@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Practice</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- HEADER PLACEHOLDER -->
+    <header id="header-placeholder"></header>
+    <div class="content-pusher" id="content-pusher"> <!-- THÊM DÒNG NÀY -->
+        <div class="container">
+            <header>
+                <h1 id="page-title">Reading Practice</h1>
+                <p id="page-description">Luyện tập sắp xếp câu</p>
+            </header>
+            <!-- HỘP GIẢI THÍCH MỚI -->
+            <div class="explanation-box">
+                <h3>💡 Giải thích phương pháp học Part 5</h3>
+                <p>Dưới đây là <strong>7 tiêu đề ĐÚNG</strong> cho mỗi bài đọc, nhưng chúng đã bị xáo trộn. Nhiệm vụ của
+                    bạn là kéo và thả để sắp xếp chúng lại theo đúng thứ tự của các đoạn văn trong đề thi.</p>
+                <p>Hãy học thuộc lòng thứ tự này bằng cách sử dụng câu chuyện gợi nhớ được cung cấp.</p>
+            </div>
+            <main id="quiz-container">
+                <!-- Các câu hỏi sẽ được tự động chèn vào đây -->
+            </main>
+        </div>
+
+        <!-- SCRIPTS -->
+
+        <script src="js/data-reading.js"></script>
+        <!-- FOOTER PLACEHOLDER -->
+        <footer id="footer-placeholder"></footer>
+    </div>
+    <!-- SCRIPT CHÍNH -->
+    <script src="js/main.js"></script>
+    <!-- Thêm thư viện SortableJS -->
+    <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const quizContainer = document.getElementById('quiz-container');
+            const pageTitle = document.getElementById('page-title');
+            const pageDescription = document.getElementById('page-description');
+
+            pageTitle.textContent = `Reading - Part 5`;
+            pageDescription.textContent = `Sắp xếp các tiêu đề đúng theo thứ tự`;
+
+            // Lấy dữ liệu trực tiếp từ part5
+            const questions = readingData.part5;
+
+            function shuffleArray(array) {
+                for (let i = array.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [array[i], array[j]] = [array[j], array[i]];
+                }
+                return array;
+            }
+
+            questions.forEach((item, index) => {
+                const originalFragmentsWithIndex = item.fragments.map((frag, i) => ({ text: frag, originalIndex: i + 1 }));
+                const shuffledFragments = shuffleArray([...originalFragmentsWithIndex]);
+                const card = document.createElement('div');
+                card.className = 'quiz-card';
+                card.dataset.key = item.key;
+
+                let listItems = '';
+                shuffledFragments.forEach(frag => {
+                    listItems += `<li data-original-index="${frag.originalIndex}">
+                                <span class="original-number">(${frag.originalIndex})</span> ${frag.text}
+                              </li>`;
+                });
+
+                card.innerHTML = `
+                <div class="card-header">
+                    <h2>Đề bài ${index + 1}: ${item.title}</h2>
+                    <span class="tag ${item.type.includes('Logic') ? 'tag-logic' : 'tag-bia'}">${item.type}</span>
+                </div>
+                <p class="instructions">Kéo và thả để sắp xếp các câu theo đúng thứ tự.</p>
+                <ul class="sentence-list sortable-list">${listItems}</ul>
+                <div class="feedback-message"></div>
+                <div class="card-actions">
+                    <button class="action-btn check-answer-btn">Kiểm tra đáp án</button>
+                    <button class="action-btn show-story-btn">Xem đáp án & câu chuyện</button>
+                </div>
+                <div class="answer-section" style="display: none;">
+                    <h4>Đáp án</h4>
+                    <p><strong>Key đúng:</strong> ${item.key}</p>
+                    <p><strong>Câu chuyện gợi nhớ:</strong> ${item.story}</p>
+                </div>
+            `;
+                quizContainer.appendChild(card);
+
+                // --- KÍCH HOẠT KÉO THẢ BẰNG SORTABLEJS ---
+                const sortableList = card.querySelector('.sortable-list');
+                new Sortable(sortableList, {
+                    animation: 150, // Hiệu ứng mượt mà khi sắp xếp
+                    ghostClass: 'sortable-ghost' // Class cho 'bóng' của mục đang kéo
+                });
+            });
+
+            quizContainer.addEventListener('click', function (e) {
+                if (e.target.classList.contains('check-answer-btn')) {
+                    const card = e.target.closest('.quiz-card');
+                    const list = card.querySelector('.sortable-list');
+                    const feedbackDiv = card.querySelector('.feedback-message');
+                    const correctKey = card.dataset.key;
+                    const currentOrder = Array.from(list.querySelectorAll('li')).map(li => li.dataset.originalIndex).join('-');
+                    card.classList.remove('correct', 'incorrect');
+                    if (currentOrder === correctKey) {
+                        card.classList.add('correct');
+                        feedbackDiv.innerHTML = '🎉 Chính xác! Rất tốt!';
+                    } else {
+                        card.classList.add('incorrect');
+                        feedbackDiv.innerHTML = '❌ Sai rồi! Hãy thử sắp xếp lại.';
+                    }
+                }
+                if (e.target.classList.contains('show-story-btn')) {
+                    const answerSection = e.target.closest('.card-actions').nextElementSibling;
+                    const isVisible = answerSection.style.display === 'block';
+                    answerSection.style.display = isVisible ? 'none' : 'block';
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -6,25 +6,25 @@ const readingData = {
             id: 'p1_just_too',
             title: 'Key: Just / Too / To',
             keys: ['Just', 'Too', 'To', 'Some', 'Give'],
-            story: 'Câu chuyện gợi nhớ: "Tôi <strong>Just</strong> (vừa mới) nhận ra trời <strong>Too</strong> (quá) lạnh <strong>To</strong> (để) đi ra ngoài, nên tôi đã gọi <strong>Some</strong> (một vài) người bạn đến và <strong>Give</strong> (đưa) họ ít trà nóng."'
+            story: '"Tôi <strong>Just</strong> (vừa mới) nhận ra trời <strong>Too</strong> (quá) lạnh <strong>To</strong> (để) đi ra ngoài, nên tôi đã gọi <strong>Some</strong> (một vài) người bạn đến và <strong>Give</strong> (đưa) họ ít trà nóng."'
         },
         {
             id: 'p1_miss_called',
             title: 'Key: Miss / Called',
             keys: ['Miss', 'Called', 'Ready', 'Meet', 'Dinner'],
-            story: 'Câu chuyện gợi nhớ: "Tôi rất <strong>nhớ (Miss)</strong> bạn, tôi đã <strong>gọi (Called)</strong> để hỏi bạn đã <strong>sẵn sàng (Ready)</strong> để <strong>gặp (Meet)</strong> tôi cho bữa <strong>tối (Dinner)</strong> chưa."'
+            story: '"Tôi rất <strong>nhớ (Miss)</strong> bạn, tôi đã <strong>gọi (Called)</strong> để hỏi bạn đã <strong>sẵn sàng (Ready)</strong> để <strong>gặp (Meet)</strong> tôi cho bữa <strong>tối (Dinner)</strong> chưa."'
         },
         {
             id: 'p1_near_friendly',
             title: 'Key: Near / Friendly',
             keys: ['Near', 'Friendly', 'Practice', 'Read', 'So'],
-            story: 'Câu chuyện gợi nhớ: "Ở <strong>gần (Near)</strong> nhà tôi có một người hàng xóm <strong>thân thiện (Friendly)</strong>. Chúng tôi thường <strong>luyện tập (Practice)</strong> và <strong>đọc (Read)</strong> sách cùng nhau, <strong>vì vậy (So)</strong> chúng tôi rất thân."'
+            story: '"Ở <strong>gần (Near)</strong> nhà tôi có một người hàng xóm <strong>thân thiện (Friendly)</strong>. Chúng tôi thường <strong>luyện tập (Practice)</strong> và <strong>đọc (Read)</strong> sách cùng nhau, <strong>vì vậy (So)</strong> chúng tôi rất thân."'
         },
         {
             id: 'p1_balance_slowly',
             title: 'Key: Balance / Slowly',
             keys: ['Balance', 'Statement', 'Think', 'Slowly', 'Before'],
-            story: 'Câu chuyện gợi nhớ: "Để <strong>cân bằng (Balance)</strong> tài khoản, hãy xem <strong>sao kê (Statement)</strong>. <strong>Hãy nghĩ (Think)</strong> thật <strong>chậm (Slowly)</strong> <strong>trước khi (Before)</strong> chi tiêu."'
+            story: '"Để <strong>cân bằng (Balance)</strong> tài khoản, hãy xem <strong>sao kê (Statement)</strong>. <strong>Hãy nghĩ (Think)</strong> thật <strong>chậm (Slowly)</strong> <strong>trước khi (Before)</strong> chi tiêu."'
         },
 
         // --- TOÀN BỘ KEY MỚI TỪ HÌNH ẢNH ---
@@ -32,67 +32,67 @@ const readingData = {
             id: 'p1_sick_read',
             title: 'Key: Sick / Read',
             keys: ['Sick', 'Read', 'Meeting', 'Ringing', 'Drink'],
-            story: 'Câu chuyện gợi nhớ: "Tôi cảm thấy <strong>bệnh (Sick)</strong> nên không thể <strong>đọc (Read)</strong> tài liệu cho buổi <strong>họp (Meeting)</strong>. Điện thoại cứ <strong>reo (Ringing)</strong> liên tục, tôi phải <strong>uống (Drink)</strong> một ly nước để bình tĩnh."'
+            story: '"Tôi cảm thấy <strong>bệnh (Sick)</strong> nên không thể <strong>đọc (Read)</strong> tài liệu cho buổi <strong>họp (Meeting)</strong>. Điện thoại cứ <strong>reo (Ringing)</strong> liên tục, tôi phải <strong>uống (Drink)</strong> một ly nước để bình tĩnh."'
         },
         {
             id: 'p1_friendly_walk',
             title: 'Key: Friendly / Walk',
             keys: ['Friendly', 'Walk', 'First', 'Speak', 'Together'],
-            story: 'Câu chuyện gợi nhớ: "Người bạn <strong>thân thiện (Friendly)</strong> và tôi đi <strong>dạo (Walk)</strong>. <strong>Đầu tiên (First)</strong>, chúng tôi không <strong>nói (Speak)</strong> gì, nhưng sau đó đã trò chuyện <strong>cùng nhau (Together)</strong>."'
+            story: '"Người bạn <strong>thân thiện (Friendly)</strong> và tôi đi <strong>dạo (Walk)</strong>. <strong>Đầu tiên (First)</strong>, chúng tôi không <strong>nói (Speak)</strong> gì, nhưng sau đó đã trò chuyện <strong>cùng nhau (Together)</strong>."'
         },
         {
             id: 'p1_near_move',
             title: 'Key: Near / Move',
             keys: ['Near', 'Move', 'Drive', 'Walk', 'Pretty'],
-            story: 'Câu chuyện gợi nhớ: "Tôi sống <strong>gần (Near)</strong> một nơi rất đẹp. Để <strong>di chuyển (Move)</strong>, bạn có thể <strong>lái xe (Drive)</strong> hoặc đi <strong>bộ (Walk)</strong>. Khung cảnh rất <strong>xinh đẹp (Pretty)</strong>."'
+            story: '"Tôi sống <strong>gần (Near)</strong> một nơi rất đẹp. Để <strong>di chuyển (Move)</strong>, bạn có thể <strong>lái xe (Drive)</strong> hoặc đi <strong>bộ (Walk)</strong>. Khung cảnh rất <strong>xinh đẹp (Pretty)</strong>."'
         },
         {
             id: 'p1_window_buy',
             title: 'Key: Window / Buy',
             keys: ['Window', 'Buy', 'Market', 'Cake', 'Watch'],
-            story: 'Câu chuyện gợi nhớ: "Tôi nhìn qua <strong>cửa sổ (Window)</strong> và quyết định đi <strong>mua (Buy)</strong> đồ ở <strong>chợ (Market)</strong>. Tôi mua một cái <strong>bánh (Cake)</strong> rồi về nhà <strong>xem (Watch)</strong> TV."'
+            story: '"Tôi nhìn qua <strong>cửa sổ (Window)</strong> và quyết định đi <strong>mua (Buy)</strong> đồ ở <strong>chợ (Market)</strong>. Tôi mua một cái <strong>bánh (Cake)</strong> rồi về nhà <strong>xem (Watch)</strong> TV."'
         },
         {
             id: 'p1_clear_sun',
             title: 'Key: Clear / Sun',
             keys: ['Clear', 'Sun', 'Enjoyable', 'Working', 'Read'],
-            story: 'Câu chuyện gợi nhớ: "Trời hôm nay <strong>quang đãng (Clear)</strong> và có <strong>nắng (Sun)</strong>, thật là một ngày <strong>dễ chịu (Enjoyable)</strong>. Thay vì <strong>làm việc (Working)</strong>, tôi quyết định đi <strong>đọc (Read)</strong> sách."'
+            story: '"Trời hôm nay <strong>quang đãng (Clear)</strong> và có <strong>nắng (Sun)</strong>, thật là một ngày <strong>dễ chịu (Enjoyable)</strong>. Thay vì <strong>làm việc (Working)</strong>, tôi quyết định đi <strong>đọc (Read)</strong> sách."'
         },
         {
             id: 'p1_visit_hot',
             title: 'Key: Visit / Hot',
             keys: ['Visit', 'Hot', 'Speak', 'Game', 'Train'],
-            story: 'Câu chuyện gợi nhớ: "Tôi đi <strong>thăm (Visit)</strong> bạn. Trời rất <strong>nóng (Hot)</strong>. Chúng tôi <strong>nói chuyện (Speak)</strong>, chơi một ván <strong>cờ (Game)</strong> rồi cùng nhau đi <strong>tàu (Train)</strong> về nhà."'
+            story: '"Tôi đi <strong>thăm (Visit)</strong> bạn. Trời rất <strong>nóng (Hot)</strong>. Chúng tôi <strong>nói chuyện (Speak)</strong>, chơi một ván <strong>cờ (Game)</strong> rồi cùng nhau đi <strong>tàu (Train)</strong> về nhà."'
         },
         {
             id: 'p1_long_detail',
             title: 'Key: Long / Detail',
             keys: ['Long', 'Detail', 'Copy', 'Busy', 'Client'],
-            story: 'Câu chuyện gợi nhớ: "Bản báo cáo này rất <strong>dài (Long)</strong> và có nhiều <strong>chi tiết (Detail)</strong>. Hãy <strong>sao chép (Copy)</strong> nó ra vì sếp đang rất <strong>bận (Busy)</strong> và cần gửi cho <strong>khách hàng (Client)</strong>."'
+            story: '"Bản báo cáo này rất <strong>dài (Long)</strong> và có nhiều <strong>chi tiết (Detail)</strong>. Hãy <strong>sao chép (Copy)</strong> nó ra vì sếp đang rất <strong>bận (Busy)</strong> và cần gửi cho <strong>khách hàng (Client)</strong>."'
         },
         {
             id: 'p1_live_share',
             title: 'Key: Live / Share',
             keys: ['Live', 'Share', 'Class', 'Drive', 'Cook'],
-            story: 'Câu chuyện gợi nhớ: "Chúng tôi <strong>sống (Live)</strong> và <strong>chia sẻ (Share)</strong> mọi thứ trong một <strong>lớp (Class)</strong> học. Chúng tôi cùng nhau <strong>lái xe (Drive)</strong> và <strong>nấu ăn (Cook)</strong>."'
+            story: '"Chúng tôi <strong>sống (Live)</strong> và <strong>chia sẻ (Share)</strong> mọi thứ trong một <strong>lớp (Class)</strong> học. Chúng tôi cùng nhau <strong>lái xe (Drive)</strong> và <strong>nấu ăn (Cook)</strong>."'
         },
         {
             id: 'p1_late_meetings',
             title: 'Key: Late / Meetings',
             keys: ['Late', 'Meetings', 'Park', 'Shop', 'Cook'],
-            story: 'Câu chuyện gợi nhớ: "Tôi bị <strong>trễ (Late)</strong> các <strong>cuộc họp (Meetings)</strong>, nên tôi đã đi ra <strong>công viên (Park)</strong>, ghé <strong>cửa hàng (Shop)</strong> mua đồ và về nhà <strong>nấu ăn (Cook)</strong>."'
+            story: '"Tôi bị <strong>trễ (Late)</strong> các <strong>cuộc họp (Meetings)</strong>, nên tôi đã đi ra <strong>công viên (Park)</strong>, ghé <strong>cửa hàng (Shop)</strong> mua đồ và về nhà <strong>nấu ăn (Cook)</strong>."'
         },
         {
             id: 'p1_early_lunch',
             title: 'Key: Early / Lunch',
             keys: ['Early', 'Lunch', 'Leave', 'Car', 'Sleepy'],
-            story: 'Câu chuyện gợi nhớ: "Tôi dậy <strong>sớm (Early)</strong>, ăn <strong>trưa (Lunch)</strong>, rồi <strong>rời đi (Leave)</strong> bằng <strong>ô tô (Car)</strong>. Lái xe một mình khiến tôi thấy <strong>buồn ngủ (Sleepy)</strong>."'
+            story: '"Tôi dậy <strong>sớm (Early)</strong>, ăn <strong>trưa (Lunch)</strong>, rồi <strong>rời đi (Leave)</strong> bằng <strong>ô tô (Car)</strong>. Lái xe một mình khiến tôi thấy <strong>buồn ngủ (Sleepy)</strong>."'
         },
         {
             id: 'p1_great_boat',
             title: 'Key: Great / Boat',
             keys: ['Great', 'Boat', 'Then', 'Drive', 'Too'],
-            story: 'Câu chuyện gợi nhớ: "Thật là <strong>tuyệt (Great)</strong> khi đi <strong>thuyền (Boat)</strong>. <strong>Sau đó (Then)</strong>, chúng tôi <strong>lái xe (Drive)</strong> về nhà. Chuyến đi thật vui <strong>quá (Too)</strong>!"'
+            story: '"Thật là <strong>tuyệt (Great)</strong> khi đi <strong>thuyền (Boat)</strong>. <strong>Sau đó (Then)</strong>, chúng tôi <strong>lái xe (Drive)</strong> về nhà. Chuyến đi thật vui <strong>quá (Too)</strong>!"'
         }// Bạn có thể thêm các bộ key khác vào đây
     ],
 
@@ -469,7 +469,7 @@ const readingData = {
                 'Who thinks the cleaning needs to be done regularly?',
                 'Who thinks volunteering is important for students?',
             ],
-            story: 'Câu chuyện gợi nhớ: "Người <strong>A</strong> thấy đây là <strong>nơi đẹp để thư giãn</strong> và sẽ <strong>nhờ người khác giúp</strong>. Người <strong>B</strong> thì <strong>không dọn được vì bận</strong> nhưng tin rằng nó <strong>giúp cho công việc tương lai</strong>. Người <strong>C</strong> cho rằng <strong>khu vực cần dọn dẹp</strong> và việc này nên <strong>diễn ra thường xuyên</strong>. Người <strong>D</strong> nghĩ nó <strong>quan trọng cho trẻ em</strong>."'
+            story: '"Người <strong>A</strong> thấy đây là <strong>nơi đẹp để thư giãn</strong> và sẽ <strong>nhờ người khác giúp</strong>. Người <strong>B</strong> thì <strong>không dọn được vì bận</strong> nhưng tin rằng nó <strong>giúp cho công việc tương lai</strong>. Người <strong>C</strong> cho rằng <strong>khu vực cần dọn dẹp</strong> và việc này nên <strong>diễn ra thường xuyên</strong>. Người <strong>D</strong> nghĩ nó <strong>quan trọng cho trẻ em</strong>."'
         },
         {
             id: 'p4_visit_island',
@@ -484,7 +484,7 @@ const readingData = {
                 'Who thought public transport could be improved?',
                 'Who liked to walk?',
             ],
-            story: 'Câu chuyện gợi nhớ: "Người <strong>A</strong> <strong>quên mang đồ</strong> và <strong>thích đi một mình</strong>. Người <strong>B</strong> thì <strong>chi nhiều tiền cho việc đi lại</strong>. Người <strong>C</strong> nghĩ <strong>phương tiện công cộng cần cải thiện</strong> và <strong>thích đi bộ</strong>. Người <strong>D</strong> thì <strong>thích ăn đồ ăn</strong> ở đó và <strong>thích mua đồ được làm sẵn</strong>."'
+            story: '"Người <strong>A</strong> <strong>quên mang đồ</strong> và <strong>thích đi một mình</strong>. Người <strong>B</strong> thì <strong>chi nhiều tiền cho việc đi lại</strong>. Người <strong>C</strong> nghĩ <strong>phương tiện công cộng cần cải thiện</strong> và <strong>thích đi bộ</strong>. Người <strong>D</strong> thì <strong>thích ăn đồ ăn</strong> ở đó và <strong>thích mua đồ được làm sẵn</strong>."'
         },
         {
             id: 'p4_art',
@@ -499,7 +499,7 @@ const readingData = {
                 'Who prefers going to art exhibitions with other people?',
                 'Who has been going to art exhibitions all their life?',
             ],
-            story: 'Câu chuyện gợi nhớ: "Người <strong>A</strong> <strong>có năng khiếu hội họa</strong> nhưng lại thấy <strong>triển lãm nhàm chán</strong>. Người <strong>B</strong> thì <strong>thích đi xem một mình</strong> và muốn mọi người <strong>tập trung vào nghệ thuật</strong>. Người <strong>C</strong> lại rất <strong>am hiểu về hội họa</strong>. Người <strong>D</strong> thì <strong>thích đi xem với bạn bè</strong> và đã <strong>dành cả đời để đi xem</strong>."'
+            story: '"Người <strong>A</strong> <strong>có năng khiếu hội họa</strong> nhưng lại thấy <strong>triển lãm nhàm chán</strong>. Người <strong>B</strong> thì <strong>thích đi xem một mình</strong> và muốn mọi người <strong>tập trung vào nghệ thuật</strong>. Người <strong>C</strong> lại rất <strong>am hiểu về hội họa</strong>. Người <strong>D</strong> thì <strong>thích đi xem với bạn bè</strong> và đã <strong>dành cả đời để đi xem</strong>."'
         },
         {
             id: 'p4_reading_books',
@@ -514,7 +514,7 @@ const readingData = {
                 'Who reads more than another family member?',
                 'Who reads many books at once?',
             ],
-            story: 'Câu chuyện gợi nhớ: "Người <strong>A</strong> <strong>lên kế hoạch đọc</strong> và <strong>đọc nhiều hơn người khác</strong>. Người <strong>B</strong> <strong>muốn đọc nhiều sách</strong> và <strong>đọc nhiều cuốn cùng lúc</strong>. Người <strong>C</strong> thì <strong>gặp khó khăn khi đọc</strong>. Người <strong>D</strong> thấy <strong>sách thực tế nhàm chán</strong> và <strong>không có thời gian đọc</strong>."'
+            story: '"Người <strong>A</strong> <strong>lên kế hoạch đọc</strong> và <strong>đọc nhiều hơn người khác</strong>. Người <strong>B</strong> <strong>muốn đọc nhiều sách</strong> và <strong>đọc nhiều cuốn cùng lúc</strong>. Người <strong>C</strong> thì <strong>gặp khó khăn khi đọc</strong>. Người <strong>D</strong> thấy <strong>sách thực tế nhàm chán</strong> và <strong>không có thời gian đọc</strong>."'
         },
         {
             id: 'p4_watching_tv',
@@ -529,7 +529,7 @@ const readingData = {
                 'Who has lost interest in watching football on TV?',
                 'Who gets a lot of knowledge by watching TV?',
             ],
-            story: 'Câu chuyện gợi nhớ: "Người <strong>A</strong> <strong>thích xem TV hơn học</strong> và thích các <strong>chương trình dài tập</strong>. Người <strong>B</strong> thì <strong>tránh xem chương trình thực tế</strong> và <strong>không còn hứng thú với đá banh</strong>. Người <strong>C</strong> học được nhiều <strong>kiến thức từ TV</strong>. Người <strong>D</strong> là người <strong>xem không kén chọn</strong> và <strong>thích cập nhật tin tức và phim ảnh</strong>."'
+            story: '"Người <strong>A</strong> <strong>thích xem TV hơn học</strong> và thích các <strong>chương trình dài tập</strong>. Người <strong>B</strong> thì <strong>tránh xem chương trình thực tế</strong> và <strong>không còn hứng thú với đá banh</strong>. Người <strong>C</strong> học được nhiều <strong>kiến thức từ TV</strong>. Người <strong>D</strong> là người <strong>xem không kén chọn</strong> và <strong>thích cập nhật tin tức và phim ảnh</strong>."'
         },
         {
             id: 'p4_eating_cooking',
@@ -540,7 +540,7 @@ const readingData = {
                 'Who only wants to eat a few range of food?', 'Who likes to eat with friends?',
                 'Who prefers to eat alone?', 'Who needs to save money?', 'Who likes home cooked food?',
             ],
-            story: 'Câu chuyện gợi nhớ: "Người <strong>A</strong> thì <strong>thích ăn cùng bạn bè</strong>. Người <strong>B</strong> thì <strong>thích ăn một mình</strong> để <strong>tiết kiệm tiền</strong>. Người <strong>C</strong> thích <strong>ăn nhiều món đa dạng</strong> và có <strong>tham gia khóa học nấu ăn</strong>. Người <strong>D</strong> chỉ <strong>ăn được vài món</strong> và <strong>thích đồ ăn nấu ở nhà</strong>."'
+            story: '"Người <strong>A</strong> thì <strong>thích ăn cùng bạn bè</strong>. Người <strong>B</strong> thì <strong>thích ăn một mình</strong> để <strong>tiết kiệm tiền</strong>. Người <strong>C</strong> thích <strong>ăn nhiều món đa dạng</strong> và có <strong>tham gia khóa học nấu ăn</strong>. Người <strong>D</strong> chỉ <strong>ăn được vài món</strong> và <strong>thích đồ ăn nấu ở nhà</strong>."'
         },
         {
             id: 'p4_visit_city',
@@ -552,7 +552,7 @@ const readingData = {
                 'Who thought public transport system was good?', 'Who thought walking too much causes a problem?',
                 'Who likes the natural resort here?',
             ],
-            story: 'Câu chuyện gợi nhớ: "Người <strong>A</strong> nghĩ <strong>phương tiện công cộng tốt rồi</strong> nhưng <strong>đi bộ nhiều thì gặp vấn đề (mệt)</strong>. Người <strong>B</strong> <strong>thích khu resort tự nhiên</strong> và chỉ <strong>tham quan một phần thành phố</strong>. Người <strong>C</strong> <strong>thích nhà hát công cộng</strong> và <strong>chi nhiều tiền mua sắm</strong>. Người <strong>D</strong> thì <strong>chi nhiều tiền cho đồ ăn</strong>."'
+            story: '"Người <strong>A</strong> nghĩ <strong>phương tiện công cộng tốt rồi</strong> nhưng <strong>đi bộ nhiều thì gặp vấn đề (mệt)</strong>. Người <strong>B</strong> <strong>thích khu resort tự nhiên</strong> và chỉ <strong>tham quan một phần thành phố</strong>. Người <strong>C</strong> <strong>thích nhà hát công cộng</strong> và <strong>chi nhiều tiền mua sắm</strong>. Người <strong>D</strong> thì <strong>chi nhiều tiền cho đồ ăn</strong>."'
         },
         {
             id: 'p4_new_restaurant',
@@ -564,7 +564,7 @@ const readingData = {
                 'Who thought the music was too quiet?', "Who didn't eat anything at the restaurant?",
                 'Who enjoyed the atmosphere?',
             ],
-            story: 'Câu chuyện gợi nhớ: "Người <strong>A</strong> <strong>chưa ăn gì cả</strong> nhưng <strong>thích không khí ở đây</strong>. Người <strong>B</strong> thấy <strong>chất lượng đồ ăn trung bình</strong> và nghĩ <strong>trải nghiệm này không thường xuyên</strong>. Người <strong>C</strong> thì <strong>sẽ không bao giờ quay lại</strong>. Người <strong>D</strong> <strong>ấn tượng với món khai vị</strong> và thấy <strong>âm nhạc quá nhỏ</strong>."'
+            story: '"Người <strong>A</strong> <strong>chưa ăn gì cả</strong> nhưng <strong>thích không khí ở đây</strong>. Người <strong>B</strong> thấy <strong>chất lượng đồ ăn trung bình</strong> và nghĩ <strong>trải nghiệm này không thường xuyên</strong>. Người <strong>C</strong> thì <strong>sẽ không bao giờ quay lại</strong>. Người <strong>D</strong> <strong>ấn tượng với món khai vị</strong> và thấy <strong>âm nhạc quá nhỏ</strong>."'
         },
         {
             id: 'p4_opinions_flying',
@@ -576,7 +576,7 @@ const readingData = {
                 'Who suggests making flights more expensive?', 'Who wants to work in other countries?',
                 'Who visits relatives regularly?',
             ],
-            story: 'Câu chuyện gợi nhớ: "Người <strong>A</strong> <strong>muốn làm việc ở nhiều quốc gia</strong> nên <strong>đề nghị tăng giá vé</strong>. Người <strong>B</strong> <strong>thăm gia đình thường xuyên</strong> và cũng muốn <strong>bảo vệ môi trường</strong>. Người <strong>C</strong> <strong>thấy thư giãn khi bay</strong>. Người <strong>D</strong> phải <strong>bay vì công việc</strong> nhưng thấy đó là một <strong>trải nghiệm tệ</strong>."'
+            story: '"Người <strong>A</strong> <strong>muốn làm việc ở nhiều quốc gia</strong> nên <strong>đề nghị tăng giá vé</strong>. Người <strong>B</strong> <strong>thăm gia đình thường xuyên</strong> và cũng muốn <strong>bảo vệ môi trường</strong>. Người <strong>C</strong> <strong>thấy thư giãn khi bay</strong>. Người <strong>D</strong> phải <strong>bay vì công việc</strong> nhưng thấy đó là một <strong>trải nghiệm tệ</strong>."'
         },
         {
             id: 'p4_going_holiday',
@@ -588,7 +588,7 @@ const readingData = {
                 'Who thinks holiday requires good weather?', 'Who wants to go mountaineering trip?',
                 'Who has never been abroad?',
             ],
-            story: 'Câu chuyện gợi nhớ: "Người <strong>A</strong> nghĩ kỳ nghỉ cần <strong>thời tiết đẹp</strong> và <strong>muốn đi leo núi</strong>. Người <strong>B</strong> thì <strong>chưa bao giờ đi nước ngoài</strong>. Người <strong>C</strong> <strong>thích ở nhà</strong> và <strong>thích đi bộ</strong>. Người <strong>D</strong> <strong>thích các điểm thu hút khách du lịch</strong> nhưng thấy <strong>đi biển nhàm chán</strong>."'
+            story: '"Người <strong>A</strong> nghĩ kỳ nghỉ cần <strong>thời tiết đẹp</strong> và <strong>muốn đi leo núi</strong>. Người <strong>B</strong> thì <strong>chưa bao giờ đi nước ngoài</strong>. Người <strong>C</strong> <strong>thích ở nhà</strong> và <strong>thích đi bộ</strong>. Người <strong>D</strong> <strong>thích các điểm thu hút khách du lịch</strong> nhưng thấy <strong>đi biển nhàm chán</strong>."'
         },
         {
             id: 'p4_sports',
@@ -600,7 +600,7 @@ const readingData = {
                 'Who thinks a routine can help us do more sport?', 'Who thinks exercise is for both the young and the elderly?',
                 'Who thinks at times we seek expert advice?',
             ],
-            story: 'Câu chuyện gợi nhớ: "Người <strong>A</strong> <strong>thích tập với bạn</strong> và cho rằng <strong>chế độ ăn quan trọng</strong>. Người <strong>B</strong> chỉ tin vào <strong>thói quen tập luyện</strong>. Người <strong>C</strong> nghĩ <strong>thi đấu không có lợi</strong> và <strong>tập thể dục tốt cho mọi lứa tuổi</strong>. Người <strong>D</strong> cho rằng <strong>không cần trải qua đau đớn</strong> vì <strong>có thể hỏi chuyên gia</strong>."'
+            story: '"Người <strong>A</strong> <strong>thích tập với bạn</strong> và cho rằng <strong>chế độ ăn quan trọng</strong>. Người <strong>B</strong> chỉ tin vào <strong>thói quen tập luyện</strong>. Người <strong>C</strong> nghĩ <strong>thi đấu không có lợi</strong> và <strong>tập thể dục tốt cho mọi lứa tuổi</strong>. Người <strong>D</strong> cho rằng <strong>không cần trải qua đau đớn</strong> vì <strong>có thể hỏi chuyên gia</strong>."'
         },
         {
             id: 'p4_watching_movie',
@@ -611,7 +611,7 @@ const readingData = {
                 'Who found the film scary?', 'Who saw the film at home?', 'Who enjoyed the story of the film?',
                 'Who read the book of the film?',
             ],
-            story: 'Câu chuyện gợi nhớ: "Người <strong>A</strong> <strong>đã xem phim trước đó rồi</strong> và <strong>vẫn thấy sợ</strong>. Người <strong>B</strong> <strong>xem phim ở nhà</strong> và <strong>thích cốt truyện bộ phim</strong>. Người <strong>C</strong> thì <strong>xem phim với bạn bè</strong>. Người <strong>D</strong> thấy <strong>phim quá dài</strong> và <strong>thích đọc sách của bộ phim</strong>."'
+            story: '"Người <strong>A</strong> <strong>đã xem phim trước đó rồi</strong> và <strong>vẫn thấy sợ</strong>. Người <strong>B</strong> <strong>xem phim ở nhà</strong> và <strong>thích cốt truyện bộ phim</strong>. Người <strong>C</strong> thì <strong>xem phim với bạn bè</strong>. Người <strong>D</strong> thấy <strong>phim quá dài</strong> và <strong>thích đọc sách của bộ phim</strong>."'
         },
         {
             id: 'p4_new_station',
@@ -623,7 +623,7 @@ const readingData = {
                 'Who thinks the new station will improve train travel?', 'Who thinks the bus service is good?',
                 'Who thinks the new station will cost too much to build?',
             ],
-            story: 'Câu chuyện gợi nhớ: "Người <strong>A</strong> nghĩ mọi người nên <strong>tự lên kế hoạch chuyến đi</strong>. Người <strong>B</strong> thấy <strong>xe buýt quá đông</strong> và tin rằng <strong>nhà ga mới sẽ giúp ích</strong>. Người <strong>C</strong> lại thấy <strong>dịch vụ xe buýt đã tốt</strong> và <strong>không cần cải thiện</strong>. Người <strong>D</strong> lo rằng <strong>nhà ga mới sẽ tốn kém</strong> và nên <strong>xây trạm y tế</strong> hơn."'
+            story: '"Người <strong>A</strong> nghĩ mọi người nên <strong>tự lên kế hoạch chuyến đi</strong>. Người <strong>B</strong> thấy <strong>xe buýt quá đông</strong> và tin rằng <strong>nhà ga mới sẽ giúp ích</strong>. Người <strong>C</strong> lại thấy <strong>dịch vụ xe buýt đã tốt</strong> và <strong>không cần cải thiện</strong>. Người <strong>D</strong> lo rằng <strong>nhà ga mới sẽ tốn kém</strong> và nên <strong>xây trạm y tế</strong> hơn."'
         },
         {
             id: 'p4_technology',
@@ -635,8 +635,226 @@ const readingData = {
                 'Who believes that people depend too much on technology?', 'Who uses technology for work purposes?',
                 'Who buys the latest technology products?',
             ],
-            story: 'Câu chuyện gợi nhớ: "Người <strong>A</strong> <strong>dùng để liên lạc gia đình</strong> và nghĩ <strong>mọi người quá phụ thuộc</strong> vào nó. Người <strong>B</strong> <strong>dùng cho công việc</strong> và khuyên <strong>không dùng trước khi ngủ</strong>. Người <strong>C</strong> <strong>dùng để giải trí</strong> và <strong>luôn mua đồ mới nhất</strong>. Người <strong>D</strong> thì cho rằng <strong>trẻ em không nên dùng</strong> công nghệ."'
+            story: '"Người <strong>A</strong> <strong>dùng để liên lạc gia đình</strong> và nghĩ <strong>mọi người quá phụ thuộc</strong> vào nó. Người <strong>B</strong> <strong>dùng cho công việc</strong> và khuyên <strong>không dùng trước khi ngủ</strong>. Người <strong>C</strong> <strong>dùng để giải trí</strong> và <strong>luôn mua đồ mới nhất</strong>. Người <strong>D</strong> thì cho rằng <strong>trẻ em không nên dùng</strong> công nghệ."'
         }
+    ],
+    part5: [
+        {
+            id: 'p5_chinese_food',
+            title: 'Chủ đề: Ẩm thực Trung Quốc',
+            type: 'Bịa (Ghi nhớ)', // Giữ lại 'type' để có tag màu
+            // 'fragments' bây giờ là 7 tiêu đề ĐÚNG
+            fragments: [
+                'The origins of Chinese food', // Đáp án 1
+                'The influence of philosophy', // Đáp án 2
+                'Regional variations',         // Đáp án 3
+                'Cooking methods',             // Đáp án 4
+                'The style',                   // Đáp án 5
+                'Changes in the Chinese diet', // Đáp án 6
+                'Effects of a changing diet'   // Đáp án 7
+            ],
+            // 'key' bây giờ luôn là 1-2-3-4-5-6-7 vì mục tiêu là sắp xếp lại đúng thứ tự
+            key: '1-2-3-4-5-6-7',
+            story: 'Câu chuyện bịa: "Biết được <strong>nguồn gốc thức ăn Trung Quốc (1)</strong>, nó <strong>ảnh hưởng bởi triết học (2)</strong>, <strong>đa dạng vùng miền (3)</strong>, có <strong>nhiều cách chế biến (4)</strong>, <strong>phong cách đa dạng (5)</strong>, và đã <strong>làm ảnh hưởng (6)</strong> đến <strong>chế độ ăn (7)</strong>."'
+        },
+        {
+            id: 'p5_experiment',
+            title: 'Chủ đề: Thí nghiệm / ốp lưng',
+            type: 'Bịa (Ghi nhớ)',
+            fragments: [
+                'Making things last longer', 'A temporary experiment', 'The reason of secrecy',
+                'Still relevant to our times', 'The difficulty of being generous', 'Reason to reach a compromise',
+                'Important lessons for all of us'
+            ],
+            key: '1-2-3-4-5-6-7',
+            story: 'Câu chuyện bịa: "Mình muốn nó <strong>bền hơn (1)</strong>, nên đã <strong>làm thí nghiệm ốp lưng (2)</strong>, và <strong>đó là bí mật (3)</strong>. Nhưng <strong>bí mật bị lan rộng (4)</strong>, thật <strong>khó để rộng lượng (5)</strong>. <strong>Lý do phải thỏa hiệp (6)</strong> là vì nó cho ta <strong>bài học quan trọng (7)</strong>."'
+        },
+        {
+            id: 'p5_dickens_book',
+            title: 'Chủ đề: Đọc sách Dickens',
+            type: 'Bịa (Ghi nhớ)',
+            fragments: [
+                'Dickens for our time', 'Difficulties for modern readers', 'Keeping the reader guessing',
+                'The influence of the media', "Dickens' early success", 'Trying to protect his property',
+                'Bringing the books to life'
+            ],
+            key: '1-2-3-4-5-6-7',
+            story: 'Câu chuyện bịa: "Đọc quyển sách <strong>Dickens for our time (1)</strong>, có nhiều <strong>khó khăn khi đọc (2)</strong>. Tác giả <strong>cố gắng làm độc giả đoán (3)</strong>, có sự <strong>ảnh hưởng truyền thông (4)</strong>, đó là <strong>thành công sớm (5)</strong> của ông. Ông đã <strong>cố gắng bảo vệ tài sản (6)</strong> của mình để <strong>mang sách đến đời sống (7)</strong>."'
+        },
+        {
+            id: 'p5_zoo_history',
+            title: 'Chủ đề: Đi sở thú',
+            type: 'Bịa (Ghi nhớ)',
+            fragments: [
+                'A symbol of privilege and wealth', 'Opening the door to everyone', 'Away from amusement to conservation',
+                'Away from enclosure to greater freedom', 'A different set of values', 'A new mission of conservation',
+                'A modern-life alternative'
+            ],
+            key: '1-2-3-4-5-6-7',
+            story: 'Câu chuyện bịa: "<strong>Đó là biểu tượng quyền lực và giàu có (1)</strong>, từ đó <strong>mở cửa cho mọi người (2)</strong>. Sở thú đã thay đổi, <strong>không còn giam cầm (3)</strong>, hướng tới <strong>tự do (4)</strong>. Nó mang <strong>nhiều giá trị khác nhau (5)</strong>, với <strong>nhiệm vụ là để bảo tồn (6)</strong>. <strong>Đó là cuộc sống hiện đại (7)</strong>."'
+        },
+        {
+            id: 'p5_coffee',
+            title: 'Chủ đề: Cà phê',
+            type: 'Bịa (Ghi nhớ)',
+            fragments: [
+                'The custom',               // 1
+                'Coffee encouraging',       // 2
+                'A habit of',               // 3
+                'The problem of',           // 4
+                'A remedy',                 // 5
+                'The health risks',         // 6
+                'The ancient origin of'     // 7
+            ],
+            key: '1-2-3-4-5-6-7',
+            story: 'Câu chuyện bịa: "Theo <strong>phong tục (1)</strong>, cà phê <strong>khuyến khích (2)</strong> một <strong>thói quen (3)</strong>. Nhưng nó có <strong>vấn đề (4)</strong>, và <strong>biện pháp khắc phục (5)</strong> là nhận thức về <strong>rủi ro sức khỏe (6)</strong> dù cho nó có <strong>nguồn gốc cổ xưa (7)</strong>."'
+        },
+        {
+            id: 'p5_pole_race',
+            title: 'Chủ đề: Cuộc đua đến Cực',
+            type: 'Bịa (Ghi nhớ)',
+            fragments: [
+                'Who is in charge?',        // 1
+                'First step on the ice',    // 2
+                'Where is the end',         // 3
+                'Hidden geography',         // 4
+                'Race to the Pole',         // 5
+                'Less effort needed',       // 6
+                'Why is it so cold?'        // 7
+            ],
+            key: '1-2-3-4-5-6-7',
+            story: 'Câu chuyện bịa: "<strong>Ai chịu trách nhiệm (1)</strong> cho <strong>bước chân đầu tiên lên băng (2)</strong>? <strong>Điểm cuối ở đâu (3)</strong> trong vùng <strong>địa lý ẩn giấu (4)</strong>? <strong>Cuộc đua đến Cực (5)</strong> này cần <strong>ít nỗ lực hơn (6)</strong>. <strong>Tại sao lại lạnh thế (7)</strong>?"'
+        },
+        {
+            id: 'p5_success_factors',
+            title: 'Chủ đề: Nhân tố thành công',
+            type: 'Bịa (Ghi nhớ)',
+            fragments: [
+                'Factor',                   // 1
+                'Situation',                // 2
+                'Success',                  // 3
+                'The wider effects',        // 4
+                'Way',                      // 5
+                'A design',                 // 6
+                'Achieving'                 // 7
+            ],
+            key: '1-2-3-4-5-6-7',
+            story: 'Câu chuyện bịa: "<strong>Nhân tố (1)</strong> chính trong mọi <strong>tình huống (2)</strong> để có được <strong>thành công (3)</strong> và tạo ra <strong>ảnh hưởng sâu rộng (4)</strong> là tìm ra một <strong>con đường (5)</strong>, một <strong>thiết kế (6)</strong> để <strong>đạt được (7)</strong> mục tiêu."'
+        },
+        {
+            id: 'p5_vegetarianism',
+            title: 'Chủ đề: Ăn chay',
+            type: 'Bịa (Ghi nhớ)',
+            fragments: [
+                'Type of vegetarian',       // 1
+                'Various explanations',     // 2
+                'Understanding the Possible',// 3
+                'Farming Factory',          // 4
+                'Respect the life',         // 5
+                'Numerous Health benefits', // 6
+                'Our global responsibilities'// 7
+            ],
+            key: '1-2-3-4-5-6-7',
+            story: 'Câu chuyện bịa: "Mỗi <strong>loại người ăn chay (1)</strong> có <strong>nhiều lời giải thích (2)</strong> khác nhau. Cần <strong>hiểu những rủi ro có thể (3)</strong> khi phản đối <strong>nông trại công nghiệp (4)</strong>. Họ <strong>tôn trọng sự sống (5)</strong> vì <strong>lợi ích sức khỏe (6)</strong> và đó là <strong>trách nhiệm toàn cầu (7)</strong> của chúng ta."'
+        },
+        {
+            id: 'p5_champions',
+            title: 'Chủ đề: Các nhà vô địch',
+            type: 'Bịa (Ghi nhớ)',
+            fragments: [
+                'The easiest way to travel',        // 1
+                'Results of a lucky escape',        // 2
+                'Origin of what the winner receives',// 3
+                'A need for a change',              // 4
+                'Earning a reputation',             // 5
+                'Generations of champions',         // 6
+                'Not in it for the money'           // 7
+            ],
+            key: '1-2-3-4-5-6-7',
+            story: 'Câu chuyện bịa: "<strong>Cách dễ nhất để đi lại (1)</strong> là nhờ vào <strong>kết quả của một cuộc tẩu thoát may mắn (2)</strong>. Đó là <strong>nguồn gốc của những gì người chiến thắng nhận được (3)</strong>. Có một <strong>nhu cầu cần thay đổi (4)</strong> để <strong>tạo dựng danh tiếng (5)</strong> cho <strong>các thế hệ nhà vô địch (6)</strong>, những người tham gia <strong>không phải vì tiền (7)</strong>."'
+        },
+        {
+            id: 'p5_exploration',
+            title: 'Chủ đề: Khám phá',
+            type: 'Bịa (Ghi nhớ)',
+            fragments: [
+                'New evidence',                 // 1
+                'Natural barier',               // 2
+                'Technology',                   // 3
+                'Journey',                      // 4
+                'No precise figure',            // 5
+                'Lack of knowledge and skills', // 6
+                'Determination'                 // 7
+            ],
+            key: '1-2-3-4-5-6-7',
+            story: 'Câu chuyện bịa: "<strong>Bằng chứng mới (1)</strong> cho thấy có một <strong>rào cản tự nhiên (2)</strong>. Nhờ có <strong>công nghệ (3)</strong>, <strong>hành trình (4)</strong> trở nên dễ dàng hơn dù <strong>không có con số chính xác (5)</strong>. Họ đã vượt qua sự <strong>thiếu hụt kiến thức và kỹ năng (6)</strong> bằng <strong>sự quyết tâm (7)</strong>."'
+        },
+        {
+            id: 'p5_tulip_economy',
+            title: 'Chủ đề: Kinh tế hoa Tulip',
+            type: 'Bịa (Ghi nhớ)',
+            fragments: [
+                'The economy during the golden age', // 1
+                'Coming into',                       // 2
+                'An item of trade',                  // 3
+                'Different types of tulip',          // 4
+                'Trade mechanics',                   // 5
+                'Trade across Europe',               // 6
+                'An Unexpected turn of events'       // 7
+            ],
+            key: '1-2-3-4-5-6-7',
+            story: 'Câu chuyện bịa: "<strong>Nền kinh tế trong thời kỳ hoàng kim (1)</strong> <strong>bắt đầu (2)</strong> với hoa tulip, một <strong>mặt hàng thương mại (3)</strong>. Có <strong>nhiều loại tulip khác nhau (4)</strong>, với <strong>cơ chế giao dịch (5)</strong> và <strong>buôn bán khắp châu Âu (6)</strong>. Sau đó là một <strong>biến cố bất ngờ (7)</strong>."'
+        },
+        {
+            id: 'p5_business_solutions',
+            title: 'Chủ đề: Giải pháp kinh doanh',
+            type: 'Bịa (Ghi nhớ)',
+            fragments: [
+                'A finance visible solution',             // 1
+                'The price of convenience may be high',   // 2
+                'The benefits of living with less',       // 4 -> Bỏ qua 3
+                'The impact of lack of freedom',          // 5 -> Sửa 5 thành 4
+                'The challenges that come with a new perspective', // 6 -> Sửa 6 thành 5
+                'A competitive business',                 // 7 -> Sửa 7 thành 6
+                'The importance of planning in advance'   // 8 -> Sửa 8 thành 7
+            ],
+            key: '1-2-3-4-5-6-7',
+            story: 'Câu chuyện bịa: "Một <strong>giải pháp tài chính rõ ràng (1)</strong> cho thấy <strong>cái giá của sự tiện lợi có thể rất cao (2)</strong>. Hãy xem xét <strong>lợi ích của việc sống với ít hơn (3)</strong> và <strong>tác động của việc thiếu tự do (4)</strong>. Luôn có <strong>thách thức với góc nhìn mới (5)</strong> trong một <strong>môi trường kinh doanh cạnh tranh (6)</strong>, vì vậy <strong>tầm quan trọng của việc lập kế hoạch (7)</strong> là rất lớn."'
+        },
+                {
+            id: 'p5_small_homes',
+            title: 'Chủ đề: Nhà nhỏ',
+            type: 'Bịa (Ghi nhớ)',
+            fragments: [
+                'Life on a small scale',    // 1
+                'Motivated by economics',   // 2
+                'The advantage',            // 3
+                'Homes too big',            // 4
+                'Sharing skill and knowledge',// 5
+                'Making a smaller impact',  // 6
+                'The lasting change'        // 7
+            ],
+            key: '1-2-3-4-5-6-7',
+            story: 'Câu chuyện bịa: "<strong>Cuộc sống ở quy mô nhỏ (1)</strong> được <strong>thúc đẩy bởi kinh tế (2)</strong>. <strong>Lợi thế (3)</strong> của nó là những <strong>ngôi nhà không quá lớn (4)</strong>. Mọi người <strong>chia sẻ kỹ năng và kiến thức (5)</strong>, <strong>tạo ra tác động nhỏ hơn (6)</strong> và đó là một <strong>thay đổi lâu dài (7)</strong>."'
+        },
+        {
+            id: 'p5_creative_hobbies',
+            title: 'Chủ đề: Sở thích sáng tạo',
+            type: 'Bịa (Ghi nhớ)',
+            fragments: [
+                'Physically demanding',           // 1
+                'A good way to boost memory',     // 2
+                'A great opportunity to broaden your social circle', // 3
+                'Routines',                       // 4
+                'Creative outlet',                // 5
+                "Enhancing other people's feelings", // 6
+                'A great sense of well-being'     // 7
+            ],
+            key: '1-2-3-4-5-6-7',
+            story: 'Câu chuyện bịa: "Dù <strong>đòi hỏi thể chất (1)</strong>, đây là <strong>cách tốt để tăng cường trí nhớ (2)</strong> và là <strong>cơ hội tuyệt vời để mở rộng vòng tròn xã hội (3)</strong>. Hãy tạo <strong>thói quen (4)</strong> cho <strong>lối thoát sáng tạo (5)</strong> này, nó sẽ <strong>nâng cao cảm xúc của người khác (6)</strong> và mang lại <strong>cảm giác hạnh phúc tuyệt vời (7)</strong>."'
+        }
+
+
     ]
     // Thêm dữ liệu cho part1, part4, part5... vào đây
 };

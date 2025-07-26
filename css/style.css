@@ -1083,3 +1083,112 @@ body.nav-open .hamburger span:last-child {
 .explanation-box ul li {
     margin-bottom: 5px;
 }
+
+
+
+/* --- STYLES FOR READING PART 5 (DRAG & DROP) --- */
+
+.part5-card .card-header {
+    margin-bottom: 25px;
+}
+
+.part5-drag-area {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+@media (min-width: 768px) {
+    .part5-drag-area {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+.part5-source-container h4,
+.part5-target-container h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: var(--primary-hover);
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.part5-source-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    min-height: 100px;
+}
+
+.part5-source-list li {
+    background-color: #fff;
+    border: 1px solid var(--border-color);
+    padding: 12px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    cursor: grab;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.part5-target-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.part5-answer-slot {
+    background-color: var(--secondary-color);
+    border: 2px dashed #ccc;
+    border-radius: 5px;
+    min-height: 53px;
+    display: flex;
+    align-items: center;
+    padding: 5px;
+    transition: background-color 0.2s;
+}
+
+.part5-answer-slot .slot-number {
+    font-weight: bold;
+    color: #aaa;
+    margin: 0 10px;
+}
+
+.part5-answer-slot li {
+    width: 100%;
+    margin: 0;
+}
+
+/* Khi có li bên trong, ẩn số thứ tự đi */
+.part5-answer-slot:has(li) .slot-number {
+    display: none;
+}
+
+/* Style lại li khi nó đã nằm trong ô đáp án */
+.part5-answer-slot li {
+    width: 100%;
+    margin: 0; /* Bỏ margin */
+    padding: 10px; /* Chỉnh lại padding cho vừa vặn */
+    font-size: 0.95em; /* Có thể làm chữ nhỏ hơn một chút */
+    box-shadow: none; /* Bỏ đổ bóng khi đã nằm trong ô */
+    border: 1px solid #b8c5d0; /* Thêm viền nhẹ cho đẹp */
+}
+
+/* Thêm vào cuối file hoặc trong khu vực style Part 5 */
+.answer-section .correct-headings-list {
+    list-style: decimal; /* Sử dụng số thứ tự 1, 2, 3... */
+    padding-left: 20px;
+    margin: 0 0 15px 0;
+}
+.answer-section .correct-headings-list li {
+    padding: 5px 0;
+    font-weight: 500;
+}
+
+.answer-section .story-section {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid var(--border-color);
+}
