@@ -95,7 +95,103 @@ const readingData = {
                 "These were ...", "Princeton University ...", "As a child...", "She later ...", "His best friend ..."
             ],
             key: "3-5-4-1-2",
-            story: 'Câu chuyện thật: "<strong>Thời còn nhỏ</strong> ảnh ấy thích đọc sách, <strong>bạn thân anh ấy</strong> cũng thích đọc sách, <strong>Cô ấy sớm</strong> thành người yêu của họ, <strong>đó là khoảng thời gian</strong> đẹp nhất tại trường <strong>đại học Princeton</strong>."'
+            story: 'Câu chuyện thật: "<strong>Thời còn nhỏ</strong> anh ấy thích đọc sách, <strong>bạn thân anh ấy</strong> cũng thích đọc sách, <strong>Cô ấy sớm</strong> thành người yêu của ảnh, <strong>đó là khoảng thời gian</strong> đẹp nhất tại trường <strong>đại học Princeton</strong>."'
+        },
+        {
+            id: "p2_timeline_words", // ID này đã có, chúng ta cập nhật câu chuyện
+            title: "Câu chuyện nhớ về nước Úc sơ khai",
+            type: "Bịa (Ghi nhớ)",
+            fragments: ["Before", "When", "After", "Remember", "You should"],
+            key: "1-4-5-2-3",
+            story: 'Câu chuyện bịa: "<strong>Trước </strong>khi<strong> nhớ </strong> về nước Úc sơ khai, <strong>bạn nên</strong> tìm kiếm thông tin, <strong>khi</strong> có thông tin, <strong>sau đó</strong> viết ra giấy."'
+        },
+        {
+            id: "p2_gym_keys",
+            title: "Câu chuyện mượn đồ tập gym",
+            type: "Logic (Thật)",
+            fragments: [
+                "You must return your keys", "You should ....collect keys", "When you have completed...", 
+                "Follow the route on the map", "Collect a map"
+            ],
+            key: "2-5-4-3-1",
+            story: 'Câu chuyện thật: "<strong>lấy chìa khóa</strong>, <strong>lấy bản đồ</strong>, <strong>đi theo bản đồ</strong>, <strong>khi tập xong (hoàn thành)</strong>, <strong>trả chìa khóa</strong>."'
+        },
+        {
+            id: "p2_exhibition_visit",
+            title: "Câu chuyện đi tham quan triển lãm",
+            type: "Logic (Thật)",
+            fragments: [
+                "Before you look at the picture a guide...", "These activitives inlude...", 
+                "Inside the building there is a photograph...", "When you arrive...collect your ticket", 
+                "You must show it..."
+            ],
+            key: "4-5-3-1-2",
+            story: 'Câu chuyện thật: "<strong>Khi bạn đến</strong> triển lãm, bạn <strong>lấy cái vé</strong>, <strong>show vé</strong>, <strong>bên trong có những bức tranh</strong>, <strong>trước khi xem tranh</strong>, nhân viên sẽ nói về <strong>các hoạt động của ngày hôm nay</strong>."'
+        },
+        {
+            id: "p2_running_race",
+            title: "Câu chuyện tham gia chạy bộ",
+            type: "Logic (Thật)",
+            fragments: [
+                "Runners must register...", "Please put this in...", "On arrival at the park",
+                "An employee...", "To do this..."
+            ],
+            key: "3-1-5-4-2",
+            story: 'Câu chuyện thật: "<strong>Khi bạn đến công viên</strong>, <strong>người tham gia phải đăng kí</strong>, <strong>để làm điều này</strong> thì bạn phải điền form, <strong>nhân viên</strong> sẽ phát quà lưu niệm, khi điền xong <strong>hãy trả lại form</strong>."'
+        },
+        {
+            id: "p2_planting_rose",
+            title: "Trồng hoa hồng",
+            type: "Logic (Thật)",
+            fragments: [
+                "Finally", "Push", "Must water everyday", "Dig a hole", "Put the rose base down"
+            ],
+            key: "4-5-2-3-1",
+            story: 'Câu chuyện thật: "<strong>Đào cái hố</strong>, <strong>đặt bông hồng xuống</strong>, <strong>lấp đất</strong>, <strong>tưới nước mỗi ngày</strong>, <strong>cuối cùng</strong> cây sẽ phát triển."'
+        },
+        {
+            id: "p2_original_house",
+            title: "Câu chuyện nhà ban đầu",
+            type: "Logic (Thật)",
+            fragments: [
+                "Too small", "That original house", "After extension",
+                "Today it has hundreds of rooms", "Since then,"
+            ],
+            key: "2-1-3-5-4",
+            story: 'Câu chuyện thật: "<strong>Nhà ban đầu</strong> <strong>quá nhỏ</strong>, <strong>sau khi sửa chữa</strong>, <strong>kể từ đó</strong>, <strong>có trăm phòng</strong>."'
+        },
+        {
+            id: "p2_famous_singer",
+            title: "Câu chuyện ca sĩ nổi tiếng",
+            type: "Logic (Thật)",
+            fragments: [
+                "He became successful", "Jay was really good at", "He started his highschool",
+                "At one of these events", "When he was young,"
+            ],
+            key: "5-3-2-4-1",
+            story: 'Câu chuyện thật: "<strong>Thời còn nhỏ</strong>, anh ấy muốn làm ca sĩ nổi tiếng, <strong>anh ấy bắt đầu học đại học</strong>, <strong>giỏi về âm nhạc</strong>, <strong>tại 1 trong những sự kiện</strong>, <strong>anh ấy trở thành ca sĩ nổi tiếng</strong>."'
+        },
+        {
+            id: "p2_presentation_day",
+            title: "Câu chuyện thuyết trình",
+            type: "Logic (Thật)",
+            fragments: [
+                "Before the open day", "With this information", "You must show",
+                "Each one", "Following these presentations"
+            ],
+            key: "1-2-3-4-5",
+            story: 'Câu chuyện thật: "<strong>trước khi</strong> – <strong>có thông tin</strong> – <strong>bạn phải show</strong> – <strong>mỗi</strong> – <strong>bài thuyết trình</strong>."'
+        },
+        {
+            id: "p2_used_car",
+            title: "Mua xe hơi cũ",
+            type: "Logic (Thật)",
+            fragments: [
+                "I had just passed", "However,", "So, ",
+                "I called the number", "We agreed on a price "
+            ],
+            key: "1-2-3-4-5",
+            story: 'Câu chuyện thật: "<strong>Pass</strong> kì thi lái xe, <strong>Tuy nhiên,</strong> không có xe, <strong>Vì thế,</strong> khi thấy tờ quảng cáo, <strong> gọi điện thoại ngay</strong>, <strong> đồng ý giao tiền giao chìa khóa</strong>."'
         }
         // Thêm các câu hỏi Part 2 khác vào đây
     ],

@@ -1,48 +1,61 @@
 // js/main.js
 document.addEventListener("DOMContentLoaded", function() {
-    // Hàm tải component
     const loadComponent = (selector, url) => {
         fetch(url)
             .then(response => response.text())
             .then(data => {
-                document.querySelector(selector).innerHTML = data;
-                // Sau khi tải header, kích hoạt link active
+                const element = document.querySelector(selector);
+                if (element) {
+                    element.innerHTML = data;
+                }
+            })
+            .then(() => {
                 if (selector === '#header-placeholder') {
+                    setupNavigation();
                     setActiveLink();
                 }
             })
             .catch(error => console.error(`Error loading ${url}:`, error));
     };
 
-    // Tải header và footer
     loadComponent('#header-placeholder', '_header.html');
     loadComponent('#footer-placeholder', '_footer.html');
 
-    // Hàm để đánh dấu link đang active
+    function setupNavigation() {
+        const hamburger = document.getElementById('hamburger-button');
+        const navContainer = document.getElementById('nav-links-container');
+        const overlay = document.getElementById('overlay');
+        
+        if (hamburger && navContainer && overlay) {
+            hamburger.addEventListener('click', () => {
+                document.body.classList.toggle('nav-open');
+            });
+            overlay.addEventListener('click', () => {
+                document.body.classList.remove('nav-open');
+            });
+        }
+    }
+
     function setActiveLink() {
-        const navLinks = document.querySelectorAll('.main-nav a.nav-link, .dropdown-content a');
-        const currentPagePath = window.location.pathname.split('/').pop(); // Lấy tên file, vd: "reading.html"
+        const navLinks = document.querySelectorAll('.nav-links-container a');
+        const currentPagePath = window.location.pathname.split('/').pop();
         const urlParams = new URLSearchParams(window.location.search);
-        const currentPart = urlParams.get('part'); // Lấy part, vd: "2"
+        const currentPart = urlParams.get('part');
 
         navLinks.forEach(link => {
-            const linkPath = new URL(link.href).pathname.split('/').pop();
-            
-            // Xử lý cho trang chủ
-            if (linkPath === 'index.html' && currentPagePath === 'index.html') {
-                link.classList.add('active');
-            }
-            
-            // Xử lý cho các trang có part
-            if (linkPath === currentPagePath && link.href.includes(`part=${currentPart}`)) {
-                 // Đánh dấu link con trong dropdown
-                link.classList.add('active');
-                // Đánh dấu cả link cha (Reading)
-                const parentLink = link.closest('.dropdown')?.querySelector('.nav-link');
-                if (parentLink) {
-                    parentLink.classList.add('active');
+            try {
+                const linkUrl = new URL(link.href);
+                const linkPath = linkUrl.pathname.split('/').pop();
+                if (linkPath === currentPagePath) {
+                    if (linkUrl.search.includes(`part=${currentPart}`)) {
+                        link.classList.add('active');
+                        const parentLink = link.closest('.dropdown')?.querySelector('.nav-link');
+                        if (parentLink) parentLink.classList.add('active');
+                    } else if (!currentPart && linkPath === 'index.html') {
+                        link.classList.add('active');
+                    }
                 }
-            }
+            } catch (e) {}
         });
     }
 });
