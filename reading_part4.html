@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading - Part 4</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header id="header-placeholder"></header>
+    <div class="content-pusher">
+        <div class="container">
+            <div class="page-intro">
+                <h1>Reading - Part 4</h1>
+                <p>Nối câu hỏi với người nói tương ứng</p>
+            </div>
+            <!-- THAY THẾ HỘP GIẢI THÍCH Ở ĐÂY -->
+            <div class="explanation-box">
+                <h3>💡 Phương pháp học Part 4</h3>
+                <p>Dạng bài này yêu cầu nối 7 câu hỏi với 4 người. Công cụ này sử dụng ký hiệu A, B, C, D để bạn dễ hình dung và học thuộc các liên kết.</p>
+                <p><strong>Lưu ý quan trọng:</strong>
+                <ul>
+                    <li>Trong kỳ thi thật, <strong>họ sẽ dùng tên thật</strong> (ví dụ: John, Sarah, Emily, David) thay vì A, B, C, D.</li>
+                    <li>Thứ tự các đoạn văn của những người này cũng sẽ bị <strong>xáo trộn ngẫu nhiên</strong>.</li>
+                    <li><strong>Nhiệm vụ của bạn là nhớ các cặp đáp án đi chung với nhau</strong>, ví dụ: "Người chê giá đắt cũng là người phàn nàn về dịch vụ". Hãy dùng câu chuyện gợi nhớ để ghi nhớ các liên kết này.</li>
+                </ul>
+                </p>
+            </div>
+            <main id="quiz-container">
+                <!-- Nội dung Part 4 sẽ được chèn vào đây -->
+            </main>
+        </div>
+        <footer id="footer-placeholder"></footer>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/data-reading.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const quizContainer = document.getElementById('quiz-container');
+            const topics = readingData.part4;
+
+            if (!topics || topics.length === 0) {
+                quizContainer.innerHTML = `<p class="error">Không có dữ liệu cho Part 4.</p>`;
+                return;
+            }
+
+            topics.forEach((topic, index) => {
+                const card = document.createElement('div');
+                card.className = 'quiz-card part4-card';
+
+                let questionsHTML = '';
+                topic.questions.forEach((q, i) => {
+                    questionsHTML += `
+                        <div class="part4-question" data-correct-answer="${topic.key[i]}">
+                            <p>${i + 1}. ${q}</p>
+                            <div class="part4-options">
+                                <button class="option-btn" data-choice="A">A</button>
+                                <button class="option-btn" data-choice="B">B</button>
+                                <button class="option-btn" data-choice="C">C</button>
+                                <button class="option-btn" data-choice="D">D</button>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                card.innerHTML = `
+                    <div class="card-header">
+                        <h2>Đề bài ${index + 1}: ${topic.title}</h2>
+                    </div>
+                    <div class="part4-questions-container">${questionsHTML}</div>
+                    <div class="feedback-message"></div>
+                    <div class="card-actions">
+                        <button class="action-btn check-answer-btn">Kiểm tra đáp án</button>
+                        <button class="action-btn show-story-btn">Xem Key & Câu chuyện</button>
+                    </div>
+                    <div class="answer-section" style="display: none;">
+                        <h4>Đáp án & Câu chuyện</h4>
+                        <p><strong>Key đúng:</strong> ${topic.key.join(' - ')}</p>
+                        <p><strong>Câu chuyện gợi nhớ:</strong> ${topic.story}</p>
+                    </div>
+                `;
+                quizContainer.appendChild(card);
+            });
+
+            quizContainer.addEventListener('click', function(e) {
+                // Chọn đáp án
+                if (e.target.classList.contains('option-btn')) {
+                    const parentOptions = e.target.parentElement;
+                    parentOptions.querySelectorAll('.option-btn').forEach(btn => btn.classList.remove('selected'));
+                    e.target.classList.add('selected');
+                }
+
+                // Kiểm tra đáp án
+                if (e.target.classList.contains('check-answer-btn')) {
+                    const card = e.target.closest('.part4-card');
+                    let correctCount = 0;
+                    const questions = card.querySelectorAll('.part4-question');
+                    questions.forEach(q => {
+                        const selectedBtn = q.querySelector('.option-btn.selected');
+                        const correctAnswer = q.dataset.correctAnswer;
+                        q.classList.remove('correct', 'incorrect');
+                        if (selectedBtn) {
+                            if (selectedBtn.dataset.choice === correctAnswer) {
+                                q.classList.add('correct');
+                                correctCount++;
+                            } else {
+                                q.classList.add('incorrect');
+                            }
+                        }
+                    });
+                    const feedbackDiv = card.querySelector('.feedback-message');
+                    feedbackDiv.innerHTML = `Bạn đã trả lời đúng <strong>${correctCount}/${questions.length}</strong> câu.`;
+                }
+
+                // Xem key & câu chuyện
+                if (e.target.classList.contains('show-story-btn')) {
+                    const answerSection = e.target.closest('.card-actions').nextElementSibling;
+                    const isVisible = answerSection.style.display === 'block';
+                    answerSection.style.display = isVisible ? 'none' : 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

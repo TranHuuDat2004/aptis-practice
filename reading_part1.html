@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading - Part 1</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header id="header-placeholder"></header>
+
+    <div class="content-pusher">
+        <div class="container">
+            <div class="page-intro">
+                <h1>Reading - Part 1</h1>
+                <p>Học thuộc các "Key" đáp án</p>
+            </div>
+
+            <div class="explanation-box">
+                <h3>💡 Phương pháp học Part 1</h3>
+                <p>Mỗi thẻ dưới đây là một bộ 5 đáp án đúng cho một bài đọc. Mục tiêu của bạn là học thuộc lòng chuỗi 5 từ này bằng cách sử dụng câu chuyện gợi nhớ đi kèm.</p>
+            </div>
+
+            <main id="key-container" class="key-grid">
+                <!-- Các Flashcard học key sẽ được chèn vào đây -->
+            </main>
+        </div>
+        <footer id="footer-placeholder"></footer>
+    </div>
+    
+    <script src="js/main.js"></script>
+    <script src="js/data-reading.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const keyContainer = document.getElementById('key-container');
+            const questions = readingData.part1;
+
+            if (!questions || questions.length === 0) {
+                keyContainer.innerHTML = `<p class="error">Không có dữ liệu cho Part 1.</p>`;
+                return;
+            }
+
+            questions.forEach((item, index) => {
+                const card = document.createElement('div');
+                card.className = 'key-card';
+
+                let keyItems = '';
+                item.keys.forEach((key, i) => {
+                    keyItems += `<li><span class="key-number">${i + 1}</span>${key}</li>`;
+                });
+
+                card.innerHTML = `
+                    <h3>${item.title}</h3>
+                    <ul class="key-list">${keyItems}</ul>
+                    <button class="show-story-btn">Xem câu chuyện gợi nhớ</button>
+                    <div class="story-section" style="display: none;">
+                        <p>${item.story}</p>
+                    </div>
+                `;
+                keyContainer.appendChild(card);
+            });
+
+            keyContainer.addEventListener('click', function(e) {
+                if (e.target.classList.contains('show-story-btn')) {
+                    const storySection = e.target.nextElementSibling;
+                    const isVisible = storySection.style.display === 'block';
+                    storySection.style.display = isVisible ? 'none' : 'block';
+                    e.target.textContent = isVisible ? 'Xem câu chuyện gợi nhớ' : 'Ẩn câu chuyện';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

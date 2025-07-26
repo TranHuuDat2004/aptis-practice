@@ -682,18 +682,20 @@ body.nav-open .hamburger span:last-child {
 
 /* === HEADER & NAVIGATION STYLES (RESPONSIVE & PUSH EFFECT) === */
 body {
-    overflow-x: hidden; /* QUAN TRỌNG: Ngăn thanh cuộn ngang khi sidebar mở */
+    overflow-x: hidden;
+    /* QUAN TRỌNG: Ngăn thanh cuộn ngang khi sidebar mở */
 }
 
 /* Wrapper để đẩy nội dung */
 .content-pusher {
     transition: transform 0.3s ease-in-out;
-    background-color: var(--background-color); /* Đảm bảo có nền để che nội dung cũ */
+    background-color: var(--background-color);
+    /* Đảm bảo có nền để che nội dung cũ */
 }
 
 header#header-placeholder {
     background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -746,14 +748,17 @@ header#header-placeholder {
     top: 0;
     right: 0;
     height: 100%;
-    width: 280px; /* Chiều rộng cố định cho sidebar */
-    background-color: #f4f7f9; /* Màu nền sáng hơn */
-    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    width: 280px;
+    /* Chiều rộng cố định cho sidebar */
+    background-color: #f4f7f9;
+    /* Màu nền sáng hơn */
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
     transform: translateX(100%);
     transition: transform 0.3s ease-in-out;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Căn giữa các mục theo chiều dọc */
+    justify-content: center;
+    /* Căn giữa các mục theo chiều dọc */
     z-index: 1000;
 }
 
@@ -764,7 +769,8 @@ header#header-placeholder {
 }
 
 .nav-links-container ul li {
-    margin: 0.75rem 1.5rem; /* Tạo khoảng cách giữa các mục */
+    margin: 0.75rem 1.5rem;
+    /* Tạo khoảng cách giữa các mục */
 }
 
 .nav-links-container a {
@@ -774,7 +780,8 @@ header#header-placeholder {
     font-weight: 500;
     padding: 1rem;
     display: block;
-    background-color: var(--primary-color); /* Nền xanh cho nút */
+    background-color: var(--primary-color);
+    /* Nền xanh cho nút */
     border-radius: 8px;
     text-align: center;
     transition: background-color 0.2s ease;
@@ -782,28 +789,45 @@ header#header-placeholder {
 
 .nav-links-container a:hover,
 .nav-links-container a.active {
-    background-color: var(--primary-hover); /* Màu đậm hơn khi hover/active */
+    background-color: var(--primary-hover);
+    /* Màu đậm hơn khi hover/active */
 }
 
 /* Tạm ẩn dropdown trên mobile, có thể làm phức tạp hơn sau */
-.dropdown-content { display: none; } 
+.dropdown-content {
+    display: none;
+}
 
 /* Open State */
 body.nav-open .content-pusher {
-    transform: translateX(-280px); /* Đẩy nội dung sang trái bằng chiều rộng của sidebar */
-    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    transform: translateX(-280px);
+    /* Đẩy nội dung sang trái bằng chiều rộng của sidebar */
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
+
 body.nav-open .nav-links-container {
     transform: translateX(0);
 }
-body.nav-open .hamburger span:first-child { transform: rotate(45deg); }
-body.nav-open .hamburger span:nth-child(2) { opacity: 0; transform: translateX(20px); }
-body.nav-open .hamburger span:last-child { transform: rotate(-45deg); }
+
+body.nav-open .hamburger span:first-child {
+    transform: rotate(45deg);
+}
+
+body.nav-open .hamburger span:nth-child(2) {
+    opacity: 0;
+    transform: translateX(20px);
+}
+
+body.nav-open .hamburger span:last-child {
+    transform: rotate(-45deg);
+}
 
 
 /* --- Desktop Styles --- */
 @media (min-width: 800px) {
-    .hamburger { display: none; }
+    .hamburger {
+        display: none;
+    }
 
     /* Trả lại trạng thái bình thường cho content-pusher */
     body.nav-open .content-pusher,
@@ -829,7 +853,7 @@ body.nav-open .hamburger span:last-child { transform: rotate(-45deg); }
         align-items: center;
         gap: 15px;
     }
-    
+
     .nav-links-container ul li {
         margin: 0;
     }
@@ -849,25 +873,213 @@ body.nav-open .hamburger span:last-child { transform: rotate(-45deg); }
     }
 
     /* Dropdown on Desktop */
-    .dropdown { position: relative; }
+    .dropdown {
+        position: relative;
+    }
+
     .dropdown-content {
         display: none;
         position: absolute;
         background-color: #fff;
         min-width: 160px;
-        box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         z-index: 1;
         border-radius: 5px;
         overflow: hidden;
         margin-top: 5px;
     }
-    .dropdown:hover .dropdown-content { display: block; }
-    .dropdown-content a {
-        color: black; padding: 12px 16px; display: block;
-        font-size: 0.9em;
-        background-color: transparent; /* Reset nền */
+
+    .dropdown:hover .dropdown-content {
+        display: block;
     }
-    .dropdown-content a:hover, .dropdown-content a.active { background-color: #f1f1f1; color: var(--primary-color); }
+
+    .dropdown-content a {
+        color: black;
+        padding: 12px 16px;
+        display: block;
+        font-size: 0.9em;
+        background-color: transparent;
+        /* Reset nền */
+    }
+
+    .dropdown-content a:hover,
+    .dropdown-content a.active {
+        background-color: #f1f1f1;
+        color: var(--primary-color);
+    }
 }
 
-/* Các style khác giữ nguyên */
+/* css/style.css */
+
+/* --- STYLES FOR READING PART 1 KEY CARDS --- */
+
+.key-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.key-card {
+    background: #fff;
+    border-radius: var(--card-radius);
+    padding: 20px;
+    box-shadow: var(--card-shadow);
+    display: flex;
+    flex-direction: column;
+}
+
+.key-card h3 {
+    margin-top: 0;
+    color: var(--primary-hover);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.key-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+    flex-grow: 1;
+    /* Đẩy nút xuống dưới */
+}
+
+.key-list li {
+    font-size: 1.1em;
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+}
+
+.key-number {
+    font-weight: 700;
+    background-color: var(--secondary-color);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+    color: var(--primary-color);
+}
+
+.key-card .show-story-btn {
+    width: 100%;
+    background-color: #fff;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.key-card .show-story-btn:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.story-section {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #e9f5ff;
+    border-left: 3px solid var(--primary-hover);
+    border-radius: 5px;
+    font-size: 0.95em;
+}
+
+.story-section p {
+    margin: 0;
+}
+
+/* css/style.css */
+
+/* --- STYLES FOR READING PART 4 --- */
+
+.part4-card .card-header {
+    margin-bottom: 20px;
+}
+
+.part4-question {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.part4-question p {
+    margin: 0;
+    padding-right: 15px;
+    flex-grow: 1;
+}
+
+.part4-options {
+    display: flex;
+    gap: 5px;
+    flex-shrink: 0;
+}
+
+.option-btn {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.option-btn:hover {
+    background-color: #e9ecef;
+}
+
+.option-btn.selected {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+}
+
+/* Style cho kết quả đúng/sai */
+.part4-question.correct {
+    background-color: #e6ffed;
+    border-color: #27ae60;
+}
+
+.part4-question.correct .selected {
+    background-color: #27ae60;
+    border-color: #27ae60;
+}
+
+.part4-question.incorrect {
+    background-color: #fff0f0;
+    border-color: #e74c3c;
+}
+
+.part4-question.incorrect .selected {
+    background-color: #e74c3c;
+    border-color: #e74c3c;
+}
+
+.part4-card .feedback-message {
+    color: #333;
+    /* Đổi màu chữ feedback cho dễ đọc */
+    font-size: 1.1em;
+}
+
+/* Thêm vào cuối file */
+.explanation-box ul {
+    padding-left: 20px;
+    margin-top: 5px;
+}
+
+.explanation-box ul li {
+    margin-bottom: 5px;
+}
