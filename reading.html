@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reading Practice</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- HEADER PLACEHOLDER -->
+    <header id="header-placeholder"></header>
+    <div class="container">
+        <header>
+            <h1 id="page-title">Reading Practice</h1>
+            <p id="page-description">Luyện tập sắp xếp câu</p>
+        </header>
+        <main id="quiz-container">
+            <!-- Các câu hỏi sẽ được tự động chèn vào đây -->
+        </main>
+    </div>
+
+    <script src="js/data-reading.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const quizContainer = document.getElementById('quiz-container');
+            const pageTitle = document.getElementById('page-title');
+            const pageDescription = document.getElementById('page-description');
+
+            // Lấy tham số 'part' từ URL
+            const urlParams = new URLSearchParams(window.location.search);
+            const partNumber = urlParams.get('part');
+
+            if (!partNumber || !readingData['part' + partNumber]) {
+                quizContainer.innerHTML = `<p class="error">Không tìm thấy dữ liệu cho phần này. Vui lòng quay lại trang chủ.</p>`;
+                pageTitle.textContent = "Lỗi";
+                return;
+            }
+
+            // Cập nhật tiêu đề trang
+            pageTitle.textContent = `Reading - Part ${partNumber}`;
+            pageDescription.textContent = `Luyện tập các câu hỏi của Part ${partNumber}`;
+
+            const questions = readingData['part' + partNumber];
+
+            // Hàm xáo trộn mảng
+            function shuffleArray(array) {
+                for (let i = array.length - 1; i > 0; i--) {
+                    const j = Math.floor(Math.random() * (i + 1));
+                    [array[i], array[j]] = [array[j], array[i]];
+                }
+                return array;
+            }
+
+            // Tạo thẻ câu hỏi
+            questions.forEach((item, index) => {
+                const originalFragmentsWithIndex = item.fragments.map((frag, i) => ({ text: frag, originalIndex: i + 1 }));
+                const shuffledFragments = shuffleArray([...originalFragmentsWithIndex]);
+
+                const card = document.createElement('div');
+                card.className = 'quiz-card';
+
+                let listItems = '';
+                shuffledFragments.forEach(frag => {
+                    listItems += `<li><span class="original-number">(${frag.originalIndex})</span> ${frag.text}</li>`;
+                });
+
+                card.innerHTML = `
+                    <div class="card-header">
+                        <h2>Đề bài ${index + 1}: ${item.title}</h2>
+                        <span class="tag ${item.type.includes('Logic') ? 'tag-logic' : 'tag-bia'}">${item.type}</span>
+                    </div>
+                    <p class="instructions">Sắp xếp các câu dưới đây theo đúng thứ tự.</p>
+                    <ul class="sentence-list">${listItems}</ul>
+                    <button class="show-answer-btn">Hiển thị đáp án</button>
+                    <div class="answer-section" style="display: none;">
+                        <h4>Đáp án</h4>
+                        <p><strong>Key đúng:</strong> ${item.key}</p>
+                        <p><strong>Câu chuyện gợi nhớ:</strong> ${item.story}</p>
+                    </div>
+                `;
+                quizContainer.appendChild(card);
+            });
+
+            // Thêm sự kiện cho nút "Show Answer"
+            document.querySelectorAll('.show-answer-btn').forEach(button => {
+                button.addEventListener('click', function () {
+                    const answerSection = this.nextElementSibling;
+                    const isVisible = answerSection.style.display === 'block';
+                    answerSection.style.display = isVisible ? 'none' : 'block';
+                    this.textContent = isVisible ? 'Hiển thị đáp án' : 'Ẩn đáp án';
+                });
+            });
+        });
+    </script>
+    <!-- FOOTER PLACEHOLDER -->
+    <footer id="footer-placeholder"></footer>
+
+    <!-- SCRIPT CHÍNH -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
