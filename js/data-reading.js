@@ -110,7 +110,7 @@ const readingData = {
             title: "Câu chuyện mượn đồ tập gym",
             type: "Logic (Thật)",
             fragments: [
-                "You must return your keys", "You should ....collect keys", "When you have completed...", 
+                "You must return your keys", "You should ....collect keys", "When you have completed...",
                 "Follow the route on the map", "Collect a map"
             ],
             key: "2-5-4-3-1",
@@ -121,8 +121,8 @@ const readingData = {
             title: "Câu chuyện đi tham quan triển lãm",
             type: "Logic (Thật)",
             fragments: [
-                "Before you look at the picture a guide...", "These activitives inlude...", 
-                "Inside the building there is a photograph...", "When you arrive...collect your ticket", 
+                "Before you look at the picture a guide...", "These activitives inlude...",
+                "Inside the building there is a photograph...", "When you arrive...collect your ticket",
                 "You must show it..."
             ],
             key: "4-5-3-1-2",
@@ -199,16 +199,55 @@ const readingData = {
     // Dữ liệu cho Part 3
     part3: [
         {
-            id: "p3_natural_history",
-            title: "Natural History Center",
+            id: "p3_lost_card",
+            title: "Câu chuyện mất thẻ",
             type: "Logic (Thật)",
             fragments: [
-                "As well as selling tickets, (maps and information)...", "When you arrive..., you will see a set of stairs",
-                "The entrance ... is on the square.", "The most important ...", "The ticket office ...",
+                "If you lost this, ....",
+                "He or she will ask for ...",
+                "He or she will take ...",
+                "To access the bulidings ...",
+                "You will also need ..."
+            ],
+            key: "4-1-2-5-3",
+            story: 'Câu chuyện thật: "<strong>Để vào tòa nhà</strong> bạn cần có thẻ, <strong>nếu bạn mất thẻ</strong>, <strong>anh ấy hoặc cô ấy sẽ hỏi</strong> bạn đi đâu, <strong>bạn cần</strong> trả lời, <strong>anh ấy hoặc cô ấy sẽ dẫn bạn đi</strong>."'
+        },
+        {
+            id: "p3_submit_assignment",
+            title: "Nộp bài tập",
+            type: "Logic (Thật)",
+            fragments: [
+                "When ...", "A staff ...", "You hand your assignment ...",
+                "Also, remember", "First, ..."
+            ],
+            key: "5-1-4-3-2",
+            story: 'Câu chuyện thật: "<strong>đầu tiên</strong>, kiểm tra và sửa lỗi, <strong>khi</strong> kiểm tra xong, <strong>ngoài ra nhớ</strong> in trang bìa, <strong>mang đi nộp</strong>, <strong>1 người nhân viên</strong> sẽ kiểm tra và xác nhận."'
+        },
+        {
+            id: "p3_reading_books",
+            title: "Đọc sách",
+            type: "Bịa (Ghi nhớ)",
+            fragments: [
+                "You can ...", "In this way, ...", "Then, ...",
+                "The next ...", "The first ..."
+            ],
+            key: "5-4-3-1-2",
+            story: 'Câu chuyện bịa: "Đọc cuốn sách <strong>đầu tiên</strong>, đọc cuốn sách <strong>tiếp theo</strong>, <strong>sau đó</strong> mời bạn đọc chung, <strong>bạn có thể</strong> đọc những quyển sách này, <strong>bằng cách này</strong> bạn sẽ có được những thông tin thú vị."'
+        },
+        {
+            id: "p3_natural_history",
+            title: "Trung tâm Lịch sử Tự nhiên",
+            type: "Logic (Thật)",
+            fragments: [
+                "As well as selling tickets, (maps and information)...",
+                "When you arrive..., you will see a set of stairs",
+                "The entrance ... is on the square.",
+                "The most important ...",
+                "The ticket office"
             ],
             key: "4-3-2-5-1",
-            story: 'Câu chuyện logic: "<strong>Điều quan trọng nhất (4)</strong> là phải đến đúng tòa nhà. <strong>Lối vào (3)</strong> ở trên quảng trường. <strong>Khi bạn đến (2)</strong>, bạn sẽ thấy một dãy cầu thang. Hãy đến <strong>văn phòng vé (5)</strong>. <strong>Ngoài việc bán vé (1)</strong>, họ còn cung cấp bản đồ và thông tin."'
-        },
+            story: 'Câu chuyện thật: "<strong>điều quan trọng nhất</strong> là đến trung tâm Lịch sử Tự nhiên, <strong>lối vào</strong> nằm ở quảng trường, <strong>khi bạn đến</strong>, bạn sẽ thấy cầu thang, trên cùng cầu thang sẽ có <strong>quầy bán vé</strong>, <strong>ngoài bán vé</strong> họ còn cung cấp bản đồ và thông tin."'
+        }
 
         // Thêm các câu hỏi Part 3 khác vào đây
     ]
