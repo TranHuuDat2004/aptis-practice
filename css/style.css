@@ -1228,6 +1228,55 @@ body.nav-open .hamburger span:last-child {
 /* css/style.css */
 
 /* --- STYLES FOR SPEAKING PART 1 (FINAL VERSION) --- */
+/* --- STYLES FOR SPEAKING TOPIC SELECTOR --- */
+
+.topic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+}
+
+.topic-selector-btn {
+    padding: 10px 5px;
+    border: 1px solid var(--border-color);
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.9em;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.topic-selector-btn:hover {
+    background-color: #e2e6ea;
+    border-color: #adb5bd;
+}
+
+.topic-selector-btn.active {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* --- LOGIC HIỂN THỊ/ẨN CARD --- */
+
+/* Ẩn tất cả các card bài tập theo mặc định */
+#speaking-container .speaking-card {
+    display: none;
+}
+
+/* Chỉ hiển thị card nào có class 'active' */
+#speaking-container .speaking-card.active {
+    display: block;
+}
 
 .speaking-card .prompt-container {
     padding: 0;

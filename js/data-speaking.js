@@ -123,11 +123,11 @@ const speakingData = {
         {
             id: 'sp1_topic13',
             title: 'Chủ đề 13: Your favorite film',
-            audioSrc: 'audio/speaking-part1/13.mp3',
+            audioSrc: 'audio/speaking-part1/13.mp3', 
             prompt: { 
                 question: "Tell me about your favorite film.", 
                 duration: 30,
-                sampleAnswer: "<strong>Example 1 (Tom and Jerry):</strong> My favorite film is Tom and Jerry. I've loved watching it since I was a kid. The cartoon is really funny because Tom and Jerry are always chasing each other and getting into funny situations. The animation is simple, but it's always entertaining. I enjoy how the show never gets boring, and it always makes me laugh, no matter how many times I watch it. <br><br> <strong>Example 2 (The Lion King):</strong> My favorite film is The Lion King. I love it because the story is touching and the music is amazing. The characters, especially Simba and Mufasa, are really memorable. It's a movie that makes me feel happy and emotional at the same time. I also enjoy the beautiful animation and the lessons about life and courage it teaches."
+                sampleAnswer: "My favorite film is Tom and Jerry. I've loved watching it since I was a kid. The cartoon is really funny because Tom and Jerry are always chasing each other and getting into funny situations. The animation is simple, but it's always entertaining. I enjoy how the show never gets boring, and it always makes me laugh, no matter how many times I watch it. "
             }
         },
         {
