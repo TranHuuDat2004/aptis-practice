@@ -48,7 +48,16 @@ def setup_piper():
 
     if not model_path.exists() or not config_path.exists():
         print("Voice model not found. Starting download...")
-        base_url = f"https://huggingface.co/rhasspy/piper-voices/resolve/main/en/{VOICE_MODEL_NAME}"
+        
+        # Tách tên model để tạo đường dẫn mới
+        # Ví dụ: 'en_US-lessac-medium' -> ['en_US', 'lessac', 'medium']
+        parts = VOICE_MODEL_NAME.split('-')
+        lang_code = parts[0]
+        voice_name = parts[1]
+        quality = parts[2]
+        
+        # Tạo base_url theo cấu trúc mới
+        base_url = f"https://huggingface.co/rhasspy/piper-voices/resolve/main/en/{lang_code}/{voice_name}/{quality}/{VOICE_MODEL_NAME}"
         
         model_url = f"{base_url}.onnx"
         config_url = f"{base_url}.onnx.json"
@@ -64,7 +73,6 @@ def generate_audio(text, model_path, output_path):
     """Tạo file audio từ văn bản."""
     print("\nGenerating audio...")
     try:
-        # Sử dụng piper qua command line, truyền text qua stdin
         process = subprocess.run(
             ['piper', '--model', model_path, '--output_file', str(output_path)],
             input=text.strip().encode('utf-8'),
@@ -84,13 +92,9 @@ def generate_audio(text, model_path, output_path):
         print("---------------")
 
 if __name__ == "__main__":
-    # 1. Thiết lập và lấy đường dẫn model
     model_path = setup_piper()
-
-    # 2. Tạo thư mục output nếu chưa có
-    output_path = Path(OUTPUT_DIR)
-    output_path.mkdir(exist_ok=True)
-    full_output_path = output_path / OUTPUT_FILENAME
-
-    # 3. Tạo audio
-    generate_audio(TEXT_TO_SPEAK, model_path, full_output_path)
+    if model_path:
+        output_path = Path(OUTPUT_DIR)
+        output_path.mkdir(exist_ok=True)
+        full_output_path = output_path / OUTPUT_FILENAME
+        generate_audio(TEXT_TO_SPEAK, model_path, full_output_path)
