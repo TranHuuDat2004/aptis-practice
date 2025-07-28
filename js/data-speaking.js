@@ -475,6 +475,169 @@ const speakingData = {
                 }
             ]
         },
+        // --- 3 CHỦ ĐỀ MỚI ---
+        {
+            id: 'sp2_active_kids',
+            title: 'Chủ đề 5: Being active',
+            imageSrc: 'img/speaking-part2/kids-playing-soccer.png',
+            audioSrc: 'audio/speaking-part2/5.m4a',
+            tasks: [
+                {
+                    question: "Describe the picture.",
+                    duration: 45,
+                    sampleAnswer: "In this picture, I can see three children playing in a park. They seem to be playing soccer with a white ball on a green grass field. They look very happy and energetic. In the background, there are many trees. The weather seems sunny and pleasant, perfect for outdoor activities."
+                },
+                {
+                    question: "Tell about a time you did something active.",
+                    duration: 45,
+                    sampleAnswer: "I like to do active things sometimes. The last time I did something active was last week. I went to the park with my friend and we played soccer. It was fun and we ran a lot. We also kicked the ball hard and tried to score goals. It was a sunny day and the grass was green. I felt happy and healthy. I think doing active things is good for you."
+                },
+                {
+                    question: "How important is it for people to be active?",
+                    duration: 45,
+                    sampleAnswer: "It is very important for people to be active. First, being active can improve your physical health and prevent diseases. Second, being active can boost your mood and mental well-being. Third, being active can help you socialize and make new friends. These are some of the benefits of being active."
+                }
+            ]
+        },
+        {
+            id: 'sp2_playing_sports',
+            title: 'Chủ đề 6: Playing sports',
+            imageSrc: 'img/speaking-part2/family-playing-soccer.png',
+            audioSrc: 'audio/speaking-part2/6.m4a',
+            tasks: [
+                {
+                    question: "Describe the picture.",
+                    duration: 45,
+                    sampleAnswer: "This picture shows a happy family of four playing in a park. It looks like the parents and their two children are playing soccer together. They are all running and smiling. In the background, there is a lot of green grass and trees. I think they are spending quality time together on a beautiful day."
+                },
+                {
+                    question: "What are the benefits of playing sports?",
+                    duration: 45,
+                    sampleAnswer: "Playing sports has many benefits for people. First, sports can improve physical health and fitness. People who play sports regularly can have stronger muscles, bones and immune systems. Second, sports can reduce stress and anxiety. Third, sports can help people develop social skills and teamwork."
+                },
+                {
+                    question: "Tell me about the sport you played or the sports program you watched recently.",
+                    duration: 45,
+                    sampleAnswer: "I played soccer with my friends last weekend. It was a lot of fun. We divided into two teams and played for an hour. The score was 3-2 for my team. I scored one goal and assisted another. Soccer is a great sport because it keeps you fit and healthy. It also helps you make friends and have fun."
+                }
+            ]
+        },
+        {
+            id: 'sp2_friends_trip',
+            title: 'Chủ đề 7: Going somewhere with friends',
+            imageSrc: 'img/speaking-part2/friends-hiking.png',
+            audioSrc: 'audio/speaking-part2/7.m4a',
+            tasks: [
+                {
+                    question: "Describe the picture.",
+                    duration: 45,
+                    sampleAnswer: "In the picture, I can see a group of five young friends hiking in the mountains. They are all wearing backpacks and comfortable clothes for walking. They look happy and are smiling. The scenery around them is very beautiful, with green hills and a clear sky. I think they are enjoying their trip together."
+                },
+                {
+                    question: "Tell about a time when you go somewhere with your friends.",
+                    duration: 45,
+                    sampleAnswer: "Last week, I went to Vung Tau beach with my friends. We had a lot of fun there. We swam in the sea, played volleyball on the sand, and ate delicious seafood. We also rented a boat and explored the nearby islands. We saw some dolphins and turtles. It was one of the best experiences of my life."
+                },
+                {
+                    question: "What is the benefit of doing/ working with others?",
+                    duration: 45,
+                    sampleAnswer: "Working with others can be very helpful. First, you can learn new things from them, share your ideas, and get feedback. Second, you can also support each other when you face challenges or difficulties. Third, working with others can make you more creative, productive, and happy."
+                }
+            ]
+        },
+        // --- 4 CHỦ ĐỀ MỚI ---
+        {
+            id: 'sp2_crossing_street',
+            title: 'Chủ đề 8: Crossing the street',
+            imageSrc: 'img/speaking-part2/crossing-street.png',
+            audioSrc: 'audio/speaking-part2/8.m4a',
+            tasks: [
+                {
+                    question: "Describe the picture.",
+                    duration: 45,
+                    sampleAnswer: "In this picture, I can see a group of young students crossing a street. They are all wearing warm clothes like jackets and beanies, so it might be cold. They are carrying backpacks, so I guess they are walking home from school. They are walking on a zebra crossing, which is a safe way to cross the street."
+                },
+                {
+                    question: "Tell me the last time you crossed the street.",
+                    duration: 45,
+                    sampleAnswer: "The last time I crossed the street was yesterday. I was going to the grocery store to buy some milk and eggs. I waited for the green light and then I looked both ways before stepping onto the crosswalk. There were some cars passing by, but they slowed down and stopped for me. I walked quickly and safely to the other side of the street."
+                },
+                {
+                    question: "Why are some people scared of crossing the street?",
+                    duration: 45,
+                    sampleAnswer: "Some people are scared of crossing the street for different reasons. First, they may have had a bad experience in the past, such as being hit by a car. Second, they may lack confidence in crossing the street safely. Third, they may not trust the drivers or the traffic lights, and think that they are not safe enough."
+                }
+            ]
+        },
+        {
+            id: 'sp2_travelling',
+            title: 'Chủ đề 9: Travelling',
+            imageSrc: 'img/speaking-part2/waiting-for-train.png',
+            audioSrc: 'audio/speaking-part2/9.m4a',
+            tasks: [
+                {
+                    question: "Describe the picture.",
+                    duration: 45,
+                    sampleAnswer: "This picture shows a group of people waiting for a train at a station. They are standing on the platform next to the train. A woman in the foreground is looking at her phone. The people seem to be a diverse group of travelers. The atmosphere looks calm as they wait to board the train."
+                },
+                {
+                    question: "Tell about the last time you travelled somewhere.",
+                    duration: 45,
+                    sampleAnswer: "Last month, I went to Vung Tau with my friends. It was a fun trip. We took a bus from Ho Chi Minh City and arrived in the morning. We checked in at a hotel near the beach and then went swimming. We also played volleyball and built sandcastles. In the evening, we ate seafood and watched the sunset. It was a beautiful view."
+                },
+                {
+                    question: "Why some people find travelling stressful?",
+                    duration: 45,
+                    sampleAnswer: "Some people find travelling stressful for different reasons. First, they may have to deal with a lot of planning and preparation, such as booking flights. Second, they may face unexpected challenges or problems during their trip, such as delays or lost items. Third, they may have to adapt to a new culture or environment."
+                }
+            ]
+        },
+        {
+            id: 'sp2_eating_out',
+            title: 'Chủ đề 10: Eating out with friends',
+            imageSrc: 'img/speaking-part2/eating-with-friends.png',
+            audioSrc: 'audio/speaking-part2/10.m4a',
+            tasks: [
+                {
+                    question: "Describe the picture.",
+                    duration: 45,
+                    sampleAnswer: "In this picture, I can see a group of friends eating together at a restaurant. They are sitting around a table full of food and drinks. Everyone is laughing and smiling, so they seem to be having a great time. The restaurant looks bright and modern. It looks like a very happy and enjoyable meal."
+                },
+                {
+                    question: "Why do people like eating out with friends?",
+                    duration: 45,
+                    sampleAnswer: "People like eating out with friends for many reasons. One reason is that they can try different kinds of food and share their opinions. Another reason is that they can have fun conversations and laugh together. Eating out with friends can also make them feel closer and happier. It is a convenient and enjoyable option."
+                },
+                {
+                    question: "Please talk about the last time you ate with friends?",
+                    duration: 45,
+                    sampleAnswer: "The last time I ate with friends was a few weeks ago. We went to a Vietnamese restaurant and ordered pho, which is a delicious noodle soup. We had a lot of fun talking about our lives, our hobbies, and our plans for the future. It was a warm and cozy meal that made me feel happy and relaxed."
+                }
+            ]
+        },
+        {
+            id: 'sp2_presentation',
+            title: 'Chủ đề 11: Giving a presentation',
+            imageSrc: 'img/speaking-part2/giving-presentation.png',
+            audioSrc: 'audio/speaking-part2/11.m4a',
+            tasks: [
+                {
+                    question: "Describe the picture.",
+                    duration: 45,
+                    sampleAnswer: "This picture shows a man giving a presentation in a meeting room. He is standing in front of a large screen, and he is talking to an audience. The audience is sitting at a long table and listening carefully. The room looks professional and modern. The man seems confident and well-prepared."
+                },
+                {
+                    question: "Tell us about the time you give a presentation. How did you feel?",
+                    duration: 45,
+                    sampleAnswer: "I gave a presentation last week. It was about my project on climate change. I practiced a lot, but I was still afraid of making mistakes. I used slides and pictures to show my main points. I spoke slowly and clearly. I looked at the audience and smiled. I felt happy and proud when I finished. I think I did a good job."
+                },
+                {
+                    question: "Why are people scared of public speaking?",
+                    duration: 45,
+                    sampleAnswer: "Many people are scared of public speaking for some reasons. Firstly, they worry about making mistakes or forgetting what to say. They think that other people will judge them harshly or laugh at them. Secondly, they feel nervous or anxious in front of a large audience. Finally, they lack confidence or experience in speaking skills."
+                }
+            ]
+        }
         // Thêm các chủ đề Part 2 khác vào đây với cấu trúc tương tự
     ],
 };
