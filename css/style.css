@@ -1192,3 +1192,309 @@ body.nav-open .hamburger span:last-child {
     padding-top: 15px;
     border-top: 1px solid var(--border-color);
 }
+
+/* css/style.css */
+
+/* --- STYLES FOR SPEAKING PART 1 --- */
+
+.speaking-card .soundcloud-player {
+    margin: 15px 0;
+}
+/* Đảm bảo iframe hiển thị đúng */
+.soundcloud-player iframe {
+    border-radius: 8px;
+}
+
+.speaking-questions h4 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: var(--primary-hover);
+}
+
+.speaking-questions ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.speaking-questions li {
+    background-color: var(--secondary-color);
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    border-left: 3px solid var(--primary-color);
+}
+
+/* css/style.css */
+
+/* --- STYLES FOR SPEAKING PART 1 (FINAL VERSION) --- */
+
+.speaking-card .prompt-container {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+}
+
+.prompt-question {
+    background-color: #eef7ff;
+    border-left: 4px solid var(--primary-color);
+    padding: 15px;
+    margin: 0 0 25px 0;
+    font-size: 1.1em;
+    line-height: 1.5;
+    border-radius: 5px;
+}
+
+.speaking-card h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--primary-hover);
+    font-size: 1.1em;
+}
+
+.timer-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.timer-controls .action-btn {
+    flex-grow: 1;
+    background-color: var(--primary-color);
+    color: white;
+}
+.timer-controls .action-btn:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+}
+
+.timer-display {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    background-color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    min-width: 80px;
+    text-align: center;
+}
+
+.sample-answer-container {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--border-color);
+}
+
+.audio-player-container {
+    margin-bottom: 15px;
+}
+
+.custom-audio-player {
+    width: 100%;
+}
+
+.sample-answer {
+    padding: 15px;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    font-size: 0.95em;
+    line-height: 1.7;
+    color: #333;
+}
+
+.sample-answer p {
+    margin: 0;
+}
+
+.card-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap; /* Giúp nút không bị vỡ layout trên màn hình hẹp */
+}
+
+/* Đảm bảo nút này trông giống các nút khác */
+.show-sample-btn {
+    flex-grow: 1;
+    background-color: #fff;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+.show-sample-btn:hover {
+    background-color: #f8f9fa;
+}
+/* --- STYLES FOR WRITING OVERVIEW PAGE --- */
+
+.writing-overview-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.writing-part-card {
+    background-color: #fff;
+    border-radius: var(--card-radius);
+    padding: 25px;
+    box-shadow: var(--card-shadow);
+    border-top: 5px solid var(--primary-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.writing-part-card .part-number {
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+
+.writing-part-card h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    color: #34495e;
+}
+
+.writing-part-card p {
+    color: #666;
+    line-height: 1.7;
+    flex-grow: 1; /* Đẩy phần details xuống cuối card */
+}
+
+.part-details {
+    margin-top: 20px;
+    background-color: var(--secondary-color);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.part-details div {
+    margin-bottom: 8px;
+    font-size: 1em;
+}
+.part-details div:last-child {
+    margin-bottom: 0;
+}
+
+.part-details strong {
+    color: #333;
+}
+
+/* css/style.css */
+
+/* --- STYLES FOR EXAM STRUCTURE PAGE --- */
+
+.structure-container .skill-overview-card {
+    background-color: #fff;
+    border-radius: var(--card-radius);
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: var(--card-shadow);
+}
+
+.skill-overview-card h2 {
+    color: var(--primary-hover);
+    margin-top: 0;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--primary-color);
+    font-size: 1.8em;
+}
+
+.skill-overview-card p {
+    color: #666;
+    margin-top: 15px;
+}
+
+.table-wrapper {
+    overflow-x: auto; /* Giúp bảng cuộn ngang trên màn hình nhỏ */
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95em;
+}
+
+table th, table td {
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    text-align: left;
+    vertical-align: top;
+}
+
+table thead th {
+    background-color: var(--secondary-color);
+    font-weight: 700;
+    color: #333;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #fdfdfd;
+}
+
+table td:first-child {
+    font-weight: bold;
+    text-align: center;
+    width: 5%;
+}
+
+.motivational-quote {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.motivational-quote blockquote {
+    margin: 0;
+    padding: 25px;
+    background-color: #eef7ff;
+    border-left: 5px solid var(--primary-color);
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-style: italic;
+    color: #34495e;
+}
+
+.motivational-quote footer {
+    margin-top: 15px;
+    font-weight: bold;
+    font-style: normal;
+    color: #555;
+}
+
+/* css/style.css */
+
+/* --- STYLES FOR SPEAKING IDEAS PAGE --- */
+.idea-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+.idea-card {
+    background-color: #fff;
+    border-radius: var(--card-radius);
+    padding: 20px;
+    box-shadow: var(--card-shadow);
+    border-left: 4px solid var(--primary-color);
+}
+
+.idea-card h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+    color: var(--primary-hover);
+}
+
+.idea-card ul {
+    padding-left: 20px;
+    margin: 10px 0 0 0;
+    color: #333;
+}
+
+.idea-card li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}

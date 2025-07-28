@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speaking - Part 1</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header id="header-placeholder"></header>
+    <div class="content-pusher">
+        <div class="container">
+            <div class="page-intro">
+                <h1>Speaking - Part 1</h1>
+                <p>Luyện tập trả lời câu hỏi với đồng hồ bấm giờ</p>
+            </div>
+            <div class="explanation-box">
+                <h3>💡 Phương pháp luyện tập hiệu quả</h3>
+                <p>Trang web này mô phỏng điều kiện thi bằng cách cung cấp câu hỏi và đồng hồ đếm ngược. Vì trình duyệt chưa hỗ trợ ghi âm trực tiếp, hãy làm theo các bước sau:</p>
+                <ul>
+                    <li><strong>Bước 1:</strong> Mở ứng dụng ghi âm trên điện thoại của bạn.</li>
+                    <li><strong>Bước 2:</strong> Trên trang web, nhấn nút "▶️ Bắt đầu trả lời" và bắt đầu ghi âm trên điện thoại cùng lúc.</li>
+                    <li><strong>Bước 3:</strong> Trả lời câu hỏi trong khoảng thời gian cho phép. Đồng hồ sẽ giúp bạn kiểm soát độ dài câu trả lời.</li>
+                    <li><strong>Bước 4:</strong> Sau khi hoàn thành, bạn có thể tải file ghi âm (MP3) lên các công cụ AI như Google Studio, ChatGPT-4o, hoặc các dịch vụ sửa bài nói chuyên dụng để nhận feedback.</li>
+                </ul>
+            </div>
+            <main id="speaking-container">
+                <!-- Các bài tập Speaking sẽ được chèn vào đây -->
+            </main>
+        </div>
+        <footer id="footer-placeholder"></footer>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/data-speaking.js"></script>
+        <!-- Trong file speaking_part1.html -->
+<script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const container = document.getElementById('speaking-container');
+            const topics = speakingData.part1;
+
+            if (!topics || topics.length === 0) {
+                container.innerHTML = `<p class="error">Không có dữ liệu cho Speaking Part 1.</p>`;
+                return;
+            }
+
+            topics.forEach((topic) => {
+                const card = document.createElement('div');
+                card.className = 'quiz-card speaking-card';
+
+                const prompt = topic.prompt;
+
+                // Thêm một nút mới và bọc phần đáp án mẫu
+                card.innerHTML = `
+                    <div class="card-header">
+                        <h2>${topic.title}</h2>
+                    </div>
+                    <div class="prompt-container">
+                        <p class="prompt-question"><strong>Câu hỏi:</strong> ${prompt.question}</p>
+                        
+                        <h4>Tự luyện tập:</h4>
+                        <div class="timer-controls">
+                            <button class="action-btn start-timer-btn" data-duration="${prompt.duration}">▶️ Bắt đầu trả lời (Bấm giờ)</button>
+                            <div class="timer-display">
+                                <span class="time-left">${prompt.duration}</span>s
+                            </div>
+                        </div>
+
+                        <div class="card-actions" style="margin-top: 25px; border-top: 1px dashed var(--border-color); padding-top: 25px;">
+                            <button class="action-btn show-sample-btn">📖 Xem câu trả lời mẫu</button>
+                        </div>
+                        
+                        <div class="sample-answer-wrapper" style="display: none;">
+                            <div class="sample-answer-container">
+                                <h4>Nghe & Đọc câu trả lời mẫu:</h4>
+                                <div class="audio-player-container">
+                                    <audio controls class="custom-audio-player" src="${topic.audioSrc}"></audio>
+                                </div>
+                                <div class="sample-answer">
+                                    <p>${prompt.sampleAnswer}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+
+            let activeTimer = null;
+            container.addEventListener('click', function(e) {
+                // Logic cho đồng hồ đếm ngược (giữ nguyên)
+                if (e.target.classList.contains('start-timer-btn')) {
+                    if (activeTimer) {
+                        clearInterval(activeTimer.intervalId);
+                        activeTimer.button.textContent = '▶️ Bắt đầu trả lời (Bấm giờ)';
+                        activeTimer.button.disabled = false;
+                        activeTimer.timeLeftEl.textContent = activeTimer.button.dataset.duration;
+                        if(activeTimer.button === e.target) {
+                             activeTimer = null;
+                             return;
+                        }
+                    }
+                    const button = e.target;
+                    const duration = parseInt(button.dataset.duration, 10);
+                    const timerDisplay = button.nextElementSibling;
+                    const timeLeftEl = timerDisplay.querySelector('.time-left');
+                    let timeLeft = duration;
+                    timeLeftEl.textContent = timeLeft;
+                    button.textContent = '⏱️ Đang đếm ngược...';
+                    button.disabled = true;
+                    const intervalId = setInterval(() => {
+                        timeLeft--;
+                        timeLeftEl.textContent = timeLeft;
+                        if (timeLeft <= 0) {
+                            clearInterval(intervalId);
+                            button.textContent = 'Hết giờ! Bắt đầu lại';
+                            button.disabled = false;
+                            activeTimer = null;
+                        }
+                    }, 1000);
+                    activeTimer = { button, intervalId, timeLeftEl };
+                }
+
+                // Logic mới: Hiển thị/ẩn toàn bộ khu vực đáp án mẫu
+                if (e.target.classList.contains('show-sample-btn')) {
+                    const button = e.target;
+                    const wrapper = button.closest('.card-actions').nextElementSibling;
+                    const isVisible = wrapper.style.display === 'block';
+                    wrapper.style.display = isVisible ? 'none' : 'block';
+                    button.textContent = isVisible ? '📖 Xem câu trả lời mẫu' : '🙈 Ẩn câu trả lời mẫu';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
