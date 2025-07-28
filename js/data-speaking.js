@@ -389,6 +389,7 @@ const speakingData = {
                 {
                     question: "Describe the picture.",
                     duration: 45,
+                    sampleAnswer: "In this picture, I can see many people crossing a street at a crosswalk in a busy city. The people are wearing different kinds of clothes, from casual to business wear, and most of them are walking with purpose. I guess it's probably a weekday during rush hour, maybe lunchtime. In the background, there are many tall buildings, which look like offices. Overall, this picture gives a strong feeling of the fast and energetic life in a modern city."
                 },
                 {
                     question: "What do you think about living in a crowded city?",
@@ -403,7 +404,77 @@ const speakingData = {
                     // Bỏ audioSrc ở đây
                 }
             ]
-        }
+        },
+        // --- 3 CHỦ ĐỀ MỚI ---
+        {
+            id: 'sp2_hiking',
+            title: 'Chủ đề 2: Visiting a new place',
+            imageSrc: 'img/speaking-part2/hiking.png',
+            audioSrc: 'audio/speaking-part2/2.m4a',
+            tasks: [
+                {
+                    question: "Describe the picture.",
+                    duration: 45,
+                    sampleAnswer: "In this picture, I can see a woman and a child standing on a rocky mountain. They are both wearing backpacks, so I think they are hiking. The woman is holding the child gently, and they are looking at the beautiful view. The weather looks sunny and nice. It seems like they are enjoying nature together."
+                },
+                {
+                    question: "When was the last time you visit a new place?",
+                    duration: 45,
+                    sampleAnswer: "The last time I visited a new place was about a month ago, when my family and I went to Da Lat. We spent three days there exploring the beautiful flower gardens and enjoying the cool weather. We also tried many local dishes. It was a wonderful and memorable trip for all of us."
+                },
+                {
+                    question: "Why do people like visit a new place?",
+                    duration: 45,
+                    sampleAnswer: "People like to visit new places for several reasons. First, it's a great way to relax and escape from daily routine. Second, it allows them to explore new cultures, try new foods, and see beautiful landscapes. Finally, traveling creates memorable experiences that they can share with family and friends."
+                }
+            ]
+        },
+        {
+            id: 'sp2_shopping',
+            title: 'Chủ đề 3: Shopping for clothes',
+            imageSrc: 'img/speaking-part2/shopping.png',
+            audioSrc: 'audio/speaking-part2/3.m4a',
+            tasks: [
+                {
+                    question: "Describe the picture.",
+                    duration: 45,
+                    sampleAnswer: "In this picture, I can see two men shopping in a clothes store. One man is holding a striped shirt and showing it to the other man. They both look happy and relaxed. I guess they are friends enjoying their time together. In the background, there are many other clothes on the racks."
+                },
+                {
+                    question: "The last time you went shopping for clothes?",
+                    duration: 45,
+                    sampleAnswer: "The last time I went shopping for clothes was about two weeks ago. I went to a shopping mall with my friend because I needed some new clothes for summer. I bought a few T-shirts, a pair of shorts, and some sandals. The store had a big sale, so I got everything at a good price. I really enjoyed the experience because it was fun to choose new styles and try them on."
+                },
+                {
+                    question: "Why do people choose different types of clothing?",
+                    duration: 45,
+                    sampleAnswer: "People choose different types of clothing for a few reasons. First, they wear what matches their personal style. Second, they choose clothes that are comfortable depending on the weather or their needs. Finally, they are influenced by fashion trends or what is popular in their culture or social group."
+                }
+            ]
+        },
+        {
+            id: 'sp2_library',
+            title: 'Chủ đề 4: Reading books',
+            imageSrc: 'img/speaking-part2/library.png',
+            audioSrc: 'audio/speaking-part2/4.m4a',
+            tasks: [
+                {
+                    question: "Describe the picture.",
+                    duration: 45,
+                    sampleAnswer: "In this picture, I can see a man sitting in a library. He is wearing a yellow shirt and blue jeans, and he is reading a blue book. He looks very focused. Behind him, there are many books on the shelves. The place looks quiet and perfect for studying. I think he is a student."
+                },
+                {
+                    question: "What kind of things do you enjoy reading?",
+                    duration: 45,
+                    sampleAnswer: "I enjoy reading stories, especially mysteries and adventure books, because they are exciting and keep me interested. I also like reading articles about science and technology because they help me learn new things. Sometimes, I read travel blogs to discover new places and get ideas for future trips."
+                },
+                {
+                    question: "Why do people enjoy reading books?",
+                    duration: 45,
+                    sampleAnswer: "People enjoy reading books for a few reasons. First, books let them escape into exciting stories and new worlds. Second, books help people learn new things and discover different ideas. Finally, reading is a great way to relax and feel calm after a busy day."
+                }
+            ]
+        },
         // Thêm các chủ đề Part 2 khác vào đây với cấu trúc tương tự
     ],
 };
