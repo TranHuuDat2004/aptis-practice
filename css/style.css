@@ -1547,3 +1547,114 @@ table td:first-child {
     margin-bottom: 8px;
     line-height: 1.6;
 }
+
+
+
+/* --- STYLES FOR SPEAKING PART 2 --- */
+
+.speaking-part2-image {
+    width: 100%;
+    border-radius: var(--card-radius);
+    margin-bottom: 25px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.speaking-task-container {
+    padding: 15px 0;
+    border-top: 1px solid var(--border-color);
+}
+.tasks-wrapper .speaking-task-container:first-child {
+    border-top: none;
+}
+
+/* --- STYLES FOR METHOD GUIDE --- */
+.method-guide-card {
+    background-color: #fff;
+    border-radius: var(--card-radius);
+    padding: 25px;
+    margin-top: 30px;
+    box-shadow: var(--card-shadow);
+    border-top: 5px solid #27ae60; /* Màu xanh lá để phân biệt */
+}
+
+.method-guide-card h2 {
+    margin-top: 0;
+    text-align: center;
+    color: #2c3e50;
+}
+
+.method-step {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--border-color);
+}
+.method-guide-card .method-step:first-of-type {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+}
+
+.method-step h4 {
+    margin: 0 0 10px 0;
+    color: var(--primary-hover);
+}
+
+.method-step ul {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.method-step li {
+    margin-bottom: 8px;
+}
+
+.method-step code {
+    background-color: #e9ecef;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    color: #c7254e;
+}
+
+/* --- THÊM VÀO PHẦN STYLES FOR METHOD GUIDE --- */
+.method-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.method-guide-card .method-step {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 0;
+    background-color: var(--secondary-color);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* --- THÊM VÀO PHẦN SPEAKING PART 2 --- */
+
+/* Logic ẩn/hiện card (giống Part 1) */
+#speaking-container .speaking-part2-card {
+    display: none;
+}
+#speaking-container .speaking-part2-card.active {
+    display: block;
+}
+
+/* Style cho phần câu trả lời mẫu trong wrapper */
+.sample-answer-wrapper .sample-answer {
+    padding: 15px;
+    background-color: #e9f5ff;
+    border-left: 3px solid var(--primary-hover);
+    border-radius: 5px;
+    font-size: 0.95em;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+.sample-answer-wrapper .sample-answer:first-child {
+    margin-top: 0;
+}
+.sample-answer-wrapper p {
+    margin: 0;
+}

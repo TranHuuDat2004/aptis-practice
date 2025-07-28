@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speaking - Part 2</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header id="header-placeholder"></header>
+    <div class="content-pusher">
+        <div class="container">
+            <div class="page-intro">
+                <h1>Speaking - Part 2</h1>
+                <p>Miêu tả tranh và trả lời câu hỏi</p>
+            </div>
+
+            <!-- KHU VỰC PHƯƠNG PHÁP -->
+            <div class="method-guide-card">
+                <h2>Cẩm nang trả lời Part 2</h2>
+                <div class="method-step">
+                    <h4>B1: Tổng quan bức tranh</h4>
+                    <p>Mở đầu bằng một câu chung. Ví dụ:</p>
+                    <ul>
+                        <li>Look at the picture/ In the picture, I can see ...</li>
+                        <li>There is/ There are ... (including...) (place) Eg: room, supermarket</li>
+                    </ul>
+                </div>
+                <div class="method-step">
+                    <h4>B2: Miêu tả chi tiết về con người</h4>
+                    <ul>
+                        <li><strong>Kiểu tóc, Tuổi tác:</strong> Tóc dài/ngắn, trẻ/già...</li>
+                        <li><strong>Trang phục:</strong> a blue shirt, a white dress...</li>
+                        <li><strong>Hành động (Quan trọng nhất):</strong> <code>The man/woman is V-ing...</code>,
+                            <code>The people are V-ing...</code></li>
+                    </ul>
+                </div>
+                <div class="method-step">
+                    <h4>B3: Đưa ra dự đoán về nhân vật</h4>
+                    <p>Sử dụng các cấu trúc phỏng đoán:</p>
+                    <ul>
+                        <li><code>I guess/ suppose/ reckon...</code></li>
+                        <li><code>It looks as if... + a sentence</code></li>
+                        <li><code>He/She looks like + a noun/adjective</code></li>
+                        <li><code>They seem to be...</code> / <code>They might be...</code></li>
+                    </ul>
+                </div>
+                <div class="method-step">
+                    <h4>B4: Miêu tả đối tượng phụ & vị trí</h4>
+                    <ul>
+                        <li><strong>Phía trên/dưới/trái/phải:</strong> At the top/bottom left/right side of this
+                            picture...</li>
+                        <li><strong>Ở giữa:</strong> In the middle...</li>
+                        <li><strong>Tiền cảnh/Hậu cảnh:</strong> In the foreground/ In the background...</li>
+                    </ul>
+                </div>
+                <div class="method-step">
+                    <h4>B5: Nêu suy nghĩ cá nhân / Bình luận</h4>
+                    <p>Kết thúc bằng một câu cảm nhận. Ví dụ:</p>
+                    <ul>
+                        <li><code>I like this picture because it reminds me of...</code></li>
+                        <li><code>It looks like a typical day in a marketplace.</code></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="page-intro">
+                <p>Chọn một chủ đề để bắt đầu luyện tập</p>
+            </div>
+
+            <!-- BẢNG ĐIỀU KHIỂN CHỌN CHỦ ĐỀ -->
+            <div id="topic-selector-grid" class="topic-grid">
+                <!-- Các nút chọn chủ đề sẽ được chèn vào đây -->
+            </div>
+
+            <main id="speaking-container">
+                <!-- Khu vực luyện tập sẽ được chèn vào đây -->
+            </main>
+
+        </div>
+        <footer id="footer-placeholder"></footer>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/data-speaking.js"></script>
+    <!-- Trong file speaking_part2.html -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const selectorContainer = document.getElementById('topic-selector-grid');
+            const contentContainer = document.getElementById('speaking-container');
+            const topics = speakingData.part2;
+
+            if (!topics || topics.length === 0) {
+                contentContainer.innerHTML = `<p class="error">Không có dữ liệu cho Speaking Part 2.</p>`;
+                return;
+            }
+
+            topics.forEach((topic, index) => {
+                const button = document.createElement('button');
+                button.className = 'topic-selector-btn';
+                button.textContent = `Chủ đề ${index + 1}`;
+                button.dataset.target = `#${topic.id}`;
+                selectorContainer.appendChild(button);
+
+                const card = document.createElement('div');
+                card.className = 'quiz-card speaking-part2-card';
+                card.id = topic.id;
+
+                let tasksHTML = '';
+                topic.tasks.forEach((task, i) => {
+                    tasksHTML += `
+                        <div class="speaking-task-container">
+                            <p class="prompt-question"><strong>Nhiệm vụ ${i + 1}:</strong> ${task.question}</p>
+                            <div class="timer-controls">
+                                <button class="action-btn start-timer-btn" data-duration="${task.duration}">▶️ Bắt đầu trả lời (Bấm giờ)</button>
+                                <div class="timer-display"><span class="time-left">${task.duration}</span>s</div>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                // Logic mới: Lấy text từ các task và tạo 1 audio player chung
+                const sampleAnswersText = topic.tasks
+                    .filter(t => t.sampleAnswer)
+                    .map(t => {
+                        const taskIndex = topic.tasks.findIndex(original => original === t) + 1;
+                        return `<div class="sample-answer"><p><strong>Câu trả lời mẫu (Nhiệm vụ ${taskIndex}):</strong> ${t.sampleAnswer}</p></div>`;
+                    }).join('');
+
+                let singleAudioPlayer = '';
+                if (topic.audioSrc) {
+                    singleAudioPlayer = `
+                        <h4>Nghe câu trả lời mẫu:</h4>
+                        <div class="audio-player-container" style="margin-bottom: 15px;">
+                            <audio controls class="custom-audio-player" src="${topic.audioSrc}"></audio>
+                        </div>
+                    `;
+                }
+
+                card.innerHTML = `
+                    <div class="card-header"><h2>${topic.title}</h2></div>
+                    <img class="speaking-part2-image" src="${topic.imageSrc}" alt="${topic.title}">
+                    <div class="tasks-wrapper">${tasksHTML}</div>
+                    <div class="card-actions" style="margin-top: 25px; border-top: 1px dashed var(--border-color); padding-top: 25px;">
+                        <button class="action-btn show-sample-btn">📖 Xem câu trả lời mẫu</button>
+                    </div>
+                    <div class="sample-answer-wrapper" style="display: none;">
+                        ${singleAudioPlayer}
+                        <h4>Đọc câu trả lời mẫu:</h4>
+                        ${sampleAnswersText}
+                    </div>
+                `;
+                contentContainer.appendChild(card);
+            });
+
+            // Logic hiển thị card (giữ nguyên)
+            const allButtons = selectorContainer.querySelectorAll('.topic-selector-btn');
+            const allCards = contentContainer.querySelectorAll('.speaking-part2-card');
+            function showTopic(targetId) { /* ... code giữ nguyên ... */ allCards.forEach(card => card.classList.remove('active')); allButtons.forEach(btn => btn.classList.remove('active')); const targetCard = document.querySelector(targetId); const targetButton = selectorContainer.querySelector(`[data-target='${targetId}']`); if (targetCard) targetCard.classList.add('active'); if (targetButton) targetButton.classList.add('active'); }
+            selectorContainer.addEventListener('click', function (e) { if (e.target.classList.contains('topic-selector-btn')) { showTopic(e.target.dataset.target); } });
+            if (allButtons.length > 0) { showTopic(allButtons[0].dataset.target); }
+
+            // Logic Timer và Show/Hide Answer (giữ nguyên)
+            let activeTimer = null;
+            contentContainer.addEventListener('click', function (e) {
+                if (e.target.classList.contains('start-timer-btn')) { /* ... logic timer giữ nguyên ... */ if (activeTimer) { clearInterval(activeTimer.intervalId); activeTimer.button.textContent = '▶️ Bắt đầu trả lời (Bấm giờ)'; activeTimer.button.disabled = false; activeTimer.timeLeftEl.textContent = activeTimer.button.dataset.duration; if (activeTimer.button === e.target) { activeTimer = null; return } } const button = e.target; const duration = parseInt(button.dataset.duration, 10); const timerDisplay = button.nextElementSibling; const timeLeftEl = timerDisplay.querySelector('.time-left'); let timeLeft = duration; timeLeftEl.textContent = timeLeft; button.textContent = '⏱️ Đang đếm ngược...'; button.disabled = true; const intervalId = setInterval(() => { timeLeft--; timeLeftEl.textContent = timeLeft; if (timeLeft <= 0) { clearInterval(intervalId); button.textContent = 'Hết giờ! Bắt đầu lại'; button.disabled = false; activeTimer = null } }, 1000); activeTimer = { button, intervalId, timeLeftEl }; }
+                if (e.target.classList.contains('show-sample-btn')) { /* ... logic xem đáp án giữ nguyên ... */ const button = e.target; const wrapper = button.closest('.card-actions').nextElementSibling; const isVisible = wrapper.style.display === 'block'; wrapper.style.display = isVisible ? 'none' : 'block'; button.textContent = isVisible ? '📖 Xem câu trả lời mẫu' : '🙈 Ẩn câu trả lời mẫu'; }
+            });
+        });
+    </script>
+
+</body>
+
+</html>
