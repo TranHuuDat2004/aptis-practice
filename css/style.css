@@ -2006,6 +2006,7 @@ table td:first-child {
     line-height: 1.7;
     color: #333;
 }
+
 .tip-card li ul {
     margin-top: 10px;
 }
@@ -2016,10 +2017,12 @@ table td:first-child {
     padding: 25px;
     border-radius: var(--card-radius);
 }
+
 .important-note h2 {
     border-bottom-color: #fadb14;
     color: #d46b08;
 }
+
 .important-note p {
     font-size: 1.1em;
     line-height: 1.8;
@@ -2031,4 +2034,179 @@ table td:first-child {
     font-weight: bold;
     margin-top: 40px;
     color: var(--primary-color);
+}
+
+/* css/style.css */
+
+/* --- STYLES FOR SKILL OVERVIEW PAGES (TABLES) --- */
+.skill-overview-card {
+    background-color: #fff;
+    border-radius: var(--card-radius);
+    padding: 25px;
+    box-shadow: var(--card-shadow);
+    border-top: 5px solid var(--primary-color);
+}
+
+.skill-overview-card h2 {
+    margin-top: 0;
+    text-align: center;
+    color: var(--primary-hover);
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    /* Giúp bảng có thể cuộn ngang trên mobile */
+    margin-top: 20px;
+}
+
+.skill-overview-card table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 600px;
+    /* Đảm bảo các cột không bị quá hẹp */
+}
+
+.skill-overview-card th,
+.skill-overview-card td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.skill-overview-card thead th {
+    background-color: var(--secondary-color);
+    font-weight: 600;
+    color: #333;
+}
+
+.skill-overview-card tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+.skill-overview-card td {
+    vertical-align: middle;
+}
+
+/* css/style.css */
+
+/* --- STYLES FOR LISTENING PART 15 --- */
+.listening15-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+}
+
+.listening15-card .card-header {
+    flex-wrap: wrap;
+    /* Cho phép xuống dòng trên mobile */
+}
+
+.listening15-title {
+    flex-grow: 1;
+}
+
+.story-hint {
+    font-size: 0.9em;
+    color: #666;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed var(--border-color);
+}
+
+.final-key-display {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: center;
+    color: var(--primary-color);
+    letter-spacing: 5px;
+    /* Tách các chữ cái ra */
+}
+
+
+/* --- Styles for the toggle switch --- */
+.speaker-toggle-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-weight: bold;
+    color: #555;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+input:checked+.slider {
+    background-color: var(--primary-color);
+}
+
+input:checked+.slider:before {
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 34px;
+}
+
+.slider.round:before {
+    border-radius: 50%;
+}
+/* Thêm vào cuối phần style của toggle switch */
+.speaker-toggle-container.disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.speaker-toggle-container.disabled .slider {
+    cursor: not-allowed;
+}
+
+/* --- STYLES FOR LISTENING PART 15 --- */
+.listening15-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+}
+
+/* THAY ĐỔI Ở ĐÂY */
+.listening15-card .card-header {
+    /* XÓA DÒNG NÀY ĐI: flex-wrap: wrap; */
+    /* Khi xóa, nó sẽ quay về giá trị mặc định là flex-wrap: nowrap; 
+       nhưng chúng ta sẽ ghi đè nó ở phần card-header chung */
+}
+
+
+.listening15-title {
+    flex-grow: 1;
 }

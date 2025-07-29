@@ -3,18 +3,18 @@
 // Danh sách thô chứa tất cả các đáp án
 const rawAnswers = [
     // --- Bộ 1 ---
-    "To suggest a drink", "3250 pounds", "Phone", "Glasses", "One", "Bathroom", 
-    "Camping", "Art", "Go to the theater and play sport", "Where to buy a new table", 
+    "To suggest a drink", "3250 pounds", "Phone", "Glasses", "One", "Bathroom",
+    "Camping", "Art", "Go to the theater and play sport", "Where to buy a new table",
     "Practical", "Furniture", "Three",
-    
+
     // --- Bộ 2 ---
     "Tea", "10.000", "The town hall", "First floor", "2.5 pounds", "Wednesday afternoon",
-    "Opposite the hotel", "Outside the shop", "7:00 – ăn tối", "Play football", 
+    "Opposite the hotel", "Outside the shop", "7:00 – ăn tối", "Play football",
     "The ending", "Residential area", "Persuading his family",
 
     // --- Bộ 3 ---
-    "An electrician", "6:30", "350 pounds", "... he will be late", "Ten minutes", 
-    "Clothes", "Win", "With people", "Swimming in the sea", "Because of its size", 
+    "An electrician", "6:30", "350 pounds", "... he will be late", "Ten minutes",
+    "Clothes", "Win", "With people", "Swimming in the sea", "Because of its size",
     "The drawer", "Department store", "Use the public transport",
 
     // --- Bộ 4 ---
@@ -102,5 +102,27 @@ const formattedListeningData = rawAnswers.map((answer, index) => {
 });
 
 const listeningData = {
-    part1: formattedListeningData
+
+    // --- THÊM MỚI DỮ LIỆU câu 15 ---
+    part15: [
+        { id: 'topic1', title: '1. Politics', baseKey: 'B-W-M-B', story: 'Cả hai (B) - người Phụ nữ (W) và người Đàn ông (M) – đều (B) quan tâm đến chính trị.' },
+        { id: 'topic2', title: '2. Arts', baseKey: 'W-M-B-M', story: 'Người Phụ nữ (W) - và người Đàn ông (M) – cả hai (B) – Muốn (M) học hội họa.' },
+        { id: 'topic3', title: '3. Audition', baseKey: 'W-M-B-B', story: 'Người Phụ nữ (W) - và người Đàn ông (M) – cả hai (B) – bắt đầu Buổi (B) thử giọng.' },
+        { id: 'topic4', title: '4. Information and technology', baseKey: 'W-M-M-B', story: 'Người Phụ nữ (W) - và người Đàn ông (M) – Muốn (M) – Biết (B) thêm về công nghệ thông tin.' },
+        { id: 'topic5', title: '5. Local cultural center', baseKey: 'W-B-M-M', story: 'Người Phụ nữ (W) – Biết (B) – người Đàn ông (M) – đừng một Mình (M) ở trung tâm văn hóa địa phương.' },
+        { id: 'topic6', title: '6. Community design', baseKey: 'B-M-W-W', story: 'Boss (B) – Muốn (M) – Wăn (W) – Wện (W).' },
+        { id: 'topic7', title: '7. University and technology', baseKey: 'B-M-W-M', story: 'Boss (B) – Muốn (M) – Website (W) trường đại học công nghệ- được tạo Miễn (M) phí.' },
+        { id: 'topic8', title: '8. Urban farming', baseKey: 'M-W-W-B', story: 'Người Đàn ông (M) và người Phụ nữ (W) – Wyết (W) định – Bàn bạc (B) về Urban farming.' },
+        { id: 'topic9', title: '9. The subject of beauty', baseKey: 'M-W-B-W', story: 'Người Đàn ông - (M) và người Phụ nữ (W) – cả hai (B) – đều Wan (W) tâm đến sắc đẹp.' },
+        { id: 'topic10', title: '10. Internet', baseKey: 'M-B-W-B', story: 'Về Internet: Man (M) biết (B) trước, Woman (W) biết (B) sau.' },
+        { id: 'topic11', title: '11. Music and Singers', baseKey: 'W-B-M-B', story: 'Về Music and Singers: Woman (W) biết (B) trước, Man (M) biết (B) sau.' },
+        // --- CHỦ ĐỀ 12 ĐƯỢC CẬP NHẬT ---
+        {
+            id: 'topic12',
+            title: '12. Changes in the work place (Trường hợp đặc biệt)',
+            baseKey: 'M-W-B-M',
+            story: 'Người Đàn ông (M) và người Phụ nữ (W) – cả hai (B) – đều Muốn (M) có nhiều thay đổi ở nơi làm việc.',
+            isFixed: true // Thêm thuộc tính này để đánh dấu là key cố định
+        }
+    ]
 };
