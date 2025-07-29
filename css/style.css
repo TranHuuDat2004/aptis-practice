@@ -2210,3 +2210,97 @@ input:checked+.slider:before {
 .listening15-title {
     flex-grow: 1;
 }
+
+
+/* --- STYLES FOR VOCABULARY PAGE (IMPROVED) --- */
+.vocabulary-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+.vocab-section h2 {
+    font-size: 1.8em;
+    color: var(--primary-hover);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.vocab-table-card {
+    background-color: #fff;
+    border-radius: var(--card-radius);
+    padding: 25px;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 20px;
+}
+
+.vocab-table-card h3 {
+    margin-top: 0;
+    font-size: 1.3em;
+    color: #34495e;
+}
+
+.vocab-table-card table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.vocab-table-card th, .vocab-table-card td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #e9ecef;
+    vertical-align: middle; /* Căn giữa theo chiều dọc */
+}
+
+.vocab-table-card thead th {
+    background-color: var(--secondary-color);
+    font-weight: 600;
+}
+.vocab-table-card tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* Style cho cột "Phân biệt" */
+.vocab-table-card .category-cell {
+    font-weight: 700; /* Tô đậm chữ */
+    color: var(--primary-hover); /* Màu chữ khác */
+    background-color: transparent; /* Bỏ nền xám */
+    border-right: 1px solid #dee2e6; /* Thêm đường kẻ phải */
+    width: 25%; /* Cố định chiều rộng cột */
+}
+
+/* Style cho các cột Tiếng Anh, Tiếng Việt */
+.vocab-table-card td {
+    font-weight: normal; /* Đảm bảo chữ bình thường */
+    background-color: transparent;
+}
+
+/* Style cho cột "Phân biệt" */
+.vocab-table-card .category-cell {
+    font-weight: 700;
+    color: var(--primary-hover);
+    background-color: transparent;
+    border-right: 1px solid #dee2e6;
+    width: 25%; /* Cố định chiều rộng cột */
+}
+
+/* --- THÊM KHỐI MỚI NÀY ĐỂ CHIA CỘT 50-50 CHO BẢNG 2 CỘT --- */
+#people-no-s table,
+#people-with-s table {
+    table-layout: fixed;
+}
+
+#people-no-s th, #people-no-s td,
+#people-with-s th, #people-with-s td {
+    width: 50%;
+}
+/* --- KẾT THÚC KHỐI MỚI --- */
+
+
+/* Style cho các cột Tiếng Anh, Tiếng Việt */
+.vocab-table-card td {
+    font-weight: normal;
+    background-color: transparent;
+}

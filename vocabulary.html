@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tổng hợp Từ vựng Quan trọng</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<style>
+    /* Thêm khối mới này vào cuối phần style của trang Vocabulary */
+    td {
+        text-align: left !important;
+        /* Buộc tất cả các ô phải căn trái */
+    }
+
+    /* Style cho cột "Phân biệt" */
+    .vocab-table-card .category-cell {
+        font-weight: 700;
+        color: var(--primary-hover);
+        background-color: transparent;
+        border-right: 1px solid #dee2e6;
+        /* Bỏ width: 25%; để áp dụng width mới bên dưới */
+    }
+
+    /* THÊM KHỐI MỚI NÀY ĐỂ CHIA CỘT 33% CHO BẢNG NƠI CHỐN */
+    #places-indoors table,
+    #places-outdoors table {
+        table-layout: fixed;
+    }
+
+    #places-indoors th,
+    #places-indoors td,
+    #places-outdoors th,
+    #places-outdoors td {
+        width: 33.33%;
+        word-wrap: break-word;
+        /* Đảm bảo chữ tự xuống dòng nếu quá dài */
+    }
+
+    /* KẾT THÚC KHỐI MỚI */
+
+
+    /* --- THÊM KHỐI MỚI NÀY ĐỂ CHIA CỘT 50-50 CHO BẢNG 2 CỘT --- */
+    #people-no-s table,
+    #people-with-s table {
+        table-layout: fixed;
+    }
+
+
+    #people-no-s th,
+    #people-no-s td,
+    #people-with-s th,
+    #people-with-s td,
+    #feature-position th,
+    #feature-position td,
+    #feature-situation th,
+    #feature-situation td {
+        width: 50%;
+    }
+
+    /* --- THÊM VÀO CUỐI PHẦN STYLES FOR VOCABULARY PAGE --- */
+    .structure-guide {
+        background-color: #e9ecef;
+        padding: 8px 12px;
+        border-radius: 5px;
+        margin-top: -10px;
+        margin-bottom: 15px;
+        font-size: 0.9em;
+    }
+
+    .structure-guide code {
+        font-weight: bold;
+        color: #333;
+    }
+
+    /* Áp dụng chia cột 50-50 cho các bảng mới */
+    #desc-hair-has table,
+    #desc-hair-is table,
+    #desc-beard table,
+    #desc-body-shape table,
+    #desc-clothes table,
+    #desc-accessories table {
+        table-layout: fixed;
+    }
+
+    #desc-hair-has th,
+    #desc-hair-has td,
+    #desc-hair-is th,
+    #desc-hair-is td,
+    #desc-beard th,
+    #desc-beard td,
+    #desc-body-shape th,
+    #desc-body-shape td,
+    #desc-clothes th,
+    #desc-clothes td,
+    #desc-accessories th,
+    #desc-accessories td {
+        width: 50%;
+    }
+
+    /* --- SỬA LẠI KHỐI NÀY --- */
+    #people-no-s table,
+    #people-with-s table,
+    #feature-position table,
+    #feature-situation table,
+    #desc-hair-has table,
+    #desc-hair-is table,
+    #desc-beard table,
+    #desc-body-shape table,
+    #desc-clothes table,
+    #desc-accessories table,
+    #detail-colors table,
+    #detail-size table,
+    #detail-shapes table,
+    #detail-object-actions table,
+    #detail-special-actions table,
+    #detail-movement table,
+    #detail-activities table,
+    #detail-emotions table {
+        table-layout: fixed;
+    }
+
+    #people-no-s th,
+    #people-no-s td,
+    #people-with-s th,
+    #people-with-s td,
+    #feature-position th,
+    #feature-position td,
+    #feature-situation th,
+    #feature-situation td,
+    #desc-hair-has th,
+    #desc-hair-has td,
+    #desc-hair-is th,
+    #desc-hair-is td,
+    #desc-beard th,
+    #desc-beard td,
+    #desc-body-shape th,
+    #desc-body-shape td,
+    #desc-clothes th,
+    #desc-clothes td,
+    #desc-accessories th,
+    #desc-accessories td,
+    #detail-colors th,
+    #detail-colors td,
+    #detail-size th,
+    #detail-size td,
+    #detail-shapes th,
+    #detail-shapes td,
+    #detail-object-actions th,
+    #detail-object-actions td,
+    #detail-special-actions th,
+    #detail-special-actions td,
+    #detail-movement th,
+    #detail-movement td,
+    #detail-activities th,
+    #detail-activities td,
+    #detail-emotions th,
+    #detail-emotions td {
+        width: 50%;
+    }
+</style>
+
+<body>
+    <header id="header-placeholder"></header>
+    <div class="content-pusher">
+        <div class="container">
+            <div class="page-intro">
+                <h1>Tổng hợp Từ vựng Quan trọng</h1>
+                <p>Từ vựng theo chủ đề Nơi chốn và Con người</p>
+            </div>
+
+            <main class="vocabulary-container">
+                <!-- TỪ VỰNG NƠI CHỐN -->
+                <div class="vocab-section">
+                    <h2>Từ vựng Nơi chốn</h2>
+                    <div class="vocab-table-card" id="places-indoors"></div>
+                    <div class="vocab-table-card" id="places-outdoors"></div>
+                </div>
+
+                <!-- TỪ VỰNG VỀ NGƯỜI -->
+                <div class="vocab-section">
+                    <h2>Từ vựng về Người</h2>
+                    <div class="vocab-table-card" id="people-no-s"></div>
+                    <div class="vocab-table-card" id="people-with-s"></div>
+                </div>
+
+                <div class="vocab-section">
+                    <h2>Từ vựng Đặc trưng (Miêu tả tranh)</h2>
+                    <div class="vocab-table-card" id="feature-position"></div>
+                    <div class="vocab-table-card" id="feature-situation"></div>
+                </div>
+
+                <!-- MIÊU TẢ ĐẶC TRƯNG CỦA CON NGƯỜI (THÊM MỚI) -->
+                <div class="vocab-section">
+                    <h2>Miêu tả Đặc trưng của Con người</h2>
+                    <div class="vocab-table-card" id="desc-hair-has"></div>
+                    <div class="vocab-table-card" id="desc-hair-is"></div>
+                    <div class="vocab-table-card" id="desc-beard"></div>
+                    <div class="vocab-table-card" id="desc-body-shape"></div>
+                    <div class="vocab-table-card" id="desc-clothes"></div>
+                    <div class="vocab-table-card" id="desc-accessories"></div>
+                </div>
+
+                <!-- TỪ VỰNG CHI TIẾT (THÊM MỚI) -->
+                <div class="vocab-section">
+                    <h2>Từ vựng Chi tiết (Miêu tả tranh)</h2>
+                    <div class="vocab-table-card" id="detail-colors"></div>
+                    <div class="vocab-table-card" id="detail-size"></div>
+                    <div class="vocab-table-card" id="detail-shapes"></div>
+                    <div class="vocab-table-card" id="detail-object-actions"></div>
+                    <div class="vocab-table-card" id="detail-special-actions"></div>
+                    <div class="vocab-table-card" id="detail-movement"></div>
+                    <div class="vocab-table-card" id="detail-activities"></div>
+                    <div class="vocab-table-card" id="detail-emotions"></div>
+                </div>
+            </main>
+        </div>
+        <footer id="footer-placeholder"></footer>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/data-vocabulary.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Hàm tạo bảng cho Nơi chốn
+            function createPlacesTable(containerId, title, data) {
+                const container = document.getElementById(containerId);
+                let tableHTML = `<h3>${title}</h3><table><thead><tr><th>Phân biệt</th><th style="padding-left:40px; padding-right:40px">Tiếng Anh</th><th>Tiếng Việt</th></tr></thead><tbody>`;
+
+                data.forEach(group => {
+                    group.items.forEach((item, index) => {
+                        tableHTML += `<tr>`;
+                        if (index === 0) {
+                            tableHTML += `<td rowspan="${group.items.length}" class="category-cell">${group.category}</td>`;
+                        }
+                        tableHTML += `<td>${item.en}</td><td>${item.vi}</td></tr>`;
+                    });
+                });
+
+                tableHTML += `</tbody></table>`;
+                container.innerHTML = tableHTML;
+            }
+
+            // Hàm tạo bảng cho Người
+            function createPeopleTable(containerId, title, data) {
+                const container = document.getElementById(containerId);
+                let tableHTML = `<h3>${title}</h3><table><thead><tr><th>Tiếng Anh</th><th>Tiếng Việt</th></tr></thead><tbody>`;
+
+                data.forEach(item => {
+                    tableHTML += `<tr><td>${item.en}</td><td>${item.vi}</td></tr>`;
+                });
+
+                tableHTML += `</tbody></table>`;
+                container.innerHTML = tableHTML;
+            }
+
+            // --- THÊM HÀM MỚI ĐỂ TẠO BẢNG "ĐẶC TRƯNG" ---
+            function createFeatureTable(containerId, title, data) {
+                const container = document.getElementById(containerId);
+                let tableHTML = `<h3>${title}</h3><table><thead><tr><th>Tiếng Anh</th><th>Tiếng Việt</th></tr></thead><tbody>`;
+
+                data.forEach(item => {
+                    tableHTML += `<tr><td>${item.en}</td><td>${item.vi}</td></tr>`;
+                });
+
+                tableHTML += `</tbody></table>`;
+                container.innerHTML = tableHTML;
+            }
+
+            // --- THÊM HÀM MỚI ĐỂ TẠO BẢNG "MIÊU TẢ" ---
+            function createDescriptionTable(containerId, title, structure, data) {
+                const container = document.getElementById(containerId);
+                let tableHTML = `<h3>${title}</h3>`;
+                if (structure) {
+                    tableHTML += `<p class="structure-guide">Cấu trúc: <code>${structure}</code></p>`;
+                }
+                tableHTML += `<table><thead><tr><th>Tiếng Anh</th><th>Tiếng Việt</th></tr></thead><tbody>`;
+
+                data.forEach(item => {
+                    tableHTML += `<tr><td>${item.en}</td><td>${item.vi}</td></tr>`;
+                });
+
+                tableHTML += `</tbody></table>`;
+                container.innerHTML = tableHTML;
+            }
+
+
+            // Render tất cả các bảng
+            createPlacesTable('places-indoors', '📍 Bên trong (Indoors)', vocabularyData.places.indoors);
+            createPlacesTable('places-outdoors', '🌳 Bên ngoài (Outdoors)', vocabularyData.places.outdoors);
+            createPeopleTable('people-no-s', 'Danh từ tập hợp không có -s', vocabularyData.people.no_s);
+            createPeopleTable('people-with-s', 'Danh từ tập hợp có -s', vocabularyData.people.with_s);
+
+            // --- GỌI HÀM MỚI ĐỂ RENDER BẢNG MỚI ---
+            createFeatureTable('feature-position', 'Đặc trưng (Hình dáng, Vị trí)', vocabularyData.features.position);
+            createFeatureTable('feature-situation', 'Đặc trưng (Tình huống)', vocabularyData.features.situation);
+
+            // --- GỌI HÀM MỚI ĐỂ RENDER BẢNG MIÊU TẢ ---
+            createDescriptionTable('desc-hair-has', 'Đầu tóc', 'She/He has + ...', vocabularyData.descriptions.hair_has);
+            createDescriptionTable('desc-hair-is', '', 'She/He is + ...', vocabularyData.descriptions.hair_is);
+            createDescriptionTable('desc-beard', 'Râu', 'He has + ...', vocabularyData.descriptions.beard);
+            createDescriptionTable('desc-body-shape', 'Dáng người', 'She/He is + ...', vocabularyData.descriptions.body_shape);
+            createDescriptionTable('desc-clothes', 'Quần áo', 'She/He is wearing + ...', vocabularyData.descriptions.clothes);
+            createDescriptionTable('desc-accessories', 'Trang sức', 'She/He is wearing + ...', vocabularyData.descriptions.accessories);
+
+            // --- GỌI HÀM ĐỂ RENDER BẢNG CHI TIẾT ---
+            // Tái sử dụng hàm createFeatureTable (tên cũ là createPeopleTable) cho các bảng 2 cột
+            createFeatureTable('detail-colors', 'Màu sắc', vocabularyData.details.colors);
+            createFeatureTable('detail-size', 'Độ lớn, độ dài', vocabularyData.details.size_intensity);
+            createFeatureTable('detail-shapes', 'Hình dáng', vocabularyData.details.shapes);
+            createFeatureTable('detail-object-actions', 'Động tác có liên quan với sự vật', vocabularyData.details.object_actions);
+            createFeatureTable('detail-special-actions', 'Động tác đặc biệt', vocabularyData.details.special_actions);
+            createFeatureTable('detail-movement', 'Động tác chuyển động', vocabularyData.details.movement_actions);
+            createFeatureTable('detail-activities', 'Vận động, hoạt động', vocabularyData.details.activities);
+            createFeatureTable('detail-emotions', 'Động từ và tính từ biểu hiện cảm xúc', vocabularyData.details.emotions);
+        });
+    </script>
+</body>
+
+</html>
