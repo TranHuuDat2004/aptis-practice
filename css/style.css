@@ -1127,7 +1127,7 @@ body.nav-open .hamburger span:last-child {
     margin-bottom: 8px;
     border-radius: 5px;
     cursor: grab;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .part5-target-list {
@@ -1169,19 +1169,26 @@ body.nav-open .hamburger span:last-child {
 /* Style lại li khi nó đã nằm trong ô đáp án */
 .part5-answer-slot li {
     width: 100%;
-    margin: 0; /* Bỏ margin */
-    padding: 10px; /* Chỉnh lại padding cho vừa vặn */
-    font-size: 0.95em; /* Có thể làm chữ nhỏ hơn một chút */
-    box-shadow: none; /* Bỏ đổ bóng khi đã nằm trong ô */
-    border: 1px solid #b8c5d0; /* Thêm viền nhẹ cho đẹp */
+    margin: 0;
+    /* Bỏ margin */
+    padding: 10px;
+    /* Chỉnh lại padding cho vừa vặn */
+    font-size: 0.95em;
+    /* Có thể làm chữ nhỏ hơn một chút */
+    box-shadow: none;
+    /* Bỏ đổ bóng khi đã nằm trong ô */
+    border: 1px solid #b8c5d0;
+    /* Thêm viền nhẹ cho đẹp */
 }
 
 /* Thêm vào cuối file hoặc trong khu vực style Part 5 */
 .answer-section .correct-headings-list {
-    list-style: decimal; /* Sử dụng số thứ tự 1, 2, 3... */
+    list-style: decimal;
+    /* Sử dụng số thứ tự 1, 2, 3... */
     padding-left: 20px;
     margin: 0 0 15px 0;
 }
+
 .answer-section .correct-headings-list li {
     padding: 5px 0;
     font-weight: 500;
@@ -1200,6 +1207,7 @@ body.nav-open .hamburger span:last-child {
 .speaking-card .soundcloud-player {
     margin: 15px 0;
 }
+
 /* Đảm bảo iframe hiển thị đúng */
 .soundcloud-player iframe {
     border-radius: 8px;
@@ -1313,6 +1321,7 @@ body.nav-open .hamburger span:last-child {
     background-color: var(--primary-color);
     color: white;
 }
+
 .timer-controls .action-btn:disabled {
     background-color: #555;
     cursor: not-allowed;
@@ -1361,7 +1370,8 @@ body.nav-open .hamburger span:last-child {
     display: flex;
     gap: 10px;
     margin-top: 20px;
-    flex-wrap: wrap; /* Giúp nút không bị vỡ layout trên màn hình hẹp */
+    flex-wrap: wrap;
+    /* Giúp nút không bị vỡ layout trên màn hình hẹp */
 }
 
 /* Đảm bảo nút này trông giống các nút khác */
@@ -1371,9 +1381,11 @@ body.nav-open .hamburger span:last-child {
     color: var(--primary-color);
     border: 1px solid var(--primary-color);
 }
+
 .show-sample-btn:hover {
     background-color: #f8f9fa;
 }
+
 /* --- STYLES FOR WRITING OVERVIEW PAGE --- */
 
 .writing-overview-container {
@@ -1410,7 +1422,8 @@ body.nav-open .hamburger span:last-child {
 .writing-part-card p {
     color: #666;
     line-height: 1.7;
-    flex-grow: 1; /* Đẩy phần details xuống cuối card */
+    flex-grow: 1;
+    /* Đẩy phần details xuống cuối card */
 }
 
 .part-details {
@@ -1424,6 +1437,7 @@ body.nav-open .hamburger span:last-child {
     margin-bottom: 8px;
     font-size: 1em;
 }
+
 .part-details div:last-child {
     margin-bottom: 0;
 }
@@ -1458,7 +1472,8 @@ body.nav-open .hamburger span:last-child {
 }
 
 .table-wrapper {
-    overflow-x: auto; /* Giúp bảng cuộn ngang trên màn hình nhỏ */
+    overflow-x: auto;
+    /* Giúp bảng cuộn ngang trên màn hình nhỏ */
     margin-top: 20px;
 }
 
@@ -1468,7 +1483,8 @@ table {
     font-size: 0.95em;
 }
 
-table th, table td {
+table th,
+table td {
     padding: 12px 15px;
     border: 1px solid var(--border-color);
     text-align: left;
@@ -1556,13 +1572,14 @@ table td:first-child {
     width: 100%;
     border-radius: var(--card-radius);
     margin-bottom: 25px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .speaking-task-container {
     padding: 15px 0;
     border-top: 1px solid var(--border-color);
 }
+
 .tasks-wrapper .speaking-task-container:first-child {
     border-top: none;
 }
@@ -1574,7 +1591,8 @@ table td:first-child {
     padding: 25px;
     margin-top: 30px;
     box-shadow: var(--card-shadow);
-    border-top: 5px solid #27ae60; /* Màu xanh lá để phân biệt */
+    border-top: 5px solid #27ae60;
+    /* Màu xanh lá để phân biệt */
 }
 
 .method-guide-card h2 {
@@ -1588,6 +1606,7 @@ table td:first-child {
     padding-top: 20px;
     border-top: 1px dashed var(--border-color);
 }
+
 .method-guide-card .method-step:first-of-type {
     margin-top: 0;
     padding-top: 0;
@@ -1638,6 +1657,7 @@ table td:first-child {
 #speaking-container .speaking-part2-card {
     display: none;
 }
+
 #speaking-container .speaking-part2-card.active {
     display: block;
 }
@@ -1652,9 +1672,363 @@ table td:first-child {
     line-height: 1.6;
     margin-top: 10px;
 }
+
 .sample-answer-wrapper .sample-answer:first-child {
     margin-top: 0;
 }
+
 .sample-answer-wrapper p {
     margin: 0;
+}
+
+/* css/style.css */
+
+/* --- STYLES FOR LISTENING PART 1 --- */
+.listening-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+}
+
+.listening-card .key-list {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+.listening-card li {
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.listening-card li:last-child {
+    border-bottom: none;
+}
+
+/* Logic ẩn/hiện đáp án */
+.listening-card .answer-text {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    margin-left: 15px;
+    font-weight: 500;
+}
+
+.listening-card.answers-visible .answer-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* --- STYLES FOR LISTENING FLASHCARDS --- */
+.flashcard-container {
+    perspective: 1000px;
+    margin-bottom: 20px;
+}
+
+.flashcard {
+    width: 100%;
+    height: 250px;
+    position: relative;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: var(--card-radius);
+}
+
+.flashcard-front,
+.flashcard-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: var(--card-radius);
+}
+
+.flashcard-front {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.flashcard-front p {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: white;
+}
+
+.flashcard-back {
+    background-color: var(--secondary-color);
+    color: #333;
+    transform: rotateY(180deg);
+}
+
+.flashcard-back p {
+    font-size: 1.8em;
+    font-weight: 500;
+    color: #333;
+}
+
+.flashcard.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.flashcard-controls {
+    text-align: center;
+}
+
+.flashcard-controls .action-btn {
+    width: auto;
+    padding: 12px 30px;
+}
+
+/* --- STYLES FOR LISTENING PAGINATION (FIXED) --- */
+
+#listening-container .key-list {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+#listening-container .key-list li {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border-color);
+    min-height: 28px;
+    /* Giữ chiều cao ổn định */
+}
+
+#listening-container .key-list li:last-child {
+    border-bottom: none;
+}
+
+/* Sửa lỗi CSS ở đây */
+/* Sử dụng lại style của .original-number từ các trang khác */
+#listening-container .key-list .key-number {
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-right: 15px;
+    background-color: #e9ecef;
+    border-radius: 50%;
+    width: 32px;
+    /* Tăng kích thước một chút */
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 0.9em;
+}
+
+/* Logic ẩn/hiện đáp án */
+#listening-container .answer-text {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s, visibility 0.3s;
+    font-weight: 500;
+    /* Bỏ margin-left vì key-number đã có margin-right */
+}
+
+#listening-container .key-list.answers-visible .answer-text {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Các style khác cho pagination giữ nguyên */
+.pagination-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.pagination-controls .action-btn {
+    width: auto;
+    padding: 10px 20px;
+}
+
+.pagination-controls .action-btn:disabled {
+    background-color: #e9ecef;
+    color: #6c757d;
+    cursor: not-allowed;
+    border-color: var(--border-color);
+}
+
+#page-number-indicator {
+    padding: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+#toggle-all-btn {
+    width: auto;
+    padding: 8px 15px;
+    font-size: 0.9em;
+}
+
+#page-title-indicator {
+    padding: 20px;
+}
+
+/* --- STYLES FOR LISTENING CHEATSHEET PAGE --- */
+.cheatsheet-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 25px;
+}
+
+.cheatsheet-card {
+    background-color: #fff;
+    border-radius: var(--card-radius);
+    padding: 20px;
+    box-shadow: var(--card-shadow);
+    border-left: 4px solid var(--primary-color);
+}
+
+.cheatsheet-card h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+    color: var(--primary-hover);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 10px;
+}
+
+.cheatsheet-card table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 0.95em;
+}
+
+.cheatsheet-card th,
+.cheatsheet-card td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.cheatsheet-card thead {
+    background-color: var(--secondary-color);
+    font-weight: 600;
+}
+
+.cheatsheet-card tr:last-child td {
+    border-bottom: none;
+}
+
+.cheatsheet-card tr:hover {
+    background-color: #f8f9fa;
+}
+
+.cheatsheet-card table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    font-size: 0.95em;
+    table-layout: fixed;
+    /* THÊM DÒNG NÀY: Quan trọng nhất! */
+}
+
+.cheatsheet-card th,
+.cheatsheet-card td {
+    padding: 12px;
+    /* Tăng padding một chút cho thoáng */
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+    word-wrap: break-word;
+    /* THÊM DÒNG NÀY: Giúp chữ tự xuống dòng */
+}
+
+/* THÊM KHỐI MỚI NÀY ĐỂ CHIA CỘT */
+.cheatsheet-card th:first-child,
+.cheatsheet-card td:first-child {
+    width: 50%;
+}
+
+.cheatsheet-card th:last-child,
+.cheatsheet-card td:last-child {
+    width: 50%;
+}
+
+
+.cheatsheet-card thead {
+    background-color: var(--secondary-color);
+    font-weight: 600;
+}
+
+/* css/style.css */
+
+/* --- STYLES FOR EXAM TIPS PAGE --- */
+.tips-container .tip-section {
+    margin-bottom: 30px;
+}
+
+.tips-container h2 {
+    font-size: 1.8em;
+    color: var(--primary-hover);
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.tip-card {
+    background-color: #fff;
+    border-radius: var(--card-radius);
+    padding: 20px 25px;
+    margin-bottom: 20px;
+    box-shadow: var(--card-shadow);
+}
+
+.tip-card h3 {
+    margin-top: 0;
+    color: #34495e;
+    font-size: 1.3em;
+}
+
+.tip-card ul {
+    padding-left: 20px;
+    margin: 10px 0 0 0;
+}
+
+.tip-card li {
+    margin-bottom: 10px;
+    line-height: 1.7;
+    color: #333;
+}
+.tip-card li ul {
+    margin-top: 10px;
+}
+
+.important-note {
+    background-color: #fffbe6;
+    border: 1px solid #ffe58f;
+    padding: 25px;
+    border-radius: var(--card-radius);
+}
+.important-note h2 {
+    border-bottom-color: #fadb14;
+    color: #d46b08;
+}
+.important-note p {
+    font-size: 1.1em;
+    line-height: 1.8;
+}
+
+.good-luck-message {
+    text-align: center;
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-top: 40px;
+    color: var(--primary-color);
 }

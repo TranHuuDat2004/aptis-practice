@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listening - Part 1</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header id="header-placeholder"></header>
+    <div class="content-pusher">
+        <div class="container">
+            <div class="page-intro">
+                <h1>Listening - Part 1 (Câu 1-13)</h1>
+                <p>Luyện tập ghi nhớ đáp án</p>
+            </div>
+            <div class="explanation-box">
+                <h3>💡 Phương pháp học hiệu quả</h3>
+                <p>Trong bài thi thật, các câu hỏi và đáp án từ 18 bộ đề gốc sẽ được <strong>xáo trộn hoàn
+                        toàn</strong>. Vì vậy, việc học thuộc lòng theo số thứ tự là không khả thi.</p>
+                <p><strong>Chiến lược hiệu quả nhất là "nhận diện mặt chữ":</strong></p>
+                <ul>
+                    <li><strong>Mục tiêu:</strong> Ghi nhớ hình ảnh và nội dung của các đáp án đúng nhiều nhất có thể.
+                    </li>
+                    <li><strong>Cách học:</strong> Lướt qua các trang đáp án nhiều lần. Đừng cố nhớ "Câu 3 là gì?", thay
+                        vào đó hãy đọc to và ghi nhớ các cụm từ như "The town hall", "Wednesday afternoon", "Persuading
+                        his family".</li>
+                    <li><strong>Trong phòng thi:</strong>
+                        <ul>
+                            <li>Khi nghe câu hỏi, hãy lắng nghe và chọn đáp án bạn cho là đúng.</li>
+                            <li><strong>Kiểm tra lại:</strong> Nhìn vào 3 lựa chọn trên màn hình. Nếu bạn thấy một đáp
+                                án <strong>trông quen thuộc</strong> (đã xuất hiện trong công cụ này), khả năng rất cao đó là đáp án
+                                đúng.</li>
+                            <li>Để chắc chắn hơn, hãy cố gắng nghe lại lần thứ hai để xác nhận đáp án bạn đã nhận diện.
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <main id="listening-container" class="quiz-card">
+                <div class="card-header">
+                    <h2 id="page-title-indicator">Đáp án 1 - 20</h2>
+                    <button class="action-btn" id="toggle-all-btn">👁️ Hiển thị tất cả</button>
+                </div>
+                <ul id="answer-list" class="key-list">
+                    <!-- Đáp án sẽ được chèn vào đây -->
+                </ul>
+                <div class="pagination-controls">
+                    <button class="action-btn" id="prev-page-btn" disabled>⬅️ Trang trước</button>
+                    <span id="page-number-indicator">Trang 1 / 3</span>
+                    <button class="action-btn" id="next-page-btn">Trang sau ➡️</button>
+                </div>
+            </main>
+        </div>
+        <footer id="footer-placeholder"></footer>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/data-listening.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const answerList = document.getElementById('answer-list');
+            const prevBtn = document.getElementById('prev-page-btn');
+            const nextBtn = document.getElementById('next-page-btn');
+            const pageTitle = document.getElementById('page-title-indicator');
+            const pageNumber = document.getElementById('page-number-indicator');
+            const toggleAllBtn = document.getElementById('toggle-all-btn');
+
+            const allAnswers = listeningData.part1;
+            const itemsPerPage = 13;
+            const totalPages = Math.ceil(allAnswers.length / itemsPerPage);
+            let currentPage = 1;
+
+            function renderPage(page) {
+                answerList.innerHTML = '';
+                const start = (page - 1) * itemsPerPage;
+                const end = start + itemsPerPage;
+                const pageItems = allAnswers.slice(start, end);
+
+                pageItems.forEach((item, index) => {
+                    const li = document.createElement('li');
+                    li.innerHTML = `
+                        <span class="key-number">${item.number}</span>
+                        <span class="answer-text">${item.answer}</span>
+                    `;
+                    answerList.appendChild(li);
+                });
+
+                // Cập nhật thông tin hiển thị
+                pageTitle.textContent = `Đáp án ${start + 1} - ${Math.min(end, allAnswers.length)}`;
+                pageNumber.textContent = `Trang ${page} / ${totalPages}`;
+
+                // Cập nhật trạng thái nút
+                prevBtn.disabled = page === 1;
+                nextBtn.disabled = page === totalPages;
+            }
+
+            prevBtn.addEventListener('click', () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    renderPage(currentPage);
+                }
+            });
+
+            nextBtn.addEventListener('click', () => {
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    renderPage(currentPage);
+                }
+            });
+
+            toggleAllBtn.addEventListener('click', () => {
+                const isVisible = answerList.classList.toggle('answers-visible');
+                toggleAllBtn.textContent = isVisible ? '🙈 Ẩn tất cả' : '👁️ Hiển thị tất cả';
+            });
+
+            // Render trang đầu tiên khi tải
+            renderPage(currentPage);
+        });
+    </script>
+</body>
+
+</html>

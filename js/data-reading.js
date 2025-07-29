@@ -265,7 +265,7 @@ const readingData = {
                 "At one of these events", "When he was young,"
             ],
             key: "5-3-2-4-1",
-            story: 'Câu chuyện thật: "<strong>Thời còn nhỏ</strong>, anh ấy muốn làm ca sĩ nổi tiếng, <strong>anh ấy bắt đầu học đại học</strong>, <strong>giỏi về âm nhạc</strong>, <strong>tại 1 trong những sự kiện</strong>, <strong>anh ấy trở thành ca sĩ nổi tiếng</strong>."'
+            story: 'Câu chuyện thật: "<strong>Thời còn nhỏ</strong>, anh ấy muốn làm ca sĩ nổi tiếng, anh ấy bắt đầu <strong> học phổ thông</strong>, <strong>giỏi về âm nhạc</strong>, <strong>tại 1 trong những sự kiện</strong>, <strong>anh ấy trở thành ca sĩ nổi tiếng</strong>."'
         },
         {
             id: "p2_presentation_day",
@@ -667,7 +667,7 @@ const readingData = {
                 'Important lessons for all of us'
             ],
             key: '1-2-3-4-5-6-7',
-            story: 'Câu chuyện bịa: "Mình muốn nó <strong>bền hơn (1)</strong>, nên đã <strong>làm thí nghiệm ốp lưng (2)</strong>, và <strong>đó là bí mật (3)</strong>. Nhưng <strong>bí mật bị lan rộng (4)</strong>, thật <strong>khó để rộng lượng (5)</strong>. <strong>Lý do phải thỏa hiệp (6)</strong> là vì nó cho ta <strong>bài học quan trọng (7)</strong>."'
+            story: 'Câu chuyện bịa: "Mình muốn nó <strong>bền hơn (1)</strong>, nên đã <strong>làm thí nghiệm ốp lưng (2)</strong>, và <strong>đó là bí mật (3)</strong>. Nhưng <strong>bí mật bị lan rộng (4)</strong>, <strong>mình cảm thấy khó chịu (5)</strong>. <strong>Lý do phải thỏa hiệp (6)</strong> Từ đó rút ra <strong>bài học quan trọng (7)</strong>."'
         },
         {
             id: 'p5_dickens_book',
@@ -679,7 +679,7 @@ const readingData = {
                 'Bringing the books to life'
             ],
             key: '1-2-3-4-5-6-7',
-            story: 'Câu chuyện bịa: "Đọc quyển sách <strong>Dickens for our time (1)</strong>, có nhiều <strong>khó khăn khi đọc (2)</strong>. Tác giả <strong>cố gắng làm độc giả đoán (3)</strong>, có sự <strong>ảnh hưởng truyền thông (4)</strong>, đó là <strong>thành công sớm (5)</strong> của ông. Ông đã <strong>cố gắng bảo vệ tài sản (6)</strong> của mình để <strong>mang sách đến đời sống (7)</strong>."'
+            story: 'Câu chuyện bịa: "Đọc quyển sách <strong>Dickens for our time (1)</strong>, gặp<strong> khó khăn khi đọc (2)</strong>. <strong>cố gắng đọc để đoán cái kết (3)</strong>, <strong>ảnh hưởng truyền thông (4)</strong>,<strong>thành công sớm (5)</strong> của ông. Ông đã <strong>cố gắng bảo vệ tài sản (6)</strong> của mình để <strong>mang sách đến đời sống (7)</strong>."'
         },
         {
             id: 'p5_zoo_history',
@@ -691,7 +691,7 @@ const readingData = {
                 'A modern-life alternative'
             ],
             key: '1-2-3-4-5-6-7',
-            story: 'Câu chuyện bịa: "<strong>Đó là biểu tượng quyền lực và giàu có (1)</strong>, từ đó <strong>mở cửa cho mọi người (2)</strong>. Sở thú đã thay đổi, <strong>không còn giam cầm (3)</strong>, hướng tới <strong>tự do (4)</strong>. Nó mang <strong>nhiều giá trị khác nhau (5)</strong>, với <strong>nhiệm vụ là để bảo tồn (6)</strong>. <strong>Đó là cuộc sống hiện đại (7)</strong>."'
+            story: 'Câu chuyện bịa: "<strong>Đó là biểu tượng quyền lực và giàu có (1)</strong>, từ đó <strong>mở cửa cho mọi người (2)</strong>. Sở thú đã thay đổi, <strong>không còn là nơi giam cầm (3)</strong>, hướng tới <strong>tự do (4)</strong>. Nó mang <strong>nhiều giá trị khác nhau (5)</strong>, với <strong>nhiệm vụ là để bảo tồn (6)</strong>. <strong>Đó là cuộc sống hiện đại (7)</strong>."'
         },
         {
             id: 'p5_coffee',
@@ -707,11 +707,11 @@ const readingData = {
                 'The ancient origin of'     // 7
             ],
             key: '1-2-3-4-5-6-7',
-            story: 'Câu chuyện bịa: "Theo <strong>phong tục (1)</strong>, cà phê <strong>khuyến khích (2)</strong> một <strong>thói quen (3)</strong>. Nhưng nó có <strong>vấn đề (4)</strong>, và <strong>biện pháp khắc phục (5)</strong> là nhận thức về <strong>rủi ro sức khỏe (6)</strong> dù cho nó có <strong>nguồn gốc cổ xưa (7)</strong>."'
+            story: 'Câu chuyện bịa: "<strong>Thói quen (custom) (1)</strong> của mọi người là <strong>sử dụng nhiều cà phê (2)</strong>, đó là một <strong>thói quen  xấu (habit) (3)</strong>vì có <strong>vấn đề (problem) (4)</strong> về sức khoẻ. Do đó, cần tìm <strong>giải pháp (5)</strong> để giảm thiểu <strong>rủi ro về sức khỏe (health risks)(6)</strong>, từ đó biết được <strong>nguồn gốc cà phê (7)</strong>."'
         },
         {
             id: 'p5_pole_race',
-            title: 'Chủ đề: Cuộc đua đến Cực',
+            title: 'Chủ đề: Vùng đất băng giá',
             type: 'Bịa (Ghi nhớ)',
             fragments: [
                 'Who is in charge?',        // 1
@@ -723,11 +723,11 @@ const readingData = {
                 'Why is it so cold?'        // 7
             ],
             key: '1-2-3-4-5-6-7',
-            story: 'Câu chuyện bịa: "<strong>Ai chịu trách nhiệm (1)</strong> cho <strong>bước chân đầu tiên lên băng (2)</strong>? <strong>Điểm cuối ở đâu (3)</strong> trong vùng <strong>địa lý ẩn giấu (4)</strong>? <strong>Cuộc đua đến Cực (5)</strong> này cần <strong>ít nỗ lực hơn (6)</strong>. <strong>Tại sao lại lạnh thế (7)</strong>?"'
+            story: 'Câu chuyện bịa: "<strong>Ai là chịu trách nhiệm (1)</strong>, đặt <strong>bước chân đầu tiên lên vùng đất băng giá (2)</strong> để đến <strong>tận cùng thế giới (3)</strong>, <strong>ẩn sau bên trong là gì (4)</strong>? Mình phải <strong>đua với đoàn đua khác (5)</strong>, cần <strong>nhiều sự nỗ lực (6)</strong> và cuối cùng biết được <strong>tại sao nó lại lạnh (7)</strong>."'
         },
         {
             id: 'p5_success_factors',
-            title: 'Chủ đề: Nhân tố thành công',
+            title: 'Chủ đề: Nhân tố thành công / Đi tập gym',
             type: 'Bịa (Ghi nhớ)',
             fragments: [
                 'Factor',                   // 1
@@ -739,7 +739,7 @@ const readingData = {
                 'Achieving'                 // 7
             ],
             key: '1-2-3-4-5-6-7',
-            story: 'Câu chuyện bịa: "<strong>Nhân tố (1)</strong> chính trong mọi <strong>tình huống (2)</strong> để có được <strong>thành công (3)</strong> và tạo ra <strong>ảnh hưởng sâu rộng (4)</strong> là tìm ra một <strong>con đường (5)</strong>, một <strong>thiết kế (6)</strong> để <strong>đạt được (7)</strong> mục tiêu."'
+            story: 'Câu chuyện bịa: "<strong>Nhân tố (1)</strong> và <strong>hoàn cảnh (2)</strong> dẫn đến <strong>thành công (3)</strong>. Nó còn <strong>ảnh hưởng bởi (4)</strong> <strong>cách (5)</strong>  <strong>thiết kế (6)</strong> của thiết bị giúp bạn <strong>đạt được hiệu quả.(7) </strong>"'
         },
         {
             id: 'p5_vegetarianism',
@@ -755,7 +755,7 @@ const readingData = {
                 'Our global responsibilities'// 7
             ],
             key: '1-2-3-4-5-6-7',
-            story: 'Câu chuyện bịa: "Mỗi <strong>loại người ăn chay (1)</strong> có <strong>nhiều lời giải thích (2)</strong> khác nhau. Cần <strong>hiểu những rủi ro có thể (3)</strong> khi phản đối <strong>nông trại công nghiệp (4)</strong>. Họ <strong>tôn trọng sự sống (5)</strong> vì <strong>lợi ích sức khỏe (6)</strong> và đó là <strong>trách nhiệm toàn cầu (7)</strong> của chúng ta."'
+            story: 'Câu chuyện bịa: "Mình đã gặp một <strong>1 người ăn chay</strong>, người đó đã<strong> giải thích</strong> cho mình, về việc <strong>những điều có thể xảy ra</strong> ở <strong>nhà máy chăn nuôi</strong>. Chúng ta cần <strong>tôn trọng sự sống</strong> để có <strong>sức khỏe tốt hơn</strong>, do đó đây là <strong>trách nhiệm toàn cầu</strong> của chúng ta."'
         },
         {
             id: 'p5_champions',
@@ -771,11 +771,11 @@ const readingData = {
                 'Not in it for the money'           // 7
             ],
             key: '1-2-3-4-5-6-7',
-            story: 'Câu chuyện bịa: "<strong>Cách dễ nhất để đi lại (1)</strong> là nhờ vào <strong>kết quả của một cuộc tẩu thoát may mắn (2)</strong>. Đó là <strong>nguồn gốc của những gì người chiến thắng nhận được (3)</strong>. Có một <strong>nhu cầu cần thay đổi (4)</strong> để <strong>tạo dựng danh tiếng (5)</strong> cho <strong>các thế hệ nhà vô địch (6)</strong>, những người tham gia <strong>không phải vì tiền (7)</strong>."'
+            story: 'Câu chuyện bịa: "<strong>Cách tốt nhất để đi du lịch</strong> bằng Doggest (tên nhân vật trong bài thi), mình <strong>may mắn thoát nạn</strong>, mình hiểu được <strong>nguồn gốc giải thưởng</strong>, do đó mình thấy <strong>cần phải thay đổi (nỗ lực)</strong>, muốn <strong>đạt được danh tiếng (nổi tiếng)</strong> <strong>qua nhiều thế hệ</strong>, vì thế chuyến đi này <strong>không phải vì tiền</strong> (mà để lấy kinh nghiệm)."'
         },
         {
             id: 'p5_exploration',
-            title: 'Chủ đề: Khám phá',
+            title: 'Chủ đề: Khám phá nước Úc sơ khai',
             type: 'Bịa (Ghi nhớ)',
             fragments: [
                 'New evidence',                 // 1
@@ -787,7 +787,7 @@ const readingData = {
                 'Determination'                 // 7
             ],
             key: '1-2-3-4-5-6-7',
-            story: 'Câu chuyện bịa: "<strong>Bằng chứng mới (1)</strong> cho thấy có một <strong>rào cản tự nhiên (2)</strong>. Nhờ có <strong>công nghệ (3)</strong>, <strong>hành trình (4)</strong> trở nên dễ dàng hơn dù <strong>không có con số chính xác (5)</strong>. Họ đã vượt qua sự <strong>thiếu hụt kiến thức và kỹ năng (6)</strong> bằng <strong>sự quyết tâm (7)</strong>."'
+            story: 'Câu chuyện bịa: "Mình khám phá nước Úc sơ khai để tìm <strong>bằng chứng mới (1)</strong>, tuy nhiên gặp phải <strong>rào cản thiên nhiên (2)</strong> và không có <strong>công nghệ (3)</strong>. Do đó, <strong>chuyến đi này (4)</strong> <strong>không thu thập được số liệu chính xác (5)</strong>, vì <strong>thiếu kiến thức kĩ năng (6)</strong>, nhưng vẫn <strong>quyết tâm (7)</strong> hoàn thành công việc."'
         },
         {
             id: 'p5_tulip_economy',
@@ -803,55 +803,52 @@ const readingData = {
                 'An Unexpected turn of events'       // 7
             ],
             key: '1-2-3-4-5-6-7',
-            story: 'Câu chuyện bịa: "<strong>Nền kinh tế trong thời kỳ hoàng kim (1)</strong> <strong>bắt đầu (2)</strong> với hoa tulip, một <strong>mặt hàng thương mại (3)</strong>. Có <strong>nhiều loại tulip khác nhau (4)</strong>, với <strong>cơ chế giao dịch (5)</strong> và <strong>buôn bán khắp châu Âu (6)</strong>. Sau đó là một <strong>biến cố bất ngờ (7)</strong>."'
+            story: 'Câu chuyện bịa: "Trong <strong>nền kinh tế thời kỳ hoàng kim (1)</strong>, mình <strong>tới nơi bán (2)</strong>, mình tìm <strong>thứ có thể bán (3)</strong>, đó là <strong>nhiều loại hoa tulip khác nhau (4)</strong>. Mình tìm hiểu <strong>cơ cấu mậu dịch (5)</strong>, rồi <strong>bán ở Châu Âu (6)</strong>, và <strong>nhiều chuyện bất ngờ đã xảy ra (7)</strong>."'
         },
         {
             id: 'p5_business_solutions',
             title: 'Chủ đề: Giải pháp kinh doanh',
             type: 'Bịa (Ghi nhớ)',
+            // Thứ tự các tiêu đề đúng
             fragments: [
-                'A finance visible solution',             // 1
-                'The price of convenience may be high',   // 2
-                'The benefits of living with less',       // 4 -> Bỏ qua 3
-                'The impact of lack of freedom',          // 5 -> Sửa 5 thành 4
-                'The challenges that come with a new perspective', // 6 -> Sửa 6 thành 5
-                'A competitive business',                 // 7 -> Sửa 7 thành 6
-                'The importance of planning in advance'   // 8 -> Sửa 8 thành 7
+                'A finance visible solution',
+                'The price of convenience may be high',
+                'The importance of planning in advance',
+                'The impact of lack of freedom',
+                'The benefits of living with less',
+                'The challenges that come with a new perspective',
+                'A competitive business'
             ],
+            // Key được suy ra từ câu chuyện mới
             key: '1-2-3-4-5-6-7',
-            story: 'Câu chuyện bịa: "Một <strong>giải pháp tài chính rõ ràng (1)</strong> cho thấy <strong>cái giá của sự tiện lợi có thể rất cao (2)</strong>. Hãy xem xét <strong>lợi ích của việc sống với ít hơn (3)</strong> và <strong>tác động của việc thiếu tự do (4)</strong>. Luôn có <strong>thách thức với góc nhìn mới (5)</strong> trong một <strong>môi trường kinh doanh cạnh tranh (6)</strong>, vì vậy <strong>tầm quan trọng của việc lập kế hoạch (7)</strong> là rất lớn."'
+            story: 'Câu chuyện bịa: "Mình phải tìm <strong>giải pháp tài chính</strong>, mình biết rằng <strong>cái giá thuận tiện cao</strong>, vì vậy mình <strong>phải nên kế hoạch trước</strong>. Nó <strong>ảnh hưởng đến sự tự do</strong>, <strong>lợi ích</strong> và <strong>thử thách</strong> về <strong>kinh doanh cạnh tranh</strong>."'
         },
-                {
+
+
+        // --- HAI CHỦ ĐỀ ĐÃ ĐƯỢC CẬP NHẬT CÂU CHUYỆN ---
+        {
             id: 'p5_small_homes',
             title: 'Chủ đề: Nhà nhỏ',
             type: 'Bịa (Ghi nhớ)',
             fragments: [
-                'Life on a small scale',    // 1
-                'Motivated by economics',   // 2
-                'The advantage',            // 3
-                'Homes too big',            // 4
-                'Sharing skill and knowledge',// 5
-                'Making a smaller impact',  // 6
-                'The lasting change'        // 7
+                'Life on a small scale', 'Motivated by economics', 'The advantage',
+                'Homes too big', 'Sharing skill and knowledge', 'Making a smaller impact',
+                'The lasting change'
             ],
             key: '1-2-3-4-5-6-7',
-            story: 'Câu chuyện bịa: "<strong>Cuộc sống ở quy mô nhỏ (1)</strong> được <strong>thúc đẩy bởi kinh tế (2)</strong>. <strong>Lợi thế (3)</strong> của nó là những <strong>ngôi nhà không quá lớn (4)</strong>. Mọi người <strong>chia sẻ kỹ năng và kiến thức (5)</strong>, <strong>tạo ra tác động nhỏ hơn (6)</strong> và đó là một <strong>thay đổi lâu dài (7)</strong>."'
+            story: 'Câu chuyện bịa: "Mình <strong>sống trong ngôi nhà nhỏ</strong>, đó là <strong>động lực kiếm tiền</strong>. <strong>Lợi thế</strong> của mình là mua được <strong>ngôi nhà to hơn</strong>. Mình <strong>chia sẻ kinh nghiệm</strong> này, <strong>tác động đến họ</strong> và làm cho họ <strong>thay đổi lâu dài</strong>."'
         },
         {
             id: 'p5_creative_hobbies',
-            title: 'Chủ đề: Sở thích sáng tạo',
+            title: 'Chủ đề: Âm nhạc / Sở thích sáng tạo',
             type: 'Bịa (Ghi nhớ)',
             fragments: [
-                'Physically demanding',           // 1
-                'A good way to boost memory',     // 2
-                'A great opportunity to broaden your social circle', // 3
-                'Routines',                       // 4
-                'Creative outlet',                // 5
-                "Enhancing other people's feelings", // 6
-                'A great sense of well-being'     // 7
+                'Physically demanding', 'A good way to boost memory', 'A great opportunity to broaden your social circle',
+                'Routines', 'Creative outlet', "Enhancing other people's feelings",
+                'A great sense of well-being'
             ],
             key: '1-2-3-4-5-6-7',
-            story: 'Câu chuyện bịa: "Dù <strong>đòi hỏi thể chất (1)</strong>, đây là <strong>cách tốt để tăng cường trí nhớ (2)</strong> và là <strong>cơ hội tuyệt vời để mở rộng vòng tròn xã hội (3)</strong>. Hãy tạo <strong>thói quen (4)</strong> cho <strong>lối thoát sáng tạo (5)</strong> này, nó sẽ <strong>nâng cao cảm xúc của người khác (6)</strong> và mang lại <strong>cảm giác hạnh phúc tuyệt vời (7)</strong>."'
+            story: 'Câu chuyện bịa: "Muốn hát hay thì <strong>đòi hỏi thể chất</strong> tốt. Việc làm này giúp <strong>tăng trí nhớ</strong>, <strong>mở rộng mối quan hệ</strong>. <strong>Thói quen</strong> này giúp mình có <strong>lối thoát sáng tạo</strong>, <strong>nâng cao cảm xúc</strong> (đang buồn hát để hết buồn) và mình cảm thấy <strong>vui vẻ hạnh phúc hơn</strong>(well being)."'
         }
 
 
