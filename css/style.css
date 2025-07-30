@@ -2182,6 +2182,7 @@ input:checked+.slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+
 /* Thêm vào cuối phần style của toggle switch */
 .speaker-toggle-container.disabled {
     opacity: 0.5;
@@ -2247,33 +2248,42 @@ input:checked+.slider:before {
     margin-top: 15px;
 }
 
-.vocab-table-card th, .vocab-table-card td {
+.vocab-table-card th,
+.vocab-table-card td {
     padding: 12px 15px;
     text-align: left;
     border-bottom: 1px solid #e9ecef;
-    vertical-align: middle; /* Căn giữa theo chiều dọc */
+    vertical-align: middle;
+    /* Căn giữa theo chiều dọc */
 }
 
 .vocab-table-card thead th {
     background-color: var(--secondary-color);
     font-weight: 600;
 }
+
 .vocab-table-card tbody tr:hover {
     background-color: #f8f9fa;
 }
 
 /* Style cho cột "Phân biệt" */
 .vocab-table-card .category-cell {
-    font-weight: 700; /* Tô đậm chữ */
-    color: var(--primary-hover); /* Màu chữ khác */
-    background-color: transparent; /* Bỏ nền xám */
-    border-right: 1px solid #dee2e6; /* Thêm đường kẻ phải */
-    width: 25%; /* Cố định chiều rộng cột */
+    font-weight: 700;
+    /* Tô đậm chữ */
+    color: var(--primary-hover);
+    /* Màu chữ khác */
+    background-color: transparent;
+    /* Bỏ nền xám */
+    border-right: 1px solid #dee2e6;
+    /* Thêm đường kẻ phải */
+    width: 25%;
+    /* Cố định chiều rộng cột */
 }
 
 /* Style cho các cột Tiếng Anh, Tiếng Việt */
 .vocab-table-card td {
-    font-weight: normal; /* Đảm bảo chữ bình thường */
+    font-weight: normal;
+    /* Đảm bảo chữ bình thường */
     background-color: transparent;
 }
 
@@ -2283,7 +2293,8 @@ input:checked+.slider:before {
     color: var(--primary-hover);
     background-color: transparent;
     border-right: 1px solid #dee2e6;
-    width: 25%; /* Cố định chiều rộng cột */
+    width: 25%;
+    /* Cố định chiều rộng cột */
 }
 
 /* --- THÊM KHỐI MỚI NÀY ĐỂ CHIA CỘT 50-50 CHO BẢNG 2 CỘT --- */
@@ -2292,10 +2303,13 @@ input:checked+.slider:before {
     table-layout: fixed;
 }
 
-#people-no-s th, #people-no-s td,
-#people-with-s th, #people-with-s td {
+#people-no-s th,
+#people-no-s td,
+#people-with-s th,
+#people-with-s td {
     width: 50%;
 }
+
 /* --- KẾT THÚC KHỐI MỚI --- */
 
 
@@ -2303,4 +2317,204 @@ input:checked+.slider:before {
 .vocab-table-card td {
     font-weight: normal;
     background-color: transparent;
+}
+
+/* css/style.css */
+
+/* --- STYLES FOR WRITING PART 1 --- */
+
+.writing-timer-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 15px 20px;
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+    margin-bottom: 25px;
+}
+
+.writing-timer-bar .action-btn {
+    width: auto;
+}
+
+.writing-timer-bar .timer-display {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--primary-hover);
+}
+
+.writing-prompt {
+    margin-bottom: 25px;
+}
+
+.writing-prompt:last-child {
+    margin-bottom: 0;
+}
+
+.writing-prompt label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #34495e;
+}
+
+.writing-prompt textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    font-family: inherit;
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    box-sizing: border-box;
+    resize: vertical;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.writing-prompt textarea:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.writing-prompt textarea:disabled {
+    background-color: #e9ecef;
+}
+
+.word-count-container {
+    text-align: right;
+    font-size: 0.9em;
+    color: #6c757d;
+    margin-top: 5px;
+}
+
+.word-count.limit-exceeded {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.writing-card {
+    display: none;
+    /* Ẩn tất cả các card theo mặc định */
+}
+
+.writing-card.active {
+    display: block;
+    /* Chỉ hiển thị card đang được chọn */
+}
+
+/* css/style.css */
+
+/* --- STYLES FOR Q&A BANK PAGE --- */
+.qa-bank-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.qa-card {
+    background-color: #fff;
+    padding: 15px 20px;
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+    border-left: 4px solid var(--primary-color);
+}
+
+.qa-card .question {
+    margin: 0 0 10px 0;
+    font-size: 1.05em;
+    color: #34495e;
+}
+
+.qa-card .answer {
+    margin: 0;
+    color: #0056b3;
+    font-weight: 500;
+}
+
+/* css/style.css */
+
+/* --- STYLES FOR WRITING PART 4 --- */
+.context-box {
+    background-color: #eef7ff;
+    border-left: 4px solid var(--primary-color);
+    padding: 15px 20px;
+    margin: 20px 0 30px 0;
+    border-radius: 8px;
+}
+
+.context-box h4 {
+    margin-top: 0;
+    color: var(--primary-hover);
+}
+
+.context-box p {
+    margin-bottom: 0;
+}
+
+.writing-task {
+    margin-bottom: 40px;
+}
+
+.writing-task .task-header {
+    margin-bottom: 15px;
+}
+
+.task-header h3 {
+    margin: 0 0 5px 0;
+    color: #34495e;
+}
+
+.task-header .instruction {
+    color: #666;
+    font-style: italic;
+    margin: 0;
+}
+
+.writing-textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    font-family: inherit;
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+.writing-task .card-actions,
+.writing-task .sample-answer-wrapper {
+    margin-top: 10px;
+}
+
+/* Dùng <pre> để giữ nguyên định dạng xuống dòng của email mẫu */
+.sample-answer pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin: 0;
+    font-family: inherit;
+}
+
+.writing-task .writing-timer-bar {
+    /* Tái sử dụng style timer bar của Part 1 */
+    margin-bottom: 15px;
+    /* Giảm margin so với Part 1 */
+    padding: 10px 15px;
+}
+
+.writing-task .writing-timer-bar .action-btn {
+    font-size: 0.9em;
+}
+
+.writing-task .writing-timer-bar .timer-display {
+    font-size: 1.5em;
+}
+
+/* css/style.css */
+.writing-part4-card {
+    display: none;
+}
+
+.writing-part4-card.active {
+    display: block;
 }

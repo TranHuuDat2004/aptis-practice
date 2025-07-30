@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writing Part 1 - Ngân hàng câu hỏi</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header id="header-placeholder"></header>
+    <div class="content-pusher">
+        <div class="container">
+            <div class="page-intro">
+                <h1>Writing Part 1 - Ngân hàng câu hỏi & trả lời mẫu</h1>
+                <p>Tham khảo các cách trả lời ngắn gọn và hiệu quả</p>
+            </div>
+            
+            <main class="qa-bank-container">
+                <!-- Các cặp Q&A sẽ được chèn vào đây -->
+            </main>
+        </div>
+        <footer id="footer-placeholder"></footer>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/data-writing.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const container = document.querySelector('.qa-bank-container');
+            const qaBank = writingData.part1_bank;
+
+            if (qaBank && qaBank.length > 0) {
+                qaBank.forEach(item => {
+                    const qaCard = document.createElement('div');
+                    qaCard.className = 'qa-card';
+                    qaCard.innerHTML = `
+                        <p class="question"><strong>Q:</strong> ${item.question}</p>
+                        <p class="answer"><strong>A:</strong> ${item.answer}</p>
+                    `;
+                    container.appendChild(qaCard);
+                });
+            } else {
+                container.innerHTML = '<p>Không có dữ liệu.</p>';
+            }
+        });
+    </script>
+</body>
+</html>

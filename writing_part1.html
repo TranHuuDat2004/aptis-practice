@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writing - Part 1</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header id="header-placeholder"></header>
+    <div class="content-pusher">
+        <div class="container">
+            <div class="page-intro">
+                <h1>Writing - Part 1</h1>
+                <p>Chọn một chủ đề và bắt đầu luyện tập</p>
+            </div>
+
+            <!-- HỘP GIẢI THÍCH MỚI -->
+            <div class="explanation-box">
+                <h3>💡 Phương pháp học & Lưu ý</h3>
+                <p>Bạn có 3 phút để trả lời 5 câu hỏi, mỗi câu không quá 10 từ. Hãy cố gắng trả lời ngắn gọn, đúng trọng
+                    tâm và đúng ngữ pháp.</p>
+                <p><strong>Lưu ý:</strong> Nội dung bạn gõ sẽ được <strong>tự động lưu</strong> vào trình duyệt của bạn
+                    (sử dụng Local Storage). Nếu bạn vô tình tải lại trang, bài làm vẫn sẽ còn. Tuy nhiên, để chắc chắn,
+                    bạn vẫn nên sao chép bài làm quan trọng ra nơi khác.</p>
+            </div>
+
+
+            <!-- BẢNG ĐIỀU KHIỂN CHỌN CHỦ ĐỀ -->
+            <div id="topic-selector-grid" class="topic-grid">
+                <!-- Các nút chọn chủ đề sẽ được chèn vào đây -->
+            </div>
+
+            <main id="writing-container">
+                <!-- Chỉ một bài tập được hiển thị tại một thời điểm -->
+            </main>
+        </div>
+        <footer id="footer-placeholder"></footer>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/data-writing.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const selectorContainer = document.getElementById('topic-selector-grid');
+            const contentContainer = document.getElementById('writing-container');
+            const topics = writingData.part1;
+
+            if (!topics || topics.length === 0) {
+                contentContainer.innerHTML = `<p class="error">Không có dữ liệu cho Writing Part 1.</p>`;
+                return;
+            }
+
+            let activeTimerInterval; // Biến để lưu trữ timer đang chạy
+
+            // TẠO NÚT VÀ CARD CHO MỖI CHỦ ĐỀ
+            topics.forEach((topic, index) => {
+                // Tạo nút chọn
+                const button = document.createElement('button');
+                button.className = 'topic-selector-btn';
+                button.textContent = `Chủ đề ${index + 1}`;
+                button.dataset.target = `#${topic.id}`;
+                selectorContainer.appendChild(button);
+
+                // Tạo card nội dung
+                const card = document.createElement('div');
+                card.className = 'quiz-card writing-card';
+                card.id = topic.id;
+                const storageKey = `writing_part1_${topic.id}`;
+
+                let questionsHTML = `<div class="card-header"><h2>${topic.title}</h2></div>`;
+                topic.questions.forEach((q, i) => {
+                    questionsHTML += `
+                        <div class="writing-prompt">
+                            <label for="${topic.id}-answer-${i}">${i + 1}. ${q}</label>
+                            <textarea id="${topic.id}-answer-${i}" rows="2" data-index="${i}" placeholder="Your answer (1-10 words)..."></textarea>
+                            <div class="word-count-container"><span class="word-count">0/10 words</span></div>
+                        </div>
+                    `;
+                });
+
+                card.innerHTML = `
+                    <div class="writing-timer-bar">
+                        <button class="action-btn start-writing-btn">Bắt đầu tính giờ (3 phút)</button>
+                        <div class="timer-display">03:00</div>
+                    </div>
+                    <div class="writing-content">${questionsHTML}</div>`;
+                contentContainer.appendChild(card);
+            });
+
+            const allButtons = selectorContainer.querySelectorAll('.topic-selector-btn');
+            const allCards = contentContainer.querySelectorAll('.writing-card');
+
+            // HÀM HIỂN THỊ CHỦ ĐỀ
+            function showTopic(targetId) {
+                allCards.forEach(card => card.classList.remove('active'));
+                allButtons.forEach(btn => btn.classList.remove('active'));
+
+                const targetCard = document.querySelector(targetId);
+                const targetButton = selectorContainer.querySelector(`[data-target='${targetId}']`);
+
+                if (targetCard) targetCard.classList.add('active');
+                if (targetButton) targetButton.classList.add('active');
+
+                // Dừng timer cũ nếu có
+                if (activeTimerInterval) clearInterval(activeTimerInterval);
+                // Reset tất cả các timer bar
+                allCards.forEach(c => {
+                    const btn = c.querySelector('.start-writing-btn');
+                    const display = c.querySelector('.timer-display');
+                    if (btn) btn.disabled = false;
+                    if (btn) btn.textContent = 'Bắt đầu tính giờ (3 phút)';
+                    if (display) display.textContent = '03:00';
+                });
+            }
+
+            // LOGIC LƯU VÀ TẢI BÀI
+            function loadAnswers(card) {
+                const storageKey = `writing_part1_${card.id}`;
+                const savedAnswers = JSON.parse(localStorage.getItem(storageKey));
+                if (savedAnswers) {
+                    savedAnswers.forEach((answer, index) => {
+                        const textarea = card.querySelector(`#${card.id}-answer-${index}`);
+                        if (textarea) {
+                            textarea.value = answer;
+                            textarea.dispatchEvent(new Event('input'));
+                        }
+                    });
+                }
+            }
+            allCards.forEach(loadAnswers); // Tải bài làm cho tất cả các card
+
+            // GÁN SỰ KIỆN
+            selectorContainer.addEventListener('click', function (e) {
+                if (e.target.classList.contains('topic-selector-btn')) showTopic(e.target.dataset.target);
+            });
+
+            contentContainer.addEventListener('input', function (e) {
+                if (e.target.tagName === 'TEXTAREA') {
+                    const card = e.target.closest('.writing-card');
+                    const storageKey = `writing_part1_${card.id}`;
+                    // Cập nhật đếm từ
+                    const wordCountSpan = e.target.nextElementSibling.querySelector('.word-count');
+                    const words = e.target.value.trim().split(/\s+/).filter(word => word.length > 0);
+                    wordCountSpan.textContent = `${words.length}/10 words`;
+                    wordCountSpan.classList.toggle('limit-exceeded', words.length > 10);
+                    // Lưu bài
+                    const allTextareas = card.querySelectorAll('textarea');
+                    const answersToSave = Array.from(allTextareas).map(ta => ta.value);
+                    localStorage.setItem(storageKey, JSON.stringify(answersToSave));
+                }
+            });
+
+            contentContainer.addEventListener('click', function (e) {
+                if (e.target.classList.contains('start-writing-btn')) {
+                    if (activeTimerInterval) clearInterval(activeTimerInterval); // Dừng timer khác nếu đang chạy
+
+                    const button = e.target;
+                    const timerBar = button.closest('.writing-timer-bar');
+                    const timerDisplay = timerBar.querySelector('.timer-display');
+                    const card = button.closest('.writing-card');
+
+                    button.disabled = true;
+                    button.textContent = 'Đang tính giờ...';
+                    let timeInSeconds = 180;
+
+                    activeTimerInterval = setInterval(() => {
+                        timeInSeconds--;
+                        const minutes = Math.floor(timeInSeconds / 60);
+                        const seconds = timeInSeconds % 60;
+                        timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                        if (timeInSeconds <= 0) {
+                            clearInterval(activeTimerInterval);
+                            timerDisplay.textContent = "Hết giờ!";
+                            alert("Hết giờ làm bài!");
+                            card.querySelectorAll('textarea').forEach(ta => ta.disabled = true);
+                        }
+                    }, 1000);
+                }
+            });
+
+            // HIỂN THỊ CHỦ ĐỀ ĐẦU TIÊN
+            if (allButtons.length > 0) showTopic(allButtons[0].dataset.target);
+        });
+    </script>
+</body>
+
+</html>
