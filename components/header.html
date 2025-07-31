@@ -1,57 +1,135 @@
-<!-- _header.html -->
-<nav class="main-nav">
-    <a href="index.html" class="nav-logo">Aptis Practice</a>
+<!-- components/header.html (FINAL) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-    <button class="hamburger" id="hamburger-button" aria-label="Open navigation menu">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
+<div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+<header>
+    <div class="container">
+        <a href="index.html" class="logo">
+            <span>Aptis Practice</span>
+        </a>
 
-    <div class="nav-links-container" id="nav-links-container">
+        <!-- Menu cho Desktop (ĐÃ THÊM LẠI DROPDOWN) -->
+        <nav class="main-nav desktop-nav">
+            <ul>
+                <li><a href="index.html">Trang Chủ</a></li>
+                <li><a href="exam_tips.html">Dặn dò</a></li>
+                <li><a href="vocabulary.html">Từ vựng</a></li>
+                <li class="dropdown">
+                    <a href="reading_overview.html">Reading</a>
+                    <div class="dropdown-content">
+                        <a href="reading_part1.html">Part 1</a>
+                        <a href="reading.html?part=2">Part 2</a>
+                        <a href="reading.html?part=3">Part 3</a>
+                        <a href="reading_part4.html">Part 4</a>
+                        <a href="reading_part5.html">Part 5</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="listening.html">Listening</a>
+                    <div class="dropdown-content">
+                        <a href="listening_part1.html">Part 1 (1-13)</a>
+                        <a href="listening_part14.html">Part 2 (Câu 14)</a>
+                        <a href="listening_part15.html">Part 2 (Câu 15)</a>
+                        <a href="listening_part1617.html">Part 3 (Câu 16-17)</a>
+                        <a href="listening_cheatsheet.html">Bảng Key Tổng hợp</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="writing.html">Writing</a>
+                    <div class="dropdown-content">
+                        <a href="writing_part1.html">Part 1</a>
+                        <a href="writing_part2.html">Part 2</a>
+                        <a href="writing_part3.html">Part 3</a>
+                        <a href="writing_part4.html">Part 4</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="speaking.html">Speaking</a>
+                    <div class="dropdown-content">
+                        <a href="speaking_part1.html">Part 1</a>
+                        <a href="speaking_part2.html">Part 2</a>
+                        <a href="speaking_ideas.html">Ngân hàng ý tưởng</a>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+
+        <div class="header-actions">
+            <button class="hamburger-btn" id="hamburger-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </div>
+
+        <!-- Menu Sidebar cho Mobile (ĐÃ THÊM DROPDOWN) -->
+    <nav class="mobile-side-menu" id="mobile-nav">
+        <div class="mobile-nav-header">
+            <span class="menu-title">Aptis Practice</span>
+            <button class="close-btn" id="close-btn">×</button>
+        </div>
         <ul>
-            <li><a href="index.html" class="nav-link">Home</a></li>
-            <li><a href="structure.html" class="nav-link">Structure</a></li>
-            <li class="dropdown">
-                <a href="exam_tips.html" class="nav-link">Tips</a>
-                <div class="dropdown-content">
-                    <a href="vocabulary.html" class="nav-link">Từ vựng</a>
-                    <a href="exam_tips.html" class="nav-link">Những điều trước ngày thi</a>
+            <li><a href="index.html"><i class="fas fa-home"></i> Trang Chủ</a></li>
+            <li><a href="exam_tips.html"><i class="fas fa-clipboard-list"></i> Dặn dò</a></li>
+            <li><a href="vocabulary.html"><i class="fas fa-book"></i> Từ vựng</a></li>
+            
+            <li class="menu-divider"><span>Kỹ năng</span></li>
+            
+            <!-- DROPDOWN CHO READING -->
+            <li class="mobile-dropdown">
+                <a href="#" class="dropdown-toggle"><i class="fas fa-book-open"></i> Reading <span>›</span></a>
+                <div class="mobile-dropdown-content">
+                    <a href="reading_overview.html">- Tổng quan</a>
+                    <a href="reading_part1.html">- Part 1</a>
+                    <a href="reading.html?part=2">- Part 2</a>
+                    <a href="reading.html?part=3">- Part 3</a>
+                    <a href="reading_part4.html">- Part 4</a>
+                    <a href="reading_part5.html">- Part 5</a>
                 </div>
             </li>
-            <li class="dropdown">
-                <a href="reading_overview.html" class="nav-link">Reading</a>
-                <div class="dropdown-content">
-                    <a href="reading_part1.html">Part 1</a> <!-- SỬA DÒNG NÀY -->
-                    <a href="reading.html?part=2">Part 2</a>
-                    <a href="reading.html?part=3">Part 3</a>
-                    <a href="reading_part4.html">Part 4</a> <!-- SỬA DÒNG NÀY -->
-                    <a href="reading_part5.html">Part 5</a> <!-- SỬA DÒNG NÀY -->
+            
+            <!-- DROPDOWN CHO LISTENING -->
+            <li class="mobile-dropdown">
+                <a href="#" class="dropdown-toggle"><i class="fas fa-headphones"></i> Listening <span>›</span></a>
+                <div class="mobile-dropdown-content">
+                    <a href="listening_overview.html">- Tổng quan</a>
+                    <a href="listening_part1.html">- Part 1 (1-13)</a>
+                    <a href="listening_part14.html">- Part 2 (Câu 14)</a>
+                    <a href="listening_part15.html">- Part 2 (Câu 15)</a>
+                    <a href="listening_part1617.html">- Part 3 (Câu 16-17)</a>
+                    <a href="listening_cheatsheet.html">- Bảng Key Tổng hợp</a>
                 </div>
             </li>
-            <li class="dropdown">
-                <a href="listening.html" class="nav-link">Listening</a>
-                <div class="dropdown-content">
-                    <a href="listening_part1.html">Part 1 (1-13)</a> <!-- SỬA DÒNG NÀY -->
-                    <a href="listening_cheatsheet.html">Bảng tổng hợp Key</a>
-                    <a href="listening_cau14.html">Luyện tập Câu 14</a>
-                    <a href="listening_cau15.html">Luyện tập Câu 15</a>
-                    <a href="listening_cau1617.html">Luyện tập Câu 16 & 17</a>
 
+             <!-- DROPDOWN CHO WRITING -->
+            <li class="mobile-dropdown">
+                <a href="#" class="dropdown-toggle"><i class="fas fa-pen-alt"></i> Writing <span>›</span></a>
+                <div class="mobile-dropdown-content">
+                     <a href="writing.html">- Tổng quan</a>
+                     <a href="writing_part1.html">- Part 1</a>
+                     <a href="writing_part2.html">- Part 2</a>
+                     <a href="writing_part3.html">- Part 3</a>
+                     <a href="writing_part4.html">- Part 4</a>
                 </div>
             </li>
-            <li><a href="#" class="nav-link disabled">Writing</a></li>
-            <li class="dropdown">
-                <a href="#" class="nav-link">Writing</a>
-                <div class="dropdown-content">
-                    <a href="writing_part1.html">Part 1 Practice</a>
-                    <a href="reading.html?part=3">Part 3</a>
-                    <a href="reading_part4.html">Part 4</a> <!-- SỬA DÒNG NÀY -->
-                    <a href="reading_part5.html">Part 5</a> <!-- SỬA DÒNG NÀY -->
-                    <a href="speaking_ideas.html">Giải thích ý kiến</a>
+            
+            <!-- DROPDOWN CHO SPEAKING -->
+            <li class="mobile-dropdown">
+                <a href="#" class="dropdown-toggle"><i class="fas fa-microphone"></i> Speaking <span>›</span></a>
+                <div class="mobile-dropdown-content">
+                    <a href="speaking.html">- Tổng quan</a>
+                    <a href="speaking_part1.html">- Part 1</a>
+                    <a href="speaking_part2.html">- Part 2</a>
+                    <a href="speaking_ideas.html">- Ngân hàng ý tưởng</a>
                 </div>
             </li>
         </ul>
-    </div>
-</nav>
-<div class="overlay" id="overlay"></div>
+        <div class="mobile-nav-footer">
+            <a href="https://github.com/your-repo" target="_blank"><i class="fab fa-github"></i> Xem trên GitHub</a>
+        </div>
+    </nav>
+</header>
+
+

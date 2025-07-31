@@ -1,61 +1,71 @@
-// js/main.js
-document.addEventListener("DOMContentLoaded", function () {
+// js/main.js (FINAL PUSH-CONTENT VERSION)
+
+document.addEventListener("DOMContentLoaded", function() {
+    
     const loadComponent = (selector, url) => {
-        fetch(url)
-            .then(response => response.text())
+        return fetch(url)
+            .then(response => {
+                if (!response.ok) throw new Error(`Could not load ${url}`);
+                return response.text();
+            })
             .then(data => {
                 const element = document.querySelector(selector);
-                if (element) {
-                    element.innerHTML = data;
-                }
+                if (element) element.innerHTML = data;
             })
-            .then(() => {
-                if (selector === '#header-placeholder') {
-                    setupNavigation();
-                    setActiveLink();
-                }
-            })
-            .catch(error => console.error(`Error loading ${url}:`, error));
+            .catch(error => console.error(`Error loading component for ${selector}:`, error));
     };
 
-    loadComponent('#header-placeholder', 'components/header.html'); // SỬA ĐƯỜNG DẪN
-    loadComponent('#footer-placeholder', 'components/footer.html'); // SỬA ĐƯỜNG DẪN
-
     function setupNavigation() {
-        const hamburger = document.getElementById('hamburger-button');
-        const navContainer = document.getElementById('nav-links-container');
-        const overlay = document.getElementById('overlay');
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileNav = document.getElementById('mobile-nav');
+        const closeBtn = document.getElementById('close-btn');
+        const body = document.body;
 
-        if (hamburger && navContainer && overlay) {
-            hamburger.addEventListener('click', () => {
-                document.body.classList.toggle('nav-open');
+        // Sự kiện mở/đóng menu chính
+        const toggleMenu = () => {
+            body.classList.toggle('u-nav-open');
+        };
+
+        if (hamburgerBtn) hamburgerBtn.addEventListener('click', toggleMenu);
+        if (closeBtn) closeBtn.addEventListener('click', toggleMenu);
+        
+        // Sự kiện cho dropdown trên mobile
+        const dropdownToggles = document.querySelectorAll('.mobile-dropdown .dropdown-toggle');
+        dropdownToggles.forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                const parent = this.parentElement;
+                parent.classList.toggle('open');
             });
-            overlay.addEventListener('click', () => {
-                document.body.classList.remove('nav-open');
-            });
+        });
+    }
+
+    function setActiveNavLink() {
+        const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+        const navLinks = document.querySelectorAll('.desktop-nav a, .mobile-side-menu a');
+        navLinks.forEach(link => {
+            const linkPath = new URL(link.href).pathname.split('/').pop() || 'index.html';
+            link.classList.remove('active');
+            // So sánh chính xác hơn
+            if (linkPath === currentPath && window.location.search === new URL(link.href).search) {
+                link.classList.add('active');
+                if (link.closest('.dropdown-content')) {
+                    link.closest('.dropdown').querySelector('a').classList.add('active');
+                }
+            }
+        });
+        if (currentPath === 'index.html') {
+            document.querySelector('.desktop-nav a[href="index.html"]')?.classList.add('active');
+            document.querySelector('.mobile-side-menu a[href="index.html"]')?.classList.add('active');
         }
     }
 
-    // function setActiveLink() {
-    //     const navLinks = document.querySelectorAll('.nav-links-container a');
-    //     const currentPagePath = window.location.pathname.split('/').pop();
-    //     const urlParams = new URLSearchParams(window.location.search);
-    //     const currentPart = urlParams.get('part');
+    Promise.all([
+        loadComponent('#header-placeholder', 'components/header.html'),
+        loadComponent('#footer-placeholder', 'components/footer.html')
+    ]).then(() => {
+        setupNavigation();
+        setActiveNavLink();
+    });
 
-    //     navLinks.forEach(link => {
-    //         try {
-    //             const linkUrl = new URL(link.href);
-    //             const linkPath = linkUrl.pathname.split('/').pop();
-    //             if (linkPath === currentPagePath) {
-    //                 if (linkUrl.search.includes(`part=${currentPart}`)) {
-    //                     link.classList.add('active');
-    //                     const parentLink = link.closest('.dropdown')?.querySelector('.nav-link');
-    //                     if (parentLink) parentLink.classList.add('active');
-    //                 } else if (!currentPart && linkPath === 'index.html') {
-    //                     link.classList.add('active');
-    //                 }
-    //             }
-    //         } catch (e) { }
-    //     });
-    // }
 });
