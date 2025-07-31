@@ -640,4 +640,1000 @@ const speakingData = {
         }
         // Thêm các chủ đề Part 2 khác vào đây với cấu trúc tương tự
     ],
+
+     // --- THÊM MỚI DỮ LIỆU PART 3 ---
+    part3: [
+        {
+            id: 'sp3_shopping_places',
+            title: 'Chủ đề 1: Shopping Places',
+            image1Src: 'img/speaking-part3/shopping-market.png',
+            image2Src: 'img/speaking-part3/shopping-supermarket.png',
+            audioSrc: 'audio/speaking-part3/1.mp3',
+            tasks: [
+                {
+                    question: "Describe the 2 pictures.",
+                    duration: 45,
+                    sampleAnswer: "In the first picture, I can see a young woman shopping for bananas at a market. She looks focused, maybe checking if the bananas are fresh. In the second picture, there is a woman and a little girl shopping together in a supermarket. The child is pointing at the fruits, and they both look happy. Both pictures show people buying fruits, but the first one is alone and in a market, while the second one is with family in a supermarket. I think shopping with someone is more fun because you can share the experience."
+                },
+                {
+                    question: "What are the benefits of shopping in these two places?",
+                    duration: 45,
+                    sampleAnswer: "Shopping in a market is good because the food is often fresh and cheap. You can talk to the sellers and feel the local atmosphere. It's a fun place to shop. In supermarkets, you can find many things in one place. It is clean, organized, and has many choices. It's easy for families and busy people."
+                },
+                {
+                    question: "Where do you think people will shop in the future?",
+                    duration: 45,
+                    sampleAnswer: "In the future, I think many people will shop online because it's fast and easy. You can buy things from home, and they will deliver them to your house. But some people will still go to supermarkets or markets to buy fresh food. I think shopping will change, but people will use different ways depending on their needs. Maybe we will see more smart technology in shops too."
+                }
+            ]
+        },
+        {
+            id: 'sp3_relaxing_places',
+            title: 'Chủ đề 2: Relaxing Places',
+            image1Src: 'img/speaking-part3/relaxing-beach.png',
+            image2Src: 'img/speaking-part3/relaxing-lake.png',
+            audioSrc: 'audio/speaking-part3/2.mp3',
+            tasks: [
+                {
+                    question: "Describe the 2 pictures.",
+                    duration: 45,
+                    sampleAnswer: "In the first picture, there are many people relaxing on a crowded beach. There are umbrellas, towels, and people sunbathing or swimming. It looks noisy and full of energy. In the second picture, there is only one person sitting quietly by a lake in the mountains. The place looks peaceful and natural. Both places are good for relaxing, but they are very different. The beach is lively and social, while the lake is calm and quiet."
+                },
+                {
+                    question: "What is your favorite place in the two pictures? Why?",
+                    duration: 45,
+                    sampleAnswer: "I prefer the second picture, the natural setting by the river. I enjoy quiet and peaceful environments where I can relax and connect with nature. The sound of the water and the fresh air would make me feel refreshed. While the beach is exciting, I find the forest more relaxing and suitable for my personality."
+                },
+                {
+                    question: "Why do many people like going to different places on holiday?",
+                    duration: 45,
+                    sampleAnswer: "People enjoy traveling to different places because they want to experience something new and escape their daily routines. Some people love the excitement of crowded beaches and fun activities, while others prefer the tranquility of nature to recharge their energy. Visiting diverse places also allows them to explore different cultures, scenery, and climates, making holidays more memorable."
+                }
+            ]
+        },
+
+        // --- 2 CHỦ ĐỀ MỚI ---
+        {
+            id: 'sp3_free_time_activities',
+            title: 'Chủ đề 3: Free time activities',
+            image1Src: 'img/speaking-part3/hobby-crossword.png',
+            image2Src: 'img/speaking-part3/hobby-game.png',
+            audioSrc: 'audio/speaking-part3/3.mp3',
+            tasks: [
+                {
+                    question: "Describe the 2 pictures.",
+                    duration: 45,
+                    sampleAnswer: "Both pictures show people doing activities in their free time, but they are very different. In the first picture, we can see an elderly man doing a crossword puzzle. He looks very focused and calm. In the second picture, there is a young boy playing a computer game. He looks very excited and energetic. The activity looks fun and fast-paced."
+                },
+                {
+                    question: "What are the attractions of these activities?",
+                    duration: 45,
+                    sampleAnswer: "The attractions of doing a crossword puzzle are that it helps improve thinking skills and can be a fun way to pass time. Playing a computer game is exciting because it can be very entertaining and gives you the chance to explore different worlds or challenges. Both activities help people relax and have fun."
+                },
+                {
+                    question: "Playing games is for children, not for adults. What do you think?",
+                    duration: 45,
+                    sampleAnswer: "I think playing games is not only for children. Adults can enjoy games too because they help people relax and have fun. Games like puzzles or strategy games can be challenging and good for the brain. They also allow adults to spend time with friends or family."
+                }
+            ]
+        },
+        {
+            id: 'sp3_eating_habits',
+            title: 'Chủ đề 4: Eating habits',
+            image1Src: 'img/speaking-part3/food-healthy.png',
+            image2Src: 'img/speaking-part3/food-pizza.png',
+            audioSrc: 'audio/speaking-part3/4.mp3',
+            tasks: [
+                {
+                    question: "Describe the 2 pictures.",
+                    duration: 45,
+                    sampleAnswer: "Both pictures show people eating, but the situations are quite different. In the first picture, we can see a young man eating healthy food. He has a bowl of salad and many fresh fruits. He seems to be enjoying a nutritious meal alone. In the second picture, there are three men eating pizza. They look happy and are talking and laughing together."
+                },
+                {
+                    question: "Which food do you prefer?",
+                    duration: 45,
+                    sampleAnswer: "I prefer vegetables because they are healthier and provide important nutrients. They also make me feel energized and are better for my overall well-being. While fast food can be tasty, I try to avoid it since it's often not as good for my health in the long run."
+                },
+                {
+                    question: "Why do people like to eat different types of food?",
+                    duration: 45,
+                    sampleAnswer: "People like to eat different types of food for several reasons. First, variety in food makes meals more interesting and enjoyable. Second, different foods offer a range of flavors that people enjoy tasting. Finally, people eat different foods because they provide various nutrients, which help keep them healthy."
+                }
+            ]
+        },
+
+         // --- 2 CHỦ ĐỀ MỚI ---
+        {
+            id: 'sp3_different_games',
+            title: 'Chủ đề 5: Different types of games',
+            image1Src: 'img/speaking-part3/game-chess.png',
+            image2Src: 'img/speaking-part3/game-video.png',
+            audioSrc: 'audio/speaking-part3/5.mp3',
+            tasks: [
+                {
+                    question: "Describe the 2 pictures.",
+                    duration: 45,
+                    sampleAnswer: "The two pictures show two different games. In the first picture, there are four people: a man, a woman, a boy, and a girl I guess they are a family. The boy wearing a long sleeve checked shirt is playing chess with his father. In the second picture, I see a man wearing headphones and holding a video game controller. He looked very focused. I think he is playing games to relax after a tiring day of work."
+                },
+                {
+                    question: "What are the attractions of these two different types of games?",
+                    duration: 45,
+                    sampleAnswer: "Chess and video games are both fun and challenging activities, but they have different attractions. Chess is a classic game that requires logic, strategy and concentration. It can improve your mental skills. Video games are more modern and diverse. They can offer different genres, graphics and stories. They can stimulate your imagination and creativity."
+                },
+                {
+                    question: "Computer games are bad. What do you think?",
+                    duration: 45,
+                    sampleAnswer: "I don’t think computer games are bad. They can be fun and educational. They can also help people relax and socialize. Computer games are not bad if you play them in moderation and balance them with other activities. Some computer games can improve your skills and creativity. They have pros and cons, but they are not bad by themselves."
+                }
+            ]
+        },
+        {
+            id: 'sp3_outdoor_time',
+            title: 'Chủ đề 6: Spending time outdoors',
+            image1Src: 'img/speaking-part3/outdoor-beach.png',
+            image2Src: 'img/speaking-part3/outdoor-mountain.png',
+            audioSrc: 'audio/speaking-part3/6.mp3',
+            tasks: [
+                {
+                    question: "Describe the 2 pictures.",
+                    duration: 45,
+                    sampleAnswer: "Both pictures show people spending time outdoors, but in different ways. In the first picture, there is a family walking along the beach. The weather looks warm and sunny, and they seem happy. In the second picture, we can see four people standing on top of a mountain. They are probably friends or hikers enjoying the view after a long walk."
+                },
+                {
+                    question: "Which do you prefer?",
+                    duration: 45,
+                    sampleAnswer: "I prefer walking along the beach because it feels very relaxing. I love the sound of the waves and the fresh air. Walking on the sand is a peaceful way to clear my mind and enjoy nature. I also like to watch the sunset over the ocean. It's a great way to feel calm and recharge after a busy day."
+                },
+                {
+                    question: "What are the characteristics that make a good resort?",
+                    duration: 45,
+                    sampleAnswer: "A good resort should have a few key characteristics. First, it should offer comfortable accommodations with clean rooms. Second, the staff should be friendly and helpful, making guests feel welcome. Finally, a good resort should provide a variety of activities and be located in a beautiful, peaceful area."
+                }
+            ]
+        },
+         // --- 2 CHỦ ĐỀ MỚI ---
+        {
+            id: 'sp3_places_to_eat',
+            title: 'Chủ đề 7: Places to eat',
+            image1Src: 'img/speaking-part3/eating-street-food.png',
+            image2Src: 'img/speaking-part3/eating-restaurant.png',
+            audioSrc: 'audio/speaking-part3/7.mp3',
+            tasks: [
+                {
+                    question: "Describe the 2 pictures.",
+                    duration: 45,
+                    sampleAnswer: "The two pictures show two different places to eat. In the first picture, I can see many people standing in front of street food stalls. They are enjoying the food. In the second picture, there is a woman. She has long hair and is wearing a blue t-shirt. She is using chopsticks and a fork to eat food. I guess she’s happy because she can enjoy food at the restaurant she likes."
+                },
+                {
+                    question: "What are the disadvantages of these two types of eating?",
+                    duration: 45,
+                    sampleAnswer: "Eating at street food stalls and eating in the restaurant have some disadvantages. Street food may be cheaper and faster, but it can be unhealthy and unsafe. You don’t know how the food is cooked or stored. Restaurant food may be more expensive and slower, but it can be tasty, clean, and safe. However, restaurant food can also be unhealthy, too salty, or too oily."
+                },
+                {
+                    question: "Why people don’t prefer eating out alone?",
+                    duration: 45,
+                    sampleAnswer: "Some people don’t like to eat out alone because they feel lonely or bored without someone to talk to. They think that other people will judge them for not having company. Eating out alone can also be expensive for some people. They would rather cook at home or order takeout and watch something on their phone or laptop."
+                }
+            ]
+        },
+        {
+            id: 'sp3_different_environments',
+            title: 'Chủ đề 8: Different Environments',
+            image1Src: 'img/speaking-part3/environment-snow.png',
+            image2Src: 'img/speaking-part3/environment-desert.png',
+            audioSrc: 'audio/speaking-part3/8.mp3',
+            tasks: [
+                {
+                    question: "Describe the 2 pictures.",
+                    duration: 45,
+                    sampleAnswer: "In the first picture, we see a man standing in a snowy place. He is wearing a big furry hat, scarf, and a thick coat. The background is full of snow and trees. In the second picture, there is a woman standing in a desert. She is wearing a long black dress that covers her body. The background is full of sand. It looks very hot and dry."
+                },
+                {
+                    question: "What are the differences between the two places?",
+                    duration: 45,
+                    sampleAnswer: "The two places are very different. The first one is a cold, snowy place with low temperatures. The second place is a hot desert with sand and strong sunlight. People wear long clothes to protect their skin from the sun. The weather, temperature, and environment are opposite. One is freezing and white, the other is hot and dry."
+                },
+                {
+                    question: "How can surroundings affect people?",
+                    duration: 45,
+                    sampleAnswer: "Surroundings can affect people in many ways. In cold places, people stay indoors more, wear warm clothes, and eat hot food. In hot places, people drink more water, wear light clothes, and avoid the sun. The environment also changes how homes are built, what people eat, and how they travel. It can also affect health, jobs and lifestyle."
+                }
+            ]
+        },
+        // --- 2 CHỦ ĐỀ MỚI ---
+        {
+            id: 'sp3_children_animals',
+            title: 'Chủ đề 9: Children and Animals',
+            image1Src: 'img/speaking-part3/animals-horse.png',
+            image2Src: 'img/speaking-part3/animals-snake.png',
+            audioSrc: 'audio/speaking-part3/9.mp3',
+            tasks: [
+                {
+                    question: "Describe the 2 pictures.",
+                    duration: 45,
+                    sampleAnswer: "Two pictures show children's interactions with animals. In the first picture, I can see a father and his son feeding a horse. The son seems to be very excited. In the second picture, there is a teacher and three students. They are touching the snake. I think the teacher is probably teaching his students knowledge about snakes. The children looks very interested and excited."
+                },
+                {
+                    question: "How do the children feel in these situations?",
+                    duration: 45,
+                    sampleAnswer: "Children have different feelings when they feed a horse or play with a snake. Feeding a horse can make them happy and excited. They can touch the horse's fur and feel its warmth. Playing with a snake can make them scared and curious. They can feel the snake's scales and its coldness. They can also watch the snake's movements and its tongue."
+                },
+                {
+                    question: "Why is it important to learn about animals?",
+                    duration: 45,
+                    sampleAnswer: "It is important to learn about animals because they are part of our world. Animals can teach us many things, like how to care for others, how to adapt to different environments, and how to respect nature. Animals also have different roles in the ecosystem, such as providing food and controlling pests. Learning about animals can help us understand how we can protect them."
+                }
+            ]
+        },
+        {
+            id: 'sp3_leisure_activities',
+            title: 'Chủ đề 10: Leisure Activities',
+            image1Src: 'img/speaking-part3/leisure-museum.png',
+            image2Src: 'img/speaking-part3/leisure-zipline.png',
+            audioSrc: 'audio/speaking-part3/10.mp3',
+            tasks: [
+                {
+                    question: "Describe the 2 pictures.",
+                    duration: 45,
+                    sampleAnswer: "The two pictures show two different leisure activities. In the first picture, there is a woman, a boy and a girl. They are visiting the museum. On the contrary, in the second picture, I can see a boy. He is wearing a helmet and a seat belt. He is playing outdoor activities. I guess the boy is very active and wants to improve his health."
+                },
+                {
+                    question: "What are the benefits of these 2 activities?",
+                    duration: 45,
+                    sampleAnswer: "Visiting a museum and playing an outdoor activity are two fun and healthy ways to spend your free time. Visiting a museum can enrich your knowledge and culture. You can learn about history, art, science, and many other topics. Playing an outdoor activity can improve your physical and mental health. You can exercise your body, breathe fresh air, and enjoy nature."
+                },
+                {
+                    question: "It is easier to learn when we enjoy doing it. What do you think?",
+                    duration: 45,
+                    sampleAnswer: "I completely agree that it is easier to learn when we enjoy doing it. When we enjoy something, we pay more attention to it. We also remember it more easily. We feel happy and motivated to learn more. Learning is not boring or hard when we like it. That is why I think it is easier to learn when we enjoy doing it."
+                }
+            ]
+        },
+        // --- 2 CHỦ ĐỀ MỚI ---
+        {
+            id: 'sp3_team_individual_sports',
+            title: 'Chủ đề 11: Team vs Individual Sports',
+            image1Src: 'img/speaking-part3/sports-rowing.png',
+            image2Src: 'img/speaking-part3/sports-cycling.png',
+            audioSrc: 'audio/speaking-part3/11.mp3',
+            tasks: [
+                {
+                    question: "Describe the 2 pictures.",
+                    duration: 45,
+                    sampleAnswer: "The two pictures show two different types of sports activities including team sports and individual sports. In the first picture, I can see a group of four people. They are participating in a rowing race. On the contrary, in the second picture there is a male athlete in a bike jersey and helmet. He is cycling very fast. I guess he is trying to reach the finish line."
+                },
+                {
+                    question: "What are the difficulties in each sport?",
+                    duration: 45,
+                    sampleAnswer: "Each sport has its own difficulties. Rowing race is hard because you need to work with your team and keep the same pace. You also need to use a lot of strength to move the boat fast. Racing bike is hard because you need to balance on the bike and avoid obstacles. You also need to pedal fast to finish the race."
+                },
+                {
+                    question: "Why do people prefer team sports to individual sports?",
+                    duration: 45,
+                    sampleAnswer: "Some people like team sports more than individual sports because they enjoy working with others. They think it is more fun and rewarding to share goals, strategies, and achievements with their teammates. They also like the social aspect of team sports, such as making friends, supporting each other, and celebrating together."
+                }
+            ]
+        },
+        {
+            id: 'sp3_different_locations',
+            title: 'Chủ đề 12: Different Locations',
+            image1Src: 'img/speaking-part3/locations-mountain.png',
+            image2Src: 'img/speaking-part3/locations-beach.png',
+            audioSrc: 'audio/speaking-part3/12.mp3',
+            tasks: [
+                {
+                    question: "Describe the 2 pictures.",
+                    duration: 45,
+                    sampleAnswer: "The two pictures show two different locations. In the first picture, I can see a group with their backpacks on their backs. They are hiking through the mountains. On the contrary, in the second picture, I can see a blue beach and white sand with a clear blue sky. On the right of the picture, there are two chairs and an umbrella underneath a big coconut tree."
+                },
+                {
+                    question: "What are the attractions of these places?",
+                    duration: 45,
+                    sampleAnswer: "The mountain and the beach are two different places that have many attractions. The mountain is a place where you can enjoy nature, fresh air, and beautiful views. You can go hiking, camping, skiing, or snowboarding on the mountain. The beach is a place where you can relax, swim, and have fun. You can play in the sand, surf, or sunbathe on the beach."
+                },
+                {
+                    question: "What are the ways to protect natural beauty?",
+                    duration: 45,
+                    sampleAnswer: "There are many ways to protect natural beauty. Firstly, we must reduce pollution by using renewable energy, recycling, and avoiding using plastics. Secondly, it is important to conserve water and energy, using them wisely. Thirdly, we can plant trees and flowers to create habitats for animals and insects. Lastly, promoting sustainable tourism can also contribute to the protection of our natural beauty."
+                }
+            ]
+        },
+
+        // --- 2 CHỦ ĐỀ MỚI ---
+        {
+            id: 'sp3_enjoying_music',
+            title: 'Chủ đề 13: Enjoying Music',
+            image1Src: 'img/speaking-part3/music-concert.png',
+            image2Src: 'img/speaking-part3/music-home.png',
+            audioSrc: 'audio/speaking-part3/13.mp3',
+            tasks: [
+                {
+                    question: "Describe the 2 pictures.",
+                    duration: 45,
+                    sampleAnswer: "The two pictures show two different places to enjoy music. In the first picture, I can see a man wearing a black vest. He is standing on the stage and performing. I guess he is a famous singer because there are many people in front of him watching him perform. The atmosphere here is so vibrant. In the second picture, there is a man sitting on the sofa. He is wearing headphones. He looked very excited when listening to his favorite song."
+                },
+                {
+                    question: "Which do you prefer?",
+                    duration: 45,
+                    sampleAnswer: "I prefer listening to music at home rather than in a concert. Here are some of my reasons. First, I can choose the songs I like and play them as loud or as soft as I want. Second, I can relax on my couch or bed and enjoy the music without any distractions. Third, I can save money and time by not buying tickets or traveling to the concert venue. Fourth, I can invite my friends or family over and have a fun time together."
+                },
+                {
+                    question: "What are the benefits of listening to music?",
+                    duration: 45,
+                    sampleAnswer: "I think that listening to music has many benefits. Firstly, it can improve our mood, helping us feel happier and more positive. Secondly, music can help us escape from daily stress and help us relax and unwind. Additionally, music can enhance your memory and learning by stimulating different parts of your brain. These are why I think that listening to music has many benefits."
+                }
+            ]
+        },
+        {
+            id: 'sp3_places_to_eat_2',
+            title: 'Chủ đề 14: Places to eat (2)',
+            image1Src: 'img/speaking-part3/eating-home.png',
+            image2Src: 'img/speaking-part3/eating-restaurant-formal.png',
+            audioSrc: 'audio/speaking-part3/14.mp3',
+            tasks: [
+                {
+                    question: "Describe the 2 pictures.",
+                    duration: 45,
+                    sampleAnswer: "The two pictures show two different places to eat. In the first picture, I can see three women eating at home. I guess they are about 25 years old. They are wearing casual clothes. There are a lot of vegetables and fruit on the dining table. On the contrary, in the second picture, I see a group of four people consisting of two men and two women. They are eating at a restaurant. On a table, there are some glasses and a lot of food that looks very greasy."
+                },
+                {
+                    question: "Why people eat out?",
+                    duration: 45,
+                    sampleAnswer: "People eat out for many reasons. Firstly, they are too busy to cook at home. They may work long hours or have many activities to do. Secondly, they want to try new foods or enjoy different cuisines. They may like to explore different cultures or flavors. Finally, they want to socialize with others. They may have friends, family, or colleagues who invite them to eat out."
+                },
+                {
+                    question: "Which do you prefer?",
+                    duration: 45,
+                    sampleAnswer: "I prefer to eat at home because it is cheaper, healthier and more comfortable. I can cook whatever I want and enjoy it with my family or friends. I don’t have to worry about the quality of the food, the service or the hygiene of the restaurant. I also save time and money by not having to travel or tip. Eating at home is more relaxing and satisfying for me."
+                }
+            ]
+        },
+
+        // --- 2 CHỦ ĐỀ MỚI ---
+        {
+            id: 'sp3_housing_styles',
+            title: 'Chủ đề 15: Housing Styles',
+            image1Src: 'img/speaking-part3/housing-classic.png',
+            image2Src: 'img/speaking-part3/housing-modern.png',
+            audioSrc: 'audio/speaking-part3/15.mp3',
+            tasks: [
+                {
+                    question: "Describe the 2 pictures.",
+                    duration: 45,
+                    sampleAnswer: "Two pictures show two different housing styles including classic style and modern style. In the first picture, I can see a man wearing a suit and dress shoes. He is sitting at the foot of the stairs. The furniture is made of wood and the room looks like it lacks sunlight. On the contrary, in the second picture, there is a man wearing a blue shirt and blue jeans. He is sitting on the sofa and holding the remote control to choose the channel he likes. He looks very happy."
+                },
+                {
+                    question: "Which room do you prefer to live in?",
+                    duration: 45,
+                    sampleAnswer: "If someone asks me which room I prefer to live in, I would say a modern room. I like modern rooms because they are more comfortable, spacious and stylish. They have smart devices, cozy furniture and minimalist design. They make me feel relaxed and happy. Classic rooms are too old-fashioned, cluttered and boring for me. They have outdated appliances, heavy curtains and dark colors."
+                },
+                {
+                    question: "Why do people like decorating their houses?",
+                    duration: 45,
+                    sampleAnswer: "People like decorating their houses for many reasons. Firstly, they want to make their houses more comfortable and cozy. They choose colors, furniture, and accessories that match their personality and style. Secondly, they want to impress their guests and neighbors. They follow the latest trends and buy expensive items to show off their wealth and taste. Finally, decorating can also be a fun and creative activity."
+                }
+            ]
+        },
+        {
+            id: 'sp3_shopping_mother_daughter',
+            title: 'Chủ đề 16: Shopping with family',
+            image1Src: 'img/speaking-part3/shopping-jewelry.png',
+            image2Src: 'img/speaking-part3/shopping-clothes-child.png',
+            audioSrc: 'audio/speaking-part3/16.mp3',
+            tasks: [
+                {
+                    question: "Describe the 2 pictures.",
+                    duration: 45,
+                    sampleAnswer: "In the first picture, I can see a woman with her daughter. The woman is wearing a white shirt and her daughter is wearing a blue striped t-shirt. They were looking at the jewelry in the display case. I guess the woman is buying jewelry for her daughter. On the contrary, in the second picture, a woman is trying on clothes for her daughter. The little girl seemed to be excited when buying clothes for herself. Around them, there are a lot of clothes hanging on racks."
+                },
+                {
+                    question: "Describe the difference between the two pictures.",
+                    duration: 45,
+                    sampleAnswer: "The two pictures show different ways that a mother and her child spend their money. In picture one, they go to a jewelry store and buy expensive items, such as rings and necklaces. This suggests that they have a lot of money and like to show it off. In picture two, they go to a clothing store and buy basic items, such as shirts and pants. This suggests that they have a limited budget and prioritize their needs over their wants."
+                },
+                {
+                    question: "Why do people like to buy expensive things?",
+                    duration: 45,
+                    sampleAnswer: "People like to buy expensive things for different reasons. Firstly, people buy expensive things to show their status or wealth. They want to impress others or feel good about themselves. Secondly, they think they are better quality or more durable. They want to enjoy the benefits of the products or services they buy. Finally, they like them or they have a personal preference. They want to express their taste or style."
+                }
+            ]
+        },
+        // --- 2 CHỦ ĐỀ MỚI ---
+        {
+            id: 'sp3_city_vs_countryside',
+            title: 'Chủ đề 17: City vs Countryside',
+            image1Src: 'img/speaking-part3/living-countryside.png',
+            image2Src: 'img/speaking-part3/living-city.png',
+            audioSrc: 'audio/speaking-part3/17.mp3',
+            tasks: [
+                {
+                    question: "Tell me what you see in the two pictures.",
+                    duration: 45,
+                    sampleAnswer: "In the first picture, I can see a quiet countryside with mountains and trees. A person is sitting on the grass, enjoying nature near a small wooden barn. The weather looks sunny and calm. In the second picture, there are many people walking on a busy city street. The buildings are tall, and there are cars and bright sunlight. The two places look very different in atmosphere and lifestyle."
+                },
+                {
+                    question: "What are the differences of living in these two places?",
+                    duration: 45,
+                    sampleAnswer: "Living in the countryside is more peaceful and quiet. People can relax, breathe fresh air, and enjoy nature. Life is slower and less stressful. In the city, life is faster and more exciting. There are more job opportunities, schools, and things to do, but also more noise and traffic. Some people prefer peace, while others enjoy the busy life in the city."
+                },
+                {
+                    question: "What do you think are the characteristics of a good neighborhood?",
+                    duration: 45,
+                    sampleAnswer: "A good neighborhood should be clean, safe, and friendly. People should help and respect each other. There should be parks, shops, and schools nearby, so life is more convenient. It's also good to have quiet streets and green spaces to relax. When neighbors talk and care about each other, the place feels like home."
+                }
+            ]
+        },
+        {
+            id: 'sp3_house_vs_apartment',
+            title: 'Chủ đề 18: House vs Apartment',
+            image1Src: 'img/speaking-part3/housing-house.png',
+            image2Src: 'img/speaking-part3/housing-apartment.png',
+            audioSrc: 'audio/speaking-part3/18.mp3',
+            tasks: [
+                {
+                    question: "Tell me what you see in the two pictures.",
+                    duration: 45,
+                    sampleAnswer: "In the first picture, I see a happy family sitting on the grass in front of a house. There are two children and their parents. The weather is nice and the house is big with a garden. In the second picture, I see a woman standing on the balcony of an apartment. She looks like she is enjoying the view or some fresh air. The building is tall and modern."
+                },
+                {
+                    question: "What are the differences between the situations in two pictures?",
+                    duration: 45,
+                    sampleAnswer: "The first picture shows a house with a garden, so the family has more space and privacy. The second picture shows a woman in an apartment, which is smaller and has less outdoor space. Living in a house feels more peaceful, while an apartment is more modern and maybe closer to the city."
+                },
+                {
+                    question: "Which situation do you prefer?",
+                    duration: 45,
+                    sampleAnswer: "I prefer the house in the first picture. I like nature and having a garden to relax. It's also better for a family with kids. There is more space to play and enjoy outdoor time. But apartments are good too if you live alone or work in the city."
+                }
+            ]
+        },
+         // --- 2 CHỦ ĐỀ MỚI ---
+        {
+            id: 'sp3_kinds_of_travel',
+            title: 'Chủ đề 19: Kinds of Travel',
+            image1Src: 'img/speaking-part3/travel-car.png',
+            image2Src: 'img/speaking-part3/travel-train.png',
+            audioSrc: 'audio/speaking-part3/19.mp3',
+            tasks: [
+                {
+                    question: "Tell me what you see in the two pictures.",
+                    duration: 45,
+                    sampleAnswer: "In the first picture, I see a happy group of three people in a car. One person is driving, and another is holding a map, maybe helping with directions. They look like they are on a road trip. In the second picture, there is a couple sitting on a train. They are relaxing, looking out the window, and enjoying the view. Both pictures show people traveling and spending time together."
+                },
+                {
+                    question: "What is the differences between these kinds of travel?",
+                    duration: 45,
+                    sampleAnswer: "Traveling by car gives you more freedom. You can stop whenever you want and choose your own route. It's great for short trips or traveling with family or friends. On the other hand, traveling by train is more relaxing. You don't have to drive, so you can rest, read, or look at the view. Also, trains are often faster and better for the environment. So, each way of travel has its own advantages."
+                },
+                {
+                    question: "What are benefits of traveling by train?",
+                    duration: 45,
+                    sampleAnswer: "Traveling by train has many benefits. First, it's comfortable because you don't have to drive. You can sit back, relax, and enjoy the scenery. Second, trains are often safer and more reliable than cars. Also, train stations are usually in the city center, so it's easy to get around. Another big advantage is that it's better for the environment, as trains use less fuel than cars."
+                }
+            ]
+        },
+        {
+            id: 'sp3_relationships_with_animals',
+            title: 'Chủ đề 20: Relationships with Animals',
+            image1Src: 'img/speaking-part3/animals-monkeys.png',
+            image2Src: 'img/speaking-part3/animals-whale.png',
+            audioSrc: 'audio/speaking-part3/20.mp3',
+            tasks: [
+                {
+                    question: "Tell me what you see in the two pictures.",
+                    duration: 45,
+                    sampleAnswer: "In the first picture, I see a man surrounded by many small monkeys. The monkeys are climbing on him and seem very friendly. He looks happy and is probably in a zoo or a forest. In the second picture, some people are on a boat and touching a big whale. They look excited and are taking photos. Both pictures show people having special experiences with animals in nature."
+                },
+                {
+                    question: "How would you react in these two situations?",
+                    duration: 45,
+                    sampleAnswer: "If I were in the first picture, I might be surprised at first, but I would probably enjoy playing with the monkeys. It looks like fun. In the second picture, I would be very excited to see a whale up close. I think I'd feel a little scared too, because the whale is so big. But overall, I would love both experiences because I like animals and enjoy being close to nature."
+                },
+                {
+                    question: "In what ways can people benefit from relationships with animals?",
+                    duration: 45,
+                    sampleAnswer: "People can benefit from animals in many ways. Animals can help us feel happy and relaxed. Pets like dogs or cats can give us love and make us feel less lonely. Being around animals can reduce stress and improve our mood. Also, animals can teach us to be kind, responsible, and patient. Some animals, like guide dogs, can help people with disabilities."
+                }
+            ]
+        },
+        // --- 2 CHỦ ĐỀ MỚI ---
+        {
+            id: 'sp3_ways_of_exercising',
+            title: 'Chủ đề 21: Ways of Exercising',
+            image1Src: 'img/speaking-part3/exercise-gym.png',
+            image2Src: 'img/speaking-part3/exercise-hiking.png',
+            audioSrc: 'audio/speaking-part3/21.mp3',
+            tasks: [
+                {
+                    question: "Tell me what you see in the two pictures.",
+                    duration: 45,
+                    sampleAnswer: "In the first picture, there's a man working out at the gym. He is lifting weights and looks very focused. In the second picture, I see two people hiking outdoors. They are walking on a mountain trail surrounded by trees and nature. While the first picture shows indoor exercise, the second shows outdoor physical activity in a natural environment."
+                },
+                {
+                    question: "What are the differences between exercising in these ways?",
+                    duration: 45,
+                    sampleAnswer: "Exercising in a gym helps people build strength by using equipment and following a fixed routine. It's great for muscle training. In contrast, hiking is done outdoors and gives people a chance to enjoy nature while moving. It's more relaxing and refreshing than gym workouts. So, one is more focused and controlled, while the other feels more natural and enjoyable."
+                },
+                {
+                    question: "Why should people take regular exercise?",
+                    duration: 45,
+                    sampleAnswer: "Regular exercise is important because it helps people stay fit and healthy. It can improve heart health, build stronger muscles, and help with weight control. Exercise also reduces stress and helps people sleep better. It gives more energy and makes people feel happier. Whether it's walking, swimming, or going to the gym, moving the body regularly brings both physical and mental health benefits."
+                }
+            ]
+        },
+        {
+            id: 'sp3_learning_environments',
+            title: 'Chủ đề 22: Learning Environments',
+            image1Src: 'img/speaking-part3/learning-outdoor.png',
+            image2Src: 'img/speaking-part3/learning-classroom.png',
+            audioSrc: 'audio/speaking-part3/22.mp3',
+            tasks: [
+                {
+                    question: "Tell me what you see in the two pictures.",
+                    duration: 45,
+                    sampleAnswer: "In the first picture, I see a group of children and a teacher learning outside in a garden. They look happy and are touching plants. In the second picture, some students are in a classroom. They are sitting at desks and raising their hands to answer a question. The teacher is standing at the front. Both pictures show children learning, but in different environments."
+                },
+                {
+                    question: "What are the benefits of learning in two different environments?",
+                    duration: 45,
+                    sampleAnswer: "Learning in different places gives students more experience. In class, they learn theory, like reading and math. Outside, they can do hands-on activities, like planting or doing experiments. This helps them understand better and keeps learning fun. It also helps students use their knowledge in real life."
+                },
+                {
+                    question: "Students should spend less time in class. What do you think?",
+                    duration: 45,
+                    sampleAnswer: "I agree a little. Students should not spend all their time in class. They also need time for sports, hobbies, and outdoor learning. This helps them stay healthy and more creative. But they still need enough time in class to learn important subjects like science and math."
+                }
+            ]
+        },
+
+        // --- 2 CHỦ ĐỀ MỚI ---
+        {
+            id: 'sp3_eating_together',
+            title: 'Chủ đề 23: Eating Together',
+            image1Src: 'img/speaking-part3/eating-restaurant-friends.png',
+            image2Src: 'img/speaking-part3/eating-picnic.png',
+            audioSrc: 'audio/speaking-part3/23.mp3',
+            tasks: [
+                {
+                    question: "Tell me what you see in the two pictures.",
+                    duration: 45,
+                    sampleAnswer: "In the first picture, a group of friends is sitting around a long table in a restaurant. They are smiling, enjoying their meal and drinks, and having fun together. In the second picture, there is a family of three – a man, a woman, and a little girl – having a picnic in a park. They're sitting on a red picnic blanket with lots of fruit and snacks, enjoying the sunshine and spending quality time together."
+                },
+                {
+                    question: "Do you prefer to have a meal in which picture?",
+                    duration: 45,
+                    sampleAnswer: "I prefer to have a meal like the second picture, where a family is having a picnic. I love eating outdoors in nature because it's peaceful and comfortable. I also enjoy spending time with close family members rather than being in a noisy restaurant. Eating in a park also allows me to relax, breathe fresh air, and enjoy simple food while talking and playing with loved ones. It feels more personal and meaningful to me."
+                },
+                {
+                    question: "Do you think it is necessary to eat together?",
+                    duration: 45,
+                    sampleAnswer: "Yes, I think it is very important to eat together. When people eat together, they have time to talk, laugh, and share their feelings. It helps to build stronger relationships, especially between family members. Eating together can also reduce stress and make people feel happier. In today's busy life, having meals together is a great way to stay connected and show care for one another."
+                }
+            ]
+        },
+        {
+            id: 'sp3_keeping_pets',
+            title: 'Chủ đề 24: Keeping Pets',
+            image1Src: 'img/speaking-part3/pets-cat.png',
+            image2Src: 'img/speaking-part3/pets-snake.png',
+            audioSrc: 'audio/speaking-part3/24.mp3',
+            tasks: [
+                {
+                    question: "Tell me what you see in the two pictures.",
+                    duration: 45,
+                    sampleAnswer: "In the first picture, there is a young woman holding a cat in her arms. She looks happy and relaxed, standing in a modern kitchen. The cat seems comfortable with her. In the second picture, I see a boy holding a snake. He is smiling and looks very confident. Both pictures show people who love and take care of their pets at home."
+                },
+                {
+                    question: "Why do people like to keep pets at home?",
+                    duration: 45,
+                    sampleAnswer: "People like to keep pets at home because pets can make them feel happy and less lonely. Pets such as cats or dogs are friendly and bring comfort, while others like snakes or fish can be fun to watch and take care of. Taking care of a pet also teaches people responsibility. Overall, pets help people relax, feel loved, and enjoy life more at home."
+                }
+            ]
+        },
+        // --- 3 CHỦ ĐỀ MỚI ---
+        {
+            id: 'sp3_weather_locations',
+            title: 'Chủ đề 25: Weather and Locations',
+            image1Src: 'img/speaking-part3/weather-winter.png',
+            image2Src: 'img/speaking-part3/weather-summer.png',
+            audioSrc: 'audio/speaking-part3/25.mp3',
+            tasks: [
+                {
+                    question: "Tell me what you see in the two pictures.",
+                    duration: 45,
+                    sampleAnswer: "In the first picture, a man and a woman are hiking in a snowy forest. They are dressed warmly in winter clothes and carrying walking sticks. It looks cold but enjoyable. In the second picture, a couple is sitting on beach chairs by the sea. The weather is sunny and bright, and they seem to be relaxing and enjoying their time together."
+                },
+                {
+                    question: "Between the two locations, where do you prefer? Why?",
+                    duration: 45,
+                    sampleAnswer: "I prefer the second location, which is the beach. I really enjoy warm, sunny weather because it makes me feel more relaxed and happy. I love sitting in the sun, listening to the sound of the waves, and feeling the sea breeze. It's a perfect place to take a break from work and enjoy nature. The beach also gives me a chance to wear light clothes and swim."
+                },
+                {
+                    question: "How do you think the weather affects people's emotions?",
+                    duration: 45,
+                    sampleAnswer: "I think the weather can strongly affect how people feel. For example, sunny and warm weather often makes people feel happier, more energetic, and more positive. On the other hand, cold or rainy weather can make people feel tired, sad, or unmotivated. Many people feel less active in the winter. That's why many prefer spring or summer."
+                }
+            ]
+        },
+        {
+            id: 'sp3_living_places',
+            title: 'Chủ đề 26: Places to live',
+            image1Src: 'img/speaking-part3/housing-apartment-building.png',
+            image2Src: 'img/speaking-part3/housing-bungalow.png',
+            audioSrc: 'audio/speaking-part3/26.mp3',
+            tasks: [
+                {
+                    question: "Tell me what you see in the two pictures.",
+                    duration: 45,
+                    sampleAnswer: "In the first picture I can see a big apartment building with many floors. I think young people like university students live here. It’s in the city. In the second picture I can see a small one floor house. It has big windows and a wooden door. There is grass outside. I think a small family lives here."
+                },
+                {
+                    question: "What would it be like living in these two places?",
+                    duration: 45,
+                    sampleAnswer: "In the first place it would be noisy, not private and crowded. There would be no garden. In the second place it would be more quiet, more relaxing and there is space for my children to play in the garden. I would like to live in the second place."
+                },
+                {
+                    question: "Which of these two places would it be better for old people to live in? Why?",
+                    duration: 45,
+                    sampleAnswer: "I think the second place would be better for old people to live in. In the second place there is no need to go up and down the stairs. It would be more comfortable for the old people to walk around. Also, because it’s a small house it would be easier for cleaning. There is an outside area where they have a picnic and grow flowers."
+                }
+            ]
+        },
+        {
+            id: 'sp3_reading_methods',
+            title: 'Chủ đề 27: Reading Methods',
+            image1Src: 'img/speaking-part3/reading-library-shelf.png',
+            image2Src: 'img/speaking-part3/reading-laptop.png',
+            audioSrc: 'audio/speaking-part3/27.mp3',
+            tasks: [
+                {
+                    question: "Tell me what you see in the two pictures.",
+                    duration: 45,
+                    sampleAnswer: "Looking at first picture, I can see two children: a boy and a girl. They are finding books at the library. Looking at the second one, there is a girl. She is writing something on paper and looking at the laptop. I guess she is reading material on laptop and taking note. The difference between two pictures is that one pictures is the traditional way of reading while the other is the modern way of reading."
+                },
+                {
+                    question: "Do you prefer reading printed books or e-books?",
+                    duration: 45,
+                    sampleAnswer: "I prefer reading e-books as it is convenient. E-books are portable so I can bring them to every place without being afraid of the heavy, but we cannot deny the benefits of printed books."
+                },
+                {
+                    question: "Does technology affect the way we read books?",
+                    duration: 45,
+                    sampleAnswer: "Yes, of course. The advance of technology is sharply changing our reading habit. In the past, people read printed books to gain knowledge or find material. Now, with the support of technology, people can read books on their laptop or phone. Many books are available on the Internet without charging fees, which allows people to read free books."
+                }
+            ]
+        }
+
+        // Thêm 38 chủ đề Part 3 khác vào đây
+    ],
+     // --- THÊM MỚI DỮ LIỆU PART 4 ---
+    part4: [
+        {
+            id: 'sp4_saving_up',
+            title: 'Chủ đề 1: Saving up to buy something',
+            audioSrc: 'audio/speaking-part4/1.mp3',
+            tasks: [
+                {
+                    question: "Tell me about a time you saved up something to buy something for yourself.",
+                    sampleAnswer: "I'd like to share about a time I saved money to buy something I really wanted. Last month, I wanted to buy a new cellphone because my old one was slow and cracked. I found a phone I liked online, but I didn't have enough money. So, I saved up by making coffee at home, cooking instead of eating out, and taking the bus. After a few weeks, I finally had enough money to buy it. When it arrived, I was really happy because it was fast, looked nice, and the camera was great."
+                },
+                {
+                    question: "How did you feel?",
+                    sampleAnswer: "Moving on to the second question, I felt very happy and excited when the phone arrived. I worked hard to save money, so it felt great to finally get what I wanted."
+                },
+                {
+                    question: "People spend too much money on trivial items. What do you think?",
+                    sampleAnswer: "As for the final question, I believe that people spend too much money on trivial items for a few reasons. First, they want to impress others with their wealth or status. Second, they are influenced by advertising and social media, which make them want things they don't really need. Third, they don't have a clear financial plan to help control their spending. That's why many people end up wasting money on things that aren't truly important."
+                }
+            ]
+        },
+        {
+            id: 'sp4_buying_expensive',
+            title: 'Chủ đề 2: Buying something expensive',
+            audioSrc: 'audio/speaking-part4/2.mp3',
+            tasks: [
+                {
+                    question: "Tell me about a time you bought something expensive.",
+                    sampleAnswer: "I'd like to share about a time when I bought something quite expensive. Last month, I wanted to buy a new cellphone because my old one was slow and cracked. I found a phone I liked online, but I didn't have enough money. So, I saved up by making coffee at home, cooking instead of eating out, and taking the bus. After a few weeks, I finally had enough money to buy it. When it arrived, I was really happy because it was fast, looked nice, and the camera was great."
+                },
+                {
+                    question: "What are the items you can buy at a high price?",
+                    sampleAnswer: "Moving on to the next question, there are many items that I can buy at a high price. Some examples are: jewelry, art, cars, houses, and designer clothes. These items are expensive because they are rare, beautiful, or have high quality. People who buy them want to show their wealth, taste, or style."
+                },
+                {
+                    question: "In your country, do people often buy high-priced items? Why?",
+                    sampleAnswer: "As for the final question, many people in my country buy expensive things for different reasons. First, they want to show that they have a good job or a lot of money, so others will respect them. Second, they believe expensive products have better quality and last longer. Third, buying something expensive can make people feel happy, proud, and more confident. That's why many choose to spend more on things they really like."
+                }
+            ]
+        },
+        // --- 3 CHỦ ĐỀ MỚI ---
+        {
+            id: 'sp4_stop_doing_something',
+            title: 'Chủ đề 3: Told to stop doing something',
+            audioSrc: 'audio/speaking-part4/3.mp3',
+            tasks: [
+                {
+                    question: "Tell me about a time when somebody told you to stop doing something.",
+                    sampleAnswer: "I'd like to share a time when someone told me to stop doing something. Last month, I was playing music loudly while studying, and my roommate told me to stop because it was disturbing them. I didn't realize it was bothering them at first, but then I understood. I felt a bit surprised at first, but I quickly turned the music down and apologized."
+                },
+                {
+                    question: "How did you feel about it?",
+                    sampleAnswer: "Now, moving on to the next question. At first, I felt a little surprised and embarrassed. But then I felt sorry for making my roommate uncomfortable. I was happy they told me in a polite way, so we could solve the problem quickly."
+                },
+                {
+                    question: "Do you think there are too many rules in modern life?",
+                    sampleAnswer: "As for the final question, I think modern life has a lot of rules. We have rules at school, work, and in public places. Even on social media, there are rules about what we can or cannot say. Some rules are helpful because they keep us safe and organized. But sometimes, there are too many rules, and they make people feel stressed or not free. I think it's important to have rules, but not too many. Balance is the key."
+                }
+            ]
+        },
+        {
+            id: 'sp4_important_choice',
+            title: 'Chủ đề 4: Making an important choice',
+            audioSrc: 'audio/speaking-part4/4.mp3',
+            tasks: [
+                {
+                    question: "Tell me about a time you had to make an important choice.",
+                    sampleAnswer: "I'd like to share a time when I had to make an important choice. Last week, I had to choose between going to a party or staying home to study for an important test. I really wanted to have fun with my friends, but I knew the test would affect my final grade. After thinking carefully, I decided to study first and join the party later. It was not an easy choice, but I felt proud because I did well on the test and still got to enjoy the party."
+                },
+                {
+                    question: "What do you feel when you have to make a difficult decision?",
+                    sampleAnswer: "Moving on to the next question, when I have to make a difficult decision, I feel nervous and worried. I don't want to choose the wrong thing. But after thinking carefully, I usually feel more sure and confident."
+                },
+                {
+                    question: "Can you give some general advice to people who have to make a choice?",
+                    sampleAnswer: "As for the final question, I believe that making a choice can be hard, but here are some simple tips. First, think about what is most important to you and what you really want. Second, look at the good and bad sides of each option and how they might affect your future. Third, talk to someone you trust for advice. Don't rush — take your time and trust yourself."
+                }
+            ]
+        },
+        {
+            id: 'sp4_new_course',
+            title: 'Chủ đề 5: Starting a new course',
+            audioSrc: 'audio/speaking-part4/5.mp3',
+            tasks: [
+                {
+                    question: "Tell me about a time when you started a new course or learned something new.",
+                    sampleAnswer: "I'd like to talk about a time when I started learning something new. Last month, I joined an online English course to improve my skills and learn more vocabulary. The course was fun and interesting. I met new friends from different countries and we practiced speaking together. The teacher gave useful tips and helped us with grammar and pronunciation. I felt more confident after that."
+                },
+                {
+                    question: "What makes a course enjoyable?",
+                    sampleAnswer: "Moving on to the next question, I think a good course needs three things. First, the teacher should make lessons fun and easy to follow. Second, the topics should be useful and interesting. Third, students should join in activities and talk with others. These things make learning more fun and effective."
+                },
+                {
+                    question: "Why do people choose to do new courses?",
+                    sampleAnswer: "As for the final question, I believe that people join new courses for many reasons. First, they want to learn new skills or get better at something. Second, they may want to explore a new hobby or topic. Third, they want to advance their careers or get a better job. Finally, they want to challenge themselves or grow personally."
+                }
+            ]
+        },
+        // --- 3 CHỦ ĐỀ MỚI ---
+        {
+            id: 'sp4_long_journey',
+            title: 'Chủ đề 6: A long journey',
+            audioSrc: 'audio/speaking-part4/6.mp3',
+            tasks: [
+                {
+                    question: "Tell me about a time you went on a long journey/ you traveled to somewhere new.",
+                    sampleAnswer: "I'd like to talk about a time when I went on a long journey. Last year, I went on a trip to Vung Tau with three close friends. We left early in the morning and drove for about three hours. The weather was sunny and nice. On the way, we talked, listened to music, and laughed a lot, so the trip felt short. We stopped at a small café to rest and take some photos. When we arrived, we went to the beach, played in the water, and ate delicious seafood. It was a fun trip with many good memories."
+                },
+                {
+                    question: "How did you feel about it?",
+                    sampleAnswer: "Moving on to the next question, I felt happy and relaxed on the trip. I had a lot of fun with my friends. I really enjoyed the nice views, tasty food, and quiet beach. It was a good way to take a break from studying."
+                },
+                {
+                    question: "What is the importance of understanding the customs where you travel?",
+                    sampleAnswer: "As for the final question, I believe that understanding the customs where you travel is important. First, it helps you show respect to local people. They feel happy when you understand their way of life. Second, it helps you avoid problems or mistakes, like saying or doing the wrong thing. Third, it makes your trip more fun. You can join local festivals, try new food, and talk to people more easily."
+                }
+            ]
+        },
+        {
+            id: 'sp4_internet_usage',
+            title: 'Chủ đề 7: Using the Internet',
+            audioSrc: 'audio/speaking-part4/7.mp3',
+            tasks: [
+                {
+                    question: "What are different ways you use Internet?",
+                    sampleAnswer: "To be honest, I often use the internet when I want to relax. I like watching movies, listening to music, and enjoying game shows online. I also use the internet for studying. I'm a final-year student, so I need to look for books and research articles. Lastly, I use the internet to stay in touch with my family and friends through apps like Facebook and Zalo."
+                },
+                {
+                    question: "How do you feel when you use the Internet?",
+                    sampleAnswer: "Now, moving on to the second question, I would say that most of the time, I feel relaxed and happy, especially when I watch funny videos or chat with my friends. However, if I spend too much time online, I sometimes feel tired or distracted."
+                },
+                {
+                    question: "Some people say that the Internet has a bad impact on our lives. What do you think?",
+                    sampleAnswer: "As for the final question, I believe that the Internet has both good and bad effects. It helps us stay connected, learn new things, and enjoy free time with music or videos. It's also useful for studying and working. However, using it too much can waste time and affect our health. Some people become addicted or see bad content online. So, we should use the Internet in a smart and balanced way."
+                }
+            ]
+        },
+        {
+            id: 'sp4_reading_a_good_book',
+            title: 'Chủ đề 8: Reading a good book',
+            audioSrc: 'audio/speaking-part4/8.mp3',
+            tasks: [
+                {
+                    question: "Tell me about a time you read a good book.",
+                    sampleAnswer: "I really love reading books, especially ones that teach me something new. A time I read a good book was when I read How to Be Rich by Napoleon Hill last week. It's a famous book that shares the secrets of successful people and how they built their wealth. It inspired me to set goals, work hard, and stay positive. I learned a lot from it, and I think it's great for anyone who wants to improve their life."
+                },
+                {
+                    question: "How do you feel when you read books for pleasure?",
+                    sampleAnswer: "Now, moving on to the second question. When I read for pleasure, I feel relaxed and happy. Reading helps me forget about stress and enjoy the present moment. I also feel curious and excited because I often discover new ideas or learn something interesting. It's a great way to relax after a long, busy day."
+                },
+                {
+                    question: "Some people love watching films more than reading books. What do you think?",
+                    sampleAnswer: "As for the final question, I believe that many people prefer watching films over reading books for a few reasons. First, films are more visually exciting — they have sound, color, and movement, which make the story easier to follow. Second, movies clearly show emotions through the actors' faces and voices. Also, watching a film is more convenient than reading, especially when people are tired. That's why I think films are a fun and easy way to enjoy stories and learn something new."
+                }
+            ]
+        },
+        // --- 5 CHỦ ĐỀ MỚI ---
+        {
+            id: 'sp4_extreme_sport',
+            title: 'Chủ đề 9: An extreme sport',
+            audioSrc: 'audio/speaking-part4/9.mp3',
+            tasks: [
+                {
+                    question: "Tell me about a time you did or saw someone do an extreme sport.",
+                    sampleAnswer: "I'd like to share a time I did an extreme sport. The last time I did one was two weeks ago, when I went skydiving with my friends. We jumped out of a plane at 10,000 feet and felt so many emotions during the free fall. After about a minute, we opened our parachutes and enjoyed the amazing view below. It was peaceful and beautiful. I felt like I was flying."
+                },
+                {
+                    question: "How did you feel?",
+                    sampleAnswer: "Now, moving on to the second question. I felt really great. At first, I was a little scared, but then I felt excited and free. It was like flying in the sky. I forgot all my worries and just enjoyed the moment. It was one of the best feelings I've ever had."
+                },
+                {
+                    question: "Only adults should be allowed to do extreme sports?",
+                    sampleAnswer: "As for the final question, I don't think only adults should do extreme sports. Young people can enjoy them too, as long as they are trained and guided by professionals. These sports can help people become more brave and confident. Of course, safety is very important. If people follow the rules and wear the right equipment, they can do it safely at any age."
+                }
+            ]
+        },
+        {
+            id: 'sp4_work_of_art',
+            title: 'Chủ đề 10: A work of art',
+            audioSrc: 'audio/speaking-part4/10.mp3',
+            tasks: [
+                {
+                    question: "Tell me about a time you saw a work of art.",
+                    sampleAnswer: "I'd like to talk about a time when I saw a beautiful work of art. Last week, I visited a museum and saw a famous painting called Starry Night by Vincent van Gogh. It shows a quiet village at night, with big stars and a moon shining in a swirling sky. The whole picture feels like a dream. The colors were strong and the sky looked like it was moving."
+                },
+                {
+                    question: "How did you feel about it?",
+                    sampleAnswer: "Moving on to the next question, I felt calm and amazed. The painting made me think deeply, but also feel peaceful inside. It was really beautiful."
+                },
+                {
+                    question: "Can we teach other people creativity?",
+                    sampleAnswer: "As for the final question, I think that creativity can be taught. First, people can learn by practicing and watching how others solve problems. They can join art classes or try new things. Second, we can teach methods like brainstorming or thinking outside the box to help them get new ideas. Finally, we can inspire creativity by sharing our own ideas and giving support."
+                }
+            ]
+        },
+        {
+            id: 'sp4_amusement_park',
+            title: 'Chủ đề 11: Amusement park',
+            audioSrc: 'audio/speaking-part4/11.mp3',
+            tasks: [
+                {
+                    question: "Tell me about the last time you went to the amusement park.",
+                    sampleAnswer: "I'd like to talk about the last time I went to the amusement park. It was two months ago on a sunny day, and I went with my best friend. We had so much fun riding the roller coaster, the Ferris wheel, and the bumper cars. We also ate cotton candy, popcorn, and ice cream. We laughed a lot and took many pictures."
+                },
+                {
+                    question: "How did you feel?",
+                    sampleAnswer: "Moving on to the next question, very happy and excited during the trip. I enjoyed the rides, the snacks, and the time with my friend. It was truly a great day."
+                },
+                {
+                    question: "Do people in your country often visit amusement parks?",
+                    sampleAnswer: "As for the final question, I think people often go to amusement parks, especially on holidays or for special events. First, these parks offer fun activities for all ages, like rides, games, and shows, so they attract both families and groups of friends. Second, it's a fun way to choose to celebrate birthdays or special events. Third, it's a fun way to relax and enjoy time together after a busy week."
+                }
+            ]
+        },
+        {
+            id: 'sp4_different_generations',
+            title: 'Chủ đề 12: Different generations',
+            audioSrc: 'audio/speaking-part4/12.mp3',
+            tasks: [
+                {
+                    question: "Tell about a time you were with someone older or younger than you.",
+                    sampleAnswer: "I'd like to talk about a time I was with someone older than me. Last year, I spent a weekend with my grandmother at her house in the countryside. We cooked together, walked around her garden, and talked a lot. She told me stories about her life when she was young, and I found them really interesting."
+                },
+                {
+                    question: "What do you feel to be with that person?",
+                    sampleAnswer: "Now, moving on to the second question, I felt warm and happy. My grandmother is very kind and caring. I also felt lucky to spend time with her and learn from her experiences. She gave me good advice and made me feel relaxed, like I could tell her anything."
+                },
+                {
+                    question: "How do people from different generations learn from each other?",
+                    sampleAnswer: "And finally, I think young people can learn about the past, life skills, and values from older people. On the other hand, older people can learn about technology, new trends, or modern ways of thinking from the younger generation. Sharing time and listening to each other is the best way to learn and understand more."
+                }
+            ]
+        },
+        {
+            id: 'sp4_visiting_someone',
+            title: 'Chủ đề 13: Visiting someone',
+            audioSrc: 'audio/speaking-part4/13.mp3',
+            tasks: [
+                {
+                    question: "Describe a time when you visited someone.",
+                    sampleAnswer: "I'd like to talk about a time when I visited someone. Last summer, I visited my best friend who had just moved to a new house in the countryside. The area was quiet and green, with a nice garden and a river nearby. We spent the whole day cooking, talking, and riding bicycles around the village. It was a fun and relaxing day."
+                },
+                {
+                    question: "What do you think about having unexpected visitors?",
+                    sampleAnswer: "Now, moving on to the second question, to be honest, I think it depends. If I'm free and the house is clean, I feel happy to welcome them. It's a nice surprise. But if I'm busy or tired, it can be a little stressful. So I think it's better if people send a quick message before coming, even if they are close friends or family."
+                },
+                {
+                    question: "Some people like to live in small communities while others like to live in big cities. What is your opinions?",
+                    sampleAnswer: "And finally, in my opinion, living in a small community is better for me. It's quieter, safer, and people are more friendly. You can feel like part of a family. Big cities have more jobs and modern services, but they are crowded and noisy. So I prefer the peaceful life in a small place."
+                }
+            ]
+        },
+        // --- 4 CHỦ ĐỀ MỚI ---
+        {
+            id: 'sp4_surrounded_by_nature',
+            title: 'Chủ đề 14: Surrounded by nature',
+            audioSrc: 'audio/speaking-part4/14.mp3',
+            tasks: [
+                {
+                    question: "Tell me about a time you spent surrounded by nature.",
+                    sampleAnswer: "I'd like to talk about a time I spent surrounded by nature. Last summer, I went camping with my friends in a national park. We stayed in a small tent near a lake, surrounded by trees, flowers and birds. In the morning, we walked in the forest, listened to birds singing, and watched the sunrise. At night, we made a fire and looked at the stars. It was very quiet and peaceful, and I felt really close to nature."
+                },
+                {
+                    question: "How do you feel afterwards?",
+                    sampleAnswer: "Moving on to the second question, after that trip, I felt relaxed and happy. Being in nature helped me forget all the stress from studying and daily life. I also felt healthier because we walked a lot and breathed fresh air. I think spending time in nature is very good for both body and mind."
+                },
+                {
+                    question: "How can people be encouraged to protect and preserve nature?",
+                    sampleAnswer: "And finally, I think education is the most important. People need to learn why nature is important and how to take care of it. Schools should teach students about the environment. Also, governments can make laws to protect natural areas. And finally, we can all do small things, like not littering, saving water, or planting trees."
+                }
+            ]
+        },
+        {
+            id: 'sp4_sports_game',
+            title: 'Chủ đề 15: A sports game',
+            audioSrc: 'audio/speaking-part4/15.mp3',
+            tasks: [
+                {
+                    question: "Tell me a sports game you went to watched or watched on TV?",
+                    sampleAnswer: "I'd like to talk about a football match I watched on TV last year. I watched a football match on TV between Vietnam and Thailand. I watched it with my family at home. It was an exciting game, and we were all cheering for Vietnam. The players ran fast, passed the ball well, and worked as a team. The match ended in a 2-2 draw, but it was still fun to watch. I felt proud of my country."
+                },
+                {
+                    question: "How did you feel about watching it?",
+                    sampleAnswer: "Moving on to the next question, I was so happy and felt proud. Even though I wasn't there, watching it on TV was still thrilling, and I really enjoyed the experience."
+                },
+                {
+                    question: "Do sporting events always bring out the best in people?",
+                    sampleAnswer: "As for the final question, I think that sporting events often bring out the best in people. First, they help create a strong community spirit. People come together to cheer for their team and share the fun. Second, sports teach teamwork, respect, and fair play. Third, watching or playing sports helps people feel happy and forget stress. Most people enjoy sports in a positive way and feel more connected with others."
+                }
+            ]
+        },
+        {
+            id: 'sp4_old_building',
+            title: 'Chủ đề 16: An old building',
+            audioSrc: 'audio/speaking-part4/16.mp3',
+            tasks: [
+                {
+                    question: "Tell me about a time when you visited an old building.",
+                    sampleAnswer: "I visited an old building last year when I went to Ho Chi Minh City in Vietnam. It was the Duc Ba church. The building is over 100 years old and it has a beautiful style. I was amazed by the red bricks, the stained glass windows and the two tall towers. The church was very crowded with tourists and locals, but I still felt a sense of peace and history inside. I learned that the church is a symbol of the city and a cultural heritage of Vietnam."
+                },
+                {
+                    question: "How did you feel about it?",
+                    sampleAnswer: "I felt amazed when I visited the Duc Ba Church. It was so old and beautiful. I liked the architecture and the stained glass windows. I learned a lot about the history and culture of Vietnam."
+                },
+                {
+                    question: "Why do you think it is important to look after old building?",
+                    sampleAnswer: "I think it is important to look after old buildings for three reasons. First, old buildings are part of our history and culture. They tell us stories about the past and help us understand where we came from. Second, old buildings are beautiful and special. They make our cities and towns more interesting and attractive. Third, old buildings can also be useful for different purposes, such as museums, hotels, or offices."
+                }
+            ]
+        },
+        {
+            id: 'sp4_getting_lost',
+            title: 'Chủ đề 17: Getting lost',
+            audioSrc: 'audio/speaking-part4/17.mp3',
+            tasks: [
+                {
+                    question: "Tell me about a time when you got lost.",
+                    sampleAnswer: "The last time I got lost was last year. When I had a business trip to Ho Chi Minh City, I wanted to visit Duc Ba Church. It was a beautiful church in Ho Chi Minh City, Vietnam. I wanted to explore the surrounding area, so I walked around without a map. I realized that I didn't know where I was or how to get back to the church. The streets were crowded and noisy, and I couldn't find anyone who spoke English. I felt scared and confused. Luckily, I had my phone with me and I was able to call a taxi."
+                },
+                {
+                    question: "How did you feel about it?",
+                    sampleAnswer: "I was very scared and confused. I didn't know where to go or who to ask for help. I felt alone and helpless. It was a lesson for me to be more careful when traveling in unfamiliar places."
+                },
+                {
+                    question: "What do people usually do when they get lost?",
+                    sampleAnswer: "When people get lost, they usually try to find their way back by using their phone. They can use a map app or a GPS to see where they are and where they need to go. Sometimes, they can also call someone who knows the place better and ask for directions. If they don't have a phone, they might ask other people around them for help. They can also check for signs or landmarks that can guide them to their destination."
+                }
+            ]
+        }
+    ]
 };

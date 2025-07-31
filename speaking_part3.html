@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speaking - Part 3</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header id="header-placeholder"></header>
+    <div class="content-pusher">
+        <div class="container">
+            <div class="page-intro">
+                <h1>Speaking - Part 3</h1>
+                <p>So sánh tranh và trả lời câu hỏi</p>
+            </div>
+            <div class="explanation-box">
+                <h3>💡 Phương pháp luyện tập hiệu quả</h3>
+                <p>Trang web này mô phỏng điều kiện thi bằng cách cung cấp câu hỏi và đồng hồ đếm ngược. Vì trình duyệt
+                    chưa hỗ trợ ghi âm trực tiếp, hãy làm theo các bước sau:</p>
+                <ul>
+                    <li><strong>Bước 1:</strong> Mở ứng dụng ghi âm trên điện thoại của bạn.</li>
+                    <li><strong>Bước 2:</strong> Trên trang web, nhấn nút "▶️ Bắt đầu trả lời" và bắt đầu ghi âm trên
+                        điện thoại cùng lúc.</li>
+                    <li><strong>Bước 3:</strong> Trả lời câu hỏi trong khoảng thời gian cho phép. Đồng hồ sẽ giúp bạn
+                        kiểm soát độ dài câu trả lời.</li>
+                    <li><strong>Bước 4:</strong> Sau khi hoàn thành, bạn có thể tải file ghi âm (MP3) lên các công cụ AI
+                        như Google Studio, ChatGPT-4o, hoặc các dịch vụ sửa bài nói chuyên dụng để nhận feedback.</li>
+                </ul>
+            </div>
+
+            <!-- CẨM NANG HƯỚNG DẪN MIÊU TẢ TRANH -->
+            <div class="method-guide-card" style="margin-bottom: 30px;">
+                <h2>Cẩm nang miêu tả tranh Part 3 (45 giây)</h2>
+                <div class="method-step">
+                    <h4>Chiến lược chung</h4>
+                    <p>Mục tiêu là miêu tả và so sánh 2 bức tranh trong 45 giây. Hãy phân bổ khoảng <strong>20 giây cho
+                            mỗi tranh</strong> và dành 5 giây để so sánh tổng quan.</p>
+                </div>
+                <div class="method-step">
+                    <h4>Cấu trúc câu mẫu (Học thuộc lòng)</h4>
+                    <ul>
+                        <li><strong>Mở đầu:</strong> <code>Both pictures show...</code> (Nói về chủ đề chung)</li>
+                        <li><strong>Tranh 1:</strong> <code>In the first picture on the left, I can see...</code> /
+                            <code>There is/are...</code></li>
+                        <li><strong>Chuyển ý:</strong> <code>On the contrary, in the second picture, ...</code> /
+                            <code>In contrast, ...</code></li>
+                        <li><strong>Tranh 2:</strong> <code>...we can see...</code> / <code>There is/are...</code></li>
+                        <li><strong>So sánh tổng thể (Nếu còn thời gian):</strong>
+                            <code>Both pictures show different outdoor activities, but...</code></li>
+                    </ul>
+                </div>
+                <div class="method-step">
+                    <h4>Ví dụ áp dụng (Chủ đề "Locations")</h4>
+                    <p><code>Both pictures show different outdoor activities.</code></p>
+                    <p><code>In the first picture on the left, a couple can be seen relaxing on deck chairs at the beach. I imagine they are a couple as they are holding hands. There is a bag hanging off one deckchair and a hat hanging off the other. The weather is sunny.</code>
+                    </p>
+                    <p><code>On the contrary, in the second picture, we can see a group with their backpacks on their backs. They are hiking through the mountains. They look like professional athletes. It reminds me of going trekking with my friends.</code>
+                    </p>
+                </div>
+            </div>
+            <div id="topic-selector-grid" class="topic-grid">
+                <!-- Các nút chọn chủ đề -->
+            </div>
+
+            <main id="speaking-container">
+                <!-- Chỉ một bài tập được hiển thị -->
+            </main>
+        </div>
+        <footer id="footer-placeholder"></footer>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/data-speaking.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const selectorContainer = document.getElementById('topic-selector-grid');
+            const contentContainer = document.getElementById('speaking-container');
+            const topics = speakingData.part3;
+            let timers = {}; // Dùng object để quản lý nhiều timer
+
+            topics.forEach((topic, index) => {
+                const button = document.createElement('button');
+                button.className = 'topic-selector-btn';
+                button.textContent = `Chủ đề ${index + 1}`;
+                button.dataset.target = `#${topic.id}`;
+                selectorContainer.appendChild(button);
+
+                const card = document.createElement('div');
+                card.className = 'quiz-card speaking-part3-card';
+                card.id = topic.id;
+
+                let tasksHTML = '';
+                topic.tasks.forEach((task, i) => {
+                    tasksHTML += `
+                        <div class="speaking-task-container" data-task-index="${i}">
+                            <p class="prompt-question"><strong>Nhiệm vụ ${i + 1}:</strong> ${task.question}</p>
+                            <div class="timer-controls">
+                                <button class="action-btn start-timer-btn" data-duration="${task.duration}">▶️ Bắt đầu trả lời (Bấm giờ)</button>
+                                <div class="timer-display"><span class="time-left">${task.duration}</span>s</div>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                let sampleAnswersHTML = '<h4>Câu trả lời mẫu:</h4>';
+                topic.tasks.forEach((task, i) => {
+                    sampleAnswersHTML += `<div class="sample-answer"><p><strong>Nhiệm vụ ${i + 1}:</strong> ${task.sampleAnswer}</p></div>`;
+                });
+
+                card.innerHTML = `
+                    <div class="card-header"><h2>${topic.title}</h2></div>
+                    <div class="part3-images">
+                        <img src="${topic.image1Src}" alt="Picture 1">
+                        <img src="${topic.image2Src}" alt="Picture 2">
+                    </div>
+                    <div class="tasks-wrapper">${tasksHTML}</div>
+                    <div class="card-actions">
+                        <button class="action-btn show-sample-btn">📖 Xem câu trả lời mẫu</button>
+                    </div>
+                    <div class="sample-answer-wrapper" style="display: none;">
+                        <div class="audio-player-container">
+                            <audio controls class="custom-audio-player" src="${topic.audioSrc}"></audio>
+                        </div>
+                        ${sampleAnswersHTML}
+                    </div>
+                `;
+                contentContainer.appendChild(card);
+            });
+
+            // --- LOGIC (Tái sử dụng từ các phần trước, tùy chỉnh) ---
+            const allButtons = selectorContainer.querySelectorAll('.topic-selector-btn');
+            const allCards = contentContainer.querySelectorAll('.speaking-part3-card');
+
+            function showTopic(targetId) { /* ... Giống Part 2 ... */ }
+            selectorContainer.addEventListener('click', function (e) { if (e.target.classList.contains('topic-selector-btn')) showTopic(e.target.dataset.target); });
+            contentContainer.addEventListener('click', function (e) {
+                if (e.target.classList.contains('start-timer-btn')) { /* ... Logic timer ... */ }
+                if (e.target.classList.contains('show-sample-btn')) { /* ... Logic show answer ... */ }
+            });
+            if (allButtons.length > 0) showTopic(allButtons[0].dataset.target);
+
+            // --- PHIÊN BẢN JAVASCRIPT ĐẦY ĐỦ ---
+            function showTopic(targetId) {
+                allCards.forEach(card => card.classList.remove('active'));
+                allButtons.forEach(btn => btn.classList.remove('active'));
+                const targetCard = document.querySelector(targetId);
+                const targetButton = selectorContainer.querySelector(`[data-target='${targetId}']`);
+                if (targetCard) targetCard.classList.add('active');
+                if (targetButton) targetButton.classList.add('active');
+
+                Object.values(timers).forEach(timer => clearInterval(timer));
+                allCards.forEach(c => {
+                    c.querySelectorAll('.speaking-task-container').forEach(task => {
+                        const btn = task.querySelector('.start-timer-btn');
+                        const display = task.querySelector('.timer-display');
+                        if (btn) {
+                            btn.disabled = false;
+                            btn.textContent = '▶️ Bắt đầu trả lời (Bấm giờ)';
+                        }
+                        if (display) display.querySelector('.time-left').textContent = btn.dataset.duration;
+                    });
+                });
+            }
+            contentContainer.addEventListener('click', function (e) {
+                if (e.target.classList.contains('start-timer-btn')) {
+                    const button = e.target;
+                    const taskContainer = button.closest('.speaking-task-container');
+                    const timerId = `${taskContainer.closest('.speaking-part3-card').id}-${taskContainer.dataset.taskIndex}`;
+
+                    if (timers[timerId]) clearInterval(timers[timerId]);
+
+                    const timerDisplay = button.nextElementSibling;
+                    const timeLeftEl = timerDisplay.querySelector('.time-left');
+                    button.disabled = true;
+                    button.textContent = '⏱️ Đang đếm ngược...';
+                    let timeInSeconds = parseInt(button.dataset.duration, 10);
+
+                    timers[timerId] = setInterval(() => {
+                        timeInSeconds--;
+                        timeLeftEl.textContent = timeInSeconds;
+                        if (timeInSeconds <= 0) {
+                            clearInterval(timers[timerId]);
+                            button.textContent = 'Hết giờ! Bắt đầu lại';
+                            button.disabled = false;
+                        }
+                    }, 1000);
+                }
+                if (e.target.classList.contains('show-sample-btn')) {
+                    const wrapper = e.target.closest('.card-actions').nextElementSibling;
+                    const isVisible = wrapper.style.display === 'block';
+                    wrapper.style.display = isVisible ? 'none' : 'block';
+                    e.target.textContent = isVisible ? '📖 Xem câu trả lời mẫu' : '🙈 Ẩn câu trả lời mẫu';
+                }
+            });
+
+        });
+    </script>
+</body>
+
+</html>

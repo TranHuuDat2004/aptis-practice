@@ -33,7 +33,33 @@
                         như Google Studio, ChatGPT-4o, hoặc các dịch vụ sửa bài nói chuyên dụng để nhận feedback.</li>
                 </ul>
             </div>
+            <!-- THAY THẾ HỘP GIẢI THÍCH Ở ĐÂY -->
+            <div class="method-guide-card" style="margin-bottom: 30px;">
+                <h2>Chiến lược thi Part 1</h2>
+                <p>Bạn sẽ trả lời 3 câu hỏi cá nhân, mỗi câu trong 30 giây. Mục tiêu là trả lời trôi chảy và phát triển
+                    ý một cách tự nhiên.</p>
 
+                <h4>Chiến lược trong phòng thi:</h4>
+                <ul>
+                    <li><strong>Đừng lo lắng về thời gian:</strong> 30 giây là đủ dài. Khi thấy đồng hồ đếm ngược, hãy
+                        giữ bình tĩnh, hít thở sâu và tập trung vào câu hỏi.</li>
+                    <li><strong>Sử dụng "Bàn tay 5W1H":</strong> Nếu "bí" ý, hãy xòe bàn tay ra và tự hỏi:
+                        <ul>
+                            <li><strong>What?</strong> (Cái gì?)</li>
+                            <li><strong>Where?</strong> (Ở đâu?)</li>
+                            <li><strong>When?</strong> (Khi nào?)</li>
+                            <li><strong>Who?</strong> (Với ai?)</li>
+                            <li><strong>Why?</strong> (Tại sao?)</li>
+                            <li><strong>How?</strong> (Như thế nào?)</li>
+                        </ul>
+                        Chỉ cần trả lời 2-3 trong số các câu hỏi này là bạn đã có một câu trả lời đầy đủ.
+                    </li>
+                    <li><strong>Đừng cố nhớ, hãy sáng tạo:</strong> Bạn không cần phải kể đúng 100% sự thật.</li>
+                    <li> Hãy thoải mái <strong>"bịa" ra một câu chuyện ngắn</strong> sao cho nó phù hợp và dễ trả lời
+                        nhất với câu hỏi được đề ra. Giám khảo chỉ quan tâm đến khả năng sử dụng tiếng Anh của bạn,
+                        không phải tính xác thực của câu chuyện.</li>
+                </ul>
+            </div>
             <div class="page-intro">
                 <p>Chọn một chủ đề để bắt đầu luyện tập</p>
             </div>
@@ -109,7 +135,7 @@
             function showTopic(targetId) {
                 allCards.forEach(card => card.classList.remove('active'));
                 allButtons.forEach(btn => btn.classList.remove('active'));
-                
+
                 const targetCard = document.querySelector(targetId);
                 const targetButton = selectorContainer.querySelector(`[data-target='${targetId}']`);
 
@@ -118,7 +144,7 @@
             }
 
             // GÁN SỰ KIỆN CLICK CHO CÁC NÚT
-            selectorContainer.addEventListener('click', function(e) {
+            selectorContainer.addEventListener('click', function (e) {
                 if (e.target.classList.contains('topic-selector-btn')) {
                     showTopic(e.target.dataset.target);
                 }
@@ -131,11 +157,12 @@
 
             // LOGIC CŨ CHO TIMER VÀ NÚT XEM ĐÁP ÁN (hoạt động bên trong card)
             let activeTimer = null;
-            contentContainer.addEventListener('click', function(e) {
-                if (e.target.classList.contains('start-timer-btn')) { /* ... logic timer giữ nguyên ... */ if(activeTimer){clearInterval(activeTimer.intervalId);activeTimer.button.textContent='▶️ Bắt đầu trả lời (Bấm giờ)';activeTimer.button.disabled=false;activeTimer.timeLeftEl.textContent=activeTimer.button.dataset.duration;if(activeTimer.button===e.target){activeTimer=null;return}}const button=e.target;const duration=parseInt(button.dataset.duration,10);const timerDisplay=button.nextElementSibling;const timeLeftEl=timerDisplay.querySelector('.time-left');let timeLeft=duration;timeLeftEl.textContent=timeLeft;button.textContent='⏱️ Đang đếm ngược...';button.disabled=true;const intervalId=setInterval(()=>{timeLeft--;timeLeftEl.textContent=timeLeft;if(timeLeft<=0){clearInterval(intervalId);button.textContent='Hết giờ! Bắt đầu lại';button.disabled=false;activeTimer=null}},1000);activeTimer={button,intervalId,timeLeftEl}; }
-                if (e.target.classList.contains('show-sample-btn')) { /* ... logic xem đáp án giữ nguyên ... */ const button=e.target;const wrapper=button.closest('.card-actions').nextElementSibling;const isVisible=wrapper.style.display==='block';wrapper.style.display=isVisible?'none':'block';button.textContent=isVisible?'📖 Xem câu trả lời mẫu':'🙈 Ẩn câu trả lời mẫu'; }
+            contentContainer.addEventListener('click', function (e) {
+                if (e.target.classList.contains('start-timer-btn')) { /* ... logic timer giữ nguyên ... */ if (activeTimer) { clearInterval(activeTimer.intervalId); activeTimer.button.textContent = '▶️ Bắt đầu trả lời (Bấm giờ)'; activeTimer.button.disabled = false; activeTimer.timeLeftEl.textContent = activeTimer.button.dataset.duration; if (activeTimer.button === e.target) { activeTimer = null; return } } const button = e.target; const duration = parseInt(button.dataset.duration, 10); const timerDisplay = button.nextElementSibling; const timeLeftEl = timerDisplay.querySelector('.time-left'); let timeLeft = duration; timeLeftEl.textContent = timeLeft; button.textContent = '⏱️ Đang đếm ngược...'; button.disabled = true; const intervalId = setInterval(() => { timeLeft--; timeLeftEl.textContent = timeLeft; if (timeLeft <= 0) { clearInterval(intervalId); button.textContent = 'Hết giờ! Bắt đầu lại'; button.disabled = false; activeTimer = null } }, 1000); activeTimer = { button, intervalId, timeLeftEl }; }
+                if (e.target.classList.contains('show-sample-btn')) { /* ... logic xem đáp án giữ nguyên ... */ const button = e.target; const wrapper = button.closest('.card-actions').nextElementSibling; const isVisible = wrapper.style.display === 'block'; wrapper.style.display = isVisible ? 'none' : 'block'; button.textContent = isVisible ? '📖 Xem câu trả lời mẫu' : '🙈 Ẩn câu trả lời mẫu'; }
             });
         });
     </script>
 </body>
+
 </html>
