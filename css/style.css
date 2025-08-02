@@ -3065,6 +3065,7 @@ body.u-nav-open {
     margin-bottom: 10px;
     color: #34495e;
 }
+
 .email-version pre {
     background-color: #f8f9fa;
     padding: 15px;
@@ -3075,6 +3076,7 @@ body.u-nav-open {
     line-height: 1.6;
     border: 1px solid #e9ecef;
 }
+
 /* Dùng CSS để tô màu thay vì thẻ HTML */
 .email-version pre strong {
     background-color: #d4edda;
@@ -3086,20 +3088,25 @@ body.u-nav-open {
 .feedback-section {
     margin-top: 20px;
 }
+
 .feedback-section h4 {
     margin-bottom: 10px;
 }
+
 .feedback-section ul {
     list-style: none;
     padding: 0;
 }
+
 .feedback-section li {
     padding: 10px;
     border-bottom: 1px dashed #e9ecef;
 }
+
 .feedback-section li:last-child {
     border-bottom: none;
 }
+
 .feedback-section li strong {
     display: inline-block;
     background-color: #e2e3e5;
@@ -3117,19 +3124,126 @@ body.u-nav-open {
     padding: 2px 4px;
     border-radius: 3px;
     color: #155724;
-    font-weight: normal; /* Trả lại font weight bình thường */
+    font-weight: normal;
+    /* Trả lại font weight bình thường */
 }
 
 /* Tô màu đỏ cho phần sai */
 .email-version pre del {
     background-color: #f8d7da;
     color: #721c24;
-    text-decoration: none; /* Bỏ gạch ngang mặc định */
+    text-decoration: none;
+    /* Bỏ gạch ngang mặc định */
     padding: 2px 4px;
     border-radius: 3px;
 }
+
 @media (max-width: 768px) {
     .email-comparison {
         grid-template-columns: 1fr;
     }
+}
+
+/* css/style.css */
+
+/* --- STYLES FOR SPEAKING TEST SIMULATION --- */
+.test-simulation-wrapper {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.test-screen {
+    display: none;
+    text-align: center;
+}
+
+.test-screen.active {
+    display: block;
+}
+
+#start-screen p,
+#end-screen p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+#start-screen .action-btn,
+#end-screen .action-btn {
+    width: auto;
+    padding: 15px 30px;
+}
+
+#part-indicator {
+    font-size: 1.8em;
+    color: var(--primary-hover);
+}
+
+#task-indicator {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+#question-area {
+    margin-bottom: 30px;
+}
+
+.test-question-text {
+    font-size: 1.5em;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.test-image-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.test-image-container img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.test-part4-questions ul {
+    list-style: decimal;
+    padding-left: 20px;
+    text-align: left;
+}
+
+#timer-area {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+#timer-label {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#timer-display {
+    font-size: 3em;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.progress-bar-container {
+    background-color: #e9ecef;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#progress-bar {
+    height: 10px;
+    width: 100%;
+    background-color: var(--primary-color);
+    transition: width 1s linear;
 }

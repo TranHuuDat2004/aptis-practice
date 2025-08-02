@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Speaking Test Simulation</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header id="header-placeholder"></header>
+    <div class="content-pusher">
+        <div class="container">
+            <div class="test-simulation-wrapper">
+
+                <!-- Màn hình bắt đầu -->
+                <div id="start-screen" class="test-screen active">
+                    <h1>Mô phỏng bài thi Speaking</h1>
+                    <p>Bài thi sẽ chạy tự động qua 4 phần. Bạn sẽ không thể tạm dừng.</p>
+                    <p>Hãy chuẩn bị sẵn micro hoặc điện thoại để ghi âm lại phần trả lời của bạn.</p>
+                    <button class="action-btn" id="start-test-btn">Bắt đầu bài thi</button>
+                </div>
+
+                <!-- Màn hình làm bài -->
+                <div id="test-screen" class="test-screen">
+                    <h2 id="part-indicator"></h2>
+                    <p id="task-indicator"></p>
+
+                    <div id="question-area">
+                        <!-- Nội dung câu hỏi/hình ảnh sẽ được chèn vào đây -->
+                    </div>
+
+                    <div id="timer-area">
+                        <div id="timer-label"></div>
+                        <div id="timer-display"></div>
+                        <div class="progress-bar-container">
+                            <div id="progress-bar"></div>
+                        </div>
+                        <!-- THÊM NÚT MỚI VÀO ĐÂY -->
+                        <button class="action-btn" id="next-btn" style="margin-top: 15px; display: none;">Next Question
+                            ➡️</button>
+                    </div>
+                </div>
+
+                <!-- Màn hình kết thúc -->
+                <div id="end-screen" class="test-screen">
+                    <h1>Bài thi đã kết thúc!</h1>
+                    <p>Chúc mừng bạn đã hoàn thành bài thi mô phỏng.</p>
+                    <p>Hãy nghe lại file ghi âm của bạn và so sánh với các câu trả lời mẫu để tự đánh giá.</p>
+                    <a href="index.html" class="action-btn">Quay về trang chủ</a>
+                </div>
+
+            </div>
+        </div>
+        <footer id="footer-placeholder"></footer>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/data-speaking.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Lấy các element
+            const startScreen = document.getElementById('start-screen');
+            const testScreen = document.getElementById('test-screen');
+            const endScreen = document.getElementById('end-screen');
+            const startBtn = document.getElementById('start-test-btn');
+            const partIndicator = document.getElementById('part-indicator');
+            const taskIndicator = document.getElementById('task-indicator');
+            const questionArea = document.getElementById('question-area');
+            const timerLabel = document.getElementById('timer-label');
+            const timerDisplay = document.getElementById('timer-display');
+            const progressBar = document.getElementById('progress-bar');
+            const nextBtn = document.getElementById('next-btn'); // Nút mới
+
+
+            // Hàm xáo trộn mảng
+            const shuffle = (array) => array.sort(() => Math.random() - 0.5);
+
+            let timerInterval; // Biến để lưu interval
+            let forceNext = () => { }; // Hàm để bỏ qua timer
+
+            // --- HÀM CHẠY ĐỒNG HỒ ĐƯỢC NÂNG CẤP ---
+            function runTimer(totalSeconds, showNextButton = false) {
+                return new Promise(resolve => {
+                    let secondsLeft = totalSeconds;
+
+                    // Logic của nút Next
+                    forceNext = () => {
+                        clearInterval(timerInterval);
+                        nextBtn.style.display = 'none'; // Ẩn nút đi
+                        resolve();
+                    };
+
+                    if (showNextButton) {
+                        nextBtn.style.display = 'inline-block'; // Hiện nút Next
+                    } else {
+                        nextBtn.style.display = 'none';
+                    }
+
+                    // ... (phần code progress bar và hiển thị thời gian giữ nguyên) ...
+                    progressBar.style.transition = 'none';
+                    progressBar.style.width = '100%';
+                    setTimeout(() => {
+                        progressBar.style.transition = `width ${totalSeconds}s linear`;
+                        progressBar.style.width = '0%';
+                    }, 100);
+                    const updateDisplay = () => {
+                        const minutes = Math.floor(secondsLeft / 60);
+                        const seconds = secondsLeft % 60;
+                        timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                    };
+                    updateDisplay();
+
+                    timerInterval = setInterval(() => {
+                        secondsLeft--;
+                        updateDisplay();
+                        if (secondsLeft <= 0) {
+                            forceNext(); // Gọi hàm forceNext khi hết giờ
+                        }
+                    }, 1000);
+                });
+            }
+
+            // Hàm hiển thị nội dung
+            function displayContent(part, task, contentHTML) {
+                partIndicator.textContent = `Part ${part}`;
+                taskIndicator.textContent = task;
+                questionArea.innerHTML = contentHTML;
+            }
+
+            // --- Luồng thi chính ---
+            async function startTest() {
+                startScreen.classList.remove('active');
+                testScreen.classList.add('active');
+
+                await runPart1();
+                await runPart2();
+                await runPart3();
+                await runPart4();
+
+                testScreen.classList.remove('active');
+                endScreen.classList.add('active');
+            }
+
+            async function runPart1() {
+                const questions = shuffle([...speakingData.part1]).slice(0, 3);
+                for (let i = 0; i < questions.length; i++) {
+                    displayContent('1', `Question ${i + 1} of 3`, `<p class="test-question-text">${questions[i].prompt.question}</p>`);
+                    timerLabel.textContent = "Answer the question";
+                    await runTimer(questions[i].prompt.duration, true); // Thêm 'true' để hiện nút Next
+                }
+            }
+            async function runPart2() {
+                const topic = shuffle([...speakingData.part2])[0];
+                const imageHTML = `<div class="test-image-container"><img src="${topic.imageSrc}" alt="Image for Part 2"></div>`;
+
+                // Sửa ở đây: dùng 'topic.tasks' thay vì 'questions'
+                for (let i = 0; i < topic.tasks.length; i++) {
+                    const task = topic.tasks[i];
+                    displayContent('2', `Task ${i + 1} of 3`,
+                        `${imageHTML}
+                         <p class="test-question-text">${task.question}</p>`
+                    );
+                    timerLabel.textContent = "Answer the question";
+                    // Sửa ở đây: dùng 'task.duration'
+                    await runTimer(task.duration, true);
+                }
+            }
+
+            async function runPart3() {
+                const topic = shuffle([...speakingData.part3])[0];
+                const imagesHTML = `<div class="test-image-container">
+                                        <img src="${topic.image1Src}" alt="Picture 1">
+                                        <img src="${topic.image2Src}" alt="Picture 2">
+                                    </div>`;
+
+                // Sửa ở đây: dùng 'topic.tasks' thay vì 'questions'
+                for (let i = 0; i < topic.tasks.length; i++) {
+                    const task = topic.tasks[i];
+                    displayContent('3', `Task ${i + 1} of 3`,
+                        `${imagesHTML}
+                         <p class="test-question-text">${task.question}</p>`
+                    );
+                    timerLabel.textContent = "Answer the question";
+                    // Sửa ở đây: dùng 'task.duration'
+                    await runTimer(task.duration, true);
+                }
+            }
+
+            async function runPart4() {
+                const topic = shuffle([...speakingData.part4])[0];
+                let questionsHTML = '<ul>';
+                topic.tasks.forEach(task => { questionsHTML += `<li>${task.question}</li>`; });
+                questionsHTML += '</ul>';
+
+                displayContent('4', 'Prepare your answer', `<div class="test-part4-questions">${questionsHTML}</div>`);
+                timerLabel.textContent = "Preparation Time";
+                await runTimer(60); // Không có nút Next cho thời gian chuẩn bị
+
+                displayContent('4', 'Answer all three questions', `<div class="test-part4-questions">${questionsHTML}</div>`);
+                timerLabel.textContent = "Speaking Time";
+                await runTimer(120, true); // Có nút Next cho thời gian trả lời
+            }
+
+            startBtn.addEventListener('click', startTest);
+            nextBtn.addEventListener('click', () => forceNext()); // Nút Next sẽ gọi hàm forceNext
+        });
+    </script>
+</body>
+
+</html>
