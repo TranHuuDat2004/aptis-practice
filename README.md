@@ -51,7 +51,7 @@ Công cụ này được chia thành các module tương ứng với các kỹ n
 - **Frontend:** HTML5, CSS3, JavaScript (ES6)
 - **Styling:** Giao diện được thiết kế theo hướng "light theme", chuyên nghiệp và responsive.
 - **Libraries:** [SortableJS](https://github.com/SortableJS/Sortable) cho chức năng kéo-thả.
-<!-- - **Backend (TTS Tool):** Python, [Flask](https://flask.palletsprojects.com/), [Piper TTS](https://github.com/rhasspy/piper). -->
+- **Text-to-Speech Generator:** (https://github.com/TranHuuDat2004/tts-flask-app)
 
 ---
 
