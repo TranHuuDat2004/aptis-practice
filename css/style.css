@@ -3036,3 +3036,100 @@ body.u-nav-open {
 .timer-section .timer-display {
     margin-top: 10px;
 }
+
+/* --- STYLES FOR WRITING ANALYSIS PAGE --- */
+.error-analysis-card {
+    background-color: #fff;
+    border-radius: var(--card-radius);
+    padding: 25px;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 30px;
+}
+
+.error-analysis-card h2 {
+    margin-top: 0;
+    color: var(--primary-hover);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+}
+
+.email-comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.email-version h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #34495e;
+}
+.email-version pre {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 0.9em;
+    line-height: 1.6;
+    border: 1px solid #e9ecef;
+}
+/* Dùng CSS để tô màu thay vì thẻ HTML */
+.email-version pre strong {
+    background-color: #d4edda;
+    padding: 2px 4px;
+    border-radius: 3px;
+    color: #155724;
+}
+
+.feedback-section {
+    margin-top: 20px;
+}
+.feedback-section h4 {
+    margin-bottom: 10px;
+}
+.feedback-section ul {
+    list-style: none;
+    padding: 0;
+}
+.feedback-section li {
+    padding: 10px;
+    border-bottom: 1px dashed #e9ecef;
+}
+.feedback-section li:last-child {
+    border-bottom: none;
+}
+.feedback-section li strong {
+    display: inline-block;
+    background-color: #e2e3e5;
+    color: #383d41;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    margin-right: 10px;
+}
+
+/* --- QUY TẮC TÔ MÀU MỚI --- */
+/* Tô màu xanh cho phần đúng */
+.email-version pre strong {
+    background-color: #d4edda;
+    padding: 2px 4px;
+    border-radius: 3px;
+    color: #155724;
+    font-weight: normal; /* Trả lại font weight bình thường */
+}
+
+/* Tô màu đỏ cho phần sai */
+.email-version pre del {
+    background-color: #f8d7da;
+    color: #721c24;
+    text-decoration: none; /* Bỏ gạch ngang mặc định */
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+@media (max-width: 768px) {
+    .email-comparison {
+        grid-template-columns: 1fr;
+    }
+}
