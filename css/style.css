@@ -10,6 +10,7 @@
     --card-radius: 12px;
 }
 
+
 body {
     font-family: 'Be Vietnam Pro', sans-serif;
     background-color: var(--background-color);
@@ -2605,6 +2606,14 @@ header .container {
     font-weight: 700;
     color: var(--primary-color);
     text-decoration: none;
+
+}
+
+.logo img {
+    max-width: 30px;
+    height: auto;
+    vertical-align: middle;
+
 }
 
 .header-actions {
