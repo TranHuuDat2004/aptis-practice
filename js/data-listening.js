@@ -102,6 +102,9 @@ const formattedListeningData = rawAnswers.map((answer, index) => {
 });
 
 const listeningData = {
+    // --- THÊM MỚI DỮ LIỆU câu 1-13 ---
+    part1: formattedListeningData,
+
 
     // --- THÊM MỚI DỮ LIỆU câu 15 ---
     part15: [
@@ -202,7 +205,7 @@ const listeningData = {
                 <p><strong>Person D:</strong> "<strong>I like to start my day with music as soon as I wake up</strong>. It helps me feel energized and ready for whatever lies ahead. As soon as I get out of bed, I turn on my favorite playlist, which is usually full of upbeat, happy songs. It's like my morning ritual..."</p>
             `
         },
-{
+        {
             id: 'listening14_outdoor_activities',
             title: ' Hoạt động ngoài trời',
             audioSrc: 'audio/listening-part14/5.mp3',
@@ -220,7 +223,7 @@ const listeningData = {
                 <p><strong>Person D:</strong> "I've always been drawn to outdoor activities, especially those that get my heart racing. While some of my friends prefer running or hiking, I find nothing more exciting than <strong>mountain biking</strong>..."</p>
             `
         },
-         {
+        {
             id: 'listening14_places_to_run',
             title: ' Nơi để chạy bộ',
             audioSrc: 'audio/listening-part14/6.mp3',
@@ -310,7 +313,7 @@ const listeningData = {
                 <p><strong>Person D:</strong> "Every morning, it's just me, <strong>my car</strong>, and the open road. There's a kind of freedom in it, you know? I get to decide my route, crank up my favorite tunes, and just go. Traffic can be a pain, sure, but it's worth it for those moments..."</p>
             `
         },
-                {
+        {
             id: 'listening14_study_habits',
             title: ' Nơi để học',
             audioSrc: 'audio/listening-part14/11.mp3',

@@ -3256,3 +3256,25 @@ body.u-nav-open {
     background-color: var(--primary-color);
     transition: width 1s linear;
 }
+
+/* css/style.css */
+
+/* --- STYLES FOR LOW QUALITY TOPICS --- */
+.low-quality-btn {
+    border-style: dashed;
+}
+
+.low-quality-btn .fa-exclamation-triangle {
+    color: #e67e22;
+}
+
+.image-quality-warning {
+    background-color: #fffbe6;
+    color: #d46b08;
+    padding: 10px 15px;
+    border: 1px solid #ffe58f;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 0.9em;
+    text-align: center;
+}

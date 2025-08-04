@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
 </head>
 
 <body>
@@ -115,15 +115,27 @@
             }
 
             topics.forEach((topic, index) => {
+                // Tạo nút chọn
                 const button = document.createElement('button');
                 button.className = 'topic-selector-btn';
                 button.textContent = `Chủ đề ${index + 1}`;
                 button.dataset.target = `#${topic.id}`;
+
+                // THÊM LOGIC NÀY: Thêm icon cảnh báo cho chủ đề chất lượng thấp
+                if (topic.quality === 'low') {
+                    button.innerHTML += ` <i class="fas fa-exclamation-triangle" title="Chủ đề luyện tập thêm, ảnh chất lượng thấp"></i>`;
+                    button.classList.add('low-quality-btn');
+                }
+
                 selectorContainer.appendChild(button);
 
                 const card = document.createElement('div');
                 card.className = 'quiz-card speaking-part2-card';
                 card.id = topic.id;
+                // THÊM LOGIC NÀY: Thêm một hộp cảnh báo vào card
+                const qualityWarning = topic.quality === 'low'
+                    ? `<div class="image-quality-warning">Lưu ý: Hình ảnh cho chủ đề này có chất lượng thấp, chỉ dùng để tham khảo.</div>`
+                    : '';
 
                 let tasksHTML = '';
                 topic.tasks.forEach((task, i) => {
@@ -158,6 +170,8 @@
 
                 card.innerHTML = `
                     <div class="card-header"><h2>${topic.title}</h2></div>
+
+                     ${qualityWarning} 
                     <img class="speaking-part2-image" src="${topic.imageSrc}" alt="${topic.title}">
                     <div class="tasks-wrapper">${tasksHTML}</div>
                     <div class="card-actions" style="margin-top: 25px; border-top: 1px dashed var(--border-color); padding-top: 25px;">

@@ -153,7 +153,10 @@
                 }
             }
             async function runPart2() {
-                const topic = shuffle([...speakingData.part2])[0];
+                // LỌC BỎ CÁC CHỦ ĐỀ CHẤT LƯỢNG THẤP
+                const highQualityTopics = speakingData.part2.filter(topic => topic.quality !== 'low');
+                const topic = shuffle(highQualityTopics)[0];
+
                 const imageHTML = `<div class="test-image-container"><img src="${topic.imageSrc}" alt="Image for Part 2"></div>`;
 
                 // Sửa ở đây: dùng 'topic.tasks' thay vì 'questions'
@@ -170,7 +173,9 @@
             }
 
             async function runPart3() {
-                const topic = shuffle([...speakingData.part3])[0];
+                // LỌC BỎ CÁC CHỦ ĐỀ CHẤT LƯỢNG THẤP
+                const highQualityTopics = speakingData.part3.filter(topic => topic.quality !== 'low');
+                const topic = shuffle(highQualityTopics)[0];
                 const imagesHTML = `<div class="test-image-container">
                                         <img src="${topic.image1Src}" alt="Picture 1">
                                         <img src="${topic.image2Src}" alt="Picture 2">

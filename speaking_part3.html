@@ -83,15 +83,29 @@
             let timers = {}; // Dùng object để quản lý nhiều timer
 
             topics.forEach((topic, index) => {
+
+                 // Tạo nút chọn
                 const button = document.createElement('button');
                 button.className = 'topic-selector-btn';
                 button.textContent = `Chủ đề ${index + 1}`;
                 button.dataset.target = `#${topic.id}`;
+
+                // THÊM LOGIC NÀY: Thêm icon cảnh báo cho chủ đề chất lượng thấp
+                if (topic.quality === 'low') {
+                    button.innerHTML += ` <i class="fas fa-exclamation-triangle" title="Chủ đề luyện tập thêm, ảnh chất lượng thấp"></i>`;
+                    button.classList.add('low-quality-btn');
+                }
+
                 selectorContainer.appendChild(button);
 
                 const card = document.createElement('div');
                 card.className = 'quiz-card speaking-part3-card';
                 card.id = topic.id;
+
+                // THÊM LOGIC NÀY: Thêm một hộp cảnh báo vào card
+                const qualityWarning = topic.quality === 'low' 
+                    ? `<div class="image-quality-warning">Lưu ý: Hình ảnh cho chủ đề này có chất lượng thấp, chỉ dùng để tham khảo.</div>` 
+                    : '';
 
                 let tasksHTML = '';
                 topic.tasks.forEach((task, i) => {
@@ -113,10 +127,12 @@
 
                 card.innerHTML = `
                     <div class="card-header"><h2>${topic.title}</h2></div>
+                    ${qualityWarning} 
                     <div class="part3-images">
                         <img src="${topic.image1Src}" alt="Picture 1">
                         <img src="${topic.image2Src}" alt="Picture 2">
                     </div>
+                     
                     <div class="tasks-wrapper">${tasksHTML}</div>
                     <div class="card-actions">
                         <button class="action-btn show-sample-btn">📖 Xem câu trả lời mẫu</button>
