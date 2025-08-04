@@ -144,7 +144,7 @@ const readingData = {
                 "When he...",
                 "This popularity ..."
             ],
-            key: "4-3-5-1-2",
+            key: "4-3-1-2-5",
             story: 'Câu chuyện bịa: "<strong>Khi anh ấy</strong> nổi tiếng, <strong>anh ấy sớm</strong>, <strong>hầu hết</strong> hoàn thành xong quyển sách, <strong>các nhân vật</strong> cũng trở nên <strong>nổi tiếng</strong>."'
         },
         {
@@ -269,7 +269,7 @@ const readingData = {
         },
         {
             id: "p2_presentation_day",
-            title: "Câu chuyện thuyết trình",
+            title: "Câu chuyện thuyết trình (Đề mới cập nhật)",
             type: "Logic (Thật)",
             fragments: [
                 "Before the open day", "With this information", "You must show",
@@ -280,7 +280,7 @@ const readingData = {
         },
         {
             id: "p2_used_car",
-            title: "Mua xe hơi cũ",
+            title: "Mua xe hơi cũ (Đề mới cập nhật)",
             type: "Logic (Thật)",
             fragments: [
                 "I had just passed", "However,", "So, ",
@@ -433,13 +433,13 @@ const readingData = {
         },
         {
             id: "p3_info_search",
-            title: "Tìm kiếm thông tin",
+            title: "Tìm kiếm thông tin xây nhà",
             type: "Bịa (Ghi nhớ)",
             fragments: [
                 "After", "You can", "Document", "The search", "First"
             ],
             key: "5-4-3-1-2",
-            story: 'Câu chuyện bịa: "<strong>Đầu tiên</strong> bạn phải bắt đầu việc <strong>tìm kiếm</strong>. Hãy <strong>ghi lại (document)</strong> mọi thứ. <strong>Sau đó</strong>, <strong>bạn có thể</strong> viết ra giấy."'
+            story: 'Câu chuyện bịa: "<strong>Đầu tiên</strong> bạn phải <strong>tìm kiếm</strong> <strong>tài liệu</strong>. <strong>Sau đó</strong>, <strong>bạn có thể</strong> xây."'
         },
         {
             id: "p3_planting_potato",
@@ -451,6 +451,34 @@ const readingData = {
             ],
             key: "5-2-3-4-1",
             story: 'Câu chuyện thật: "<strong>Tất cả mọi thứ mình cần là</strong> <strong>củ khoai tay già</strong>, <strong>màu sẵm</strong>, <strong>tưới nước mỗi ngày</strong>, tiếp tục <strong>chăm sóc</strong>."'
+        },
+        {
+            id: 'p3_famous_man',
+            title: 'Câu chuyện người đàn ông nổi tiếng (Đề mới cập nhật)',
+            type: 'Bịa (Ghi nhớ)',
+            fragments: [
+                'He first...',         // 1
+                'Although...',         // 2
+                'His popularity...',   // 3
+                'After being famous...',// 4
+                'He travelled...'      // 5
+            ],
+            key: '1-2-3-4-5',
+            story: 'Câu chuyện bịa: "<strong>Đầu tiên (1)</strong>, anh ấy rất nghèo. <strong>Mặc dù (2)</strong> vậy, anh ấy thử làm video TikTok và <strong>sự nổi tiếng của anh ấy (3)</strong> đột nhiên tăng vọt. <strong>Sau khi nổi tiếng (4)</strong>, <strong>anh ấy đi du lịch (5)</strong> khắp nơi."'
+        },
+        {
+            id: 'p3_shanghai_woman',
+            title: 'Câu chuyện người phụ nữ Thượng Hải (Đề mới cập nhật)',
+            type: 'Logic (Thật)',
+            fragments: [
+                'She was born in Shanghai in 1933...',         // 1
+                'At that time...',                             // 2
+                'A few years later, she went abroad...',       // 3
+                'However, in 1972 she began to miss China...', // 4
+                'In 1980, she finally returned...'             // 5
+            ],
+            key: '1-2-3-4-5',
+            story: 'Câu chuyện thật: "<strong>Cô ấy được sinh ra (1)</strong> trong một gia đình nghèo. <strong>Vào thời điểm đó (2)</strong>, cuộc sống rất khó khăn. <strong>Vài năm sau (3)</strong>, cô đi du học. <strong>Tuy nhiên, vào năm 1972 (4)</strong>, cô luôn nhớ về quê hương. <strong>Vào năm 1980 (5)</strong>, cô quyết định trở về và xây dựng đất nước."'
         }
 
         // Thêm các câu hỏi Part 3 khác vào đây
@@ -849,9 +877,24 @@ const readingData = {
             ],
             key: '1-2-3-4-5-6-7',
             story: 'Câu chuyện bịa: "Muốn hát hay thì <strong>đòi hỏi thể chất</strong> tốt. Việc làm này giúp <strong>tăng trí nhớ</strong>, <strong>mở rộng mối quan hệ</strong>. <strong>Thói quen</strong> này giúp mình có <strong>lối thoát sáng tạo</strong>, <strong>nâng cao cảm xúc</strong> (đang buồn hát để hết buồn) và mình cảm thấy <strong>vui vẻ hạnh phúc hơn</strong>(well being)."'
+        },
+        {
+            id: 'p5_humor_psychology',
+            title: 'Chủ đề: Tâm lý học của sự hài hước (Đề mới cập nhật)',   // Thêm dữ liệu cho đề mới,
+            type: 'Bịa (Ghi nhớ)',
+            fragments: [
+                'Humor is common...',        // 1
+                'What is the purpose...',    // 2
+                'How humor helps...',        // 3
+                'Take care of...',           // 4
+                'The difference...',         // 5
+                'What we find...',           // 6
+                'Why we...'                  // 7
+            ],
+            key: '1-2-3-4-5-6-7',
+            story: 'Câu chuyện bịa: "Ai cũng biết <strong>sự hài hước rất phổ biến (1)</strong>. Nhưng <strong>mục đích của nó là gì (2)</strong>? Đó là cách<strong> nó giúp chúng ta (3)</strong> vui vẻ hạnh phúc. Vì vậy, hãy <strong>chăm sóc (4)</strong> nó. Dù có <strong>sự khác biệt (5)</strong> về <strong>thứ chúng ta tìm kiếm  (6)</strong> niềm vui, đó là <strong> lý do (why) chúng ta (7)</strong> nên hài hước."'
         }
 
 
-    ]
-    // Thêm dữ liệu cho part1, part4, part5... vào đây
+    ] 
 };
