@@ -1302,6 +1302,253 @@ const speakingData = {
                     sampleAnswer: "Yes, of course. The advance of technology is sharply changing our reading habit. In the past, people read printed books to gain knowledge or find material. Now, with the support of technology, people can read books on their laptop or phone. Many books are available on the Internet without charging fees, which allows people to read free books."
                 }
             ]
+        },
+
+        {
+            id: 'sp2_children_playing',
+            title: 'Chủ đề 28: Children Playing',
+            image1Src: 'img/speaking-part3/children-tablet.png',
+            image2Src: 'img/speaking-part3/children-running.png',
+            audioSrc: 'audio/speaking-part2/28.m4a',
+            tags: ['hot', 'low-quality-img'], // Đây là chủ đề "hot" nhưng ảnh mờ
+            tasks: [
+                {
+                    question: "Tell me what you see in the two pictures.",
+                    duration: 45,
+                    sampleAnswer: "These two pictures show children playing in different situations. In the first picture on the left, I see a family in a living room. Two children are lying on the floor at home, playing with a tablet. The parents are sitting on a sofa and watching them. The room looks cozy and quiet. In contrast, the second picture shows several children playing and running in a park. They are wearing colorful clothes and look very happy and energetic."
+                },
+                {
+                    question: "What are the benefits of these 2 ways for children to play?",
+                    duration: 45,
+                    sampleAnswer: "Playing with electronic devices can help children improve thinking skills and creativity. They can also learn from educational games and apps. On the other hand, outdoor activities help children stay active and healthy. Running and playing outside builds their physical strength. Also, outdoor play gives them a chance to interact with other kids."
+                },
+                {
+                    question: "Why is it important for children to play together?",
+                    duration: 45,
+                    sampleAnswer: "Children playing together is important for several reasons. First, it helps them learn social skills like sharing, cooperation, and communication. Second, it keeps them active, which is good for their health and development. Third, playing helps them use their imagination and be creative through different games and activities. That's why playing with others is a big part of growing up."
+                }
+            ]
+        },
+
+        // --- 2 CHỦ ĐỀ MỚI ---
+        {
+            id: 'sp3_gardening',
+            title: 'Chủ đề 29: Gardening',
+            image1Src: 'img/speaking-part3/gardening-adults.png',
+            image2Src: 'img/speaking-part3/gardening-children.png',
+            audioSrc: 'audio/speaking-part3/29.mp3',
+            tags: ['hot', 'low-quality-img'],
+            tasks: [
+                {
+                    question: "Tell me what you see in the two pictures.",
+                    duration: 45,
+                    sampleAnswer: "These two pictures show people gardening. In the first picture on the left, there are three adults working together in a garden. They are outdoors, surrounded by green plants. In contrast, the second picture shows an older man and two children in a garden. The girl in a pink dress is holding a small watering can, and the older man is helping her water the plants."
+                },
+                {
+                    question: "What are the attractions of the two pictures?",
+                    duration: 45,
+                    sampleAnswer: "Both pictures are attractive because they show people enjoying gardening. In the first picture, the garden looks calm and peaceful, which helps adults relax and connect with nature. It’s also a nice way to spend time with friends or family. In the second picture, the children are learning new things while having fun. Gardening teaches them to care for plants and be responsible."
+                },
+                {
+                    question: "What is the appeal of growing plants and doing gardening?",
+                    duration: 45,
+                    sampleAnswer: "Growing plants and gardening are enjoyable for many reasons. First, it helps people relax and feel calm while spending time in nature. Second, it is good for health because it gives you some exercise and fresh air. Third, it can be fun to do with family or friends, which makes everyone feel closer."
+                }
+            ]
+        },
+        {
+            id: 'sp3_presentations',
+            title: 'Chủ đề 30: Presentations',
+            image1Src: 'img/speaking-part3/presentation-large.png',
+            image2Src: 'img/speaking-part3/presentation-small.png',
+            audioSrc: 'audio/speaking-part3/30.mp3',
+            tags: ['hot', 'low-quality-img'],
+            tasks: [
+                {
+                    question: "Tell me what you see in the two pictures.",
+                    duration: 45,
+                    sampleAnswer: "The two pictures show people attending presentations or meetings. In the first picture on the left, there are many people wearing formal clothes and sitting in rows, facing a speaker. In contrast, the second picture shows a small group of people in a meeting room. They are wearing business clothes and sitting around a table with laptops. The atmosphere looks more interactive and informal."
+                },
+                {
+                    question: "What are the problems of giving a presentation in these situations?",
+                    duration: 45,
+                    sampleAnswer: "Giving a presentation in different situations can be challenging. When giving a presentation to a big group, people often feel nervous and find it hard to keep everyone's attention. When speaking to a small group, it can feel personal and you might feel pressured to answer questions. If the audience doesn't show much interest, it can be hard to stay confident."
+                },
+                {
+                    question: "Technology has improved the ability to communicate of people. How do you think?",
+                    duration: 45,
+                    sampleAnswer: "Technology has made communication faster and easier. First, we can now send messages or make video calls instantly, no matter where we are. Second, it helps people stay connected with family and friends through social media. Lastly, translation tools help us understand different languages, making communication simpler. Overall, technology helps people stay in touch and communicate better than ever before."
+                }
+            ]
+        },
+
+        // --- 4 CHỦ ĐỀ MỚI ---
+        {
+            id: 'sp3_ways_of_eating',
+            title: 'Chủ đề 31: Ways of eating',
+            image1Src: 'img/speaking-part3/eating-ready-meal.png',
+            image2Src: 'img/speaking-part3/eating-cooking.png',
+            audioSrc: 'audio/speaking-part3/31.mp3',
+            tags: ['hot', 'low-quality-img'],
+            tasks: [
+                {
+                    question: "Tell me what you see in the two pictures.",
+                    duration: 45,
+                    sampleAnswer: "The two pictures show two different ways of eating. In the first picture on the left, a man is sitting at a table, smiling while eating a fresh salad. In the second picture, a man is standing in the kitchen, carefully chopping vegetables on a cutting board. He looks relaxed and is probably preparing a healthy meal for himself."
+                },
+                {
+                    question: "What appeal to these 2 ways of eating?",
+                    duration: 45,
+                    sampleAnswer: "Both ways of eating have their own appeal. Eating a ready-made meal is quick and convenient, especially for busy people. It saves time and effort. On the other hand, cooking at home can also be a relaxing and enjoyable activity. Personally, I think cooking is more rewarding, but sometimes fast meals are necessary."
+                },
+                {
+                    question: "Is it important to think about what you eat?",
+                    duration: 45,
+                    sampleAnswer: "Yes, it's important to think about what you eat for three main reasons. First, eating healthy food helps you stay strong and avoid illnesses. Second, a good diet gives you more energy to work or study better. Third, what you eat can affect your mood — healthy meals can help you feel happier and more focused."
+                }
+            ]
+        },
+        {
+            id: 'sp3_keeping_memories',
+            title: 'Chủ đề 32: Keeping memories',
+            image1Src: 'img/speaking-part3/memories-selfie.png',
+            image2Src: 'img/speaking-part3/memories-writing.png',
+            audioSrc: 'audio/speaking-part3/32.mp3',
+            tags: ['hot', 'low-quality-img'],
+            tasks: [
+                {
+                    question: "Tell me what you see in the two pictures.",
+                    duration: 45,
+                    sampleAnswer: "The two pictures show two different ways of keeping memories. In the first picture on the left, a family of four is standing next to a car and taking a selfie. They are smiling and look very happy. In contrast, the second picture shows a man sitting alone in a café. He is writing in a notebook and looks focused. He might be writing a diary to keep personal memories."
+                },
+                {
+                    question: "Which do you prefer to record memories? Why?",
+                    duration: 45,
+                    sampleAnswer: "I prefer taking photos to record memories for three reasons. First, photos capture real moments and emotions instantly. Second, they are easy to store and share with friends or family. Third, looking at old pictures can bring back strong feelings and help us remember details we might forget. While writing is also nice, I think photos are more visual and powerful."
+                },
+                {
+                    question: "Why do people like taking photograph?",
+                    duration: 45,
+                    sampleAnswer: "People like taking photographs for a few reasons. First, it helps them keep memories of important moments like family gatherings or trips. Second, photography lets people show their creativity by playing with angles and lighting. Also, photos are a great way to share experiences with friends and family, especially on social media. Lastly, some people use photography to express themselves and share how they see the world."
+                }
+            ]
+        },
+        {
+            id: 'sp3_types_of_jobs',
+            title: 'Chủ đề 33: Types of jobs',
+            image1Src: 'img/speaking-part3/jobs-construction.png',
+            image2Src: 'img/speaking-part3/jobs-farmer.png',
+            audioSrc: 'audio/speaking-part3/33.mp3',
+            tags: ['hot', 'low-quality-img'],
+            tasks: [
+                {
+                    question: "Tell me what you see in the two pictures.",
+                    duration: 45,
+                    sampleAnswer: "The two pictures show different types of jobs. In the first picture on the left, several workers are on a construction site. They are standing on scaffolding, working with metal bars. They look busy and focused. In contrast, the second picture shows a man standing alone in the middle of a green field. He might be a farmer checking his crops."
+                },
+                {
+                    question: "What do you feel if you are in those places?",
+                    duration: 45,
+                    sampleAnswer: "Both places give different feelings. If I were at the construction site, I might feel a bit nervous because it looks high and dangerous. But I would also feel proud to help build something useful. If I were in the field, I think I would feel calm and relaxed. The open space and nature would make me happy."
+                },
+                {
+                    question: "Natural beauty should be protected from developments. What is your opinion?",
+                    duration: 45,
+                    sampleAnswer: "I think we should protect natural beauty from developments for three reasons. First, nature gives us clean air and beautiful views that make us feel good. Second, protecting nature helps preserve wildlife and ecosystems. Finally, preserving natural areas can boost tourism and local economies. While development is important, we should find ways to grow without harming nature."
+                }
+            ]
+        },
+        {
+            id: 'sp3_different_sports',
+            title: 'Chủ đề 34: Different sports',
+            image1Src: 'img/speaking-part3/sports-wheelchair-basketball.png',
+            image2Src: 'img/speaking-part3/sports-tennis.png',
+            audioSrc: 'audio/speaking-part3/34.mp3',
+            tags: ['hot', 'low-quality-img'],
+            tasks: [
+                {
+                    question: "Tell me what you see in the two pictures.",
+                    duration: 45,
+                    sampleAnswer: "In the first picture on the left, people in wheelchairs are playing basketball. They look strong and focused. On the contrary, in the second picture, four women are playing tennis. They are shaking hands at the end of the match. They look respectful and friendly. Both pictures show the power of sports."
+                },
+                {
+                    question: "What is your favorite sport?",
+                    duration: 45,
+                    sampleAnswer: "My favorite sport is football. I like it because it is fun and exciting. I enjoy playing with my friends and working as a team. It also helps me stay strong and healthy. I like watching football matches on TV, especially when my favorite team plays. Football is easy to play anywhere, even in a small space."
+                },
+                {
+                    question: "What are the differences/ benefits of indoor and outdoor activities?",
+                    duration: 45,
+                    sampleAnswer: "Indoor and outdoor activities are different in many ways. Indoor activities, like playing video games or table tennis, are good when the weather is bad. They are safe and comfortable. Outdoor activities, like football or hiking, help you get fresh air and sunshine. They are great for your health and give you more space to move. Both types of activities are fun and useful."
+                }
+            ]
+        },
+
+         // --- 5 CHỦ ĐỀ MỚI ---
+        {
+            id: 'sp3_field_sports',
+            title: 'Chủ đề 35: Field Sports',
+            image1Src: 'img/speaking-part3/sports-football.png',
+            image2Src: 'img/speaking-part3/sports-high-jump.png',
+            audioSrc: 'audio/speaking-part3/35.mp3',
+            tags: ['hot', 'low-quality-img'],
+            tasks: [
+                { question: "Tell me what you see in the two pictures.", duration: 45, sampleAnswer: "In the first picture on the left, a group of men is playing football in a big stadium. One player in white is running with the ball, while others are trying to stop him. On the contrary, in the second picture, a man is doing high jump. He is in the air, jumping over a high bar. He looks strong and focused. Both sports need energy and practice." },
+                { question: "What are the attractions of these sports?", duration: 45, sampleAnswer: "Football is exciting because it’s a fast-paced team sport that helps players improve teamwork, skills, and fitness. High jump is attractive because it challenges athletes to jump as high as possible, testing their strength, speed, and technique. It’s a great way to improve physical ability and set personal goals." },
+                { question: "Which key factors can influence the popularity of sports?", duration: 45, sampleAnswer: "Some important things make sports popular. First, if a sport is easy to play and doesn’t cost much, more people will try it. Second, sports that are on TV and social media get more attention. Third, culture is important - people like sports that are popular in their country. Finally, sports that are fun and exciting to watch usually have more fans." }
+            ]
+        },
+        {
+            id: 'sp3_traditional_travel',
+            title: 'Chủ đề 36: Traditional ways of transport',
+            image1Src: 'img/speaking-part3/travel-camel.png',
+            image2Src: 'img/speaking-part3/travel-horse-carriage.png',
+            audioSrc: 'audio/speaking-part3/36.mp3',
+            tags: ['hot', 'low-quality-img'],
+            tasks: [
+                { question: "Tell me what you see in the two pictures.", duration: 45, sampleAnswer: "Both pictures show traditional ways of transport. In the first picture on the left, there is a man riding a camel in the desert, with the famous pyramids of Egypt in the background. In the second picture, we can see a man driving a horse-drawn carriage in a city. He is wearing formal clothes and a black hat, and the horse looks strong and healthy." },
+                { question: "What is the interesting point of the vehicle experience in the two ways of traveling above?", duration: 45, sampleAnswer: "Riding a horse or camel is interesting because these animals make the journey special. Camels are slower but very comfortable for long journeys in the desert. On the other hand, horses are fast and strong, often used for riding through forests, fields, or city tours. Riding these animals also helps us learn about local culture." },
+                { question: "Should animals be treated like means of transportation?", duration: 45, sampleAnswer: "Animals should not be treated just as means of transportation for several reasons. First, animals have feelings and can feel pain, so they need kindness and respect. Second, using animals too much for carrying people or goods can harm their health. Third, today we have many other ways to travel, so we should protect animals and not rely on them too much." }
+            ]
+        },
+        {
+            id: 'sp3_plane_vs_train',
+            title: 'Chủ đề 37: Plane vs Train',
+            image1Src: 'img/speaking-part3/travel-airport.png',
+            image2Src: 'img/speaking-part3/travel-train-station.png',
+            audioSrc: 'audio/speaking-part3/37.mp3',
+            tags: ['hot', 'low-quality-img'],
+            tasks: [
+                { question: "Tell me what you see in the two pictures.", duration: 45, sampleAnswer: "In the first picture on the left, a man is standing inside an airport, looking out the window at an airplane taking off. On the contrary, the second picture shows a man standing on a train platform, looking at an approaching train. The sunset with its golden light creates a warm and peaceful atmosphere." },
+                { question: "Why do people prefer to go by plane than by train?", duration: 45, sampleAnswer: "People prefer to go by plane rather than by train for three main reasons. First, planes are much faster, so they save a lot of travel time. Second, planes can reach distant or remote places that trains cannot go to. Third, many people find flying more comfortable and convenient, with better services on board." },
+                { question: "Why does flying make many people feel uncomfortable?", duration: 45, sampleAnswer: "Flying can make many people feel uncomfortable for several reasons. First, some people are afraid of heights or flying, which causes anxiety. Second, the airplane cabin is small, so it can feel tight and uncomfortable. Third, during the flight, changes in air pressure can cause ear pain or headaches." }
+            ]
+        },
+        {
+            id: 'sp3_enjoy_music_ways',
+            title: 'Chủ đề 38: Ways to enjoy music',
+            image1Src: 'img/speaking-part3/music-piano.png',
+            image2Src: 'img/speaking-part3/music-concert-small.png',
+            audioSrc: 'audio/speaking-part3/38.mp3',
+            tags: ['hot', 'low-quality-img'],
+            tasks: [
+                { question: "Tell me what you see in the two pictures.", duration: 45, sampleAnswer: "These two pictures show different ways people enjoy music. In the first picture on the left, a family is in a cozy room. The mother and daughter are playing the piano together, while the father is playing guitar. In contrast, the second picture shows a lively concert. A musician is singing and playing guitar on stage, with a keyboard player in the background." },
+                { question: "Where do you like to play music? Why?", duration: 45, sampleAnswer: "I like to play music in my bedroom because it is a cozy and private space. I can sing along to my favorite songs without worrying about disturbing anyone. I also have a guitar that I like to practice on. Playing music helps me relax and express myself. Sometimes I even write my own songs and record them on my phone." },
+                { question: "How does playing music in different locations bring different feelings?", duration: 45, sampleAnswer: "Playing music in different places can create different feelings because each place has its own mood. For example, playing music outside in nature feels relaxing and free. Playing music in a small room feels cozy and personal. Playing music in a crowded place, like a party or concert, feels exciting and energetic because of the people around." }
+            ]
+        },
+        {
+            id: 'sp3_study_places',
+            title: 'Chủ đề 39: Places to study',
+            image1Src: 'img/speaking-part3/study-group.png',
+            image2Src: 'img/speaking-part3/study-alone.png',
+            audioSrc: 'audio/speaking-part3/39.mp3',
+            tags: ['hot', 'low-quality-img'],
+            tasks: [
+                { question: "Tell me what you see in the two pictures.", duration: 45, sampleAnswer: "Two pictures show two different places to study. In the first picture, we can see a group of students sitting together in a library. They are smiling and working on a laptop, probably doing a group project. In the second picture, there is a man studying alone in a quiet environment. He is wearing headphones and taking notes, which suggests he is very focused and concentrated." },
+                { question: "What are the difficulties when studying in this place?", duration: 45, sampleAnswer: "Studying in a library or a coffee shop can have some challenges. For example, the library might be too quiet and make you feel sleepy or bored. The coffee shop might be too noisy and distract you from your work. You have to find the right balance between silence and stimulation for your study needs." },
+                { question: "There is too much noise in our modern lives? Do you agree/ disagree?", duration: 45, sampleAnswer: "I agree that there is too much noise in our modern lives. Noise can come from many sources, such as traffic, construction, music, or people. Noise can affect our health, our mood, and our productivity. It can cause stress, anxiety, and sleep problems. I think we need to find ways to reduce noise pollution and create more quiet spaces for ourselves and others." }
+            ]
         }
 
         // Thêm 38 chủ đề Part 3 khác vào đây

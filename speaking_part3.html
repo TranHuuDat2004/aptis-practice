@@ -7,7 +7,7 @@
     <title>Speaking - Part 3</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
 </head>
 
 <body>
@@ -46,12 +46,15 @@
                     <ul>
                         <li><strong>Mở đầu:</strong> <code>Both pictures show...</code> (Nói về chủ đề chung)</li>
                         <li><strong>Tranh 1:</strong> <code>In the first picture on the left, I can see...</code> /
-                            <code>There is/are...</code></li>
+                            <code>There is/are...</code>
+                        </li>
                         <li><strong>Chuyển ý:</strong> <code>On the contrary, in the second picture, ...</code> /
-                            <code>In contrast, ...</code></li>
+                            <code>In contrast, ...</code>
+                        </li>
                         <li><strong>Tranh 2:</strong> <code>...we can see...</code> / <code>There is/are...</code></li>
                         <li><strong>So sánh tổng thể (Nếu còn thời gian):</strong>
-                            <code>Both pictures show different outdoor activities, but...</code></li>
+                            <code>Both pictures show different outdoor activities, but...</code>
+                        </li>
                     </ul>
                 </div>
                 <div class="method-step">
@@ -83,18 +86,24 @@
             let timers = {}; // Dùng object để quản lý nhiều timer
 
             topics.forEach((topic, index) => {
-
-                 // Tạo nút chọn
                 const button = document.createElement('button');
                 button.className = 'topic-selector-btn';
                 button.textContent = `Chủ đề ${index + 1}`;
                 button.dataset.target = `#${topic.id}`;
 
-                // THÊM LOGIC NÀY: Thêm icon cảnh báo cho chủ đề chất lượng thấp
-                if (topic.quality === 'low') {
-                    button.innerHTML += ` <i class="fas fa-exclamation-triangle" title="Chủ đề luyện tập thêm, ảnh chất lượng thấp"></i>`;
-                    button.classList.add('low-quality-btn');
-                }
+                // --- LOGIC MỚI: HIỂN THỊ TAGS ---
+                // if (topic.tags && topic.tags.length > 0) {
+                //     // let tagsHTML = '<div class="topic-tags">';
+                //     // if (topic.tags.includes('hot')) {
+                //     //     tagsHTML += '<span class="tag-hot" title="Chủ đề thường gặp">🔥 Hot</span>';
+                //     // }
+                //     // if (topic.tags.includes('low-quality-img')) {
+                //     //     tagsHTML += '<span class="tag-warning" title="Ảnh chất lượng thấp">⚠️ LQ</span>';
+                //     // }
+                //     // Thêm các tag khác nếu cần
+                //     // tagsHTML += '</div>';
+                //     button.innerHTML += tagsHTML; // Thêm tags vào nút
+                // }
 
                 selectorContainer.appendChild(button);
 
@@ -103,8 +112,8 @@
                 card.id = topic.id;
 
                 // THÊM LOGIC NÀY: Thêm một hộp cảnh báo vào card
-                const qualityWarning = topic.quality === 'low' 
-                    ? `<div class="image-quality-warning">Lưu ý: Hình ảnh cho chủ đề này có chất lượng thấp, chỉ dùng để tham khảo.</div>` 
+                const qualityWarning = topic.quality === 'low'
+                    ? `<div class="image-quality-warning">Lưu ý: Hình ảnh cho chủ đề này có chất lượng thấp, chỉ dùng để tham khảo.</div>`
                     : '';
 
                 let tasksHTML = '';

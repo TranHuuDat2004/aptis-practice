@@ -3278,3 +3278,30 @@ body.u-nav-open {
     font-size: 0.9em;
     text-align: center;
 }
+
+
+.topic-selector-btn {
+    position: relative; /* Cần thiết để định vị các tag */
+    padding-bottom: 25px; /* Thêm không gian cho tag */
+}
+.topic-tags {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+}
+.topic-tags span {
+    font-size: 0.7em;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 8px;
+    color: white;
+}
+.tag-hot {
+    background-color: #e74c3c; /* Màu đỏ */
+}
+.tag-warning {
+    background-color: #f39c12; /* Màu vàng */
+}
