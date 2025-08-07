@@ -695,7 +695,7 @@ const readingData = {
                 'Important lessons for all of us'
             ],
             key: '1-2-3-4-5-6-7',
-            story: 'Câu chuyện bịa: "Mình muốn nó <strong>bền hơn (1)</strong>, nên đã <strong>làm thí nghiệm ốp lưng (2)</strong>, và <strong>đó là bí mật (3)</strong>. Nhưng <strong>bí mật bị lan rộng (4)</strong>, <strong>mình cảm thấy khó chịu (5)</strong>. <strong>Lý do phải thỏa hiệp (6)</strong> Từ đó rút ra <strong>bài học quan trọng (7)</strong>."'
+            story: 'Câu chuyện bịa: "Mình muốn nó <strong>bền hơn (1)</strong>, nên đã <strong>làm thí nghiệm  (2)</strong>, ốp lưng rớt không bể là <strong> bí mật (3)</strong>. Nhưng <strong>bí mật bị lan rộng (4)</strong>, <strong>mình cảm thấy khó chịu (5)</strong>. <strong>Lý do vì sao phải thỏa hiệp (6)</strong> Từ đó rút ra <strong>bài học quan trọng (7)</strong>."'
         },
         {
             id: 'p5_dickens_book',
@@ -719,7 +719,7 @@ const readingData = {
                 'A modern-life alternative'
             ],
             key: '1-2-3-4-5-6-7',
-            story: 'Câu chuyện bịa: "<strong>Đó là biểu tượng quyền lực và giàu có (1)</strong>, từ đó <strong>mở cửa cho mọi người (2)</strong>. Sở thú đã thay đổi, <strong>không còn là nơi giam cầm (3)</strong>, hướng tới <strong>tự do (4)</strong>. Nó mang <strong>nhiều giá trị khác nhau (5)</strong>, với <strong>nhiệm vụ là để bảo tồn (6)</strong>. <strong>Đó là cuộc sống hiện đại (7)</strong>."'
+            story: 'Câu chuyện bịa: "<strong>Đó là biểu tượng quyền lực và giàu có (1)</strong>, từ đây <strong>mở cửa cho mọi người (2)</strong>.<strong>Không còn là nơi giam cầm (3)</strong>, hướng tới <strong>tự do (4)</strong>. Nó mang <strong>nhiều giá trị khác nhau (5)</strong>, với <strong>sứ mệnh là để bảo tồn (6)</strong>. <strong>Đó là cuộc sống hiện đại (7)</strong>."'
         },
         {
             id: 'p5_coffee',
@@ -783,7 +783,7 @@ const readingData = {
                 'Our global responsibilities'// 7
             ],
             key: '1-2-3-4-5-6-7',
-            story: 'Câu chuyện bịa: "Mình đã gặp một <strong>1 người ăn chay</strong>, người đó đã<strong> giải thích</strong> cho mình, về việc <strong>những điều có thể xảy ra</strong> ở <strong>nhà máy chăn nuôi</strong>. Chúng ta cần <strong>tôn trọng sự sống</strong> để có <strong>sức khỏe tốt hơn</strong>, do đó đây là <strong>trách nhiệm toàn cầu</strong> của chúng ta."'
+            story: 'Câu chuyện bịa: "Mình đã gặp một <strong>1 người ăn chay</strong>, người đó đã<strong> giải thích</strong> cho mình, về việc <strong>những điều có thể xảy ra</strong>  <strong>nhà máy chăn nuôi</strong>. Chúng ta cần <strong>tôn trọng sự sống</strong> để có <strong>sức khỏe tốt hơn</strong>, do đó chúng ta cần có phải có <strong>trách nhiệm toàn cầu</strong> ."'
         },
         {
             id: 'p5_champions',
@@ -799,7 +799,7 @@ const readingData = {
                 'Not in it for the money'           // 7
             ],
             key: '1-2-3-4-5-6-7',
-            story: 'Câu chuyện bịa: "<strong>Cách tốt nhất để đi du lịch</strong> bằng Doggest (tên nhân vật trong bài thi), mình <strong>may mắn thoát nạn</strong>, mình hiểu được <strong>nguồn gốc giải thưởng</strong>, do đó mình thấy <strong>cần phải thay đổi (nỗ lực)</strong>, muốn <strong>đạt được danh tiếng (nổi tiếng)</strong> <strong>qua nhiều thế hệ</strong>, vì thế chuyến đi này <strong>không phải vì tiền</strong> (mà để lấy kinh nghiệm)."'
+            story: 'Câu chuyện bịa: "<strong>Cách tốt nhất để đi du lịch</strong> bằng Doggest (tên nhân vật trong bài thi), mình <strong>may mắn thoát nạn</strong>, mình biết được <strong>nguồn gốc giải thưởng</strong>, do đó mình thấy <strong>cần phải thay đổi </strong>, muốn <strong>đạt được danh tiếng (nổi tiếng)</strong> <strong>qua nhiều thế hệ</strong>, vì thế chuyến đi này <strong>không phải vì tiền</strong> (mà để lấy kinh nghiệm)."'
         },
         {
             id: 'p5_exploration',
@@ -815,7 +815,7 @@ const readingData = {
                 'Determination'                 // 7
             ],
             key: '1-2-3-4-5-6-7',
-            story: 'Câu chuyện bịa: "Mình khám phá nước Úc sơ khai để tìm <strong>bằng chứng mới (1)</strong>, tuy nhiên gặp phải <strong>rào cản thiên nhiên (2)</strong> và không có <strong>công nghệ (3)</strong>. Do đó, <strong>chuyến đi này (4)</strong> <strong>không thu thập được số liệu chính xác (5)</strong>, vì <strong>thiếu kiến thức kĩ năng (6)</strong>, nhưng vẫn <strong>quyết tâm (7)</strong> hoàn thành công việc."'
+            story: 'Câu chuyện bịa: "Mình khám phá nước Úc sơ khai để tìm <strong>bằng chứng mới (1)</strong>, tuy nhiên gặp phải <strong>rào cản thiên nhiên (2)</strong> và không có <strong>công nghệ (3)</strong>. Do đó, <strong>chuyến đi này (4)</strong> <strong>không có được số liệu chính xác (5)</strong>, vì <strong>thiếu kiến thức kĩ năng (6)</strong>, nhưng vẫn <strong>quyết tâm (7)</strong> hoàn thành công việc."'
         },
         {
             id: 'p5_tulip_economy',
@@ -831,7 +831,7 @@ const readingData = {
                 'An Unexpected turn of events'       // 7
             ],
             key: '1-2-3-4-5-6-7',
-            story: 'Câu chuyện bịa: "Trong <strong>nền kinh tế thời kỳ hoàng kim (1)</strong>, mình <strong>tới nơi bán (2)</strong>, mình tìm <strong>thứ có thể bán (3)</strong>, đó là <strong>nhiều loại hoa tulip khác nhau (4)</strong>. Mình tìm hiểu <strong>cơ cấu mậu dịch (5)</strong>, rồi <strong>bán ở Châu Âu (6)</strong>, và <strong>nhiều chuyện bất ngờ đã xảy ra (7)</strong>."'
+            story: 'Câu chuyện bịa: "<strong>Nền kinh tế trong thời kỳ hoàng kim (1)</strong>, mình <strong>tới nơi bán (2)</strong>, mình tìm <strong>thứ có thể bán (3)</strong>, đó là <strong>nhiều loại hoa tulip khác nhau (4)</strong>. Mình tìm hiểu <strong>cơ cấu mậu dịch (5)</strong>, rồi <strong>bán khắp Châu Âu (6)</strong>, và <strong>nhiều chuyện bất ngờ đã xảy ra (7)</strong>."'
         },
         {
             id: 'p5_business_solutions',
@@ -849,7 +849,7 @@ const readingData = {
             ],
             // Key được suy ra từ câu chuyện mới
             key: '1-2-3-4-5-6-7',
-            story: 'Câu chuyện bịa: "Mình phải tìm <strong>giải pháp tài chính</strong>, mình biết rằng <strong>cái giá thuận tiện cao</strong>, vì vậy mình <strong>phải nên kế hoạch trước</strong>. Nó <strong>ảnh hưởng đến sự tự do</strong>, <strong>lợi ích</strong> và <strong>thử thách</strong> về <strong>kinh doanh cạnh tranh</strong>."'
+            story: 'Câu chuyện bịa: "Mình phải tìm <strong>giải pháp tài chính</strong>, mình biết rằng <strong>cái giá thuận tiện cao</strong>, vì vậy mình <strong>phải lên kế hoạch trước</strong>. Nó <strong>ảnh hưởng đến </strong>, <strong>lợi ích</strong> và có nhiều<strong>thử thách</strong> về việc<strong>kinh doanh cạnh tranh</strong>."'
         },
 
 
@@ -864,7 +864,7 @@ const readingData = {
                 'The lasting change'
             ],
             key: '1-2-3-4-5-6-7',
-            story: 'Câu chuyện bịa: "Mình <strong>sống trong ngôi nhà nhỏ</strong>, đó là <strong>động lực kiếm tiền</strong>. <strong>Lợi thế</strong> của mình là mua được <strong>ngôi nhà to hơn</strong>. Mình <strong>chia sẻ kinh nghiệm</strong> này, <strong>tác động đến họ</strong> và làm cho họ <strong>thay đổi lâu dài</strong>."'
+            story: 'Câu chuyện bịa: "Mình <strong>sống trong ngôi nhà nhỏ</strong>, đó là <strong>động lực kiếm tiền</strong>. <strong>Lợi thế</strong> của mình là mua được <strong>ngôi nhà lớn</strong>. Mình <strong>chia sẻ kinh nghiệm</strong> này, làm <strong>tác động (impact) đến họ</strong> và làm cho họ <strong>thay đổi lâu dài</strong>."'
         },
         {
             id: 'p5_creative_hobbies',
