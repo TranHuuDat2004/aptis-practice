@@ -478,7 +478,7 @@ const readingData = {
                 'In 1980, she finally returned...'             // 5
             ],
             key: '1-2-3-4-5',
-            story: 'Câu chuyện thật: "<strong>Cô ấy được sinh ra (1)</strong> trong một gia đình nghèo. <strong>Vào thời điểm đó (2)</strong>, cuộc sống rất khó khăn. <strong>Vài năm sau (3)</strong>, cô đi du học. <strong>Tuy nhiên, vào năm 1972 (4)</strong>, cô luôn nhớ về quê hương. <strong>Vào năm 1980 (5)</strong>, cô quyết định trở về và xây dựng đất nước."'
+            story: 'Câu chuyện thật: "<strong>Cô ấy được sinh ra tại Thượng Hải vào năm 1933(1)</strong>. <strong>Vào thời điểm đó (2)</strong>, cô cố gắng hoàn thành việc học. <strong>Vài năm sau (3)</strong>, cô đi du học Mỹ. <strong>Tuy nhiên, vào năm 1972 (4)</strong>, cô luôn nhớ về quê hương. <strong>Vào năm 1980 , cô trở về Trung Quốc (5)</strong>."'
         }
 
         // Thêm các câu hỏi Part 3 khác vào đây
@@ -735,7 +735,7 @@ const readingData = {
                 'The ancient origin of'     // 7
             ],
             key: '1-2-3-4-5-6-7',
-            story: 'Câu chuyện bịa: "<strong>Thói quen (custom) (1)</strong> của mọi người là <strong>sử dụng nhiều cà phê (2)</strong>, đó là một <strong>thói quen  xấu (habit) (3)</strong>vì có <strong>vấn đề (problem) (4)</strong> về sức khoẻ. Do đó, cần tìm <strong>giải pháp (5)</strong> để giảm thiểu <strong>rủi ro về sức khỏe (health risks)(6)</strong>, từ đó biết được <strong>nguồn gốc cà phê (7)</strong>."'
+            story: 'Câu chuyện bịa: "Uống cà phê là <strong>thói quen (custom) (1)</strong> của mọi người vì nó giúp mình <strong>kích thước sự tỉnh táo (2)</strong>, đó là một <strong>thói quen  xấu (habit) (3)</strong>vì nó gây ra <strong>vấn đề (problem) (4)</strong> về sức khoẻ. Do đó, cần tìm <strong>giải pháp (5)</strong> để giảm thiểu <strong>rủi ro về sức khỏe (health risks)(6)</strong>, từ đó biết được <strong>nguồn gốc cà phê (7)</strong>."'
         },
         {
             id: 'p5_pole_race',
@@ -751,7 +751,7 @@ const readingData = {
                 'Why is it so cold?'        // 7
             ],
             key: '1-2-3-4-5-6-7',
-            story: 'Câu chuyện bịa: "<strong>Ai là chịu trách nhiệm (1)</strong>, đặt <strong>bước chân đầu tiên lên vùng đất băng giá (2)</strong> để đến <strong>tận cùng thế giới (3)</strong>, <strong>ẩn sau bên trong là gì (4)</strong>? Mình phải <strong>đua với đoàn đua khác (5)</strong>, cần <strong>nhiều sự nỗ lực (6)</strong> và cuối cùng biết được <strong>tại sao nó lại lạnh (7)</strong>."'
+            story: 'Câu chuyện bịa: "<strong>Mình là người chịu trách nhiệm (1)</strong>, đặt <strong>bước chân đầu tiên lên vùng đất băng giá (2)</strong> để đến <strong>tận cùng thế giới (3)</strong>, <strong>ẩn sau bên trong là gì (4)</strong>? Mình phải <strong> chạy đua với đoàn đua khác (5)</strong>, cần <strong>nhiều sự nỗ lực (6)</strong> và cuối cùng biết được <strong>tại sao nó lại lạnh (7)</strong>."'
         },
         {
             id: 'p5_success_factors',
