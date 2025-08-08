@@ -433,7 +433,7 @@ const speakingData = {
             id: 'sp2_shopping',
             title: 'Chủ đề 3: Shopping for clothes',
             imageSrc: 'img/speaking-part2/shopping.png',
-            audioSrc: 'audio/speaking-part2/3.m4a',
+            audioSrc: 'audio/speaking-part2/3.wav',
             tasks: [
                 {
                     question: "Describe the picture.",
@@ -456,7 +456,7 @@ const speakingData = {
             id: 'sp2_library',
             title: 'Chủ đề 4: Reading books',
             imageSrc: 'img/speaking-part2/library.png',
-            audioSrc: 'audio/speaking-part2/4.m4a',
+            audioSrc: 'audio/speaking-part2/4.wav',
             tasks: [
                 {
                     question: "Describe the picture.",
@@ -480,7 +480,7 @@ const speakingData = {
             id: 'sp2_active_kids',
             title: 'Chủ đề 5: Being active',
             imageSrc: 'img/speaking-part2/kids-playing-soccer.png',
-            audioSrc: 'audio/speaking-part2/5.m4a',
+            audioSrc: 'audio/speaking-part2/5.wav',
             tasks: [
                 {
                     question: "Describe the picture.",
@@ -503,7 +503,7 @@ const speakingData = {
             id: 'sp2_playing_sports',
             title: 'Chủ đề 6: Playing sports',
             imageSrc: 'img/speaking-part2/family-playing-soccer.png',
-            audioSrc: 'audio/speaking-part2/6.m4a',
+            audioSrc: 'audio/speaking-part2/6.wav',
             tasks: [
                 {
                     question: "Describe the picture.",
@@ -526,7 +526,7 @@ const speakingData = {
             id: 'sp2_friends_trip',
             title: 'Chủ đề 7: Going somewhere with friends',
             imageSrc: 'img/speaking-part2/friends-hiking.png',
-            audioSrc: 'audio/speaking-part2/7.m4a',
+            audioSrc: 'audio/speaking-part2/7.wav',
             tasks: [
                 {
                     question: "Describe the picture.",
@@ -550,7 +550,7 @@ const speakingData = {
             id: 'sp2_crossing_street',
             title: 'Chủ đề 8: Crossing the street',
             imageSrc: 'img/speaking-part2/crossing-street.png',
-            audioSrc: 'audio/speaking-part2/8.m4a',
+            audioSrc: 'audio/speaking-part2/8.wav',
             tasks: [
                 {
                     question: "Describe the picture.",
@@ -573,7 +573,7 @@ const speakingData = {
             id: 'sp2_travelling',
             title: 'Chủ đề 9: Travelling',
             imageSrc: 'img/speaking-part2/waiting-for-train.png',
-            audioSrc: 'audio/speaking-part2/9.m4a',
+            audioSrc: 'audio/speaking-part2/9.wav',
             tasks: [
                 {
                     question: "Describe the picture.",
@@ -596,7 +596,7 @@ const speakingData = {
             id: 'sp2_eating_out',
             title: 'Chủ đề 10: Eating out with friends',
             imageSrc: 'img/speaking-part2/eating-with-friends.png',
-            audioSrc: 'audio/speaking-part2/10.m4a',
+            audioSrc: 'audio/speaking-part2/10.wav',
             tasks: [
                 {
                     question: "Describe the picture.",
@@ -619,7 +619,7 @@ const speakingData = {
             id: 'sp2_presentation',
             title: 'Chủ đề 11: Giving a presentation',
             imageSrc: 'img/speaking-part2/giving-presentation.png',
-            audioSrc: 'audio/speaking-part2/11.m4a',
+            audioSrc: 'audio/speaking-part2/11.wav',
             tasks: [
                 {
                     question: "Describe the picture.",
