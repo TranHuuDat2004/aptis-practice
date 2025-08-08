@@ -3305,3 +3305,20 @@ body.u-nav-open {
 .tag-warning {
     background-color: #f39c12; /* Màu vàng */
 }
+
+.non-existent-answers {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 15px 0;
+}
+
+.non-existent-answers span {
+    background-color: #dc3545; /* Màu đỏ cảnh báo */
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-decoration: line-through; /* Gạch ngang để nhấn mạnh */
+}
