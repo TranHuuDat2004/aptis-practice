@@ -648,7 +648,7 @@ const speakingData = {
             title: 'Chủ đề 1: Shopping Places',
             image1Src: 'img/speaking-part3/shopping-market.png',
             image2Src: 'img/speaking-part3/shopping-supermarket.png',
-            audioSrc: 'audio/speaking-part3/1.mp3',
+            audioSrc: 'audio/speaking-part3/1.wav',
             tasks: [
                 {
                     question: "Describe the 2 pictures.",
@@ -672,7 +672,7 @@ const speakingData = {
             title: 'Chủ đề 2: Relaxing Places',
             image1Src: 'img/speaking-part3/relaxing-beach.png',
             image2Src: 'img/speaking-part3/relaxing-lake.png',
-            audioSrc: 'audio/speaking-part3/2.mp3',
+            audioSrc: 'audio/speaking-part3/2.wav',
             tasks: [
                 {
                     question: "Describe the 2 pictures.",
@@ -698,7 +698,7 @@ const speakingData = {
             title: 'Chủ đề 3: Free time activities',
             image1Src: 'img/speaking-part3/hobby-crossword.png',
             image2Src: 'img/speaking-part3/hobby-game.png',
-            audioSrc: 'audio/speaking-part3/3.mp3',
+            audioSrc: 'audio/speaking-part3/3.wav',
             tasks: [
                 {
                     question: "Describe the 2 pictures.",
@@ -722,7 +722,7 @@ const speakingData = {
             title: 'Chủ đề 4: Eating habits',
             image1Src: 'img/speaking-part3/food-healthy.png',
             image2Src: 'img/speaking-part3/food-pizza.png',
-            audioSrc: 'audio/speaking-part3/4.mp3',
+            audioSrc: 'audio/speaking-part3/4.wav',
             tasks: [
                 {
                     question: "Describe the 2 pictures.",
@@ -748,7 +748,7 @@ const speakingData = {
             title: 'Chủ đề 5: Different types of games',
             image1Src: 'img/speaking-part3/game-chess.png',
             image2Src: 'img/speaking-part3/game-video.png',
-            audioSrc: 'audio/speaking-part3/5.mp3',
+            audioSrc: 'audio/speaking-part3/5.wav',
             tasks: [
                 {
                     question: "Describe the 2 pictures.",
@@ -772,7 +772,7 @@ const speakingData = {
             title: 'Chủ đề 6: Spending time outdoors',
             image1Src: 'img/speaking-part3/outdoor-beach.png',
             image2Src: 'img/speaking-part3/outdoor-mountain.png',
-            audioSrc: 'audio/speaking-part3/6.mp3',
+            audioSrc: 'audio/speaking-part3/6.wav',
             tasks: [
                 {
                     question: "Describe the 2 pictures.",
@@ -797,7 +797,7 @@ const speakingData = {
             title: 'Chủ đề 7: Places to eat',
             image1Src: 'img/speaking-part3/eating-street-food.png',
             image2Src: 'img/speaking-part3/eating-restaurant.png',
-            audioSrc: 'audio/speaking-part3/7.mp3',
+            audioSrc: 'audio/speaking-part3/7.wav',
             tasks: [
                 {
                     question: "Describe the 2 pictures.",
