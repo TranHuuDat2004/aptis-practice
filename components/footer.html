@@ -1,4 +1,120 @@
-<!-- _footer.html -->
+<!-- components/footer.html (FINAL - Updated with Dropdowns, Grid, and Line-break Fix) -->
+<footer>
+    <div style="padding-top: 30px;" class="container footer-grid">
+        <!-- Cột 1: Giới thiệu chung -->
+        <div class="footer-col">
+            <a href="index.html" class="footer-logo">
+                <span>Aptis Practice</span>
+            </a>
+            <p class="footer-bio">Công cụ hỗ trợ ôn thi Aptis ESOL, được phát triển dựa trên phương pháp học "key" và "câu chuyện gợi nhớ" từ các tài liệu uy tín.</p>
+        </div>
 
-<p>© 2025 - Aptis Practice Tool - Bản quyền phần mềm thuộc về Trần Hữu Đạt.</p>
-<p>Tài liệu ôn tập và phương pháp học được cung cấp bởi Anh Thái Aptis. Chúc bạn ôn thi hiệu quả!</p>
+        <!-- Cột 2: Điều hướng nhanh -->
+        <div class="footer-col">
+            <h4>Điều hướng</h4>
+            <ul class="footer-links">
+                <li><a href="index.html"><i class="fas fa-angle-right"></i> Trang Chủ</a></li>
+                <li><a href="exam_tips.html"><i class="fas fa-angle-right"></i> Dặn dò</a></li>
+                <li><a href="vocabulary.html"><i class="fas fa-angle-right"></i> Từ vựng</a></li>
+                <li><a href="speaking_test.html"><i class="fas fa-angle-right"></i> Thi thử Speaking</a></li>
+            </ul>
+        </div>
+
+        <!-- Cột 3: Các kỹ năng -->
+        <div class="footer-col">
+            <h4>Các Kỹ năng</h4>
+            <div class="footer-dropdown">
+                <a class="dropdown-trigger"><i class="fas fa-angle-right"></i> Reading</a>
+                <div class="dropdown-content">
+                    <a href="reading_part1.html">Part 1</a>
+                    <a href="reading.html?part=2">Part 2</a>
+                    <a href="reading.html?part=3">Part 3</a>
+                    <a href="reading_part4.html">Part 4</a>
+                    <a href="reading_part5.html">Part 5</a>
+                </div>
+            </div>
+            <div class="footer-dropdown">
+                <a class="dropdown-trigger"><i class="fas fa-angle-right"></i> Listening</a>
+                <div class="dropdown-content">
+                    <a href="listening_part1.html">Part 1 (1-13)</a>
+                    <a href="listening_part14.html">Part 2 (Câu 14)</a>
+                    <a href="listening_part15.html">Part 3 (Câu 15)</a>
+                    <a href="listening_part1617.html">Part 4 (Câu 16-17)</a>
+                    <a href="listening_cheatsheet.html">Bảng Key Tổng hợp</a>
+                </div>
+            </div>
+            <div class="footer-dropdown">
+                <a class="dropdown-trigger"><i class="fas fa-angle-right"></i> Writing</a>
+                <div class="dropdown-content">
+                    <a href="writing_part1.html">Part 1</a>
+                    <a href="writing_part2.html">Part 2</a>
+                    <a href="writing_part3.html">Part 3</a>
+                    <a href="writing_part4.html">Part 4</a>
+                    <a href="writing_errors.html">Các lỗi sai thường gặp</a>
+                    <a href="errors.html">Các lỗi sai ngữ pháp</a>
+                </div>
+            </div>
+            <div class="footer-dropdown">
+                <a class="dropdown-trigger"><i class="fas fa-angle-right"></i> Speaking</a>
+                <div class="dropdown-content">
+                    <a href="speaking_part1.html">Part 1</a>
+                    <a href="speaking_part2.html">Part 2</a>
+                    <a href="speaking_part3.html">Part 3</a>
+                    <a href="speaking_part4.html">Part 4</a>
+                    <a href="speaking_test.html">Thi thử Speaking</a>
+                    <a href="speaking_ideas.html">Dạng câu hỏi quan điểm (lên ý tưởng)</a>
+                    <a href="speaking_peel.html">Dạng câu hỏi quan điểm (dùng công thức)</a>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Cột 4: Liên hệ -->
+        <div class="footer-col">
+            <h4>Thông tin</h4>
+            <ul class="footer-contact">
+                <li><i class="fas fa-user"></i> <strong>Tác giả:</strong> Trần Hữu Đạt</li>
+                <li><i class="fas fa-chalkboard-teacher"></i> <strong>Tài liệu:</strong> Anh Thái Aptis</li>
+                <li><i class="fas fa-history"></i> <strong>Cập nhật:</strong> 08/08/2025</li>
+            </ul>
+            <div class="footer-social">
+                <a href="https://github.com/TranHuuDat2004/aptis-practice" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <div class="container">
+            <p>&copy; 2025 - Aptis Practice Tool. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // JavaScript cho Footer Dropdown
+    document.addEventListener('DOMContentLoaded', function() {
+        const footerDropdownTriggers = document.querySelectorAll('.footer-col .footer-dropdown > a.dropdown-trigger');
+
+        footerDropdownTriggers.forEach(trigger => {
+            trigger.addEventListener('click', function(event) {
+                if (window.innerWidth <= 768) {
+                    event.preventDefault(); 
+                    const parentDropdown = this.parentElement;
+                    document.querySelectorAll('.footer-col .footer-dropdown.active').forEach(openDropdown => {
+                        if (openDropdown !== parentDropdown) {
+                            openDropdown.classList.remove('active');
+                        }
+                    });
+                    parentDropdown.classList.toggle('active');
+                }
+            });
+        });
+        
+        window.addEventListener('click', function(event) {
+            if (!event.target.closest('.footer-dropdown')) {
+                document.querySelectorAll('.footer-col .footer-dropdown.active').forEach(openDropdown => {
+                    openDropdown.classList.remove('active');
+                });
+            }
+        });
+    });
+</script>

@@ -337,20 +337,6 @@ header#header-placeholder {
 }
 
 
-/* === FOOTER STYLES === */
-footer#footer-placeholder {
-    text-align: center;
-    margin-top: 40px;
-    padding: 20px;
-    background-color: #34495e;
-    color: #ecf0f1;
-}
-
-/* Thêm vào cuối file */
-.footer-content p {
-    margin: 5px 0;
-    /* Tạo một chút khoảng cách giữa các dòng */
-}
 
 /* Page Intro Styles (cho tiêu đề bên dưới header) */
 .page-intro {
@@ -3405,3 +3391,213 @@ body.u-nav-open {
 .writing-task .card-actions .action-btn {
     flex-grow: 1;
 }
+
+/* === FOOTER STYLES (NEW VP Computer STYLE) === */
+footer {
+    background-color: #fff;
+    color: #555;
+    border-top: 1px solid #e9ecef;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+    padding-bottom: 40px;
+}
+
+.footer-col h4 {
+    font-size: 1.1em;
+    color: #333;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.footer-logo {
+    display: inline-block;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--primary-color);
+    text-decoration: none;
+}
+
+.footer-bio {
+    font-size: 0.95em;
+    line-height: 1.7;
+    color: #6c757d;
+}
+
+.footer-links, .footer-contact {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links li, .footer-contact li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #555;
+    transition: color 0.2s, padding-left 0.2s;
+    display: flex;
+    align-items: center;
+}
+.footer-links a:hover {
+    color: var(--primary-color);
+    padding-left: 5px;
+}
+.footer-links a i {
+    margin-right: 8px;
+    font-size: 0.8em;
+    color: var(--primary-color);
+}
+
+.footer-contact li {
+    display: flex;
+    align-items: flex-start;
+}
+.footer-contact i {
+    margin-right: 10px;
+    margin-top: 4px;
+    color: var(--primary-color);
+    width: 16px; /* Căn lề cho icon */
+}
+
+.footer-social {
+    margin-top: 20px;
+}
+.footer-social a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: #f1f1f1;
+    color: #555;
+    text-decoration: none;
+    margin-right: 10px;
+    transition: background-color 0.2s, color 0.2s;
+}
+.footer-social a:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+
+.footer-bottom {
+    background-color: #f8f9fa;
+    padding: 15px 0;
+    text-align: center;
+    font-size: 0.9em;
+    color: #6c757d;
+    border-top: 1px solid #e9ecef;
+}
+.footer-bottom p {
+    margin: 0;
+}
+
+    .footer-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        /* 4 cột bằng nhau */
+        gap: 30px;
+        /* Khoảng cách giữa các cột */
+    }
+
+    /* Footer Dropdown Styling */
+    .footer-col .footer-dropdown {
+        position: relative;
+        /* Cần thiết cho dropdown */
+        margin-bottom: 10px;
+    }
+
+    .footer-col .footer-dropdown>a {
+        display: inline-block;
+        padding: 5px 0;
+        cursor: pointer;
+        text-decoration: none;
+        color: var(--text-color, #666);
+        /* Sử dụng màu chữ mặc định hoặc biến CSS nếu có */
+        transition: color 0.3s;
+    }
+    
+    .footer-col .footer-dropdown > a:hover {
+        color: var(--primary-color, #007bff);
+    }
+
+    .footer-col .footer-dropdown .dropdown-content {
+        display: none;
+        /* Ẩn mặc định */
+        position: absolute;
+        bottom: 100%;
+        /* Hiển thị bên trên thẻ cha */
+        left: 0;
+        background-color: #ffffff;
+        min-width: 200px;
+        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+        z-index: 10;
+        border-radius: 5px;
+        padding: 10px 0;
+        margin-bottom: 5px; /* Khoảng cách giữa dropdown và link chính */
+    }
+
+    .footer-col .footer-dropdown .dropdown-content a {
+        color: #333;
+        padding: 8px 15px;
+        text-decoration: none;
+        display: block;
+        font-size: 0.9rem;
+    }
+
+    .footer-col .footer-dropdown .dropdown-content a:hover {
+        background-color: #f1f1f1;
+    }
+
+    /* Hiển thị dropdown khi hover trên desktop */
+    @media (min-width: 769px) {
+        .footer-col .footer-dropdown:hover .dropdown-content {
+            display: block;
+        }
+    }
+    
+    /* Hiển thị dropdown khi có class 'active' (cho mobile click) */
+    .footer-col .footer-dropdown.active .dropdown-content {
+        display: block;
+    }
+    
+    /* === FIX LỖI XUỐNG DÒNG CHO CỘT "THÔNG TIN" === */
+    .footer-contact li {
+        white-space: nowrap; /* Ngăn text bị xuống dòng */
+    }
+    /* === KẾT THÚC FIX === */
+
+
+    /* Responsive cho Grid */
+    @media (max-width: 992px) {
+        .footer-grid {
+            grid-template-columns: repeat(2, 1fr);
+            /* 2 cột trên tablet */
+        }
+    }
+
+    @media (max-width: 768px) {
+        .footer-grid {
+            grid-template-columns: 1fr;
+            /* 1 cột trên mobile */
+            text-align: center; /* Căn giữa nội dung khi xếp chồng */
+        }
+        .footer-col {
+            margin-bottom: 20px;
+        }
+        .footer-col .footer-dropdown .dropdown-content {
+            left: 50%;
+            transform: translateX(-50%); /* Căn giữa dropdown trên mobile */
+        }
+        .footer-contact li {
+            white-space: normal; /* Cho phép xuống dòng lại trên mobile nếu cần */
+        }
+    }
