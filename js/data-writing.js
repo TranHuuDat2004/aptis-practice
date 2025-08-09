@@ -432,7 +432,13 @@ const writingData = {
 Hi Sara,
 How's it going? I hope everything goes well with you. I just got an email from the travel club. The club is planning to encourage tourists to visit an area. They also want visitors coming to our areas to behave politely. I think we should create brochures or flyers about our area's attractions and distribute them to hotels, airports, and tourist centers. We could also put up simple, friendly signs in key spots, reminding tourists to respect local customs and the environment. What do you think? Do you have any other suggestions?
 Love,
-Nguyen`
+Nguyen`,
+                hints: [
+                    "create brochures or flyers",
+                    "distribute them to hotels, airports, or tourist centers",
+                    "put up simple, friendly signs",
+                    "reminding tourists to respect local customs"
+                ]
             },
             task2: {
                 instruction: "Write an email to the manager of the club. Tell the manager about your opinion and make another suggestion. 120 – 150 words.",
@@ -444,7 +450,12 @@ From my perspective, I think we should make some brochures or flyers that introd
 Besides, to encourage polite behavior, we could put up signs in important areas, asking tourists to respect local customs and the environment. The signs should be simple, friendly, and easy to understand, maybe with translations for visitors from other countries. This way, we can avoid conflicts or misunderstandings with the locals.
 I hope you find my suggestions helpful. Please let me know if you have any questions or feedback.
 Sincerely,
-Nguyen`
+Nguyen`,
+                hints: [
+                    "make some brochures or flyers that introduce our area",
+                    "put up signs in important areas",
+                    "asking tourists to respect local customs and the environment"
+                ]
             }
         },
 
@@ -465,7 +476,12 @@ Nguyen`
 Hi Sara,
 I got an email from the Science Club about the club exhibition next month. They are asking for ideas and opinions. I think it would be fun to show some experiments or games that people can try. Maybe we can make a volcano or a rocket. What do you think? Should we charge money for the tickets? I think it would be better to make it free so more people can come. Let me know what you think.
 Love,
-Nguyen`
+Nguyen`,
+                hints: [
+                    "show some experiments or games",
+                    "make a volcano or a rocket",
+                    "make it free so more people can come"
+                ]
             },
             task2: {
                 instruction: "Write an email to the manager of the club. 120 – 150 words.",
@@ -478,7 +494,14 @@ I have some ideas for the event team. First, I think we should have some interac
 I also have an opinion about the ticket issue. I think we should not charge the participants for the tickets. Instead, we can ask for voluntary donations or sponsorships from local businesses or organizations.
 I hope you find my suggestions helpful. Please let me know if you have any questions or feedback.
 Sincerely,
-Vu Khanh Nguyen`
+Vu Khanh Nguyen`,
+                hints: [
+                    "have some interactive experiments and demonstrations",
+                    "attract both young and elderly people",
+                    "have some quizzes and games",
+                    "should not charge for the tickets",
+                    "ask for voluntary donations or sponsorships"
+                ]
             }
         },
 
@@ -503,7 +526,11 @@ Hi Sara,
 I hope you're doing well! I just got an email from the food club manager. He said that the club is organizing a meeting with a famous chef. To be honest, I felt so excited to hear that. I think the club should ask the chef to talk about Vietnamese food and guide us on how to make a dish like pho or spring rolls. It might be a good idea to attract both young and older people.
 I hope to hear from you soon.
 All the best,
-Nguyen`
+Nguyen`,
+                hints: [
+                    "ask the chef to talk about Vietnamese food",
+                    "guide us on how to make a dish like pho or spring rolls"
+                ]
             },
             task2: {
                 instruction: "Write an email to the manager of the club. 120 – 150 words.",
@@ -515,7 +542,12 @@ From my perspective, I suggest that the chef talk about Vietnamese food. Vietnam
 I believe that by choosing Vietnamese food, we will not only entertain but also educate our members, creating a memorable event.
 Thank you for considering my suggestions. I look forward to the event.
 Yours sincerely,
-Vu Khanh Nguyen`
+Vu Khanh Nguyen`,
+                hints: [
+                    "I suggest that the chef talk about Vietnamese food",
+                    "it would be great if the chef could guide us on how to make a traditional dish",
+                    "choosing Vietnamese food, we will not only entertain but also educate our members"
+                ]
             }
         },
         {
@@ -534,7 +566,12 @@ Vu Khanh Nguyen`
 Hi Sara,
 I just got the email from the club manager. He said that the club wants to encourage more people to learn cooking. I think it's a good idea to promote cooking at home. Cooking is fun and healthy. I would tell people to start with easy recipes and watch some videos online. Maybe the club should organize cooking workshops for beginners. The club could also create easy video tutorials or recipe cards for members to follow at home. What do you think?
 Love,
-Nguyen`
+Nguyen`,
+                hints: [
+                    "start with easy recipes and watch some videos online",
+                    "organize cooking workshops for beginners",
+                    "create easy video tutorials or recipe cards"
+                ]
             },
             task2: {
                 instruction: "Write an email to the manager of the club. Tell the manager about your opinion and what you think the club should do about the problem. Write about 120-150 words.",
@@ -549,7 +586,13 @@ I have spoken to other club members, and I know that they also share the same op
 I hope you will consider these suggestions and let me know what you decide.
 I am looking forward to hearing from you soon.
 Yours sincerely,
-Vu Khanh Nguyen`
+Vu Khanh Nguyen`,
+                hints: [
+                    "organize cooking workshops for beginners",
+                    "workshops could focus on simple, quick meals",
+                    "create video tutorials or recipe cards",
+                    "learn cooking at their own pace"
+                ]
             }
         },
         {
@@ -571,7 +614,12 @@ I agree with them. It sounds too ambitious and expensive. I think the club shoul
 What do you think? Do you have any suggestions for the club?
 Please reply soon.
 Your friend,
-Nguyen`
+Nguyen`,
+                hints: [
+                    "It sounds too ambitious and expensive",
+                    "the club should focus on local events",
+                    "activities that are more accessible and affordable"
+                ]
             },
             task2: {
                 instruction: "Write an email to the manager of the club. Tell the manager about your opinion and what you think the club should do about the problem. Write about 120-150 words.",
@@ -585,7 +633,15 @@ Therefore, I suggest that we can do something simpler and closer to home, like a
 I hope you will consider my suggestion and let me know what you think.
 I am looking forward to hearing from you soon.
 Sincerely,
-Nguyen`
+Nguyen`,
+                hints: [
+                    "many factors make this idea difficult",
+                    "too stressful and risky",
+                    "do something simpler and closer to home",
+                    "like a walking challenge in our own city",
+                    "extend the duration... make it more flexible",
+                    "invite other walking clubs to join us"
+                ]
             }
         },
         {
@@ -606,7 +662,11 @@ Hi Sara,
 I got an email from the club manager. He wants us to give some advice on road safety. I think it's a good idea. Many people are not careful when they walk on the streets. They look at their phones and don't see the cars or bikes. This is dangerous for them and others.
 I think the club should make some posters or flyers with simple tips on how to be safe. What do you think? Do you have any other suggestions?
 Love,
-Nguyen`
+Nguyen`,
+                hints: [
+                    "make some posters or flyers",
+                    "with simple tips on how to be safe"
+                ]
             },
             task2: {
                 instruction: "Write an email to the manager of the club. Tell the manager about your opinion and what you think the club should do about the problem. Write about 120-150 words.",
@@ -618,7 +678,13 @@ According to the email, you said that many pedestrians are reading their phones 
 I have two suggestions for how we can inform people about road safety. First, we can create a flyer or a brochure with some tips and facts about how to be safe on the road. We can distribute this to our club members and also to other pedestrians we meet on our walks. Second, we can organize a road safety awareness event, where we invite experts, police officers, or local officials to talk about the issue and answer questions. We can also have some activities or games to make it fun and engaging.
 I think these suggestions will help us communicate effectively with the public and raise awareness about road safety. Please let me know what you think and if you have any other ideas.
 Sincerely,
-Nguyen`
+Nguyen`,
+                hints: [
+                    "create a flyer or a brochure with some tips and facts",
+                    "distribute this to our club members and other pedestrians",
+                    "organize a road safety awareness event",
+                    "invite experts, police officers, or local officials to talk"
+                ]
             }
         },
         {
@@ -640,7 +706,12 @@ Hi Sara,
 Hope you're doing well! I just got an email from the club about the City Council's new gardening plans. They're thinking of planting 500 trees and flowers in the park or organizing gardening workshops at a college.
 I'm really excited! I think planting trees is a great idea—it'll make the park greener and more beautiful. What do you think? Let's discuss it soon!
 All the best,
-Nguyen`
+Nguyen`,
+                hints: [
+                    "I'm really excited!",
+                    "I think planting trees is a great idea",
+                    "it'll make the park greener and more beautiful"
+                ]
             },
             task2: {
                 instruction: "Write an email to the manager of the club. Write about 120-150 words.",
@@ -652,7 +723,14 @@ While gardening workshops are valuable, I believe more people will benefit from 
 I appreciate the effort the City Council is making to encourage gardening and would love to support this initiative in any way I can. Please let me know if there are opportunities to get involved.
 I look forward to your response.
 Yours sincerely,
-Pham Khanh Nguyen`
+Pham Khanh Nguyen`,
+                hints: [
+                    "I strongly support planting 500 trees and flowers",
+                    "This initiative will provide a greener environment",
+                    "trees offer long-term benefits",
+                    "more people will benefit from an improved park",
+                    "this project will have a lasting impact"
+                ]
             }
         },
         {
@@ -673,7 +751,12 @@ Pham Khanh Nguyen`
 Hi Sara,
 Hope everything is going well with you. Did you see the latest notice from the club? They're choosing two people to join a car program across Europe! I just got an email from the club manager. To be honest, I'm super excited about it! I think we should suggest Minh as the driver – he's really skilled. Maybe I could go as the passenger? Hope to hear from you soon!
 All the best,
-Nguyen`
+Nguyen`,
+                hints: [
+                    "I'm super excited about it!",
+                    "suggest Minh as the driver – he's really skilled",
+                    "Maybe I could go as the passenger?"
+                ]
             },
             task2: {
                 instruction: "Write an email to the manager of the club. Write about 120-150 words.",
@@ -685,7 +768,13 @@ From my perspective, I suggest that Minh Nguyen be selected as the main driver. 
 I have also spoken to other club members, and they agree with my suggestions.
 I hope you will take them into consideration and let me know your decision.
 Yours sincerely,
-Pham Khanh Nguyen`
+Pham Khanh Nguyen`,
+                hints: [
+                    "suggest that Minh Nguyen be selected as the main driver",
+                    "As for the passenger, I would like to recommend myself",
+                    "I have experience with long road trips",
+                    "can also assist with navigation and planning"
+                ]
             }
         },
         {
@@ -704,7 +793,12 @@ Pham Khanh Nguyen`
 Hi Sara,
 I wanted to share something exciting with you! I've been taking an English course at the American Dream Center for the past two months, and it's been amazing! The lessons are really helpful, and I feel my speaking and writing skills have improved. If you're looking for a great course to improve your English, I highly recommend it. Let me know if you're interested!
 Take care,
-[Your Name]`
+[Your Name]`,
+                hints: [
+                    "The lessons are really helpful",
+                    "my speaking and writing skills have improved",
+                    "I highly recommend it"
+                ]
             },
 
             task2: {
@@ -715,7 +809,14 @@ I hope you are doing well. My name is [Your Name], and I had registered for the 
 I was really looking forward to this course, but because of my work schedule and some other personal responsibilities, I am unable to find a good time to attend the classes. I'm very disappointed, as I was excited to improve my English skills with your help.
 I would love to join the course in the future when my schedule allows. Could you please let me know if there are any other sessions coming up that might work better for me? Thank you for understanding, and I hope to join your course soon.
 Best regards,
-[Your Name]`
+[Your Name]`,
+                hints: [
+                    "I won’t be able to attend the course as planned",
+                    "because of my work schedule",
+                    "I'm very disappointed",
+                    "I would love to join the course in the future",
+                    "let me know if there are any other sessions coming up"
+                ]
             }
         },
         {
@@ -735,7 +836,12 @@ Hi Sara,
 How's it going? I hope everything goes well with you.
 I got an email from the book club. The email stated that the local authorities announced that the public library may close next year. I'm so sad about the library. I love going there and reading books. It's not fair that they want to close it. We should do something to stop them. Maybe we can sign a petition or write letters. Can you help me with that? Please reply soon.
 Love,
-Nguyen`
+Nguyen`,
+                hints: [
+                    "I'm so sad about the library",
+                    "We should do something to stop them",
+                    "Maybe we can sign a petition or write letters"
+                ]
             },
             task2: {
                 instruction: "Write an e-mail to the of the club. Write about your opinion and what actions should be taken. Write 120-150 words. You have 20 minutes.",
@@ -748,7 +854,13 @@ From my perspective, I think it is very important to keep it open. The library h
 I think we should write a letter to the authorities and explain why the library is valuable for us and for society. We should also ask them to reconsider their decision and find other ways to save money. We should also start a petition and get signatures from other people who support the library. We should also spread the word on social media and ask our friends and family to join us.
 I hope you agree with me and I look forward to hearing from you soon.
 Yours sincerely,
-Nguyen`
+Nguyen`,
+                hints: [
+                    "it is very important to keep it open",
+                    "write a letter to the authorities",
+                    "start a petition and get signatures",
+                    "spread the word on social media"
+                ]
             }
         },
         {
@@ -769,7 +881,13 @@ Hi Sara,
 How's it going? I hope everything goes well with you.
 I just got the email from the book club manager about designing the new library. I think it should be more interactive, with spaces for reading, group activities, and modern technology like e-books and smart screens. To attract both young and older people, we could add comfortable seating and events like book talks or workshops. What do you think? Please reply soon.
 Best,
-Nguyen`
+Nguyen`,
+                hints: [
+                    "it should be more interactive",
+                    "with spaces for reading, group activities",
+                    "modern technology like e-books",
+                    "add comfortable seating and events"
+                ]
             },
             task2: {
                 instruction: "Write an email to the manager of the club. Tell the manager about your opinion and what you think the club should do about the problem. Write about 120-150 words.",
@@ -782,7 +900,13 @@ I think the library should be more interactive to attract both young and older p
 We could also have comfortable seating and host events like book talks or workshops. This way, the library will become a lively and inviting place for everyone.
 Thank you for considering my suggestions. I am looking forward to hearing from you soon.
 Sincerely,
-Vu Khanh Nguyen`
+Vu Khanh Nguyen`,
+                hints: [
+                    "library should be more interactive",
+                    "spaces for reading, group activities",
+                    "modern technology like e-books and smart screens",
+                    "have comfortable seating and host events"
+                ]
             }
         },
         {
@@ -802,7 +926,12 @@ Vu Khanh Nguyen`
 Hi Sara,
 The club manager is considering separate categories based on gender and age for the annual photography competition. I don't agree with splitting the categories by gender and age. I think photography should be judged based on creativity and skill, no matter who takes the photo. Dividing the categories might create barriers and discourage some members. What do you think? Let's chat about it soon!
 Love,
-Nguyen`
+Nguyen`,
+                hints: [
+                    "I don't agree with splitting the categories",
+                    "should be judged based on creativity and skill",
+                    "Dividing the categories might create barriers"
+                ]
             },
             task2: {
                 instruction: "Write an email to the manager of the club. Tell the manager what your opinion about the proposed change is and your reason for that opinion. 120 – 150 words.",
@@ -814,7 +943,13 @@ According to the email, you said that in the past we have had just one single ca
 I think we should keep the competition as one category to celebrate everyone's talent equally. Besides, I suggest we could have special awards for different themes or styles within the main competition. This way, we can celebrate a variety of talents without dividing the members.
 Thank you for your consideration, and I look forward to hearing from you soon.
 Yours sincerely,
-Vu Khanh Nguyen`
+Vu Khanh Nguyen`,
+                hints: [
+                    "keep the competition as one category",
+                    "celebrate everyone's talent equally",
+                    "suggest we could have special awards for different themes",
+                    "celebrate a variety of talents without dividing the members"
+                ]
             }
         },
         {
@@ -834,7 +969,12 @@ Vu Khanh Nguyen`
 Hi Sara,
 I wanted to tell you that the talk on "The Gardens of Japan" by Mr. Seiko has been canceled because he is ill. Instead, Mr. Jones will give his talk on "The Gardens of England" again. I know we've heard him before, but it should still be interesting. It's a good chance to learn more about English gardens. I hope you can join the talk too!
 Love,
-Nguyen`
+Nguyen`,
+                hints: [
+                    "talk...has been canceled because he is ill",
+                    "Mr. Jones will give his talk...again",
+                    "It's a good chance to learn more"
+                ]
             },
             task2: {
                 instruction: "Write an email to the manager of the club. Write about 200 simple words.",
@@ -845,7 +985,13 @@ Although I've heard Mr. Jones speak before, his talks are always interesting and
 It could also be nice to have a Q&A session or a discussion after the talk. This would give everyone a chance to share ideas and learn from each other.
 Thank you for organizing the event. I look forward to hearing Mr. Jones again.
 Best regards,
-Pham Khanh Nguyen`
+Pham Khanh Nguyen`,
+                hints: [
+                    "I'm sorry to hear that Mr. Seiko is ill",
+                    "his talks are always interesting and informative",
+                    "consider inviting a different speaker or exploring new topics",
+                    "have a Q&A session or a discussion after the talk"
+                ]
             }
         },
         {
@@ -865,7 +1011,12 @@ Hi Sara,
 How's it going? I hope everything goes well with you.
 I got an email from the college administrator. They changed the exam date to two weeks earlier. That's not fair at all. I have other things to do and I need more time to study. How can they do this to us? They should change it back or give us some extra help. This is a bad situation and I don't know what to do. I hope you are doing okay. Let me know if you want to talk more.
 Your friend,
-Nguyen`
+Nguyen`,
+                hints: [
+                    "They changed the exam date to two weeks earlier",
+                    "That's not fair at all",
+                    "They should change it back or give us some extra help"
+                ]
             },
             task2: {
                 instruction: "Write an email to the college administrator. Write about your feelings and what you think the college should do about the situation. Write about 120 – 150 words.",
@@ -877,7 +1028,13 @@ According to the email, you said that our final exams would happen two weeks soo
 From my perspective, I think the college should reconsider this decision and change the exam dates back to the original ones. Besides, the college should provide us with some extra help, such as revision sessions, online resources or extra time for the exams. This would be fair and reasonable for all the students who are affected by this change.
 I hope you will consider my suggestions and let me know what you think. I am looking forward to hearing from you soon.
 Sincerely,
-Nguyen`
+Nguyen`,
+                hints: [
+                    "I felt blue when I heard this news",
+                    "college should reconsider this decision",
+                    "change the exam dates back to the original ones",
+                    "provide us with some extra help, such as revision sessions"
+                ]
             }
         }
         // Thêm các chủ đề Part 4 khác vào đây

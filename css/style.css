@@ -3365,3 +3365,43 @@ body.u-nav-open {
     cursor: pointer;
     font-weight: 500;
 }
+
+/* --- STYLES FOR HINTS --- */
+.hints-wrapper {
+    margin-top: 10px;
+    padding: 15px;
+    background-color: #fffbe6; /* Màu vàng nhạt */
+    border-left: 3px solid #ffe58f;
+    border-radius: 5px;
+}
+.hints-wrapper h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #856404;
+}
+.hints-wrapper ul {
+    list-style-type: '💡';
+    padding-left: 25px;
+    margin: 0;
+}
+.hints-wrapper li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+/* --- THÊM VÀO CUỐI PHẦN STYLES FOR HINTS --- */
+.support-wrapper {
+    margin-top: 15px;
+}
+.support-wrapper .hints-wrapper {
+    margin-top: 0;
+    margin-bottom: 15px; /* Tạo khoảng cách với đáp án mẫu */
+    border-radius: 8px; /* Bo góc đẹp hơn */
+}
+.support-wrapper .sample-answer-wrapper .sample-answer {
+     border-radius: 8px; /* Bo góc đẹp hơn */
+}
+
+/* Đảm bảo nút mới chiếm toàn bộ chiều rộng */
+.writing-task .card-actions .action-btn {
+    flex-grow: 1;
+}
