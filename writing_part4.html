@@ -7,7 +7,7 @@
     <title>Writing - Part 4</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
 </head>
 
 <body>
@@ -79,7 +79,8 @@
                             <li><code><strong>Firstly,</strong> I suggest that the club could...</code></li>
                             <li><code><strong>Secondly,</strong> it would be a great idea if we...</code> /
                                 <code><strong>In addition,</strong> we could also...</code> /
-                                <code><strong>Besides,</strong> ...</code></li>
+                                <code><strong>Besides,</strong> ...</code>
+                            </li>
                         </ul>
                         <p><strong>4. Kết bài (Closing):</strong></p>
                         <ul>
@@ -92,9 +93,11 @@
                                 </ul>
                             </li>
                             <li><strong>Kêu gọi hành động:</strong>
-                                <code>I look forward to hearing from you soon.</code></li>
+                                <code>I look forward to hearing from you soon.</code>
+                            </li>
                             <li><strong>Lời chào cuối thư:</strong> <code>Yours sincerely,</code> /
-                                <code>Best regards,</code></li>
+                                <code>Best regards,</code>
+                            </li>
                         </ul>
                     </div>
                 </div>
@@ -178,8 +181,17 @@
                 card.id = topic.id;
 
                 card.innerHTML = `
-                    <div class="card-header"><h2>${topic.title}</h2></div>
-                    <div class="context-box"><h4>Bối cảnh:</h4><p>${topic.context}</p></div>
+    <div class="card-header"><h2>${topic.title}</h2></div>
+    <div class="context-box">
+        <p>${topic.context}</p>
+        <div class="translation-controls">
+            <button class="action-btn-small show-translation-btn">🔍 Dịch & Từ khóa</button>
+        </div>
+        <div class="translation-content" style="display:none;">
+            <p><strong>Bản dịch:</strong> ${topic.context_vi || 'Chưa có bản dịch.'}</p>
+            <div class="keywords-list"></div>
+        </div>
+    </div>
                     <!-- Nhiệm vụ 1 -->
                     <div class="writing-task" data-task-id="1">
                         <div class="task-header"><h3>Nhiệm vụ 1: Email cho bạn (thân mật)</h3><p class="instruction">${topic.task1.instruction}</p></div>
@@ -200,6 +212,7 @@
                     </div>`;
                 contentContainer.appendChild(card);
             });
+
 
             const allButtons = selectorContainer.querySelectorAll('.topic-selector-btn');
             const allCards = contentContainer.querySelectorAll('.writing-part4-card');
@@ -264,6 +277,32 @@
             });
 
             contentContainer.addEventListener('click', function (e) {
+
+                // Thay thế toàn bộ logic cũ cho nút Dịch và Từ khóa bằng đoạn này
+                if (e.target.classList.contains('show-translation-btn')) {
+                    const button = e.target;
+                    const card = button.closest('.writing-part4-card');
+                    const topicData = topics.find(t => t.id === card.id);
+                    const translationContent = card.querySelector('.translation-content');
+                    const keywordsList = translationContent.querySelector('.keywords-list');
+
+                    const isVisible = translationContent.style.display === 'block';
+
+                    if (!isVisible) {
+                        // Nếu chưa hiện, thì tạo danh sách từ khóa trước khi hiển thị
+                        keywordsList.innerHTML = ''; // Xóa nội dung cũ
+                        if (topicData.keywords_vi) {
+                            keywordsList.innerHTML = '<h4>Từ khóa chính:</h4>';
+                            for (const [en, vi] of Object.entries(topicData.keywords_vi)) {
+                                keywordsList.innerHTML += `<p><strong>${en}:</strong> ${vi}</p>`;
+                            }
+                        }
+                    }
+
+                    // Hiển thị hoặc ẩn toàn bộ khu vực
+                    translationContent.style.display = isVisible ? 'none' : 'block';
+                    button.textContent = isVisible ? '🔍 Dịch & Từ khóa' : '🙈 Ẩn';
+                }
                 if (e.target.classList.contains('start-writing-btn')) {
                     const button = e.target;
                     const timerBar = button.closest('.writing-timer-bar');

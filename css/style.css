@@ -3322,3 +3322,46 @@ body.u-nav-open {
     font-weight: bold;
     text-decoration: line-through; /* Gạch ngang để nhấn mạnh */
 }
+
+/* Thêm vào css/style.css */
+.translation-controls {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px dashed #eee;
+    display: flex;
+    gap: 10px;
+}
+.action-btn-small {
+    background-color: #f8f9fa;
+    color: #333;
+    border: 1px solid var(--border-color);
+    padding: 5px 12px;
+    font-size: 0.8em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.translation-content {
+    margin-top: 15px;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+}
+.keywords-list h4 { margin-top: 10px; }
+
+/* Sửa lại CSS một chút cho gọn */
+.translation-controls {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px dashed #eee;
+    /* display: flex; và gap: 10px; không còn cần thiết */
+}
+.action-btn-small {
+    background-color: #f8f9fa;
+    color: #333;
+    border: 1px solid var(--border-color);
+    padding: 8px 15px; /* Tăng padding một chút */
+    font-size: 0.9em; /* Tăng font size một chút */
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+}

@@ -132,7 +132,7 @@ const writingData = {
         { question: "What is your favorite season/time of the year?", answer: "My favorite season is summer." }
     ],
 
-     part2: [
+    part2: [
         {
             id: 'wp2_travel_club',
             title: 'Chủ đề 1: Travel Club',
@@ -213,7 +213,7 @@ const writingData = {
             question: "Tell me about the last book or story you read.",
             sampleAnswer: "The last story I read was about Doraemon, a blue robot cat from the future. He uses his magical gadgets to help Nobita, a young boy, with everyday problems and adventures. It's fun and heartwarming!"
         },
-         {
+        {
             id: 'wp2_photography_club',
             title: 'Chủ đề 14: Photography Club',
             question: "What is your favorite time and place to take pictures?",
@@ -233,7 +233,7 @@ const writingData = {
         }
     ],
 
- part3: [
+    part3: [
         {
             id: 'wp3_travel_club',
             title: 'Chủ đề 1: Travel Club Chat',
@@ -417,8 +417,15 @@ const writingData = {
     part4: [
         {
             id: 'wp4_travel_club_tourists',
-            title: 'Chủ đề: Kế hoạch thu hút khách du lịch của Câu lạc bộ Du lịch',
+            title: 'Chủ đề 1: Kế hoạch thu hút khách du lịch của Câu lạc bộ Du lịch',
             context: "Our club is planning to encourage tourists to visit an area. We also want visitors coming to our areas to behave politely. Please raise your voice and give some suggestions for this plan.",
+            // --- DỮ LIỆU DỊCH MỚI ---
+            context_vi: "Câu lạc bộ của chúng ta đang có kế hoạch khuyến khích khách du lịch đến thăm một khu vực. Chúng ta cũng muốn du khách đến khu vực của chúng ta cư xử lịch sự. Vui lòng cho ý kiến và đưa ra một số gợi ý cho kế hoạch này.",
+            keywords_vi: {
+                "encourage tourists": "khuyến khích khách du lịch",
+                "behave politely": "cư xử lịch sự",
+                "give some suggestions": "đưa ra một số gợi ý"
+            },
             task1: {
                 instruction: "Write an email to your friend. Tell your friend about your opinion and describe your own suggestion. 50 words.",
                 sampleAnswer: `
@@ -446,6 +453,12 @@ Nguyen`
             id: 'wp4_science_club_exhibition',
             title: 'Chủ đề 2: Triển lãm của Câu lạc bộ Khoa học',
             context: "Dear all members in our club, our club is preparing to organize the science exhibition next month. Both young people and elderly people can take part in our activities in the exhibition. We are planning for our exhibition. Could you contribute some ideas for our event team? Whether our club issues the ticket for participants? I would like to hear your contribution.",
+            context_vi: "Gửi tất cả các thành viên, câu lạc bộ của chúng ta đang chuẩn bị tổ chức triển lãm khoa học vào tháng tới. Cả người trẻ và người lớn tuổi đều có thể tham gia. Chúng tôi đang lên kế hoạch cho triển lãm. Bạn có thể đóng góp một vài ý tưởng cho đội sự kiện không? Liệu câu lạc bộ có nên phát hành vé cho người tham gia? Tôi rất muốn nghe sự đóng góp của bạn.",
+            keywords_vi: {
+                "organize the science exhibition": "tổ chức triển lãm khoa học",
+                "contribute some ideas": "đóng góp một vài ý tưởng",
+                "issues the ticket": "phát hành vé"
+            },
             task1: {
                 instruction: "Write an email to your friend. 50 words.",
                 sampleAnswer: `
@@ -474,6 +487,15 @@ Vu Khanh Nguyen`
             id: 'wp4_food_club_chef',
             title: 'Chủ đề 3: Gặp gỡ đầu bếp nổi tiếng',
             context: "Dear Member, The Food Club is going to organize a meeting with a famous chef and we would like to ask members for suggestions. The chef will give a talk and demonstrate how to cook something. What do you think the chef should talk about and what kind of meal should the chef guide to cook? We want to attract as wide an audience as possible of both young and elder people. Please send us your suggestions and also give reasons for your suggestions.",
+
+            context_vi: "Gửi thành viên, Câu lạc bộ Ẩm thực sẽ tổ chức một buổi gặp mặt với một đầu bếp nổi tiếng và chúng tôi muốn hỏi ý kiến của các thành viên. Đầu bếp sẽ nói chuyện và trình diễn cách nấu một món ăn. Bạn nghĩ đầu bếp nên nói về chủ đề gì và hướng dẫn nấu món ăn nào? Chúng tôi muốn thu hút đông đảo khán giả cả trẻ và già. Vui lòng gửi cho chúng tôi gợi ý và lý do của bạn.",
+            // --- THAY THẾ OBJECT NÀY ---
+            keywords_vi: {
+                "ask members for suggestions": "hỏi ý kiến của các thành viên",
+                "what should the chef talk about": "đầu bếp nên nói về chủ đề gì",
+                "what kind of meal... guide to cook": "hướng dẫn nấu món ăn nào",
+                "attract as wide an audience as possible": "thu hút đông đảo khán giả nhất có thể"
+            },
             task1: {
                 instruction: "Write an email to your friend. 50 words.",
                 sampleAnswer: `
@@ -500,6 +522,12 @@ Vu Khanh Nguyen`
             id: 'wp4_food_club_cooking',
             title: 'Chủ đề 4: Khuyến khích người trẻ nấu ăn',
             context: "Dear member, A recent report states that young people in their 20s do not cook at home. We want to encourage more people to learn cooking. What advice would you give to those who have never cooked before but want to start, and what is the best way to convey this advice?",
+            context_vi: "Gửi thành viên, Một báo cáo gần đây chỉ ra rằng những người trẻ ở độ tuổi 20 không nấu ăn ở nhà. Chúng tôi muốn khuyến khích nhiều người hơn học nấu ăn. Bạn sẽ đưa ra lời khuyên gì cho những người chưa từng nấu ăn trước đây nhưng muốn bắt đầu, và cách tốt nhất để truyền đạt lời khuyên này là gì?",
+            keywords_vi: {
+                "encourage more people to learn cooking": "khuyến khích nhiều người học nấu ăn",
+                "what advice would you give": "bạn sẽ đưa ra lời khuyên gì",
+                "best way to convey this advice": "cách tốt nhất để truyền đạt lời khuyên này"
+            },
             task1: {
                 instruction: "Write an email to your friend, who is also a member of this club. Tell your friend about your opinion and what you think the club should do about the problem. Write about 50 words.",
                 sampleAnswer: `
@@ -528,6 +556,12 @@ Vu Khanh Nguyen`
             id: 'wp4_walking_club_competition',
             title: 'Chủ đề 5: Cuộc thi đi bộ vòng quanh Châu Âu',
             context: "Dear member, the club is going to organize a walking competition through several Europe countries in two weeks. But there are some opinions that it is not realistic. Give your opinion and alternative suggestion for this.",
+            context_vi: "Gửi thành viên, câu lạc bộ sẽ tổ chức một cuộc thi đi bộ qua một vài quốc gia Châu Âu trong hai tuần. Nhưng có một số ý kiến cho rằng điều đó không thực tế. Hãy đưa ra ý kiến và gợi ý thay thế của bạn về việc này.",
+            keywords_vi: {
+                "organize a walking competition": "tổ chức một cuộc thi đi bộ",
+                "not realistic": "không thực tế",
+                "alternative suggestion": "gợi ý thay thế"
+            },
             task1: {
                 instruction: "Write an email to your friend, who is also a member of this club. Tell your friend about your opinion and what you think the club should do about the problem. Write about 50 words.",
                 sampleAnswer: `
@@ -558,6 +592,13 @@ Nguyen`
             id: 'wp4_walking_club_road_safety',
             title: 'Chủ đề 6: Nâng cao nhận thức về An toàn giao thông',
             context: "Dear Member, Road safety has become a major issue in big cities. Some people say this is because many pedestrians are reading their phones as they walk and not concentrating. There may be other issues, too. We would like to produce some information about road safety for people. What advice should we include and how can we communicate this effectively to members of public? Please write about your suggestions and why.",
+            context_vi: "Gửi thành viên, An toàn giao thông đã trở thành một vấn đề lớn ở các thành phố. Một số người cho rằng điều này là do nhiều người đi bộ đọc điện thoại khi đi đường và không tập trung. Cũng có thể có các vấn đề khác. Chúng tôi muốn tạo ra một số thông tin về an toàn giao thông cho mọi người. Chúng ta nên bao gồm lời khuyên nào và làm thế nào để truyền đạt điều này một cách hiệu quả đến công chúng? Vui lòng viết gợi ý và lý do của bạn.",
+            keywords_vi: {
+                "major issue": "vấn đề lớn",
+                "pedestrians are reading their phones": "người đi bộ đọc điện thoại",
+                "what advice should we include": "nên bao gồm lời khuyên nào",
+                "how can we communicate this effectively": "làm thế nào để truyền đạt hiệu quả"
+            },
             task1: {
                 instruction: "Write an email to your friend, who is also a member of this club. Tell your friend about your opinion and what you think the club should do about the problem. Write about 50 words.",
                 sampleAnswer: `
@@ -584,6 +625,14 @@ Nguyen`
             id: 'wp4_gardening_club_proposals',
             title: 'Chủ đề 7: Đề xuất của Hội đồng Thành phố về làm vườn',
             context: "Dear members, The City Council wants to encourage people to take up gardening. The City Council has two proposals. The first is to plant 500 new trees and some species of flowers at the local park. The second is to organise gardening workshops at a local college. As a member of the gardening club, please email which proposal you would like to propose.",
+
+            context_vi: "Gửi thành viên, Hội đồng Thành phố muốn khuyến khích mọi người tham gia làm vườn. Hội đồng có hai đề xuất. Thứ nhất là trồng 500 cây mới và một số loài hoa tại công viên địa phương. Thứ hai là tổ chức các buổi hội thảo làm vườn tại một trường cao đẳng địa phương. Với tư cách là thành viên câu lạc bộ làm vườn, vui lòng gửi email cho biết bạn muốn đề xuất phương án nào.",
+            keywords_vi: {
+                "two proposals": "hai đề xuất",
+                "plant 500 new trees": "trồng 500 cây mới",
+                "organise gardening workshops": "tổ chức hội thảo làm vườn",
+                "which proposal you would like to propose": "bạn muốn đề xuất phương án nào"
+            },
             task1: {
                 instruction: "Write an email to your friend (feeling, ideas). Write about 50 words.",
                 sampleAnswer: `
@@ -610,6 +659,14 @@ Pham Khanh Nguyen`
             id: 'wp4_car_club_program',
             title: 'Chủ đề 8: Chương trình xe hơi xuyên Châu Âu',
             context: "There will be a car program running across Europe. The program invites the Car Club to send 2 representatives (1 main driver and 1 passenger) and both must have good driving skills. Do you have any suggestions for the above positions?",
+
+            context_vi: "Sẽ có một chương trình xe hơi chạy xuyên Châu Âu. Chương trình mời Câu lạc bộ Xe hơi cử 2 đại diện (1 tài xế chính và 1 hành khách) và cả hai đều phải có kỹ năng lái xe tốt. Bạn có gợi ý gì cho các vị trí trên không?",
+            keywords_vi: {
+                "car program running across Europe": "chương trình xe hơi xuyên Châu Âu",
+                "send 2 representatives": "cử 2 đại diện",
+                "good driving skills": "kỹ năng lái xe tốt",
+                "suggestions for the above positions": "gợi ý cho các vị trí"
+            },
             task1: {
                 instruction: "Write an email to your friend. Write about 50 words.",
                 sampleAnswer: `
@@ -634,6 +691,12 @@ Pham Khanh Nguyen`
         {
             id: 'wp4_language_club_recommend',
             title: 'Chủ đề 9: Giới thiệu khóa học Tiếng Anh',
+            context_vi: "Bạn là thành viên của câu lạc bộ ngôn ngữ. Bạn đang tham gia một Khóa học Tiếng Anh tại Trung tâm American Dream. Sau 2 tháng học, bạn thấy khóa học hiệu quả và hữu ích.",
+            keywords_vi: {
+                "taking an English Course": "đang tham gia khóa học Tiếng Anh",
+                "course effective and useful": "khóa học hiệu quả và hữu ích",
+                "recommend the course": "giới thiệu khóa học"
+            },
             context: "You are a member of the language club. You are taking an English Course at the American Dream Center. After studying for 2 months, you find the course effective and useful.",
             task1: {
                 instruction: "Write an email to your friend. Write about your feelings and recommend the course to her/him.",
@@ -659,6 +722,12 @@ Best regards,
             id: 'wp4_book_club_library',
             title: 'Chủ đề 10: Thư viện công cộng có nguy cơ đóng cửa',
             context: "Dear Member, The local authorities announced that the public library may close next year. Many people prefer reading on the internet so there is no need for a public library. We want to write a letter to the authorities and we may need your help. What do you think?...",
+            context_vi: "Gửi thành viên, Chính quyền địa phương đã thông báo rằng thư viện công cộng có thể sẽ đóng cửa vào năm tới. Nhiều người thích đọc trên internet hơn nên không cần thư viện công cộng. Chúng tôi muốn viết một lá thư cho chính quyền và có thể cần sự giúp đỡ của bạn. Bạn nghĩ sao?...",
+            keywords_vi: {
+                "public library may close": "thư viện công cộng có thể đóng cửa",
+                "no need for a public library": "không cần thư viện công cộng",
+                "write a letter to the authorities": "viết thư cho chính quyền"
+            },
             task1: {
                 instruction: "Write an e-mail to your friend. What do you feel and what should be done? Write about 50 words. You have 10 minutes.",
                 sampleAnswer: `
@@ -686,6 +755,13 @@ Nguyen`
             id: 'wp4_reading_club_new_library',
             title: 'Chủ đề 11: Thiết kế thư viện quốc gia mới',
             context: "Dear member, Our club has been invited to contribute to design a new national library. We would like to find out what our members think. Some people say that libraries are boring places and they are rarely used. We want the new library to be modern and exciting so that it will attract both young and old people. Please tell us what you think the kind of new library should be.",
+            context_vi: "Gửi thành viên, Câu lạc bộ của chúng ta đã được mời đóng góp ý kiến thiết kế một thư viện quốc gia mới. Chúng tôi muốn biết các thành viên nghĩ gì. Một số người nói rằng thư viện là nơi nhàm chán và hiếm khi được sử dụng. Chúng tôi muốn thư viện mới phải hiện đại và thú vị để thu hút cả người trẻ và người già. Vui lòng cho chúng tôi biết bạn nghĩ loại thư viện mới nên như thế nào.",
+            keywords_vi: {
+                "design a new national library": "thiết kế thư viện quốc gia mới",
+                "libraries are boring places": "thư viện là nơi nhàm chán",
+                "modern and exciting": "hiện đại và thú vị",
+                "attract both young and old people": "thu hút cả người trẻ và người già"
+            },
             task1: {
                 instruction: "Write an email to your friend, who is also a member of this club. Tell your friend about your opinion and what you think the club should do about the problem. Write about 50 words.",
                 sampleAnswer: `
@@ -713,6 +789,13 @@ Vu Khanh Nguyen`
             id: 'wp4_photo_club_categories',
             title: 'Chủ đề 12: Thay đổi hạng mục cuộc thi nhiếp ảnh',
             context: "Dear Member, As you know, every year we hold a competition for the best photograph from our members. In the past we have had just one single category. This year we are thinking about having separate categories for men and women and another category for people under 16. Before we make any changes, we would like to hear from you. What do you think of the proposed change? Please do not forget to tell us the reason for your opinion.",
+            context_vi: "Gửi thành viên, Như bạn đã biết, hàng năm chúng ta tổ chức một cuộc thi ảnh đẹp nhất từ các thành viên. Trong quá khứ, chúng ta chỉ có một hạng mục duy nhất. Năm nay, chúng tôi đang nghĩ đến việc có các hạng mục riêng cho nam, nữ và một hạng mục khác cho người dưới 16 tuổi. Trước khi thực hiện bất kỳ thay đổi nào, chúng tôi muốn nghe ý kiến từ bạn. Bạn nghĩ gì về sự thay đổi được đề xuất này? Vui lòng cho chúng tôi biết lý do cho ý kiến của bạn.",
+            keywords_vi: {
+                "one single category": "một hạng mục duy nhất",
+                "separate categories": "các hạng mục riêng",
+                "proposed change": "sự thay đổi được đề xuất",
+                "reason for your opinion": "lý do cho ý kiến của bạn"
+            },
             task1: {
                 instruction: "Write an email to your friend, who is also a member of the club. Tell your friend how you feel about this change and why you feel this way. Write about 50 words.",
                 sampleAnswer: `
@@ -738,6 +821,13 @@ Vu Khanh Nguyen`
             id: 'wp4_garden_club_speaker_change',
             title: 'Chủ đề 13: Thay đổi diễn giả buổi nói chuyện',
             context: "Dear members, We are writing to tell you that the talk and slide show on The Gardens of Japan by Mr.Seiko has been canceled because the speaker has been taken ill. Mr.Jones has kindly agreed to give his talk on The Gardens of England again. I know that many of you have already heard Mr. Jones before but I hope you will be happy to hear him once again. Please give your suggestions.",
+            context_vi: "Gửi các thành viên, Chúng tôi viết thư để thông báo rằng buổi nói chuyện và trình chiếu về Vườn Nhật Bản của ông Seiko đã bị hủy vì diễn giả bị ốm. Ông Jones đã vui lòng đồng ý trình bày lại bài nói của mình về Vườn Anh Quốc. Tôi biết nhiều người trong số các bạn đã nghe ông Jones nói trước đây nhưng hy vọng các bạn sẽ vui vẻ khi nghe lại ông ấy. Vui lòng cho chúng tôi gợi ý của bạn.",
+            keywords_vi: {
+                "has been canceled": "đã bị hủy",
+                "speaker has been taken ill": "diễn giả bị ốm",
+                "give his talk... again": "trình bày lại bài nói",
+                "give your suggestions": "đưa ra gợi ý của bạn"
+            },
             task1: {
                 instruction: "Write an email to your friend. Write about 75 simple words.",
                 sampleAnswer: `
@@ -762,6 +852,12 @@ Pham Khanh Nguyen`
             id: 'wp4_college_exam_change',
             title: 'Chủ đề 14: Thay đổi lịch thi cuối kỳ',
             context: "Dear student, We are writing to inform you that the end of course exams will now take place two weeks earlier than originally planned. Your exam, which was scheduled for the 21st of next month, will now take place on the 7th of next month. We apologize for any difficulty this may cause.",
+            context_vi: "Gửi sinh viên, Chúng tôi viết thư để thông báo rằng kỳ thi cuối khóa sẽ diễn ra sớm hơn hai tuần so với kế hoạch ban đầu. Kỳ thi của bạn, dự kiến vào ngày 21 tháng sau, giờ sẽ diễn ra vào ngày 7 tháng sau. Chúng tôi xin lỗi vì bất kỳ khó khăn nào điều này có thể gây ra.",
+            keywords_vi: {
+                "exams will now take place": "kỳ thi sẽ diễn ra",
+                "two weeks earlier": "sớm hơn hai tuần",
+                "apologize for any difficulty": "xin lỗi vì bất kỳ khó khăn nào"
+            },
             task1: {
                 instruction: "Write an email to your friend. Write about your feelings and what you think the college should do about the situation. Write about 50 words.",
                 sampleAnswer: `
