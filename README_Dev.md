@@ -4,6 +4,9 @@ Tài liệu này ghi lại các giải pháp và kỹ thuật lập trình chín
 
 ## I. Cấu trúc Dự án (Frontend)
 
+[kỹ năng].html (ví dụ: reading.html, listening.html): Đây sẽ là trang Tổng quan (Overview), giải thích cấu trúc và yêu cầu của toàn bộ kỹ năng đó.
+[kỹ năng]_part[số].html (ví dụ: reading_part1.html, speaking_part2.html): Đây là các trang Luyện tập (Practice) cụ thể cho từng phần.
+
 Dự án được xây dựng theo mô hình **trang web tĩnh (Static Website)**, không yêu cầu cơ sở dữ liệu và có thể triển khai dễ dàng trên các nền tảng như GitHub Pages.
 
 -   **HTML Modularization (Mô-đun hóa):**

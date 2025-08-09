@@ -11,6 +11,13 @@
 
 ---
 
+## 👉 Cấu trúc Dự án 
+
+[kỹ năng].html (ví dụ: reading.html, listening.html): Đây sẽ là trang Tổng quan (Overview), giải thích cấu trúc và yêu cầu của toàn bộ kỹ năng đó.
+[kỹ năng]_part[số].html (ví dụ: reading_part1.html, speaking_part2.html): Đây là các trang Luyện tập (Practice) cụ thể cho từng phần.
+
+---
+
 ## ✨ Các tính năng chính
 
 Công cụ này được chia thành các module tương ứng với các kỹ năng trong bài thi Aptis:

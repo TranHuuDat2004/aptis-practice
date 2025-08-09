@@ -6,7 +6,8 @@
             <a href="index.html" class="footer-logo">
                 <span>Aptis Practice</span>
             </a>
-            <p class="footer-bio">Công cụ hỗ trợ ôn thi Aptis ESOL, được phát triển dựa trên phương pháp học "key" và "câu chuyện gợi nhớ" từ các tài liệu uy tín.</p>
+            <p class="footer-bio">Công cụ hỗ trợ ôn thi Aptis ESOL, được phát triển dựa trên phương pháp học "key" và
+                "câu chuyện gợi nhớ" từ các tài liệu uy tín.</p>
         </div>
 
         <!-- Cột 2: Điều hướng nhanh -->
@@ -27,8 +28,8 @@
                 <a class="dropdown-trigger"><i class="fas fa-angle-right"></i> Reading</a>
                 <div class="dropdown-content">
                     <a href="reading_part1.html">Part 1</a>
-                    <a href="reading.html?part=2">Part 2</a>
-                    <a href="reading.html?part=3">Part 3</a>
+                    <a href="reading_part2.html">Part 2</a> <!-- SỬA Ở ĐÂY -->
+                    <a href="reading_part3.html">Part 3</a> <!-- SỬA Ở ĐÂY -->
                     <a href="reading_part4.html">Part 4</a>
                     <a href="reading_part5.html">Part 5</a>
                 </div>
@@ -51,7 +52,7 @@
                     <a href="writing_part3.html">Part 3</a>
                     <a href="writing_part4.html">Part 4</a>
                     <a href="writing_errors.html">Các lỗi sai thường gặp</a>
-                    <a href="errors.html">Các lỗi sai ngữ pháp</a>
+                    <a href="grammar_errors.html">Các lỗi sai ngữ pháp</a>
                 </div>
             </div>
             <div class="footer-dropdown">
@@ -78,7 +79,8 @@
                 <li><i class="fas fa-history"></i> <strong>Cập nhật:</strong> 08/08/2025</li>
             </ul>
             <div class="footer-social">
-                <a href="https://github.com/TranHuuDat2004/aptis-practice" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                <a href="https://github.com/TranHuuDat2004/aptis-practice" target="_blank" aria-label="GitHub"><i
+                        class="fab fa-github"></i></a>
             </div>
         </div>
     </div>
@@ -91,13 +93,13 @@
 
 <script>
     // JavaScript cho Footer Dropdown
-    document.addEventListener('DOMContentLoaded', function() {
+    document.addEventListener('DOMContentLoaded', function () {
         const footerDropdownTriggers = document.querySelectorAll('.footer-col .footer-dropdown > a.dropdown-trigger');
 
         footerDropdownTriggers.forEach(trigger => {
-            trigger.addEventListener('click', function(event) {
+            trigger.addEventListener('click', function (event) {
                 if (window.innerWidth <= 768) {
-                    event.preventDefault(); 
+                    event.preventDefault();
                     const parentDropdown = this.parentElement;
                     document.querySelectorAll('.footer-col .footer-dropdown.active').forEach(openDropdown => {
                         if (openDropdown !== parentDropdown) {
@@ -108,8 +110,8 @@
                 }
             });
         });
-        
-        window.addEventListener('click', function(event) {
+
+        window.addEventListener('click', function (event) {
             if (!event.target.closest('.footer-dropdown')) {
                 document.querySelectorAll('.footer-col .footer-dropdown.active').forEach(openDropdown => {
                     openDropdown.classList.remove('active');
