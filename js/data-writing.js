@@ -1036,6 +1036,460 @@ Nguyen`,
                     "provide us with some extra help, such as revision sessions"
                 ]
             }
+        },
+        {
+            id: 'wp4_business_club_proposals',
+            title: 'Chủ đề 15: Hỗ trợ doanh nghiệp nhỏ',
+            context: "Dear Members, Currently our club is planning to support local individuals who want to start up a small business. The club has 2 proposals: First, create a call center where customers can call to ask questions and request help. Second, create free courses to support local universities nearby. Let us know which option you would use and why.",
+            context_vi: "Gửi các thành viên, Hiện tại câu lạc bộ của chúng ta đang có kế hoạch hỗ trợ các cá nhân tại địa phương muốn khởi nghiệp một doanh nghiệp nhỏ. Câu lạc bộ có 2 đề xuất: Thứ nhất, tạo một trung tâm cuộc gọi nơi khách hàng có thể gọi để đặt câu hỏi và yêu cầu giúp đỡ. Thứ hai, tạo các khóa học miễn phí để hỗ trợ các trường đại học lân cận. Hãy cho chúng tôi biết bạn sẽ chọn phương án nào và tại sao.",
+            keywords_vi: {
+                "support local individuals": "hỗ trợ các cá nhân tại địa phương",
+                "2 proposals": "2 đề xuất",
+                "create a call center": "tạo một trung tâm cuộc gọi",
+                "create free courses": "tạo các khóa học miễn phí",
+                "which option you would use and why": "bạn sẽ chọn phương án nào và tại sao"
+            },
+            task1: {
+                instruction: "Write a letter to a friend about your choice and the idea. Write about 50 words.",
+                sampleAnswer: `
+Hi Sara,
+I hope you're doing well! I just received an email from the manager of the business club about two ways to support local small businesses: setting up a call center or offering free courses at nearby universities. Honestly, I'm really excited about this! I think offering free courses is the better option because it will provide valuable skills to those starting businesses. You should join us!
+Looking forward to your thoughts.
+All the best,
+Nguyen`,
+                hints: [
+                    "two ways to support local small businesses",
+                    "offering free courses is the better option",
+                    "it will provide valuable skills"
+                ]
+            },
+            task2: {
+                instruction: "Write a letter to the club manager about your choice and why. Write about 120-150 words.",
+                sampleAnswer: `
+Dear Manager,
+I hope this email finds you well.
+My name is Vu Khanh Nguyen, and I have been an active member of the club for the past two years. I am writing in response to your recent email.
+According to the email, we have two options to support local individuals who want to start up a small business: creating a call center for customer support or offering free courses at local universities. To be honest, I was excited to hear this because it shows our club's dedication to helping the community.
+From my perspective, we should offer free courses. These courses will provide valuable knowledge and skills to people who want to start their own businesses, helping them build a strong foundation for their businesses. Free courses can also help build strong connections with local universities, which can help us work together better in the future.
+I have spoken to other club members, and I know that they also have the same opinions as me.
+I hope you will consider these suggestions and let me know what you decide. I am looking forward to hearing from you soon.
+Yours sincerely,
+Vu Khanh Nguyen`,
+                hints: [
+                    "we should offer free courses",
+                    "provide valuable knowledge and skills",
+                    "help build a strong foundation for their businesses",
+                    "build strong connections with local universities"
+                ]
+            }
+        },
+        {
+            id: 'wp4_nature_club_plan',
+            title: 'Chủ đề 16: Kế hoạch cho người trẻ của CLB Thiên nhiên',
+            context: "Dear Members, The club wants to make a plan for the young people because they just love to stay home and play games.",
+            context_vi: "Gửi các thành viên, Câu lạc bộ muốn lập một kế hoạch cho những người trẻ tuổi vì họ chỉ thích ở nhà và chơi game.",
+            keywords_vi: {
+                "make a plan for the young people": "lập kế hoạch cho người trẻ",
+                "love to stay home and play games": "thích ở nhà và chơi game"
+            },
+            task1: {
+                instruction: "Write an email to your friend. Write about 50 words.",
+                sampleAnswer: `
+Hi Sara,
+I hope you're doing well! I just got an email from the manager of the nature club. The email says that the club is planning to create some new activities for young people because many of them prefer staying at home and playing games. To be honest, I felt happy to hear that. I think the club should organize outdoor activities like hiking and nature walks. It might be a good idea to have some fun challenges too.
+I hope to hear from you soon.
+All the best,
+Nguyen`,
+                hints: [
+                    "create some new activities for young people",
+                    "organize outdoor activities like hiking and nature walks",
+                    "have some fun challenges too"
+                ]
+            },
+            task2: {
+                instruction: "Write an email to the manager of the club. Write about 120-150 words.",
+                sampleAnswer: `
+Dear Manager,
+I hope this email finds you well.
+My name is Vu Khanh Nguyen, and I have been an active member of the club for the past two years. I am writing in response to your recent email.
+According to the email, the club wants to make a plan for young people because they just love to stay home and play games. To be honest, I felt so happy to hear that.
+From my perspective, we should organize outdoor activities like hiking and nature walks. These activities will help young people enjoy nature, stay active, and connect with others.
+Additionally, the club could add some fun challenges to make the events more exciting. For example, a scavenger hunt in nature would be both entertaining and educational. These activities can increase interest and participation among young members.
+I have spoken with other club members, and they also agree with these ideas.
+I hope you will consider my suggestions and let me know what you decide.
+I look forward to hearing from you soon.
+Yours sincerely,
+Pham Khanh Nguyen`,
+                hints: [
+                    "organize outdoor activities like hiking and nature walks",
+                    "help young people enjoy nature, stay active, and connect",
+                    "add some fun challenges",
+                    "a scavenger hunt in nature",
+                    "increase interest and participation among young members"
+                ]
+            }
+        },
+        {
+            id: 'wp4_community_club_support',
+            title: 'Chủ đề 17: Hỗ trợ các dự án cộng đồng',
+            context: "Dear Members, Our club needs support with several tasks this year. First, we need more members who can actively participate in our ongoing projects. Second, we are looking for creative ideas to develop new activities. Could you share some suggestions with us to help support our projects this year?",
+            context_vi: "Gửi các thành viên, Câu lạc bộ của chúng ta cần sự hỗ trợ cho một vài nhiệm vụ trong năm nay. Thứ nhất, chúng ta cần thêm thành viên có thể tích cực tham gia vào các dự án đang diễn ra. Thứ hai, chúng ta đang tìm kiếm những ý tưởng sáng tạo để phát triển các hoạt động mới. Bạn có thể chia sẻ một vài gợi ý để giúp hỗ trợ các dự án của chúng ta trong năm nay không?",
+            keywords_vi: {
+                "needs support": "cần sự hỗ trợ",
+                "more active members": "thêm thành viên tích cực",
+                "creative ideas to develop new activities": "ý tưởng sáng tạo để phát triển hoạt động mới",
+                "share some suggestions": "chia sẻ một vài gợi ý"
+            },
+            task1: {
+                instruction: "Write an email to your friend. Write about 50 words.",
+                sampleAnswer: `
+Hi Sara,
+I hope you're doing well! I just got an email from the manager of the community club. He said that we need more active members and creative ideas for activities. Honestly, I'm really excited about this!
+I think we should encourage current members to invite their friends and family to join. Also, the club could organize fun workshops, competitions, or community service projects to attract more people. What do you think?
+I hope to hear from you soon.
+All the best,
+Nguyen`,
+                hints: [
+                    "encourage current members to invite their friends and family",
+                    "organize fun workshops, competitions, or community service projects"
+                ]
+            },
+            task2: {
+                instruction: "Write an email to your club manager. Write about 120-150 words.",
+                sampleAnswer: `
+Dear Manager,
+I hope this email finds you well.
+My name is Vu Khanh Nguyen, and I have been an active member of the club for the past two years. I am writing in response to your recent email.
+According to the email, the club wants more active members for ongoing projects and creative ideas for new activities. I'm excited because this is a great chance to grow and help our community.
+To increase active members, I suggest encouraging current members to invite their friends and family. This will help bring in new people who are interested and motivated.
+For creative activities, we could organize workshops on useful skills, hold fun competitions, or arrange community service projects. These would attract participation and help build a stronger community spirit.
+In addition, using social media to promote these activities can help us reach a wider audience and keep everyone informed.
+I have spoken to other members, and they agree with these ideas. I hope you will consider them and look forward to your reply.
+Yours sincerely,
+Vu Khanh Nguyen`,
+                hints: [
+                    "encouraging current members to invite their friends and family",
+                    "organize workshops on useful skills, hold fun competitions",
+                    "using social media to promote these activities",
+                    "reach a wider audience and keep everyone informed"
+                ]
+            }
+        },
+        {
+            id: 'wp4_fashion_club_meeting',
+            title: 'Chủ đề 18: Lựa chọn hình thức sự kiện thời trang',
+            context: "Dear Members, The club is planning to hold meetings with famous designers who will talk about their clothing designs and answer members' questions. We need feedback on organizations. There are opinions that it should be held online while others want to organize a fashion show-style event. State your opinion.",
+            context_vi: "Gửi các thành viên, Câu lạc bộ đang lên kế hoạch tổ chức các buổi gặp gỡ với các nhà thiết kế nổi tiếng, họ sẽ nói về các thiết kế quần áo của mình và trả lời câu hỏi của thành viên. Chúng tôi cần phản hồi về cách thức tổ chức. Có ý kiến cho rằng nên tổ chức trực tuyến, trong khi những người khác muốn tổ chức một sự kiện theo kiểu trình diễn thời trang. Hãy nêu ý kiến của bạn.",
+            keywords_vi: {
+                "hold meetings with famous designers": "tổ chức buổi gặp gỡ với các nhà thiết kế nổi tiếng",
+                "held online": "tổ chức trực tuyến",
+                "organize a fashion show-style event": "tổ chức sự kiện kiểu trình diễn thời trang",
+                "State your opinion": "Nêu ý kiến của bạn"
+            },
+            task1: {
+                instruction: "Write to a friend to express which way of organisation you prefer.",
+                sampleAnswer: `
+Hi Sara,
+I hope you're doing well! I just got an email from the manager of the fashion club. He mentioned that the club is deciding between holding meetings with designers online or organizing a fashion show-style event. Honestly, I'm really excited about this! I personally prefer the fashion show because it would be wonderful to see the designs up close and meet the famous designers in person.
+I hope to hear from you soon.
+All the best,
+Nguyen`,
+                hints: [
+                    "deciding between holding meetings online or organizing a fashion show",
+                    "I personally prefer the fashion show",
+                    "see the designs up close and meet the famous designers in person"
+                ]
+            },
+            task2: {
+                instruction: "Write to the manager to express which ways of organisation you prefer and explain.",
+                sampleAnswer: `
+Dear Manager,
+I hope this email finds you well.
+My name is Vu Khanh Nguyen, and I have been an active member of the club for the past two years. I am writing in response to your recent email.
+According to the email, the club is seeking feedback on how the upcoming meetings with designers should be organized. Some people prefer to have it online, while others suggest a fashion show-style event. To be honest, I was really excited when I heard about this!
+From my perspective, it would be great if we could organize a fashion show-style event for two main reasons. First, a fashion show is exciting and fun to watch. It allows members to see the designers' clothes in action, which can be more interesting than an online meeting. Second, a live event gives members a chance to meet and talk with the designers and other people in person. This can help us make new friends and connections, which might not be as easy to do online.
+I have spoken to other club members, and I know that they also prefer this option.
+I hope you will consider this suggestion and let me know what you decide. I am looking forward to hearing from you soon.
+Yours sincerely,
+Vu Khanh Nguyen`,
+                hints: [
+                    "organize a fashion show-style event",
+                    "a fashion show is exciting and fun to watch",
+                    "see the designers' clothes in action",
+                    "a live event gives members a chance to meet and talk with the designers"
+                ]
+            }
+        },
+        {
+            id: 'wp4_tech_club_comments',
+            title: 'Chủ đề 19: Xử lý bình luận tiêu cực',
+            context: "Dear Members, As you know, our members are very active online and like to post comments on the club's website. However, recently some members have been posting negative comments about other members. At the moment, everyone who posts on our website is anonymous. We are thinking of changing the system so that we can identify everyone who makes a comment. We would like to hear your opinion about this. Also, can you think of an alternative solution to this problem?",
+            context_vi: "Gửi các thành viên, Như bạn đã biết, các thành viên của chúng ta rất năng động trực tuyến và thích đăng bình luận trên trang web của câu lạc bộ. Tuy nhiên, gần đây một số thành viên đã đăng những bình luận tiêu cực về các thành viên khác. Hiện tại, mọi người đăng bài trên trang web của chúng ta đều ẩn danh. Chúng tôi đang nghĩ đến việc thay đổi hệ thống để có thể xác định danh tính của mọi người. Chúng tôi muốn nghe ý kiến của bạn về điều này. Ngoài ra, bạn có thể nghĩ ra một giải pháp thay thế cho vấn đề này không?",
+            keywords_vi: {
+                "posting negative comments": "đăng bình luận tiêu cực",
+                "is anonymous": "là ẩn danh",
+                "identify everyone": "xác định danh tính mọi người",
+                "alternative solution": "giải pháp thay thế"
+            },
+            task1: {
+                instruction: "Write an email to your friend, who is also a member of this club. Tell your friend about your opinion and what you think the club should do about the problem. Write about 50 words.",
+                sampleAnswer: `
+Hi Sara,
+How's it going? I hope everything is going well with you. I just received an email from the manager of the technology club about the negative comments on the website. Honestly, I think it's not a good idea to make everyone reveal their identity. Instead, the club should set clear rules for comments and have a moderation system to check them before posting. What do you think?
+Love,
+Nguyen`,
+                hints: [
+                    "not a good idea to make everyone reveal their identity",
+                    "set clear rules for comments",
+                    "have a moderation system to check them"
+                ]
+            },
+            task2: {
+                instruction: "Write an email to the manager of the club. Tell the manager about your opinion and what you think the club should do about the problem. Write about 120-150 words.",
+                sampleAnswer: `
+Dear Manager,
+I hope this email finds you well.
+My name is Vu Khanh Nguyen, and I have been an active member of the club for the past two years. I am writing in response to your recent email.
+According to the email, recently some members have been posting negative comments about other members. At the moment, everyone who posts on our website is anonymous. I don't think changing the system to identify everyone who makes a comment is a good idea. That might discourage some members from sharing their opinions and ideas, and make them feel less comfortable and safe.
+Instead, I suggest that we set clear rules for commenting. This can help remind members to be respectful and avoid negative language. Additionally, I believe the club should have a moderation system to review comments before they are posted. This way, the club can remove inappropriate comments while protecting members' privacy.
+I have spoken to other club members, and I know that they also share the same opinions as me.
+I hope you will consider these suggestions and let me know what you decide. I am looking forward to hearing from you soon.
+Yours sincerely,
+Vu Khanh Nguyen`,
+                hints: [
+                    "don't think changing the system... is a good idea",
+                    "discourage some members from sharing their opinions",
+                    "suggest that we set clear rules for commenting",
+                    "have a moderation system to review comments",
+                    "remove inappropriate comments while protecting members' privacy"
+                ]
+            }
+        },
+        {
+            id: 'wp4_tech_club_fair',
+            title: 'Chủ đề 20: Tình nguyện viên cho Hội chợ Công nghệ',
+            context: "Dear Members, Our club is going to participate in the annual Technology Fair. We are asking members for help. We need several volunteers to speak to members of general public about computers and the internet. Please write to us and tell us why technology is important and why you think you would be a good presenter?",
+            context_vi: "Gửi các thành viên, Câu lạc bộ của chúng ta sẽ tham gia Hội chợ Công nghệ thường niên. Chúng tôi đang kêu gọi sự giúp đỡ từ các thành viên. Chúng tôi cần một vài tình nguyện viên để nói chuyện với công chúng về máy tính và internet. Vui lòng viết thư cho chúng tôi và cho biết tại sao công nghệ lại quan trọng và tại sao bạn nghĩ mình sẽ là một người thuyết trình tốt?",
+            keywords_vi: {
+                "participate in the annual Technology Fair": "tham gia Hội chợ Công nghệ thường niên",
+                "asking members for help": "kêu gọi sự giúp đỡ từ thành viên",
+                "why technology is important": "tại sao công nghệ lại quan trọng",
+                "why you would be a good presenter": "tại sao bạn sẽ là người thuyết trình tốt"
+            },
+            task1: {
+                instruction: "Write an e-mail to your friend. Write about what you think and why you would be a good speaker. Write about 50 words.",
+                sampleAnswer: `
+Hi Sara,
+I hope you're doing well! I just got an email from the manager of the technology club. They're looking for volunteers to speak at the technology fair. I am really excited about this, and I'd love to join! Technology is important because it helps us learn, connect, and improve our daily lives. I think I'd be a good speaker since I know a lot about tech and have given presentations before. What do you think? Would you like to join me?
+Love,
+Nguyen`,
+                hints: [
+                    "I'd love to join!",
+                    "Technology is important because it helps us learn, connect, and improve",
+                    "I'd be a good speaker since I know a lot about tech",
+                    "have given presentations before"
+                ]
+            },
+            task2: {
+                instruction: "Write an e-mail to the manager of the club. Write about your opinion and why you would be a good presenter? Write 120-150 words.",
+                sampleAnswer: `
+Dear Manager,
+I hope this email finds you well.
+My name is Vu Khanh Nguyen, and I have been an active member of the club for the past two years. I am writing in response to your recent email.
+According to the email, the club needs several volunteers to speak to members of general public about computers and the internet. I was truly excited about the chance to be a presenter at the upcoming Technology Fair. I believe technology is very important because it helps us communicate, learn, create, and solve problems. It also makes our lives easier and more enjoyable.
+I believe I would be a good presenter because I have strong knowledge of computers and the Internet. I have used them since I was a child and know many software applications. In the past, I've given presentations both at school and in the club before and I received positive feedback.
+Please let me know if you need more information. I would be honored to represent the club at the fair.
+Sincerely,
+Vu Khanh Nguyen`,
+                hints: [
+                    "technology is very important because it helps us communicate, learn, create, and solve problems",
+                    "I have strong knowledge of computers and the Internet",
+                    "I've given presentations...before and I received positive feedback"
+                ]
+            }
+        },
+        {
+            id: 'wp4_music_club_complaints',
+            title: 'Chủ đề 21: Khiếu nại về tiếng ồn của CLB Âm nhạc',
+            context: "Dear Members, As you know, we regularly have concerts at our club in the evenings. Unfortunately, there have been complaints about the music from people in the living area. If we do not do something about this situation, we may have to stop the concerts. I would be interested to hear what you think about this. What can be done about this problem? I am writing to ask all members for their suggestions. Please send me your ideas in an email.",
+            context_vi: "Gửi các thành viên, Như bạn đã biết, chúng ta thường xuyên tổ chức các buổi hòa nhạc tại câu lạc bộ vào buổi tối. Thật không may, đã có những lời phàn nàn về âm nhạc từ những người dân trong khu vực. Nếu chúng ta không làm gì đó về tình hình này, chúng ta có thể phải dừng các buổi hòa nhạc. Tôi muốn nghe ý kiến của bạn về việc này. Có thể làm gì để giải quyết vấn đề này? Tôi viết thư này để hỏi ý kiến của tất cả các thành viên. Vui lòng gửi cho tôi ý tưởng của bạn qua email.",
+            keywords_vi: {
+                "complaints about the music": "lời phàn nàn về âm nhạc",
+                "may have to stop the concerts": "có thể phải dừng các buổi hòa nhạc",
+                "what can be done about this problem": "có thể làm gì để giải quyết vấn đề này",
+                "give your suggestions": "đưa ra gợi ý của bạn"
+            },
+            task1: {
+                instruction: "Write an email to your friend, who is also a member of this club. Tell your friend about your opinion and what you think the club should do about the problem. Write about 50 words.",
+                sampleAnswer: `
+Hi Sara,
+I hope you're doing well! I just got an email from the manager of the music club about noise complaints from neighbors. Honestly, I was a bit sad because I really enjoy our concerts. I think it is important to respect their rights. Personally, I believe the club should take some soundproofing measures or change the concert times to reduce noise impact. What do you think? Let me know your ideas.
+Love,
+Nguyen`,
+                hints: [
+                    "I was a bit sad because I really enjoy our concerts",
+                    "respect their rights",
+                    "take some soundproofing measures",
+                    "change the concert times to reduce noise impact"
+                ]
+            },
+            task2: {
+                instruction: "Write an email to the manager of the club. Tell the manager about your opinion and what you think the club should do about the problem. Write about 120-150 words.",
+                sampleAnswer: `
+Dear Manager,
+I hope this email finds you well.
+My name is Vu Khanh Nguyen, and I have been an active member of the club for the past two years. I am writing in response to your recent email.
+According to the email, there have been complaints from neighbors about the noise caused by our evening concerts. When I received this news, I felt concerned because I really enjoy the concerts at our club, but I also understand that the music can disturb the people living nearby. I believe we should respect their rights and work together find a suitable solution.
+From my perspective, the club should implement soundproofing measures to reduce the noise. In addition, it would be helpful to reschedule the concerts to Saturday evenings, from 7 to 10 p.m., when people are not working or going to bed early.
+I have talked with other members, and they share the same opinion. I hope you will consider my suggestions and let me know your decision.
+I look forward to hearing from you soon.
+Yours sincerely,
+Vu Khanh Nguyen`,
+                hints: [
+                    "implement soundproofing measures to reduce the noise",
+                    "reschedule the concerts to Saturday evenings, from 7 to 10 p.m.",
+                    "when people are not working or going to bed early"
+                ]
+            }
+        },
+        {
+            id: 'wp4_social_club_meetings',
+            title: 'Chủ đề 22: Tổ chức buổi gặp mặt CLB Xã hội',
+            context: "Dear Members, We would like to organize some monthly face-to-face meetings. We would like your suggestions about when and where we could meet. It should suit both young and older people. Please send us your suggestions and your reasons.",
+            context_vi: "Gửi các thành viên, Chúng tôi muốn tổ chức một số buổi gặp mặt trực tiếp hàng tháng. Chúng tôi muốn nhận được gợi ý của bạn về thời gian và địa điểm chúng ta có thể gặp nhau. Buổi gặp mặt nên phù hợp cho cả người trẻ và người lớn tuổi. Vui lòng gửi cho chúng tôi gợi ý và lý do của bạn.",
+            keywords_vi: {
+                "monthly face-to-face meetings": "buổi gặp mặt trực tiếp hàng tháng",
+                "when and where we could meet": "khi nào và ở đâu chúng ta có thể gặp",
+                "suit both young and older people": "phù hợp cho cả người trẻ và người lớn tuổi"
+            },
+            task1: {
+                instruction: "Write an email to your friend. Tell your friend about your opinion and describe your own suggestion. (50 words)",
+                sampleAnswer: `
+Hi Sara,
+How are you? I hope everything is going well with you. I just got an email from the manager of the social club. They are planning monthly face-to-face meetings.
+I'm really excited because it's a great chance for us to connect more. I think we should meet at the community center near the park on weekends. It's peaceful, easy to reach, and perfect for both young and older members. What do you think? I'd love to hear your opinion.
+Love,
+Nguyen`,
+                hints: [
+                    "I'm really excited because it's a great chance to connect more",
+                    "meet at the community center near the park on weekends",
+                    "peaceful, easy to reach, and perfect for both young and older members"
+                ]
+            },
+            task2: {
+                instruction: "Write an email to the manager of the club. Tell the manager about your opinion and make another suggestion. (120 - 150 words)",
+                sampleAnswer: `
+Dear Manager,
+I hope this email finds you well.
+My name is Vu Khanh Nguyen, and I have been an active member of the club for the past two years. I am writing in response to your recent email.
+According to the email, the club wants to organize meetings every month and is asking for suggestions about when and where to meet. The meetings should be good for both young and older people. I was very happy to hear this, because I think meeting in person is a great way to connect and share.
+From my perspective, we should meet on the first Saturday of each month, from 10 a.m. to 12 p.m. This time is convenient because people usually have free time on weekends, and it is not too early or too late for older members.
+In addition, I suggest holding the meetings at the community center near the park. It is quiet, easy to reach by bus or car, and has enough space for group activities.
+I hope you will think about my ideas. I look forward to hearing from you.
+Vu Khanh Nguyen`,
+                hints: [
+                    "meet on the first Saturday of each month, from 10 a.m. to 12 p.m.",
+                    "convenient because people usually have free time on weekends",
+                    "not too early or too late for older members",
+                    "holding the meetings at the community center near the park",
+                    "quiet, easy to reach... and has enough space"
+                ]
+            }
+        },
+        {
+            id: 'wp4_book_club_public_talk',
+            title: 'Chủ đề 23: Tổ chức buổi nói chuyện công khai',
+            context: "Dear Members, We are planning to organize a public talk soon. We would like your ideas on who we should invite as a guest speaker and what topics they should cover. Our goal is to attract a wide audience, including both young people and older adults. Please send us your suggestions.",
+            context_vi: "Gửi các thành viên, Chúng tôi đang lên kế hoạch sớm tổ chức một buổi nói chuyện công khai. Chúng tôi muốn nhận ý kiến của bạn về việc chúng ta nên mời ai làm diễn giả khách mời và họ nên trình bày những chủ đề gì. Mục tiêu của chúng ta là thu hút một lượng lớn khán giả, bao gồm cả người trẻ và người lớn tuổi. Vui lòng gửi cho chúng tôi gợi ý của bạn.",
+            keywords_vi: {
+                "organize a public talk": "tổ chức buổi nói chuyện công khai",
+                "who we should invite": "chúng ta nên mời ai",
+                "what topics they should cover": "họ nên trình bày chủ đề gì",
+                "attract a wide audience": "thu hút lượng lớn khán giả"
+            },
+            task1: {
+                instruction: "Write an email to your friend. Tell your friend about your opinion and describe your own suggestion. (50 words)",
+                sampleAnswer: `
+Hi Sara,
+How are you? I just got an email from the book club manager about organizing a public talk. Honestly, I'm really excited because it's a great chance for us to connect and share our love of reading. I think we should invite a famous Vietnamese author to talk about \"the joy of reading for all ages.\" This topic could attract both young and older people.
+What do you think? Let me know your ideas!
+Love,
+Nguyen`,
+                hints: [
+                    "I'm really excited",
+                    "invite a famous Vietnamese author",
+                    "talk about \"the joy of reading for all ages\"",
+                    "attract both young and older people"
+                ]
+            },
+            task2: {
+                instruction: "Write an email to the manager of the club. Tell the manager about your opinion and make another suggestion. (120 - 150 words)",
+                sampleAnswer: `
+Dear Manager,
+I hope this email finds you well.
+My name is Vu Khanh Nguyen, and I have been an active member of the club for the past two years. I am writing in response to your recent email.
+According to the email, the club is planning to organize a public talk and wants suggestions on who to invite and what topics to cover. I was very happy to hear this news.
+From my perspective, the club should invite Nguyen Nhat Anh, a famous Vietnamese author who writes stories loved by both children and adults. His books are easy to read but full of inspiring many people who enjoy reading. I believe he would attract a large and diverse audience.
+For the topic, I suggest "The joy of reading for all ages." This theme is suitable for everyone and would encourage more people to join our club and enjoy books.
+I hope you will consider my suggestions and let me know your decision.
+I am looking forward to hearing from you soon.
+Sincerely,
+Vu Khanh Nguyen`,
+                hints: [
+                    "the club should invite Nguyen Nhat Anh",
+                    "His books are easy to read but full of inspiring",
+                    "attract a large and diverse audience",
+                    "I suggest \"The joy of reading for all ages.\"",
+                    "encourage more people to join our club"
+                ]
+            }
+        },
+        {
+            id: 'wp4_debate_club_encourage',
+            title: 'Chủ đề 24: Khuyến khích người trẻ tham gia CLB Tranh biện',
+            context: "Dear Members, We want to encourage young people to join our club. Sadly, young people often think debating is not for them. We are writing to ask for your help. Please write and tell us the two most important benefits of learning how to debate topical issues and speak in public. Please share your ideas about the importance of debating. We will publish them on our website.",
+            context_vi: "Gửi các thành viên, Chúng tôi muốn khuyến khích những người trẻ tuổi tham gia câu lạc bộ của chúng ta. Đáng buồn thay, những người trẻ thường nghĩ rằng tranh biện không dành cho họ. Chúng tôi viết thư này để nhờ sự giúp đỡ của bạn. Vui lòng viết và cho chúng tôi biết hai lợi ích quan trọng nhất của việc học cách tranh luận về các vấn đề thời sự và nói trước công chúng. Hãy chia sẻ ý tưởng của bạn về tầm quan trọng của việc tranh biện. Chúng tôi sẽ đăng chúng trên trang web của mình.",
+            keywords_vi: {
+                "encourage young people to join": "khuyến khích người trẻ tham gia",
+                "debating is not for them": "tranh biện không dành cho họ",
+                "two most important benefits": "hai lợi ích quan trọng nhất",
+                "share your ideas": "chia sẻ ý tưởng của bạn"
+            },
+            task1: {
+                instruction: "Write an email to your friend, who is also a member of this club. Tell your friend about your opinion and what you think the club should do about the problem. Write about 50 words.",
+                sampleAnswer: `
+Hi Sara,
+How are you? I hope you're well.
+I got an email from the debate club. They want more young people to join, but many think debating isn't for them. I think debating helps improve speaking and thinking skills and teaches us about new topics. Maybe the club can organize fun workshops or games to make it more interesting.
+Hope to hear from you soon!
+All the best,
+Nguyen`,
+                hints: [
+                    "debating helps improve speaking and thinking skills",
+                    "teaches us about new topics",
+                    "organize fun workshops or games",
+                    "make it more interesting"
+                ]
+            },
+            task2: {
+                instruction: "Write an email to the manager of the club. Tell the manager about your opinion and what you think the club should do about the problem. Write about 120-150 words.",
+                sampleAnswer: `
+Dear Manager,
+I hope this email finds you well.
+My name is Vu Khanh Nguyen, and I have been an active member of the club for the past two years. I am writing in response to your recent email.
+According to the email, the club wants to encourage more young people to join, but many of them feel debating isn't for them. I believe debating is very helpful because it improves our speaking and thinking skills. It also helps us gain new knowledge about many topics.
+From my perspective, the club should choose debate topics that interest young people, such as social media, music, or the environment. Also, organizing fun activities like workshops or games would help young people enjoy debating and join more easily.
+I hope you will consider my suggestions and let me know your decision.
+I look forward to hearing from you soon.
+Yours sincerely,
+Vu Khanh Nguyen`,
+                hints: [
+                    "debating is very helpful because it improves our speaking and thinking skills",
+                    "choose debate topics that interest young people",
+                    "organizing fun activities like workshops or games",
+                    "help young people enjoy debating and join more easily"
+                ]
+            }
         }
         // Thêm các chủ đề Part 4 khác vào đây
     ]
