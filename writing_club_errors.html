@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lỗi sai Writing theo Chủ đề Câu lạc bộ</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header id="header-placeholder"></header>
+    <div class="content-pusher">
+        <div class="container">
+            <div class="page-intro">
+                <h1>Lỗi sai Writing theo Chủ đề Câu lạc bộ</h1>
+                <p>Phân tích các lỗi thường gặp trong từng ngữ cảnh cụ thể</p>
+            </div>
+
+            <main id="analysis-container">
+                <!-- Các bài phân tích sẽ được chèn vào đây -->
+            </main>
+        </div>
+        <footer id="footer-placeholder"></footer>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/data-writing-club-analysis.js"></script>
+<!-- Trong file writing_club_errors.html -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const container = document.getElementById('analysis-container');
+            const clubData = writingClubAnalysisData;
+
+            for (const clubKey in clubData) {
+                const club = clubData[clubKey];
+                
+                const card = document.createElement('section');
+                card.className = 'error-analysis-card';
+
+                let analysisHTML = '';
+                club.analysis.forEach(item => {
+                    let comparisonHTML = '';
+                    // Kiểm tra xem câu này có đúng hay không
+                    if (item.isCorrect) {
+                        comparisonHTML = `
+                            <div class="text-comparison correct-text">
+                                <p><strong>Câu trả lời đã tốt:</strong> ${item.originalText}</p>
+                            </div>
+                        `;
+                    } else {
+                        comparisonHTML = `
+                            <div class="text-comparison">
+                                <p><del>Sai:</del> ${item.originalText}</p>
+                                <p><strong>Đúng:</strong> ${item.correctedText}</p>
+                            </div>
+                        `;
+                    }
+
+                    analysisHTML += `
+                        <div class="error-item">
+                            <h4>${item.part}</h4>
+                            ${comparisonHTML}
+                            <p class="feedback ${item.isCorrect ? 'correct' : ''}"><strong>💡 Góp ý:</strong> ${item.feedback}</p>
+                        </div>
+                    `;
+                });
+
+                card.innerHTML = `<h2>${club.title}</h2><div class="error-list">${analysisHTML}</div>`;
+                container.appendChild(card);
+            }
+        });
+    </script>
+</body>
+</html>

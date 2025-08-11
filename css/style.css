@@ -3267,9 +3267,12 @@ body.u-nav-open {
 
 
 .topic-selector-btn {
-    position: relative; /* Cần thiết để định vị các tag */
-    padding-bottom: 25px; /* Thêm không gian cho tag */
+    position: relative;
+    /* Cần thiết để định vị các tag */
+    padding-bottom: 25px;
+    /* Thêm không gian cho tag */
 }
+
 .topic-tags {
     position: absolute;
     bottom: 5px;
@@ -3278,6 +3281,7 @@ body.u-nav-open {
     display: flex;
     gap: 5px;
 }
+
 .topic-tags span {
     font-size: 0.7em;
     font-weight: bold;
@@ -3285,11 +3289,15 @@ body.u-nav-open {
     border-radius: 8px;
     color: white;
 }
+
 .tag-hot {
-    background-color: #e74c3c; /* Màu đỏ */
+    background-color: #e74c3c;
+    /* Màu đỏ */
 }
+
 .tag-warning {
-    background-color: #f39c12; /* Màu vàng */
+    background-color: #f39c12;
+    /* Màu vàng */
 }
 
 .non-existent-answers {
@@ -3301,12 +3309,14 @@ body.u-nav-open {
 }
 
 .non-existent-answers span {
-    background-color: #dc3545; /* Màu đỏ cảnh báo */
+    background-color: #dc3545;
+    /* Màu đỏ cảnh báo */
     color: white;
     padding: 8px 15px;
     border-radius: 20px;
     font-weight: bold;
-    text-decoration: line-through; /* Gạch ngang để nhấn mạnh */
+    text-decoration: line-through;
+    /* Gạch ngang để nhấn mạnh */
 }
 
 /* Thêm vào css/style.css */
@@ -3317,6 +3327,7 @@ body.u-nav-open {
     display: flex;
     gap: 10px;
 }
+
 .action-btn-small {
     background-color: #f8f9fa;
     color: #333;
@@ -3326,13 +3337,17 @@ body.u-nav-open {
     border-radius: 5px;
     cursor: pointer;
 }
+
 .translation-content {
     margin-top: 15px;
     background-color: #f8f9fa;
     padding: 15px;
     border-radius: 8px;
 }
-.keywords-list h4 { margin-top: 10px; }
+
+.keywords-list h4 {
+    margin-top: 10px;
+}
 
 /* Sửa lại CSS một chút cho gọn */
 .translation-controls {
@@ -3341,12 +3356,15 @@ body.u-nav-open {
     border-top: 1px dashed #eee;
     /* display: flex; và gap: 10px; không còn cần thiết */
 }
+
 .action-btn-small {
     background-color: #f8f9fa;
     color: #333;
     border: 1px solid var(--border-color);
-    padding: 8px 15px; /* Tăng padding một chút */
-    font-size: 0.9em; /* Tăng font size một chút */
+    padding: 8px 15px;
+    /* Tăng padding một chút */
+    font-size: 0.9em;
+    /* Tăng font size một chút */
     border-radius: 5px;
     cursor: pointer;
     font-weight: 500;
@@ -3356,35 +3374,45 @@ body.u-nav-open {
 .hints-wrapper {
     margin-top: 10px;
     padding: 15px;
-    background-color: #fffbe6; /* Màu vàng nhạt */
+    background-color: #fffbe6;
+    /* Màu vàng nhạt */
     border-left: 3px solid #ffe58f;
     border-radius: 5px;
 }
+
 .hints-wrapper h4 {
     margin-top: 0;
     margin-bottom: 10px;
     color: #856404;
 }
+
 .hints-wrapper ul {
     list-style-type: '💡';
     padding-left: 25px;
     margin: 0;
 }
+
 .hints-wrapper li {
     margin-bottom: 8px;
     line-height: 1.6;
 }
+
 /* --- THÊM VÀO CUỐI PHẦN STYLES FOR HINTS --- */
 .support-wrapper {
     margin-top: 15px;
 }
+
 .support-wrapper .hints-wrapper {
     margin-top: 0;
-    margin-bottom: 15px; /* Tạo khoảng cách với đáp án mẫu */
-    border-radius: 8px; /* Bo góc đẹp hơn */
+    margin-bottom: 15px;
+    /* Tạo khoảng cách với đáp án mẫu */
+    border-radius: 8px;
+    /* Bo góc đẹp hơn */
 }
+
 .support-wrapper .sample-answer-wrapper .sample-answer {
-     border-radius: 8px; /* Bo góc đẹp hơn */
+    border-radius: 8px;
+    /* Bo góc đẹp hơn */
 }
 
 /* Đảm bảo nút mới chiếm toàn bộ chiều rộng */
@@ -3429,13 +3457,15 @@ footer {
     color: #6c757d;
 }
 
-.footer-links, .footer-contact {
+.footer-links,
+.footer-contact {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.footer-links li, .footer-contact li {
+.footer-links li,
+.footer-contact li {
     margin-bottom: 12px;
 }
 
@@ -3446,10 +3476,12 @@ footer {
     display: flex;
     align-items: center;
 }
+
 .footer-links a:hover {
     color: var(--primary-color);
     padding-left: 5px;
 }
+
 .footer-links a i {
     margin-right: 8px;
     font-size: 0.8em;
@@ -3460,16 +3492,19 @@ footer {
     display: flex;
     align-items: flex-start;
 }
+
 .footer-contact i {
     margin-right: 10px;
     margin-top: 4px;
     color: var(--primary-color);
-    width: 16px; /* Căn lề cho icon */
+    width: 16px;
+    /* Căn lề cho icon */
 }
 
 .footer-social {
     margin-top: 20px;
 }
+
 .footer-social a {
     display: inline-flex;
     justify-content: center;
@@ -3483,6 +3518,7 @@ footer {
     margin-right: 10px;
     transition: background-color 0.2s, color 0.2s;
 }
+
 .footer-social a:hover {
     background-color: var(--primary-color);
     color: #fff;
@@ -3496,111 +3532,121 @@ footer {
     color: #6c757d;
     border-top: 1px solid #e9ecef;
 }
+
 .footer-bottom p {
     margin: 0;
 }
 
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 cột bằng nhau */
+    gap: 30px;
+    /* Khoảng cách giữa các cột */
+}
+
+/* Footer Dropdown Styling */
+.footer-col .footer-dropdown {
+    position: relative;
+    /* Cần thiết cho dropdown */
+    margin-bottom: 10px;
+}
+
+.footer-col .footer-dropdown>a {
+    display: inline-block;
+    padding: 5px 0;
+    cursor: pointer;
+    text-decoration: none;
+    color: var(--text-color, #666);
+    /* Sử dụng màu chữ mặc định hoặc biến CSS nếu có */
+    transition: color 0.3s;
+}
+
+.footer-col .footer-dropdown>a:hover {
+    color: var(--primary-color, #007bff);
+}
+
+.footer-col .footer-dropdown .dropdown-content {
+    display: none;
+    /* Ẩn mặc định */
+    position: absolute;
+    bottom: 100%;
+    /* Hiển thị bên trên thẻ cha */
+    left: 0;
+    background-color: #ffffff;
+    min-width: 200px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+    border-radius: 5px;
+    padding: 10px 0;
+    margin-bottom: 5px;
+    /* Khoảng cách giữa dropdown và link chính */
+}
+
+.footer-col .footer-dropdown .dropdown-content a {
+    color: #333;
+    padding: 8px 15px;
+    text-decoration: none;
+    display: block;
+    font-size: 0.9rem;
+}
+
+.footer-col .footer-dropdown .dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+/* Hiển thị dropdown khi hover trên desktop */
+@media (min-width: 769px) {
+    .footer-col .footer-dropdown:hover .dropdown-content {
+        display: block;
+    }
+}
+
+/* Hiển thị dropdown khi có class 'active' (cho mobile click) */
+.footer-col .footer-dropdown.active .dropdown-content {
+    display: block;
+}
+
+/* === FIX LỖI XUỐNG DÒNG CHO CỘT "THÔNG TIN" === */
+.footer-contact li {
+    white-space: nowrap;
+    /* Ngăn text bị xuống dòng */
+}
+
+/* === KẾT THÚC FIX === */
+
+
+/* Responsive cho Grid */
+@media (max-width: 992px) {
     .footer-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        /* 4 cột bằng nhau */
-        gap: 30px;
-        /* Khoảng cách giữa các cột */
+        grid-template-columns: repeat(2, 1fr);
+        /* 2 cột trên tablet */
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+        /* 1 cột trên mobile */
+        text-align: center;
+        /* Căn giữa nội dung khi xếp chồng */
     }
 
-    /* Footer Dropdown Styling */
-    .footer-col .footer-dropdown {
-        position: relative;
-        /* Cần thiết cho dropdown */
-        margin-bottom: 10px;
-    }
-
-    .footer-col .footer-dropdown>a {
-        display: inline-block;
-        padding: 5px 0;
-        cursor: pointer;
-        text-decoration: none;
-        color: var(--text-color, #666);
-        /* Sử dụng màu chữ mặc định hoặc biến CSS nếu có */
-        transition: color 0.3s;
-    }
-    
-    .footer-col .footer-dropdown > a:hover {
-        color: var(--primary-color, #007bff);
+    .footer-col {
+        margin-bottom: 20px;
     }
 
     .footer-col .footer-dropdown .dropdown-content {
-        display: none;
-        /* Ẩn mặc định */
-        position: absolute;
-        bottom: 100%;
-        /* Hiển thị bên trên thẻ cha */
-        left: 0;
-        background-color: #ffffff;
-        min-width: 200px;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-        z-index: 10;
-        border-radius: 5px;
-        padding: 10px 0;
-        margin-bottom: 5px; /* Khoảng cách giữa dropdown và link chính */
+        left: 50%;
+        transform: translateX(-50%);
+        /* Căn giữa dropdown trên mobile */
     }
 
-    .footer-col .footer-dropdown .dropdown-content a {
-        color: #333;
-        padding: 8px 15px;
-        text-decoration: none;
-        display: block;
-        font-size: 0.9rem;
-    }
-
-    .footer-col .footer-dropdown .dropdown-content a:hover {
-        background-color: #f1f1f1;
-    }
-
-    /* Hiển thị dropdown khi hover trên desktop */
-    @media (min-width: 769px) {
-        .footer-col .footer-dropdown:hover .dropdown-content {
-            display: block;
-        }
-    }
-    
-    /* Hiển thị dropdown khi có class 'active' (cho mobile click) */
-    .footer-col .footer-dropdown.active .dropdown-content {
-        display: block;
-    }
-    
-    /* === FIX LỖI XUỐNG DÒNG CHO CỘT "THÔNG TIN" === */
     .footer-contact li {
-        white-space: nowrap; /* Ngăn text bị xuống dòng */
+        white-space: normal;
+        /* Cho phép xuống dòng lại trên mobile nếu cần */
     }
-    /* === KẾT THÚC FIX === */
-
-
-    /* Responsive cho Grid */
-    @media (max-width: 992px) {
-        .footer-grid {
-            grid-template-columns: repeat(2, 1fr);
-            /* 2 cột trên tablet */
-        }
-    }
-
-    @media (max-width: 768px) {
-        .footer-grid {
-            grid-template-columns: 1fr;
-            /* 1 cột trên mobile */
-            text-align: center; /* Căn giữa nội dung khi xếp chồng */
-        }
-        .footer-col {
-            margin-bottom: 20px;
-        }
-        .footer-col .footer-dropdown .dropdown-content {
-            left: 50%;
-            transform: translateX(-50%); /* Căn giữa dropdown trên mobile */
-        }
-        .footer-contact li {
-            white-space: normal; /* Cho phép xuống dòng lại trên mobile nếu cần */
-        }
-    }
+}
 
 .action-btn-secondary {
     display: inline-block;
@@ -3610,6 +3656,66 @@ footer {
     color: var(--primary-color);
     font-weight: 500;
 }
+
 .action-btn-secondary:hover {
     text-decoration: underline;
+}
+
+/* --- STYLES FOR CLUB-SPECIFIC ERROR ANALYSIS --- */
+.text-comparison {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+.text-comparison p {
+    margin: 0 0 10px 0;
+}
+
+.text-comparison p:last-child {
+    margin-bottom: 0;
+}
+
+.text-comparison del {
+    background-color: #f8d7da;
+    color: #721c24;
+    text-decoration: none;
+    padding: 1px 3px;
+    border-radius: 3px;
+}
+
+.text-comparison strong {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 1px 3px;
+    border-radius: 3px;
+}
+
+.feedback {
+    background-color: #eef7ff;
+    border-left: 3px solid var(--primary-color);
+    padding: 10px 15px;
+    font-size: 0.95em;
+}
+
+.feedback strong {
+    color: var(--primary-hover);
+}
+
+/* Style cho các câu đã viết đúng */
+.text-comparison.correct-text {
+    background-color: #e2fdef; /* Nền xanh lá nhạt */
+    border-left: 3px solid #34a853;
+}
+.text-comparison.correct-text p {
+    color: #0d652d;
+}
+
+.feedback.correct {
+    background-color: #e2fdef;
+    border-left-color: #34a853;
+}
+.feedback.correct strong {
+    color: #0d652d;
 }

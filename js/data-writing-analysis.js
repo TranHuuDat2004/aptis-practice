@@ -144,4 +144,69 @@ Tran Huu Dat`,
             { errorType: "Sai thì & Lỗi giới từ", correction: "<code>I talk... they agree this</code> → <strong>I talked... they agree with this</strong> (Hành động đã xảy ra nên dùng quá khứ đơn; 'agree with' là cụm đúng)." }
         ]
     },
+
+    {
+        id: 'analysis_library_closure',
+        title: 'Chủ đề: Thư viện công cộng có nguy cơ đóng cửa',
+        originalText: `Dear Manager,
+I hope this email finds you well.
+First, I would like to introduce myself. My name is Tran Huu Dat and I have been <del>club member</del> for 2 years. I am writing this email to express my opinion about the recent email.
+According to the email, the local authorities announced that the public library may close next year. Many people prefer reading on the internet<del>so</del> there is no need for a public library. To be honest, I was disappointed when I heard this news.
+From my perspective, I think it is very important to keep it open. The library has many old books that are not on the internet. The library also helps people <del>to find</del> great books. That is a good way for many people <del>want</del> to know <del>new topic</del> or improve <del>them soft skills</del>.
+I think we should write a letter to the government <del>why</del> the library is important. We can tell them to think again and try to save money. We can also ask many people <del>sign</del> a paper to support the library. We can share this on social media and ask our friends and family to help.
+I hope you agree with me and reply to the email soon.
+Best regards,
+Tran Huu Dat`,
+        correctedText: `Dear Manager,
+I hope this email finds you well.
+First, I would like to introduce myself. My name is Tran Huu Dat and I have been <strong>a club member</strong> for 2 years. I am writing this email to express my opinion about the recent email.
+According to the email, the local authorities announced that the public library may close next year. Many people prefer reading on the internet<strong>, so</strong> there is no need for a public library. To be honest, I was disappointed when I heard this news.
+From my perspective, I think it is very important to keep it open. The library has many old books that are not on the internet. The library also helps people <strong>find</strong> great books. That is a good way for many people <strong>to want</strong> to know <strong>new topics</strong> or improve <strong>their soft skills</strong>.
+I think we should write a letter to the government <strong>explaining why</strong> the library is important. We can tell them to think again and try to save money. We can also ask many people <strong>to sign</strong> a paper to support the library. We can share this on social media and ask our friends and family to help.
+I hope you agree with me and reply to the email soon.
+Best regards,
+Tran Huu Dat`,
+        feedback: [
+            { errorType: "Thiếu mạo từ", correction: "<code>club member</code> → <strong>a club member</strong>." },
+            { errorType: "Dấu câu", correction: "<code>internet so there is</code> → <strong>internet, so there is</strong> (Luôn có dấu phẩy trước liên từ 'so')." },
+            { errorType: "Sai dạng động từ", correction: "<code>helps people to find</code> → <strong>helps people find</strong> (Sau 'help' có thể dùng V-inf không 'to')." },
+            { errorType: "Sai cấu trúc", correction: "<code>way for many people want</code> → <strong>way for many people to want</strong>." },
+            { errorType: "Lỗi số ít/số nhiều", correction: "<code>new topic</code> → <strong>new topics</strong>." },
+            { errorType: "Sai đại từ sở hữu", correction: "<code>improve them soft skills</code> → <strong>improve their soft skills</strong>." },
+            { errorType: "Thêm từ nối", correction: "<code>government why</code> → <strong>government explaining why</strong> (Dùng V-ing để nối 2 mệnh đề)." },
+            { errorType: "Sai dạng động từ", correction: "<code>ask many people sign</code> → <strong>ask many people to sign</strong> (Cấu trúc: ask somebody to do something)." }
+        ]
+    },
+
+     // --- THÊM BÀI PHÂN TÍCH MỚI VÀO ĐÂY ---
+    {
+        id: 'analysis_gardening_proposals',
+        title: 'Chủ đề: Đề xuất về làm vườn',
+        originalText: `Dear Manager,
+I hope this email finds you well.
+First, I would like to introduce myself. My name is Tran Huu Dat and I have been <del>club member</del> for 2 years. I am writing this email to express my opinion about the recent email.
+According to the email, <del>The</del> City Council wants to <del>more people</del> to take up gardening. They are thinking of planting 500 trees and flowers in the park or organizing gardening workshops at a college. To be honest, I <del>really excited</del> when I heard this.
+From my perspective, I think both ideas are fantastic, but I prefer to plant 500 trees and flowers in the local parks. <del>That is the great ways</del> to provide a greener environment, improve air <del>quailty</del> and create a beautiful view for the community.
+While gardening workshops are valuable, some people may be too busy to join a workshop, but they can still enjoy the benefits of a green, beautiful park in their free time.
+I hope you agree with me and reply to the email soon.
+Best regards,
+Tran Huu Dat`,
+        correctedText: `Dear Manager,
+I hope this email finds you well.
+First, I would like to introduce myself. My name is Tran Huu Dat and I have been <strong>a club member</strong> for 2 years. I am writing this email to express my opinion about the recent email.
+According to the email, <strong>the</strong> City Council wants <strong>more people</strong> to take up gardening. They are thinking of planting 500 trees and flowers in the park or organizing gardening workshops at a college. To be honest, I <strong>was really excited</strong> when I heard this.
+From my perspective, I think both ideas are fantastic, but I prefer to plant 500 trees and flowers in the local parks. <strong>That is a great way</strong> to provide a greener environment, improve air <strong>quality</strong> and create a beautiful view for the community.
+While gardening workshops are valuable, some people may be too busy to join a workshop, but they can still enjoy the benefits of a green, beautiful park in their free time.
+I hope you agree with me and reply to the email soon.
+Best regards,
+Tran Huu Dat`,
+        feedback: [
+            { errorType: "Thiếu mạo từ", correction: "<code>club member</code> → <strong>a club member</strong>." },
+            { errorType: "Viết hoa", correction: "<code>The City Council</code> (giữa câu) → <strong>the City Council</strong>." },
+            { errorType: "Thừa từ", correction: "<code>wants to more people to</code> → <strong>wants more people to</strong>." },
+            { errorType: "Thiếu động từ", correction: "<code>I really excited</code> → <strong>I was really excited</strong> (Thiếu động từ 'to be' và chia thì quá khứ cho cảm xúc đã xảy ra)." },
+            { errorType: "Sai mạo từ & Số nhiều", correction: "<code>That is the great ways</code> → <strong>That is a great way</strong>." },
+            { errorType: "Sai chính tả", correction: "<code>quailty</code> → <strong>quality</strong>." }
+        ]
+    }
 ];
