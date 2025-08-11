@@ -66,6 +66,15 @@ document.addEventListener("DOMContentLoaded", function() {
     ]).then(() => {
         setupNavigation();
         setActiveNavLink();
+        // THÊM ĐOẠN CODE NÀY VÀO
+        const lastUpdatedEl = document.getElementById('last-updated');
+        if (lastUpdatedEl) {
+            const today = new Date();
+            const day = String(today.getDate()).padStart(2, '0');
+            const month = String(today.getMonth() + 1).padStart(2, '0');
+            const year = today.getFullYear();
+            lastUpdatedEl.textContent = `${day}/${month}/${year}`;
+        }
     });
 
 });
