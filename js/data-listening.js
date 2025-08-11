@@ -108,7 +108,7 @@ const listeningData = {
 
     // --- THÊM MỚI DỮ LIỆU câu 15 ---
 part15: [
-        { id: 'topic1', title: '1. Politics', baseKey: 'W-B-M-B', story: '<strong>W</strong>oman <strong>B</strong>oth <strong>M</strong>eet <strong>B</strong>iden (Người phụ nữ và cả hai chúng tôi đều gặp ông Biden).' },
+        { id: 'topic1', title: '1. Politics', baseKey: 'B-W-M-B',  story: '<strong>B</strong>iden <strong>W</strong>ants <strong>M</strong>eeting <strong>B</strong>oth (Tổng thống Biden muốn gặp cả hai người).'  },
         { id: 'topic2', title: '2. Arts', baseKey: 'W-M-B-M', story: '<strong>W</strong>e <strong>M</strong>ust <strong>B</strong>uy <strong>M</strong>ore (Chúng ta phải mua thêm tranh nghệ thuật).' },
         { id: 'topic3', title: '3. Audition', baseKey: 'W-M-B-B', story: '<strong>W</strong>e <strong>M</strong>ust <strong>B</strong>e <strong>B</strong>rave (Chúng ta phải dũng cảm đi thử giọng).' },
         { id: 'topic4', title: '4. Information and technology', baseKey: 'W-M-M-B', story: '<strong>W</strong>hy <strong>M</strong>ust <strong>M</strong>en <strong>B</strong>oast? (Tại sao đàn ông phải khoe khoang về công nghệ?).' },
