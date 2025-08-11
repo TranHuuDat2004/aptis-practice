@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listening - Part 2 (Câu 15)</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="icon" href="img/favicon.png" type="image/x-icon">
+</head>
+<body>
+    <header id="header-placeholder"></header>
+    <div class="content-pusher">
+        <div class="container">
+            <div class="page-intro">
+                <h1>Listening - Luyện tập Câu 15</h1>
+                <p>Luyện tập ghi nhớ key và quy luật đảo ngược</p>
+            </div>
+            <div class="explanation-box">
+                <h3>💡 Quy luật vàng của Câu 15</h3>
+                <p>Nhiệm vụ là nối 4 ý kiến với người nói (Woman, Man, Both). Điểm mấu chốt là thứ tự nói chuyện:</p>
+                <ul>
+                    <li>Nếu <strong>Woman nói trước</strong>, key sẽ là key gốc (ví dụ: W-B-M-B).</li>
+                    <li>Nếu <strong>Man nói trước</strong>, key sẽ bị <strong>đảo ngược</strong>: W thành M, M thành W, còn B giữ nguyên (ví dụ: W-B-M-B ➔ M-B-W-B).</li>
+                </ul>
+                <p>Hãy sử dụng công tắc bên dưới để luyện tập quy luật này cho từng chủ đề.</p>
+            </div>
+
+            <main id="listening-container" class="listening15-grid">
+                <!-- Các chủ đề sẽ được chèn vào đây -->
+            </main>
+        </div>
+        <footer id="footer-placeholder"></footer>
+    </div>
+    <script src="js/main.js"></script>
+    <script src="js/data-listening.js"></script>
+    <!-- Trong file listening_part15.html -->
+        <!-- Trong file listening_part15.html -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const container = document.getElementById('listening-container');
+            const topics = listeningData.part15;
+
+            // Hàm tính toán key
+            function calculateKey(baseKey, isManFirst, isFixed) {
+                if (isManFirst && !isFixed) { // Chỉ đảo ngược nếu không phải là key cố định
+                    return baseKey.split('-').map(char => {
+                        if (char === 'W') return 'M';
+                        if (char === 'M') return 'W';
+                        return 'B';
+                    }).join('-');
+                }
+                return baseKey;
+            }
+
+            topics.forEach((topic) => {
+                const card = document.createElement('div');
+                card.className = 'quiz-card listening15-card';
+                card.dataset.baseKey = topic.baseKey;
+                // Lưu trạng thái cố định vào dataset
+                if (topic.isFixed) {
+                    card.dataset.isFixed = "true";
+                }
+
+                // Vô hiệu hóa công tắc nếu là trường hợp ngoại lệ
+                const toggleDisabled = topic.isFixed ? 'disabled' : '';
+
+                card.innerHTML = `
+                    <div class="card-header">
+                        <h2 class="listening15-title">${topic.title}</h2>
+                        <div class="speaker-toggle-container ${toggleDisabled ? 'disabled' : ''}">
+                            <span>Woman</span>
+                            <label class="switch">
+                                <input type="checkbox" class="speaker-toggle" ${toggleDisabled}>
+                                <span class="slider round"></span>
+                            </label>
+                            <span>Man</span>
+                        </div>
+                    </div>
+                    <p class="story-hint"><em>Gợi nhớ: ${topic.story}</em></p>
+                    <div class="card-actions">
+                        <button class="action-btn show-listening15-key">Hiện đáp án</button>
+                    </div>
+                    <div class="answer-section" style="display: none;">
+                        <p class="final-key-display"></p>
+                    </div>
+                `;
+                container.appendChild(card);
+            });
+
+            // --- LOGIC MỚI ---
+            container.addEventListener('change', function(e) {
+                if (e.target.classList.contains('speaker-toggle')) {
+                    const card = e.target.closest('.listening15-card');
+                    const answerSection = card.querySelector('.answer-section');
+                    if (answerSection.style.display === 'block') {
+                        const baseKey = card.dataset.baseKey;
+                        const isManFirst = e.target.checked;
+                        const isFixed = card.dataset.isFixed === "true";
+                        const finalKey = calculateKey(baseKey, isManFirst, isFixed);
+                        card.querySelector('.final-key-display').textContent = ` ${finalKey}`;
+                    }
+                }
+            });
+
+            container.addEventListener('click', function(e) {
+                if (e.target.classList.contains('show-listening15-key')) {
+                    const card = e.target.closest('.listening15-card');
+                    const answerSection = card.querySelector('.answer-section');
+                    const isVisible = answerSection.style.display === 'block';
+
+                    if (!isVisible) {
+                        const baseKey = card.dataset.baseKey;
+                        const isManFirst = card.querySelector('.speaker-toggle').checked;
+                        const isFixed = card.dataset.isFixed === "true";
+                        const finalKey = calculateKey(baseKey, isManFirst, isFixed);
+                        card.querySelector('.final-key-display').textContent = ` ${finalKey}`;
+                    }
+
+                    answerSection.style.display = isVisible ? 'none' : 'block';
+                    e.target.textContent = isVisible ? 'Ẩn đáp án' : 'Hiện đáp án';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

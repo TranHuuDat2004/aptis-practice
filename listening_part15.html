@@ -1,127 +1,196 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listening - Part 2 (Câu 15)</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 </head>
+
 <body>
     <header id="header-placeholder"></header>
     <div class="content-pusher">
         <div class="container">
             <div class="page-intro">
                 <h1>Listening - Luyện tập Câu 15</h1>
-                <p>Luyện tập ghi nhớ key và quy luật đảo ngược</p>
+                <p>Nối câu hỏi với người nói (Woman, Man, Both)</p>
             </div>
             <div class="explanation-box">
                 <h3>💡 Quy luật vàng của Câu 15</h3>
                 <p>Nhiệm vụ là nối 4 ý kiến với người nói (Woman, Man, Both). Điểm mấu chốt là thứ tự nói chuyện:</p>
                 <ul>
                     <li>Nếu <strong>Woman nói trước</strong>, key sẽ là key gốc (ví dụ: W-B-M-B).</li>
-                    <li>Nếu <strong>Man nói trước</strong>, key sẽ bị <strong>đảo ngược</strong>: W thành M, M thành W, còn B giữ nguyên (ví dụ: W-B-M-B ➔ M-B-W-B).</li>
+                    <li>Nếu <strong>Man nói trước</strong>, key sẽ bị <strong>đảo ngược</strong>: W thành M, M thành W,
+                        còn B giữ nguyên (ví dụ: W-B-M-B ➔ M-B-W-B).</li>
                 </ul>
                 <p>Hãy sử dụng công tắc bên dưới để luyện tập quy luật này cho từng chủ đề.</p>
             </div>
 
-            <main id="listening-container" class="listening15-grid">
-                <!-- Các chủ đề sẽ được chèn vào đây -->
+            
+
+            <main id="quiz-container">
+                <!-- Nội dung sẽ được chèn vào đây -->
             </main>
         </div>
         <footer id="footer-placeholder"></footer>
     </div>
     <script src="js/main.js"></script>
     <script src="js/data-listening.js"></script>
-    <!-- Trong file listening_part15.html -->
-        <!-- Trong file listening_part15.html -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const container = document.getElementById('listening-container');
+
+            const quizContainer = document.getElementById('quiz-container');
             const topics = listeningData.part15;
 
-            // Hàm tính toán key
-            function calculateKey(baseKey, isManFirst, isFixed) {
-                if (isManFirst && !isFixed) { // Chỉ đảo ngược nếu không phải là key cố định
-                    return baseKey.split('-').map(char => {
+            topics.forEach((topic, index) => {
+                const button = document.createElement('button');
+                button.className = 'topic-selector-btn';
+                button.textContent = `Chủ đề ${index + 1}`;
+                button.dataset.target = `#${topic.id}`;
+                
+
+                const card = document.createElement('div');
+                card.className = 'quiz-card part4-card';
+                card.id = topic.id;
+                card.dataset.baseKey = topic.baseKey;
+                if (topic.isFixed) card.dataset.isFixed = "true";
+
+                let questionsHTML = '';
+                for (let i = 1; i <= 4; i++) {
+                    questionsHTML += `
+                        <div class="part4-question" data-question-index="${i - 1}">
+                            <p><strong>Câu ${i}</strong></p>
+                            <div class="part4-options">
+                                <button class="option-btn" data-choice="W">W</button>
+                                <button class="option-btn" data-choice="M">M</button>
+                                <button class="option-btn" data-choice="B">B</button>
+                            </div>
+                        </div>
+                    `;
+                }
+
+                const toggleDisabled = topic.isFixed ? 'disabled' : '';
+                card.innerHTML = `
+                    <div class="card-header">
+                        <h2>${topic.title}</h2>
+                        <div class="speaker-toggle-container ${toggleDisabled ? 'disabled' : ''}">
+                            <span>Woman nói trước</span>
+                            <label class="switch"><input type="checkbox" class="speaker-toggle" ${toggleDisabled}><span class="slider round"></span></label>
+                            <span>Man nói trước</span>
+                        </div>
+                    </div>
+                    <div class="part4-questions-container">${questionsHTML}</div>
+                    <div class="feedback-message"></div>
+                    <div class="card-actions">
+                        <button class="action-btn check-answer-btn">Kiểm tra đáp án</button>
+                        <button class="action-btn show-story-btn">Xem Key & Gợi nhớ</button>
+                    </div>
+                    <div class="answer-section" style="display: none;">
+                        <h4>Đáp án & Gợi nhớ</h4>
+                        <p><strong>Key đúng:</strong> <span class="final-key-display"></span></p>
+                        <p><strong>Câu chuyện gợi nhớ:</strong> ${topic.story}</p>
+                    </div>
+                `;
+                quizContainer.appendChild(card);
+            });
+
+            // --- LOGIC HOÀN CHỈNH VÀ ĐÁNG TIN CẬY ---
+    
+            const allCards = quizContainer.querySelectorAll('.part4-card');
+
+            function showTopic(targetId) {
+                allCards.forEach(card => card.classList.remove('active'));
+                allButtons.forEach(btn => btn.classList.remove('active'));
+                const targetCard = document.querySelector(targetId);
+                const targetButton = selectorContainer.querySelector(`[data-target='${targetId}']`);
+                if (targetCard) targetCard.classList.add('active');
+                if (targetButton) targetButton.classList.add('active');
+            }
+
+            function calculateKeyArray(baseKey, isManFirst, isFixed) {
+                const keyArray = baseKey.split('-');
+                if (isManFirst && !isFixed) {
+                    return keyArray.map(char => {
                         if (char === 'W') return 'M';
                         if (char === 'M') return 'W';
                         return 'B';
-                    }).join('-');
+                    });
                 }
-                return baseKey;
+                return keyArray;
             }
 
-            topics.forEach((topic) => {
-                const card = document.createElement('div');
-                card.className = 'quiz-card listening15-card';
-                card.dataset.baseKey = topic.baseKey;
-                // Lưu trạng thái cố định vào dataset
-                if (topic.isFixed) {
-                    card.dataset.isFixed = "true";
-                }
-
-                // Vô hiệu hóa công tắc nếu là trường hợp ngoại lệ
-                const toggleDisabled = topic.isFixed ? 'disabled' : '';
-
-                card.innerHTML = `
-                    <div class="card-header">
-                        <h2 class="listening15-title">${topic.title}</h2>
-                        <div class="speaker-toggle-container ${toggleDisabled ? 'disabled' : ''}">
-                            <span>Woman</span>
-                            <label class="switch">
-                                <input type="checkbox" class="speaker-toggle" ${toggleDisabled}>
-                                <span class="slider round"></span>
-                            </label>
-                            <span>Man</span>
-                        </div>
-                    </div>
-                    <p class="story-hint"><em>Gợi nhớ: ${topic.story}</em></p>
-                    <div class="card-actions">
-                        <button class="action-btn show-listening15-key">Hiện đáp án</button>
-                    </div>
-                    <div class="answer-section" style="display: none;">
-                        <p class="final-key-display"></p>
-                    </div>
-                `;
-                container.appendChild(card);
-            });
-
-            // --- LOGIC MỚI ---
-            container.addEventListener('change', function(e) {
+            // 1. Thêm sự kiện 'change' cho công tắc toggle
+            quizContainer.addEventListener('change', function(e) {
                 if (e.target.classList.contains('speaker-toggle')) {
-                    const card = e.target.closest('.listening15-card');
+                    const card = e.target.closest('.part4-card');
                     const answerSection = card.querySelector('.answer-section');
+                    
+                    // Chỉ cập nhật nếu đáp án đang được hiển thị
                     if (answerSection.style.display === 'block') {
-                        const baseKey = card.dataset.baseKey;
                         const isManFirst = e.target.checked;
                         const isFixed = card.dataset.isFixed === "true";
-                        const finalKey = calculateKey(baseKey, isManFirst, isFixed);
-                        card.querySelector('.final-key-display').textContent = ` ${finalKey}`;
-                    }
-                }
-            });
-
-            container.addEventListener('click', function(e) {
-                if (e.target.classList.contains('show-listening15-key')) {
-                    const card = e.target.closest('.listening15-card');
-                    const answerSection = card.querySelector('.answer-section');
-                    const isVisible = answerSection.style.display === 'block';
-
-                    if (!isVisible) {
                         const baseKey = card.dataset.baseKey;
-                        const isManFirst = card.querySelector('.speaker-toggle').checked;
-                        const isFixed = card.dataset.isFixed === "true";
-                        const finalKey = calculateKey(baseKey, isManFirst, isFixed);
-                        card.querySelector('.final-key-display').textContent = ` ${finalKey}`;
+                        
+                        const finalKeyArray = calculateKeyArray(baseKey, isManFirst, isFixed);
+                        card.querySelector('.final-key-display').textContent = finalKeyArray.join(' - ');
                     }
-
-                    answerSection.style.display = isVisible ? 'none' : 'block';
-                    e.target.textContent = isVisible ? 'Ẩn đáp án' : 'Hiện đáp án';
                 }
             });
+            
+            quizContainer.addEventListener('click', function (e) {
+                if (e.target.classList.contains('option-btn')) {
+                    const parentOptions = e.target.parentElement;
+                    parentOptions.querySelectorAll('.option-btn').forEach(btn => btn.classList.remove('selected'));
+                    e.target.classList.add('selected');
+                }
+
+                if (e.target.classList.contains('check-answer-btn')) {
+                    const card = e.target.closest('.part4-card');
+                    const isManFirst = card.querySelector('.speaker-toggle').checked;
+                    const isFixed = card.dataset.isFixed === "true";
+                    const baseKey = card.dataset.baseKey;
+
+                    const correctKeyArray = calculateKeyArray(baseKey, isManFirst, isFixed);
+
+                    let correctCount = 0;
+                    const questions = card.querySelectorAll('.part4-question');
+                    questions.forEach((q, i) => {
+                        const selectedBtn = q.querySelector('.option-btn.selected');
+                        q.classList.remove('correct', 'incorrect');
+                        if (selectedBtn && selectedBtn.dataset.choice === correctKeyArray[i]) {
+                            q.classList.add('correct');
+                            correctCount++;
+                        } else if (selectedBtn) {
+                            q.classList.add('incorrect');
+                        }
+                    });
+                    card.querySelector('.feedback-message').innerHTML = `Đúng: <strong>${correctCount}/${questions.length}</strong>`;
+                }
+
+                if (e.target.classList.contains('show-story-btn')) {
+                    const card = e.target.closest('.part4-card');
+                    const isManFirst = card.querySelector('.speaker-toggle').checked;
+                    const isFixed = card.dataset.isFixed === "true";
+                    const baseKey = card.dataset.baseKey;
+
+                    const finalKeyArray = calculateKeyArray(baseKey, isManFirst, isFixed);
+                    card.querySelector('.final-key-display').textContent = finalKeyArray.join(' - ');
+
+                    const answerSection = e.target.closest('.card-actions').nextElementSibling;
+                    const isVisible = answerSection.style.display === 'block';
+                    answerSection.style.display = isVisible ? 'none' : 'block';
+                    e.target.textContent = isVisible ? 'Ẩn Key & Gợi nhớ' : 'Xem Key & Gợi nhớ';
+                }
+            });
+
+            
+           
         });
     </script>
 </body>
+
+
 </html>
