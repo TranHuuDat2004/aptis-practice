@@ -1,0 +1,221 @@
+:root {
+    --primary-color: #d9534f;
+    --secondary-color: #f0f2f5;
+    --border-color: #e0e0e0;
+    --text-color: #333;
+    --light-grey-bg: #f8f9fa;
+    --correct-bg: #e6ffed;
+    --correct-border: #28a745;
+    --incorrect-bg: #ffe6e6;
+    --incorrect-border: #dc3545;
+}
+
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: var(--secondary-color);
+    color: var(--text-color);
+}
+
+.test-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 30px;
+    background-color: #fff;
+    border-top: 4px solid var(--primary-color);
+    border-bottom: 1px solid var(--border-color);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-left,
+.header-right {
+    font-weight: 500;
+}
+
+.header-left .fa-home {
+    margin-right: 8px;
+}
+
+.header-center {
+    font-weight: 700;
+}
+
+.test-container {
+    max-width: 1100px;
+    margin: 30px auto;
+    background-color: #fff;
+    padding: 24px 40px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    min-height: 70vh;
+}
+
+.test-footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #f1f1f1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 30px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#question-title {
+    font-size: 2em;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 12px;
+}
+
+#question-instruction {
+    color: #555;
+    margin-bottom: 30px;
+    font-size: 1.1em;
+}
+
+.gap-fill-item,
+.questions-list .question-item,
+.paragraphs-list .paragraph-item {
+    background-color: var(--light-grey-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+}
+
+.gap-fill-item select,
+.questions-list select,
+.paragraphs-list select {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin: 0 10px;
+    font-size: 1em;
+    cursor: pointer;
+    min-width: 150px;
+}
+
+.drag-and-drop-container {
+    display: flex;
+    gap: 30px;
+}
+
+.drop-zones,
+.draggable-items {
+    flex: 1;
+}
+
+.drop-zone {
+    border: 2px dashed #ccc;
+    border-radius: 8px;
+    min-height: 60px;
+    margin-bottom: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fafafa;
+}
+
+.draggable {
+    background-color: var(--light-grey-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 20px;
+    cursor: grab;
+    user-select: none;
+}
+
+.draggable.dragging {
+    opacity: 0.5;
+}
+
+.opinion-matching-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.opinion-item {
+    margin-bottom: 20px;
+}
+
+.opinion-item b {
+    color: var(--primary-color);
+}
+
+.questions-list .question-item {
+    grid-template-columns: 1fr auto;
+}
+
+.paragraphs-list .paragraph-item {
+    gap: 15px;
+}
+
+.paragraphs-list p {
+    margin: 0;
+    line-height: 1.6;
+}
+
+.headings-list {
+    list-style-type: none;
+    padding: 20px;
+    margin-bottom: 30px;
+    background-color: var(--light-grey-bg);
+    border-radius: 8px;
+}
+
+.nav-btn {
+    padding: 10px 35px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    font-weight: 700;
+    color: #fff;
+    cursor: pointer;
+}
+
+.back-btn {
+    background-color: #ffc107;
+}
+
+.next-btn {
+    background-color: #28a745;
+}
+
+.submit-btn {
+    background-color: #007bff;
+}
+
+#results-screen {
+    text-align: center;
+    padding: 50px 0;
+}
+
+#results-summary {
+    text-align: left;
+    max-width: 400px;
+    margin: 30px auto;
+    font-size: 1.2em;
+}
+
+.correct {
+    background-color: var(--correct-bg) !important;
+    border-color: var(--correct-border) !important;
+}
+
+.incorrect {
+    background-color: var(--incorrect-bg) !important;
+    border-color: var(--incorrect-border) !important;
+}

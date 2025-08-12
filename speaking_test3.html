@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aptis Speaking Test</title>
+    <!-- Bạn có thể giữ hoặc xóa các link này vì CSS đã được nhúng bên dưới -->
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+
+    <style>
+        /* === CSS NHÚNG ĐẶC BIỆT ĐỂ TÁI TẠO GIAO DIỆN APTIS === */
+
+        /* Cài đặt chung */
+        body,
+        html {
+            margin: 0;
+            padding: 0;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: #f0f2f5;
+            color: #333;
+        }
+
+        /* Header của trang thi */
+        .test-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 24px;
+            background-color: #ffffff;
+            border-top: 4px solid #d9534f;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            width: 100%;
+            box-sizing: border-box;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-left {
+            font-weight: bold;
+            font-size: 1.1em;
+        }
+
+        .header-left .icon {
+            color: #d9534f;
+            margin-right: 8px;
+        }
+
+        .header-center, .header-right {
+            font-size: 0.95em;
+        }
+
+        /* Container chính */
+        .container {
+            max-width: 960px;
+            margin: 20px auto;
+            padding: 0 24px;
+            box-sizing: border-box;
+        }
+        
+        /* Box chứa nội dung thi (phỏng theo ảnh) */
+        .test-simulation-wrapper {
+            background-color: #ffffff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 24px;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+            min-height: 400px;
+        }
+
+        /* Ẩn/Hiện các màn hình */
+        .test-screen {
+            display: none;
+        }
+        .test-screen.active {
+            display: block;
+        }
+        
+        /* Tiêu đề chính của từng phần */
+        #part-indicator {
+            font-size: 1.5em;
+            margin-top: 0;
+            margin-bottom: 24px;
+            color: #000;
+            font-weight: 500;
+        }
+        
+        #task-indicator {
+            display: none;
+        }
+        
+        /* Khu vực hình ảnh - được tạo bởi JS của bạn */
+        .test-image-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 24px;
+        }
+        .test-image-container img {
+            width: 45%;
+            max-width: 300px;
+            height: auto;
+            border-radius: 6px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Bảng câu hỏi được mô phỏng */
+        #question-area {
+            width: 100%;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        #question-area::before {
+            content: 'Câu hỏi';
+            display: block;
+            padding: 16px;
+            text-align: left;
+            background-color: #f8f9fa;
+            font-weight: 500;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        /* Câu hỏi (được tạo bởi JS của bạn) */
+        .test-question-text {
+            padding: 16px;
+            margin: 0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        .test-question-text:last-of-type {
+             border-bottom: none;
+        }
+
+        .test-part4-questions ul {
+            list-style-position: inside;
+            padding: 16px;
+            margin: 0;
+        }
+        .test-part4-questions li {
+            padding-bottom: 8px;
+        }
+
+        /* Footer và nút bấm */
+        .page-footer {
+            display: flex;
+            justify-content: flex-end;
+            padding: 24px 24px 24px 0;
+            padding-top: 16px;
+            background-color: transparent;
+        }
+
+        .action-btn,
+        #next-btn {
+            padding: 10px 25px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background-color 0.2s ease-in-out;
+            background-color: #28a745;
+            color: white;
+            display: inline-block;
+        }
+
+        .action-btn:hover,
+        #next-btn:hover {
+            background-color: #218838;
+        }
+        
+        #timer-area {
+            display: none;
+        }
+        
+        #start-screen, #end-screen {
+            text-align: center;
+            padding: 40px 0;
+        }
+        #start-screen h1, #end-screen h1 {
+            margin-bottom: 20px;
+        }
+        #start-screen p, #end-screen p {
+            margin-bottom: 30px;
+            color: #555;
+            line-height: 1.6;
+        }
+        
+        .explanation-box {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+        .explanation-box ul {
+            padding-left: 20px;
+        }
+        .explanation-box li {
+            margin-bottom: 10px;
+        }
+        a.action-btn, a.action-btn-secondary {
+             text-decoration: none;
+        }
+        .action-btn-secondary {
+             color: #007bff;
+             display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header tĩnh mô phỏng theo ảnh -->
+    <header class="test-header">
+        <div class="header-left">
+            <span class="icon">Aptis practice</span> 
+        </div>
+        <div class="header-center" id="timer-display-header">
+            Time remaining: --:--
+        </div>
+        <div class="header-right" id="question-indicator-header">
+            Speaking Test
+        </div>
+    </header>
+
+    <!-- Nội dung chính mà SCRIPT của bạn sẽ điều khiển -->
+    <div class="container">
+        <div class="test-simulation-wrapper">
+
+            <!-- Màn hình bắt đầu -->
+            <div id="start-screen" class="test-screen active">
+                <h1>Mô phỏng bài thi Speaking</h1>
+                <p>Bài thi sẽ chạy tự động qua 4 phần. Bạn sẽ không thể tạm dừng.<br>Hãy chuẩn bị sẵn micro hoặc điện thoại để ghi âm lại phần trả lời của bạn.</p>
+                <button class="action-btn" id="start-test-btn">Bắt đầu bài thi</button>
+            </div>
+
+            <!-- Màn hình làm bài (Vỏ rỗng để JS của bạn điền vào) -->
+            <div id="test-screen" class="test-screen">
+                <h2 id="part-indicator"></h2>
+                <p id="task-indicator"></p>
+                <div id="question-area"></div>
+                <div id="timer-area">
+                    <div id="timer-label"></div>
+                    <div id="timer-display"></div>
+                    <div class="progress-bar-container">
+                        <div id="progress-bar"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Màn hình kết thúc -->
+            <div id="end-screen" class="test-screen">
+                <h1>Bài thi đã kết thúc!</h1>
+                <p>Chúc mừng bạn đã hoàn thành bài thi mô phỏng.</p>
+                <div class="explanation-box" style="margin-top: 20px; text-align: left;">
+                    <h3>💡 Bước tiếp theo: Tự đánh giá bài làm</h3>
+                    <p>Bây giờ là lúc sử dụng file ghi âm bạn vừa tạo để cải thiện kỹ năng. Hãy làm theo các bước sau:</p>
+                    <ul>
+                        <li><strong>Bước 1:</strong> Nghe lại file ghi âm của bạn.</li>
+                        <li><strong>Bước 2:</strong> So sánh câu trả lời của bạn với các "Câu trả lời mẫu".</li>
+                        <li><strong>Bước 3 (Nâng cao):</strong> Tải file ghi âm lên các công cụ AI để nhận feedback chi tiết.</li>
+                    </ul>
+                </div>
+                 <a href="speaking_test.html" class="action-btn" style="margin-top: 20px;">Làm lại bài thi khác</a>
+                 <a href="index.html" class="action-btn-secondary" style="margin-top: 10px;">Quay về trang chủ</a>
+            </div>
+
+        </div>
+         <footer class="page-footer">
+            <button class="action-btn" id="next-btn" style="display: none;">Next</button>
+        </footer>
+    </div>
+    
+    <script src="js/data-speaking.js"></script>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Lấy các element
+        const startScreen = document.getElementById('start-screen');
+        const testScreen = document.getElementById('test-screen');
+        const endScreen = document.getElementById('end-screen');
+        const startBtn = document.getElementById('start-test-btn');
+        const partIndicator = document.getElementById('part-indicator');
+        const taskIndicator = document.getElementById('task-indicator');
+        const questionArea = document.getElementById('question-area');
+        const timerLabel = document.getElementById('timer-label');
+        const timerDisplay = document.getElementById('timer-display');
+        const progressBar = document.getElementById('progress-bar');
+        const nextBtn = document.getElementById('next-btn');
+        const timerDisplayHeader = document.getElementById('timer-display-header');
+        const questionIndicatorHeader = document.getElementById('question-indicator-header');
+
+        const shuffle = (array) => array.sort(() => Math.random() - 0.5);
+
+        let timerInterval;
+        let forceNext = () => {};
+        let questionCounter = 0;
+
+        function runTimer(totalSeconds, showNextButton = false) {
+            return new Promise(resolve => {
+                let secondsLeft = totalSeconds;
+                forceNext = () => {
+                    clearInterval(timerInterval);
+                    nextBtn.style.display = 'none';
+                    resolve();
+                };
+                if (showNextButton) {
+                    nextBtn.style.display = 'inline-block';
+                } else {
+                    nextBtn.style.display = 'none';
+                }
+                const updateDisplay = () => {
+                    const minutes = Math.floor(secondsLeft / 60);
+                    const seconds = secondsLeft % 60;
+                    const formattedTime = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                    timerDisplay.textContent = formattedTime;
+                    timerDisplayHeader.textContent = `Time remaining: ${formattedTime}`;
+                };
+                updateDisplay();
+                progressBar.style.transition = 'none';
+                progressBar.style.width = '100%';
+                setTimeout(() => {
+                    progressBar.style.transition = `width ${totalSeconds}s linear`;
+                    progressBar.style.width = '0%';
+                }, 100);
+                timerInterval = setInterval(() => {
+                    secondsLeft--;
+                    updateDisplay();
+                    if (secondsLeft <= 0) {
+                        forceNext();
+                    }
+                }, 1000);
+            });
+        }
+
+        function displayContent(part, task, contentHTML) {
+            questionCounter++;
+            partIndicator.textContent = `Speaking ${part}`;
+            taskIndicator.textContent = task;
+            questionArea.innerHTML = contentHTML;
+            questionIndicatorHeader.textContent = `Speaking question ${questionCounter}`;
+        }
+        
+        async function startTest() {
+            startScreen.classList.remove('active');
+            testScreen.classList.add('active');
+            document.querySelector('.page-footer').style.display = 'flex';
+            questionCounter = 0; // Reset counter
+
+            await runPart1();
+            await runPart2();
+            await runPart3();
+            await runPart4();
+
+            testScreen.classList.remove('active');
+            endScreen.classList.add('active');
+            document.querySelector('.page-footer').style.display = 'none';
+            questionIndicatorHeader.textContent = 'Test Finished';
+        }
+
+        async function runPart1() {
+            const questions = shuffle([...speakingData.part1]).slice(0, 3);
+            for (let i = 0; i < questions.length; i++) {
+                const questionHTML = `<p class="test-question-text">${questions[i].prompt.question}</p>`;
+                displayContent('I', `Question ${i + 1} of 3`, questionHTML);
+                await runTimer(questions[i].prompt.duration, true);
+            }
+        }
+        
+        async function runPart2() {
+            const highQualityTopics = speakingData.part2.filter(topic => topic.quality !== 'low');
+            const topic = shuffle(highQualityTopics)[0];
+            const imageHTML = `<div class="test-image-container"><img src="${topic.imageSrc}" alt="Image for Part 2"></div>`;
+
+            for (let i = 0; i < topic.tasks.length; i++) {
+                const task = topic.tasks[i];
+                const contentHTML = `${imageHTML}<p class="test-question-text">${task.question}</p>`;
+                displayContent('II', `Task ${i + 1} of 3`, contentHTML);
+                await runTimer(task.duration, true);
+            }
+        }
+
+        // *** ĐÃ SỬA LẠI HÀM NÀY ***
+        async function runPart3() {
+            const highQualityTopics = speakingData.part3.filter(topic => topic.quality !== 'low');
+            const topic = shuffle(highQualityTopics)[0];
+            const imagesHTML = `<div class="test-image-container">
+                                    <img src="${topic.image1Src}" alt="Picture 1">
+                                    <img src="${topic.image2Src}" alt="Picture 2">
+                                </div>`;
+            
+            // Lặp qua từng câu hỏi, hiển thị lần lượt
+            for (let i = 0; i < topic.tasks.length; i++) {
+                const task = topic.tasks[i];
+                // Gộp HTML của 2 ảnh và 1 câu hỏi hiện tại
+                const contentHTML = `${imagesHTML}<p class="test-question-text">${task.question}</p>`;
+                displayContent('III', `Task ${i + 1} of 3`, contentHTML);
+                // Chạy timer cho riêng câu hỏi này
+                await runTimer(task.duration, true);
+            }
+        }
+
+        async function runPart4() {
+            const topic = shuffle([...speakingData.part4])[0];
+            let questionsHTML = '<ul>';
+            topic.tasks.forEach(task => { questionsHTML += `<li>${task.question}</li>`; });
+            questionsHTML += '</ul>';
+            const part4Content = `<div class="test-part4-questions">${questionsHTML}</div>`;
+            
+            // Thời gian chuẩn bị
+            displayContent('IV', 'Prepare your answer', part4Content);
+            timerDisplayHeader.textContent = "Preparation Time: 01:00";
+            await runTimer(60); 
+
+            // Thời gian nói
+            // Cập nhật lại màn hình để timer chính xác
+            partIndicator.textContent = `Speaking IV`;
+            questionArea.innerHTML = part4Content;
+            questionIndicatorHeader.textContent = `Speaking question ${questionCounter}`;
+            await runTimer(120, true);
+        }
+
+        startBtn.addEventListener('click', startTest);
+        nextBtn.addEventListener('click', () => forceNext());
+    });
+    </script>
+</body>
+</html>
