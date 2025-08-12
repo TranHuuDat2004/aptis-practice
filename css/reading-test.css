@@ -4,10 +4,8 @@
     --border-color: #e0e0e0;
     --text-color: #333;
     --light-grey-bg: #f8f9fa;
-    --correct-bg: #e6ffed;
-    --correct-border: #28a745;
-    --incorrect-bg: #ffe6e6;
-    --incorrect-border: #dc3545;
+    --correct-color: #28a745;
+    --incorrect-color: #dc3545;
 }
 
 body,
@@ -82,9 +80,8 @@ html {
     font-size: 1.1em;
 }
 
-.gap-fill-item,
-.questions-list .question-item,
-.paragraphs-list .paragraph-item {
+/* Part 1 */
+.gap-fill-item {
     background-color: var(--light-grey-bg);
     border: 1px solid var(--border-color);
     border-radius: 8px;
@@ -94,9 +91,7 @@ html {
     align-items: center;
 }
 
-.gap-fill-item select,
-.questions-list select,
-.paragraphs-list select {
+.gap-fill-item select {
     padding: 8px 12px;
     border-radius: 6px;
     border: 1px solid #ccc;
@@ -106,6 +101,7 @@ html {
     min-width: 150px;
 }
 
+/* Part 2 & 3 */
 .drag-and-drop-container {
     display: flex;
     gap: 30px;
@@ -137,43 +133,81 @@ html {
     user-select: none;
 }
 
-.draggable.dragging {
-    opacity: 0.5;
-}
-
+/* === CSS ĐÃ SỬA LẠI CHO PART 4 === */
 .opinion-matching-container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 40px;
 }
 
+.opinions,
+.questions-list {
+    display: flex;
+    flex-direction: column;
+}
+
 .opinion-item {
     margin-bottom: 20px;
+    line-height: 1.6;
 }
 
 .opinion-item b {
     color: var(--primary-color);
 }
 
-.questions-list .question-item {
+.question-item {
+    display: grid;
     grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 15px;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    background-color: var(--light-grey-bg);
+    border: 1px solid var(--border-color);
+}
+
+.question-item select {
+    padding: 8px;
+    border-radius: 6px;
+}
+
+/* === CSS ĐÃ SỬA LẠI CHO PART 5 === */
+.heading-matching-container {}
+
+.headings-list {
+    list-style-type: none;
+    padding: 20px;
+    margin: 0 0 30px 0;
+    background-color: var(--light-grey-bg);
+    border-radius: 8px;
+}
+
+.headings-list li {
+    margin-bottom: 10px;
 }
 
 .paragraphs-list .paragraph-item {
+    display: flex;
+    align-items: flex-start;
     gap: 15px;
+    margin-bottom: 20px;
+    background-color: var(--light-grey-bg);
+    border: 1px solid var(--border-color);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.paragraphs-list select {
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
 }
 
 .paragraphs-list p {
     margin: 0;
     line-height: 1.6;
-}
-
-.headings-list {
-    list-style-type: none;
-    padding: 20px;
-    margin-bottom: 30px;
-    background-color: var(--light-grey-bg);
-    border-radius: 8px;
+    text-align: left;
 }
 
 .nav-btn {
@@ -210,12 +244,106 @@ html {
     font-size: 1.2em;
 }
 
-.correct {
-    background-color: var(--correct-bg) !important;
-    border-color: var(--correct-border) !important;
+#disclaimer-text {
+    font-style: italic;
+    color: #777;
+    font-size: 0.9em;
+    margin-top: 20px;
 }
 
-.incorrect {
-    background-color: var(--incorrect-bg) !important;
-    border-color: var(--incorrect-border) !important;
+.review-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.review-summary {
+    margin: 15px 0;
+    font-size: 1.5em;
+}
+
+#review-total-score {
+    color: var(--correct-color);
+    font-weight: bold;
+}
+
+#review-grade {
+    color: #007bff;
+    font-weight: bold;
+    margin-left: 20px;
+}
+
+.review-pagination button {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    color: #333;
+    padding: 10px 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+.review-pagination button.active {
+    background-color: #007bff;
+    color: #fff;
+    border-color: #007bff;
+}
+
+.review-content h3 {
+    font-size: 1.8em;
+    margin-bottom: 8px;
+}
+
+.review-content .part-score {
+    font-size: 1.2em;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.review-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.review-table th,
+.review-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.review-table th {
+    background-color: var(--light-grey-bg);
+}
+
+.review-table tr:last-child td {
+    border-bottom: none;
+}
+
+.review-answer-correct {
+    color: var(--correct-color);
+    font-weight: bold;
+}
+
+.review-answer-incorrect {
+    color: var(--incorrect-color);
+    text-decoration: line-through;
+}
+
+/* === STYLE MỚI CHO CÁC NÚT BẤM Ở MÀN HÌNH KẾT QUẢ === */
+#results-screen-actions {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 15px; /* Tạo khoảng cách giữa 2 nút */
+}
+
+.home-btn {
+    background-color: #6c757d; /* Màu xám */
+    text-decoration: none; /* Bỏ gạch chân của thẻ a */
+    display: inline-flex; /* Để căn giữa text và có padding */
+    align-items: center;
+}
+.home-btn:hover {
+    background-color: #5a6268;
 }

@@ -337,7 +337,120 @@ const allReadingTests = {
                 answer: ['A', 'B', 'C', 'D', 'E', 'F', 'G']
             }
         }
-    ]
+    ], // <--- Đừng quên dấu phẩy này để ngăn cách với đề thi "test_003"
+"test_004": [
+    {
+        part: 1,
+        type: 'gap-fill',
+        title: 'Question 1 of 5',
+        instruction: 'Choose the word that fits in the gap. The first one is done for you.',
+        content: {
+            prefix: 'Hey Lewis,',
+            items: [
+                { prefix: 'I wake up', options: ['early', 'late', 'on time'], suffix: 'every day.' },
+                { prefix: 'I have', options: ['breakfast', 'lunch', 'dinner'], suffix: 'at noon.' },
+                { prefix: 'I', options: ['leave', 'live', 'stay'], suffix: 'the house at 8 AM.' },
+                { prefix: 'I drive in my new', options: ['house', 'job', 'car'], suffix: '.' },
+                { prefix: 'I sleep when I feel', options: ['tired', 'sleepy', 'happy'], suffix: '.' }
+            ],
+            suffix: 'Love,<br>Helen',
+            answer: ['early', 'lunch', 'leave', 'car', 'sleepy']
+        }
+    },
+    {
+        part: 2,
+        type: 'sentence-ordering',
+        title: 'Question 2 of 5',
+        instruction: 'Put the sentences below in the right order. (Topic: Hand in assignment)',
+        content: {
+            sentences: [
+                "First, it is a good idea to check your report and correct mistakes",
+                "When you are sure there are no mistakes left, print out your report",
+                "Next, complete a cover sheet with your name and your student number, and attach it to your printed assignment",
+                "Bring your assignment with the attached cover sheet to the front desk in the main hall",
+                "The staff member will take your report and confirm that everything is complete"
+            ],
+            answer: [
+                "First, it is a good idea to check your report and correct mistakes",
+                "When you are sure there are no mistakes left, print out your report",
+                "Next, complete a cover sheet with your name and your student number, and attach it to your printed assignment",
+                "Bring your assignment with the attached cover sheet to the front desk in the main hall",
+                "The staff member will take your report and confirm that everything is complete"
+            ]
+        }
+    },
+    {
+        part: 3,
+        type: 'sentence-ordering',
+        title: 'Question 3 of 5',
+        instruction: 'Put the sentences below in the right order. (Topic: MFire instructions)',
+        content: {
+            sentences: [
+                "When you hear the alarm, leave your bags and belongings at the desk",
+                "Next, walk calmly to the doors marked Emergency Exit",
+                "Through these doors, there are stairs leading you to the ground floor",
+                "When you reach the bottom of these stairs, leave the building through front entrance",
+                "Outside, gather on the grass and wait for further instructions"
+            ],
+            answer: [
+                "When you hear the alarm, leave your bags and belongings at the desk",
+                "Next, walk calmly to the doors marked Emergency Exit",
+                "Through these doors, there are stairs leading you to the ground floor",
+                "When you reach the bottom of these stairs, leave the building through front entrance",
+                "Outside, gather on the grass and wait for further instructions"
+            ]
+        }
+    },
+    {
+        part: 4,
+        type: 'opinion-matching',
+        title: 'Question 4 of 5',
+        instruction: 'Four people respond in the comments section of an online magazine article about the above topic. Read the texts and then answer the questions.',
+        content: {
+            topic: 'Sports',
+            opinions: [
+                { person: 'A', text: 'Exercising with friends is a fantastic idea, don\'t you think? It adds a fun element to the workout routine. It\'s important to fuel our bodies properly, though. After a good workout, I always make sure to have a nutritious meal to replenish energy and support muscle recovery.' },
+                { person: 'B', text: 'Establishing a consistent workout routine has really helped me stay on track with my fitness goals. It\'s amazing how much more I can accomplish when I have a structured plan in place. Plus, it keeps me accountable and ensures I make time for physical activity every day.' },
+                { person: 'C', text: 'Age is just a number when it comes to exercise. Whether you\'re young or old, staying active is crucial for maintaining overall health and vitality. While competitions can be motivating for some, they\'re not necessarily suitable for everyone. It\'s important to find activities that are enjoyable and sustainable for each individual.' },
+                { person: 'D', text: 'Experiencing pain during exercise isn\'t necessary and it\'s a sign that something may be wrong. It\'s important to listen to our bodies and seek expert advice when needed, whether it\'s from a trainer, physical therapist, or medical professional. Taking care of ourselves properly ensures we can continue to enjoy physical activity without risking injury.' }
+            ],
+            questions: [
+                'Who thinks work out with friends is a good idea?', 
+                'Who thinks competitions are not useful for everybody?',
+                'Who thinks experience pain is not necessary?', 
+                'Who thinks a proper meal is important?',
+                'Who thinks a routine can help us do more sport?', 
+                'Who thinks exercise is for both the young and the elderly?',
+                'Who thinks at times we seek expert advice?',
+            ],
+            answer: ['A', 'C', 'D', 'A', 'B', 'C', 'D']
+        }
+    },
+    {
+        part: 5,
+        type: 'heading-matching',
+        title: 'Question 5 of 5',
+        instruction: 'Read the text below. Match the headings to the paragraphs.',
+        content: {
+            topic: 'Early Australia',
+            headings: [
+                'A. New evidence', 'B. Natural barrier', 'C. Technology',
+                'D. Journey', 'E. No precise figure', 'F. Lack of knowledge and skills',
+                'G. Determination'
+            ],
+            paragraphs: [
+                "The history of early Australians stretches back much further than previously believed, with evidence suggesting human presence on the Australian continent dating back approximately 65,000 years. This timeline challenges traditional views held by historians regarding the first human settlers in Australia. Carbon analysis of archaeological sites has provided different results, leading to alternative hypotheses about the early inhabitants of the land Down Under. The findings shed new light on the ancient origins and rich cultural heritage of the indigenous people who have inhabited the continent for millennia.",
+                "Recent discoveries have revealed that the settlement of Australia was not a singular event. In addition to the early settlers, scientists have uncovered traces of two other human groups that migrated to the continent. The presence of multiple groups suggests a complex history of human migration and interaction. However, reaching the isolated continent would have posed significant challenges for ancient humans, as they would have needed to traverse vast stretches of open sea, a feat seemingly impossible with the technology available to them at the time.",
+                "The aid of advanced equipment and techniques has allowed scientists to identify a series of small islands closely connected, forming a continuous pathway leading to Australia. Remote sensing technology has helped researchers identify and map out islands and potential migration routes. Geographic Information Systems (GIS) have integrated various data sets to discover more about the migration corridors. This detailed mapping provides insight into the probable routes taken by ancient migrants as they ventured across the vast expanse of the sea, providing a deeper understanding of the complex migration patterns that shaped the early history of the continent.",
+                "The migration patterns of early Australians reveal a gradual journey to the continent. Archaeological evidence points to the likelihood of different tribes arriving in Australia through a series of island-hopping journeys. Each island served as a resting point and a source of food, allowing them to continue their voyage. This gradual movement indicates an adaptive and resourceful approach taken by these ancient tribes, who navigated the challenges of the terrain to ultimately settle in Australia.",
+                "Scientists can only speculate about the exact number of individuals required to undertake such a migration, which could have ranged from a small group to several thousand people. The uncertainty stems from various factors, including the limitations of archaeological evidence and the complexities of ancient human migration. The lack of exact statistics makes it challenging to determine the scale and composition of these early human journeys accurately. However, ongoing research and technological advancements may offer more insights in the future.",
+                "Some skeptics argue that ancient humans didn't have enough the intellectual capacity, knowledge, and skills needed to undertake such journeys. They question whether early humans possessed the navigational and maritime expertise to traverse vast stretches of open ocean. Critics contend that without advanced tools or navigational aids, navigating through open seas would have been beyond the capabilities of ancient populations. However, it is crucial to acknowledge that human ingenuity and adaptability have proven remarkable throughout history, enabling our ancestors to overcome various challenges and achieve extraordinary feats.",
+                "History has demonstrated the unwavering determination and resilience of human explorers in the past. From deep-sea expeditions to ancient times to modern space travel, humans have showcased their resolve to explore and conquer the unknown. The same determination might have driven the early Australians to embark on perilous journeys across treacherous waters. While the challenges they faced were undoubtedly immense, the spirit of human curiosity and the desire to discover new lands and opportunities likely motivated these ancient explorers, leaving a remarkable legacy in the annals of history."
+            ],
+            answer: ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+        }
+    }
+]
 
 };
 

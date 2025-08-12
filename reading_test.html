@@ -8,28 +8,64 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="stylesheet" href="css/reading-test.css">
 </head>
+<style>
+    a {
+        text-decoration: none;
+        color: black;
+    }
+    /* === STYLE MỚI CHO DÒNG CHÚ THÍCH === */
+#disclaimer-text {
+    font-style: italic;
+    color: #777;
+    font-size: 0.9em;
+    margin-top: 20px;
+}
+</style>
 <body>
     <header class="test-header">
-        <div class="header-left"><i class="fas fa-home"></i> Aptis Practice</div>
+        <a href="index.html">
+        <div class="header-left"><i class="fas fa-home"></i> Aptis Practice</div></a>
         <div class="header-center">Time remaining: <span id="timer-display">35:00</span></div>
         <div class="header-right">Reading</div>
     </header>
 
-    <main class="test-container">
+    <main class="test-container" id="main-container">
+        <!-- Giao diện làm bài -->
         <div id="test-screen">
             <h2 id="question-title"></h2>
             <p id="question-instruction"></p>
             <div id="question-content"></div>
         </div>
-        <!-- === NÚT REVIEW ĐÃ BỊ XÓA KHỎI ĐÂY === -->
+        
+        <!-- Giao diện kết quả ban đầu -->
         <div id="results-screen" style="display: none;">
             <h1>Test Finished!</h1>
             <div id="results-summary"></div>
             <h3 id="total-score-display"></h3>
+              <!-- === DÒNG CHÚ THÍCH ĐÃ ĐƯỢC THÊM VÀO === -->
+            <p id="disclaimer-text">* Điểm và xếp hạng chỉ mang tính chất tham khảo.</p>
+            <!-- === CONTAINER MỚI CHO CÁC NÚT BẤM === -->
+            <div id="results-screen-actions">
+                <button id="review-btn" class="nav-btn submit-btn">Review Answers</button>
+                <a href="index.html" class="nav-btn home-btn">Back to Home</a>
+            </div>
+        </div>
+
+        <!-- Giao diện xem lại chi tiết (MỚI) -->
+        <div id="review-page" style="display: none;">
+            <div class="review-header">
+                <h2 id="review-title">Test and Answer Review</h2>
+                <div class="review-summary">
+                    <span id="review-total-score"></span>
+                    <span id="review-grade"></span>
+                </div>
+                <div class="review-pagination" id="review-pagination"></div>
+            </div>
+            <div class="review-content" id="review-content"></div>
         </div>
     </main>
 
-    <footer class="test-footer">
+    <footer class="test-footer" id="test-footer">
         <button id="back-btn" class="nav-btn back-btn">Back</button>
         <div id="footer-right-buttons">
             <button id="next-btn" class="nav-btn next-btn">Next</button>
@@ -38,138 +74,6 @@
     </footer>
 
     <script src="js/data-reading-test.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-             // === PHẦN ĐÃ THAY ĐỔI: LOGIC CHỌN ĐỀ NGẪU NHIÊN ===
-
-            // 1. Lấy tất cả các "key" của các đề thi có sẵn (ví dụ: ["test_001", "test_002"])
-            const availableTestKeys = Object.keys(allReadingTests);
-
-            // 2. Chọn một key ngẫu nhiên từ danh sách đó
-            const randomTestKey = availableTestKeys[Math.floor(Math.random() * availableTestKeys.length)];
-
-            // 3. Lấy dữ liệu của đề thi đã được chọn ngẫu nhiên
-            const testData = allReadingTests[randomTestKey];
-
-            // Lấy các element, không còn reviewBtn
-            const timerDisplay = document.getElementById('timer-display'), questionTitle = document.getElementById('question-title'), questionInstruction = document.getElementById('question-instruction'), questionContent = document.getElementById('question-content'), nextBtn = document.getElementById('next-btn'), backBtn = document.getElementById('back-btn'), submitBtn = document.getElementById('submit-btn'), testScreen = document.getElementById('test-screen'), resultsScreen = document.getElementById('results-screen'), resultsSummary = document.getElementById('results-summary'), totalScoreDisplay = document.getElementById('total-score-display'), footerRightButtons = document.getElementById('footer-right-buttons');
-            
-
-
-
-            let currentQuestionIndex = 0, timerInterval, userAnswers = {};
-
-            function startTimer(duration) { let timer = duration; timerInterval = setInterval(() => { timerDisplay.textContent = `${Math.floor(timer/60).toString().padStart(2,'0')}:${(timer%60).toString().padStart(2,'0')}`; if (--timer < 0) { clearInterval(timerInterval); submitTest(); }}, 1000); }
-
-            function displayQuestion(index) {
-                const q = testData[index];
-                questionTitle.textContent = q.title; questionInstruction.textContent = q.instruction; questionContent.innerHTML = '';
-                if (q.type === 'gap-fill') renderGapFill(q);
-                else if (q.type === 'sentence-ordering') renderSentenceOrdering(q);
-                else if (q.type === 'opinion-matching') renderOpinionMatching(q);
-                else if (q.type === 'heading-matching') renderHeadingMatching(q);
-                updateFooter(index);
-            }
-
-            function updateFooter(index) {
-                backBtn.style.visibility = index === 0 ? 'hidden' : 'visible';
-                const isLastQuestion = index === testData.length - 1;
-                nextBtn.style.display = isLastQuestion ? 'none' : 'block';
-                submitBtn.style.display = isLastQuestion ? 'block' : 'none';
-            }
-
-            function saveCurrentAnswers() {
-                const q = testData[currentQuestionIndex];
-                const answers = [];
-                if (q.type === 'gap-fill' || q.type === 'opinion-matching' || q.type === 'heading-matching') {
-                    questionContent.querySelectorAll('select').forEach(select => answers.push(select.value));
-                } else if (q.type === 'sentence-ordering') {
-                    questionContent.querySelectorAll('.drop-zone').forEach(zone => {
-                        answers.push(zone.children.length > 0 ? zone.children[0].textContent : '');
-                    });
-                }
-                userAnswers[currentQuestionIndex] = answers;
-            }
-
-            function submitTest() {
-                saveCurrentAnswers(); clearInterval(timerInterval);
-                let totalScore = 0; let summaryHTML = '<h2>Results Summary</h2>';
-                testData.forEach((q, i) => {
-                    const correctAnswers = q.content.answer;
-                    const studentAnswers = userAnswers[i] || [];
-                    let partScore = 0;
-                    correctAnswers.forEach((ans, j) => {
-                        if (studentAnswers[j] && studentAnswers[j].toString() === ans.toString()) partScore++;
-                    });
-                    totalScore += partScore;
-                    summaryHTML += `<p><b>Part ${q.part}:</b> ${partScore} / ${correctAnswers.length} correct</p>`;
-                });
-                resultsSummary.innerHTML = summaryHTML;
-                totalScoreDisplay.innerHTML = `Total Score: ${totalScore} / ${testData.reduce((acc, q) => acc + q.content.answer.length, 0)}`;
-                testScreen.style.display = 'none'; resultsScreen.style.display = 'block'; document.querySelector('.test-footer').style.display = 'none';
-            }
-
-            // Các hàm render không cần tham số isReview nữa
-            function renderGapFill(q) {
-                const content = q.content; let html = `<div class="gap-fill-container"><p>${content.prefix}</p>`;
-                content.items.forEach((item, i) => {
-                    html += `<div class="gap-fill-item"><span>${item.prefix}</span><select>
-                        <option value="">---</option>${item.options.map(o => `<option value="${o}">${o}</option>`).join('')}</select>
-                        <span>${item.suffix || ''}</span></div>`;
-                });
-                html += `<p>${content.suffix}</p></div>`; questionContent.innerHTML = html;
-            }
-
-            function renderSentenceOrdering(q) {
-                const content = q.content; let dropZonesHTML = ''; let draggableItemsHTML = '';
-                for (let i = 0; i < content.sentences.length; i++) dropZonesHTML += `<div class="drop-zone" data-drop-id="${i}"></div>`;
-                draggableItemsHTML = content.sentences.map((s, i) => `<div class="draggable" draggable="true" id="drag-${i}">${s}</div>`).join('');
-                questionContent.innerHTML = `<div class="drag-and-drop-container"><div class="drop-zones">${dropZonesHTML}</div><div class="draggable-items">${draggableItemsHTML}</div></div>`;
-                setupDragAndDrop();
-            }
-
-            function renderOpinionMatching(q) {
-                const content = q.content; const opinionsHTML = content.opinions.map(op => `<div class="opinion-item"><b>${op.person}:</b> ${op.text}</div>`).join('');
-                let questionsHTML = '';
-                content.questions.forEach((question) => {
-                    questionsHTML += `<div class="question-item"><span>${question}</span><select><option value="">-</option>
-                        ${content.opinions.map(op => `<option value="${op.person}">${op.person}</option>`).join('')}</select></div>`;
-                });
-                questionContent.innerHTML = `<div class="opinion-matching-container"><div class="opinions">${opinionsHTML}</div><div class="questions-list">${questionsHTML}</div></div>`;
-            }
-
-            function renderHeadingMatching(q) {
-                const content = q.content; const headingsHTML = content.headings.map(h => `<li>${h}</li>`).join('');
-                let paragraphsHTML = '';
-                content.paragraphs.forEach((p, i) => {
-                    const optionsHTML = content.headings.map((h) => `<option value="${h.split('.')[0]}">${h.split('.')[0]}</option>`).join('');
-                    paragraphsHTML += `<div class="paragraph-item"><select><option value="">-</option>${optionsHTML}</select><p><b>${i+1}.</b> ${p}</p></div>`;
-                });
-                questionContent.innerHTML = `<div class="heading-matching-container"><ul class="headings-list">${headingsHTML}</ul><div class="paragraphs-list">${paragraphsHTML}</div></div>`;
-            }
-
-            function setupDragAndDrop() {
-                const draggables = document.querySelectorAll('.draggable'), dropZones = document.querySelectorAll('.drop-zone'), draggableItemsContainer = document.querySelector('.draggable-items');
-                draggables.forEach(draggable => { draggable.addEventListener('dragstart', () => draggable.classList.add('dragging')); draggable.addEventListener('dragend', () => draggable.classList.remove('dragging')); });
-                dropZones.forEach(zone => {
-                    zone.addEventListener('dragover', e => e.preventDefault());
-                    zone.addEventListener('drop', e => {
-                        e.preventDefault(); const dragging = document.querySelector('.dragging');
-                        if (zone.children.length === 0) zone.appendChild(dragging);
-                        else { const existing = zone.children[0]; draggableItemsContainer.appendChild(existing); zone.appendChild(dragging); }
-                    });
-                });
-            }
-
-            nextBtn.addEventListener('click', () => { saveCurrentAnswers(); if (currentQuestionIndex < testData.length - 1) displayQuestion(++currentQuestionIndex); });
-            backBtn.addEventListener('click', () => { saveCurrentAnswers(); if (currentQuestionIndex > 0) displayQuestion(--currentQuestionIndex); });
-            submitBtn.addEventListener('click', submitTest);
-            
-            // === EVENT LISTENER CHO NÚT REVIEW ĐÃ BỊ XÓA ===
-
-            startTimer(35 * 60);
-            displayQuestion(currentQuestionIndex);
-        });
-    </script>
+    <script src="js/reading-test.js"></script>
 </body>
 </html>
