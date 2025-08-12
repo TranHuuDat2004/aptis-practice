@@ -40,11 +40,22 @@
     <script src="js/data-reading-test.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
+             // === PHẦN ĐÃ THAY ĐỔI: LOGIC CHỌN ĐỀ NGẪU NHIÊN ===
+
+            // 1. Lấy tất cả các "key" của các đề thi có sẵn (ví dụ: ["test_001", "test_002"])
+            const availableTestKeys = Object.keys(allReadingTests);
+
+            // 2. Chọn một key ngẫu nhiên từ danh sách đó
+            const randomTestKey = availableTestKeys[Math.floor(Math.random() * availableTestKeys.length)];
+
+            // 3. Lấy dữ liệu của đề thi đã được chọn ngẫu nhiên
+            const testData = allReadingTests[randomTestKey];
+
             // Lấy các element, không còn reviewBtn
             const timerDisplay = document.getElementById('timer-display'), questionTitle = document.getElementById('question-title'), questionInstruction = document.getElementById('question-instruction'), questionContent = document.getElementById('question-content'), nextBtn = document.getElementById('next-btn'), backBtn = document.getElementById('back-btn'), submitBtn = document.getElementById('submit-btn'), testScreen = document.getElementById('test-screen'), resultsScreen = document.getElementById('results-screen'), resultsSummary = document.getElementById('results-summary'), totalScoreDisplay = document.getElementById('total-score-display'), footerRightButtons = document.getElementById('footer-right-buttons');
             
-            const testKey = "test_001";
-            const testData = allReadingTests[testKey];
+
+
 
             let currentQuestionIndex = 0, timerInterval, userAnswers = {};
 
