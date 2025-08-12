@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Reading Test</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="css/reading-test.css"> <!-- Sử dụng lại CSS cũ cho đồng bộ -->
+    <style>
+        .selection-container {
+            text-align: center;
+            padding-top: 50px;
+        }
+        .selection-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 30px;
+        }
+        .test-btn {
+            background-color: #fff;
+            border: 1px solid var(--border-color);
+            padding: 20px 30px;
+            font-size: 1.2em;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            text-decoration: none;
+            color: var(--text-color);
+        }
+        .test-btn:hover {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+        }
+        .random-btn {
+            background-color: var(--primary-color);
+            color: #fff;
+            border: none;
+        }
+         .random-btn:hover {
+            opacity: 0.9;
+            color: #fff;
+        }
+
+            a {
+        text-decoration: none;
+        color: black;
+    }
+    /* === STYLE MỚI CHO DÒNG CHÚ THÍCH === */
+#disclaimer-text {
+    font-style: italic;
+    color: #777;
+    font-size: 0.9em;
+    margin-top: 20px;
+}
+    </style>
+</head>
+<body>
+    <header class="test-header">
+        <a href="index.html">
+        <div class="header-left"><i class="fas fa-home"></i> Aptis Practice</div></a>
+        <div class="header-center">Time remaining: <span id="timer-display">--:--</span></div>
+        <div class="header-right">Reading</div>
+    </header>
+
+    <main class="test-container">
+        <div class="selection-container">
+            <h1>Select a Reading Test</h1>
+            <p>Choose a specific test or let us pick a random one for you.</p>
+            <div class="selection-grid" id="test-selection-grid">
+                <!-- Các nút chọn đề sẽ được JS chèn vào đây -->
+                 <a href="#" class="test-btn random-btn" id="random-test-btn">
+                    <i class="fas fa-random"></i> Random Test
+                </a>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/data-reading-test.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const grid = document.getElementById('test-selection-grid');
+            const randomBtn = document.getElementById('random-test-btn');
+
+            // Lấy tất cả các key từ dữ liệu
+            const testKeys = Object.keys(allReadingTests);
+
+            // Tạo nút cho từng đề thi
+            testKeys.forEach(key => {
+                const testName = key.replace('_', ' ').replace(/(^\w{1})|(\s+\w{1})/g, letter => letter.toUpperCase()); // Format "test_001" to "Test 001"
+                
+                const link = document.createElement('a');
+                link.href = `reading-test.html?test=${key}`;
+                link.className = 'test-btn';
+                link.textContent = testName;
+                
+                // Chèn vào trước nút Random
+                grid.insertBefore(link, randomBtn);
+            });
+
+            // Xử lý nút Random
+            randomBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const randomKey = testKeys[Math.floor(Math.random() * testKeys.length)];
+                window.location.href = `reading-test.html?test=${randomKey}`;
+            });
+        });
+    </script>
+</body>
+</html>

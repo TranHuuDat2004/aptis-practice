@@ -1,4 +1,18 @@
 document.addEventListener('DOMContentLoaded', function () {
+    
+        // === LOGIC MỚI: ĐỌC TEST KEY TỪ URL ===
+    const urlParams = new URLSearchParams(window.location.search);
+    const testKey = urlParams.get('test');
+
+    // Nếu không có test key, chuyển hướng về trang chọn đề
+    if (!testKey || !allReadingTests[testKey]) {
+        window.location.href = 'select-test.html';
+        return; // Dừng thực thi script
+    }
+    
+    // Lấy dữ liệu của đề thi đã chọn
+    const testData = allReadingTests[testKey];
+
     const timerDisplay = document.getElementById('timer-display'), questionTitle = document.getElementById('question-title'), questionInstruction = document.getElementById('question-instruction'), questionContent = document.getElementById('question-content'), nextBtn = document.getElementById('next-btn'), backBtn = document.getElementById('back-btn'), submitBtn = document.getElementById('submit-btn'), testScreen = document.getElementById('test-screen'), resultsScreen = document.getElementById('results-screen'), resultsSummary = document.getElementById('results-summary'), totalScoreDisplay = document.getElementById('total-score-display'), reviewBtn = document.getElementById('review-btn'), testFooter = document.getElementById('test-footer'), mainContainer = document.getElementById('main-container'), reviewPage = document.getElementById('review-page');
 
     // === HỆ SỐ ĐIỂM THÔ MỚI DỰA TRÊN ĐỘ KHÓ ===
@@ -6,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const availableTestKeys = Object.keys(allReadingTests);
     const randomTestKey = availableTestKeys[Math.floor(Math.random() * availableTestKeys.length)];
-    const testData = allReadingTests[randomTestKey];
+
 
     let currentQuestionIndex = 0, timerInterval, userAnswers = {}, testResults = {};
 

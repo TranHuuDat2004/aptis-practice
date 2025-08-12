@@ -450,6 +450,472 @@ const allReadingTests = {
             answer: ['A', 'B', 'C', 'D', 'E', 'F', 'G']
         }
     }
+],
+
+// Thay thế khối mã "test_005" cũ bằng khối mã này
+
+"test_005": [
+    {
+        part: 1,
+        type: 'gap-fill',
+        title: 'Question 1 of 5',
+        instruction: 'Choose the word that fits in the gap. The first one is done for you.',
+        content: {
+            prefix: 'Hey Lewis,',
+            items: [
+                { prefix: 'My dog is', options: ['Friendly', 'Walk', 'First', 'Speak', 'Together'], suffix: '.' },
+                { prefix: 'This is the', options: ['Friendly', 'Walk', 'First', 'Speak', 'Together'], suffix: 'book I read.' },
+                { prefix: 'I can', options: ['Friendly', 'Walk', 'First', 'Speak', 'Together'], suffix: 'to the park.' },
+                { prefix: 'He can', options: ['Friendly', 'Walk', 'First', 'Speak', 'Together'], suffix: 'English very well.' },
+                { prefix: 'We eat dinner', options: ['Friendly', 'Walk', 'First', 'Speak', 'Together'], suffix: 'every evening.' }
+            ],
+            suffix: 'Love,<br>Helen',
+            answer: ['Friendly', 'First', 'Walk', 'Speak', 'Together']
+        }
+    },
+    {
+        part: 2,
+        type: 'sentence-ordering',
+        title: 'Question 2 of 5',
+        instruction: 'Put the sentences below in the right order. (Topic: A scientist\'s life - Albert)',
+        content: {
+            sentences: [
+                "As a child, he moved to a special school because he was so clever",
+                "His best friend in his new class was a girl named Lavime",
+                "She later became his wife and helped him with his earliest scientific discoveries",
+                "These were so advanced that he soon became famous all over the world",
+                "Princeton University in the USA offered him a job because he was so famous"
+            ],
+            answer: [
+                "As a child, he moved to a special school because he was so clever",
+                "His best friend in his new class was a girl named Lavime",
+                "She later became his wife and helped him with his earliest scientific discoveries",
+                "These were so advanced that he soon became famous all over the world",
+                "Princeton University in the USA offered him a job because he was so famous"
+            ]
+        }
+    },
+    {
+        part: 3,
+        type: 'sentence-ordering',
+        title: 'Question 3 of 5',
+        instruction: 'Put the sentences below in the right order. (Topic: Enter the Conference Hall)',
+        content: {
+            sentences: [
+                "When you arrive at the conference hall, give your booking number",
+                "A staff member will note this down and give you a welcome pack",
+                "Inside you will find a schedule of events and the information of the key speaker",
+                "If you would like to attend his talk, it will take place in the main hall at midday",
+                "After he finishes, there will be time for questions"
+            ],
+            answer: [
+                "When you arrive at the conference hall, give your booking number",
+                "A staff member will note this down and give you a welcome pack",
+                "Inside you will find a schedule of events and the information of the key speaker",
+                "If you would like to attend his talk, it will take place in the main hall at midday",
+                "After he finishes, there will be time for questions"
+            ]
+        }
+    },
+    {
+        part: 4,
+        type: 'opinion-matching',
+        title: 'Question 4 of 5',
+        instruction: 'Four people respond in the comments section of an online magazine article about the above topic. Read the texts and then answer the questions.',
+        content: {
+            topic: 'Going on holiday',
+            opinions: [
+                { person: 'A', text: 'When I travel somewhere, I often ask for bus routes to famous tourist destinations so that I can get to those places as quickly as possible and avoid wasting time going around. Famous tourist destinations are the places I want to explore the most when traveling somewhere. I don\'t understand why many people just like to sit still at the beach when traveling, I find that uninteresting and time-consuming.' },
+                { person: 'B', text: 'My family and I often plan to travel every time we have a vacation. If the weather is nice then our plans go ahead as usual, if not, we will postpone that vacation. For my family, light wind and warm sunlight are important when we go out. A few of my friends invited me to go climbing, but I\'m afraid of heights so I refused them. However, in the future I really want to try mountain climbing once.' },
+                { person: 'C', text: 'Next month\'s trip will be the first time I travel to another country. Normally I only travel to famous local places or in my country. These places are beautiful but I\'m so excited to travel to a foreign place once in my life.' },
+                { person: 'D', text: 'Last year, I went on a mountain climbing trip with my friends. It was the most horrible trip I have ever experienced. However, after that trip, I had a strong passion for walking. So now, every day I walk as a hobby, and it also helps my health a lot. I\'m old so I\'m no longer interested in traveling to far away places. Instead, I want to lie on a comfortable sofa and watch my favorite TV show.' }
+            ],
+            questions: [
+                'Who thinks going to the beach is boring?',
+                'Who prefers to stay at home?',
+                'Who thinks holiday requires good weather?',
+                'Who likes going walking?',
+                'Who wants to go mountaineering trip?',
+                'Who has never been abroad?',
+                'Who likes seeing tourist attractions?'
+            ],
+            // === ĐÁP ÁN ĐÃ ĐƯỢC SỬA LẠI CHO ĐÚNG ===
+            answer: ['A', 'D', 'B', 'D', 'B', 'C', 'A']
+        }
+    },
+    {
+        part: 5,
+        type: 'heading-matching',
+        title: 'Question 5 of 5',
+        instruction: 'Read the text below. Match the headings to the paragraphs.',
+        content: {
+            topic: 'Charles Dickens',
+            headings: [
+                'A. Dickens for our time', 'B. Difficulties for modern readers', 'C. Keeping the readers guessing',
+                'D. The influence of the media', 'E. Dickens\'s early success', 'F. Trying to protect his property',
+                'G. Bring the books to life'
+            ],
+            paragraphs: [
+                "The popularity of Dickens's works in our time remains a global phenomenon. Although he wrote his novels in the 19th century, his works have had a global impact. In addition, these masterpieces helped connect Renaissance drama to the multimedia revolution. Many readers find the characters and themes surprisingly modern.",
+                "Shakespeare's plays are difficult to understand and sometimes require the reader to struggle or think twice to figure out the character's thoughts. Sometimes the dialogue tends to be emotional without any connection to the context of the story. There are many passages that are a confusing mess of single words and old classical vocabulary.",
+                "Hamlet is a Renaissance tragedy written by Shakespeare. The play is very long and has plot twists that keep the reader guessing. Dickens had a special interest in the work. He told his daughter to keep an eye on Hamlet. For Dickens' novels, he sometimes created serial editions, with new chapters released monthly, keeping readers eagerly awaiting the next issue.",
+                "Dickens's legacy is undeniable. His works have been translated and used in over 100 countries and are studied by most schoolchildren in the world. It has even been said that Dickens' legacy belongs not to one era but to all times. It is easy to see that Dickens lives on in society and culture through his language and through his enduring influence on education and the media.",
+                "Dickens achieved success at a young age. His first novel, The Pickwick Papers, was published when he was only 24 and became a bestseller. His success increased throughout the 1890s. He was honored as a member of the Lord Chamber Men - those lucky enough to perform for the Queen of England on many occasions. Alongside his novels and plays, he also published many poems in his own style.",
+                "As Dickens's reputation grew, the question arose whether to preserve his legacy and make it live on. Dickens himself was always keen to make his mark and to maintain his uniqueness. He even attempted to break the convention of the popular comedies of the time with a series of dramatic plays.",
+                "To mark the 400th anniversary of Dickens's death, there will be a number of events to help readers, and especially students, better understand his works. There will be videos detailing the content of each of his works to help people excitedly explore the pinnacle of language and the meaning his works bring to our daily lives."
+            ],
+            answer: ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+        }
+    }
+]// Thêm vào file js/data-reading-test.js
+
+, // <--- Đừng quên dấu phẩy này để ngăn cách với đề thi "test_005"
+"test_006": [
+    {
+        part: 1,
+        type: 'gap-fill',
+        title: 'Question 1 of 5',
+        instruction: 'Choose the word that fits in the gap. The first one is done for you.',
+        content: {
+            prefix: 'Hey Lewis,',
+            items: [
+                { prefix: 'I imagine you don\'t want to', options: ['Miss', 'Called', 'Ready', 'Meet', 'Dinner'], suffix: 'this.' },
+                { prefix: 'I', options: ['Miss', 'Called', 'Ready', 'Meet', 'Dinner'], suffix: 'you earlier but you were not home.' },
+                { prefix: 'Can you be', options: ['Miss', 'Called', 'Ready', 'Meet', 'Dinner'], suffix: 'before 7pm?' },
+                { prefix: 'I can', options: ['Miss', 'Called', 'Ready', 'Meet', 'Dinner'], suffix: 'you at your place then.' },
+                { prefix: 'Don\'t have too much', options: ['Miss', 'Called', 'Ready', 'Meet', 'Dinner'], suffix: 'because we\'re going to eat cake.' }
+            ],
+            suffix: 'Love,<br>Helen',
+            answer: ['Miss', 'Called', 'Ready', 'Meet', 'Dinner']
+        }
+    },
+    {
+        part: 2,
+        type: 'sentence-ordering',
+        title: 'Question 2 of 5',
+        instruction: 'Put the sentences below in the right order. (Topic: Printer Usage)',
+        content: {
+            sentences: [
+                "First, you need to find an appropriate place to put your printer",
+                "When your printer is in place, turn it on using the switch",
+                "A light comes on at the front of the printer",
+                "If the light is green, your printer is ready to use",
+                "Before using the printer, you need to put papers into it"
+            ],
+            answer: [
+                "First, you need to find an appropriate place to put your printer",
+                "When your printer is in place, turn it on using the switch",
+                "A light comes on at the front of the printer",
+                "Before using the printer, you need to put papers into it",
+                "If the light is green, your printer is ready to use"
+            ]
+        }
+    },
+    {
+        part: 3,
+        type: 'sentence-ordering',
+        title: 'Question 3 of 5',
+        instruction: 'Put the sentences below in the right order. (Topic: Delivery man)',
+        content: {
+            sentences: [
+                "You should arrive at the main office by 6.30am and collect your keys",
+                "In the office, you can also collect a map of your route",
+                "You must follow the route on the map to deliver packages",
+                "When you have completed all deliveries, return to your office",
+                "You must return your keys to the office manager after you get back"
+            ],
+            answer: [
+                "You should arrive at the main office by 6.30am and collect your keys",
+                "In the office, you can also collect a map of your route",
+                "You must follow the route on the map to deliver packages",
+                "When you have completed all deliveries, return to your office",
+                "You must return your keys to the office manager after you get back"
+            ]
+        }
+    },
+    {
+        part: 4,
+        type: 'opinion-matching',
+        title: 'Question 4 of 5',
+        instruction: 'Four people respond in the comments section of an online magazine article about the above topic. Read the texts and then answer the questions.',
+        content: {
+            topic: 'Opinions on flying',
+            opinions: [
+                { person: 'A', text: 'I have a dream that I work as a tour guide. So I understand that I will have to fly to other countries. In my personal opinion, airplanes are currently too cheap compared to the damage they cause to the environment, so I believe we should add taxes to airline ticket prices to make people choose to use other means of transport before they think about flying. I believe that people are also very happy when they can contribute to protecting the environment.' },
+                { person: 'B', text: 'My family and siblings live quite far from me. So I often have to fly to visit them every month when I have time. We really appreciate the time we spend together and we are happy to be able to meet each other and share our new story. I know that traveling by plane too much is not good for the environment so I often shop online or go to work by bike instead of going by car or I reuse plastic bags and paper bags. In addition, I sometimes volunteer to clean up trash in the neighborhood.' },
+                { person: 'C', text: 'I was a businessman so I had to fly many times a week. I had to go to other countries to be able to sign wine trading contracts with them. I felt very tired every time I have to fly. Now, my sister and I, whenever we have free time, take the train together and we enjoy that time very much because I can travel while sightseeing and relax without any stress.' },
+                { person: 'D', text: 'If I have to go somewhere I will choose other means of public transport, not the plane. Every time I go on a plane I feel extremely tired and I just hope time passes quickly so I can get off that plane. However, due to the specific nature of my job, I have to film in many different locations, so sometimes I cannot avoid having to take this public transportation.' }
+            ],
+            questions: [
+                'Who tries to protect the environment?', 
+                'Who likes relaxing while they travel?',
+                'Who finds flying tiring?', 
+                'Who needs to fly for their work?',
+                'Who suggests making flights more expensive?', 
+                'Who wants to work in other countries?',
+                'Who visits relatives regularly?',
+            ],
+            answer: ['B', 'C', 'D', 'D', 'A', 'A', 'B']
+        }
+    },
+    {
+        part: 5,
+        type: 'heading-matching',
+        title: 'Question 5 of 5',
+        instruction: 'Read the text below. Match the headings to the paragraphs.',
+        content: {
+            topic: 'The Tulips',
+            headings: [
+                'A. The economy during the golden age', 'B. Coming into', 'C. An item of trade',
+                'D. Different types of tulip', 'E. Trade mechanics', 'F. Trade across Europe',
+                'G. An Unexpected turn of events'
+            ],
+            paragraphs: [
+                "During the period of the Dutch Golden Age, the port of Manchester was one of the wealthiest in all of Europe. This prosperity was in part due to the trade connections established by the Dutch East India Company, which transported luxury and exotic goods to Europe from Asia and beyond. Among the imported items, tulip bulbs made their way to Europe and quickly captured public attention, especially after their arrival in the bustling ports of the Netherlands. Tulips, with their striking colors and exotic appeal, soon became a symbol of status and luxury in Europe, especially as they gained popularity through trade at the prominent Manchester port.",
+                "In 1593, studies conducted at Dutch universities revealed that tulips could survive the cold European climate, an insight that fueled the flower's popularity. Their vibrant and diverse colors stood out against the more subdued tones of European flora, making tulips a unique spectacle. As they gained popularity, tulips became a symbol of wealth and status, particularly in the Netherlands. This popularity spread quickly across Europe, establishing tulips as a highly desirable commodity and solidifying their reputation as a status symbol among the European elite.",
+                "The demand for tulips surged, with collectors and merchants eagerly seeking the most colorful and unique blooms. Because tulips only bloomed during a limited season, from September to November, those who wanted tulips outside this window had to place orders in advance. This created a system of advance sales and pre-purchases, giving rise to a speculative market. This practice of pre-ordering tulips and trading contracts for their future delivery resembled modern-day options and futures trading in the financial markets, laying the groundwork for a complex market around these rare and exotic flowers.",
+                "Tulip values varied greatly, depending on their rarity and color. Multi-colored tulips, especially those with striking patterns, commanded higher prices than solid-colored varieties. Of particular interest were tulips affected by a viral infection that caused beautiful flame-like patterns on the petals, known as 'broken' tulips. These rare blooms were highly valued for their unique appearance and sold for premium prices. Since tulips were also susceptible to disease, their fragility and exclusivity made them a prized commodity, as any remaining bulbs became even more desirable.",
+                "As the tulip market grew, prices skyrocketed. Merchants often held onto their bulbs, waiting to sell at inflated prices. Between 1634 and 1637, the value of certain tulips rose by up to sixty times their original price. Speculators poured increasing amounts of money into tulips, driven by the hope of reselling them at even higher prices. The speculative nature of the market led to an economic bubble, where the price of tulips continued to rise without any intrinsic reason beyond collective belief in their value.",
+                "Tulip prices reached such extreme heights that they began to be traded on exchanges and even listed on stock markets. The general public, hoping to partake in the lucrative trade, flocked to purchase tulip bulbs. This speculative frenzy drew in a wide range of people, from merchants to commoners, all vying for a piece of what seemed like a guaranteed profitable investment. The tulip market became a cultural and economic phenomenon, with people from all backgrounds willing to invest their savings into tulips, expecting substantial returns.",
+                "However, this bustling tulip market eventually reached its breaking point. As with many speculative bubbles, the tulip craze was unsustainable, and prices eventually began to plummet. Once people realized that tulip prices had risen far beyond reasonable levels, panic selling ensued, and the market collapsed. The dramatic fall in prices left many investors in financial ruin, as the value of tulips dwindled to a fraction of their peak. The tulip mania became one of history's most famous economic bubbles, offering a cautionary tale about the dangers of speculation and the risks inherent in market bubbles."
+            ],
+            answer: ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+        }
+    }
+]// Thêm vào file js/data-reading-test.js
+
+, // <--- Đừng quên dấu phẩy này để ngăn cách với đề thi "test_006"
+"test_007": [
+    {
+        part: 1,
+        type: 'gap-fill',
+        title: 'Question 1 of 5',
+        instruction: 'Choose the word that fits in the gap. The first one is done for you.',
+        content: {
+            prefix: 'Hey Lewis,',
+            items: [
+                { prefix: 'The books don\'t', options: ['Balance', 'Statement', 'Think', 'Slowly', 'Before'], suffix: 'on the shelf.' },
+                { prefix: 'Could you get the financial', options: ['Balance', 'Statement', 'Think', 'Slowly', 'Before'], suffix: 'for me?' },
+                { prefix: 'I', options: ['Balance', 'Statement', 'Think', 'Slowly', 'Before'], suffix: 'it will be useful for the project.' },
+                { prefix: 'Read the instructions', options: ['Balance', 'Statement', 'Think', 'Slowly', 'Before'], suffix: ', not quickly.' },
+                { prefix: 'Send me the report', options: ['Balance', 'Statement', 'Think', 'Slowly', 'Before'], suffix: 'the meeting, not after.' }
+            ],
+            suffix: 'Love,<br>Helen',
+            answer: ['Balance', 'Statement', 'Think', 'Slowly', 'Before']
+        }
+    },
+    {
+        part: 2,
+        type: 'sentence-ordering',
+        title: 'Question 2 of 5',
+        instruction: 'Put the sentences below in the right order. (Topic: Solve a problem)',
+        content: {
+            sentences: [
+                "The first step is to find out what you know about the problem",
+                "The next one is to form a hypothesis or an idea based on your information",
+                "Then, you need to perform experiments to see if these ideas are true or not",
+                "You can also compare your results with experiments in the past",
+                "In this way, you can add to your knowledge of the subject for future experiments"
+            ],
+            answer: [
+                "The first step is to find out what you know about the problem",
+                "The next one is to form a hypothesis or an idea based on your information",
+                "Then, you need to perform experiments to see if these ideas are true or not",
+                "You can also compare your results with experiments in the past",
+                "In this way, you can add to your knowledge of the subject for future experiments"
+            ]
+        }
+    },
+    {
+        part: 3,
+        type: 'sentence-ordering',
+        title: 'Question 3 of 5',
+        instruction: 'Put the sentences below in the right order. (Topic: Submit Report)',
+        content: {
+            sentences: [
+                "Before you start to write your report, you should look at websites for the information you need",
+                "Remember to save links to websites and include them in your report",
+                "You should also include a list of books that you use for reference",
+                "When you have finished your report, correct all the mistakes",
+                "After you make the corrections, send your report by your email"
+            ],
+            answer: [
+                "Before you start to write your report, you should look at websites for the information you need",
+                "Remember to save links to websites and include them in your report",
+                "You should also include a list of books that you use for reference",
+                "When you have finished your report, correct all the mistakes",
+                "After you make the corrections, send your report by your email"
+            ]
+        }
+    },
+    {
+        part: 4,
+        type: 'opinion-matching',
+        title: 'Question 4 of 5',
+        instruction: 'Four people respond in the comments section of an online magazine article about the above topic. Read the texts and then answer the questions.',
+        content: {
+            topic: 'A new restaurant',
+            opinions: [
+                { person: 'A', text: 'This is my first time coming to this restaurant. The food is very cheap but the quality is excellent. I was very surprised with the starter because its menu is very diverse, but there is one thing that I want the restaurant to improve. The music was too low and it didn\'t make the meal atmosphere lively. Next time turn the music louder, please!' },
+                { person: 'B', text: 'This is a very famous restaurant that I saw in the newspaper. Sadly, I arrived later than the rest of the party, so I didn\'t get to order dinner. However, I ordered orange juice and mango juice and they were both delicious. What about the surroundings? Lively music along with fashionable and appropriate decor makes me feel very comfortable.' },
+                { person: 'C', text: 'I\'m not sure if I will return to this restaurant. I think the staff was arguing when I got there, because the atmosphere here was not very comfortable. As for the food, I think there\'s nothing to write about. I ordered fish and chips, it wasn\'t bad, but it wasn\'t good either. But many people say that the food here is fabulous. So, I think I\'m an exception.' },
+                { person: 'D', text: 'I don\'t understand why this restaurant is so famous. When I arrived and saw a menu with lots of different dishes, I saw this as a bad sign. Furthermore, the menu with traditional dishes contrasting with the modern decoration style made me feel very confused and strange. The staff here are also not friendly. This was one of my worst experiences eating at a restaurant.' }
+            ],
+            questions: [
+                'Who was impressed by the range of appetizers?',
+                'Who thought his experience was probably unusual?',
+                'Who thought the food was of average quality?',
+                'Who will definitely not return to the restaurant?',
+                'Who thought the music was too quiet?',
+                "Who didn't eat anything at the restaurant?",
+                'Who enjoyed the atmosphere?',
+            ],
+            answer: ['A', 'C', 'C', 'D', 'A', 'B', 'B']
+        }
+    },
+    {
+        part: 5,
+        type: 'heading-matching',
+        title: 'Question 5 of 5',
+        instruction: 'Read the text below. Match the headings to the paragraphs.',
+        content: {
+            topic: 'Eating in China',
+            headings: [
+                'A. The origins of Chinese food', 'B. The influence of philosophy', 'C. Regional variations',
+                'D. Cooking methods', 'E. The style', 'F. Changes in the Chinese diet',
+                'G. Effects of a changing diet'
+            ],
+            paragraphs: [
+                "The story of this cuisine stretches back thousands of years, shaped by local farming and customs. Early diets were simple, relying on grains and ingredients from nearby sources. Over time, different areas began to create their own flavors influenced by unique resources and historical events. Key foods, such as rice and noodles, became staples, adding depth to a rich culinary history that continues to evolve.",
+                "Ancient ideas play a significant role in shaping attitudes toward food and meals. Concepts like balance and harmony are often reflected in how dishes are prepared and enjoyed, guiding choices in cooking. This backdrop helps create an environment where meals are not just about sustenance but also about connection and community, enriching the overall dining experience.",
+                "The diverse geography of the country results in a wide range of culinary styles. Each area showcases distinct flavors based on local ingredients and traditions. For instance, the bold tastes found in one region can be quite different from the lighter fare in another. These variations highlight the richness of the culinary landscape, influenced by both local practices and cultural exchanges.",
+                "A variety of cooking techniques are used that enhance the flavors of the ingredients. Quick methods, like stir-frying, keep vegetables crisp and fresh, while steaming helps maintain the natural taste and nutrients of food. Each technique serves to improve the overall eating experience, showing how versatile and innovative cooking can be.",
+                "Dining is often approached as a communal experience, emphasizing sharing and togetherness. Meals are usually served in a way that allows everyone to sample different dishes, fostering conversation and connection. The use of chopsticks adds an element of culture, making the act of eating feel more intentional and connected to tradition.",
+                "Recent years have seen shifts in eating habits, influenced by modern lifestyles and global trends. While traditional foods remain important, there’s a growing interest in fast food and snacks, reflecting a blend of old and new practices. This evolution illustrates how culinary choices can change while still holding onto some aspects of the past.",
+                "The shift in dietary habits carries various implications for health and cultural practices. Increased consumption of processed foods and sugary drinks has raised concerns, challenging long-held eating traditions. As younger generations lean towards convenience, there's a risk of losing valuable culinary knowledge. Balancing contemporary choices with traditional practices is essential for maintaining cultural integrity and promoting healthier lifestyles."
+            ],
+            answer: ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+        }
+    }
+], // <--- Đừng quên dấu phẩy này để ngăn cách với đề thi "test_007"
+"test_008": [
+    {
+        part: 1,
+        type: 'gap-fill',
+        title: 'Question 1 of 5',
+        instruction: 'Choose the word that fits in the gap. The first one is done for you.',
+        content: {
+            prefix: 'Hey Lewis,',
+            items: [
+                { prefix: 'I', options: ['Live', 'Share', 'Class', 'Drive', 'Cook'], suffix: 'in a house.' },
+                { prefix: 'I', options: ['Live', 'Share', 'Class', 'Drive', 'Cook'], suffix: 'my room with my brother.' },
+                { prefix: 'We are in the same', options: ['Live', 'Share', 'Class', 'Drive', 'Cook'], suffix: 'at school.' },
+                { prefix: 'We', options: ['Live', 'Share', 'Class', 'Drive', 'Cook'], suffix: 'to the park.' },
+                { prefix: 'We like to', options: ['Live', 'Share', 'Class', 'Drive', 'Cook'], suffix: 'together.' }
+            ],
+            suffix: 'Love,<br>Helen',
+            answer: ['Live', 'Share', 'Class', 'Drive', 'Cook']
+        }
+    },
+    {
+        part: 2,
+        type: 'sentence-ordering',
+        title: 'Question 2 of 5',
+        instruction: 'Put the sentences below in the right order. (Topic: Instructions for new students)',
+        content: {
+            sentences: [
+                "When you arrive at the university, go to the help desk",
+                "A member of staff will ask for your name and your address",
+                "He or she will enter your information into the computer and give you an identification card",
+                "You can use this card to borrow books from library and access lesson materials online",
+                "You will find these in material links on your home page"
+            ],
+            answer: [
+                "When you arrive at the university, go to the help desk",
+                "A member of staff will ask for your name and your address",
+                "He or she will enter your information into the computer and give you an identification card",
+                "You can use this card to borrow books from library and access lesson materials online",
+                "You will find these in material links on your home page"
+            ]
+        }
+    },
+    {
+        part: 3,
+        type: 'sentence-ordering',
+        title: 'Question 3 of 5',
+        instruction: 'Put the sentences below in the right order. (Topic: Participate in a race)',
+        content: {
+            sentences: [
+                "On your arrival, please go to the information point at the north gate",
+                "Runners must register here at least 30 minutes before the race starts at 9am",
+                "To do this, you just need to give us your photo card",
+                "A member of staff will give you a numbered armband to wear",
+                "Please put this on immediately and join other competitors at the warm-up area"
+            ],
+            answer: [
+                "On your arrival, please go to the information point at the north gate",
+                "Runners must register here at least 30 minutes before the race starts at 9am",
+                "To do this, you just need to give us your photo card",
+                "A member of staff will give you a numbered armband to wear",
+                "Please put this on immediately and join other competitors at the warm-up area"
+            ]
+        }
+    },
+    {
+        part: 4,
+        type: 'opinion-matching',
+        title: 'Question 4 of 5',
+        instruction: 'Four people respond in the comments section of an online magazine article about the above topic. Read the texts and then answer the questions.',
+        content: {
+            topic: 'Visit Stevenson city',
+            opinions: [
+                { person: 'A', text: 'When I first came to this city, I felt very scared because this city is very big. The city has many parts and the shopping part is very far from the green part. However, we already had the bus route and we signed up to take the bus for a full day. Buses are very cheap and very convenient. I feel very lucky to not have to put pressure on my sore feet.' },
+                { person: 'B', text: 'I don\'t like big cities and rarely go out. But I go to StevenSon city very often. I go there about five to seven times a year. There is an area outside the city. In that area, there are many things that I need. There is a lot of water, a natural area, a small forest and a special camping area. I really like coming to this place to rest. It also has a great coffee serving area for visitors.' },
+                { person: 'C', text: 'I went to this city last summer and really liked the atmosphere of this city. The reason I like the atmosphere here is because it has a lot of public performances. These performances often take place in front of department stores, so this prevents me from shopping inside those stores. I was very surprised when I came home with an empty bag and I didn\'t buy anything.' },
+                { person: 'D', text: 'When I go out, I only care about two things: good food and a good play. I especially liked the lunch I had in this city, it was delicious and I really want to come back here next time. However, I guess it\'s a bit expensive and I have to walk a long way to get there. However, it didn\'t matter because I had a wonderful day.' }
+            ],
+            questions: [
+                'Who liked the public theatre that the city puts on?',
+                'Who paid a lot for their meal?',
+                'Who usually spends a lot of money on shopping?',
+                'Who thought public transport system was good?',
+                'Who thought walking too much causes a problem?',
+                'Who likes the natural resort here?',
+                'Who visits one part of the city?',
+            ],
+            answer: ['C', 'D', 'C', 'A', 'A', 'B', 'B']
+        }
+    },
+    {
+        part: 5,
+        type: 'heading-matching',
+        title: 'Question 5 of 5',
+        instruction: 'Read the text below. Match the headings to the paragraphs.',
+        content: {
+            topic: 'Children and exercises',
+            // === HEADINGS ĐÃ ĐƯỢC CẬP NHẬT ===
+            headings: [
+                'A. The wider effects of regular activity', 
+                'B. Ways in which environment can influence behavior', 
+                'C. The success of a simple idea',
+                'D. The situation have the potential of being worst', 
+                'E. Factors contributing to inactivity', 
+                'F. A design for exercise and for study',
+                'G. Achieving the right balance'
+            ],
+            paragraphs: [
+                "Not anymore, if the statistics are to be believed. For the majority of children in developed countries, there is an increasing volume of evidence that fewer and fewer hours are spent getting exercise outside, and more and more time is spent lying on a sofa, hanging around inside with friends, or more likely, looking at a screen. However, it isn't just screens that are to blame; urbanization restricts children's access to green spaces, fears over their safety keep parents from giving them the freedom to roam, and pressure from schools for children to do hours of homework all contribute.",
+                "Is this trend reversible? Technological change is happening at such a rate that it is difficult to make accurate predictions. Nevertheless, it seems certain that laptops and smartphones will continue to prove irresistible, and this is likely to exacerbate the current behavior of the young. The fact that the issue has become an increasing claim is evident from the ongoing debate in the media, as well as in journals of medicine and psychology. As a society, we seem to be recognising the problem, and, in the search for possible solutions, there is a will to prevent it from becoming a full-blown crisis.",
+                "One of the more interesting solutions originated in a school in Scotland, which pioneered a scheme to ensure that all its pupils walk or run a mile every day. The initiative was widely praised and won several awards. The subsequent media attention was instrumental in helping to promote the scheme, which in some form or other has been adopted by over 3,600 schools in 35 countries. A recent university study compared two schools one a member of the 'Daily Mile' scheme, the other not-and found evidence that participation led to improved fitness and body composition.",
+                "The scheme have reported improvements in the pupils' ability to focus, their alertness and even their classroom behaviour. Recent experiments in psychology and neuroscience have found evidence that these can be consequences of physical activity, although the precise mechanisms are not yet fully understood. The old saying a healthy mind in a healthy body is, it appears, supported by science.",
+                "Another means of combatting the problem of lack of exercise comes from the world of architecture. Architectural design not only enables people to live in a particular way, it can also affect the way people go about their lives. For example, carefully designed retail outlets can even have an impact on people's shopping habits. Workplaces can be made more productive through design, and homes can be built that encourage greater communication. Now it seems that a carefully designed school can directly contribute to the amount of exercise children do, not only in exercise or sports classes but also in their normal, day-to-day activities.",
+                "Japanese architect Takaharu Tezuka created a kindergarten in Tokyo in which the layout functions as a giant playground. The oval-shaped roof acts as both a play area and a running track. Tezuka recalls the emotional moment when the first pupils started interacting with the architecture. 'It was simple,' he said. 'They just started running.' He did not want to impose physical boundaries on the children so created a continuous open space. As an architect, he believes that traditional classrooms do not create a positive learning environment. The free plan of his award winning kindergarten encourages both independence and collaboration.",
+                "The two initiatives cited above cost 'The Daily Mile' and the Japanese kindergarten- occupy two ends of the economic spectrum. The former requires very little in terms of resources and can be easily adapted at no great cost. The latter, however, involves a significant investment of both time and money. To solve the global problem of inactivity amongst the young will require a variety of responses. Local conditions, including the availability of space and budgetary considerations, will dramatically affect how local authorities and educational institutions respond to the issue, and it will be their responsibility to find a happy medium."
+            ],
+           // === ĐÁP ÁN ĐÃ ĐƯỢC CẬP NHẬT THEO HEADINGS MỚI ===
+            answer: ['E', 'D', 'C', 'A', 'B', 'F', 'G']
+        }
+    }
 ]
 
 };
