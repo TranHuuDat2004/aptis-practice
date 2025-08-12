@@ -916,6 +916,236 @@ const allReadingTests = {
             answer: ['E', 'D', 'C', 'A', 'B', 'F', 'G']
         }
     }
+]// Thêm vào file js/data-reading-test.js
+
+, // <--- Đừng quên dấu phẩy này để ngăn cách với đề thi "test_008"
+"test_009": [
+    {
+        part: 1,
+        type: 'gap-fill',
+        title: 'Question 1 of 5',
+        instruction: 'Choose the word that fits in the gap. The first one is done for you.',
+        content: {
+            prefix: 'Hey Lewis,',
+            items: [
+                { prefix: 'The sky is', options: ['Clear', 'Sun', 'Enjoyable', 'Working', 'Read'], suffix: 'today.' },
+                { prefix: 'I had an', options: ['Clear', 'Sun', 'Enjoyable', 'Working', 'Read'], suffix: 'lunch with my friends.' },
+                { prefix: 'After', options: ['Clear', 'Sun', 'Enjoyable', 'Working', 'Read'], suffix: 'for hours, I felt tired.' },
+                { prefix: 'I hope to', options: ['Clear', 'Sun', 'Enjoyable', 'Working', 'Read'], suffix: 'that book soon.' },
+                { prefix: 'The', options: ['Clear', 'Sun', 'Enjoyable', 'Working', 'Read'], suffix: 'is shining brightly today.' }
+            ],
+            suffix: 'Love,<br>Helen',
+            answer: ['Clear', 'Enjoyable', 'Working', 'Read', 'Sun']
+        }
+    },
+    {
+        part: 2,
+        type: 'sentence-ordering',
+        title: 'Question 2 of 5',
+        instruction: 'Put the sentences below in the right order. (Topic: Car park)',
+        content: {
+            sentences: [
+                "When you arrive, please take a ticket from a machine at the entrance",
+                "This ticket will show the date and the time you arrived",
+                "Please display the ticket with this information in the window of your car",
+                "Before you leave, please put the ticket on the machine by the gate",
+                "The machine will read your information and tell you how much you have to pay"
+            ],
+            answer: [
+                "When you arrive, please take a ticket from a machine at the entrance",
+                "This ticket will show the date and the time you arrived",
+                "Please display the ticket with this information in the window of your car",
+                "Before you leave, please put the ticket on the machine by the gate",
+                "The machine will read your information and tell you how much you have to pay"
+            ]
+        }
+    },
+    {
+        part: 3,
+        type: 'sentence-ordering',
+        title: 'Question 3 of 5',
+        instruction: 'Put the sentences below in the right order. (Topic: Submit Paperwork)',
+        content: {
+            sentences: [
+                "In your account, press \"open new window\"",
+                "When you do this, a new window will open",
+                "Simply drag and drop your files",
+                "Once you put the files there, press the \"send\" button",
+                "After you send your work, you should check your email"
+            ],
+            answer: [
+                "In your account, press \"open new window\"",
+                "When you do this, a new window will open",
+                "Simply drag and drop your files",
+                "Once you put the files there, press the \"send\" button",
+                "After you send your work, you should check your email"
+            ]
+        }
+    },
+    {
+        part: 4,
+        type: 'opinion-matching',
+        title: 'Question 4 of 5',
+        instruction: 'Four people respond in the comments section of an online magazine article about the above topic. Read the texts and then answer the questions.',
+        content: {
+            topic: 'Eating and cooking',
+            opinions: [
+                { person: 'A', text: 'When I was a kid, I was often given ready-made or junk food when I was at home, although I don\'t want to blame my parents. Since then, I try to eat at restaurants as much as possible. The food at the restaurant is not very diverse but for me that is not a problem. What matters to me when going out to eat is who you go with. I often eat with colleagues or close friends when I get off work, it\'s very fun.' },
+                { person: 'B', text: 'I used to often go to the most fashionable and luxurious restaurants to eat. However, now, I\'m back to being a student and my finances won\'t stretch that far. Therefore, I often cook for myself and watch recipes and cooking methods on the internet. That helps me to be able to focus on my studies without losing concentration.' },
+                { person: 'C', text: 'Going to a restaurant is for the social atmosphere and I am not bothered to eat alone either. What\'s important to me is the variety of dishes. Therefore, I eat at as many places as possible even though they are a bit pricey. That\'s why I joined the cooking club, where I can learn many new recipes and also meet many friends.' },
+                { person: 'D', text: 'I don\'t understand why so many people want to find many different recipes for one dish. I know clearly what I like and I eat exactly that food. My dad is a good cook, he knows what ingredients I don\'t like to eat, which obviously are a lot. I love being home and eating with my family.' }
+            ],
+            questions: [
+                'Who takes a cookery course?',
+                'Who only wants to eat a few range of food?',
+                'Who likes to eat with friends?',
+                'Who prefers to eat alone?',
+                'Who needs to save money?',
+                'Who likes home cooked food?',
+                'Who likes to eat a wide range of dishes?',
+            ],
+            answer: ['C', 'D', 'A', 'B', 'B', 'D', 'C']
+        }
+    },
+    {
+        part: 5,
+        type: 'heading-matching',
+        title: 'Question 5 of 5',
+        instruction: 'Read the text below. Match the headings to the paragraphs.',
+        content: {
+            topic: 'Antarctica',
+            headings: [
+                'A. Who is in charge?', 'B. First step on the ice', 'C. Where is the end',
+                'D. Hidden geography', 'E. Race to the Pole', 'F. Less effort needed',
+                'G. Why is it so cold?'
+            ],
+            paragraphs: [
+                "This continent is governed by an international agreement known as the Antarctic Treaty System, established in 1961. This treaty ensures that the region is utilized for peaceful purposes and encourages global scientific collaboration. While no nation officially owns this land, several countries—Argentina, Australia, Chile, France, New Zealand, Norway, and the United Kingdom—assert territorial claims. The treaty forbids military activity, resource extraction, and nuclear tests, designating the area for research and conservation efforts. As a result, scientists from various countries gather to study this unique environment, sharing their discoveries for the benefit of humanity.",
+                "Setting foot on Antarctica is a significant event for any explorer or scientist. The journey typically begins in South America, where travelers board a ship or a plane to cross the Drake Passage. Once they arrive, the first step on the ice is both exhilarating and daunting. Visitors are immediately struck by the vast expanse of white, the crisp, cold air, and the breathtaking scenery. The sound of crunching ice underfoot serves as a reminder of the remote and untouched nature of this continent, a place where human footprints are few and far between.",
+                "Positioned around the South Pole, Antarctica represents the southernmost point on the planet. The continent's remoteness contributes to its mystique, drawing adventurers and researchers alike. The harsh conditions, including bitter cold and relentless winds, create a sense of otherworldliness. In many ways, it feels like the last frontier on Earth, where the landscape remains largely unspoiled and the natural world thrives in its purest form.",
+                "Beneath the massive ice sheets lies a concealed landscape that reveals much about the planet's geological history. This region hosts the largest ice mass globally, covering approximately 98 percent of its area. The ice conceals a variety of geological features, including mountains and valleys. Researchers analyze ice cores extracted from deep within the layers to uncover details about past climates and atmospheric conditions. These investigations provide vital information for understanding global climate change and its potential implications for our world.",
+                "The pursuit of the southernmost point in the early 20th century captivated many. Adventurers such as Robert Falcon Scott and Roald Amundsen undertook perilous journeys to achieve this milestone. Amundsen's successful expedition in 1911 marked a significant achievement in exploration, while Scott's tragic story underscored the risks associated with such endeavors. These tales of courage and ambition continue to inspire modern explorers, highlighting the fascination that this harsh terrain holds.",
+                "Recent advancements in technology have made reaching this icy expanse easier than in the past. Modern icebreakers and advanced aircraft enable safer and more efficient travel. This accessibility has led to a rise in interest for tourism, allowing more people to experience the breathtaking beauty of the landscape. However, the increase in visitors raises concerns about the potential environmental impact, emphasizing the necessity for sustainable practices to safeguard this delicate ecosystem.",
+                "The extreme low temperatures in this region result mainly from its high elevation and geographic positioning. Being located over the South Pole means it receives minimal direct sunlight, especially during the prolonged winter months of darkness. Average temperatures can plummet below -60°C (-76°F), with summer still remaining quite frigid. The reflective nature of ice further contributes to the chilling climate. Understanding these climatic influences is crucial for scientists studying global weather systems and shifts in climate patterns."
+            ],
+            answer: ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+        }
+    }
+]// Thêm vào file js/data-reading-test.js
+
+, // <--- Đừng quên dấu phẩy này để ngăn cách với đề thi "test_009"
+"test_010": [
+    {
+        part: 1,
+        type: 'gap-fill',
+        title: 'Question 1 of 5',
+        instruction: 'Choose the word that fits in the gap. The first one is done for you.',
+        content: {
+            prefix: 'Hey Lewis,',
+            items: [
+                { prefix: 'I was looking at the art in the', options: ['Window', 'Buy', 'Market', 'Cake', 'Watch'], suffix: '.' },
+                { prefix: 'I didn\'t', options: ['Window', 'Buy', 'Market', 'Cake', 'Watch'], suffix: 'it because it was too expensive.' },
+                { prefix: 'I bought vegetables at the', options: ['Window', 'Buy', 'Market', 'Cake', 'Watch'], suffix: '.' },
+                { prefix: 'I ate', options: ['Window', 'Buy', 'Market', 'Cake', 'Watch'], suffix: 'after dinner.' },
+                { prefix: 'I', options: ['Window', 'Buy', 'Market', 'Cake', 'Watch'], suffix: 'a TV show last night.' }
+            ],
+            suffix: 'Love,<br>Helen',
+            answer: ['Window', 'Buy', 'Market', 'Cake', 'Watch']
+        }
+    },
+    {
+        part: 2,
+        type: 'sentence-ordering',
+        title: 'Question 2 of 5',
+        instruction: 'Put the sentences below in the right order. (Topic: Key card)',
+        content: {
+            sentences: [
+                "To enter the building and use the lift, you will need your key card",
+                "If you lose this, you will need to see the staff member at the front desk",
+                "He or she will ask for your name and your flat number, and then will write these down",
+                "You will also need to show you identification card",
+                "He or she will make a copy of it and give you a new key card"
+            ],
+            answer: [
+                "To enter the building and use the lift, you will need your key card",
+                "If you lose this, you will need to see the staff member at the front desk",
+                "He or she will ask for your name and your flat number, and then will write these down",
+                "You will also need to show you identification card",
+                "He or she will make a copy of it and give you a new key card"
+            ]
+        }
+    },
+    {
+        part: 3,
+        type: 'sentence-ordering',
+        title: 'Question 3 of 5',
+        instruction: 'Put the sentences below in the right order. (Topic: Tom Harper)',
+        content: {
+            sentences: [
+                "When he was young, he began writing short stories for a magazine",
+                "He soon wrote regularly for the magazine, but he was not satisfied",
+                "He almost left the magazine, but then he decided to create some unusual new characters",
+                "The characters he imagined were one of the most famous in the world",
+                "This popularity made Tome Harper rich and successful"
+            ],
+            answer: [
+                "When he was young, he began writing short stories for a magazine",
+                "He soon wrote regularly for the magazine, but he was not satisfied",
+                "He almost left the magazine, but then he decided to create some unusual new characters",
+                "The characters he imagined were one of the most famous in the world",
+                "This popularity made Tome Harper rich and successful"
+            ]
+        }
+    },
+    {
+        part: 4,
+        type: 'opinion-matching',
+        title: 'Question 4 of 5',
+        instruction: 'Four people respond in the comments section of an online magazine article about the above topic. Read the texts and then answer the questions.',
+        content: {
+            topic: 'Watching television',
+            opinions: [
+                { person: 'A', text: 'I know I have to spend time studying but there are so many great TV shows, especially horror TV shows. once you watch it, you will be glued to it and can\'t stop watching. Besides, these TV shows often last for many weeks.' },
+                { person: 'B', text: 'I often spend time watching news on TV in the evening when I\'m free. In the past, I often watched the soccer team I like on TV, but they often lost, so I gave up watching them. Nowadays there are too many reality TV shows being shown on TV. Every time I see these shows, I turn it off and do more interesting things.' },
+                { person: 'C', text: 'I wasn\'t good when I was in school because I often spent time watching cartoons on TV. However, I now watch nature documentaries and TV shows about science, history, and business. This helps me expand my knowledge a lot compared to when I was in school.' },
+                { person: 'D', text: 'My husband usually schedules TV viewing for the weekend, he usually watches football or documentaries. I\'m the opposite, I just turn on the TV and it doesn\'t matter what program it is, because I just need to relax. However, I also want to update news about movies, not just movies, but also songs. I also find reality TV shows very entertaining.' }
+            ],
+            questions: [
+                "Who isn't a very selective viewer?",
+                'Who likes TV programs which continue over several weeks?',
+                'Who keeps up to date on cinema and music?',
+                'Who avoids watching reality TV programs?',
+                'Who has lost interest in watching football on TV?',
+                'Who gets a lot of knowledge by watching TV?',
+                'Who watches TV instead of studying?',
+            ],
+            answer: ['D', 'A', 'D', 'B', 'B', 'C', 'A']
+        }
+    },
+    {
+        part: 5,
+        type: 'heading-matching',
+        title: 'Question 5 of 5',
+        instruction: 'Read the text below. Match the headings to the paragraphs.',
+        content: {
+            topic: 'Doggett\'s coat and badge',
+            headings: [
+                'A. The easiest way to travel', 'B. Results of a lucky escape', 'C. Origin of what the winner receives',
+                'D. A need for a change', 'E. Earning a reputation', 'F. Generations of champions',
+                'G. Not in it for the money'
+            ],
+            paragraphs: [
+                "Thomas Doggett, an Irish actor and comedian who managed Drury Lane Theatre, created the race. He relied heavily on Thames watermen, who were vital for transportation at the time. With poor roads and crowded city streets, the Thames served as the primary highway. Doggett frequently commuted via the river between his London work locations and his home in Chelsea.",
+                "A popular story suggests that Doggett was saved by a waterman after falling into the Thames in 1715. To show his gratitude, he organized a race for six young watermen, offering a prize for the fastest rower on a 7.4-km course between two pubs named 'The Swan' in London Bridge and Chelsea.",
+                "Unlike typical prizes, Doggett awarded a traditional red waterman's coat with a silver badge inscribed with 'Liberty'. This badge commemorated the coronation of George I of the House of Hanover on August 1, 1714. Doggett chose August 1 for the annual race to honor this event. The badge today still includes 'Liberty' and an image of the Hanover horse. Doggett managed the race and financed it himself until his death in 1721.",
+                "After Doggett's death, the Fishmongers' Company of London continued the race as specified in his will. However, the event now runs with the incoming tide, and competitors use racing boats instead of commercial vessels. In 1988, due to a decline in watermen, the Fishmongers' Company allowed competitors three chances to win the race.",
+                "The winner's prize remains the traditional red waterman's coat along with a silver badge featuring a horse and the word 'Liberty'. Additionally, all competitors who finish the race receive a miniature version of Doggett's badge for their collars at a ceremony held at Watermen's Hall. The winner receives a silver badge, while other participants receive bronze ones. Historically, winning the Doggett's Coat and Badge in the 18th and 19th centuries helped bring in more business for the successful waterman. Although this practical advantage is now somewhat outdated, achieving the Doggett's Coat and Badge remains a highly respected honor.",
+                "In 2012, six rowers competed, and the race was won by 23-year-old waterman Merlin Dwan. Dwan comes from a family of watermen; his father won the Doggett's Coat and Badge in 1977, and his uncle and two cousins have also won the race. However, the Dwan family doesn't hold the record for the most wins—that title goes to the Phelps family, with ten victories.",
+                "The tradition of families winning the Doggett's Coat and Badge highlights its enduring significance. Nowadays, being a waterman is likely viewed less as a career and more as a means of preserving a centuries-old family tradition. This heritage is upheld further by the exclusive group of watermen known as the Royal Watermen. Queen Elizabeth employs 24 watermen to accompany her on ceremonial occasions along the Thames. Each waterman earns a modest annual sum of £3.50 for this role, but the prestige of wearing the iconic red jacket and silver badge on important state occasions is invaluable."
+            ],
+            answer: ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+        }
+    }
 ]
 
 };
