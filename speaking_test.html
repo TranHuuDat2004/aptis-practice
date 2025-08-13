@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Aptis Speaking Test - Giao diện mới</title>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link rel="icon" href="img/favicon.png" type="image/x-icon">
 
     <style>
@@ -219,15 +220,29 @@
             color: #007bff;
             display: inline-block;
         }
+            a {
+        text-decoration: none;
+        color: black;
+    }
+    /* === STYLE MỚI CHO DÒNG CHÚ THÍCH === */
+#disclaimer-text {
+    font-style: italic;
+    color: #777;
+    font-size: 0.9em;
+    margin-top: 20px;
+}
     </style>
 </head>
 
 <body>
     <!-- HTML không thay đổi nhiều, chủ yếu là ID và class -->
     <header class="test-header">
-        <div class="header-left">
-            Aptis practice
-        </div>
+        <a href="index.html">
+            <div><i class="fas fa-home"></i>
+
+                Aptis practice
+            </div>
+        </a>
         <!-- Tiêu đề phần thi sẽ được cập nhật ở đây -->
         <div class="header-center" id="part-indicator-header">
             Speaking Test
