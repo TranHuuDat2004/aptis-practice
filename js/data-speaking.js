@@ -637,6 +637,52 @@ const speakingData = {
                     sampleAnswer: "Many people are scared of public speaking for some reasons. Firstly, they worry about making mistakes or forgetting what to say. They think that other people will judge them harshly or laugh at them. Secondly, they feel nervous or anxious in front of a large audience. Finally, they lack confidence or experience in speaking skills."
                 }
             ]
+        },
+        {
+            id: 'sp2_travel_sea',
+            title: 'Chủ đề 12: Travelling by Sea',
+            imageSrc: 'img/speaking-part2/travel-sea.png', // Bạn hãy đổi tên file ảnh cho phù hợp
+            audioSrc: 'audio/speaking-part2/12.wav',
+            tasks: [
+                {
+                    question: "Describe this picture.",
+                    duration: 45,
+                    sampleAnswer: "This picture shows a woman relaxing on the deck of a yacht. The weather seems perfect, with a clear blue sky and a calm sea. In the distance, I can see some small islands. The overall atmosphere of the picture is very peaceful and luxurious."
+                },
+                {
+                    question: "Tell me the last time you saw the sea.",
+                    duration: 45,
+                    sampleAnswer: "The last time I saw the sea was a few months ago. I went to the beach with my family and we had a lot of fun. We played in the sand, swam in the water, and ate ice cream. The sea was very blue and calm that day. I loved watching the waves and listening to the sound of the sea. It was very relaxing and peaceful. I wish I could go back to the sea soon."
+                },
+                {
+                    question: "Why do you think some people dislike travelling by sea?",
+                    duration: 45,
+                    sampleAnswer: "Some people dislike travelling by sea because of the following reasons. First, they may get seasick easily and feel uncomfortable on a boat or a ship. Second, some people feel nervous about safety, especially in bad weather or storms. Third, they may find it boring or too slow to travel by sea compared to other forms of transport. These are some of the possible reasons why some people prefer not to travel by sea."
+                }
+            ]
+        },
+                {
+            id: 'sp2_shopping2',
+            title: 'Chủ đề 13: Shopping',
+            imageSrc: 'img/speaking-part2/shopping2.png', // Bạn hãy đổi tên file ảnh cho phù hợp
+            audioSrc: 'audio/speaking-part2/13.wav',
+            tasks: [
+                {
+                    question: "Describe the picture.",
+                    duration: 45,
+                    sampleAnswer: "This picture shows a woman shopping in a supermarket or a grocery store. She is standing in an aisle and looking carefully at a product in her hands. The shelves are fully stocked with many different items. The store looks bright and well-organized."
+                },
+                {
+                    question: "Tell me the time you shopped in a local store.",
+                    duration: 45,
+                    sampleAnswer: "The last time I shopped in a local store was last week. I needed some groceries and I wanted to support the small businesses in my area. I went to a nearby market that sells fresh fruits and vegetables. I was impressed by the quality and variety of the produce. The staff was friendly and helpful. They gave me some tips on how to cook some of the items I bought. I enjoyed the experience and I plan to go back soon."
+                },
+                {
+                    question: "Nowadays, why do people like shopping online?",
+                    duration: 45,
+                    sampleAnswer: "People like shopping online for many reasons. Firstly, it is convenient. You can shop anytime and anywhere you want. You don't have to worry about traffic, parking, or crowds. Secondly, it is cheaper. You can compare prices and find discounts easily, without spending money on gas or parking. Finally, online stores offer a wider variety of products, so you can find exactly what you need."
+                }
+            ]
         }
         // Thêm các chủ đề Part 2 khác vào đây với cấu trúc tương tự
     ],
@@ -821,7 +867,7 @@ const speakingData = {
             title: 'Chủ đề 8: Different Environments',
             image1Src: 'img/speaking-part3/environment-snow.png',
             image2Src: 'img/speaking-part3/environment-desert.png',
-            audioSrc: 'audio/speaking-part3/8.mp3',
+            audioSrc: 'audio/speaking-part3/8.wav',
             tasks: [
                 {
                     question: "Describe the 2 pictures.",
@@ -846,7 +892,7 @@ const speakingData = {
             title: 'Chủ đề 9: Children and Animals',
             image1Src: 'img/speaking-part3/animals-horse.png',
             image2Src: 'img/speaking-part3/animals-snake.png',
-            audioSrc: 'audio/speaking-part3/9.mp3',
+            audioSrc: 'audio/speaking-part3/9.wav',
             tasks: [
                 {
                     question: "Describe the 2 pictures.",
@@ -870,7 +916,7 @@ const speakingData = {
             title: 'Chủ đề 10: Leisure Activities',
             image1Src: 'img/speaking-part3/leisure-museum.png',
             image2Src: 'img/speaking-part3/leisure-zipline.png',
-            audioSrc: 'audio/speaking-part3/10.mp3',
+            audioSrc: 'audio/speaking-part3/10.wav',
             tasks: [
                 {
                     question: "Describe the 2 pictures.",
@@ -895,7 +941,7 @@ const speakingData = {
             title: 'Chủ đề 11: Team vs Individual Sports',
             image1Src: 'img/speaking-part3/sports-rowing.png',
             image2Src: 'img/speaking-part3/sports-cycling.png',
-            audioSrc: 'audio/speaking-part3/11.mp3',
+            audioSrc: 'audio/speaking-part3/11.wav',
             tasks: [
                 {
                     question: "Describe the 2 pictures.",
@@ -919,7 +965,7 @@ const speakingData = {
             title: 'Chủ đề 12: Different Locations',
             image1Src: 'img/speaking-part3/locations-mountain.png',
             image2Src: 'img/speaking-part3/locations-beach.png',
-            audioSrc: 'audio/speaking-part3/12.mp3',
+            audioSrc: 'audio/speaking-part3/12.wav',
             tasks: [
                 {
                     question: "Describe the 2 pictures.",
@@ -945,7 +991,7 @@ const speakingData = {
             title: 'Chủ đề 13: Enjoying Music',
             image1Src: 'img/speaking-part3/music-concert.png',
             image2Src: 'img/speaking-part3/music-home.png',
-            audioSrc: 'audio/speaking-part3/13.mp3',
+            audioSrc: 'audio/speaking-part3/13.wav',
             tasks: [
                 {
                     question: "Describe the 2 pictures.",
@@ -969,7 +1015,7 @@ const speakingData = {
             title: 'Chủ đề 14: Places to eat (2)',
             image1Src: 'img/speaking-part3/eating-home.png',
             image2Src: 'img/speaking-part3/eating-restaurant-formal.png',
-            audioSrc: 'audio/speaking-part3/14.mp3',
+            audioSrc: 'audio/speaking-part3/14.wav',
             tasks: [
                 {
                     question: "Describe the 2 pictures.",
@@ -995,7 +1041,7 @@ const speakingData = {
             title: 'Chủ đề 15: Housing Styles',
             image1Src: 'img/speaking-part3/housing-classic.png',
             image2Src: 'img/speaking-part3/housing-modern.png',
-            audioSrc: 'audio/speaking-part3/15.mp3',
+            audioSrc: 'audio/speaking-part3/15.wav',
             tasks: [
                 {
                     question: "Describe the 2 pictures.",
@@ -1019,7 +1065,7 @@ const speakingData = {
             title: 'Chủ đề 16: Shopping with family',
             image1Src: 'img/speaking-part3/shopping-jewelry.png',
             image2Src: 'img/speaking-part3/shopping-clothes-child.png',
-            audioSrc: 'audio/speaking-part3/16.mp3',
+            audioSrc: 'audio/speaking-part3/16.wav',
             tasks: [
                 {
                     question: "Describe the 2 pictures.",
@@ -1044,7 +1090,7 @@ const speakingData = {
             title: 'Chủ đề 17: City vs Countryside',
             image1Src: 'img/speaking-part3/living-countryside.png',
             image2Src: 'img/speaking-part3/living-city.png',
-            audioSrc: 'audio/speaking-part3/17.mp3',
+            audioSrc: 'audio/speaking-part3/17.wav',
             tasks: [
                 {
                     question: "Tell me what you see in the two pictures.",
@@ -1068,7 +1114,7 @@ const speakingData = {
             title: 'Chủ đề 18: House vs Apartment',
             image1Src: 'img/speaking-part3/housing-house.png',
             image2Src: 'img/speaking-part3/housing-apartment.png',
-            audioSrc: 'audio/speaking-part3/18.mp3',
+            audioSrc: 'audio/speaking-part3/18.wav',
             tasks: [
                 {
                     question: "Tell me what you see in the two pictures.",
@@ -1093,7 +1139,7 @@ const speakingData = {
             title: 'Chủ đề 19: Kinds of Travel',
             image1Src: 'img/speaking-part3/travel-car.png',
             image2Src: 'img/speaking-part3/travel-train.png',
-            audioSrc: 'audio/speaking-part3/19.mp3',
+            audioSrc: 'audio/speaking-part3/19.wav',
             tasks: [
                 {
                     question: "Tell me what you see in the two pictures.",
@@ -1117,7 +1163,7 @@ const speakingData = {
             title: 'Chủ đề 20: Relationships with Animals',
             image1Src: 'img/speaking-part3/animals-monkeys.png',
             image2Src: 'img/speaking-part3/animals-whale.png',
-            audioSrc: 'audio/speaking-part3/20.mp3',
+            audioSrc: 'audio/speaking-part3/20.wav',
             tasks: [
                 {
                     question: "Tell me what you see in the two pictures.",
@@ -1142,7 +1188,7 @@ const speakingData = {
             title: 'Chủ đề 21: Ways of Exercising',
             image1Src: 'img/speaking-part3/exercise-gym.png',
             image2Src: 'img/speaking-part3/exercise-hiking.png',
-            audioSrc: 'audio/speaking-part3/21.mp3',
+            audioSrc: 'audio/speaking-part3/21.wav',
             tasks: [
                 {
                     question: "Tell me what you see in the two pictures.",
