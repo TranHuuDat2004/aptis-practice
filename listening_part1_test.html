@@ -91,12 +91,45 @@
     }
 
     .audio-player {
-    width: 100%;
-    margin-bottom: 20px;
-    
-    /* === ĐÂY LÀ DÒNG ĐỂ ẨN AUDIO === */
-    display: none; 
-}
+        width: 100%;
+        margin-bottom: 20px;
+
+        /* === ĐÂY LÀ DÒNG ĐỂ ẨN AUDIO === */
+        display: none;
+    }
+
+    /* === CSS MỚI CHO HỘP GIẢI THÍCH === */
+
+    .resource-links {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin: 25px 0;
+    }
+
+    .resource-links .action-btn {
+        text-decoration: none;
+    }
+
+    .explanation-box h4 {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .explanation-box .custom-ol {
+        max-width: 650px;
+        /* Giới hạn chiều rộng để dễ đọc */
+        margin: 15px auto 0;
+        /* Căn giữa block */
+        padding-left: 20px;
+        text-align: left;
+        /* Căn trái nội dung text */
+    }
+
+    .explanation-box .custom-ol li {
+        margin-bottom: 10px;
+        line-height: 1.6;
+    }
 </style>
 
 <body>
@@ -107,12 +140,36 @@
                 <h1>Listening - Part 1</h1>
                 <p>Nghe đoạn hội thoại ngắn và chọn câu trả lời đúng.</p>
             </div>
-            <div class="explanation-box">
+            <!-- <div class="explanation-box">
                 <h3>💡 Phương pháp học Part 1</h3>
                 <p>Dạng bài này kiểm tra khả năng nghe hiểu thông tin chi tiết trong các đoạn hội thoại ngắn. Hãy tập
                     trung vào các từ khóa trong câu hỏi (ví dụ: "what time", "where", "who") để xác định thông tin cần
                     nghe.</p>
+            </div> -->
+
+           <!-- === HỘP GIẢI THÍCH ĐÃ ĐƯỢC CẬP NHẬT LẠI NỘI DUNG === -->
+            <div class="explanation-box">
+                <h3>💡 Phương pháp kiểm tra trí nhớ</h3>
+                <p>
+                    Đây là trang kiểm tra nhanh trí nhớ của bạn. Mục tiêu là <b>vận dụng</b> những gì bạn đã học được từ 2 trang "List Key" và "Cheatsheet" để trả lời các câu hỏi mà không cần tra cứu lại.
+                </p>
+                <p>
+                    Nếu bạn chưa ôn tập, hãy mở 2 trang đó ngay bây giờ!
+                </p>
+                
+                <div class="resource-links">
+                    <a href="listening_part1.html" target="_blank" class="action-btn">Học từ trang List Key</a>
+                    <a href="listening_cheatsheet.html" target="_blank" class="action-btn">Học từ trang Cheatsheet</a>
+                </div>
+
+                <h4>Các bước thực hiện:</h4>
+                <ol>
+                    <li><strong>Ôn tập thật kỹ:</strong> Dành thời gian học thuộc các đáp án và mẹo ghi nhớ từ 2 trang tài liệu ở trên.</li>
+                    <li><strong>Kiểm tra trí nhớ:</strong> Quay lại trang này và trả lời tất cả các câu hỏi dựa trên những gì bạn nhớ được.</li>
+                    <li><strong>Xem kết quả:</strong> Sau khi hoàn thành, nhấn nút "Kiểm tra đáp án" ở cuối trang để xem bạn đã nhớ đúng bao nhiêu câu.</li>
+                </ol>
             </div>
+
             <main id="quiz-container">
                 <!-- Nội dung câu hỏi trắc nghiệm sẽ được JS chèn vào đây -->
             </main>
