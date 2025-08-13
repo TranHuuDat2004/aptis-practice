@@ -1374,6 +1374,237 @@ const allReadingTests = {
             answer: ['A', 'B', 'C', 'D', 'E', 'F', 'G']
         }
     }
+],// Thay thế khối mã "test_013" cũ bằng khối mã này
+
+"test_013": [
+    {
+        part: 1,
+        type: 'gap-fill',
+        title: 'Question 1 of 5',
+        instruction: 'Choose the word that fits in the gap. The first one is done for you.',
+        content: {
+            prefix: 'Hey Lewis,',
+            items: [
+                { prefix: 'It is', options: ['Just', 'Too', 'To', 'Some', 'Give'], suffix: 'what I need.' },
+                { prefix: 'And it is the perfect color,', options: ['Just', 'Too', 'To', 'Some', 'Give'], suffix: '.' },
+                { prefix: 'I am going to wear it', options: ['Just', 'Too', 'To', 'Some', 'Give'], suffix: 'my friend\'s party.' },
+                { prefix: 'I will save you', options: ['Just', 'Too', 'To', 'Some', 'Give'], suffix: 'cake.' },
+                { prefix: 'I', options: ['Just', 'Too', 'To', 'Some', 'Give'], suffix: 'my best wishes to everyone.' }
+            ],
+            suffix: 'Love,<br>Helen',
+            answer: ['Just', 'Too', 'To', 'Some', 'Give']
+        }
+    },
+    {
+        part: 2,
+        type: 'sentence-ordering',
+        title: 'Question 2 of 5',
+        instruction: 'Put the sentences below in the right order. (Topic: Buying a new house)',
+        content: {
+            sentences: [
+                "The first and most important thing is to choose the location",
+                "In order to choose the right place, you need to consider several factors",
+                "The most important of these to look at is the price of homes",
+                "Other factors to look at is the place of employment, shops and schools",
+                "Such requirements of course depend on your personal circumstances"
+            ],
+            answer: [
+                "The first and most important thing is to choose the location",
+                "In order to choose the right place, you need to consider several factors",
+                "The most important of these to look at is the price of homes",
+                "Other factors to look at is the place of employment, shops and schools",
+                "Such requirements of course depend on your personal circumstances"
+            ]
+        }
+    },
+    {
+        part: 3,
+        type: 'sentence-ordering',
+        title: 'Question 3 of 5',
+        instruction: 'Put the sentences below in the right order. (Topic: Using public cycle)',
+        content: {
+            sentences: [
+                "Enter the code on the lock of the bike and wait for the green lights",
+                "Go to the collection point and click on the screen to choose the bike with your bank card",
+                "Choose \"hire the cycle\" on the screen and then follow the instructions to receive an unlock code",
+                "When you finish your journey, return the bike to any empty collection point",
+                "When the light comes, you can unlock your bike and start your journey",
+                
+            ],
+            answer: [
+                "Go to the collection point and click on the screen to choose the bike with your bank card",
+                "Choose \"hire the cycle\" on the screen and then follow the instructions to receive an unlock code",
+                "Enter the code on the lock of the bike and wait for the green lights",
+                "When the light comes, you can unlock your bike and start your journey",
+                "When you finish your journey, return the bike to any empty collection point"
+            ]
+        }
+    },
+    {
+        part: 4,
+        type: 'opinion-matching',
+        title: 'Question 4 of 5',
+        instruction: 'Four people respond in the comments section of an online magazine article about the above topic. Read the texts and then answer the questions.',
+        content: {
+            topic: 'Volunteering to clean a local park',
+            opinions: [
+                { person: 'A', text: 'I feel very lucky to have this park here. My family and I often go to the park because of the natural landscape here. It\'s different from the city, which is very busy and full of dust. Unfortunately, I am away this weekend so I cannot help with the cleaning. However, I know my brother and his friends will be very interested in this cleanup so I will ask them if they can help.' },
+                { person: 'B', text: 'I\'m a very busy person and I have to spend this weekend with my family because I only have the weekend as free time. I think young people who don\'t have families should help. Besides, students and schools also have days off on weekends. I think this volunteering will be very helpful for students\' future careers.' },
+                { person: 'C', text: 'I think this volunteering is a good idea but it doesn\'t have a long-term vision. When volunteers clean up the park, it will be clean, but it will become busy again after about a month when tourist season arrives. I think we should clean this park regularly about once a month. Surrounding areas such as the lake and local forest should also be cleaned up. We should also have signs telling visitors to clean up their trash. I am very upset when I see a lot of trash on both sides of the road.' },
+                { person: 'D', text: 'My family and I often spend time at the park. My children love going to the park and they find the park a very interesting place to visit. My son has a dream of becoming a biologist so I think cleaning up this park will be very helpful for my son. I think we should pique children\'s interest in cleaning. They will be more willing to volunteer and help others.' }
+            ],
+            questions: [
+                "Who can't help clean the park because of their busy work?",
+                'Who thinks the park is a beautiful place to relax?',
+                'Who will ask for other people to help?',
+                'Who thinks volunteering is important for children?',
+                'Who thinks other local areas need cleaning?',
+                'Who thinks the cleaning needs to be done regularly?',
+                'Who thinks volunteering can help with future employment?',
+            ],
+            answer: ['B', 'A', 'A', 'D', 'C', 'C', 'B']
+        }
+    },
+    {
+        part: 5,
+        type: 'heading-matching',
+        title: 'Question 5 of 5',
+        instruction: 'Read the text below. Match the headings to the paragraphs.',
+        content: {
+            topic: 'The Hotel',
+            headings: [
+                'A. A sensible financial choice', 'B. The price of convenience may be high', 'C. The importance of planning in advance',
+                'D. The impact of lack of freedom', 'E. The benefits of living with less', 'F. The advantages of having your own space',
+                'G. A competitive business'
+            ],
+            // === NỘI DUNG ĐÃ ĐƯỢC CẬP NHẬT ĐẦY ĐỦ ===
+            paragraphs: [
+                "In today's world, many individuals are opting to live in hotels because it is more affordable than renting a house. The cost of renting a hotel covers all expenses, including water, electricity, and even meals, often surpassing what traditional homes offer. Moreover, residents have the opportunity to negotiate long-term stays with hotel managers, making hotel living more cost-effective compared to renting a house.",
+                "While it may seem convenient to have meals readily available with private chefs in hotel restaurants, there are potential downsides to consider. Reliance on outside food options can impact health. Hotel meals often prioritize convenience over nutrition, which can lead to an unhealthy diet. This, in turn, may result in weight gain and nutrient deficiencies, leading to various health issues. As a result, you can suffer from medical bills in the long term - if you use the food in the restaurant cooked by chef.",
+                "Moving to a hotel for an extended period requires careful planning and preparation. It's not a decision that can be made overnight. Individuals need to consider what belongings to bring, how to transport them, and how to organize their new living space. It's important to prioritize essential items and leave behind what is not necessary. By planning ahead, individuals can ensure a smooth transition to hotel living, avoiding unnecessary stress and disruptions.",
+                "Living in a hotel comes with certain rules and regulations that residents must follow. They have to adapt to the hotel's policies and accommodate different lifestyles of fellow residents. This can sometimes mean compromising personal preferences to maintain harmony within the hotel environment. While there may be a loss of certain freedoms compared to living in a house, the trade-off is the convenience and services provided by the hotel.",
+                "Choosing to live in a hotel instead of renting a house often means downsizing and living with fewer possessions. This can bring various benefits, such as reduced clutter, easier maintenance, and a simplified lifestyle. Living with less can also lead to greater flexibility and mobility, as individuals are not tied down to a specific location or burdened with extensive belongings. Embracing a minimalist approach can enhance a sense of freedom and offer a more streamlined living experience.",
+                "Adjusting to hotel living can be tough, but it brings fresh outlooks. Living with less in a smaller space allows residents to focus on experiences instead of stuff, leading to a simpler and more flexible lifestyle. Plus, being in a hotel exposes people to different cultures and diverse individuals, broadening their minds and promoting openness. This change in perspective encourages personal growth, adaptability, and a deeper appreciation for the transient nature of life.",
+                "As the trend of living in hotels becomes increasingly popular, the hotel industry faces growing competition. Hotels must continually enhance their offerings and services to attract guests and secure their position in the market. The future of hotel living is predicted to be a competitive arena, as establishments strive to captivate customers and meet their evolving needs and preferences. This competition benefits consumers, as it fosters innovation and ensures a diverse range of hotel options to choose from."
+            ],
+            answer: ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+        }
+    }
+]// Thêm vào file js/data-reading-test.js
+
+, // <--- Đừng quên dấu phẩy này để ngăn cách với đề thi "test_013"
+"test_014": [
+    {
+        part: 1,
+        type: 'gap-fill',
+        title: 'Question 1 of 5',
+        instruction: 'Choose the word that fits in the gap. The first one is done for you.',
+        content: {
+            prefix: 'Hey Lewis,',
+            items: [
+                { prefix: 'I was looking at the art in the', options: ['Window', 'Buy', 'Market', 'Cake', 'Watch'], suffix: '.' },
+                { prefix: 'I didn\'t', options: ['Window', 'Buy', 'Market', 'Cake', 'Watch'], suffix: 'it because it was too expensive.' },
+                { prefix: 'I bought vegetables at the', options: ['Window', 'Buy', 'Market', 'Cake', 'Watch'], suffix: '.' },
+                { prefix: 'I ate', options: ['Window', 'Buy', 'Market', 'Cake', 'Watch'], suffix: 'after dinner.' },
+                { prefix: 'I', options: ['Window', 'Buy', 'Market', 'Cake', 'Watch'], suffix: 'a TV show last night.' }
+            ],
+            suffix: 'Love,<br>Helen',
+            answer: ['Window', 'Buy', 'Market', 'Cake', 'Watch']
+        }
+    },
+    {
+        part: 2,
+        type: 'sentence-ordering',
+        title: 'Question 2 of 5',
+        instruction: 'Put the sentences below in the right order. (Topic: Rose Planting Process)',
+        content: {
+            sentences: [
+                "Push this down by hand until the tree is straight",
+                "In the chosen place, dig a deep hole in the ground",
+                "Once you planted it, water them everyday",
+                "Finally, The amount of water depends on the weather condition",
+                "Put the base of the rose and cover the root with lease earth"
+            ],
+            answer: [
+                "In the chosen place, dig a deep hole in the ground",
+                "Put the base of the rose and cover the root with lease earth",
+                "Push this down by hand until the tree is straight",
+                "Once you planted it, water them everyday",
+                "Finally, The amount of water depends on the weather condition"
+            ]
+        }
+    },
+    {
+        part: 3,
+        type: 'sentence-ordering',
+        title: 'Question 3 of 5',
+        instruction: 'Put the sentences below in the right order. (Topic: Receive gift)',
+        content: {
+            sentences: [
+                "Take a seat and wait for your turn to receive the gift",
+                "Ring the bell of the gate to notify the staff of your arrival",
+                "Show your membership card to verify your eligibility for receiving the gift",
+                "Fill in the required document to complete the necessary formalities for the gift",
+                "Provide details of the person receiving the gift to ensure the correct recipient is identified"
+            ],
+            answer: [
+                "Ring the bell of the gate to notify the staff of your arrival",
+                "Show your membership card to verify your eligibility for receiving the gift",
+                "Provide details of the person receiving the gift to ensure the correct recipient is identified",
+                "Fill in the required document to complete the necessary formalities for the gift",
+                "Take a seat and wait for your turn to receive the gift"
+            ]
+        }
+    },
+    {
+        part: 4,
+        type: 'opinion-matching',
+        title: 'Question 4 of 5',
+        instruction: 'Four people respond in the comments section of an online magazine article about the above topic. Read the texts and then answer the questions.',
+        content: {
+            topic: 'Visit an island',
+            opinions: [
+                { person: 'A', text: 'I like travelling to the beach. I think I have to walk quite a distance from the hotel to the beach so I think I have to bring boots. However, when I opened the suitcase I didn\'t see any boots. But I still completed the trip and visited many beautiful beaches. One great thing is that the beaches are in remote areas so there are very few tourists. However, it also makes finding food and drinks more difficult.' },
+                { person: 'B', text: 'As an architect, I have always been interested in how buildings are constructed. So when I travel, I never spend time lying on the beach or buying souvenirs. I will go around the area to see the architecture of the houses. I chose to go around by taxi, it was great. However, it cost me a lot because I traveled alone and had no one to share the costs with. But for me this was still a great experience because I got to see many old houses.' },
+                { person: 'C', text: 'The sharp bends of the island made me abandon the idea of renting a car, because it was very dangerous. I decided to take the bus, it was also much cheaper. However, the bus routes are quite few and there are many time constraints. We toured the neighborhoods on foot. I loved this experience because I could see many beautiful sights.' },
+                { person: 'D', text: 'There\'s a lot of food here and I spend most of my time eating. I can\'t recommend any of the dishes because they are all very impressive. If you want to cook for yourself, you will have to take the bus to the street market because they sell a lot of cool local products. I have a lot of good bargains there.' }
+            ],
+            questions: [
+                'Who loved eating food here?',
+                'Who liked to be alone?',
+                'Who liked buying things on the island?',
+                'Who spent a lot of money on transport?',
+                'Who thought public transport could be improved?',
+                'Who liked to walk?',
+                'Who forgot to bring something?',
+            ],
+            answer: ['D', 'A', 'D', 'B', 'C', 'C', 'A']
+        }
+    },
+    {
+        part: 5,
+        type: 'heading-matching',
+        title: 'Question 5 of 5',
+        instruction: 'Read the text below. Match the headings to the paragraphs.',
+        content: {
+            topic: 'Tiny house',
+            headings: [
+                'A. Live in a small scale', 'B. Motivated', 'C. Advantages',
+                'D. Homes too big', 'E. Sharing skills', 'F. Making a small impact',
+                'G. The lasting change'
+            ],
+            paragraphs: [
+                "Paragraph 1 text placeholder about living on a small scale.",
+                "Paragraph 2 text placeholder about being motivated.",
+                "Paragraph 3 text placeholder about the advantages.",
+                "Paragraph 4 text placeholder about homes being too big.",
+                "Paragraph 5 text placeholder about sharing skills.",
+                "Paragraph 6 text placeholder about making a small impact.",
+                "Paragraph 7 text placeholder about the lasting change."
+            ],
+            answer: ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+        }
+    }
 ]
 
 };

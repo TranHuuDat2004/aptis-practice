@@ -479,7 +479,21 @@ const readingData = {
             ],
             key: '1-2-3-4-5',
             story: 'Câu chuyện thật: "<strong>Cô ấy được sinh ra tại Thượng Hải vào năm 1933(1)</strong>. <strong>Vào thời điểm đó (2)</strong>, cô cố gắng hoàn thành việc học. <strong>Vài năm sau (3)</strong>, cô đi du học Mỹ. <strong>Tuy nhiên, vào năm 1972 (4)</strong>, cô luôn nhớ về quê hương. <strong>Vào năm 1980 , cô trở về Trung Quốc (5)</strong>."'
-        }
+        },
+        {
+            id: "p3_receive_gift",
+            title: "Câu chuyện nhận quà (Đề mới cập nhật)",
+            type: "Logic (Thật)",
+            fragments: [
+                "Ring the bell",
+                "Show your card",
+                "Provide details",
+                "Fill the document",
+                "Take a seat"
+            ],
+            key: "1-2-3-4-5",
+            story: 'Câu chuyện thật: "Để nhận quà, đầu tiên bạn phải <strong>bấm chuông (1)</strong>. Sau đó, <strong>đưa thẻ (2)</strong> thành viên. Tiếp theo, <strong>cung cấp thông tin (3)</strong> người nhận, <strong>điền vào giấy tờ (4)</strong> và cuối cùng là <strong>ngồi xuống (5)</strong> chờ đến lượt."'
+        },
 
         // Thêm các câu hỏi Part 3 khác vào đây
     ],
