@@ -67,27 +67,50 @@
         color: #dc3545;
     }
 
-    /* Style cho phân trang */
+    /* === STYLE MỚI CHO PHÂN TRANG (DÙNG CSS GRID) === */
     .pagination-controls {
-        text-align: center;
+        display: grid;
+        /* Desktop: 10 cột bằng nhau */
+        grid-template-columns: repeat(15, 1fr);
+        gap: 8px;
         margin: 30px 0;
     }
 
     .pagination-controls button {
+        /* Làm cho nút có kích thước đồng đều và vuông vắn */
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        /* Giữ tỷ lệ 1:1 (vuông) */
+        padding: 0;
+        /* Bỏ padding để nút lấp đầy ô grid */
+
+        /* Căn giữa số bên trong nút */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        /* Style cơ bản */
         background-color: #fff;
         border: 1px solid #ccc;
         color: #333;
-        padding: 10px 15px;
-        margin: 0 5px;
         border-radius: 5px;
         cursor: pointer;
         font-size: 1em;
+        font-weight: 500;
     }
 
     .pagination-controls button.active {
         background-color: #007bff;
         color: #fff;
         border-color: #007bff;
+    }
+
+    /* Responsive: Áp dụng cho màn hình nhỏ hơn 768px (máy tính bảng và điện thoại) */
+    @media (max-width: 768px) {
+        .pagination-controls {
+            /* Mobile: 5 cột bằng nhau */
+            grid-template-columns: repeat(7, 1fr);
+        }
     }
 
     .audio-player {
@@ -147,16 +170,17 @@
                     nghe.</p>
             </div> -->
 
-           <!-- === HỘP GIẢI THÍCH ĐÃ ĐƯỢC CẬP NHẬT LẠI NỘI DUNG === -->
+            <!-- === HỘP GIẢI THÍCH ĐÃ ĐƯỢC CẬP NHẬT LẠI NỘI DUNG === -->
             <div class="explanation-box">
                 <h3>💡 Phương pháp kiểm tra trí nhớ</h3>
                 <p>
-                    Đây là trang kiểm tra nhanh trí nhớ của bạn. Mục tiêu là <b>vận dụng</b> những gì bạn đã học được từ 2 trang "List Key" và "Cheatsheet" để trả lời các câu hỏi mà không cần tra cứu lại.
+                    Đây là trang kiểm tra nhanh trí nhớ của bạn. Mục tiêu là <b>vận dụng</b> những gì bạn đã học được từ
+                    2 trang "List Key" và "Cheatsheet" để trả lời các câu hỏi mà không cần tra cứu lại.
                 </p>
                 <p>
                     Nếu bạn chưa ôn tập, hãy mở 2 trang đó ngay bây giờ!
                 </p>
-                
+
                 <div class="resource-links">
                     <a href="listening_part1.html" target="_blank" class="action-btn">Học từ trang List Key</a>
                     <a href="listening_cheatsheet.html" target="_blank" class="action-btn">Học từ trang Cheatsheet</a>
@@ -164,9 +188,12 @@
 
                 <h4>Các bước thực hiện:</h4>
                 <ol>
-                    <li><strong>Ôn tập thật kỹ:</strong> Dành thời gian học thuộc các đáp án và mẹo ghi nhớ từ 2 trang tài liệu ở trên.</li>
-                    <li><strong>Kiểm tra trí nhớ:</strong> Quay lại trang này và trả lời tất cả các câu hỏi dựa trên những gì bạn nhớ được.</li>
-                    <li><strong>Xem kết quả:</strong> Sau khi hoàn thành, nhấn nút "Kiểm tra đáp án" ở cuối trang để xem bạn đã nhớ đúng bao nhiêu câu.</li>
+                    <li><strong>Ôn tập thật kỹ:</strong> Dành thời gian học thuộc các đáp án và mẹo ghi nhớ từ 2 trang
+                        tài liệu ở trên.</li>
+                    <li><strong>Kiểm tra trí nhớ:</strong> Quay lại trang này và trả lời tất cả các câu hỏi dựa trên
+                        những gì bạn nhớ được.</li>
+                    <li><strong>Xem kết quả:</strong> Sau khi hoàn thành, nhấn nút "Kiểm tra đáp án" ở cuối trang để xem
+                        bạn đã nhớ đúng bao nhiêu câu.</li>
                 </ol>
             </div>
 
