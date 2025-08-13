@@ -1146,6 +1146,234 @@ const allReadingTests = {
             answer: ['A', 'B', 'C', 'D', 'E', 'F', 'G']
         }
     }
+], // <--- Đừng quên dấu phẩy này để ngăn cách với đề thi "test_010"
+"test_011": [
+    {
+        part: 1,
+        type: 'gap-fill',
+        title: 'Question 1 of 5',
+        instruction: 'Choose the word that fits in the gap. The first one is done for you.',
+        content: {
+            prefix: 'Hey Lewis,',
+            items: [
+                { prefix: 'The weather is', options: ['Great', 'Boat', 'Then', 'Drive', 'Too'], suffix: '.' },
+                { prefix: 'We are on the', options: ['Great', 'Boat', 'Then', 'Drive', 'Too'], suffix: '.' },
+                { prefix: 'We eat dinner', options: ['Great', 'Boat', 'Then', 'Drive', 'Too'], suffix: 'we go to church.' },
+                { prefix: 'We are going to', options: ['Great', 'Boat', 'Then', 'Drive', 'Too'], suffix: 'around.' },
+                { prefix: 'I hope the weather isn\'t', options: ['Great', 'Boat', 'Then', 'Drive', 'Too'], suffix: 'hot.' }
+            ],
+            suffix: 'Love,<br>Helen',
+            answer: ['Great', 'Boat', 'Then', 'Drive', 'Too']
+        }
+    },
+    {
+        part: 2,
+        type: 'sentence-ordering',
+        title: 'Question 2 of 5',
+        instruction: 'Put the sentences below in the right order. (Topic: Betty Barr\'s life)',
+        content: {
+            sentences: [
+                "She was born in Shanghai in 1933 to a American mother and a father from Scotland",
+                "At that time, Shanghai is a city filled with many people from different countries",
+                "After she finished her school, she went to Wellesley College, a famous university in USA",
+                "However, she missed China, and applied for a job in Hong Kong, where she taught from 1959 to 1972, and learnt to speak Cantonese, the local language",
+                "In the 1980s, she finally returned to China and still lives with her Shanghai husband, George Wang."
+            ],
+            answer: [
+                "She was born in Shanghai in 1933 to a American mother and a father from Scotland",
+                "At that time, Shanghai is a city filled with many people from different countries",
+                "After she finished her school, she went to Wellesley College, a famous university in USA",
+                "However, she missed China, and applied for a job in Hong Kong, where she taught from 1959 to 1972, and learnt to speak Cantonese, the local language",
+                "In the 1980s, she finally returned to China and still lives with her Shanghai husband, George Wang."
+            ]
+        }
+    },
+    {
+        part: 3,
+        type: 'sentence-ordering',
+        title: 'Question 3 of 5',
+        instruction: 'Put the sentences below in the right order. (Topic: My first car)',
+        content: {
+            sentences: [
+                "I have just passed the test, and I am the proud owner of the driving license",
+                "However, I did not have a car and my parents would not let me drive theirs",
+                "So, when I saw an advertisement on the local newspaper for a cheap second hand car, I did not waste a time",
+                "I called the number in that advert and arranged a meeting to meet the owner on the other side of the town",
+                "We agreed on a price and when I handed over the money, he gave me the keys"
+            ],
+            answer: [
+                "I have just passed the test, and I am the proud owner of the driving license",
+                "However, I did not have a car and my parents would not let me drive theirs",
+                "So, when I saw an advertisement on the local newspaper for a cheap second hand car, I did not waste a time",
+                "I called the number in that advert and arranged a meeting to meet the owner on the other side of the town",
+                "We agreed on a price and when I handed over the money, he gave me the keys"
+            ]
+        }
+    },
+    {
+        part: 4,
+        type: 'opinion-matching',
+        title: 'Question 4 of 5',
+        instruction: 'Four people respond in the comments section of an online magazine article about the above topic. Read the texts and then answer the questions.',
+        content: {
+            topic: 'Reading books',
+            opinions: [
+                { person: 'A', text: 'My wife often complains about not having time to read, and I say we have to make our own time. So, I often calculate my free time on my phone. So I can know in advance whether I should bring a book to read on the train. My wife often laughs at me for doing so, but I don\'t mind, as long as I can finish reading so many books.' },
+                { person: 'B', text: 'I used to struggle very much to finish reading a book that we were expected to read. However, now that I read for my own pleasure, I don\'t mind too much. I usually don\'t limit myself to reading one at a time. There are so many titles I can choose from that get me excited. I have a list of books that I want to read in the future.' },
+                { person: 'C', text: 'I often keep a book on the bedside table to read before going to bed. The problem is, I get tired after reading only half of a page, and I fall asleep. So, I\'ve been reading that one book for half a year now and have only read chapter 2. However, when I read factual books, I find it very interesting and it keeps me awake for hours.' },
+                { person: 'D', text: 'My job requires reading a lot of books. These books include a lot of facts and figures and they are very boring. When I have free time, I usually want to read light books, like mystery novels or comedy. I often read on the train to work. I have a young child, so when I come home I almost don\'t have time to read. Therefore, I have to read books when traveling by train. So, a book can last me 1 week.' }
+            ],
+            questions: [
+                'Who wants to read a lot of books?',
+                'Who plans their reading schedule?',
+                'Who thinks that factual books are boring?',
+                'Who is having difficulty in finishing a book?',
+                'Who has limited time to read books?',
+                'Who reads more than another family member?',
+                'Who reads many books at once?',
+            ],
+            answer: ['B', 'A', 'D', 'C', 'D', 'A', 'B']
+        }
+    },
+    {
+        part: 5,
+        type: 'heading-matching',
+        title: 'Question 5 of 5',
+        instruction: 'Read the text below. Match the headings to the paragraphs.',
+        content: {
+            topic: 'Meatless diet',
+            headings: [
+                'A. Type of vegetarian', 'B. Various explanations', 'C. Understanding the Possible',
+                'D. Farming Factory', 'E. Respect the life', 'F. Numerous Health benefits',
+                'G. Our global responsibilities'
+            ],
+            paragraphs: [
+                "There are several types of vegetarian diets. Some people avoid all animal products, like vegans, while others, like lacto-vegetarians, eat dairy. Others, like ovo-vegetarians, include eggs. Many people also follow a pescatarian diet, which includes fish but no other meat. Each of these diets offers a variety of meals rich in fruits, vegetables, grains, and plant-based proteins.",
+                "The reasons behind dietary choices can be as diverse as the individuals making them. Many people opt for a vegetarian lifestyle due to ethical concerns, environmental awareness, or health considerations. Some may be motivated by cultural traditions or personal beliefs, while others seek new culinary experiences. Understanding these motivations fosters respectful discussions about food choices and their implications, promoting a more inclusive dialogue around dietary preferences.",
+                "As the global population continues to grow, concerns about food security and sustainability intensify. The increasing demand for resources puts immense pressure on agricultural systems, leading to potential shortages and rising prices. Without significant changes in our consumption patterns and food production methods, we may face a considerable crisis soon. This reality underscores the need for diverse dietary choices, including vegetarian options, which can alleviate some of the pressure on our food systems.",
+                "The industrial approach to livestock production raises numerous ethical and environmental questions. Large-scale operations often prioritize efficiency over animal welfare, resulting in cramped living conditions and the overuse of antibiotics. This practice not only impacts the lives of animals but contributes to pollution and greenhouse gas emissions. As awareness of these issues grows, many advocates push for more humane and sustainable farming practices, which align better with the ethical motivations of those choosing plant-based diets.",
+                "In an interconnected world, our food consumption choices carry significant weight. Each individual's decisions can influence broader societal impacts, affecting everything from environmental sustainability to animal welfare. Embracing a sense of stewardship encourages us to consider how our eating habits impact not just our health, but also the health of the planet. By making conscious choices, such as incorporating more plant-based meals, we can collectively work towards a more equitable and sustainable future for all.",
+                "Opting for a diet rich in plant-based foods offers numerous advantages for overall well-being. Research suggests that a variety of fruits, vegetables, whole grains, and legumes can lower the risk of chronic diseases such as heart disease and diabetes. These foods are often high in essential nutrients and low in unhealthy fats. Embracing a more plant-centered way of eating not only supports personal health but also aligns with public health efforts and energy levels for everyone.",
+                "Recognizing the intrinsic value of all living beings is essential for fostering a compassionate world. This perspective encourages reflection on our interactions with nature and other creatures, promoting empathy and kindness. By cultivating a mindset of respect, we can appreciate the interconnectedness of life and acknowledge the importance of coexisting harmoniously with all beings. Such an approach inspires actions that contribute to a more peaceful and sustainable planet, ultimately benefiting both individuals and society as a whole."
+            ],
+            answer: ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+        }
+    }
+]// Thêm vào file js/data-reading-test.js
+
+, // <--- Đừng quên dấu phẩy này để ngăn cách với đề thi "test_011"
+"test_012": [
+    {
+        part: 1,
+        type: 'gap-fill',
+        title: 'Question 1 of 5',
+        instruction: 'Choose the word that fits in the gap. The first one is done for you.',
+        content: {
+            prefix: 'Hey Lewis,',
+            items: [
+                { prefix: 'I am living with a family', options: ['Near', 'Friendly', 'Practice', 'Read', 'So'], suffix: 'the park.' },
+                { prefix: 'The children are', options: ['Near', 'Friendly', 'Practice', 'Read', 'So'], suffix: 'to me.' },
+                { prefix: 'People', options: ['Near', 'Friendly', 'Practice', 'Read', 'So'], suffix: 'speaking English with me.' },
+                { prefix: 'Sometimes, I', options: ['Near', 'Friendly', 'Practice', 'Read', 'So'], suffix: 'books to my friends.' },
+                { prefix: 'I hate the food,', options: ['Near', 'Friendly', 'Practice', 'Read', 'So'], suffix: 'I ate out yesterday.' }
+            ],
+            suffix: 'Love,<br>Helen',
+            answer: ['Near', 'Friendly', 'Practice', 'Read', 'So']
+        }
+    },
+    {
+        part: 2,
+        type: 'sentence-ordering',
+        title: 'Question 2 of 5',
+        instruction: 'Put the sentences below in the right order. (Topic: Enter the conference hall)',
+        content: {
+            sentences: [
+                "When you collect you pack, go to the lifts on the right",
+                "Take the lift to the third floor and go to the main desk",
+                "Show your pass from the conference pack to a member of staff at the desk",
+                "He or she will tell you your seat number for the talk at the main hall",
+                "Once you are in the hall, someone will help you find your seat"
+            ],
+            answer: [
+                "When you collect you pack, go to the lifts on the right",
+                "Take the lift to the third floor and go to the main desk",
+                "Show your pass from the conference pack to a member of staff at the desk",
+                "He or she will tell you your seat number for the talk at the main hall",
+                "Once you are in the hall, someone will help you find your seat"
+            ]
+        }
+    },
+    {
+        part: 3,
+        type: 'sentence-ordering',
+        title: 'Question 3 of 5',
+        instruction: 'Put the sentences below in the right order. (Topic: Animal Hospital Process)',
+        content: {
+            sentences: [
+                "When you arrive, go straight to the main office to collect your ticket",
+                "You will need to show this to a member of staff at the door before you enter",
+                "Inside the building, you will find a photography exhibition on the ground floor",
+                "Before you look at the pictures, a guide will tell you about the day's event",
+                "These activities will include playing and feeding the animals"
+            ],
+            answer: [
+                "When you arrive, go straight to the main office to collect your ticket",
+                "You will need to show this to a member of staff at the door before you enter",
+                "Inside the building, you will find a photography exhibition on the ground floor",
+                "Before you look at the pictures, a guide will tell you about the day's event",
+                "These activities will include playing and feeding the animals"
+            ]
+        }
+    },
+    {
+        part: 4,
+        type: 'opinion-matching',
+        title: 'Question 4 of 5',
+        instruction: 'Four people respond in the comments section of an online magazine article about the above topic. Read the texts and then answer the questions.',
+        content: {
+            topic: 'The Art',
+            opinions: [
+                { person: 'A', text: 'I know a little about famous painters and their works. But I don\'t like going to art exhibitions unless my friend invites me. I like extracurricular activities more, painting exhibitions seem too quiet to me. I like to draw, and I have been drawing ever since I can remember. My forte in drawing is animals, especially big and ferocious animals.' },
+                { person: 'B', text: 'I find going to see paintings similar to reading books. You must look and read before discussing. When I go to exhibitions with my friends, they often talk before seeing the painting, and what they talk about isn\'t even about the painting, that\'s annoy me.' },
+                { person: 'C', text: 'I find polite art very fascinating. I often go to talks about arts and I have gone to many foreign art exhibitions and artists\' houses. It\'s great to see their works and where they worked.' },
+                { person: 'D', text: 'My parents often took me to see art exhibitions when I was a child, and I think that habit remains. Currently, I often take my children to the exhibition, which is a lovely activity for me. I often ask my children to do other activities while looking at pictures, for example, think of a story for that picture, so they don\'t get bored.' }
+            ],
+            questions: [
+                'Who has been going to art exhibitions all their life?',
+                'Who thinks seeing exhibitions is a boring activity?',
+                'Who has a good knowledge of art?',
+                'Who has some artistic skills?',
+                'Who thinks visitors should focus on the art?',
+                'Who prefers seeing exhibitions by themselves?',
+                'Who prefers going to art exhibitions with other people?',
+            ],
+            answer: ['D', 'A', 'C', 'A', 'B', 'B', 'D']
+        }
+    },
+    {
+        part: 5,
+        type: 'heading-matching',
+        title: 'Question 5 of 5',
+        instruction: 'Read the text below. Match the headings to the paragraphs.',
+        content: {
+            topic: 'The Music',
+            headings: [
+                'A. Physically demanding', 'B. A good way to boost memory', 'C. A great opportunity to broaden your social circle',
+                'D. Routines', 'E. Creative outlet', "F. Enhancing other people's feelings",
+                'G. A great sense of well-being'
+            ],
+            paragraphs: [
+                "Research indicates that children who play an instrument experience various positive effects. They become more engaged in school, leading to improved academic performance, especially in comprehension and math. Learning to play music also enhances their fine and gross motor skills and coordination. It can positively impact mental health and well-being and help with memory and social interactions. Moreover, playing an instrument fosters a sense of accomplishment, boosts confidence, and allows for self-expression in children. These benefits make learning music a wonderful experience for your child.",
+                "Learning and playing music has been linked to enhanced memory function. Memorizing sheet music, chords, and melodies exercises the brain, improving memory and cognitive abilities. The process of learning new pieces and practicing them regularly helps strengthen neural connections, leading to improved memory retention and recall in other areas of life as well.",
+                "Playing an instrument isn't only good for your brain, it's also a fantastic opportunity to connect with other like-minded individuals. Joining a band, orchestra, or music group allows musicians to collaborate, share experiences, and develop friendships. Music also has a universal language, making it easier to communicate and connect with people from diverse backgrounds and cultures.",
+                "Unless you're an out-of-this-world child prodigy, learning to play an instrument isn't a skill you can master overnight. Learning music takes time and effort, and helps children understand that if they want to be good at something, they'll need to put in the hours and organize their time effectively.This disciplined approach fosters a strong work ethic, patience, and perseverance that can be applied to other areas of life.",
+                "Music serves as a channel for individuals to express themselves and communicate in special ways. When kids learn to play an instrument, they can explore their inner world and share thoughts uniquely, even when they struggle to do so verbally. Additionally, playing music can be a form of stress relief. The act of playing an instrument requires concentration and focus, which can help children relax and unwind. It can also provide a healthy way to channel their emotions and thoughts.",
+                "Being a musician in a five-minute song requires physical and mental involvement, but emotional connection is even more crucial. It's not just about the music's mood but also our own feelings. Music develops focus, which helps in life. Research shows that music education improves emotional intelligence, understanding our emotions and others'. Musicians learn to listen and cooperate with others, being attentive and adaptable. This fosters better appreciation of others' emotions and viewpoints.",
+                "Playing a musical instrument has been shown to help mental health by reducing stress, anxiety, and depression. It requires all of your attention, allowing you an escape from day-to-day stresses and creating a feeling of mindfulness and calm. Music releases dopamine, the feel-good chemical in the brain, so playing an instrument makes people happy! Factor in the sense of achievement you'll feel when you learn a new note or master a piece, and you'll never have felt better."
+            ],
+            answer: ['A', 'B', 'C', 'D', 'E', 'F', 'G']
+        }
+    }
 ]
 
 };

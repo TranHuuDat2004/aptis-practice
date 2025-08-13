@@ -839,12 +839,12 @@ const readingData = {
             type: 'Bịa (Ghi nhớ)',
             // Thứ tự các tiêu đề đúng
             fragments: [
-                'A finance visible solution',
+                'A finance visible solution / A sensible financial choice',
                 'The price of convenience may be high',
                 'The importance of planning in advance',
                 'The impact of lack of freedom',
                 'The benefits of living with less',
-                'The challenges that come with a new perspective',
+                'The challenges that come with a new perspective / The advantages of having your own space',
                 'A competitive business'
             ],
             // Key được suy ra từ câu chuyện mới
