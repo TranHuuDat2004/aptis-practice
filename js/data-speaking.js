@@ -1212,7 +1212,7 @@ const speakingData = {
             title: 'Chủ đề 22: Learning Environments',
             image1Src: 'img/speaking-part3/learning-outdoor.png',
             image2Src: 'img/speaking-part3/learning-classroom.png',
-            audioSrc: 'audio/speaking-part3/22.mp3',
+            audioSrc: 'audio/speaking-part3/22.wav',
             tasks: [
                 {
                     question: "Tell me what you see in the two pictures.",
@@ -1238,7 +1238,7 @@ const speakingData = {
             title: 'Chủ đề 23: Eating Together',
             image1Src: 'img/speaking-part3/eating-restaurant-friends.png',
             image2Src: 'img/speaking-part3/eating-picnic.png',
-            audioSrc: 'audio/speaking-part3/23.mp3',
+            audioSrc: 'audio/speaking-part3/23.wav',
             tasks: [
                 {
                     question: "Tell me what you see in the two pictures.",
@@ -1262,7 +1262,7 @@ const speakingData = {
             title: 'Chủ đề 24: Keeping Pets',
             image1Src: 'img/speaking-part3/pets-cat.png',
             image2Src: 'img/speaking-part3/pets-snake.png',
-            audioSrc: 'audio/speaking-part3/24.mp3',
+            audioSrc: 'audio/speaking-part3/24.wav',
             tasks: [
                 {
                     question: "Tell me what you see in the two pictures.",
@@ -1282,7 +1282,7 @@ const speakingData = {
             title: 'Chủ đề 25: Weather and Locations',
             image1Src: 'img/speaking-part3/weather-winter.png',
             image2Src: 'img/speaking-part3/weather-summer.png',
-            audioSrc: 'audio/speaking-part3/25.mp3',
+            audioSrc: 'audio/speaking-part3/25.wav',
             tasks: [
                 {
                     question: "Tell me what you see in the two pictures.",
@@ -1306,7 +1306,7 @@ const speakingData = {
             title: 'Chủ đề 26: Places to live',
             image1Src: 'img/speaking-part3/housing-apartment-building.png',
             image2Src: 'img/speaking-part3/housing-bungalow.png',
-            audioSrc: 'audio/speaking-part3/26.mp3',
+            audioSrc: 'audio/speaking-part3/26.wav',
             tasks: [
                 {
                     question: "Tell me what you see in the two pictures.",
@@ -1330,7 +1330,7 @@ const speakingData = {
             title: 'Chủ đề 27: Reading Methods',
             image1Src: 'img/speaking-part3/reading-library-shelf.png',
             image2Src: 'img/speaking-part3/reading-laptop.png',
-            audioSrc: 'audio/speaking-part3/27.mp3',
+            audioSrc: 'audio/speaking-part3/27.wav',
             tasks: [
                 {
                     question: "Tell me what you see in the two pictures.",
@@ -1351,11 +1351,11 @@ const speakingData = {
         },
 
         {
-            id: 'sp2_children_playing',
+            id: 'sp3_children_playing',
             title: 'Chủ đề 28: Children Playing',
             image1Src: 'img/speaking-part3/children-tablet.png',
             image2Src: 'img/speaking-part3/children-running.png',
-            audioSrc: 'audio/speaking-part2/28.m4a',
+            audioSrc: 'audio/speaking-part3/28.wav',
             tags: ['hot', 'low-quality-img'], // Đây là chủ đề "hot" nhưng ảnh mờ
             tasks: [
                 {
@@ -1382,7 +1382,7 @@ const speakingData = {
             title: 'Chủ đề 29: Gardening',
             image1Src: 'img/speaking-part3/gardening-adults.png',
             image2Src: 'img/speaking-part3/gardening-children.png',
-            audioSrc: 'audio/speaking-part3/29.mp3',
+            audioSrc: 'audio/speaking-part3/29.wav',
             tags: ['hot', 'low-quality-img'],
             tasks: [
                 {
@@ -1407,7 +1407,7 @@ const speakingData = {
             title: 'Chủ đề 30: Presentations',
             image1Src: 'img/speaking-part3/presentation-large.png',
             image2Src: 'img/speaking-part3/presentation-small.png',
-            audioSrc: 'audio/speaking-part3/30.mp3',
+            audioSrc: 'audio/speaking-part3/30.wav',
             tags: ['hot', 'low-quality-img'],
             tasks: [
                 {
@@ -1434,7 +1434,7 @@ const speakingData = {
             title: 'Chủ đề 31: Ways of eating',
             image1Src: 'img/speaking-part3/eating-ready-meal.png',
             image2Src: 'img/speaking-part3/eating-cooking.png',
-            audioSrc: 'audio/speaking-part3/31.mp3',
+            audioSrc: 'audio/speaking-part3/31.wav',
             tags: ['hot', 'low-quality-img'],
             tasks: [
                 {
@@ -1459,7 +1459,7 @@ const speakingData = {
             title: 'Chủ đề 32: Keeping memories',
             image1Src: 'img/speaking-part3/memories-selfie.png',
             image2Src: 'img/speaking-part3/memories-writing.png',
-            audioSrc: 'audio/speaking-part3/32.mp3',
+            audioSrc: 'audio/speaking-part3/32.wav',
             tags: ['hot', 'low-quality-img'],
             tasks: [
                 {
@@ -1484,7 +1484,7 @@ const speakingData = {
             title: 'Chủ đề 33: Types of jobs',
             image1Src: 'img/speaking-part3/jobs-construction.png',
             image2Src: 'img/speaking-part3/jobs-farmer.png',
-            audioSrc: 'audio/speaking-part3/33.mp3',
+            audioSrc: 'audio/speaking-part3/33.wav',
             tags: ['hot', 'low-quality-img'],
             tasks: [
                 {
@@ -1509,7 +1509,7 @@ const speakingData = {
             title: 'Chủ đề 34: Different sports',
             image1Src: 'img/speaking-part3/sports-wheelchair-basketball.png',
             image2Src: 'img/speaking-part3/sports-tennis.png',
-            audioSrc: 'audio/speaking-part3/34.mp3',
+            audioSrc: 'audio/speaking-part3/34.wav',
             tags: ['hot', 'low-quality-img'],
             tasks: [
                 {
@@ -1536,7 +1536,7 @@ const speakingData = {
             title: 'Chủ đề 35: Field Sports',
             image1Src: 'img/speaking-part3/sports-football.png',
             image2Src: 'img/speaking-part3/sports-high-jump.png',
-            audioSrc: 'audio/speaking-part3/35.mp3',
+            audioSrc: 'audio/speaking-part3/35.wav',
             tags: ['hot', 'low-quality-img'],
             tasks: [
                 { question: "Tell me what you see in the two pictures.", duration: 45, sampleAnswer: "In the first picture on the left, a group of men is playing football in a big stadium. One player in white is running with the ball, while others are trying to stop him. On the contrary, in the second picture, a man is doing high jump. He is in the air, jumping over a high bar. He looks strong and focused. Both sports need energy and practice." },
@@ -1549,7 +1549,7 @@ const speakingData = {
             title: 'Chủ đề 36: Traditional ways of transport',
             image1Src: 'img/speaking-part3/travel-camel.png',
             image2Src: 'img/speaking-part3/travel-horse-carriage.png',
-            audioSrc: 'audio/speaking-part3/36.mp3',
+            audioSrc: 'audio/speaking-part3/36.wav',
             tags: ['hot', 'low-quality-img'],
             tasks: [
                 { question: "Tell me what you see in the two pictures.", duration: 45, sampleAnswer: "Both pictures show traditional ways of transport. In the first picture on the left, there is a man riding a camel in the desert, with the famous pyramids of Egypt in the background. In the second picture, we can see a man driving a horse-drawn carriage in a city. He is wearing formal clothes and a black hat, and the horse looks strong and healthy." },
@@ -1562,7 +1562,7 @@ const speakingData = {
             title: 'Chủ đề 37: Plane vs Train',
             image1Src: 'img/speaking-part3/travel-airport.png',
             image2Src: 'img/speaking-part3/travel-train-station.png',
-            audioSrc: 'audio/speaking-part3/37.mp3',
+            audioSrc: 'audio/speaking-part3/37.wav',
             tags: ['hot', 'low-quality-img'],
             tasks: [
                 { question: "Tell me what you see in the two pictures.", duration: 45, sampleAnswer: "In the first picture on the left, a man is standing inside an airport, looking out the window at an airplane taking off. On the contrary, the second picture shows a man standing on a train platform, looking at an approaching train. The sunset with its golden light creates a warm and peaceful atmosphere." },
@@ -1575,7 +1575,7 @@ const speakingData = {
             title: 'Chủ đề 38: Ways to enjoy music',
             image1Src: 'img/speaking-part3/music-piano.png',
             image2Src: 'img/speaking-part3/music-concert-small.png',
-            audioSrc: 'audio/speaking-part3/38.mp3',
+            audioSrc: 'audio/speaking-part3/38.wav',
             tags: ['hot', 'low-quality-img'],
             tasks: [
                 { question: "Tell me what you see in the two pictures.", duration: 45, sampleAnswer: "These two pictures show different ways people enjoy music. In the first picture on the left, a family is in a cozy room. The mother and daughter are playing the piano together, while the father is playing guitar. In contrast, the second picture shows a lively concert. A musician is singing and playing guitar on stage, with a keyboard player in the background." },
@@ -1588,7 +1588,7 @@ const speakingData = {
             title: 'Chủ đề 39: Places to study',
             image1Src: 'img/speaking-part3/study-group.png',
             image2Src: 'img/speaking-part3/study-alone.png',
-            audioSrc: 'audio/speaking-part3/39.mp3',
+            audioSrc: 'audio/speaking-part3/39.wav',
             tags: ['hot', 'low-quality-img'],
             tasks: [
                 { question: "Tell me what you see in the two pictures.", duration: 45, sampleAnswer: "Two pictures show two different places to study. In the first picture, we can see a group of students sitting together in a library. They are smiling and working on a laptop, probably doing a group project. In the second picture, there is a man studying alone in a quiet environment. He is wearing headphones and taking notes, which suggests he is very focused and concentrated." },
@@ -1604,7 +1604,7 @@ const speakingData = {
         {
             id: 'sp4_saving_up',
             title: 'Chủ đề 1: Saving up to buy something',
-            audioSrc: 'audio/speaking-part4/1.mp3',
+            audioSrc: 'audio/speaking-part4/1.wav',
             tasks: [
                 {
                     question: "Tell me about a time you saved up something to buy something for yourself.",
@@ -1623,7 +1623,7 @@ const speakingData = {
         {
             id: 'sp4_buying_expensive',
             title: 'Chủ đề 2: Buying something expensive',
-            audioSrc: 'audio/speaking-part4/2.mp3',
+            audioSrc: 'audio/speaking-part4/2.wav',
             tasks: [
                 {
                     question: "Tell me about a time you bought something expensive.",
@@ -1643,7 +1643,7 @@ const speakingData = {
         {
             id: 'sp4_stop_doing_something',
             title: 'Chủ đề 3: Told to stop doing something',
-            audioSrc: 'audio/speaking-part4/3.mp3',
+            audioSrc: 'audio/speaking-part4/3.wav',
             tasks: [
                 {
                     question: "Tell me about a time when somebody told you to stop doing something.",
@@ -1662,7 +1662,7 @@ const speakingData = {
         {
             id: 'sp4_important_choice',
             title: 'Chủ đề 4: Making an important choice',
-            audioSrc: 'audio/speaking-part4/4.mp3',
+            audioSrc: 'audio/speaking-part4/4.wav',
             tasks: [
                 {
                     question: "Tell me about a time you had to make an important choice.",
@@ -1681,7 +1681,7 @@ const speakingData = {
         {
             id: 'sp4_new_course',
             title: 'Chủ đề 5: Starting a new course',
-            audioSrc: 'audio/speaking-part4/5.mp3',
+            audioSrc: 'audio/speaking-part4/5.wav',
             tasks: [
                 {
                     question: "Tell me about a time when you started a new course or learned something new.",
@@ -1701,7 +1701,7 @@ const speakingData = {
         {
             id: 'sp4_long_journey',
             title: 'Chủ đề 6: A long journey',
-            audioSrc: 'audio/speaking-part4/6.mp3',
+            audioSrc: 'audio/speaking-part4/6.wav',
             tasks: [
                 {
                     question: "Tell me about a time you went on a long journey/ you traveled to somewhere new.",
@@ -1720,7 +1720,7 @@ const speakingData = {
         {
             id: 'sp4_internet_usage',
             title: 'Chủ đề 7: Using the Internet',
-            audioSrc: 'audio/speaking-part4/7.mp3',
+            audioSrc: 'audio/speaking-part4/7.wav',
             tasks: [
                 {
                     question: "What are different ways you use Internet?",
@@ -1739,7 +1739,7 @@ const speakingData = {
         {
             id: 'sp4_reading_a_good_book',
             title: 'Chủ đề 8: Reading a good book',
-            audioSrc: 'audio/speaking-part4/8.mp3',
+            audioSrc: 'audio/speaking-part4/8.wav',
             tasks: [
                 {
                     question: "Tell me about a time you read a good book.",
@@ -1759,7 +1759,7 @@ const speakingData = {
         {
             id: 'sp4_extreme_sport',
             title: 'Chủ đề 9: An extreme sport',
-            audioSrc: 'audio/speaking-part4/9.mp3',
+            audioSrc: 'audio/speaking-part4/9.wav',
             tasks: [
                 {
                     question: "Tell me about a time you did or saw someone do an extreme sport.",
@@ -1778,7 +1778,7 @@ const speakingData = {
         {
             id: 'sp4_work_of_art',
             title: 'Chủ đề 10: A work of art',
-            audioSrc: 'audio/speaking-part4/10.mp3',
+            audioSrc: 'audio/speaking-part4/10.wav',
             tasks: [
                 {
                     question: "Tell me about a time you saw a work of art.",
@@ -1797,7 +1797,7 @@ const speakingData = {
         {
             id: 'sp4_amusement_park',
             title: 'Chủ đề 11: Amusement park',
-            audioSrc: 'audio/speaking-part4/11.mp3',
+            audioSrc: 'audio/speaking-part4/11.wav',
             tasks: [
                 {
                     question: "Tell me about the last time you went to the amusement park.",
@@ -1816,7 +1816,7 @@ const speakingData = {
         {
             id: 'sp4_different_generations',
             title: 'Chủ đề 12: Different generations',
-            audioSrc: 'audio/speaking-part4/12.mp3',
+            audioSrc: 'audio/speaking-part4/12.wav',
             tasks: [
                 {
                     question: "Tell about a time you were with someone older or younger than you.",
@@ -1835,7 +1835,7 @@ const speakingData = {
         {
             id: 'sp4_visiting_someone',
             title: 'Chủ đề 13: Visiting someone',
-            audioSrc: 'audio/speaking-part4/13.mp3',
+            audioSrc: 'audio/speaking-part4/13.wav',
             tasks: [
                 {
                     question: "Describe a time when you visited someone.",
@@ -1855,7 +1855,7 @@ const speakingData = {
         {
             id: 'sp4_surrounded_by_nature',
             title: 'Chủ đề 14: Surrounded by nature',
-            audioSrc: 'audio/speaking-part4/14.mp3',
+            audioSrc: 'audio/speaking-part4/14.wav',
             tasks: [
                 {
                     question: "Tell me about a time you spent surrounded by nature.",
@@ -1874,7 +1874,7 @@ const speakingData = {
         {
             id: 'sp4_sports_game',
             title: 'Chủ đề 15: A sports game',
-            audioSrc: 'audio/speaking-part4/15.mp3',
+            audioSrc: 'audio/speaking-part4/15.wav',
             tasks: [
                 {
                     question: "Tell me a sports game you went to watched or watched on TV?",
@@ -1893,7 +1893,7 @@ const speakingData = {
         {
             id: 'sp4_old_building',
             title: 'Chủ đề 16: An old building',
-            audioSrc: 'audio/speaking-part4/16.mp3',
+            audioSrc: 'audio/speaking-part4/16.wav',
             tasks: [
                 {
                     question: "Tell me about a time when you visited an old building.",
@@ -1912,7 +1912,7 @@ const speakingData = {
         {
             id: 'sp4_getting_lost',
             title: 'Chủ đề 17: Getting lost',
-            audioSrc: 'audio/speaking-part4/17.mp3',
+            audioSrc: 'audio/speaking-part4/17.wav',
             tasks: [
                 {
                     question: "Tell me about a time when you got lost.",
