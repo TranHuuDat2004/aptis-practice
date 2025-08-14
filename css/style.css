@@ -21,7 +21,7 @@ body {
 }
 
 .container {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
 }
@@ -1668,6 +1668,22 @@ table td:first-child {
     margin: 0;
 }
 
+.speaking-part2-image-container {
+    width: 80%;
+    max-width: 300px; /* Giới hạn chiều rộng tối đa của ảnh */
+    margin: 0 auto 25px auto; /* Căn giữa ảnh và tạo khoảng cách dưới */
+}
+
+.speaking-part2-image {
+    width: 100%; /* Ảnh sẽ luôn vừa với container của nó */
+    height: auto; /* Giữ đúng tỷ lệ ảnh */
+    max-height: 300px; /* Giới hạn chiều cao tối đa của ảnh */
+    object-fit: contain; /* Đảm bảo toàn bộ ảnh hiển thị, không bị cắt xén */
+    border-radius: var(--card-radius);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: block; /* Bỏ khoảng trống thừa dưới ảnh */
+}
+
 /* css/style.css */
 
 /* --- STYLES FOR LISTENING PART 1 --- */
@@ -2974,6 +2990,33 @@ body.u-nav-open {
     border: 1px solid var(--border-color);
 }
 
+/* --- STYLES FOR SPEAKING PART 3 (ĐÃ SỬA LỖI KÍCH THƯỚC ẢNH) --- */
+.speaking-part3-card {
+    display: none;
+}
+
+.speaking-part3-card.active {
+    display: block;
+}
+
+.part3-images-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Luôn chia làm 2 cột bằng nhau */
+    gap: 20px; /* Khoảng cách giữa 2 ảnh */
+    align-items: center; /* Căn các ảnh theo chiều dọc nếu chiều cao khác nhau */
+    max-width: 900px; /* Giới hạn chiều rộng tối đa của cả khu vực 2 ảnh */
+    margin: 0 auto 25px auto; /* Căn giữa khu vực ảnh và tạo khoảng cách dưới */
+}
+
+.part3-images-container img {
+    width: 100%; /* Ảnh sẽ luôn vừa với cột của nó */
+    height: auto; /* Giữ đúng tỷ lệ ảnh */
+    max-height: 350px; /* Giới hạn chiều cao tối đa của MỖI ảnh */
+    object-fit: contain; /* Đảm bảo toàn bộ ảnh hiển thị, không bị cắt xén */
+    border-radius: var(--card-radius);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+}
 /* css/style.css */
 
 /* --- STYLES FOR SPEAKING PART 4 --- */
@@ -3705,9 +3748,11 @@ footer {
 
 /* Style cho các câu đã viết đúng */
 .text-comparison.correct-text {
-    background-color: #e2fdef; /* Nền xanh lá nhạt */
+    background-color: #e2fdef;
+    /* Nền xanh lá nhạt */
     border-left: 3px solid #34a853;
 }
+
 .text-comparison.correct-text p {
     color: #0d652d;
 }
@@ -3716,6 +3761,7 @@ footer {
     background-color: #e2fdef;
     border-left-color: #34a853;
 }
+
 .feedback.correct strong {
     color: #0d652d;
 }
