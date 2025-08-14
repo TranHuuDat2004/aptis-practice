@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listening - Part 1</title>
+    <title>Listening - Part 4 (Q16-17)</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/quiz.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,49 +13,37 @@
     <link rel="icon" href="img/favicon.png" type="image/x-icon">
 </head>
 
-
 <body>
     <header id="header-placeholder"></header>
     <div class="content-pusher">
         <div class="container">
             <div class="page-intro">
-                <h1>Listening - Part 1</h1>
-                <p>Nghe đoạn hội thoại ngắn và chọn câu trả lời đúng.</p>
+                <h1>Listening - Part 4 (Câu 16-17)</h1>
+                <p>Nghe một đoạn độc thoại dài hơn và trả lời 2 câu hỏi về nó.</p>
             </div>
-            <!-- <div class="explanation-box">
-                <h3>💡 Phương pháp học Part 1</h3>
-                <p>Dạng bài này kiểm tra khả năng nghe hiểu thông tin chi tiết trong các đoạn hội thoại ngắn. Hãy tập
-                    trung vào các từ khóa trong câu hỏi (ví dụ: "what time", "where", "who") để xác định thông tin cần
-                    nghe.</p>
-            </div> -->
-
-            <!-- === HỘP GIẢI THÍCH ĐÃ ĐƯỢC CẬP NHẬT LẠI NỘI DUNG === -->
             <div class="explanation-box">
                 <h3>💡 Phương pháp kiểm tra trí nhớ</h3>
                 <p>
                     Đây là trang kiểm tra nhanh trí nhớ của bạn. Mục tiêu là <b>vận dụng</b> những gì bạn đã học được từ
-                    2 trang "List Key" và "Cheatsheet" để trả lời các câu hỏi.
+                    trang "List Key" để trả lời các câu hỏi.
                 </p>
                 <p>
-                    Nếu bạn chưa ôn tập, hãy mở 2 trang này để ôn nhé!
+                    Nếu bạn chưa ôn tập, hãy mở trang này để ôn nhé!
                 </p>
 
                 <div class="resource-links">
-                    <a href="listening_part1.html" target="_blank" class="action-btn">Học từ trang List Key</a>
-                    <a href="listening_cheatsheet.html" target="_blank" class="action-btn">Học từ trang Cheatsheet</a>
+                    <a href="listening_part1617.html" target="_blank" class="action-btn">Học từ trang List Key</a>
                 </div>
 
                 <h4>Các bước thực hiện:</h4>
                 <ol>
-                    <li><strong>Ôn tập thật kỹ:</strong> Dành thời gian học thuộc các đáp án và mẹo ghi nhớ từ 2 trang
-                        tài liệu ở trên.</li>
+                    <li><strong>Ôn tập thật kỹ:</strong> Dành thời gian học thuộc các đáp án và ghi nhớ từ in đậm.</li>
                     <li><strong>Kiểm tra trí nhớ:</strong> Quay lại trang này và trả lời tất cả các câu hỏi dựa trên
                         những gì bạn nhớ được.</li>
                     <li><strong>Xem kết quả:</strong> Sau khi hoàn thành, nhấn nút "Kiểm tra đáp án" ở cuối trang để xem
                         bạn đã nhớ đúng bao nhiêu câu.</li>
                 </ol>
             </div>
-
             <main id="quiz-container">
                 <!-- Nội dung câu hỏi trắc nghiệm sẽ được JS chèn vào đây -->
             </main>
@@ -70,7 +58,7 @@
         <footer id="footer-placeholder"></footer>
     </div>
 
-    <script src="js/data-listening-test.js"></script>
+    <script src="js/data-listening-part4.js"></script>
     <script src="js/main.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
@@ -79,10 +67,11 @@
             const checkAnswersBtn = document.getElementById('check-answers-btn');
             const resultMessage = document.getElementById('result-message');
 
-            const questions = listeningData.part1;
+            const questions = listeningPart4Data.part4;
             const questionsPerPage = 10;
             let currentPage = 1;
 
+            // === HÀM RENDER ĐÃ ĐƯỢC CẬP NHẬT LOGIC ĐÁNH SỐ ===
             function renderPage(page) {
                 quizContainer.innerHTML = '';
                 currentPage = page;
@@ -90,14 +79,26 @@
                 const end = start + questionsPerPage;
                 const questionsToRender = questions.slice(start, end);
 
+                let topicCounter = Math.floor(start / 2) + 1;
+                let subQuestionCounter = 1;
+
                 questionsToRender.forEach((q, index) => {
                     const questionIndex = start + index;
+
+                    // Logic đánh số mới
+                    if (index > 0 && q.topicId !== questionsToRender[index - 1].topicId) {
+                        topicCounter++;
+                        subQuestionCounter = 1;
+                    }
+                    const questionNumber = `${topicCounter}.${subQuestionCounter}`;
+                    subQuestionCounter++;
+
                     const questionElement = document.createElement('div');
                     questionElement.className = 'quiz-card listening-question';
                     questionElement.dataset.questionIndex = questionIndex;
 
                     let optionsHTML = '';
-                    q.options.forEach((option, i) => {
+                    q.options.forEach((option) => {
                         optionsHTML += `
                             <label class="radio-label">
                                 <input type="radio" name="question-${questionIndex}" value="${option}">
@@ -106,10 +107,8 @@
                         `;
                     });
 
-                    // === PHẦN ĐÃ CẬP NHẬT: Thêm thẻ <audio> vào đây ===
                     questionElement.innerHTML = `
-                        <p class="question-title">${questionIndex + 1}. ${q.question}</p>
-                        <audio class="audio-player" controls src="${q.audioSrc}"></audio>
+                        <p class="question-title">${questionNumber}. ${q.question}</p>
                         <div class="options-container">
                             ${optionsHTML}
                         </div>
