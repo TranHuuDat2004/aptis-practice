@@ -2,7 +2,13 @@
 # Aptis Practice Tool - Công cụ Luyện thi Aptis Story-based
 
 <p align="center">
-  <img src="screenshot/index.png" alt="Aptis" />
+ <img src="https://img.shields.io/github/v/release/TranHuuDat2004/aptis-practice?style=for-the-badge" alt="Latest Release">
+  <img src="https://img.shields.io/github/last-commit/TranHuuDat2004/aptis-practice?style=for-the-badge" alt="Last Commit">
+  <img src="https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg?style=for-the-badge" alt="License">
+</p>
+
+<p align="center">
+  <img src="screenshot/index.jpg" alt="Aptis" />
 </p>
 
 Đây là một công cụ web được xây dựng để hỗ trợ việc ôn thi Aptis ESOL, đặc biệt là theo phương pháp học "key" và "câu chuyện gợi nhớ" của Thầy Thái Aptis. Dự án này được phát triển từ nhu cầu cá nhân nhằm hệ thống hóa tài liệu và tạo ra một môi trường luyện tập tương tác, hiệu quả.
@@ -69,6 +75,20 @@ Công cụ này được chia thành các module tương ứng với các kỹ n
 2.  **Chạy trên máy tính (Offline):**
     - Clone repository này về máy: `git clone https://github.com/TranHuuDat2004/aptis-practice.git`
     - Mở file `index.html` trong trình duyệt của bạn.
+
+---
+
+## 📝 Giấy phép
+
+Dự án này được cấp phép theo [Giấy phép Quốc tế Creative Commons Ghi công-Phi thương mại 4.0](https://creativecommons.org/licenses/by-nc/4.0/).
+Bạn được tự do Chia sẻ và Phỏng theo tài liệu, theo các điều khoản Ghi công và Phi thương mại.
+[![Giấy phép: CC BY-NC 4.0](https://licensebuttons.net/l/by-nc/4.0/88x31.png)](https://creativecommons.org/licenses/by-nc/4.0/)
+
+---
+
+## 🤝 Đóng Góp
+
+Dự án này được xây dựng cho mục đích học tập và rất hoan nghênh các ý kiến đóng góp để hoàn thiện hơn. Nếu bạn có ý tưởng hoặc phát hiện lỗi, vui lòng tạo một "Issue" trên repository này.
 
 ---
 
