@@ -661,7 +661,7 @@ const speakingData = {
                 }
             ]
         },
-                {
+        {
             id: 'sp2_shopping2',
             title: 'Chủ đề 13: Shopping',
             imageSrc: 'img/speaking-part2/shopping2.png', // Bạn hãy đổi tên file ảnh cho phù hợp
@@ -683,11 +683,173 @@ const speakingData = {
                     sampleAnswer: "People like shopping online for many reasons. Firstly, it is convenient. You can shop anytime and anywhere you want. You don't have to worry about traffic, parking, or crowds. Secondly, it is cheaper. You can compare prices and find discounts easily, without spending money on gas or parking. Finally, online stores offer a wider variety of products, so you can find exactly what you need."
                 }
             ]
+        },
+        {
+            id: 'sp2_visit_new_place',
+            title: 'Chủ đề 14: Visiting a new place',
+            imageSrc: 'img/speaking-part2/visit-new-place.png', // Hãy lưu ảnh màu với tên này
+            audioSrc: 'audio/speaking-part2/14.wav',
+            tasks: [
+                {
+                    question: "Describe the picture.",
+                    duration: 45,
+                    sampleAnswer: "This picture shows a mother carrying her young child on her shoulders. They are outdoors in a beautiful natural setting, with a large forest and tall mountains in the background. The child is pointing at something in the distance, and the mother is smiling. It looks like they are hiking or exploring a new place together."
+                },
+                {
+                    question: "When was the last time you visited a new place?",
+                    duration: 45,
+                    sampleAnswer: "The last time I visited a new place was last summer. I went to a small town near the coast with my family. We rented a cozy cabin and enjoyed the fresh air and the beautiful scenery. We also did some fun activities like hiking, kayaking, and fishing. It was a relaxing and memorable trip. I learned a lot about the local culture and history. I also made some new friends there. I hope to go back someday and explore more of that area."
+                },
+                {
+                    question: "Why do people like to go to new places?",
+                    duration: 45,
+                    sampleAnswer: "People like to go to new places for many reasons. One reason is that they want to learn new things. They can discover different cultures, languages, foods, and histories. Another reason is that they want to have fun and relax. They can enjoy beautiful scenery, exciting activities, and friendly people. A third reason is that they want to challenge themselves. They can try new things, overcome difficulties. Going to new places can be rewarding and enriching for people."
+                }
+            ]
+        },
+                {
+            id: 'sp2_watching_news',
+            title: 'Chủ đề 15: Watching the News',
+            imageSrc: 'img/speaking-part2/interview.png', // Hãy lưu ảnh với tên này
+            audioSrc: 'audio/speaking-part2/15.wav',
+            tasks: [
+                {
+                    question: "Describe the picture.",
+                    duration: 45,
+                    sampleAnswer: "This picture shows a man in a suit being interviewed. There is a cameraman filming the interview and a woman, who is likely a reporter, holding a microphone. They seem to be outdoors in a public area. The man being interviewed is smiling, so it might be a positive news story."
+                },
+                {
+                    question: "Do you prefer reading newspapers or watching news?",
+                    duration: 45,
+                    sampleAnswer: "I like watching news more than reading newspapers. I think watching news is faster and easier. I can see and hear what is happening in the world. I can also choose the channel or the website that I want to watch. Sometimes, I watch news with my family or friends and we can talk about it. Reading newspapers is boring and slow for me. I have to buy the paper or go online and read a lot of words. Sometimes, the newspapers are not updated or accurate. I don't enjoy reading newspapers as much as watching news."
+                },
+                {
+                    question: "Why do people need to watch the news?",
+                    duration: 45,
+                    sampleAnswer: "People need to watch the news for some reasons. Firstly, watching the news helps people to learn about the world. They can see what is happening in other countries and cultures. Secondly, watching the news also helps people to develop thinking skills. They can compare different sources and perspectives on the same topic. Finally, watching the news also helps people to be responsible citizens. They can know about the actions and decisions of their leaders and governments."
+                }
+            ]
+        },
+
+                {
+            id: 'sp2_animals',
+            title: 'Chủ đề 16: Animals',
+            imageSrc: 'img/speaking-part2/animals-horse-riding.png', // Hãy lưu ảnh màu với tên này
+            audioSrc: 'audio/speaking-part2/16.wav',
+            tasks: [
+                {
+                    question: "Describe the picture.",
+                    duration: 45,
+                    sampleAnswer: "In this picture, I can see a woman and a small child riding a horse together. The woman is sitting behind the child, holding her securely. They are on a beautiful brown horse inside a fenced area, which looks like a riding school or a farm. In the background, there are many trees. It seems like a peaceful and enjoyable activity for them."
+                },
+                {
+                    question: "Tell me about an animal that you like.",
+                    duration: 45,
+                    sampleAnswer: "I like a dog very much. My father gave me a dog on my birthday when I was six years old. His name is Spot and he is black and white. He likes to play with me and sleep on my bed. He is very smart and friendly. He can do some tricks, like sit, roll over and fetch. He also barks when someone comes to the door and protects me from strangers. He is my best friend and I love him a lot."
+                },
+                {
+                    question: "How important are animals in our lives?",
+                    duration: 45,
+                    sampleAnswer: "Animals are very important in our lives for many reasons. First, they provide companionship and emotional support, especially pets like dogs and cats. Second, animals play a big role in the environment, controlling pests and maintaining balance in nature. Third, some animals are essential for farming, providing food and, clothing, and medicine. Overall, animals are an essential part of life and our health."
+                }
+            ]
+        },
+                {
+            id: 'sp2_travel_group',
+            title: 'Chủ đề 17: Travelling in a group',
+            imageSrc: 'img/speaking-part2/travel-group.png', // Hãy lưu ảnh màu với tên này
+            audioSrc: 'audio/speaking-part2/17.wav',
+            tasks: [
+                {
+                    question: "Describe this picture.",
+                    duration: 45,
+                    sampleAnswer: "This picture shows several young people traveling on a school bus. In the foreground, a girl is wearing headphones and listening to music. Next to her, another girl is looking at her tablet. The students seem calm and are enjoying their journey. It looks like a typical scene of students going to or from school."
+                },
+                {
+                    question: "When was the last time you traveled in a group?",
+                    duration: 45,
+                    sampleAnswer: "The last time I traveled in a group was when I went to Vung Tau with my friends. We planned the trip together and were really excited to spend time at the beach. We swam in the sea, took lots of photos, and tried some delicious seafood. In the evenings, we walked by the coast and talked about funny stories. We also visited some famous places and took more pictures. It was a trip full of fun and laughter, and traveling with friends made it even better. I'll always remember it."
+                },
+                {
+                    question: "What is the good thing about traveling in a group?",
+                    duration: 45,
+                    sampleAnswer: "Traveling in a group has many advantages. First, it's more fun because you get to share experiences and create memories with others. Second, it can be safer because you can help each other if any problems come up. Third, group travel is often more affordable because you can share the costs, like transportation and accommodation. Overall, traveling in a group is a great way to bond and enjoy new experiences together."
+                }
+            ]
+        },
+                {
+            id: 'sp2_art_exhibition',
+            title: 'Chủ đề 18: Art Exhibitions',
+            imageSrc: 'img/speaking-part2/art-exhibition.png', // Hãy lưu ảnh màu với tên này
+            audioSrc: 'audio/speaking-part2/18.wav',
+            tasks: [
+                {
+                    question: "Describe this picture.",
+                    duration: 45,
+                    sampleAnswer: "This picture shows a group of young people at an art gallery or a museum. They are standing and looking at several paintings hanging on a white wall. The atmosphere seems calm and everyone looks interested in the artwork. It looks like a school trip or a casual visit with friends."
+                },
+                {
+                    question: "Tell about the last time you went to an art museum.",
+                    duration: 45,
+                    sampleAnswer: "The last time I went to an art museum was about a month ago. I went with some friends to see an exhibition of modern art. There were many different types of artwork, like paintings and sculptures. One painting that I really liked had bright colors and was very interesting. We spent a few hours looking at the art and talking about it. It was a fun and relaxing visit, and I really enjoyed seeing the creativity of the artists."
+                },
+                {
+                    question: "What are the benefits of viewing artwork/ Why do people like to go to art exhibitions?",
+                    duration: 45,
+                    sampleAnswer: "There are several benefits to viewing artwork. First, it can be relaxing and help reduce stress by allowing people to focus on something beautiful and creative. Second, it helps people learn about different cultures, ideas, and perspectives, making them more open-minded. Third, viewing art can inspire creativity and spark new ideas. People also enjoy going to art exhibitions because it's a fun way to spend time with others, explore new styles of art, and appreciate the talent of artists."
+                }
+            ]
+        },
+                {
+            id: 'sp2_giving_flowers',
+            title: 'Chủ đề 19: Giving Flowers',
+            imageSrc: 'img/speaking-part2/giving-flowers.png', // Hãy lưu ảnh với tên này
+            audioSrc: 'audio/speaking-part2/19.wav',
+            tasks: [
+                {
+                    question: "Describe the picture.",
+                    duration: 45,
+                    sampleAnswer: "In this picture, a young boy is giving a bouquet of pink roses to a woman, who is likely his mother. He is hiding the flowers behind his back to surprise her. The mother looks very surprised and happy. They seem to be in a kitchen, and the atmosphere is very warm and loving."
+                },
+                {
+                    question: "Tell me about a time when you gave or received some flowers.",
+                    duration: 45,
+                    sampleAnswer: "I remember giving my friend flowers when she had a baby last year. I went to a local flower shop and chose a beautiful bouquet with pink flowers because she had a baby girl. She was very happy and surprised. It felt good to give her something special to celebrate such a happy occasion."
+                },
+                {
+                    question: "On what occasions in your country do people give flowers?",
+                    duration: 45,
+                    sampleAnswer: "In Vietnam, people give flowers on many different occasions. For example, they are very common for birthdays, graduations, and weddings. People also give flowers to congratulate someone on a new baby or a new home. Besides happy events, flowers are also used to say sorry, to show love on Valentine's Day, or to express sympathy."
+                }
+            ]
+        },
+                {
+            id: 'sp2_watching_tv',
+            title: 'Chủ đề 20: Watching TV',
+            imageSrc: 'img/speaking-part2/watching-tv.png', // Hãy lưu ảnh với tên này
+            audioSrc: 'audio/speaking-part2/20.wav',
+            tasks: [
+                {
+                    question: "Describe the picture.",
+                    duration: 45,
+                    sampleAnswer: "In this picture, I can see a hand holding a remote control and pointing it at a smart TV. The TV screen is showing a menu with many applications and movie options, like Netflix and YouTube. The person is about to choose a program to watch. The setting seems to be a living room, and it looks like a relaxing, everyday activity."
+                },
+                {
+                    question: "How often do you watch films or programs at home? Why?",
+                    duration: 45,
+                    sampleAnswer: "I’m keen on watching TV; it's one of my favorite activities. I often watch films at home in my spare time, especially on weekend evenings with my family. We enjoy watching comedies or action movies together. Watching TV not only helps me relax after a hard-working day but also makes me happy and expands my knowledge. I find it very interesting."
+                },
+                {
+                    question: "Which is better for learning, watching video or reading? Why?",
+                    duration: 45,
+                    sampleAnswer: "Personally, I prefer watching videos to reading books for learning. The visuals and graphics in videos attract me and help me understand difficult topics better. Furthermore, watching a video often takes less time than reading a book with the same content. It feels more relaxing and can also expand my horizons. However, I think combining both methods is the best way to learn."
+                }
+            ]
         }
         // Thêm các chủ đề Part 2 khác vào đây với cấu trúc tương tự
     ],
 
-     // --- THÊM MỚI DỮ LIỆU PART 3 ---
+    // --- THÊM MỚI DỮ LIỆU PART 3 ---
     part3: [
         {
             id: 'sp3_shopping_places',
@@ -788,7 +950,7 @@ const speakingData = {
             ]
         },
 
-         // --- 2 CHỦ ĐỀ MỚI ---
+        // --- 2 CHỦ ĐỀ MỚI ---
         {
             id: 'sp3_different_games',
             title: 'Chủ đề 5: Different types of games',
@@ -837,7 +999,7 @@ const speakingData = {
                 }
             ]
         },
-         // --- 2 CHỦ ĐỀ MỚI ---
+        // --- 2 CHỦ ĐỀ MỚI ---
         {
             id: 'sp3_places_to_eat',
             title: 'Chủ đề 7: Places to eat',
@@ -1133,7 +1295,7 @@ const speakingData = {
                 }
             ]
         },
-         // --- 2 CHỦ ĐỀ MỚI ---
+        // --- 2 CHỦ ĐỀ MỚI ---
         {
             id: 'sp3_kinds_of_travel',
             title: 'Chủ đề 19: Kinds of Travel',
@@ -1530,7 +1692,7 @@ const speakingData = {
             ]
         },
 
-         // --- 5 CHỦ ĐỀ MỚI ---
+        // --- 5 CHỦ ĐỀ MỚI ---
         {
             id: 'sp3_field_sports',
             title: 'Chủ đề 35: Field Sports',
@@ -1599,7 +1761,7 @@ const speakingData = {
 
         // Thêm 38 chủ đề Part 3 khác vào đây
     ],
-     // --- THÊM MỚI DỮ LIỆU PART 4 ---
+    // --- THÊM MỚI DỮ LIỆU PART 4 ---
     part4: [
         {
             id: 'sp4_saving_up',
