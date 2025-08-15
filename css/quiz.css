@@ -139,3 +139,55 @@
         margin-bottom: 10px;
         line-height: 1.6;
     }
+
+    /* === CSS CHO TRANG READING PART 1 QUIZ === */
+
+    .part1-topic-title {
+        text-align: center;
+        margin-bottom: 25px;
+        font-size: 1.5em;
+        color: var(--primary-blue);
+    }
+
+    .part1-question-item {
+        padding: 20px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        margin-bottom: 15px;
+        transition: all 0.2s ease-in-out;
+    }
+
+    .part1-question-item.correct {
+        border-left: 5px solid #28a745;
+        background-color: #e6ffed;
+    }
+
+    .part1-question-item.incorrect {
+        border-left: 5px solid #dc3545;
+        background-color: #ffe6e6;
+    }
+
+    .part1-question-item .question-text {
+        font-weight: 500;
+        font-size: 1.1em;
+        margin-bottom: 15px;
+    }
+
+    .part1-question-item .options-container {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .part1-question-item .feedback-answer {
+        margin-top: 15px;
+        font-weight: 500;
+    }
+
+    .part1-question-item.correct .feedback-answer {
+        color: #28a745;
+    }
+
+    .part1-question-item.incorrect .feedback-answer {
+        color: #dc3545;
+    }

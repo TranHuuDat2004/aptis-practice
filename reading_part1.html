@@ -1,78 +1,151 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reading - Part 1</title>
+    <title>Reading - Part 1 Quiz</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/quiz.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
 </head>
+
 <body>
     <header id="header-placeholder"></header>
-
     <div class="content-pusher">
         <div class="container">
             <div class="page-intro">
-                <h1>Reading - Part 1</h1>
-                <p>Học thuộc các "Key" đáp án</p>
+                <h1>Reading - Part 1 Quiz</h1>
+                <p>Chọn từ đúng để điền vào chỗ trống trong mỗi câu.</p>
             </div>
-
             <div class="explanation-box">
-                <h3>💡 Phương pháp học Part 1</h3>
-                <p>Mỗi thẻ dưới đây là một bộ 5 đáp án đúng cho một bài đọc. Mục tiêu của bạn là học thuộc lòng chuỗi 5 từ này bằng cách sử dụng câu chuyện gợi nhớ đi kèm.</p>
+                <h3>💡 Phương pháp làm bài</h3>
+                <p>Mỗi bộ 5 câu hỏi sẽ điền 5 từ cho sẵn. Hãy đọc kỹ ngữ cảnh của từng câu để chọn ra đáp án phù hợp
+                    nhất. Chú ý đến loại từ (danh từ, động từ, tính từ) và ý nghĩa của câu.</p>
             </div>
-
-            <main id="key-container" class="key-grid">
-                <!-- Các Flashcard học key sẽ được chèn vào đây -->
+            <main id="quiz-container">
+                <!-- Nội dung các bộ câu hỏi sẽ được JS chèn vào đây -->
             </main>
+            <div class="pagination-controls" id="pagination-controls">
+                <!-- Nút phân trang sẽ được JS chèn vào đây -->
+            </div>
+            <div class="card-actions" style="justify-content: center; margin-top: 20px;">
+                <button class="action-btn check-answer-btn" id="check-answers-btn">Kiểm tra đáp án</button>
+            </div>
+            <div id="result-message" class="feedback-message" style="text-align: center; margin-top: 20px;"></div>
         </div>
         <footer id="footer-placeholder"></footer>
     </div>
-    
+
+    <script src="js/data-reading-part1.js"></script> <!-- SỬ DỤNG FILE DATA MỚI -->
     <script src="js/main.js"></script>
-    <script src="js/data-reading.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-            const keyContainer = document.getElementById('key-container');
-            const questions = readingData.part1;
+            const quizContainer = document.getElementById('quiz-container');
+            const paginationControls = document.getElementById('pagination-controls');
+            const checkAnswersBtn = document.getElementById('check-answers-btn');
+            const resultMessage = document.getElementById('result-message');
 
-            if (!questions || questions.length === 0) {
-                keyContainer.innerHTML = `<p class="error">Không có dữ liệu cho Part 1.</p>`;
-                return;
-            }
+            const topics = readingPart1Data; // Lấy dữ liệu từ file mới
+            const topicsPerPage = 1; // Mỗi trang hiển thị 1 bộ 5 câu
+            let currentPage = 1;
 
-            questions.forEach((item, index) => {
-                const card = document.createElement('div');
-                card.className = 'key-card';
+            function renderPage(page) {
+                quizContainer.innerHTML = '';
+                currentPage = page;
+                const topicIndex = page - 1;
+                const topic = topics[topicIndex];
 
-                let keyItems = '';
-                item.keys.forEach((key, i) => {
-                    keyItems += `<li><span class="key-number">${i + 1}</span>${key}</li>`;
+                if (!topic) return;
+
+                const quizCard = document.createElement('div');
+                quizCard.className = 'quiz-card part1-quiz';
+                quizCard.dataset.topicIndex = topicIndex;
+
+                let questionsHTML = '';
+                topic.questions.forEach((q, qIndex) => {
+                    let optionsHTML = '';
+                    q.options.forEach(option => {
+                        optionsHTML += `
+                            <label class="radio-label">
+                                <input type="radio" name="topic-${topicIndex}-q-${qIndex}" value="${option}">
+                                <span>${option}</span>
+                            </label>
+                        `;
+                    });
+
+                    questionsHTML += `
+                        <div class="part1-question-item" data-question-index="${qIndex}">
+                            <p class="question-text">${q.text.replace('___', '<strong>___</strong>')}</p>
+                            <div class="options-container">${optionsHTML}</div>
+                            <div class="feedback-answer" style="display: none;"></div>
+                        </div>
+                    `;
                 });
 
-                card.innerHTML = `
-                    <h3>${item.title}</h3>
-                    <ul class="key-list">${keyItems}</ul>
-                    <button class="show-story-btn">Xem câu chuyện gợi nhớ</button>
-                    <div class="story-section" style="display: none;">
-                        <p>${item.story}</p>
-                    </div>
+                quizCard.innerHTML = `
+                    <h2 class="part1-topic-title">${topic.title}</h2>
+                    ${questionsHTML}
                 `;
-                keyContainer.appendChild(card);
+                quizContainer.appendChild(quizCard);
+                renderPagination();
+                resultMessage.textContent = '';
+            }
+
+            function renderPagination() {
+                paginationControls.innerHTML = '';
+                const pageCount = topics.length;
+                for (let i = 1; i <= pageCount; i++) {
+                    const button = document.createElement('button');
+                    button.textContent = i;
+                    button.className = (i === currentPage) ? 'active' : '';
+                    button.addEventListener('click', () => renderPage(i));
+                    paginationControls.appendChild(button);
+                }
+            }
+
+            checkAnswersBtn.addEventListener('click', function () {
+                const currentCard = quizContainer.querySelector('.part1-quiz');
+                if (!currentCard) return;
+
+                const topicIndex = parseInt(currentCard.dataset.topicIndex);
+                const topicData = topics[topicIndex];
+                const questionItems = currentCard.querySelectorAll('.part1-question-item');
+                let correctCount = 0;
+
+                questionItems.forEach(item => {
+                    const qIndex = parseInt(item.dataset.questionIndex);
+                    const questionData = topicData.questions[qIndex];
+                    const selectedRadio = item.querySelector(`input[name="topic-${topicIndex}-q-${qIndex}"]:checked`);
+                    const feedbackDiv = item.querySelector('.feedback-answer');
+
+                    item.classList.remove('correct', 'incorrect');
+                    feedbackDiv.style.display = 'block';
+
+                    if (selectedRadio) {
+                        if (selectedRadio.value === questionData.answer) {
+                            item.classList.add('correct');
+                            feedbackDiv.textContent = 'Chính xác!';
+                            correctCount++;
+                        } else {
+                            item.classList.add('incorrect');
+                            feedbackDiv.innerHTML = `Sai rồi! Đáp án đúng là: <strong>${questionData.answer}</strong>`;
+                        }
+                    } else {
+                        item.classList.add('incorrect');
+                        feedbackDiv.innerHTML = `Bạn chưa chọn đáp án. Đáp án đúng là: <strong>${questionData.answer}</strong>`;
+                    }
+                });
+
+                resultMessage.innerHTML = `Bạn đã trả lời đúng <strong>${correctCount}/${questionItems.length}</strong> câu.`;
             });
 
-            keyContainer.addEventListener('click', function(e) {
-                if (e.target.classList.contains('show-story-btn')) {
-                    const storySection = e.target.nextElementSibling;
-                    const isVisible = storySection.style.display === 'block';
-                    storySection.style.display = isVisible ? 'none' : 'block';
-                    e.target.textContent = isVisible ? 'Xem câu chuyện gợi nhớ' : 'Ẩn câu chuyện';
-                }
-            });
+            renderPage(1);
         });
     </script>
 </body>
+
 </html>
