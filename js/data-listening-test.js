@@ -1040,6 +1040,81 @@ const listeningData = {
             options: ["Friday", "Thursday", "Tuesday"],
             answer: "Friday",
             audioSrc: "audio/part1/q170.mp3"
+        }        , // <-- Đảm bảo có dấu phẩy ở cuối câu hỏi trước đó
+        // === CÁC CÂU HỎI BỔ SUNG ĐỂ HOÀN THIỆN CHEATSHEET ===
+        {
+            question: "A man is buying a new computer. What color is the light on the front?",
+            options: ["Red", "Green", "Blue"],
+            answer: "Blue",
+            audioSrc: "audio/part1/q171.mp3"
+        },
+        {
+            question: "Two friends are arranging to meet. Where is the supermarket located?",
+            options: ["The South", "The East", "The North"],
+            answer: "The North",
+            audioSrc: "audio/part1/q172.mp3"
+        },
+        {
+            question: "A student is talking about his assignment. How many pages are the instructions?",
+            options: ["5 pages", "4 pages", "6 pages"],
+            answer: "4 pages",
+            audioSrc: "audio/part1/q173.mp3"
+        },
+        {
+            question: "How long does the student's essay need to be?",
+            options: ["10 pages", "20 pages", "15 pages"],
+            answer: "15 pages",
+            audioSrc: "audio/part1/q174.mp3"
+        },
+        {
+            question: "A woman is calling her friend. How late will she be?",
+            options: ["Five minutes", "Ten minutes", "Fifteen minutes"],
+            answer: "Ten minutes",
+            audioSrc: "audio/part1/q175.mp3"
+        },
+        {
+            question: "How long is the train journey?",
+            options: ["30 minutes", "50 minutes", "40 minutes"],
+            answer: "40 minutes",
+            audioSrc: "audio/part1/q176.mp3"
+        }        , // <-- Đảm bảo có dấu phẩy ở cuối câu hỏi trước đó
+        // === CÁC CÂU HỎI BỔ SUNG VỀ SỐ LƯỢNG LỚN ===
+        {
+            question: "A tour guide is talking about a historic city. How old is the city?",
+            options: ["1000 years", "1500 years", "2000 years"],
+            answer: "1500 years",
+            audioSrc: "audio/part1/q177.mp3"
+        },
+        {
+            question: "A speaker is describing a town. How many people live in the town?",
+            options: ["5,000", "15,000", "10,000"],
+            answer: "10,000",
+            audioSrc: "audio/part1/q178.mp3"
+        },
+        {
+            question: "A man is reading news about a housing development plan. How many new houses are going to be built?",
+            options: ["2500", "2000", "1500"],
+            answer: "2000",
+            audioSrc: "audio/part1/q179.mp3"
+        },
+        {
+            question: "The director is talking about sales of his company. How many copies of the magazine were sold?",
+            options: ["Over 200,000 copies", "Over 400,000 copies", "Over 300,000 copies"],
+            answer: "Over 300,000 copies",
+            audioSrc: "audio/part1/q180.mp3"
+        }        , // <-- Đảm bảo có dấu phẩy ở cuối câu hỏi trước đó
+        // === CÁC CÂU HỎI BỔ SUNG ĐỂ LÀM RÕ CHEATSHEET ===
+        {
+            question: "A man is thirsty after playing sports. What does he want to drink?",
+            options: ["Water", "Coffee", "Milk"],
+            answer: "Water",
+            audioSrc: "audio/part1/q181.mp3"
+        },
+        {
+            question: "A man is ordering at a cafe on a hot day. What does he want?",
+            options: ["Hot chocolate", "Iced tea", "Orange juice"],
+            answer: "Iced tea",
+            audioSrc: "audio/part1/q182.mp3"
         }
     ]
 };
