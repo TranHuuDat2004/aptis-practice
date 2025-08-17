@@ -906,8 +906,10 @@ const readingData = {
                 'Why we...'                  // 7
             ],
             key: '1-2-3-4-5-6-7',
-            story: 'Câu chuyện bịa: "Ai cũng biết <strong>sự hài hước rất phổ biến (1)</strong>. Nhưng <strong>mục đích của nó là gì (2)</strong>? Đó là cách<strong> nó giúp chúng ta (3)</strong> vui vẻ hạnh phúc. Vì vậy, hãy <strong>chăm sóc (4)</strong> nó. Dù có <strong>sự khác biệt (5)</strong> về <strong>thứ chúng ta tìm kiếm  (6)</strong> niềm vui, đó là <strong> lý do (why) chúng ta (7)</strong> nên hài hước."'
-        },        {
+            // === CÂU CHUYỆN MỚI CỦA BẠN - NGẮN GỌN VÀ DỄ NHỚ HƠN ===
+            story: 'Câu chuyện bịa: "<strong>Sự hài hước rất phổ biến (1)</strong>, <strong>mục đích (2)</strong> là <strong>giúp chúng ta (3)</strong> biết cách <strong>chăm sóc (4)</strong> bản thân. Nó tạo ra <strong>sự khác biệt (5)</strong> về <strong>thứ mà chúng ta thấy (6)</strong> là hài hước, và đó là <strong>lý do tại sao (7)</strong> nó quan trọng."'
+        },
+               {
             id: 'p5_exploration_v2',
             title: 'Chủ đề: Nước Úc sơ khai (Phiên bản 2)',
             type: 'Bịa (Ghi nhớ)', // Đây là dạng bài logic

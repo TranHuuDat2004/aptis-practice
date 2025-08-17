@@ -88,7 +88,7 @@ const speakingData = {
             prompt: {
                 question: "Tell me about the last time you visited your friends.",
                 duration: 30,
-                sampleAnswer: "The last time I visited my friends was about two weeks ago. We met at a café to catch up, as we hadn’t seen each other in a while. We had a great time talking about our recent experiences, watching a movie, and enjoying some snacks. It was a really fun and relaxing day, and it felt nice to reconnect after such a long time."
+                sampleAnswer: "The last time I visited my friends was about two weeks ago. We met at a café to catch up, as we hadn't seen each other in a while. We had a great time talking about our recent experiences, watching a movie, and enjoying some snacks. It was a really fun and relaxing day, and it felt nice to reconnect after such a long time."
             }
         },
         {
@@ -837,7 +837,7 @@ const speakingData = {
                 {
                     question: "How often do you watch films or programs at home? Why?",
                     duration: 45,
-                    sampleAnswer: "I’m keen on watching TV; it's one of my favorite activities. I often watch films at home in my spare time, especially on weekend evenings with my family. We enjoy watching comedies or action movies together. Watching TV not only helps me relax after a hard-working day but also makes me happy and expands my knowledge. I find it very interesting."
+                    sampleAnswer: "I'm keen on watching TV; it's one of my favorite activities. I often watch films at home in my spare time, especially on weekend evenings with my family. We enjoy watching comedies or action movies together. Watching TV not only helps me relax after a hard-working day but also makes me happy and expands my knowledge. I find it very interesting."
                 },
                 {
                     question: "Which is better for learning, watching video or reading? Why?",
@@ -971,7 +971,7 @@ const speakingData = {
                 {
                     question: "Computer games are bad. What do you think?",
                     duration: 45,
-                    sampleAnswer: "I don’t think computer games are bad. They can be fun and educational. They can also help people relax and socialize. Computer games are not bad if you play them in moderation and balance them with other activities. Some computer games can improve your skills and creativity. They have pros and cons, but they are not bad by themselves."
+                    sampleAnswer: "I don't think computer games are bad. They can be fun and educational. They can also help people relax and socialize. Computer games are not bad if you play them in moderation and balance them with other activities. Some computer games can improve your skills and creativity. They have pros and cons, but they are not bad by themselves."
                 }
             ]
         },
@@ -1010,17 +1010,17 @@ const speakingData = {
                 {
                     question: "Describe the 2 pictures.",
                     duration: 45,
-                    sampleAnswer: "The two pictures show two different places to eat. In the first picture, I can see many people standing in front of street food stalls. They are enjoying the food. In the second picture, there is a woman. She has long hair and is wearing a blue t-shirt. She is using chopsticks and a fork to eat food. I guess she’s happy because she can enjoy food at the restaurant she likes."
+                    sampleAnswer: "The two pictures show two different places to eat. In the first picture, I can see many people standing in front of street food stalls. They are enjoying the food. In the second picture, there is a woman. She has long hair and is wearing a blue t-shirt. She is using chopsticks and a fork to eat food. I guess she's happy because she can enjoy food at the restaurant she likes."
                 },
                 {
                     question: "What are the disadvantages of these two types of eating?",
                     duration: 45,
-                    sampleAnswer: "Eating at street food stalls and eating in the restaurant have some disadvantages. Street food may be cheaper and faster, but it can be unhealthy and unsafe. You don’t know how the food is cooked or stored. Restaurant food may be more expensive and slower, but it can be tasty, clean, and safe. However, restaurant food can also be unhealthy, too salty, or too oily."
+                    sampleAnswer: "Eating at street food stalls and eating in the restaurant have some disadvantages. Street food may be cheaper and faster, but it can be unhealthy and unsafe. You don't know how the food is cooked or stored. Restaurant food may be more expensive and slower, but it can be tasty, clean, and safe. However, restaurant food can also be unhealthy, too salty, or too oily."
                 },
                 {
-                    question: "Why people don’t prefer eating out alone?",
+                    question: "Why people don't prefer eating out alone?",
                     duration: 45,
-                    sampleAnswer: "Some people don’t like to eat out alone because they feel lonely or bored without someone to talk to. They think that other people will judge them for not having company. Eating out alone can also be expensive for some people. They would rather cook at home or order takeout and watch something on their phone or laptop."
+                    sampleAnswer: "Some people don't like to eat out alone because they feel lonely or bored without someone to talk to. They think that other people will judge them for not having company. Eating out alone can also be expensive for some people. They would rather cook at home or order takeout and watch something on their phone or laptop."
                 }
             ]
         },
@@ -1192,7 +1192,7 @@ const speakingData = {
                 {
                     question: "Which do you prefer?",
                     duration: 45,
-                    sampleAnswer: "I prefer to eat at home because it is cheaper, healthier and more comfortable. I can cook whatever I want and enjoy it with my family or friends. I don’t have to worry about the quality of the food, the service or the hygiene of the restaurant. I also save time and money by not having to travel or tip. Eating at home is more relaxing and satisfying for me."
+                    sampleAnswer: "I prefer to eat at home because it is cheaper, healthier and more comfortable. I can cook whatever I want and enjoy it with my family or friends. I don't have to worry about the quality of the food, the service or the hygiene of the restaurant. I also save time and money by not having to travel or tip. Eating at home is more relaxing and satisfying for me."
                 }
             ]
         },
@@ -1473,7 +1473,7 @@ const speakingData = {
                 {
                     question: "Tell me what you see in the two pictures.",
                     duration: 45,
-                    sampleAnswer: "In the first picture I can see a big apartment building with many floors. I think young people like university students live here. It’s in the city. In the second picture I can see a small one floor house. It has big windows and a wooden door. There is grass outside. I think a small family lives here."
+                    sampleAnswer: "In the first picture I can see a big apartment building with many floors. I think young people like university students live here. It's in the city. In the second picture I can see a small one floor house. It has big windows and a wooden door. There is grass outside. I think a small family lives here."
                 },
                 {
                     question: "What would it be like living in these two places?",
@@ -1483,7 +1483,7 @@ const speakingData = {
                 {
                     question: "Which of these two places would it be better for old people to live in? Why?",
                     duration: 45,
-                    sampleAnswer: "I think the second place would be better for old people to live in. In the second place there is no need to go up and down the stairs. It would be more comfortable for the old people to walk around. Also, because it’s a small house it would be easier for cleaning. There is an outside area where they have a picnic and grow flowers."
+                    sampleAnswer: "I think the second place would be better for old people to live in. In the second place there is no need to go up and down the stairs. It would be more comfortable for the old people to walk around. Also, because it's a small house it would be easier for cleaning. There is an outside area where they have a picnic and grow flowers."
                 }
             ]
         },
@@ -1555,7 +1555,7 @@ const speakingData = {
                 {
                     question: "What are the attractions of the two pictures?",
                     duration: 45,
-                    sampleAnswer: "Both pictures are attractive because they show people enjoying gardening. In the first picture, the garden looks calm and peaceful, which helps adults relax and connect with nature. It’s also a nice way to spend time with friends or family. In the second picture, the children are learning new things while having fun. Gardening teaches them to care for plants and be responsible."
+                    sampleAnswer: "Both pictures are attractive because they show people enjoying gardening. In the first picture, the garden looks calm and peaceful, which helps adults relax and connect with nature. It's also a nice way to spend time with friends or family. In the second picture, the children are learning new things while having fun. Gardening teaches them to care for plants and be responsible."
                 },
                 {
                     question: "What is the appeal of growing plants and doing gardening?",
@@ -1702,8 +1702,8 @@ const speakingData = {
             tags: ['hot', 'low-quality-img'],
             tasks: [
                 { question: "Tell me what you see in the two pictures.", duration: 45, sampleAnswer: "In the first picture on the left, a group of men is playing football in a big stadium. One player in white is running with the ball, while others are trying to stop him. On the contrary, in the second picture, a man is doing high jump. He is in the air, jumping over a high bar. He looks strong and focused. Both sports need energy and practice." },
-                { question: "What are the attractions of these sports?", duration: 45, sampleAnswer: "Football is exciting because it’s a fast-paced team sport that helps players improve teamwork, skills, and fitness. High jump is attractive because it challenges athletes to jump as high as possible, testing their strength, speed, and technique. It’s a great way to improve physical ability and set personal goals." },
-                { question: "Which key factors can influence the popularity of sports?", duration: 45, sampleAnswer: "Some important things make sports popular. First, if a sport is easy to play and doesn’t cost much, more people will try it. Second, sports that are on TV and social media get more attention. Third, culture is important - people like sports that are popular in their country. Finally, sports that are fun and exciting to watch usually have more fans." }
+                { question: "What are the attractions of these sports?", duration: 45, sampleAnswer: "Football is exciting because it's a fast-paced team sport that helps players improve teamwork, skills, and fitness. High jump is attractive because it challenges athletes to jump as high as possible, testing their strength, speed, and technique. It's a great way to improve physical ability and set personal goals." },
+                { question: "Which key factors can influence the popularity of sports?", duration: 45, sampleAnswer: "Some important things make sports popular. First, if a sport is easy to play and doesn't cost much, more people will try it. Second, sports that are on TV and social media get more attention. Third, culture is important - people like sports that are popular in their country. Finally, sports that are fun and exciting to watch usually have more fans." }
             ]
         },
         {

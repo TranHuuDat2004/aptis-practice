@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writing - Typing Practice</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/typing.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+</head>
+
+<body>
+    <header id="header-placeholder"></header>
+    <div class="content-pusher">
+        <div class="container">
+            <div class="page-intro">
+                <h1>Writing - Luyện Gõ & Ghi Nhớ Cấu Trúc</h1>
+                <p>Cải thiện tốc độ gõ phím và độ chính xác từ vựng cho các cấu trúc câu quan trọng.</p>
+            </div>
+            <div class="explanation-box">
+                <h3>💡 Phương pháp luyện tập</h3>
+                <p>Chọn một nhóm câu (ví dụ: Mở bài Thân mật), câu mẫu sẽ tự động hiện ra. Nhiệm vụ của bạn là gõ lại
+                    chính xác câu đó vào ô bên dưới. Luyện tập thường xuyên sẽ giúp bạn ghi nhớ cấu trúc và gõ nhanh hơn
+                    trong phòng thi.</p>
+            </div>
+
+            <main id="typing-practice-container" class="quiz-card">
+                <div class="typing-filters">
+                    <label for="category-select">Chọn nhóm câu để luyện tập:</label>
+                    <select id="category-select">
+                        <option value="all">Tất cả các câu</option>
+
+                        <optgroup label="Email Thân mật (Informal)">
+                            <option value="informal_greeting">Mở bài</option>
+                            <option value="informal_context">Nêu vấn đề & Cảm xúc</option>
+                            <option value="informal_suggestion">Gợi ý</option>
+                            <option value="informal_closing">Kết bài</option>
+                        </optgroup>
+
+                        <optgroup label="Email Trang trọng (Formal)">
+                            <option value="formal_opening">Mở bài</option>
+                            <option value="formal_context">Nêu vấn đề</option>
+                            <option value="formal_suggestion">Thân bài (Gợi ý)</option>
+                            <option value="formal_closing">Kết bài</option>
+                        </optgroup>
+
+                        <optgroup label="Part 1">
+                            <option value="part1_answers_short_responses">Câu trả lời mẫu</option>
+                        </optgroup>
+                    </select>
+                </div>
+
+                <div class="prompt-to-type" id="prompt-to-type">
+                    Chọn một nhóm câu để bắt đầu luyện tập...
+                </div>
+                <textarea id="typing-input" placeholder="Gõ lại câu mẫu vào đây..." rows="3" disabled></textarea>
+                <div id="typing-feedback"></div>
+                <div class="card-actions" style="justify-content: center; margin-top: 20px;">
+                    <button id="next-sentence-btn" class="action-btn">Câu tiếp theo</button>
+                </div>
+            </main>
+        </div>
+        <footer id="footer-placeholder"></footer>
+    </div>
+
+    <script src="js/data-writing-typing.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/writing-typing-logic.js"></script>
+</body>
+
+</html>
