@@ -907,7 +907,25 @@ const readingData = {
             ],
             key: '1-2-3-4-5-6-7',
             story: 'Câu chuyện bịa: "Ai cũng biết <strong>sự hài hước rất phổ biến (1)</strong>. Nhưng <strong>mục đích của nó là gì (2)</strong>? Đó là cách<strong> nó giúp chúng ta (3)</strong> vui vẻ hạnh phúc. Vì vậy, hãy <strong>chăm sóc (4)</strong> nó. Dù có <strong>sự khác biệt (5)</strong> về <strong>thứ chúng ta tìm kiếm  (6)</strong> niềm vui, đó là <strong> lý do (why) chúng ta (7)</strong> nên hài hước."'
-        }
+        },        {
+            id: 'p5_exploration_v2',
+            title: 'Chủ đề: Nước Úc sơ khai (Phiên bản 2)',
+            type: 'Bịa (Ghi nhớ)', // Đây là dạng bài logic
+            // Các tiêu đề mới bạn đã cung cấp
+            fragments: [
+                'An alternative history of settlement',      // 1
+                'Natural barrier to resettlement',           // 2
+                'Technology helps uncover the ocean’s secret',// 3
+                'A Journey made by stages',                  // 4
+                'A new evidence that leads to speculation',  // 5
+                'Lack of knowledge and skills',              // 6
+                'Determination of the explorers through the ages' // 7
+            ],
+            // Thứ tự key đúng dựa trên logic và ghi chú của bạn
+            key: '1-2-3-4-5-6-7',
+            // Câu chuyện được bịa lại để khớp với các tiêu đề mới
+             story: 'Câu chuyện bịa: "Mình khám phá nước Úc sơ khai để tìm hiểu về <strong>lịch sử (1)</strong>, tuy nhiên gặp phải <strong>rào cản thiên nhiên (2)</strong> và không có <strong>công nghệ (3)</strong>. Do đó, <strong>chuyến đi này (4)</strong> không tìm được <strong> bằng chứng mới (5)</strong>, vì <strong>thiếu kiến thức kĩ năng (6)</strong>, nhưng vẫn <strong>quyết tâm (7)</strong> hoàn thành công việc."'
+        },
 
 
     ] 
