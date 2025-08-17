@@ -78,6 +78,7 @@
     <script src="js/main.js"></script>
     <script src="js/data-speaking.js"></script>
     <!-- Trong file speaking_part1.html -->
+     <!-- === THAY THẾ TOÀN BỘ SCRIPT CŨ BẰNG SCRIPT MỚI NÀY === -->
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const selectorContainer = document.getElementById('topic-selector-grid');
@@ -89,20 +90,32 @@
                 return;
             }
 
-            // TẠO 37 NÚT VÀ 37 CARD NỘI DUNG
+            // --- GIAI ĐOẠN 1: CHỈ TẠO CÁC NÚT BẤM ---
             topics.forEach((topic, index) => {
-                // Tạo nút chọn
                 const button = document.createElement('button');
                 button.className = 'topic-selector-btn';
                 button.textContent = `Chủ đề ${index + 1}`;
-                button.dataset.target = `#${topic.id}`;
+                button.dataset.index = index; // Lưu trữ chỉ số của chủ đề
                 selectorContainer.appendChild(button);
+            });
 
-                // Tạo card nội dung (như cũ)
+            const allButtons = selectorContainer.querySelectorAll('.topic-selector-btn');
+            let activeTimer = null;
+
+            // --- GIAI ĐOẠN 2: HÀM TẠO CARD "THEO YÊU CẦU" ---
+            function renderTopicCard(index) {
+                // Xóa nội dung cũ trong container
+                contentContainer.innerHTML = '';
+                
+                // Lấy dữ liệu của chủ đề được chọn
+                const topic = topics[index];
+                if (!topic) return;
+
+                // Tạo card nội dung
                 const card = document.createElement('div');
-                card.className = 'quiz-card speaking-card';
-                card.id = topic.id; // Gán ID để nút có thể tìm thấy
+                card.className = 'quiz-card speaking-card active'; // Thêm active để nó hiện ra ngay
                 const prompt = topic.prompt;
+
                 card.innerHTML = `
                     <div class="card-header">
                         <h2>${topic.title}</h2>
@@ -126,41 +139,69 @@
                         </div>
                     </div>
                 `;
+                // Chèn card vừa tạo vào container
                 contentContainer.appendChild(card);
-            });
-
-            const allButtons = selectorContainer.querySelectorAll('.topic-selector-btn');
-            const allCards = contentContainer.querySelectorAll('.speaking-card');
-
-            // HÀM ĐỂ HIỂN THỊ MỘT CHỦ ĐỀ
-            function showTopic(targetId) {
-                allCards.forEach(card => card.classList.remove('active'));
-                allButtons.forEach(btn => btn.classList.remove('active'));
-
-                const targetCard = document.querySelector(targetId);
-                const targetButton = selectorContainer.querySelector(`[data-target='${targetId}']`);
-
-                if (targetCard) targetCard.classList.add('active');
-                if (targetButton) targetButton.classList.add('active');
             }
 
             // GÁN SỰ KIỆN CLICK CHO CÁC NÚT
             selectorContainer.addEventListener('click', function (e) {
                 if (e.target.classList.contains('topic-selector-btn')) {
-                    showTopic(e.target.dataset.target);
+                    // Bỏ active ở tất cả các nút
+                    allButtons.forEach(btn => btn.classList.remove('active'));
+                    // Thêm active cho nút được nhấn
+                    e.target.classList.add('active');
+                    // Lấy index và render card tương ứng
+                    const topicIndex = parseInt(e.target.dataset.index, 10);
+                    renderTopicCard(topicIndex);
                 }
             });
 
             // MẶC ĐỊNH HIỂN THỊ CHỦ ĐỀ ĐẦU TIÊN KHI TẢI TRANG
             if (allButtons.length > 0) {
-                showTopic(allButtons[0].dataset.target);
+                allButtons[0].classList.add('active');
+                renderTopicCard(0);
             }
 
-            // LOGIC CŨ CHO TIMER VÀ NÚT XEM ĐÁP ÁN (hoạt động bên trong card)
-            let activeTimer = null;
+            // LOGIC CHO TIMER VÀ NÚT XEM ĐÁP ÁN (hoạt động bên trong card)
             contentContainer.addEventListener('click', function (e) {
-                if (e.target.classList.contains('start-timer-btn')) { /* ... logic timer giữ nguyên ... */ if (activeTimer) { clearInterval(activeTimer.intervalId); activeTimer.button.textContent = '▶️ Bắt đầu trả lời (Bấm giờ)'; activeTimer.button.disabled = false; activeTimer.timeLeftEl.textContent = activeTimer.button.dataset.duration; if (activeTimer.button === e.target) { activeTimer = null; return } } const button = e.target; const duration = parseInt(button.dataset.duration, 10); const timerDisplay = button.nextElementSibling; const timeLeftEl = timerDisplay.querySelector('.time-left'); let timeLeft = duration; timeLeftEl.textContent = timeLeft; button.textContent = '⏱️ Đang đếm ngược...'; button.disabled = true; const intervalId = setInterval(() => { timeLeft--; timeLeftEl.textContent = timeLeft; if (timeLeft <= 0) { clearInterval(intervalId); button.textContent = 'Hết giờ! Bắt đầu lại'; button.disabled = false; activeTimer = null } }, 1000); activeTimer = { button, intervalId, timeLeftEl }; }
-                if (e.target.classList.contains('show-sample-btn')) { /* ... logic xem đáp án giữ nguyên ... */ const button = e.target; const wrapper = button.closest('.card-actions').nextElementSibling; const isVisible = wrapper.style.display === 'block'; wrapper.style.display = isVisible ? 'none' : 'block'; button.textContent = isVisible ? '📖 Xem câu trả lời mẫu' : '🙈 Ẩn câu trả lời mẫu'; }
+                if (e.target.classList.contains('start-timer-btn')) {
+                    if (activeTimer) {
+                        clearInterval(activeTimer.intervalId);
+                        activeTimer.button.textContent = '▶️ Bắt đầu trả lời (Bấm giờ)';
+                        activeTimer.button.disabled = false;
+                        activeTimer.timeLeftEl.textContent = activeTimer.button.dataset.duration;
+                        if (activeTimer.button === e.target) {
+                            activeTimer = null;
+                            return;
+                        }
+                    }
+                    const button = e.target;
+                    const duration = parseInt(button.dataset.duration, 10);
+                    const timerDisplay = button.nextElementSibling;
+                    const timeLeftEl = timerDisplay.querySelector('.time-left');
+                    let timeLeft = duration;
+                    timeLeftEl.textContent = timeLeft;
+                    button.textContent = '⏱️ Đang đếm ngược...';
+                    button.disabled = true;
+                    const intervalId = setInterval(() => {
+                        timeLeft--;
+                        timeLeftEl.textContent = timeLeft;
+                        if (timeLeft <= 0) {
+                            clearInterval(intervalId);
+                            button.textContent = 'Hết giờ! Bắt đầu lại';
+                            button.disabled = false;
+                            activeTimer = null;
+                        }
+                    }, 1000);
+                    activeTimer = { button, intervalId, timeLeftEl };
+                }
+                if (e.target.classList.contains('show-sample-btn')) {
+                    const button = e.target;
+                    const wrapper = button.closest('.card-actions').nextElementSibling;
+                    const isVisible = wrapper.style.display === 'block';
+                    wrapper.style.display = isVisible ? 'none' : 'block';
+                    button.textContent = isVisible ? '📖 Xem câu trả lời mẫu' : '🙈 Ẩn câu trả lời mẫu';
+                }
             });
         });
     </script>
