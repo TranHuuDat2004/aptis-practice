@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
 </head>
 
 <body>
@@ -18,22 +18,62 @@
     <div class="content-pusher" id="content-pusher"> <!-- THÊM DÒNG NÀY -->
         <div class="container">
 
-                <h1 style="text-align: center;" id="page-title">Reading Practice</h1>
-                <p style="text-align: center;" id="page-description">Luyện tập sắp xếp câu</p>
+            <h1 style="text-align: center;" id="page-title">Reading Practice</h1>
+            <p style="text-align: center;" id="page-description">Luyện tập sắp xếp câu</p>
 
             <!-- HỘP GIẢI THÍCH MỚI -->
+
             <div class="explanation-box">
                 <h3>💡 Giải thích phương pháp học</h3>
-                <p><strong>Câu chuyện Logic (Thật):</strong> Là câu chuyện được xây dựng dựa trên trình tự hợp lý của
-                    bài
-                    đọc gốc trong đề thi. Phương pháp này giúp bạn hiểu và ghi nhớ nội dung một cách logic.</p>
-                <p><strong>Câu chuyện Bịa (Ghi nhớ):</strong> Là một câu chuyện sáng tạo, đôi khi vô lý, không liên quan
-                    đến
-                    bài đọc.
-                    <br>
-                    Mục đích duy nhất là để "mã hóa" thứ tự đáp án (key) khó nhớ thành một câu chuyện độc đáo,
-                    giúp
-                    bạn học thuộc một cách hiệu quả.</p>
+
+                <!-- Phần giải thích Câu chuyện Logic -->
+                <p>
+                    <strong>Câu chuyện Logic (Thật):</strong> Là câu chuyện được xây dựng dựa trên trình tự hợp lý của
+                    các câu trong đề thi thật. Bạn chỉ cần đọc và hiểu để ghi nhớ.
+                </p>
+                <div class="example-container">
+                    <strong>Ví dụ "Câu chuyện Logic" (Chủ đề: Tham quan triển lãm):</strong>
+                    <p class="example-explanation">Dưới đây là các câu đã được sắp xếp theo đúng thứ tự logic của một
+                        quy trình:</p>
+                    <ol class="example-list">
+                        <li><b>When you arrive</b>, go straight to the main office to collect your ticket</li>
+                        <li>You will need to <b>show this</b> to a member of staff at the door before you enter</li>
+                        <li><b>Inside</b> the building, you will find a photography exhibition on the ground floor</li>
+                        <li><b>Before</b> you look at the pictures, a guide will tell you about the day's event</li>
+                        <li><b>These activities</b> will include playing and feeding the animals</li>
+                    </ol>
+                </div>
+
+                <!-- Phần giải thích Câu chuyện Bịa -->
+                <p style="margin-top: 25px;">
+                    <strong>Câu chuyện Bịa (Ghi nhớ):</strong> Là một câu chuyện sáng tạo, không liên quan đến bài đọc
+                    gốc. Mục đích là để "mã hóa" thứ tự đáp án (key) khó nhớ.
+                </p>
+                <div class="example-container">
+                    <strong>Ví dụ "Câu chuyện Bịa" (Chủ đề: Tờ rơi ăn chay - Key: 1-2-3-4-5):</strong>
+                    <p class="example-explanation">Hãy xem cách chúng ta tạo ra câu chuyện "bịa" từ những từ đầu tiên
+                        của các câu gốc (lấy từ chủ đề "Mua nhà"):</p>
+                    <p class="example-text">
+                        Câu chuyện bịa: "<strong>Đầu tiên (1)</strong> thấy tờ rơi, <strong>để ăn chay (2)</strong>
+                        <strong>thứ tốt nhất (3)</strong> phải ăn nhiều rau, ngoài ra còn có<strong> yếu tố khác
+                            (4)</strong> <strong>như là (5) </strong>hạt và trái cây"
+                    </p>
+
+                    <!-- === BẢNG ĐÃ ĐƯỢC THAY THẾ BẰNG DANH SÁCH UL/LI === -->
+                    <ul class="example-key-list">
+                        <li><code>(1) The first</code> &larr; "<strong>The first</strong> and most important
+                            thing is to choose the location"</li>
+                        <li><code>(2) In order to</code> &larr; "<strong>In order to</strong> choose the right
+                            place, you need to consider..."</li>
+                        <li><code>(3) The most</code> &larr; "<strong>The most</strong> important of these to
+                            look at is the price..."</li>
+                        <li><code>(4) Other factors</code> &larr; "<strong>Other factors</strong> to look at is
+                            the place of employment..."</li>
+                        <li><code>(5) Such as</code> &larr; "<strong>Such</strong> requirements of course depend
+                            on your personal circumstances"</li>
+
+                    </ul>
+                </div>
             </div>
             <main id="quiz-container">
                 <!-- Các câu hỏi sẽ được tự động chèn vào đây -->
