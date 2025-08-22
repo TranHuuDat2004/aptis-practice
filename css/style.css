@@ -3765,3 +3765,47 @@ footer {
 .feedback.correct strong {
     color: #0d652d;
 }
+
+/* === CSS MỚI CHO SECTION ĐỊA ĐIỂM THI === */
+.location-section {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border: 1px solid var(--border-color);
+}
+
+.location-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* Chia cột, ảnh chiếm phần nhỏ hơn */
+    gap: 25px;
+    align-items: center;
+}
+
+.location-image img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+.location-image .image-caption {
+    font-size: 0.85em;
+    color: #6c757d;
+    text-align: center;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.location-info ul {
+    padding-left: 20px;
+}
+
+.location-info li {
+    margin-bottom: 8px;
+}
+
+/* Responsive cho màn hình nhỏ */
+@media (max-width: 768px) {
+    .location-grid {
+        grid-template-columns: 1fr; /* Chuyển thành 1 cột */
+    }
+}
