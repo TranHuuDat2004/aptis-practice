@@ -1,0 +1,570 @@
+/* css/pages/writing.css */
+
+/* --- STYLES FOR WRITING OVERVIEW PAGE --- */
+
+.writing-overview-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+.writing-part-card {
+    background-color: #fff;
+    border-radius: var(--card-radius);
+    padding: 25px;
+    box-shadow: var(--card-shadow);
+    border-top: 5px solid var(--primary-color);
+    display: flex;
+    flex-direction: column;
+}
+
+.writing-part-card .part-number {
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+
+.writing-part-card h3 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    font-size: 1.5em;
+    color: #34495e;
+}
+
+.writing-part-card p {
+    color: #666;
+    line-height: 1.7;
+    flex-grow: 1;
+    /* Đẩy phần details xuống cuối card */
+}
+
+.part-details {
+    margin-top: 20px;
+    background-color: var(--secondary-color);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.part-details div {
+    margin-bottom: 8px;
+    font-size: 1em;
+}
+
+.part-details div:last-child {
+    margin-bottom: 0;
+}
+
+.part-details strong {
+    color: #333;
+}
+
+/* --- STYLES FOR WRITING PART 1 --- */
+
+.writing-timer-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 15px 20px;
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+    margin-bottom: 25px;
+}
+
+.writing-timer-bar .action-btn {
+    width: auto;
+}
+
+.writing-timer-bar .timer-display {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: var(--primary-hover);
+}
+
+.writing-prompt {
+    margin-bottom: 25px;
+}
+
+.writing-prompt:last-child {
+    margin-bottom: 0;
+}
+
+.writing-prompt label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #34495e;
+}
+
+.writing-prompt textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    font-family: inherit;
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    box-sizing: border-box;
+    resize: vertical;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.writing-prompt textarea:focus {
+    border-color: #80bdff;
+    outline: 0;
+    box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.writing-prompt textarea:disabled {
+    background-color: #e9ecef;
+}
+
+.word-count-container {
+    text-align: right;
+    font-size: 0.9em;
+    color: #6c757d;
+    margin-top: 5px;
+}
+
+.word-count.limit-exceeded {
+    color: #e74c3c;
+    font-weight: bold;
+}
+
+.writing-card {
+    display: none;
+    /* Ẩn tất cả các card theo mặc định */
+}
+
+.writing-card.active {
+    display: block;
+    /* Chỉ hiển thị card đang được chọn */
+}
+
+/* --- STYLES FOR Q&A BANK PAGE --- */
+.qa-bank-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 15px;
+}
+
+.qa-card {
+    background-color: #fff;
+    padding: 15px 20px;
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+    border-left: 4px solid var(--primary-color);
+}
+
+.qa-card .question {
+    margin: 0 0 10px 0;
+    font-size: 1.05em;
+    color: #34495e;
+}
+
+.qa-card .answer {
+    margin: 0;
+    color: #0056b3;
+    font-weight: 500;
+}
+
+/* --- STYLES FOR WRITING PART 4 --- */
+.context-box {
+    background-color: #eef7ff;
+    border-left: 4px solid var(--primary-color);
+    padding: 15px 20px;
+    margin: 20px 0 30px 0;
+    border-radius: 8px;
+}
+
+.context-box h4 {
+    margin-top: 0;
+    color: var(--primary-hover);
+}
+
+.context-box p {
+    margin-bottom: 0;
+}
+
+.writing-task {
+    margin-bottom: 40px;
+}
+
+.writing-task .task-header {
+    margin-bottom: 15px;
+}
+
+.task-header h3 {
+    margin: 0 0 5px 0;
+    color: #34495e;
+}
+
+.task-header .instruction {
+    color: #666;
+    font-style: italic;
+    margin: 0;
+}
+
+.writing-textarea {
+    width: 100%;
+    padding: 12px;
+    font-size: 1em;
+    font-family: inherit;
+    border-radius: 8px;
+    border: 1px solid #ced4da;
+    box-sizing: border-box;
+    resize: vertical;
+}
+
+.writing-task .card-actions,
+.writing-task .sample-answer-wrapper {
+    margin-top: 10px;
+}
+
+/* Dùng <pre> để giữ nguyên định dạng xuống dòng của email mẫu */
+.sample-answer pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    margin: 0;
+    font-family: inherit;
+}
+
+.writing-task .writing-timer-bar {
+    /* Tái sử dụng style timer bar của Part 1 */
+    margin-bottom: 15px;
+    /* Giảm margin so với Part 1 */
+    padding: 10px 15px;
+}
+
+.writing-task .writing-timer-bar .action-btn {
+    font-size: 0.9em;
+}
+
+.writing-task .writing-timer-bar .timer-display {
+    font-size: 1.5em;
+}
+
+.writing-part4-card {
+    display: none;
+}
+
+.writing-part4-card.active {
+    display: block;
+}
+
+/* --- STYLES FOR WRITING PART 3 (CHAT ROOM) --- */
+.chat-window {
+    background-color: #f8f9fa;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 15px;
+    margin-top: 15px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.chat-message {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.chat-user {
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #6c757d;
+    margin-bottom: 4px;
+}
+
+.chat-bubble {
+    padding: 12px 15px;
+    border-radius: 18px;
+    max-width: 80%;
+    line-height: 1.5;
+}
+
+/* Tin nhắn của người khác */
+.chat-message.them {
+    align-items: flex-start;
+}
+
+.chat-message.them .chat-bubble {
+    background-color: #e9ecef;
+    border-top-left-radius: 4px;
+    color: #333;
+}
+
+.chat-message.them .chat-user {
+    align-self: flex-start;
+}
+
+/* Tin nhắn của mình */
+.chat-message.me {
+    align-items: flex-end;
+}
+
+.chat-message.me .chat-input {
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 18px;
+    border: 1px solid #ccc;
+    padding: 12px 15px;
+    font-family: inherit;
+    font-size: 1em;
+}
+
+.chat-message.me .word-count-container {
+    align-self: flex-end;
+}
+
+.chat-room .sample-answer p {
+    margin-bottom: 10px;
+}
+
+/* --- STYLES FOR WRITING ERRORS PAGE --- */
+.error-analysis-card {
+    background-color: #fff;
+    border-radius: var(--card-radius);
+    padding: 25px;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 30px;
+}
+
+.error-analysis-card h2 {
+    margin-top: 0;
+    color: var(--primary-hover);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+}
+
+.email-sample {
+    margin-top: 20px;
+}
+
+.email-sample p {
+    font-weight: bold;
+    color: #333;
+}
+
+.email-sample pre {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 0.95em;
+    line-height: 1.6;
+}
+
+.email-sample del {
+    background-color: #fde0e3;
+    color: #c01c28;
+    text-decoration: none;
+}
+
+.email-sample strong {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.error-list {
+    margin-top: 20px;
+}
+
+.error-item {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.error-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.error-item h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #34495e;
+}
+
+.error-item p {
+    margin: 0;
+    line-height: 1.8;
+}
+
+.error-item em {
+    color: #6c757d;
+    font-size: 0.9em;
+}
+
+/* --- STYLES FOR WRITING ANALYSIS PAGE --- */
+.error-analysis-card {
+    background-color: #fff;
+    border-radius: var(--card-radius);
+    padding: 25px;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 30px;
+}
+
+.error-analysis-card h2 {
+    margin-top: 0;
+    color: var(--primary-hover);
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+}
+
+.email-comparison {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.email-version h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #34495e;
+}
+
+.email-version pre {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    font-size: 0.9em;
+    line-height: 1.6;
+    border: 1px solid #e9ecef;
+}
+
+/* Dùng CSS để tô màu thay vì thẻ HTML */
+.email-version pre strong {
+    background-color: #d4edda;
+    padding: 2px 4px;
+    border-radius: 3px;
+    color: #155724;
+}
+
+.feedback-section {
+    margin-top: 20px;
+}
+
+.feedback-section h4 {
+    margin-bottom: 10px;
+}
+
+.feedback-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.feedback-section li {
+    padding: 10px;
+    border-bottom: 1px dashed #e9ecef;
+}
+
+.feedback-section li:last-child {
+    border-bottom: none;
+}
+
+.feedback-section li strong {
+    display: inline-block;
+    background-color: #e2e3e5;
+    color: #383d41;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    margin-right: 10px;
+}
+
+/* --- QUY TẮC TÔ MÀU MỚI --- */
+/* Tô màu xanh cho phần đúng */
+.email-version pre strong {
+    background-color: #d4edda;
+    padding: 2px 4px;
+    border-radius: 3px;
+    color: #155724;
+    font-weight: normal;
+    /* Trả lại font weight bình thường */
+}
+
+/* Tô màu đỏ cho phần sai */
+.email-version pre del {
+    background-color: #f8d7da;
+    color: #721c24;
+    text-decoration: none;
+    /* Bỏ gạch ngang mặc định */
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+@media (max-width: 768px) {
+    .email-comparison {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* --- STYLES FOR CLUB-SPECIFIC ERROR ANALYSIS --- */
+.text-comparison {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin: 10px 0;
+}
+
+.text-comparison p {
+    margin: 0 0 10px 0;
+}
+
+.text-comparison p:last-child {
+    margin-bottom: 0;
+}
+
+.text-comparison del {
+    background-color: #f8d7da;
+    color: #721c24;
+    text-decoration: none;
+    padding: 1px 3px;
+    border-radius: 3px;
+}
+
+.text-comparison strong {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 1px 3px;
+    border-radius: 3px;
+}
+
+.feedback {
+    background-color: #eef7ff;
+    border-left: 3px solid var(--primary-color);
+    padding: 10px 15px;
+    font-size: 0.95em;
+}
+
+.feedback strong {
+    color: var(--primary-hover);
+}
+
+/* Style cho các câu đã viết đúng */
+.text-comparison.correct-text {
+    background-color: #e2fdef;
+    /* Nền xanh lá nhạt */
+    border-left: 3px solid #34a853;
+}
+
+.text-comparison.correct-text p {
+    color: #0d652d;
+}
+
+.feedback.correct {
+    background-color: #e2fdef;
+    border-left-color: #34a853;
+}
+
+.feedback.correct strong {
+    color: #0d652d;
+}

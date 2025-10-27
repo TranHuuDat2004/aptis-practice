@@ -1,0 +1,67 @@
+/* css/pages/dashboard.css */
+
+/* Dashboard Styles (index.html) */
+.skill-section {
+    margin-bottom: 40px;
+}
+
+.skill-section h2 {
+    font-size: 1.8em;
+    color: #34495e;
+    border-bottom: 2px solid var(--primary-color);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.skill-section h2 .icon {
+    margin-right: 10px;
+}
+
+.part-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.part-card {
+    background: #fff;
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+    padding: 20px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    border-left: 5px solid var(--primary-color);
+}
+
+.part-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.part-card h3 {
+    margin-top: 0;
+    color: var(--primary-hover);
+}
+
+.part-card p {
+    margin-bottom: 0;
+    color: #666;
+}
+
+.part-card.disabled {
+    background-color: #f1f1f1;
+    border-left-color: #ccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.part-card.disabled:hover {
+    transform: none;
+    box-shadow: var(--card-shadow);
+}
+
+.part-card.disabled p {
+    font-weight: bold;
+    color: #999;
+}

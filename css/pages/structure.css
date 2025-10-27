@@ -1,0 +1,83 @@
+/* css/pages/structure.css */
+
+/* --- STYLES FOR EXAM STRUCTURE PAGE --- */
+
+.structure-container .skill-overview-card {
+    background-color: #fff;
+    border-radius: var(--card-radius);
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: var(--card-shadow);
+}
+
+.skill-overview-card h2 {
+    color: var(--primary-hover);
+    margin-top: 0;
+    padding-bottom: 15px;
+    border-bottom: 2px solid var(--primary-color);
+    font-size: 1.8em;
+}
+
+.skill-overview-card p {
+    color: #666;
+    margin-top: 15px;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    /* Giúp bảng cuộn ngang trên màn hình nhỏ */
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95em;
+}
+
+table th,
+table td {
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    text-align: left;
+    vertical-align: top;
+}
+
+table thead th {
+    background-color: var(--secondary-color);
+    font-weight: 700;
+    color: #333;
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #fdfdfd;
+}
+
+table td:first-child {
+    font-weight: bold;
+    text-align: center;
+    width: 5%;
+}
+
+.motivational-quote {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.motivational-quote blockquote {
+    margin: 0;
+    padding: 25px;
+    background-color: #eef7ff;
+    border-left: 5px solid var(--primary-color);
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-style: italic;
+    color: #34495e;
+}
+
+.motivational-quote footer {
+    margin-top: 15px;
+    font-weight: bold;
+    font-style: normal;
+    color: #555;
+}

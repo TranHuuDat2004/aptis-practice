@@ -1,0 +1,249 @@
+/* css/components/misc.css */
+
+/* --- STYLES FOR LOW QUALITY TOPICS --- */
+.low-quality-btn {
+    border-style: dashed;
+}
+
+.low-quality-btn .fa-exclamation-triangle {
+    color: #e67e22;
+}
+
+.image-quality-warning {
+    background-color: #fffbe6;
+    color: #d46b08;
+    padding: 10px 15px;
+    border: 1px solid #ffe58f;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+
+.topic-selector-btn {
+    position: relative;
+    /* Cần thiết để định vị các tag */
+    padding-bottom: 25px;
+    /* Thêm không gian cho tag */
+}
+
+.topic-tags {
+    position: absolute;
+    bottom: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+}
+
+.topic-tags span {
+    font-size: 0.7em;
+    font-weight: bold;
+    padding: 2px 6px;
+    border-radius: 8px;
+    color: white;
+}
+
+.tag-hot {
+    background-color: #e74c3c;
+    /* Màu đỏ */
+}
+
+.tag-warning {
+    background-color: #f39c12;
+    /* Màu vàng */
+}
+
+.non-existent-answers {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    margin: 15px 0;
+}
+
+.non-existent-answers span {
+    background-color: #dc3545;
+    /* Màu đỏ cảnh báo */
+    color: white;
+    padding: 8px 15px;
+    border-radius: 20px;
+    font-weight: bold;
+    text-decoration: line-through;
+    /* Gạch ngang để nhấn mạnh */
+}
+
+/* Thêm vào css/style.css */
+.translation-controls {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px dashed #eee;
+    display: flex;
+    gap: 10px;
+}
+
+.action-btn-small {
+    background-color: #f8f9fa;
+    color: #333;
+    border: 1px solid var(--border-color);
+    padding: 5px 12px;
+    font-size: 0.8em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.translation-content {
+    margin-top: 15px;
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.keywords-list h4 {
+    margin-top: 10px;
+}
+
+/* Sửa lại CSS một chút cho gọn */
+.translation-controls {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px dashed #eee;
+    /* display: flex; và gap: 10px; không còn cần thiết */
+}
+
+.action-btn-small {
+    background-color: #f8f9fa;
+    color: #333;
+    border: 1px solid var(--border-color);
+    padding: 8px 15px;
+    /* Tăng padding một chút */
+    font-size: 0.9em;
+    /* Tăng font size một chút */
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+/* --- STYLES FOR HINTS --- */
+.hints-wrapper {
+    margin-top: 10px;
+    padding: 15px;
+    background-color: #fffbe6;
+    /* Màu vàng nhạt */
+    border-left: 3px solid #ffe58f;
+    border-radius: 5px;
+}
+
+.hints-wrapper h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #856404;
+}
+
+.hints-wrapper ul {
+    list-style-type: '💡';
+    padding-left: 25px;
+    margin: 0;
+}
+
+.hints-wrapper li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+/* --- THÊM VÀO CUỐI PHẦN STYLES FOR HINTS --- */
+.support-wrapper {
+    margin-top: 15px;
+}
+
+.support-wrapper .hints-wrapper {
+    margin-top: 0;
+    margin-bottom: 15px;
+    /* Tạo khoảng cách với đáp án mẫu */
+    border-radius: 8px;
+    /* Bo góc đẹp hơn */
+}
+
+.support-wrapper .sample-answer-wrapper .sample-answer {
+    border-radius: 8px;
+    /* Bo góc đẹp hơn */
+}
+
+/* Đảm bảo nút mới chiếm toàn bộ chiều rộng */
+.writing-task .card-actions .action-btn {
+    flex-grow: 1;
+}
+
+
+
+.action-btn-secondary {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 12px 20px;
+    text-decoration: none;
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.action-btn-secondary:hover {
+    text-decoration: underline;
+}
+
+/* === CSS MỚI CHO SECTION ĐỊA ĐIỂM THI === */
+.location-section {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border: 1px solid var(--border-color);
+}
+
+.location-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    /* Chia cột, ảnh chiếm phần nhỏ hơn */
+    gap: 25px;
+    align-items: center;
+}
+
+.location-image img {
+    width: 100%;
+    border-radius: 6px;
+}
+
+.location-image .image-caption {
+    font-size: 0.85em;
+    color: #6c757d;
+    text-align: center;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+.location-info ul {
+    padding-left: 20px;
+}
+
+.location-info li {
+    margin-bottom: 8px;
+}
+
+/* Responsive cho màn hình nhỏ */
+@media (max-width: 768px) {
+    .location-grid {
+        grid-template-columns: 1fr;
+        /* Chuyển thành 1 cột */
+    }
+
+    .footer-col {
+        text-align: center;
+        /* Căn giữa tất cả văn bản và link bên trong cột */
+        margin-bottom: 25px;
+        /* Thêm khoảng cách giữa các cột khi xếp chồng */
+    }
+
+    .footer-col .footer-links {
+        padding-left: 0;
+        /* Xóa khoảng đệm bên trái mặc định của thẻ ul */
+    }
+}

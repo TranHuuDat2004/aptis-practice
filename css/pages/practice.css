@@ -1,0 +1,131 @@
+/* css/pages/practice.css */
+
+/* Practice Page Styles (reading.html) */
+.back-link {
+    display: inline-block;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.back-link:hover {
+    text-decoration: underline;
+}
+
+.quiz-card {
+    background-color: #ffffff;
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+    padding: 25px;
+    margin-bottom: 25px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.card-header h2 {
+    margin: 0;
+    font-size: 1.4em;
+    color: #34495e;
+}
+
+.tag {
+    font-size: 0.8em;
+    font-weight: 500;
+    padding: 4px 10px;
+    border-radius: 12px;
+    color: #fff;
+}
+
+.tag-logic {
+    background-color: #27ae60;
+}
+
+.tag-bia {
+    background-color: #e67e22;
+}
+
+.instructions {
+    color: #666;
+    font-style: italic;
+    margin-bottom: 20px;
+}
+
+.sentence-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0 0 20px 0;
+}
+
+.sentence-list li {
+    background-color: var(--secondary-color);
+    border: 1px solid var(--border-color);
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.original-number {
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-right: 10px;
+    background-color: #e9ecef;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.show-answer-btn {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1em;
+    font-weight: 500;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.show-answer-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+.answer-section {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #e9f5ff;
+    border-left: 4px solid var(--primary-hover);
+    border-radius: 5px;
+}
+
+.answer-section h4 {
+    margin-top: 0;
+    color: #0056b3;
+}
+
+.answer-section p {
+    margin-bottom: 5px;
+}
+
+.error {
+    text-align: center;
+    color: #e74c3c;
+    font-size: 1.2em;
+    background-color: #fbecec;
+    padding: 20px;
+    border-radius: 5px;
+}

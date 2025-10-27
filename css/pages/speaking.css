@@ -1,0 +1,571 @@
+/* css/pages/speaking.css */
+
+/* --- STYLES FOR SPEAKING PART 1 --- */
+
+.speaking-card .soundcloud-player {
+    margin: 15px 0;
+}
+
+/* Đảm bảo iframe hiển thị đúng */
+.soundcloud-player iframe {
+    border-radius: 8px;
+}
+
+.speaking-questions h4 {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: var(--primary-hover);
+}
+
+.speaking-questions ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.speaking-questions li {
+    background-color: var(--secondary-color);
+    padding: 10px 15px;
+    margin-bottom: 8px;
+    border-radius: 5px;
+    border-left: 3px solid var(--primary-color);
+}
+
+/* --- STYLES FOR SPEAKING PART 1 (FINAL VERSION) --- */
+/* --- STYLES FOR SPEAKING TOPIC SELECTOR --- */
+
+.topic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+}
+
+.topic-selector-btn {
+    padding: 10px 5px;
+    border: 1px solid var(--border-color);
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 0.9em;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.topic-selector-btn:hover {
+    background-color: #e2e6ea;
+    border-color: #adb5bd;
+}
+
+.topic-selector-btn.active {
+    background-color: var(--primary-color);
+    color: #fff;
+    border-color: var(--primary-color);
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* --- LOGIC HIỂN THỊ/ẨN CARD --- */
+
+/* Ẩn tất cả các card bài tập theo mặc định */
+#speaking-container .speaking-card {
+    display: none;
+}
+
+/* Chỉ hiển thị card nào có class 'active' */
+#speaking-container .speaking-card.active {
+    display: block;
+}
+
+.speaking-card .prompt-container {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+}
+
+.prompt-question {
+    background-color: #eef7ff;
+    border-left: 4px solid var(--primary-color);
+    padding: 15px;
+    margin: 0 0 25px 0;
+    font-size: 1.1em;
+    line-height: 1.5;
+    border-radius: 5px;
+}
+
+.speaking-card h4 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: var(--primary-hover);
+    font-size: 1.1em;
+}
+
+.timer-controls {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.timer-controls .action-btn {
+    flex-grow: 1;
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.timer-controls .action-btn:disabled {
+    background-color: #555;
+    cursor: not-allowed;
+}
+
+.timer-display {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+    background-color: #fff;
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: 1px solid var(--border-color);
+    min-width: 80px;
+    text-align: center;
+}
+
+.sample-answer-container {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--border-color);
+}
+
+.audio-player-container {
+    margin-bottom: 15px;
+}
+
+.custom-audio-player {
+    width: 100%;
+}
+
+.sample-answer {
+    padding: 15px;
+    background-color: var(--secondary-color);
+    border-radius: 5px;
+    font-size: 0.95em;
+    line-height: 1.7;
+    color: #333;
+}
+
+.sample-answer p {
+    margin: 0;
+}
+
+.card-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+    /* Giúp nút không bị vỡ layout trên màn hình hẹp */
+}
+
+/* Đảm bảo nút này trông giống các nút khác */
+.show-sample-btn {
+    flex-grow: 1;
+    background-color: #fff;
+    color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.show-sample-btn:hover {
+    background-color: #f8f9fa;
+}
+
+/* --- STYLES FOR SPEAKING IDEAS PAGE --- */
+.idea-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 20px;
+}
+
+.idea-card {
+    background-color: #fff;
+    border-radius: var(--card-radius);
+    padding: 20px;
+    box-shadow: var(--card-shadow);
+    border-left: 4px solid var(--primary-color);
+}
+
+.idea-card h3 {
+    margin-top: 0;
+    font-size: 1.2em;
+    color: var(--primary-hover);
+}
+
+.idea-card ul {
+    padding-left: 20px;
+    margin: 10px 0 0 0;
+    color: #333;
+}
+
+.idea-card li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+/* --- STYLES FOR SPEAKING PART 2 --- */
+
+.speaking-part2-image {
+    width: 100%;
+    border-radius: var(--card-radius);
+    margin-bottom: 25px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.speaking-task-container {
+    padding: 15px 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.tasks-wrapper .speaking-task-container:first-child {
+    border-top: none;
+}
+
+/* --- STYLES FOR METHOD GUIDE --- */
+.method-guide-card {
+    background-color: #fff;
+    border-radius: var(--card-radius);
+    padding: 25px;
+    margin-top: 30px;
+    box-shadow: var(--card-shadow);
+    border-top: 5px solid #27ae60;
+    /* Màu xanh lá để phân biệt */
+}
+
+.method-guide-card h2 {
+    margin-top: 0;
+    text-align: center;
+    color: #2c3e50;
+}
+
+.method-step {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px dashed var(--border-color);
+}
+
+.method-guide-card .method-step:first-of-type {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+}
+
+.method-step h4 {
+    margin: 0 0 10px 0;
+    color: var(--primary-hover);
+}
+
+.method-step ul {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.method-step li {
+    margin-bottom: 8px;
+}
+
+.method-step code {
+    background-color: #e9ecef;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: monospace;
+    color: #c7254e;
+}
+
+/* --- THÊM VÀO PHẦN STYLES FOR METHOD GUIDE --- */
+.method-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+}
+
+.method-guide-card .method-step {
+    border-top: none;
+    padding-top: 0;
+    margin-top: 0;
+    background-color: var(--secondary-color);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+/* --- THÊM VÀO PHẦN SPEAKING PART 2 --- */
+
+/* Logic ẩn/hiện card (giống Part 1) */
+#speaking-container .speaking-part2-card {
+    display: none;
+}
+
+#speaking-container .speaking-part2-card.active {
+    display: block;
+}
+
+/* Style cho phần câu trả lời mẫu trong wrapper */
+.sample-answer-wrapper .sample-answer {
+    padding: 15px;
+    background-color: #e9f5ff;
+    border-left: 3px solid var(--primary-hover);
+    border-radius: 5px;
+    font-size: 0.95em;
+    line-height: 1.6;
+    margin-top: 10px;
+}
+
+.sample-answer-wrapper .sample-answer:first-child {
+    margin-top: 0;
+}
+
+.sample-answer-wrapper p {
+    margin: 0;
+}
+
+.speaking-part2-image-container {
+    width: 80%;
+    max-width: 300px;
+    /* Giới hạn chiều rộng tối đa của ảnh */
+    margin: 0 auto 25px auto;
+    /* Căn giữa ảnh và tạo khoảng cách dưới */
+}
+
+.speaking-part2-image {
+    width: 100%;
+    /* Ảnh sẽ luôn vừa với container của nó */
+    height: auto;
+    /* Giữ đúng tỷ lệ ảnh */
+    max-height: 300px;
+    /* Giới hạn chiều cao tối đa của ảnh */
+    object-fit: contain;
+    /* Đảm bảo toàn bộ ảnh hiển thị, không bị cắt xén */
+    border-radius: var(--card-radius);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: block;
+    /* Bỏ khoảng trống thừa dưới ảnh */
+}
+
+/* --- STYLES FOR SPEAKING PART 3 --- */
+.speaking-part3-card {
+    display: none;
+}
+
+.speaking-part3-card.active {
+    display: block;
+}
+
+.part3-images {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.part3-images img {
+    width: 100%;
+    border-radius: var(--card-radius);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+}
+
+/* --- STYLES FOR SPEAKING PART 3 (ĐÃ SỬA LỖI KÍCH THƯỚC ẢNH) --- */
+.speaking-part3-card {
+    display: none;
+}
+
+.speaking-part3-card.active {
+    display: block;
+}
+
+.part3-images-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Luôn chia làm 2 cột bằng nhau */
+    gap: 20px;
+    /* Khoảng cách giữa 2 ảnh */
+    align-items: center;
+    /* Căn các ảnh theo chiều dọc nếu chiều cao khác nhau */
+    max-width: 900px;
+    /* Giới hạn chiều rộng tối đa của cả khu vực 2 ảnh */
+    margin: 0 auto 25px auto;
+    /* Căn giữa khu vực ảnh và tạo khoảng cách dưới */
+}
+
+.part3-images-container img {
+    width: 100%;
+    /* Ảnh sẽ luôn vừa với cột của nó */
+    height: auto;
+    /* Giữ đúng tỷ lệ ảnh */
+    max-height: 350px;
+    /* Giới hạn chiều cao tối đa của MỖI ảnh */
+    object-fit: contain;
+    /* Đảm bảo toàn bộ ảnh hiển thị, không bị cắt xén */
+    border-radius: var(--card-radius);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+}
+
+/* --- STYLES FOR SPEAKING PART 4 --- */
+.speaking-part4-card {
+    display: none;
+}
+
+.speaking-part4-card.active {
+    display: block;
+}
+
+.part4-questions {
+    background-color: var(--secondary-color);
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+}
+
+.part4-questions h4 {
+    margin: 0 0 10px 0;
+}
+
+.part4-questions ul {
+    padding-left: 20px;
+    margin: 0;
+}
+
+.part4-questions li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+}
+
+.part4-timers {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 25px;
+}
+
+.timer-section {
+    padding: 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    text-align: center;
+}
+
+.timer-section h4 {
+    margin: 0 0 15px 0;
+}
+
+.timer-section .timer-controls {
+    flex-direction: column;
+}
+
+.timer-section .timer-display {
+    margin-top: 10px;
+}
+
+/* --- STYLES FOR SPEAKING TEST SIMULATION --- */
+.test-simulation-wrapper {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.test-screen {
+    display: none;
+    text-align: center;
+}
+
+.test-screen.active {
+    display: block;
+}
+
+#start-screen p,
+#end-screen p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+#start-screen .action-btn,
+#end-screen .action-btn {
+    width: auto;
+    padding: 15px 30px;
+}
+
+#part-indicator {
+    font-size: 1.8em;
+    color: var(--primary-hover);
+}
+
+#task-indicator {
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+#question-area {
+    margin-bottom: 30px;
+}
+
+.test-question-text {
+    font-size: 1.5em;
+    font-weight: 500;
+    line-height: 1.6;
+}
+
+.test-image-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.test-image-container img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.test-part4-questions ul {
+    list-style: decimal;
+    padding-left: 20px;
+    text-align: left;
+}
+
+#timer-area {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+#timer-label {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#timer-display {
+    font-size: 3em;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.progress-bar-container {
+    background-color: #e9ecef;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+#progress-bar {
+    height: 10px;
+    width: 100%;
+    background-color: var(--primary-color);
+    transition: width 1s linear;
+}

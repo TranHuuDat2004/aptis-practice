@@ -38,6 +38,33 @@ document.addEventListener("DOMContentLoaded", function() {
                 parent.classList.toggle('open');
             });
         });
+
+        // --- Desktop Dropdown Click Logic ---
+        const desktopDropdowns = document.querySelectorAll('.desktop-nav .dropdown > a');
+
+        desktopDropdowns.forEach(toggle => {
+            toggle.addEventListener('click', function(e) {
+                const parent = this.parentElement;
+                // Only prevent default for actual dropdowns
+                if (parent.classList.contains('dropdown')) {
+                    e.preventDefault();
+                    const wasActive = parent.classList.contains('active');
+                    // Close all other dropdowns
+                    document.querySelectorAll('.desktop-nav .dropdown').forEach(d => d.classList.remove('active'));
+                    // If it wasn't active before, open it
+                    if (!wasActive) {
+                        parent.classList.add('active');
+                    }
+                }
+            });
+        });
+
+        // Close dropdowns when clicking outside
+        document.addEventListener('click', function(e) {
+            if (!e.target.closest('.desktop-nav .dropdown')) {
+                document.querySelectorAll('.desktop-nav .dropdown').forEach(d => d.classList.remove('active'));
+            }
+        });
     }
 
     function setActiveNavLink() {
