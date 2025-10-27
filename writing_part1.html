@@ -43,12 +43,12 @@
         <footer id="footer-placeholder"></footer>
     </div>
     <script src="js/main.js"></script>
-    <script src="js/data-writing.js"></script>
+    <script src="js/data-writing-part1.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const selectorContainer = document.getElementById('topic-selector-grid');
             const contentContainer = document.getElementById('writing-container');
-            const topics = writingData.part1;
+            const topics = writingPart1Data;
 
             if (!topics || topics.length === 0) {
                 contentContainer.innerHTML = `<p class="error">Không có dữ liệu cho Writing Part 1.</p>`;

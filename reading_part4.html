@@ -37,11 +37,11 @@
         <footer id="footer-placeholder"></footer>
     </div>
     <script src="js/main.js"></script>
-    <script src="js/data-reading.js"></script>
+    <script src="js/data-reading-part4.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const quizContainer = document.getElementById('quiz-container');
-            const topics = readingData.part4;
+            const topics = readingPart4Data;
 
             if (!topics || topics.length === 0) {
                 quizContainer.innerHTML = `<p class="error">Không có dữ liệu cho Part 4.</p>`;

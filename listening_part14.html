@@ -62,12 +62,12 @@
         <footer id="footer-placeholder"></footer>
     </div>
     <script src="js/main.js"></script>
-    <script src="js/data-listening.js"></script>
+    <script src="js/data-listening-part14.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const quizContainer = document.getElementById('quiz-container');
-            const topics = listeningData.part14;
+            const topics = listeningPart14Data;
 
             topics.forEach((item, index) => {
                 const originalFragmentsWithIndex = item.fragments.map((frag, i) => ({ text: frag, originalIndex: i + 1 }));

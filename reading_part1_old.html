@@ -33,11 +33,11 @@
     </div>
     
     <script src="js/main.js"></script>
-    <script src="js/data-reading.js"></script>
+    <script src="js/data-reading-part1.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const keyContainer = document.getElementById('key-container');
-            const questions = readingData.part1;
+            const questions = readingPart1Data;
 
             if (!questions || questions.length === 0) {
                 keyContainer.innerHTML = `<p class="error">Không có dữ liệu cho Part 1.</p>`;

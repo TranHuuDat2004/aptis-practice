@@ -82,7 +82,7 @@
 
         <!-- SCRIPTS -->
 
-        <script src="js/data-reading.js"></script>
+        <script src="js/data-reading-part3.js"></script>
         <!-- FOOTER PLACEHOLDER -->
         <footer id="footer-placeholder"></footer>
     </div>
@@ -99,14 +99,14 @@
             const urlParams = new URLSearchParams(window.location.search);
             const partNumber = 3;
 
-            if (!partNumber || !readingData['part' + partNumber]) {
+            if (!partNumber || !readingPart3Data) {
                 quizContainer.innerHTML = `<p class="error">Không tìm thấy dữ liệu cho phần này.</p>`;
                 pageTitle.textContent = "Lỗi"; return;
             }
 
             pageTitle.textContent = `Reading - Part ${partNumber}`;
             pageDescription.textContent = `Luyện tập các câu hỏi của Part ${partNumber}`;
-            const questions = readingData['part' + partNumber];
+            const questions = readingPart3Data;
 
             function shuffleArray(array) {
                 for (let i = array.length - 1; i > 0; i--) {

@@ -35,7 +35,7 @@
 
         <!-- SCRIPTS -->
 
-        <script src="js/data-reading.js"></script>
+        <script src="js/data-reading-part5.js"></script>
         <!-- FOOTER PLACEHOLDER -->
         <footer id="footer-placeholder"></footer>
     </div>
@@ -53,7 +53,12 @@
             pageDescription.textContent = `Sắp xếp các tiêu đề đúng theo thứ tự`;
 
             // Lấy dữ liệu trực tiếp từ part5
-            const questions = readingData.part5;
+            const questions = readingPart5Data;
+
+            if (!questions || questions.length === 0) {
+                quizContainer.innerHTML = `<p class="error">Không có dữ liệu cho Part 5.</p>`;
+                return;
+            }
 
             function shuffleArray(array) {
                 for (let i = array.length - 1; i > 0; i--) {

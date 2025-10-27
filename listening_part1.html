@@ -63,7 +63,7 @@
         <footer id="footer-placeholder"></footer>
     </div>
     <script src="js/main.js"></script>
-    <script src="js/data-listening.js"></script>
+    <script src="js/data-listening-part1.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const answerList = document.getElementById('answer-list');
@@ -73,7 +73,7 @@
             const pageNumber = document.getElementById('page-number-indicator');
             const toggleAllBtn = document.getElementById('toggle-all-btn');
 
-            const allAnswers = listeningData.part1;
+            const allAnswers = listeningPart1Data;
             const itemsPerPage = 13;
             const totalPages = Math.ceil(allAnswers.length / itemsPerPage);
             let currentPage = 1;
