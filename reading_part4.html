@@ -8,17 +8,142 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+
+    <!-- 1. Tích hợp CSS của Driver.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css"/>
+
+    <style>
+        /* CSS cho bài tập Part 4 */
+        .quiz-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .part4-question {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        .part4-question:last-child {
+            border-bottom: none;
+        }
+        .part4-options {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+        .option-btn {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #ccc;
+            background: #fff;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: bold;
+        }
+        .option-btn:hover { background: #f0f0f0; }
+        .option-btn.selected {
+            background: #007bff;
+            color: #fff;
+            border-color: #007bff;
+        }
+        
+        /* Feedback styles */
+        .correct { background-color: #d4edda !important; border-color: #c3e6cb !important; }
+        .incorrect { background-color: #f8d7da !important; border-color: #f5c6cb !important; }
+        
+        .part4-question.correct .option-btn.selected { background-color: #28a745; border-color: #28a745; }
+        .part4-question.incorrect .option-btn.selected { background-color: #dc3545; border-color: #dc3545; }
+
+        .card-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .answer-section {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e2e3e5;
+            border-radius: 8px;
+        }
+
+        /* CSS cho nút Help/Tour */
+        .tour-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            color: #333;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            z-index: 999;
+            font-size: 24px;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .tour-btn:hover {
+            transform: scale(1.1);
+            background-color: #f8f9fa;
+        }
+
+        /* Tùy chỉnh giao diện Driver.js */
+        .driver-popover.driverjs-theme {
+            background-color: #fff;
+            color: #333;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            max-width: 350px;
+        }
+        
+        .driver-popover.driverjs-theme .driver-popover-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--primary-blue, #007bff);
+        }
+        
+        .driver-popover.driverjs-theme .driver-popover-description {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .driver-popover.driverjs-theme button {
+            background-color: var(--primary-blue, #007bff);
+            color: #fff;
+            text-shadow: none;
+            border: none;
+            border-radius: 4px;
+            padding: 6px 12px;
+        }
+    </style>
 </head>
 <body>
     <header id="header-placeholder"></header>
+    
+    <!-- 2. Nút kích hoạt lại Tour -->
+    <div class="tour-btn" id="restart-tour" title="Hướng dẫn sử dụng">❓</div>
+
     <div class="content-pusher">
         <div class="container">
             <div class="page-intro">
                 <h1>Reading - Part 4</h1>
                 <p>Nối câu hỏi với người nói tương ứng</p>
             </div>
-            <!-- THAY THẾ HỘP GIẢI THÍCH Ở ĐÂY -->
+            
             <div class="explanation-box">
                 <h3>💡 Phương pháp học Part 4</h3>
                 <p>Dạng bài này yêu cầu nối 7 câu hỏi với 4 người. Công cụ này sử dụng ký hiệu A, B, C, D để bạn dễ hình dung và học thuộc các liên kết.</p>
@@ -26,7 +151,13 @@
                 <ul>
                     <li>Trong kỳ thi thật, <strong>họ sẽ dùng tên thật</strong> (ví dụ: John, Sarah, Emily, David) thay vì A, B, C, D.</li>
                     <li>Thứ tự các đoạn văn của những người này cũng sẽ bị <strong>xáo trộn ngẫu nhiên</strong>.</li>
-                    <li><strong>Nhiệm vụ của bạn là nhớ các cặp đáp án đi chung với nhau</strong>, ví dụ: "Người chê giá đắt cũng là người phàn nàn về dịch vụ". Hãy dùng câu chuyện gợi nhớ để ghi nhớ các liên kết này.</li>
+                    <li><strong>Nhiệm vụ của bạn là nhớ các cặp đáp án đi chung với nhau</strong>.</li>
+                    <!-- Đã thêm phần ví dụ minh họa -->
+                    <li style="margin-top: 10px; background-color: #fff3cd; padding: 10px; border-radius: 5px; border-left: 4px solid #ffc107;">
+                        <strong>Ví dụ minh họa cách tìm ý:</strong><br>
+                        Nếu câu hỏi là <em>"Who thinks the park is a beautiful place to <strong>relax</strong>?"</em> (Ai nghĩ công viên là nơi đẹp để thư giãn?), hãy tìm trong bài đọc người có ý tương tự.<br>
+                        👉 Nếu Người A nói: <em>"I need a beautiful place to <strong>relax</strong>"</em>, thì đáp án chính là <strong>A</strong>.
+                    </li>
                 </ul>
                 </p>
             </div>
@@ -36,17 +167,24 @@
         </div>
         <footer id="footer-placeholder"></footer>
     </div>
+    
     <script src="js/main.js"></script>
     <script src="js/data-reading-part4.js"></script>
+    
+    <!-- 3. Tích hợp Script của Driver.js -->
+    <script src="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.js.iife.js"></script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const quizContainer = document.getElementById('quiz-container');
-            const topics = readingPart4Data;
-
-            if (!topics || topics.length === 0) {
-                quizContainer.innerHTML = `<p class="error">Không có dữ liệu cho Part 4.</p>`;
+            
+            // Kiểm tra dữ liệu
+            if (typeof readingPart4Data === 'undefined' || readingPart4Data.length === 0) {
+                quizContainer.innerHTML = `<p class="error">Không tìm thấy dữ liệu (readingPart4Data). Vui lòng kiểm tra file js/data-reading-part4.js</p>`;
                 return;
             }
+
+            const topics = readingPart4Data;
 
             topics.forEach((topic, index) => {
                 const card = document.createElement('div');
@@ -99,10 +237,13 @@
                     const card = e.target.closest('.part4-card');
                     let correctCount = 0;
                     const questions = card.querySelectorAll('.part4-question');
+                    
                     questions.forEach(q => {
                         const selectedBtn = q.querySelector('.option-btn.selected');
                         const correctAnswer = q.dataset.correctAnswer;
+                        
                         q.classList.remove('correct', 'incorrect');
+                        
                         if (selectedBtn) {
                             if (selectedBtn.dataset.choice === correctAnswer) {
                                 q.classList.add('correct');
@@ -112,8 +253,13 @@
                             }
                         }
                     });
+                    
                     const feedbackDiv = card.querySelector('.feedback-message');
                     feedbackDiv.innerHTML = `Bạn đã trả lời đúng <strong>${correctCount}/${questions.length}</strong> câu.`;
+                    feedbackDiv.style.textAlign = "center";
+                    feedbackDiv.style.marginTop = "15px";
+                    feedbackDiv.style.fontWeight = "bold";
+                    feedbackDiv.style.color = correctCount === questions.length ? "#28a745" : "#333";
                 }
 
                 // Xem key & câu chuyện
@@ -123,7 +269,92 @@
                     answerSection.style.display = isVisible ? 'none' : 'block';
                 }
             });
+
+            // --- KÍCH HOẠT TOUR HƯỚNG DẪN ---
+            setTimeout(initReadingPart4Tour, 800);
         });
+
+        // HÀM KHỞI TẠO TOUR CHO READING PART 4
+        function initReadingPart4Tour() {
+            const driver = window.driver.js.driver;
+            
+            const driverObj = driver({
+                showProgress: true,
+                animate: true,
+                doneBtnText: 'Đã hiểu',
+                nextBtnText: 'Tiếp theo',
+                prevBtnText: 'Quay lại',
+                popoverClass: 'driverjs-theme',
+                steps: [
+                    { 
+                        element: '.explanation-box', 
+                        popover: { 
+                            title: 'Reading Part 4', 
+                            description: 'Phần này yêu cầu bạn nối 7 câu hỏi với 4 đoạn văn (A, B, C, D). Hãy đọc kỹ lưu ý về việc tên người có thể thay đổi.', 
+                            side: "bottom", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.part4-card:first-child', 
+                        popover: { 
+                            title: 'Bộ câu hỏi', 
+                            description: 'Mỗi chủ đề sẽ gồm 7 câu hỏi.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.part4-card:first-child .part4-question:first-child .part4-options', 
+                        popover: { 
+                            title: 'Chọn đáp án', 
+                            description: 'Bấm vào một trong 4 ký tự A, B, C, D tương ứng với người/đoạn văn phù hợp.', 
+                            side: "left", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.part4-card:first-child .check-answer-btn', 
+                        popover: { 
+                            title: 'Kiểm tra', 
+                            description: 'Sau khi làm xong cả 7 câu, bấm nút này để xem kết quả. Màu xanh là đúng, màu đỏ là sai.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.part4-card:first-child .show-story-btn', 
+                        popover: { 
+                            title: 'Mẹo ghi nhớ', 
+                            description: 'Bấm vào đây để xem toàn bộ đáp án (Key) và câu chuyện liên kết giúp bạn học thuộc nhanh hơn.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '#restart-tour', 
+                        popover: { 
+                            title: 'Hỗ trợ', 
+                            description: 'Bấm vào đây bất cứ lúc nào để xem lại hướng dẫn.', 
+                            side: "left", 
+                            align: 'center' 
+                        } 
+                    }
+                ]
+            });
+
+            // Logic tự động chạy lần đầu cho Part 4
+            const hasSeenTour = localStorage.getItem('hasSeenReadingPart4Tour');
+            if (!hasSeenTour) {
+                driverObj.drive();
+                localStorage.setItem('hasSeenReadingPart4Tour', 'true');
+            }
+
+            // Gán sự kiện cho nút ?
+            document.getElementById('restart-tour').addEventListener('click', () => {
+                driverObj.drive();
+            });
+        }
     </script>
 </body>
 </html>

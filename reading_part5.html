@@ -4,61 +4,215 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reading Practice</title>
+    <title>Reading - Part 5</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+
+    <!-- 1. Tích hợp Driver.js (Tour) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css"/>
+
+    <style>
+        /* CSS cho bài tập sắp xếp (Tái sử dụng từ Part 2/3) */
+        .quiz-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .card-header h2 { margin: 0; font-size: 1.2em; color: #333; }
+        
+        .heading-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+        .heading-list li {
+            background: #fff;
+            border: 1px solid #dee2e6;
+            margin-bottom: 8px;
+            padding: 12px 15px;
+            border-radius: 4px;
+            cursor: move; /* Con trỏ kéo thả */
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+        }
+        .heading-list li:hover { 
+            background: #f1f3f5; 
+            border-color: #ced4da;
+        }
+        /* Số thứ tự đoạn văn (cố định bên trái để người dùng biết mình đang xếp cho đoạn nào) */
+        .paragraph-number {
+            font-weight: bold;
+            color: #007bff;
+            background: #e7f1ff;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .sortable-ghost { opacity: 0.4; background: #cce5ff; border: 2px dashed #007bff; }
+
+        .feedback-message {
+            margin-bottom: 15px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .correct { color: #28a745; }
+        .incorrect { color: #dc3545; }
+
+        .card-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+        .answer-section {
+            margin-top: 15px;
+            padding: 15px;
+            background: #f1f8e9;
+            border-left: 4px solid #4caf50;
+            border-radius: 4px;
+        }
+        
+        /* Style cho danh sách đáp án tiếng Anh */
+        .english-key-list {
+            list-style: none;
+            padding: 0;
+            margin: 10px 0;
+        }
+        .english-key-list li {
+            margin-bottom: 5px;
+            color: #2e7d32;
+        }
+        .english-key-list strong {
+            color: #1b5e20;
+            margin-right: 5px;
+        }
+
+        /* CSS cho nút Help/Tour */
+        .tour-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            color: #333;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            z-index: 999;
+            font-size: 24px;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .tour-btn:hover {
+            transform: scale(1.1);
+            background-color: #f8f9fa;
+        }
+
+        /* Tùy chỉnh giao diện Driver.js */
+        .driver-popover.driverjs-theme {
+            background-color: #fff;
+            color: #333;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            max-width: 350px;
+        }
+        .driver-popover.driverjs-theme .driver-popover-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--primary-blue, #007bff);
+        }
+        .driver-popover.driverjs-theme .driver-popover-description {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #555;
+        }
+        .driver-popover.driverjs-theme button {
+            background-color: var(--primary-blue, #007bff);
+            color: #fff;
+            text-shadow: none;
+            border: none;
+            border-radius: 4px;
+            padding: 6px 12px;
+        }
+    </style>
 </head>
 
 <body>
-    <!-- HEADER PLACEHOLDER -->
     <header id="header-placeholder"></header>
-    <div class="content-pusher" id="content-pusher"> <!-- THÊM DÒNG NÀY -->
+    
+    <!-- 2. Nút kích hoạt lại Tour -->
+    <div class="tour-btn" id="restart-tour" title="Hướng dẫn sử dụng">❓</div>
+
+    <div class="content-pusher">
         <div class="container">
 
-                <h1 style="text-align: center;" id="page-title">Reading Practice</h1>
-                <p style="text-align: center;" id="page-description">Luyện tập sắp xếp câu</p>
+            <h1 style="text-align: center;" id="page-title">Reading - Part 5</h1>
+            <p style="text-align: center;" id="page-description">Matching Headings (Nối tiêu đề)</p>
 
-            <!-- HỘP GIẢI THÍCH MỚI -->
+            <!-- HỘP GIẢI THÍCH -->
             <div class="explanation-box">
-                <h3>💡 Giải thích phương pháp học Part 5</h3>
-                <p>Dưới đây là <strong>7 tiêu đề ĐÚNG</strong> cho mỗi bài đọc, nhưng chúng đã bị xáo trộn. Nhiệm vụ của
-                    bạn là kéo và thả để sắp xếp chúng lại theo đúng thứ tự của các đoạn văn trong đề thi.</p>
-                <p>Hãy học thuộc lòng thứ tự này bằng cách sử dụng câu chuyện gợi nhớ được cung cấp.</p>
+                <h3>💡 Phương pháp học Part 5</h3>
+                <p>
+                    <strong>Nhiệm vụ:</strong> Có 7 đoạn văn và 8 tiêu đề (1 tiêu đề thừa). Bạn cần nối tiêu đề đúng vào đoạn văn tương ứng.
+                </p>
+                <p>
+                    <strong>Cách luyện tập tại đây:</strong> Các tiêu đề đúng (7 tiêu đề) đã được chọn lọc nhưng bị <strong>xáo trộn thứ tự</strong>. Bạn hãy kéo thả chúng để sắp xếp lại theo đúng trình tự từ Đoạn 1 đến Đoạn 7.
+                </p>
             </div>
+            
             <main id="quiz-container">
                 <!-- Các câu hỏi sẽ được tự động chèn vào đây -->
             </main>
         </div>
 
-        <!-- SCRIPTS -->
-
-        <script src="js/data-reading-part5.js"></script>
-        <!-- FOOTER PLACEHOLDER -->
         <footer id="footer-placeholder"></footer>
     </div>
-    <!-- SCRIPT CHÍNH -->
+    
+    <!-- SCRIPTS -->
     <script src="js/main.js"></script>
-    <!-- Thêm thư viện SortableJS -->
+    <script src="js/data-reading-part5.js"></script>
+    
+    <!-- 2. SortableJS (Kéo thả) -->
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    
+    <!-- 3. Driver.js (Tour) -->
+    <script src="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.js.iife.js"></script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const quizContainer = document.getElementById('quiz-container');
-            const pageTitle = document.getElementById('page-title');
-            const pageDescription = document.getElementById('page-description');
 
-            pageTitle.textContent = `Reading - Part 5`;
-            pageDescription.textContent = `Sắp xếp các tiêu đề đúng theo thứ tự`;
-
-            // Lấy dữ liệu trực tiếp từ part5
-            const questions = readingPart5Data;
-
-            if (!questions || questions.length === 0) {
-                quizContainer.innerHTML = `<p class="error">Không có dữ liệu cho Part 5.</p>`;
+            // Kiểm tra xem dữ liệu có tồn tại không
+            if (typeof readingPart5Data === 'undefined') {
+                quizContainer.innerHTML = `<p class="error">Không tìm thấy dữ liệu (readingPart5Data). Vui lòng kiểm tra file js/data-reading-part5.js</p>`;
                 return;
             }
+
+            const questions = readingPart5Data;
 
             function shuffleArray(array) {
                 for (let i = array.length - 1; i > 0; i--) {
@@ -69,61 +223,98 @@
             }
 
             questions.forEach((item, index) => {
+                // Tạo danh sách tiêu đề và xáo trộn
+                // originalIndex chính là thứ tự đúng (1, 2, 3...)
                 const originalFragmentsWithIndex = item.fragments.map((frag, i) => ({ text: frag, originalIndex: i + 1 }));
                 const shuffledFragments = shuffleArray([...originalFragmentsWithIndex]);
+                
                 const card = document.createElement('div');
                 card.className = 'quiz-card';
-                card.dataset.key = item.key;
+                // Không cần dùng dataset.key từ file data nữa, ta sẽ tự tạo key chuẩn 1-7
+                card.dataset.correctKey = Array.from({length: 7}, (_, i) => i + 1).join('-');
 
                 let listItems = '';
-                shuffledFragments.forEach(frag => {
+                shuffledFragments.forEach((frag, i) => {
                     listItems += `<li data-original-index="${frag.originalIndex}">
-                                <span class="original-number">(${frag.originalIndex})</span> ${frag.text}
-                              </li>`;
+                                    <div class="paragraph-number">?</div>
+                                    <div class="heading-content">${frag.text}</div>
+                                  </li>`;
                 });
+
+                // Tạo danh sách đáp án tiếng Anh
+                let englishKeyList = '<ul class="english-key-list">';
+                item.fragments.forEach((frag, i) => {
+                    englishKeyList += `<li><strong>${i + 1}.</strong> ${frag}</li>`;
+                });
+                englishKeyList += '</ul>';
 
                 card.innerHTML = `
                 <div class="card-header">
                     <h2>Đề bài ${index + 1}: ${item.title}</h2>
-                    <span class="tag ${item.type.includes('Logic') ? 'tag-logic' : 'tag-bia'}">${item.type}</span>
                 </div>
-                <p class="instructions">Kéo và thả để sắp xếp các câu theo đúng thứ tự.</p>
-                <ul class="sentence-list sortable-list">${listItems}</ul>
+                <p class="instructions">Kéo các tiêu đề bên dưới để khớp với thứ tự <strong>Đoạn 1 &rarr; Đoạn 7</strong>.</p>
+                
+                <div class="list-container">
+                    <!-- Danh sách số thứ tự cố định bên trái (Visual aid) -->
+                    <ul class="heading-list sortable-list">
+                        ${listItems}
+                    </ul>
+                </div>
+
                 <div class="feedback-message"></div>
                 <div class="card-actions">
                     <button class="action-btn check-answer-btn">Kiểm tra đáp án</button>
-                    <button class="action-btn show-story-btn">Xem đáp án & câu chuyện</button>
+                    <button class="action-btn show-story-btn">Xem Đáp án & Mẹo</button>
                 </div>
                 <div class="answer-section" style="display: none;">
-                    <h4>Đáp án</h4>
-                    <p><strong>Key đúng:</strong> ${item.key}</p>
-                    <p><strong>Câu chuyện gợi nhớ:</strong> ${item.story}</p>
+                    <h4>Đáp án đúng:</h4>
+                    ${englishKeyList}
+                    <p style="margin-top:15px;"><strong>Câu chuyện gợi nhớ:</strong> ${item.story}</p>
                 </div>
             `;
                 quizContainer.appendChild(card);
 
-                // --- KÍCH HOẠT KÉO THẢ BẰNG SORTABLEJS ---
+                // --- KÍCH HOẠT KÉO THẢ ---
                 const sortableList = card.querySelector('.sortable-list');
+                
                 new Sortable(sortableList, {
-                    animation: 150, // Hiệu ứng mượt mà khi sắp xếp
-                    ghostClass: 'sortable-ghost' // Class cho 'bóng' của mục đang kéo
+                    animation: 150, 
+                    ghostClass: 'sortable-ghost',
+                    onEnd: function (evt) {
+                        updateParagraphNumbers(sortableList);
+                    }
                 });
+                
+                updateParagraphNumbers(sortableList);
             });
+
+            // Hàm cập nhật số thứ tự (1, 2, 3...) bên trái
+            function updateParagraphNumbers(list) {
+                const items = list.querySelectorAll('li');
+                items.forEach((item, index) => {
+                    item.querySelector('.paragraph-number').textContent = index + 1;
+                });
+            }
 
             quizContainer.addEventListener('click', function (e) {
                 if (e.target.classList.contains('check-answer-btn')) {
                     const card = e.target.closest('.quiz-card');
                     const list = card.querySelector('.sortable-list');
                     const feedbackDiv = card.querySelector('.feedback-message');
-                    const correctKey = card.dataset.key;
+                    const correctKey = card.dataset.correctKey; // Chuỗi "1-2-3-4-5-6-7"
+                    
+                    // Lấy thứ tự hiện tại của các item (dựa vào originalIndex)
                     const currentOrder = Array.from(list.querySelectorAll('li')).map(li => li.dataset.originalIndex).join('-');
+                    
                     card.classList.remove('correct', 'incorrect');
                     if (currentOrder === correctKey) {
                         card.classList.add('correct');
-                        feedbackDiv.innerHTML = '🎉 Chính xác! Rất tốt!';
+                        feedbackDiv.innerHTML = '🎉 Chính xác! Bạn đã sắp xếp đúng toàn bộ.';
+                        feedbackDiv.className = 'feedback-message correct';
                     } else {
                         card.classList.add('incorrect');
                         feedbackDiv.innerHTML = '❌ Sai rồi! Hãy thử sắp xếp lại.';
+                        feedbackDiv.className = 'feedback-message incorrect';
                     }
                 }
                 if (e.target.classList.contains('show-story-btn')) {
@@ -132,7 +323,83 @@
                     answerSection.style.display = isVisible ? 'none' : 'block';
                 }
             });
+
+            // --- KÍCH HOẠT TOUR HƯỚNG DẪN ---
+            setTimeout(initReadingPart5Tour, 800);
         });
+
+        // HÀM KHỞI TẠO TOUR CHO READING PART 5
+        function initReadingPart5Tour() {
+            const driver = window.driver.js.driver;
+            
+            const driverObj = driver({
+                showProgress: true,
+                animate: true,
+                doneBtnText: 'Đã hiểu',
+                nextBtnText: 'Tiếp theo',
+                prevBtnText: 'Quay lại',
+                popoverClass: 'driverjs-theme',
+                steps: [
+                    { 
+                        element: '.explanation-box', 
+                        popover: { 
+                            title: 'Reading Part 5', 
+                            description: 'Nhiệm vụ: Sắp xếp 7 tiêu đề vào đúng vị trí của 7 đoạn văn.', 
+                            side: "bottom", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.quiz-card:first-child .heading-list', 
+                        popover: { 
+                            title: 'Danh sách Tiêu đề', 
+                            description: 'Đây là các tiêu đề đã bị xáo trộn. Số bên trái (1, 2, 3...) đại diện cho <strong>Đoạn 1, Đoạn 2, Đoạn 3...</strong>', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.quiz-card:first-child .heading-list li:first-child', 
+                        popover: { 
+                            title: 'Kéo & Thả', 
+                            description: 'Hãy giữ chuột vào tiêu đề và kéo nó đến vị trí số thứ tự tương ứng mà bạn cho là đúng.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.quiz-card:first-child .check-answer-btn', 
+                        popover: { 
+                            title: 'Kiểm tra', 
+                            description: 'Sau khi sắp xếp xong từ 1 đến 7, bấm nút này để biết kết quả.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '#restart-tour', 
+                        popover: { 
+                            title: 'Hỗ trợ', 
+                            description: 'Bấm vào đây để xem lại hướng dẫn.', 
+                            side: "left", 
+                            align: 'center' 
+                        } 
+                    }
+                ]
+            });
+
+            // Logic tự động chạy lần đầu
+            const hasSeenTour = localStorage.getItem('hasSeenReadingPart5Tour');
+            if (!hasSeenTour) {
+                driverObj.drive();
+                localStorage.setItem('hasSeenReadingPart5Tour', 'true');
+            }
+
+            // Gán sự kiện cho nút ?
+            document.getElementById('restart-tour').addEventListener('click', () => {
+                driverObj.drive();
+            });
+        }
     </script>
 </body>
 

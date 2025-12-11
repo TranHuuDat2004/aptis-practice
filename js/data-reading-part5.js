@@ -246,6 +246,4 @@ const readingPart5Data = [
         // Câu chuyện được bịa lại để khớp với các tiêu đề mới
         story: 'Câu chuyện bịa: "Mình khám phá nước Úc sơ khai để tìm hiểu về <strong>lịch sử (1)</strong>, tuy nhiên gặp phải <strong>rào cản thiên nhiên (2)</strong> và không có <strong>công nghệ (3)</strong>. Do đó, <strong>chuyến đi này (4)</strong> không tìm được <strong> bằng chứng mới (5)</strong>, vì <strong>thiếu kiến thức kĩ năng (6)</strong>, nhưng vẫn <strong>quyết tâm (7)</strong> hoàn thành công việc."'
     },
-
-
 ];

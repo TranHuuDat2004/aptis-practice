@@ -10,19 +10,152 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="icon" href="img/favicon.png" type="image/x-icon">
+
+    <!-- 1. Tích hợp CSS của Driver.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css"/>
+
+    <style>
+        /* CSS cho bài tập sắp xếp */
+        .quiz-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .card-header h2 { margin: 0; font-size: 1.2em; color: #333; }
+        .tag {
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8em;
+            font-weight: bold;
+        }
+        .tag-logic { background-color: #e3f2fd; color: #0d47a1; }
+        .tag-bia { background-color: #fff3e0; color: #e65100; }
+        
+        .sentence-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+        .sentence-list li {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            margin-bottom: 8px;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: move; /* Con trỏ kéo thả */
+            transition: background 0.2s;
+        }
+        .sentence-list li:hover { background: #e9ecef; }
+        .original-number {
+            font-weight: bold;
+            color: #6c757d;
+            margin-right: 10px;
+        }
+        .sortable-ghost { opacity: 0.4; background: #cce5ff; }
+
+        .feedback-message {
+            margin-bottom: 15px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .correct { color: #28a745; }
+        .incorrect { color: #dc3545; }
+
+        .card-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+        .answer-section {
+            margin-top: 15px;
+            padding: 15px;
+            background: #f1f8e9;
+            border-left: 4px solid #4caf50;
+            border-radius: 4px;
+        }
+
+        /* CSS cho nút Help/Tour */
+        .tour-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            color: #333;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            z-index: 999;
+            font-size: 24px;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .tour-btn:hover {
+            transform: scale(1.1);
+            background-color: #f8f9fa;
+        }
+
+        /* Tùy chỉnh giao diện Driver.js */
+        .driver-popover.driverjs-theme {
+            background-color: #fff;
+            color: #333;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            max-width: 350px;
+        }
+        
+        .driver-popover.driverjs-theme .driver-popover-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--primary-blue, #007bff);
+        }
+        
+        .driver-popover.driverjs-theme .driver-popover-description {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .driver-popover.driverjs-theme button {
+            background-color: var(--primary-blue, #007bff);
+            color: #fff;
+            text-shadow: none;
+            border: none;
+            border-radius: 4px;
+            padding: 6px 12px;
+        }
+    </style>
 </head>
 
 <body>
     <!-- HEADER PLACEHOLDER -->
     <header id="header-placeholder"></header>
-    <div class="content-pusher" id="content-pusher"> <!-- THÊM DÒNG NÀY -->
+    
+    <!-- 2. Nút kích hoạt lại Tour -->
+    <div class="tour-btn" id="restart-tour" title="Hướng dẫn sử dụng">❓</div>
+
+    <div class="content-pusher" id="content-pusher">
         <div class="container">
 
             <h1 style="text-align: center;" id="page-title">Reading Practice</h1>
             <p style="text-align: center;" id="page-description">Luyện tập sắp xếp câu</p>
 
             <!-- HỘP GIẢI THÍCH MỚI -->
-
             <div class="explanation-box">
                 <h3>💡 Giải thích phương pháp học</h3>
 
@@ -59,7 +192,6 @@
                             (4)</strong> <strong>như là (5) </strong>hạt và trái cây"
                     </p>
 
-                    <!-- === BẢNG ĐÃ ĐƯỢC THAY THẾ BẰNG DANH SÁCH UL/LI === -->
                     <ul class="example-key-list">
                         <li><code>(1) The first</code> &larr; "<strong>The first</strong> and most important
                             thing is to choose the location"</li>
@@ -80,16 +212,19 @@
             </main>
         </div>
 
-        <!-- SCRIPTS -->
-
-        <script src="js/data-reading-part2.js"></script>
         <!-- FOOTER PLACEHOLDER -->
         <footer id="footer-placeholder"></footer>
     </div>
-    <!-- SCRIPT CHÍNH -->
+    
+    <!-- SCRIPTS -->
     <script src="js/main.js"></script>
+    <script src="js/data-reading-part2.js"></script>
     <!-- Thêm thư viện SortableJS -->
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    
+    <!-- 3. Tích hợp Script của Driver.js -->
+    <script src="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.js.iife.js"></script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const quizContainer = document.getElementById('quiz-container');
@@ -97,11 +232,12 @@
             const pageDescription = document.getElementById('page-description');
 
             const urlParams = new URLSearchParams(window.location.search);
-            const partNumber = 2;
+            const partNumber = 2; // Hardcode part 2
 
-            if (!partNumber || !readingPart2Data) {
-                quizContainer.innerHTML = `<p class="error">Không tìm thấy dữ liệu cho phần này.</p>`;
-                pageTitle.textContent = "Lỗi"; return;
+            // Kiểm tra xem dữ liệu có tồn tại không
+            if (typeof readingPart2Data === 'undefined') {
+                quizContainer.innerHTML = `<p class="error">Không tìm thấy dữ liệu (readingPart2Data). Vui lòng kiểm tra file js/data-reading-part2.js</p>`;
+                return;
             }
 
             pageTitle.textContent = `Reading - Part ${partNumber}`;
@@ -126,8 +262,8 @@
                 let listItems = '';
                 shuffledFragments.forEach(frag => {
                     listItems += `<li data-original-index="${frag.originalIndex}">
-                                <span class="original-number">(${frag.originalIndex})</span> ${frag.text}
-                              </li>`;
+                                    <span class="original-number">(${frag.originalIndex})</span> ${frag.text}
+                                  </li>`;
                 });
 
                 card.innerHTML = `
@@ -169,9 +305,11 @@
                     if (currentOrder === correctKey) {
                         card.classList.add('correct');
                         feedbackDiv.innerHTML = '🎉 Chính xác! Rất tốt!';
+                        feedbackDiv.className = 'feedback-message correct';
                     } else {
                         card.classList.add('incorrect');
                         feedbackDiv.innerHTML = '❌ Sai rồi! Hãy thử sắp xếp lại.';
+                        feedbackDiv.className = 'feedback-message incorrect';
                     }
                 }
                 if (e.target.classList.contains('show-story-btn')) {
@@ -180,7 +318,93 @@
                     answerSection.style.display = isVisible ? 'none' : 'block';
                 }
             });
+
+            // --- KÍCH HOẠT TOUR HƯỚNG DẪN ---
+            // Gọi sau khi render xong để đảm bảo các element đã tồn tại
+            setTimeout(initReadingPart2Tour, 800);
         });
+
+        // HÀM KHỞI TẠO TOUR CHO READING PART 2
+        function initReadingPart2Tour() {
+            const driver = window.driver.js.driver;
+            
+            const driverObj = driver({
+                showProgress: true,
+                animate: true,
+                doneBtnText: 'Đã hiểu',
+                nextBtnText: 'Tiếp theo',
+                prevBtnText: 'Quay lại',
+                popoverClass: 'driverjs-theme',
+                steps: [
+                    { 
+                        element: '.explanation-box', 
+                        popover: { 
+                            title: 'Reading Part 2', 
+                            description: 'Phần này yêu cầu bạn sắp xếp lại các câu văn bị xáo trộn để tạo thành đoạn văn có nghĩa. Hãy đọc kỹ phần giải thích phương pháp "Logic" và "Bịa" câu chuyện.', 
+                            side: "bottom", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.quiz-card:first-child', 
+                        popover: { 
+                            title: 'Thẻ bài tập', 
+                            description: 'Mỗi thẻ là một bài tập riêng biệt. Bạn có thể thấy loại đề (Logic/Bịa) ở góc trên bên phải.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.quiz-card:first-child .sortable-list', 
+                        popover: { 
+                            title: 'Kéo thả', 
+                            description: 'Đây là danh sách các câu bị xáo trộn. Hãy <strong>giữ chuột và kéo</strong> các câu lên xuống để sắp xếp lại theo thứ tự đúng.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.quiz-card:first-child .check-answer-btn', 
+                        popover: { 
+                            title: 'Kiểm tra', 
+                            description: 'Sau khi sắp xếp xong, bấm vào đây để xem bạn làm đúng hay sai.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.quiz-card:first-child .show-story-btn', 
+                        popover: { 
+                            title: 'Đáp án & Mẹo nhớ', 
+                            description: 'Nếu khó quá, hãy bấm vào đây để xem đáp án đúng và "câu chuyện gợi nhớ" giúp bạn học thuộc bài nhanh hơn.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '#restart-tour', 
+                        popover: { 
+                            title: 'Hỗ trợ', 
+                            description: 'Bấm vào đây bất cứ lúc nào để xem lại hướng dẫn.', 
+                            side: "left", 
+                            align: 'center' 
+                        } 
+                    }
+                ]
+            });
+
+            // Logic tự động chạy lần đầu
+            const hasSeenTour = localStorage.getItem('hasSeenReadingPart2Tour');
+            if (!hasSeenTour) {
+                driverObj.drive();
+                localStorage.setItem('hasSeenReadingPart2Tour', 'true');
+            }
+
+            // Gán sự kiện cho nút ?
+            document.getElementById('restart-tour').addEventListener('click', () => {
+                driverObj.drive();
+            });
+        }
     </script>
 </body>
 
