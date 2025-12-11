@@ -11,11 +11,78 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="icon" href="img/favicon.png" type="image/x-icon">
+
+    <!-- 1. Tích hợp CSS của Driver.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css"/>
+
+    <style>
+        /* CSS cho nút Help/Tour */
+        .tour-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            color: #333;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            z-index: 999;
+            font-size: 24px;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .tour-btn:hover {
+            transform: scale(1.1);
+            background-color: #f8f9fa;
+        }
+
+        /* Tùy chỉnh giao diện Driver.js */
+        .driver-popover.driverjs-theme {
+            background-color: #fff;
+            color: #333;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            max-width: 350px;
+        }
+        
+        .driver-popover.driverjs-theme .driver-popover-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--primary-blue, #007bff);
+        }
+        
+        .driver-popover.driverjs-theme .driver-popover-description {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .driver-popover.driverjs-theme button {
+            background-color: var(--primary-blue, #007bff);
+            color: #fff;
+            text-shadow: none;
+            border: none;
+            border-radius: 4px;
+            padding: 6px 12px;
+        }
+    </style>
 </head>
 
 
 <body>
     <header id="header-placeholder"></header>
+    
+    <!-- 2. Nút kích hoạt lại Tour -->
+    <div class="tour-btn" id="restart-tour" title="Hướng dẫn sử dụng">❓</div>
+
     <div class="content-pusher">
         <div class="container">
             <div class="page-intro">
@@ -38,10 +105,98 @@
         <footer id="footer-placeholder"></footer>
     </div>
 
-    <!-- === ĐƯỜNG DẪN ĐÃ ĐƯỢC CẬP NHẬT === -->
+    <!-- Scripts -->
     <script src="js/data-speaking-quiz.js"></script>
     <script src="js/main.js"></script>
     <script src="js/speaking-quiz-logic.js"></script>
+    
+    <!-- 3. Tích hợp Script của Driver.js -->
+    <script src="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.js.iife.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // --- KÍCH HOẠT TOUR HƯỚNG DẪN ---
+            // Gọi sau khi render xong để đảm bảo các element đã tồn tại
+            // Thời gian delay cần đủ lâu để speaking-quiz-logic.js render xong câu hỏi
+            setTimeout(initSpeakingQuizTour, 1000);
+
+            // Gán sự kiện cho nút ?
+            document.getElementById('restart-tour').addEventListener('click', () => {
+                initSpeakingQuizTour(); // Gọi hàm khởi tạo tour
+            });
+        });
+
+        // HÀM KHỞI TẠO TOUR
+        function initSpeakingQuizTour() {
+            const driver = window.driver.js.driver;
+            
+            const driverObj = driver({
+                showProgress: true,
+                animate: true,
+                doneBtnText: 'Đã hiểu',
+                nextBtnText: 'Tiếp theo',
+                prevBtnText: 'Quay lại',
+                popoverClass: 'driverjs-theme',
+                steps: [
+                    { 
+                        element: '.page-intro', 
+                        popover: { 
+                            title: 'Speaking Quiz', 
+                            description: 'Chào mừng bạn! Đây là bài kiểm tra nhanh để ôn lại các kiến thức lý thuyết về Speaking (sườn bài, từ nối, mẹo...).', 
+                            side: "bottom", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.explanation-box', 
+                        popover: { 
+                            title: 'Mục tiêu', 
+                            description: 'Mục tiêu là giúp bạn khắc sâu các công thức (như 5W1H, PEEL, 20-20-5) để phản xạ nhanh hơn khi thi thật.', 
+                            side: "bottom", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '#quiz-container .quiz-card:first-child', 
+                        popover: { 
+                            title: 'Câu hỏi', 
+                            description: 'Các câu hỏi trắc nghiệm sẽ xoay quanh 4 phần thi Speaking. Hãy đọc kỹ và chọn đáp án đúng nhất.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '#check-answers-btn', 
+                        popover: { 
+                            title: 'Kiểm tra', 
+                            description: 'Sau khi hoàn thành, bấm nút này để xem kết quả và giải thích chi tiết cho từng câu.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '#restart-tour', 
+                        popover: { 
+                            title: 'Hỗ trợ', 
+                            description: 'Bấm vào đây bất cứ lúc nào để xem lại hướng dẫn.', 
+                            side: "left", 
+                            align: 'center' 
+                        } 
+                    }
+                ]
+            });
+
+            // Logic tự động chạy lần đầu
+            const hasSeenTour = localStorage.getItem('hasSeenSpeakingQuizTour');
+            if (!hasSeenTour) {
+                driverObj.drive();
+                localStorage.setItem('hasSeenSpeakingQuizTour', 'true');
+            } else {
+                // Nếu gọi thủ công từ nút ?, chạy luôn
+                driverObj.drive();
+            }
+        }
+    </script>
 </body>
 
 </html>

@@ -6,9 +6,159 @@
     <title>Lỗi sai Writing theo Chủ đề Câu lạc bộ</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- 1. Tích hợp CSS của Driver.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css"/>
+
+    <style>
+        /* CSS cho bài phân tích lỗi */
+        .error-analysis-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .error-analysis-card h2 {
+            margin-top: 0;
+            color: #007bff;
+            border-bottom: 2px solid #f0f2f5;
+            padding-bottom: 10px;
+        }
+
+        .error-item {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 1px dashed #dee2e6;
+        }
+
+        .error-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .error-item h4 {
+            margin-bottom: 10px;
+            color: #495057;
+            font-weight: 600;
+        }
+
+        /* === GIAO DIỆN DỊU MẮT (KHÔNG BỊ ĐỎ LÈ) === */
+        .text-comparison {
+            background-color: #f8f9fa; /* Nền xám nhạt */
+            border-left: 4px solid #dc3545; /* Viền đỏ báo lỗi */
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 10px;
+        }
+
+        .text-comparison.correct-text {
+            background-color: #f8f9fa; 
+            border-left: 4px solid #28a745; /* Viền xanh báo đúng */
+        }
+
+        .text-comparison p {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+
+        /* Chữ gạch ngang (câu sai) - Chỉ đổi màu chữ, không tô nền */
+        del {
+            color: #dc3545; 
+            text-decoration: line-through;
+            background-color: transparent; 
+        }
+        
+        /* Chữ đậm (câu đúng) */
+        .text-comparison strong {
+            color: #28a745; 
+        }
+
+        /* CSS cho feedback */
+        .feedback {
+            font-style: italic;
+            color: #555;
+            margin-top: 10px;
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #eee;
+            border-radius: 4px;
+            font-size: 0.95em;
+        }
+        
+        .feedback.correct {
+            color: #155724;
+            background-color: #d4edda;
+            border-color: #c3e6cb;
+        }
+
+        /* CSS cho nút Help/Tour */
+        .tour-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            color: #333;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            z-index: 999;
+            font-size: 24px;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .tour-btn:hover {
+            transform: scale(1.1);
+            background-color: #f8f9fa;
+        }
+
+        /* Tùy chỉnh giao diện Driver.js */
+        .driver-popover.driverjs-theme {
+            background-color: #fff;
+            color: #333;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            max-width: 350px;
+        }
+        
+        .driver-popover.driverjs-theme .driver-popover-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--primary-blue, #007bff);
+        }
+        
+        .driver-popover.driverjs-theme .driver-popover-description {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .driver-popover.driverjs-theme button {
+            background-color: var(--primary-blue, #007bff);
+            color: #fff;
+            text-shadow: none;
+            border: none;
+            border-radius: 4px;
+            padding: 6px 12px;
+        }
+    </style>
 </head>
 <body>
     <header id="header-placeholder"></header>
+    
+    <!-- 2. Nút kích hoạt lại Tour -->
+    <div class="tour-btn" id="restart-tour" title="Hướng dẫn sử dụng">❓</div>
+
     <div class="content-pusher">
         <div class="container">
             <div class="page-intro">
@@ -22,12 +172,23 @@
         </div>
         <footer id="footer-placeholder"></footer>
     </div>
+    
     <script src="js/main.js"></script>
     <script src="js/data-writing-club-analysis.js"></script>
-<!-- Trong file writing_club_errors.html -->
+    
+    <!-- 3. Tích hợp Script của Driver.js -->
+    <script src="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.js.iife.js"></script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const container = document.getElementById('analysis-container');
+            
+            // Kiểm tra dữ liệu
+            if (typeof writingClubAnalysisData === 'undefined') {
+                container.innerHTML = '<p class="error">Không tìm thấy dữ liệu. Vui lòng kiểm tra file js/data-writing-club-analysis.js</p>';
+                return;
+            }
+
             const clubData = writingClubAnalysisData;
 
             for (const clubKey in clubData) {
@@ -39,7 +200,6 @@
                 let analysisHTML = '';
                 club.analysis.forEach(item => {
                     let comparisonHTML = '';
-                    // Kiểm tra xem câu này có đúng hay không
                     if (item.isCorrect) {
                         comparisonHTML = `
                             <div class="text-comparison correct-text">
@@ -67,7 +227,89 @@
                 card.innerHTML = `<h2>${club.title}</h2><div class="error-list">${analysisHTML}</div>`;
                 container.appendChild(card);
             }
+
+            // --- KÍCH HOẠT TOUR HƯỚNG DẪN ---
+            // Gọi sau khi render xong
+            setTimeout(() => initClubErrorsTour(false), 800);
+
+            // Gán sự kiện cho nút ? (Force run = true)
+            document.getElementById('restart-tour').addEventListener('click', () => {
+                initClubErrorsTour(true);
+            });
         });
+
+        // HÀM KHỞI TẠO TOUR ĐÃ SỬA LỖI
+        function initClubErrorsTour(forceStart) {
+            const driver = window.driver.js.driver;
+            
+            const driverObj = driver({
+                showProgress: true,
+                animate: true,
+                doneBtnText: 'Đã hiểu',
+                nextBtnText: 'Tiếp theo',
+                prevBtnText: 'Quay lại',
+                popoverClass: 'driverjs-theme',
+                steps: [
+                    { 
+                        element: '.page-intro', 
+                        popover: { 
+                            title: 'Phân tích Lỗi Sai', 
+                            description: 'Trang này giúp bạn học từ những lỗi sai phổ biến của các học viên khác trong các bài Writing Part 1, 2, 3.', 
+                            side: "bottom", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.error-analysis-card:first-child', 
+                        popover: { 
+                            title: 'Chủ đề Câu lạc bộ', 
+                            description: 'Các lỗi được gom nhóm theo từng chủ đề (ví dụ: CLB Sách, CLB Âm nhạc) để bạn dễ theo dõi ngữ cảnh.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.error-analysis-card:first-child .text-comparison', 
+                        popover: { 
+                            title: 'So sánh Sai/Đúng', 
+                            description: 'Phần viền đỏ là câu chứa lỗi (chữ đỏ gạch ngang). Phần viền xanh là câu đã được sửa lại đúng ngữ pháp.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.error-analysis-card:first-child .feedback', 
+                        popover: { 
+                            title: 'Góp ý chi tiết', 
+                            description: 'Giải thích lý do tại sao sai và đưa ra lời khuyên để bạn không mắc lại lỗi này.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '#restart-tour', 
+                        popover: { 
+                            title: 'Hỗ trợ', 
+                            description: 'Bấm vào đây để xem lại hướng dẫn.', 
+                            side: "left", 
+                            align: 'center' 
+                        } 
+                    }
+                ]
+            });
+
+            // Logic kiểm tra: Nếu forceStart = true (bấm nút), chạy luôn.
+            // Nếu không, kiểm tra localStorage xem đã chạy chưa.
+            if (forceStart) {
+                driverObj.drive();
+            } else {
+                const hasSeenTour = localStorage.getItem('hasSeenClubErrorsTour');
+                if (!hasSeenTour) {
+                    driverObj.drive();
+                    localStorage.setItem('hasSeenClubErrorsTour', 'true');
+                }
+            }
+        }
     </script>
 </body>
 </html>
