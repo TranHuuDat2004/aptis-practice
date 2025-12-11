@@ -1,23 +1,194 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listening - Part 2 (Câu 14)</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+
+    <!-- 1. Tích hợp Driver.js (Tour) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css"/>
+
+    <style>
+        /* CSS cho bài tập sắp xếp */
+        .quiz-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .card-header h2 { margin: 0; font-size: 1.2em; color: #333; }
+        
+        /* Audio Player Styling */
+        .audio-player-container {
+            margin: 15px 0;
+            background: #f1f3f5;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        .custom-audio-player {
+            width: 100%;
+            outline: none;
+        }
+
+        /* List Items */
+        .sentence-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
+        .sentence-list li {
+            background: #fff;
+            border: 1px solid #dee2e6;
+            margin-bottom: 8px;
+            padding: 12px 15px;
+            border-radius: 4px;
+            cursor: move; /* Con trỏ kéo thả */
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+        }
+        .sentence-list li:hover { 
+            background: #e9ecef;
+            border-color: #adb5bd;
+        }
+        
+        .original-number {
+            font-weight: bold;
+            color: #007bff;
+            background: #e7f1ff;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 50%;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .sortable-ghost { opacity: 0.4; background: #cce5ff; border: 2px dashed #007bff; }
+
+        .feedback-message {
+            margin-bottom: 15px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .correct { color: #28a745; }
+        .incorrect { color: #dc3545; }
+
+        .card-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+        
+        .answer-section {
+            margin-top: 20px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-left: 4px solid #17a2b8;
+            border-radius: 4px;
+        }
+        
+        /* CẬP NHẬT CSS PHẦN SCRIPT - DỄ ĐỌC HƠN */
+        .script-content {
+            font-family: inherit; /* Sử dụng phông của web thay vì Courier New */
+            white-space: pre-wrap;
+            line-height: 1.6;
+            font-size: 1em;
+            color: #333;
+            max-height: 400px;
+            overflow-y: auto;
+            background: #fff;
+            padding: 15px;
+            border: 1px solid #e9ecef;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
+
+        /* CSS cho nút Help/Tour */
+        .tour-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            color: #333;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            z-index: 999;
+            font-size: 24px;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .tour-btn:hover {
+            transform: scale(1.1);
+            background-color: #f8f9fa;
+        }
+
+        /* Tùy chỉnh giao diện Driver.js */
+        .driver-popover.driverjs-theme {
+            background-color: #fff;
+            color: #333;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            max-width: 350px;
+        }
+        .driver-popover.driverjs-theme .driver-popover-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--primary-blue, #007bff);
+        }
+        .driver-popover.driverjs-theme .driver-popover-description {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #555;
+        }
+        .driver-popover.driverjs-theme button {
+            background-color: var(--primary-blue, #007bff);
+            color: #fff;
+            text-shadow: none;
+            border: none;
+            border-radius: 4px;
+            padding: 6px 12px;
+        }
+    </style>
 </head>
+
 <body>
     <header id="header-placeholder"></header>
+    
+    <!-- 2. Nút kích hoạt lại Tour -->
+    <div class="tour-btn" id="restart-tour" title="Hướng dẫn sử dụng">❓</div>
+
     <div class="content-pusher">
         <div class="container">
             <div class="page-intro">
                 <h1>Listening - Luyện tập Câu 14</h1>
                 <p>Nối ý kiến với người nói tương ứng</p>
             </div>
-<!-- Trong file listening_part14.html -->
 
+            <!-- Cẩm nang -->
             <div class="explanation-box">
                 <h3>💡 Phương pháp học & Chiến lược làm bài Câu 14</h3>
                 <p>Nghe 4 đoạn độc thoại và nối 4 ý kiến với đúng người nói. Đây là phần kiểm tra kỹ năng nghe-hiểu và loại trừ thông tin nhiễu.</p>
@@ -47,7 +218,7 @@
                     <p><strong>Trường hợp 3: Bẫy phủ định "but"</strong></p>
                     <ul>
                         <li><strong>Bẫy:</strong> Người nói có thể nêu ra một ý tưởng, nhưng ngay sau đó lại phủ định nó bằng từ `but`.</li>
-                        <li><strong>Chiếng lược:</strong> Ví dụ: "Option A is interesting, <strong>but</strong> it has many problems." -> Đáp án <b>không phải</b> là A. Hãy lắng nghe ý kiến thực sự ở vế sau.</li>
+                        <li><strong>Chiến lược:</strong> Ví dụ: "Option A is interesting, <strong>but</strong> it has many problems." -> Đáp án <b>không phải</b> là A. Hãy lắng nghe ý kiến thực sự ở vế sau.</li>
                     </ul>
                 </div>
 
@@ -55,64 +226,236 @@
                 <p>Các câu trả lời đúng thường chứa các từ/cụm từ thể hiện quan điểm hoặc sự lựa chọn một cách trực tiếp. Hãy đặc biệt chú ý đến các lựa chọn có chứa:</p>
                 <p><code>but, so, however, therefore, personally, instead of, that's a great/good way</code></p>
             </div>
+
             <main id="quiz-container">
                 <!-- Các câu hỏi sẽ được chèn vào đây -->
             </main>
         </div>
         <footer id="footer-placeholder"></footer>
     </div>
+    
+    <!-- SCRIPTS -->
     <script src="js/main.js"></script>
     <script src="js/data-listening-part14.js"></script>
+    <!-- Thư viện SortableJS cho tính năng kéo thả -->
     <script src="https://cdn.jsdelivr.net/npm/sortablejs@latest/Sortable.min.js"></script>
+    <!-- Driver.js cho Tour -->
+    <script src="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.js.iife.js"></script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const quizContainer = document.getElementById('quiz-container');
+            
+            // Kiểm tra dữ liệu (bảo vệ tránh lỗi nếu chưa có file data)
+            if (typeof listeningPart14Data === 'undefined') {
+                quizContainer.innerHTML = '<p class="error">Không tìm thấy dữ liệu (listeningPart14Data). Vui lòng kiểm tra file js/data-listening-part14.js</p>';
+                return;
+            }
+
             const topics = listeningPart14Data;
 
+            // Render các bài tập
             topics.forEach((item, index) => {
+                // Tạo danh sách các ý kiến và xáo trộn chúng
                 const originalFragmentsWithIndex = item.fragments.map((frag, i) => ({ text: frag, originalIndex: i + 1 }));
                 const shuffledFragments = [...originalFragmentsWithIndex].sort(() => Math.random() - 0.5);
+                
                 const card = document.createElement('div');
                 card.className = 'quiz-card';
-                card.dataset.key = item.key;
+                card.dataset.key = item.key; // Lưu key đúng (dạng 1-2-3-4)
 
                 let listItems = '';
                 shuffledFragments.forEach(frag => {
+                    // Hiển thị ký hiệu ? để người dùng biết đây là các options chưa sắp xếp
                     listItems += `<li data-original-index="${frag.originalIndex}">
-                                <span class="original-number">${String.fromCharCode(64 + frag.originalIndex)}</span> ${frag.text}
-                              </li>`;
+                                    <span class="original-number">?</span> ${frag.text}
+                                  </li>`;
                 });
+
+                // === LOGIC MỚI: TẠO DANH SÁCH ĐÁP ÁN ĐÚNG BẰNG TIẾNG ANH ===
+                const correctIndices = item.key.split('-').map(k => parseInt(k) - 1);
+                let correctAnswersList = '<ul style="list-style: none; padding: 0; margin-top: 10px;">';
+                correctIndices.forEach((idx, i) => {
+                    if(item.fragments[idx]) {
+                        correctAnswersList += `
+                            <li style="margin-bottom: 8px; padding: 10px; background: #fff; border: 1px solid #c3e6cb; border-radius: 4px; border-left: 4px solid #28a745;">
+                                <strong style="color: #28a745;">Speaker ${i + 1}:</strong> ${item.fragments[idx]}
+                            </li>`;
+                    }
+                });
+                correctAnswersList += '</ul>';
+                // ==========================================================
 
                 card.innerHTML = `
                     <div class="card-header">
                         <h2>Đề bài ${index + 1}: ${item.title}</h2>
                     </div>
-                    <h4>Nghe đoạn hội thoại:</h4>
+                    <h4>1. Nghe đoạn hội thoại:</h4>
                     <div class="audio-player-container">
                         <audio controls class="custom-audio-player" src="${item.audioSrc}"></audio>
                     </div>
-                    <p class="instructions">Sắp xếp các ý kiến theo đúng thứ tự người nói.</p>
+                    <h4>2. Sắp xếp ý kiến:</h4>
+                    <p class="instructions">Kéo thả các ý kiến bên dưới để khớp với thứ tự người nói: <strong>Speaker 1 &rarr; Speaker 4</strong>.</p>
                     <ul class="sentence-list sortable-list">${listItems}</ul>
+                    
                     <div class="feedback-message"></div>
+                    
                     <div class="card-actions">
                         <button class="action-btn check-answer-btn">Kiểm tra đáp án</button>
-                        <button class="action-btn show-script-btn">Xem Script</button>
+                        <button class="action-btn show-script-btn">Xem Transcript</button>
                     </div>
+                    
                     <div class="answer-section" style="display: none;">
-                        <h4>Transcript</h4>
+                        <h4>Transcript (Lời thoại):</h4>
                         <div class="script-content">${item.script}</div>
+                        <div style="margin-top: 20px;">
+                            <h4 style="color: #28a745; margin-bottom: 10px;">Đáp án đúng:</h4>
+                            ${correctAnswersList}
+                        </div>
                     </div>
                 `;
                 quizContainer.appendChild(card);
+
+                // Kích hoạt SortableJS cho danh sách này
                 const sortableList = card.querySelector('.sortable-list');
-                new Sortable(sortableList, { animation: 150, ghostClass: 'sortable-ghost' });
+                new Sortable(sortableList, { 
+                    animation: 150, 
+                    ghostClass: 'sortable-ghost',
+                    onEnd: function (evt) {
+                        updateSpeakerNumbers(sortableList);
+                    }
+                });
+                
+                // Đánh số 1, 2, 3, 4 ban đầu
+                updateSpeakerNumbers(sortableList);
             });
 
+            // Hàm cập nhật số thứ tự (Speaker 1, 2...)
+            function updateSpeakerNumbers(list) {
+                const items = list.querySelectorAll('li');
+                items.forEach((item, index) => {
+                    item.querySelector('.original-number').textContent = index + 1;
+                });
+            }
+
+            // Xử lý sự kiện click
             quizContainer.addEventListener('click', function (e) {
-                if (e.target.classList.contains('check-answer-btn')) { /* ... logic check answer cũ ... */ const card = e.target.closest('.quiz-card'); const list = card.querySelector('.sortable-list'); const feedbackDiv = card.querySelector('.feedback-message'); const correctKey = card.dataset.key; const currentOrder = Array.from(list.querySelectorAll('li')).map(li => li.dataset.originalIndex).join('-'); card.classList.remove('correct', 'incorrect'); if (currentOrder === correctKey) { card.classList.add('correct'); feedbackDiv.innerHTML = '🎉 Chính xác! Rất tốt!'; } else { card.classList.add('incorrect'); feedbackDiv.innerHTML = '❌ Sai rồi! Hãy thử sắp xếp lại.'; } }
-                if (e.target.classList.contains('show-script-btn')) { /* ... logic show script mới ... */ const answerSection = e.target.closest('.card-actions').nextElementSibling; const isVisible = answerSection.style.display === 'block'; answerSection.style.display = isVisible ? 'none' : 'block'; e.target.textContent = isVisible ? 'Ẩn Script' : 'Xem Script'; }
+                // Kiểm tra đáp án
+                if (e.target.classList.contains('check-answer-btn')) {
+                    const card = e.target.closest('.quiz-card');
+                    const list = card.querySelector('.sortable-list');
+                    const feedbackDiv = card.querySelector('.feedback-message');
+                    const correctKey = card.dataset.key; // "1-2-3-4"
+                    
+                    const currentOrder = Array.from(list.querySelectorAll('li')).map(li => li.dataset.originalIndex).join('-');
+                    
+                    card.classList.remove('correct', 'incorrect');
+                    if (currentOrder === correctKey) {
+                        card.classList.add('correct');
+                        feedbackDiv.innerHTML = '🎉 Chính xác! Bạn đã nghe rất tốt.';
+                        feedbackDiv.className = 'feedback-message correct';
+                    } else {
+                        card.classList.add('incorrect');
+                        feedbackDiv.innerHTML = '❌ Sai rồi! Hãy nghe lại kỹ hơn nhé.';
+                        feedbackDiv.className = 'feedback-message incorrect';
+                    }
+                }
+                
+                // Xem Transcript
+                if (e.target.classList.contains('show-script-btn')) {
+                    const answerSection = e.target.closest('.card-actions').nextElementSibling;
+                    const isVisible = answerSection.style.display === 'block';
+                    answerSection.style.display = isVisible ? 'none' : 'block';
+                    e.target.textContent = isVisible ? 'Xem Transcript' : 'Ẩn Transcript';
+                }
             });
+
+            // --- KÍCH HOẠT TOUR HƯỚNG DẪN ---
+            setTimeout(initListeningPart14Tour, 800);
         });
+
+        // HÀM KHỞI TẠO TOUR
+        function initListeningPart14Tour() {
+            const driver = window.driver.js.driver;
+            
+            const driverObj = driver({
+                showProgress: true,
+                animate: true,
+                doneBtnText: 'Đã hiểu',
+                nextBtnText: 'Tiếp theo',
+                prevBtnText: 'Quay lại',
+                popoverClass: 'driverjs-theme',
+                steps: [
+                    { 
+                        element: '.explanation-box', 
+                        popover: { 
+                            title: 'Listening Part 2', 
+                            description: 'Nhiệm vụ: Bạn sẽ nghe 4 người nói về một chủ đề chung. Hãy nối ý kiến của họ với đúng người nói.', 
+                            side: "bottom", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.quiz-card:first-child .audio-player-container', 
+                        popover: { 
+                            title: 'Audio', 
+                            description: 'Bấm Play để nghe. Hãy chú ý lắng nghe các từ khóa chuyển ý như "but", "however" để tránh bẫy.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.quiz-card:first-child .sortable-list', 
+                        popover: { 
+                            title: 'Sắp xếp ý kiến', 
+                            description: 'Đây là 4 ý kiến tương ứng với 4 người nói. Hãy <strong>kéo và thả</strong> chúng để sắp xếp theo thứ tự xuất hiện: Người 1 ở trên cùng, Người 4 ở dưới cùng.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.quiz-card:first-child .check-answer-btn', 
+                        popover: { 
+                            title: 'Kiểm tra', 
+                            description: 'Sau khi sắp xếp xong, bấm nút này để xem kết quả.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.quiz-card:first-child .show-script-btn', 
+                        popover: { 
+                            title: 'Transcript', 
+                            description: 'Nếu không nghe được, hãy bấm vào đây để xem lời thoại chi tiết và học từ mới.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '#restart-tour', 
+                        popover: { 
+                            title: 'Hỗ trợ', 
+                            description: 'Bấm vào đây bất cứ lúc nào để xem lại hướng dẫn.', 
+                            side: "left", 
+                            align: 'center' 
+                        } 
+                    }
+                ]
+            });
+
+            // Logic tự động chạy lần đầu
+            const hasSeenTour = localStorage.getItem('hasSeenListeningPart14Tour');
+            if (!hasSeenTour) {
+                driverObj.drive();
+                localStorage.setItem('hasSeenListeningPart14Tour', 'true');
+            }
+
+            // Gán sự kiện cho nút ?
+            document.getElementById('restart-tour').addEventListener('click', () => {
+                driverObj.drive();
+            });
+        }
     </script>
 </body>
+
 </html>

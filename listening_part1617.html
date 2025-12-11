@@ -1,33 +1,136 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listening - Part 3 (Câu 16 & 17)</title>
+    <title>Listening - Part 4 (Câu 16 & 17)</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+
+    <!-- 1. Tích hợp CSS của Driver.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css"/>
+
+    <style>
+        strong {
+            font-weight: 700;
+            color: #007bff;
+        }
+
+        /* CSS cho nút Help/Tour */
+        .tour-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            color: #333;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            z-index: 999;
+            font-size: 24px;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .tour-btn:hover {
+            transform: scale(1.1);
+            background-color: #f8f9fa;
+        }
+
+        /* Tùy chỉnh giao diện Driver.js */
+        .driver-popover.driverjs-theme {
+            background-color: #fff;
+            color: #333;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            max-width: 350px;
+        }
+        
+        .driver-popover.driverjs-theme .driver-popover-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--primary-blue, #007bff);
+        }
+        
+        .driver-popover.driverjs-theme .driver-popover-description {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .driver-popover.driverjs-theme button {
+            background-color: var(--primary-blue, #007bff);
+            color: #fff;
+            text-shadow: none;
+            border: none;
+            border-radius: 4px;
+            padding: 6px 12px;
+        }
+
+        /* Style cho danh sách Key */
+        .key-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .key-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+            align-items: center;
+        }
+        .key-list li:last-child { border-bottom: none; }
+        .key-number {
+            font-weight: bold;
+            color: #6c757d;
+            width: 40px;
+        }
+        .answer-text {
+            flex-grow: 1;
+            font-weight: 500;
+            color: #2c3e50;
+        }
+    </style>
 </head>
-<style>
-    strong{
-        font-weight: 700;
-        color: #007bff;
-    }
-</style>
+
 <body>
     <header id="header-placeholder"></header>
+    
+    <!-- 2. Nút kích hoạt lại Tour -->
+    <div class="tour-btn" id="restart-tour" title="Hướng dẫn sử dụng">❓</div>
+
     <div class="content-pusher">
         <div class="container">
             <div class="page-intro">
-                <h1>Listening - Part 3 (Câu 16 & 17)</h1>
+                <h1>Listening - Part 4 (Câu 16 & 17)</h1>
                 <p>Luyện tập ghi nhớ cặp key đáp án</p>
             </div>
+            
             <div class="explanation-box">
                 <h3>💡 Phương pháp học</h3>
                 <p>Phần thi này bao gồm 2 đoạn độc thoại, mỗi đoạn có 2 câu hỏi. Mỗi câu hỏi có 3 lựa chọn, trong đó có 2 lựa chọn đúng. Nhiệm vụ của bạn là chọn đúng 2 đáp án đó. Hãy "nhận diện mặt chữ" của các cặp đáp án này.</p>
                 <ul>
                     <li>Phần tô đậm <strong>(strong)</strong> là những cụm từ quan trọng nhất cần ghi nhớ.</li>
                     <li>Lướt qua các trang và đọc to các cặp đáp án để quen mặt chữ.</li>
+                </ul>
+            </div>
+
+            <!-- SECTION MỚI: TÀI LIỆU BỔ TRỢ -->
+            <div class="explanation-box" style="margin-top: 20px; background-color: #e3f2fd; border-left: 4px solid #2196f3;">
+                <h3>📚 Tài liệu gốc</h3>
+                <p>Nếu bạn muốn xem file gốc để đối chiếu, hãy truy cập link bên dưới:</p>
+                <ul>
+                    <li>📂 <a href="https://drive.google.com/drive/folders/15lR8CosejfYo3rO1y_d_NujHSq-wh0cW?usp=drive_link" target="_blank" style="color: #0056b3; font-weight: 500;">Kho tài liệu Drive (Part 16 & 17)</a></li>
                 </ul>
             </div>
 
@@ -48,10 +151,14 @@
         </div>
         <footer id="footer-placeholder"></footer>
     </div>
+    
     <script src="js/main.js"></script>
     <script src="js/data-listening-part1617.js"></script>
+    
+    <!-- 3. Tích hợp Script của Driver.js -->
+    <script src="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.js.iife.js"></script>
+
     <script>
-        // Copy toàn bộ script từ listening_part1.html và chỉ thay đổi nguồn dữ liệu
         document.addEventListener('DOMContentLoaded', function () {
             const answerList = document.getElementById('answer-list');
             const prevBtn = document.getElementById('prev-page-btn');
@@ -60,7 +167,13 @@
             const pageNumber = document.getElementById('page-number-indicator');
             const toggleAllBtn = document.getElementById('toggle-all-btn');
 
-            const allAnswers = listeningPart1617Data; // THAY ĐỔI DUY NHẤT Ở ĐÂY
+            // Kiểm tra dữ liệu
+            if (typeof listeningPart1617Data === 'undefined') {
+                answerList.innerHTML = '<p class="error">Không tìm thấy dữ liệu (listeningPart1617Data).</p>';
+                return;
+            }
+
+            const allAnswers = listeningPart1617Data;
             const itemsPerPage = 10;
             const totalPages = Math.ceil(allAnswers.length / itemsPerPage);
             let currentPage = 1;
@@ -70,6 +183,7 @@
                 const start = (page - 1) * itemsPerPage;
                 const end = start + itemsPerPage;
                 const pageItems = allAnswers.slice(start, end);
+
                 pageItems.forEach((item) => {
                     const li = document.createElement('li');
                     li.innerHTML = `
@@ -78,16 +192,103 @@
                     `;
                     answerList.appendChild(li);
                 });
+
                 pageTitle.textContent = `Đáp án ${start + 1} - ${Math.min(end, allAnswers.length)}`;
                 pageNumber.textContent = `Trang ${page} / ${totalPages}`;
                 prevBtn.disabled = page === 1;
                 nextBtn.disabled = page === totalPages;
             }
-            prevBtn.addEventListener('click', () => { if (currentPage > 1) { currentPage--; renderPage(currentPage); } });
-            nextBtn.addEventListener('click', () => { if (currentPage < totalPages) { currentPage++; renderPage(currentPage); } });
-            toggleAllBtn.addEventListener('click', () => { const isVisible = answerList.classList.toggle('answers-visible'); toggleAllBtn.textContent = isVisible ? '🙈 Ẩn tất cả' : '👁️ Hiển thị tất cả'; });
+
+            prevBtn.addEventListener('click', () => { 
+                if (currentPage > 1) { currentPage--; renderPage(currentPage); } 
+            });
+            
+            nextBtn.addEventListener('click', () => { 
+                if (currentPage < totalPages) { currentPage++; renderPage(currentPage); } 
+            });
+            
+            toggleAllBtn.addEventListener('click', () => { 
+                const isVisible = answerList.classList.toggle('answers-visible'); 
+                toggleAllBtn.textContent = isVisible ? '🙈 Ẩn tất cả' : '👁️ Hiển thị tất cả'; 
+            });
+
+            // Render trang đầu
             renderPage(currentPage);
+
+            // --- KÍCH HOẠT TOUR HƯỚNG DẪN ---
+            setTimeout(initListeningPart1617Tour, 800);
         });
+
+        // HÀM KHỞI TẠO TOUR
+        function initListeningPart1617Tour() {
+            const driver = window.driver.js.driver;
+            
+            const driverObj = driver({
+                showProgress: true,
+                animate: true,
+                doneBtnText: 'Đã hiểu',
+                nextBtnText: 'Tiếp theo',
+                prevBtnText: 'Quay lại',
+                popoverClass: 'driverjs-theme',
+                steps: [
+                    { 
+                        element: '.explanation-box', 
+                        popover: { 
+                            title: 'Listening Part 4 (Q16-17)', 
+                            description: 'Nhiệm vụ: Tìm <strong>2 ý kiến đúng</strong> trong mỗi đoạn văn. Hãy tập trung học thuộc các cặp đáp án này.', 
+                            side: "bottom", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '#answer-list', 
+                        popover: { 
+                            title: 'Danh sách cặp Key', 
+                            description: 'Các từ được in đậm màu xanh (strong) là những từ khóa quan trọng nhất giúp bạn nhận diện đáp án nhanh.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '#toggle-all-btn', 
+                        popover: { 
+                            title: 'Tự kiểm tra', 
+                            description: 'Bấm nút này để che bớt đáp án, sau đó nhìn số câu hỏi và tự nhẩm lại xem mình có nhớ cặp Key không.', 
+                            side: "left", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.explanation-box[style*="background-color: #e3f2fd"]', 
+                        popover: { 
+                            title: 'Tài liệu gốc', 
+                            description: 'Nếu cần đối chiếu với file gốc, hãy truy cập link Google Drive tại đây.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '#restart-tour', 
+                        popover: { 
+                            title: 'Hỗ trợ', 
+                            description: 'Bấm vào đây để xem lại hướng dẫn.', 
+                            side: "left", 
+                            align: 'center' 
+                        } 
+                    }
+                ]
+            });
+
+            const hasSeenTour = localStorage.getItem('hasSeenListeningPart1617Tour');
+            if (!hasSeenTour) {
+                driverObj.drive();
+                localStorage.setItem('hasSeenListeningPart1617Tour', 'true');
+            }
+
+            document.getElementById('restart-tour').addEventListener('click', () => {
+                driverObj.drive();
+            });
+        }
     </script>
 </body>
 </html>

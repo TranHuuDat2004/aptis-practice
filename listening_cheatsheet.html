@@ -10,10 +10,184 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="icon" href="img/favicon.png" type="image/x-icon">
+
+    <!-- 1. Tích hợp CSS của Driver.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css"/>
+
+    <style>
+        /* CSS cho bảng cheatsheet */
+        .cheatsheet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .cheatsheet-card {
+            background: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            border-top: 4px solid #007bff;
+        }
+
+        .cheatsheet-card h3 {
+            margin-top: 0;
+            color: #007bff;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        th, td {
+            text-align: left;
+            padding: 8px;
+            border-bottom: 1px solid #eee;
+            font-size: 0.95em;
+        }
+
+        th {
+            background-color: #f8f9fa;
+            font-weight: 600;
+            color: #495057;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        /* Highlight cho cột Key đúng */
+        td:last-child {
+            color: #28a745;
+            font-weight: 500;
+        }
+
+        /* Phần lưu ý quan trọng */
+        .important-note {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            color: #856404;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+        }
+        
+        .important-note h2 {
+            margin-top: 0;
+            color: #d39e00;
+            font-size: 1.4em;
+        }
+
+        .non-existent-answers {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin: 15px 0;
+        }
+
+        .non-existent-answers span {
+            background-color: #f8d7da;
+            color: #721c24;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-weight: bold;
+            text-decoration: line-through;
+        }
+
+        /* CSS cho nút Help/Tour */
+        .tour-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            color: #333;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            z-index: 999;
+            font-size: 24px;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .tour-btn:hover {
+            transform: scale(1.1);
+            background-color: #f8f9fa;
+        }
+
+        /* Tùy chỉnh giao diện Driver.js */
+        .driver-popover.driverjs-theme {
+            background-color: #fff;
+            color: #333;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            max-width: 350px;
+        }
+        
+        .driver-popover.driverjs-theme .driver-popover-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--primary-blue, #007bff);
+        }
+        
+        .driver-popover.driverjs-theme .driver-popover-description {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .driver-popover.driverjs-theme button {
+            background-color: var(--primary-blue, #007bff);
+            color: #fff;
+            text-shadow: none;
+            border: none;
+            border-radius: 4px;
+            padding: 6px 12px;
+        }
+
+        /* CSS cho phần "Sẵn sàng kiểm tra" */
+        .ready-test-section {
+            text-align: center; 
+            margin-top: 40px; 
+            margin-bottom: 20px;
+            padding: 30px; 
+            background-color: #e9f7ef; 
+            border-radius: 8px; 
+            border: 1px solid #c3e6cb;
+        }
+        
+        .ready-test-section h3 {
+            color: #155724; 
+            margin-top: 0;
+            font-size: 1.3em;
+        }
+        
+        .ready-test-section p {
+            color: #155724; 
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 
 <body>
     <header id="header-placeholder"></header>
+    
+    <!-- 2. Nút kích hoạt lại Tour -->
+    <div class="tour-btn" id="restart-tour" title="Hướng dẫn sử dụng">❓</div>
+
     <div class="content-pusher">
         <div class="container">
             <div class="page-intro">
@@ -26,7 +200,7 @@
                     Trang này giúp bạn gom nhóm và so sánh chúng để ghi nhớ một cách chính xác nhất, tránh nhầm lẫn
                     trong phòng thi.</p>
             </div>
-            <!-- THÊM HỘP LƯU Ý QUAN TRỌNG VÀO ĐÂY -->
+            
             <div class="important-note tip-section" style="margin-bottom: 30px; text-align: center;">
                 <h2>‼️ Lưu ý các đáp án KHÔNG có trong Part 1</h2>
                 <p>Để tránh nhầm lẫn với các phần nghe khác, hãy nhớ rằng các đáp án sau <strong>KHÔNG ĐƯỢC
@@ -40,6 +214,7 @@
                 </div>
                 <p>Nếu bạn nghĩ đến các đáp án này, có thể bạn đang nhầm lẫn với Part 2, 3, hoặc 4.</p>
             </div>
+            
             <div class="method-guide-card">
                 <div class="method-step">
                     <h4 style="text-align: center;">Phân biệt các đáp án gần giống nhau</h4>
@@ -223,7 +398,7 @@
                     </table>
                 </div>
 
-                <!-- BẢNG MÀU SẮC (THÊM MỚI VÀO ĐÂY) -->
+                <!-- MÀU SẮC -->
                 <div class="cheatsheet-card">
                     <h3>🎨 Màu sắc</h3>
                     <table>
@@ -258,7 +433,7 @@
                     </table>
                 </div>
 
-                <!-- ĐỊA ĐIỂM / PHƯƠNG HƯỚNG -->
+                <!-- ĐỊA ĐIỂM -->
                 <div class="cheatsheet-card">
                     <h3>📍 Địa điểm / Phương hướng</h3>
                     <table>
@@ -382,7 +557,7 @@
                     </table>
                 </div>
 
-                <!-- MÔN HỌC / LĨNH VỰC -->
+                <!-- MÔN HỌC -->
                 <div class="cheatsheet-card">
                     <h3>📚 Môn học / Lĩnh vực</h3>
                     <table>
@@ -409,7 +584,7 @@
                     </table>
                 </div>
 
-                <!-- CON NGƯỜI / NGHỀ NGHIỆP -->
+                <!-- CON NGƯỜI -->
                 <div class="cheatsheet-card">
                     <h3>🧍‍♀️ Con người / Nghề nghiệp</h3>
                     <table>
@@ -474,7 +649,8 @@
                         </tbody>
                     </table>
                 </div>
-                <!-- === BẢNG MỚI: ĐỒ VẬT BỊ MẤT === -->
+                
+                <!-- ĐỒ VẬT BỊ MẤT -->
                 <div class="cheatsheet-card">
                     <h3>👜 Đồ vật bị mất</h3>
                     <table>
@@ -501,7 +677,7 @@
                     </table>
                 </div>
 
-                <!-- === BẢNG MỚI: ĐỒ UỐNG === -->
+                <!-- ĐỒ UỐNG -->
                 <div class="cheatsheet-card">
                     <h3>🥤 Đồ uống</h3>
                     <table>
@@ -528,8 +704,7 @@
                     </table>
                 </div>
 
-
-                <!-- === BẢNG MỚI: MUA SẮM CHO GIA ĐÌNH === -->
+                <!-- MUA SẮM CHO GIA ĐÌNH -->
                 <div class="cheatsheet-card">
                     <h3>🛍️ Mua sắm cho gia đình</h3>
                     <table>
@@ -560,13 +735,110 @@
                     </table>
                 </div>
             </main>
+
+            <!-- PHẦN MỚI THÊM VÀO: READY FOR TEST SECTION -->
+            <div class="ready-test-section">
+                <h3>Bạn đã sẵn sàng làm phần kiểm tra Part 1 chưa?</h3>
+                <p>Hãy thử sức với bộ câu hỏi trắc nghiệm để xem bạn nhớ được bao nhiêu Key nhé!</p>
+                <a href="listening_part1_test.html" class="action-btn" style="display: inline-block; text-decoration: none; font-size: 1.1em;">🚀 Làm bài kiểm tra ngay</a>
+            </div>
+
         </div>
-
-        <div style="padding-top:10px ;"></div>
-
         <footer id="footer-placeholder"></footer>
     </div>
     <script src="js/main.js"></script>
+    
+    <!-- 3. Tích hợp Script của Driver.js -->
+    <script src="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.js.iife.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // --- KÍCH HOẠT TOUR HƯỚNG DẪN ---
+            setTimeout(initCheatsheetTour, 800);
+        });
+
+        // HÀM KHỞI TẠO TOUR CHO CHEATSHEET
+        function initCheatsheetTour() {
+            const driver = window.driver.js.driver;
+            
+            const driverObj = driver({
+                showProgress: true,
+                animate: true,
+                doneBtnText: 'Đã hiểu',
+                nextBtnText: 'Tiếp theo',
+                prevBtnText: 'Quay lại',
+                popoverClass: 'driverjs-theme',
+                steps: [
+                    { 
+                        element: '.page-intro', 
+                        popover: { 
+                            title: 'Bảng tổng hợp Key', 
+                            description: 'Trang này giúp bạn gom nhóm các đáp án theo chủ đề để dễ học thuộc hơn.', 
+                            side: "bottom", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.important-note', 
+                        popover: { 
+                            title: 'Cảnh báo quan trọng', 
+                            description: 'Hãy đặc biệt chú ý phần này. Đây là những đáp án <strong>không bao giờ đúng</strong> trong Part 1.', 
+                            side: "bottom", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.method-guide-card', 
+                        popover: { 
+                            title: 'Phân biệt đáp án', 
+                            description: 'Bảng so sánh này giúp bạn tránh các bẫy thường gặp. Ví dụ: đáp án đúng là "Play football" chứ không phải "Play soccer".', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.cheatsheet-grid', 
+                        popover: { 
+                            title: 'Phân loại theo chủ đề', 
+                            description: 'Các đáp án được chia thành các nhóm như Thời gian, Giá tiền, Địa điểm... Cột "Bối cảnh gợi ý" giúp bạn nhớ tình huống, cột "Đáp án Key" là từ cần chọn.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.ready-test-section', 
+                        popover: { 
+                            title: 'Sẵn sàng kiểm tra?', 
+                            description: 'Sau khi ôn tập xong, hãy bấm vào đây để làm bài trắc nghiệm kiểm tra trí nhớ.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '#restart-tour', 
+                        popover: { 
+                            title: 'Hỗ trợ', 
+                            description: 'Bấm vào đây để xem lại hướng dẫn.', 
+                            side: "left", 
+                            align: 'center' 
+                        } 
+                    }
+                ]
+            });
+
+            // Logic tự động chạy lần đầu
+            const hasSeenTour = localStorage.getItem('hasSeenCheatsheetTour');
+            if (!hasSeenTour) {
+                driverObj.drive();
+                localStorage.setItem('hasSeenCheatsheetTour', 'true');
+            }
+
+            // Gán sự kiện cho nút ?
+            document.getElementById('restart-tour').addEventListener('click', () => {
+                driverObj.drive();
+            });
+        }
+    </script>
 </body>
 
 </html>

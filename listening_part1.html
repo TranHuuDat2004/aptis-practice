@@ -7,14 +7,111 @@
     <title>Listening - Part 1</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
-
     <link rel="icon" href="img/favicon.png" type="image/x-icon">
+
+    <!-- 1. Tích hợp CSS của Driver.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css"/>
+
+    <style>
+        /* CSS cho danh sách Key */
+        .key-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .key-list li {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+            align-items: center;
+        }
+        .key-list li:last-child { border-bottom: none; }
+        .key-number {
+            font-weight: bold;
+            color: #6c757d;
+            width: 40px;
+        }
+        .answer-text {
+            flex-grow: 1;
+            font-weight: 500;
+            color: #2c3e50;
+        }
+        
+        /* Hiệu ứng ẩn/hiện đáp án */
+        /* Mặc định có thể ẩn hoặc hiện tùy logic CSS của bạn, ở đây mình giả định class điều khiển */
+        /* Ví dụ: Nếu muốn mặc định ẩn bớt để học */
+        /* .answer-text { filter: blur(4px); transition: filter 0.3s; cursor: pointer; } */
+        /* .answer-text:hover, .answers-visible .answer-text { filter: none; } */
+
+        /* CSS cho nút Help/Tour */
+        .tour-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            color: #333;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            z-index: 999;
+            font-size: 24px;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .tour-btn:hover {
+            transform: scale(1.1);
+            background-color: #f8f9fa;
+        }
+
+        /* Tùy chỉnh giao diện Driver.js */
+        .driver-popover.driverjs-theme {
+            background-color: #fff;
+            color: #333;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            max-width: 350px;
+        }
+        
+        .driver-popover.driverjs-theme .driver-popover-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--primary-blue, #007bff);
+        }
+        
+        .driver-popover.driverjs-theme .driver-popover-description {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .driver-popover.driverjs-theme button {
+            background-color: var(--primary-blue, #007bff);
+            color: #fff;
+            text-shadow: none;
+            border: none;
+            border-radius: 4px;
+            padding: 6px 12px;
+        }
+    </style>
 </head>
 
 <body>
     <header id="header-placeholder"></header>
+    
+    <!-- 2. Nút kích hoạt lại Tour -->
+    <div class="tour-btn" id="restart-tour" title="Hướng dẫn sử dụng">❓</div>
+
     <div class="content-pusher">
         <div class="container">
             <div class="page-intro">
@@ -45,6 +142,16 @@
                 </ul>
             </div>
 
+            <!-- SECTION MỚI THÊM: TÀI LIỆU BỔ TRỢ -->
+            <div class="explanation-box" style="margin-top: 20px; background-color: #e3f2fd; border-left: 4px solid #2196f3;">
+                <h3>📚 Tài liệu bổ trợ</h3>
+                <p>Nếu bạn cảm thấy giao diện này khó thuộc Key, bạn có thể tham khảo thêm:</p>
+                <ul>
+                    <li style="margin-bottom: 8px;">📂 <a href="https://drive.google.com/drive/folders/1_4-5xP6PP9n3pjPG3BHZaoDL_F_E23Yx?usp=drive_link" target="_blank" style="color: #0056b3; font-weight: 500;">Kho tài liệu Drive (Ảnh/PDF gốc)</a></li>
+                    <li>📝 <a href="listening_cheatsheet.html" target="_blank" style="color: #0056b3; font-weight: 500;">Trang Cheatsheet (Bảng tổng hợp)</a></li>
+                </ul>
+            </div>
+
             <main id="listening-container" class="quiz-card">
                 <div class="card-header">
                     <h2 id="page-title-indicator">Đáp án 1 - 20</h2>
@@ -62,8 +169,14 @@
         </div>
         <footer id="footer-placeholder"></footer>
     </div>
+    
+    <!-- Scripts -->
     <script src="js/main.js"></script>
     <script src="js/data-listening-part1.js"></script>
+    
+    <!-- 3. Tích hợp Script của Driver.js -->
+    <script src="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.js.iife.js"></script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const answerList = document.getElementById('answer-list');
@@ -72,6 +185,12 @@
             const pageTitle = document.getElementById('page-title-indicator');
             const pageNumber = document.getElementById('page-number-indicator');
             const toggleAllBtn = document.getElementById('toggle-all-btn');
+
+            // Kiểm tra dữ liệu
+            if (typeof listeningPart1Data === 'undefined') {
+                answerList.innerHTML = '<p class="error">Không tìm thấy dữ liệu.</p>';
+                return;
+            }
 
             const allAnswers = listeningPart1Data;
             const itemsPerPage = 13;
@@ -118,12 +237,89 @@
 
             toggleAllBtn.addEventListener('click', () => {
                 const isVisible = answerList.classList.toggle('answers-visible');
+                // Lưu ý: Cần thêm CSS cho .answers-visible hoặc logic ẩn/hiện nếu muốn hiệu ứng blur
                 toggleAllBtn.textContent = isVisible ? '🙈 Ẩn tất cả' : '👁️ Hiển thị tất cả';
             });
 
             // Render trang đầu tiên khi tải
             renderPage(currentPage);
+
+            // --- KÍCH HOẠT TOUR HƯỚNG DẪN ---
+            setTimeout(initListeningKeyTour, 800);
         });
+
+        // HÀM KHỞI TẠO TOUR
+        function initListeningKeyTour() {
+            const driver = window.driver.js.driver;
+            
+            const driverObj = driver({
+                showProgress: true,
+                animate: true,
+                doneBtnText: 'Đã hiểu',
+                nextBtnText: 'Tiếp theo',
+                prevBtnText: 'Quay lại',
+                popoverClass: 'driverjs-theme',
+                steps: [
+                    { 
+                        element: '.explanation-box', 
+                        popover: { 
+                            title: 'Chiến thuật học Key', 
+                            description: 'Vì đề thi thật xáo trộn thứ tự, bạn không thể học vẹt số câu. Hãy học cách <strong>nhận diện mặt chữ</strong> của đáp án đúng.', 
+                            side: "bottom", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '#answer-list', 
+                        popover: { 
+                            title: 'Danh sách đáp án', 
+                            description: 'Đây là các cụm từ (Key) xuất hiện trong bài thi. Hãy đọc to và cố gắng ghi nhớ chúng.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '#toggle-all-btn', 
+                        popover: { 
+                            title: 'Công cụ ôn tập', 
+                            description: 'Sử dụng nút này để Ẩn/Hiện đáp án, giúp bạn tự kiểm tra xem mình có nhớ đúng mặt chữ hay không.', 
+                            side: "left", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.pagination-controls', 
+                        popover: { 
+                            title: 'Kho dữ liệu lớn', 
+                            description: 'Có hàng trăm đáp án cần ghi nhớ. Hãy chia nhỏ và học từng trang một.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '#restart-tour', 
+                        popover: { 
+                            title: 'Hỗ trợ', 
+                            description: 'Bấm vào đây để xem lại hướng dẫn.', 
+                            side: "left", 
+                            align: 'center' 
+                        } 
+                    }
+                ]
+            });
+
+            // Logic tự động chạy lần đầu
+            const hasSeenTour = localStorage.getItem('hasSeenListeningKeyTour');
+            if (!hasSeenTour) {
+                driverObj.drive();
+                localStorage.setItem('hasSeenListeningKeyTour', 'true');
+            }
+
+            // Gán sự kiện cho nút ?
+            document.getElementById('restart-tour').addEventListener('click', () => {
+                driverObj.drive();
+            });
+        }
     </script>
 </body>
 

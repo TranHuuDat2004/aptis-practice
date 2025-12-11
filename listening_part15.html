@@ -4,32 +4,193 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listening - Part 2 (Câu 15)</title>
+    <title>Listening - Part 3 (Câu 15)</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+
+    <!-- 1. Tích hợp Driver.js (Tour) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css"/>
+
+    <style>
+        /* CSS cho bài tập Part 4/Part 2 Q15 */
+        .quiz-card {
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .card-header h2 { margin: 0; font-size: 1.2em; color: #333; }
+        
+        .part4-question {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .part4-question:last-child { border-bottom: none; }
+        
+        .part4-options {
+            display: flex;
+            gap: 10px;
+        }
+        .option-btn {
+            width: 40px;
+            height: 40px;
+            border: 1px solid #ccc;
+            background: #fff;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: bold;
+            color: #555;
+        }
+        .option-btn:hover { background: #f0f0f0; }
+        .option-btn.selected {
+            background: #007bff;
+            color: #fff;
+            border-color: #007bff;
+        }
+        
+        /* Feedback styles */
+        .correct { background-color: #d4edda !important; }
+        .incorrect { background-color: #f8d7da !important; }
+        .part4-question.correct .option-btn.selected { background-color: #28a745; border-color: #28a745; }
+        .part4-question.incorrect .option-btn.selected { background-color: #dc3545; border-color: #dc3545; }
+
+        .card-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .answer-section {
+            margin-top: 20px;
+            padding: 15px;
+            background: #e2e3e5;
+            border-radius: 8px;
+        }
+
+        /* Toggle Switch Styles */
+        .speaker-toggle-container {
+            display: flex;
+            align-items: center;
+            background: #f1f3f5;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 50px;
+            height: 24px;
+            margin: 0 10px;
+        }
+        .switch input { opacity: 0; width: 0; height: 0; }
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        input:checked + .slider { background-color: #ffc107; } /* Màu vàng cảnh báo khi đảo key */
+        input:checked + .slider:before { transform: translateX(26px); }
+        
+        .toggle-label-woman { color: #e91e63; }
+        .toggle-label-man { color: #2196f3; }
+        
+        /* Highlight khi đảo key */
+        input:checked ~ .toggle-label-man { font-weight: bold; text-decoration: underline; }
+
+        /* CSS cho nút Help/Tour */
+        .tour-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            color: #333;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            z-index: 999;
+            font-size: 24px;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+        .tour-btn:hover { transform: scale(1.1); background-color: #f8f9fa; }
+
+        /* Driver.js Theme */
+        .driver-popover.driverjs-theme { background-color: #fff; color: #333; border-radius: 8px; padding: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
+        .driver-popover.driverjs-theme .driver-popover-title { font-size: 18px; font-weight: 700; margin-bottom: 8px; color: #007bff; }
+        .driver-popover.driverjs-theme .driver-popover-description { font-size: 14px; line-height: 1.6; color: #555; }
+        .driver-popover.driverjs-theme button { background-color: #007bff; color: #fff; border: none; border-radius: 4px; padding: 6px 12px; }
+    </style>
 </head>
 
 <body>
     <header id="header-placeholder"></header>
+    
+    <!-- Nút kích hoạt lại Tour -->
+    <div class="tour-btn" id="restart-tour" title="Hướng dẫn sử dụng">❓</div>
+
     <div class="content-pusher">
         <div class="container">
             <div class="page-intro">
                 <h1>Listening - Luyện tập Câu 15</h1>
-                <p>Nối câu hỏi với người nói (Woman, Man, Both)</p>
+                <p>Nối ý kiến với người nói (Woman, Man, Both)</p>
             </div>
+            
             <div class="explanation-box">
-                <h3>💡 Quy luật vàng của Câu 15</h3>
-                <p>Nhiệm vụ là nối 4 ý kiến với người nói (Woman, Man, Both). Điểm mấu chốt là thứ tự nói chuyện:</p>
+                <h3>💡 Quy luật "Đảo Key" (Mẹo)</h3>
+                <p>Vì bài nghe rất dài (7 phút) và không có thời gian đọc câu hỏi, chúng ta sử dụng mẹo dựa trên <strong>người nói đầu tiên</strong>:</p>
                 <ul>
-                    <li>Nếu <strong>Woman nói trước</strong>, key sẽ là key gốc (ví dụ: W-B-M-B).</li>
-                    <li>Nếu <strong>Man nói trước</strong>, key sẽ bị <strong>đảo ngược</strong>: W thành M, M thành W,
-                        còn B giữ nguyên (ví dụ: W-B-M-B ➔ M-B-W-B).</li>
+                    <li>👩 <strong>Nữ (Woman) nói trước:</strong> Key giữ nguyên (Ví dụ gốc: W-M-B-W).</li>
+                    <li>👨 <strong>Nam (Man) nói trước:</strong> Key bị <strong>ĐẢO NGƯỢC</strong> (W ↔ M).
+                        <ul>
+                            <li>W thành M</li>
+                            <li>M thành W</li>
+                            <li>B giữ nguyên</li>
+                            <li>Ví dụ gốc: W-M-B-W ➔ <strong>M-W-B-M</strong></li>
+                        </ul>
+                    </li>
                 </ul>
-                <p>Hãy sử dụng công tắc bên dưới để luyện tập quy luật này cho từng chủ đề.</p>
+                <p>Hãy sử dụng công tắc trên mỗi thẻ bài để mô phỏng việc "nghe thấy ai nói trước" và xem đáp án thay đổi như thế nào.</p>
             </div>
 
-            
+            <div id="topic-selector-grid" class="topic-grid">
+                <!-- Nút chọn chủ đề -->
+            </div>
 
             <main id="quiz-container">
                 <!-- Nội dung sẽ được chèn vào đây -->
@@ -37,23 +198,35 @@
         </div>
         <footer id="footer-placeholder"></footer>
     </div>
+    
     <script src="js/main.js"></script>
     <script src="js/data-listening-part15.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.js.iife.js"></script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
-
+            const selectorContainer = document.getElementById('topic-selector-grid');
             const quizContainer = document.getElementById('quiz-container');
+            
+            if (typeof listeningPart15Data === 'undefined') {
+                quizContainer.innerHTML = '<p class="error">Không tìm thấy dữ liệu.</p>';
+                return;
+            }
+
             const topics = listeningPart15Data;
 
+            // Render buttons & Cards
             topics.forEach((topic, index) => {
+                // Button
                 const button = document.createElement('button');
                 button.className = 'topic-selector-btn';
                 button.textContent = `Chủ đề ${index + 1}`;
                 button.dataset.target = `#${topic.id}`;
-                
+                selectorContainer.appendChild(button);
 
+                // Card
                 const card = document.createElement('div');
-                card.className = 'quiz-card part4-card';
+                card.className = 'quiz-card part4-card'; // Tái sử dụng class style của part 4 cũ
                 card.id = topic.id;
                 card.dataset.baseKey = topic.baseKey;
                 if (topic.isFixed) card.dataset.isFixed = "true";
@@ -62,7 +235,7 @@
                 for (let i = 1; i <= 4; i++) {
                     questionsHTML += `
                         <div class="part4-question" data-question-index="${i - 1}">
-                            <p><strong>Câu ${i}</strong></p>
+                            <span><strong>Câu ${i}:</strong> Ý kiến này thuộc về ai?</span>
                             <div class="part4-options">
                                 <button class="option-btn" data-choice="W">W</button>
                                 <button class="option-btn" data-choice="M">M</button>
@@ -72,16 +245,21 @@
                     `;
                 }
 
-                const toggleDisabled = topic.isFixed ? 'disabled' : '';
                 card.innerHTML = `
                     <div class="card-header">
                         <h2>${topic.title}</h2>
-                        <div class="speaker-toggle-container ${toggleDisabled ? 'disabled' : ''}">
-                            <span>Woman</span>
-                            <label class="switch"><input type="checkbox" class="speaker-toggle" ${toggleDisabled}><span class="slider round"></span></label>
-                            <span>Man</span>
+                        <div class="speaker-toggle-container">
+                            <span class="toggle-label-woman">👩 Nữ nói trước</span>
+                            <label class="switch">
+                                <input type="checkbox" class="speaker-toggle">
+                                <span class="slider round"></span>
+                            </label>
+                            <span class="toggle-label-man">👨 Nam nói trước</span>
                         </div>
                     </div>
+                    <p class="instructions" style="font-style: italic; margin-bottom: 15px;">
+                        Gạt công tắc ở trên để giả lập người nói đầu tiên.
+                    </p>
                     <div class="part4-questions-container">${questionsHTML}</div>
                     <div class="feedback-message"></div>
                     <div class="card-actions">
@@ -90,107 +268,200 @@
                     </div>
                     <div class="answer-section" style="display: none;">
                         <h4>Đáp án & Gợi nhớ</h4>
-                        <p><strong>Key đúng:</strong> <span class="final-key-display"></span></p>
-                        <p><strong>Câu chuyện gợi nhớ:</strong> ${topic.story}</p>
+                        <p><strong>Key áp dụng:</strong> <span class="final-key-display" style="font-size: 1.2em; font-weight: bold; color: #d63384;">...</span></p>
+                        <p><strong>Key gốc (Nữ nói trước):</strong> ${topic.baseKey}</p>
+                        <hr style="margin: 10px 0; border: 0; border-top: 1px solid #ddd;">
+                        <p>${topic.story}</p>
                     </div>
                 `;
                 quizContainer.appendChild(card);
             });
 
-            // --- LOGIC HOÀN CHỈNH VÀ ĐÁNG TIN CẬY ---
-    
+            const allButtons = selectorContainer.querySelectorAll('.topic-selector-btn');
             const allCards = quizContainer.querySelectorAll('.part4-card');
 
-            function showTopic(targetId) {
-                allCards.forEach(card => card.classList.remove('active'));
-                allButtons.forEach(btn => btn.classList.remove('active'));
-                const targetCard = document.querySelector(targetId);
-                const targetButton = selectorContainer.querySelector(`[data-target='${targetId}']`);
-                if (targetCard) targetCard.classList.add('active');
-                if (targetButton) targetButton.classList.add('active');
-            }
-
-            function calculateKeyArray(baseKey, isManFirst, isFixed) {
+            // --- HÀM TÍNH TOÁN KEY ---
+            function calculateKeyArray(baseKey, isManFirst) {
                 const keyArray = baseKey.split('-');
-                if (isManFirst && !isFixed) {
+                if (isManFirst) {
                     return keyArray.map(char => {
                         if (char === 'W') return 'M';
                         if (char === 'M') return 'W';
-                        return 'B';
+                        return 'B'; // B giữ nguyên
                     });
                 }
                 return keyArray;
             }
 
-            // 1. Thêm sự kiện 'change' cho công tắc toggle
-            quizContainer.addEventListener('change', function(e) {
+            // --- SỰ KIỆN ---
+            
+            // 1. Chuyển Tab Chủ đề
+            function showTopic(targetId) {
+                allCards.forEach(card => card.classList.remove('active'));
+                allButtons.forEach(btn => btn.classList.remove('active'));
+                const targetCard = document.querySelector(targetId);
+                const targetButton = selectorContainer.querySelector(`[data-target='${targetId}']`);
+                
+                if (targetCard) targetCard.classList.add('active');
+                if (targetButton) targetButton.classList.add('active');
+            }
+
+            selectorContainer.addEventListener('click', (e) => {
+                if (e.target.classList.contains('topic-selector-btn')) showTopic(e.target.dataset.target);
+            });
+
+            // 2. Chọn đáp án (W/M/B)
+            quizContainer.addEventListener('click', (e) => {
+                if (e.target.classList.contains('option-btn')) {
+                    const parent = e.target.parentElement;
+                    parent.querySelectorAll('.option-btn').forEach(btn => btn.classList.remove('selected'));
+                    e.target.classList.add('selected');
+                }
+            });
+
+            // 3. Gạt công tắc (Toggle Speaker) - Cập nhật Key hiển thị nếu đang mở
+            quizContainer.addEventListener('change', (e) => {
                 if (e.target.classList.contains('speaker-toggle')) {
                     const card = e.target.closest('.part4-card');
                     const answerSection = card.querySelector('.answer-section');
-                    
-                    // Chỉ cập nhật nếu đáp án đang được hiển thị
+                    // Reset kết quả cũ nếu có
+                    card.classList.remove('correct', 'incorrect');
+                    card.querySelectorAll('.part4-question').forEach(q => q.classList.remove('correct', 'incorrect'));
+                    card.querySelector('.feedback-message').innerHTML = '';
+
+                    // Nếu đang xem đáp án, cập nhật ngay key mới
                     if (answerSection.style.display === 'block') {
-                        const isManFirst = e.target.checked;
-                        const isFixed = card.dataset.isFixed === "true";
-                        const baseKey = card.dataset.baseKey;
-                        
-                        const finalKeyArray = calculateKeyArray(baseKey, isManFirst, isFixed);
-                        card.querySelector('.final-key-display').textContent = finalKeyArray.join(' - ');
+                        updateKeyDisplay(card);
                     }
                 }
             });
-            
-            quizContainer.addEventListener('click', function (e) {
-                if (e.target.classList.contains('option-btn')) {
-                    const parentOptions = e.target.parentElement;
-                    parentOptions.querySelectorAll('.option-btn').forEach(btn => btn.classList.remove('selected'));
-                    e.target.classList.add('selected');
-                }
 
+            function updateKeyDisplay(card) {
+                const isManFirst = card.querySelector('.speaker-toggle').checked;
+                const baseKey = card.dataset.baseKey;
+                const finalKeyArray = calculateKeyArray(baseKey, isManFirst);
+                card.querySelector('.final-key-display').textContent = finalKeyArray.join(' - ');
+                
+                // Thêm label chỉ dẫn
+                const label = isManFirst ? "(Đã đảo: W↔M)" : "(Giữ nguyên)";
+                card.querySelector('.final-key-display').innerHTML += ` <small style="font-weight:normal; font-size:0.7em; color:#666;">${label}</small>`;
+            }
+
+            // 4. Kiểm tra đáp án
+            quizContainer.addEventListener('click', (e) => {
                 if (e.target.classList.contains('check-answer-btn')) {
                     const card = e.target.closest('.part4-card');
                     const isManFirst = card.querySelector('.speaker-toggle').checked;
-                    const isFixed = card.dataset.isFixed === "true";
                     const baseKey = card.dataset.baseKey;
-
-                    const correctKeyArray = calculateKeyArray(baseKey, isManFirst, isFixed);
-
+                    const correctKeyArray = calculateKeyArray(baseKey, isManFirst);
+                    
                     let correctCount = 0;
                     const questions = card.querySelectorAll('.part4-question');
+                    
                     questions.forEach((q, i) => {
                         const selectedBtn = q.querySelector('.option-btn.selected');
                         q.classList.remove('correct', 'incorrect');
-                        if (selectedBtn && selectedBtn.dataset.choice === correctKeyArray[i]) {
-                            q.classList.add('correct');
-                            correctCount++;
-                        } else if (selectedBtn) {
-                            q.classList.add('incorrect');
+                        
+                        if (selectedBtn) {
+                            if (selectedBtn.dataset.choice === correctKeyArray[i]) {
+                                q.classList.add('correct');
+                                correctCount++;
+                            } else {
+                                q.classList.add('incorrect');
+                            }
                         }
                     });
-                    card.querySelector('.feedback-message').innerHTML = `Đúng: <strong>${correctCount}/${questions.length}</strong>`;
-                }
-
-                if (e.target.classList.contains('show-story-btn')) {
-                    const card = e.target.closest('.part4-card');
-                    const isManFirst = card.querySelector('.speaker-toggle').checked;
-                    const isFixed = card.dataset.isFixed === "true";
-                    const baseKey = card.dataset.baseKey;
-
-                    const finalKeyArray = calculateKeyArray(baseKey, isManFirst, isFixed);
-                    card.querySelector('.final-key-display').textContent = finalKeyArray.join(' - ');
-
-                    const answerSection = e.target.closest('.card-actions').nextElementSibling;
-                    const isVisible = answerSection.style.display === 'block';
-                    answerSection.style.display = isVisible ? 'none' : 'block';
-                    e.target.textContent = isVisible ? 'Ẩn Key & Gợi nhớ' : 'Xem Key & Gợi nhớ';
+                    
+                    const feedback = card.querySelector('.feedback-message');
+                    feedback.innerHTML = `Bạn trả lời đúng <strong>${correctCount}/4</strong> câu.`;
+                    feedback.className = correctCount === 4 ? 'feedback-message correct' : 'feedback-message incorrect';
                 }
             });
 
-            
-           
+            // 5. Xem Key
+            quizContainer.addEventListener('click', (e) => {
+                if (e.target.classList.contains('show-story-btn')) {
+                    const card = e.target.closest('.part4-card');
+                    const answerSection = card.querySelector('.answer-section');
+                    const isVisible = answerSection.style.display === 'block';
+                    
+                    if (!isVisible) {
+                        updateKeyDisplay(card); // Tính toán key đúng thời điểm mở
+                        answerSection.style.display = 'block';
+                        e.target.textContent = 'Ẩn Key & Gợi nhớ';
+                    } else {
+                        answerSection.style.display = 'none';
+                        e.target.textContent = 'Xem Key & Gợi nhớ';
+                    }
+                }
+            });
+
+            // Init
+            if (allButtons.length > 0) showTopic(allButtons[0].dataset.target);
+            setTimeout(initListeningPart15Tour, 800);
         });
+
+        // --- TOUR HƯỚNG DẪN ---
+        function initListeningPart15Tour() {
+            const driver = window.driver.js.driver;
+            const driverObj = driver({
+                showProgress: true,
+                animate: true,
+                doneBtnText: 'Hoàn thành',
+                nextBtnText: 'Tiếp theo',
+                prevBtnText: 'Quay lại',
+                popoverClass: 'driverjs-theme',
+                steps: [
+                    { 
+                        element: '.explanation-box', 
+                        popover: { 
+                            title: 'Mẹo "Đảo Key" Câu 15', 
+                            description: 'Quy luật sống còn: Nếu <strong>Nữ</strong> nói trước -> Key giữ nguyên. Nếu <strong>Nam</strong> nói trước -> Key đảo ngược (W thành M, M thành W).', 
+                            side: "bottom", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.part4-card.active .speaker-toggle-container', 
+                        popover: { 
+                            title: 'Giả lập tình huống', 
+                            description: 'Sử dụng công tắc này để giả định ai là người nói câu đầu tiên trong đoạn băng. Hãy thử gạt qua lại để xem sự thay đổi.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.part4-card.active .part4-questions-container', 
+                        popover: { 
+                            title: 'Chọn đáp án', 
+                            description: 'Dựa vào tình huống bạn đã chọn (Nữ hay Nam nói trước) và trí nhớ về câu chuyện, hãy chọn W, M hoặc B.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.part4-card.active .show-story-btn', 
+                        popover: { 
+                            title: 'Kiểm chứng', 
+                            description: 'Bấm vào đây để xem hệ thống tự động tính toán Key đúng (Đã đảo hoặc Không đảo) dựa trên công tắc bạn chọn.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    }
+                ]
+            });
+
+            const hasSeenTour = localStorage.getItem('hasSeenListeningPart15Tour');
+            if (!hasSeenTour) {
+                driverObj.drive();
+                localStorage.setItem('hasSeenListeningPart15Tour', 'true');
+            }
+
+            document.getElementById('restart-tour').addEventListener('click', () => {
+                driverObj.drive();
+            });
+        }
     </script>
 </body>
-
 
 </html>

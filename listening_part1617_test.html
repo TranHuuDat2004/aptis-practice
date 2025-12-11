@@ -4,31 +4,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Listening - Part 4 (Q16-17)</title>
+    <title>Listening - Part 4 Test</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/quiz.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="icon" href="img/favicon.png" type="image/x-icon">
+
+    <!-- 1. Tích hợp CSS của Driver.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css"/>
+
+    <style>
+        /* CSS cho nút Help/Tour */
+        .tour-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            color: #333;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            z-index: 999;
+            font-size: 24px;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .tour-btn:hover {
+            transform: scale(1.1);
+            background-color: #f8f9fa;
+        }
+
+        /* Tùy chỉnh giao diện Driver.js */
+        .driver-popover.driverjs-theme {
+            background-color: #fff;
+            color: #333;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            max-width: 350px;
+        }
+        
+        .driver-popover.driverjs-theme .driver-popover-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--primary-blue, #007bff);
+        }
+        
+        .driver-popover.driverjs-theme .driver-popover-description {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .driver-popover.driverjs-theme button {
+            background-color: var(--primary-blue, #007bff);
+            color: #fff;
+            text-shadow: none;
+            border: none;
+            border-radius: 4px;
+            padding: 6px 12px;
+        }
+        
+        /* Style bổ sung cho danh sách liên kết tài liệu */
+        .resource-links {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        
+        /* Style cho câu hỏi */
+        .listening-question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+        }
+
+        .question-title {
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #2c3e50;
+        }
+    </style>
 </head>
+
 
 <body>
     <header id="header-placeholder"></header>
+    
+    <!-- 2. Nút kích hoạt lại Tour -->
+    <div class="tour-btn" id="restart-tour" title="Hướng dẫn sử dụng">❓</div>
+
     <div class="content-pusher">
         <div class="container">
             <div class="page-intro">
-                <h1>Listening - Part 4 (Câu 16-17)</h1>
-                <p>Nghe một đoạn độc thoại dài hơn và trả lời 2 câu hỏi về nó.</p>
+                <h1>Listening - Part 4 Test (Câu 16-17)</h1>
+                <p>Kiểm tra trí nhớ các cặp Key đã học.</p>
             </div>
+
+            <!-- HỘP GIẢI THÍCH -->
             <div class="explanation-box">
                 <h3>💡 Phương pháp kiểm tra trí nhớ</h3>
                 <p>
-                    Đây là trang kiểm tra nhanh trí nhớ của bạn. Mục tiêu là <b>vận dụng</b> những gì bạn đã học được từ
-                    trang "List Key" để trả lời các câu hỏi.
+                    Đây là trang trắc nghiệm giúp bạn ôn lại kiến thức Part 4. Hãy cố gắng nhớ lại <strong>cặp đáp án đúng</strong> (2 ý kiến) cho mỗi đoạn hội thoại mà không cần nghe audio.
                 </p>
                 <p>
-                    Nếu bạn chưa ôn tập, hãy mở trang này để ôn nhé!
+                    Nếu bạn chưa thuộc bài, hãy quay lại trang "List Key" để ôn tập trước nhé!
                 </p>
 
                 <div class="resource-links">
@@ -37,13 +131,21 @@
 
                 <h4>Các bước thực hiện:</h4>
                 <ol>
-                    <li><strong>Ôn tập thật kỹ:</strong> Dành thời gian học thuộc các đáp án và ghi nhớ từ in đậm.</li>
-                    <li><strong>Kiểm tra trí nhớ:</strong> Quay lại trang này và trả lời tất cả các câu hỏi dựa trên
-                        những gì bạn nhớ được.</li>
-                    <li><strong>Xem kết quả:</strong> Sau khi hoàn thành, nhấn nút "Kiểm tra đáp án" ở cuối trang để xem
-                        bạn đã nhớ đúng bao nhiêu câu.</li>
+                    <li><strong>Đọc câu hỏi:</strong> Xác định xem đây là đoạn hội thoại nào.</li>
+                    <li><strong>Chọn đáp án:</strong> Chọn 1 đáp án chính xác nhất trong số các lựa chọn.</li>
+                    <li><strong>Kiểm tra:</strong> Nhấn nút "Kiểm tra đáp án" để xem kết quả.</li>
                 </ol>
             </div>
+
+            <!-- SECTION MỚI: TÀI LIỆU BỔ TRỢ -->
+            <div class="explanation-box" style="margin-top: 20px; background-color: #e3f2fd; border-left: 4px solid #2196f3;">
+                <h3>📚 Tài liệu gốc</h3>
+                <p>Nếu bạn muốn xem file gốc để đối chiếu, hãy truy cập link bên dưới:</p>
+                <ul>
+                    <li>📂 <a href="https://drive.google.com/drive/folders/15lR8CosejfYo3rO1y_d_NujHSq-wh0cW?usp=drive_link" target="_blank" style="color: #0056b3; font-weight: 500;">Kho tài liệu Drive (Part 16 & 17)</a></li>
+                </ul>
+            </div>
+
             <main id="quiz-container">
                 <!-- Nội dung câu hỏi trắc nghiệm sẽ được JS chèn vào đây -->
             </main>
@@ -58,8 +160,13 @@
         <footer id="footer-placeholder"></footer>
     </div>
 
-    <script src="js/data-listening-part4.js"></script>
+    <!-- SỬ DỤNG FILE DATA MỚI CHO PART 16-17 -->
+    <script src="js/data-listening-test-part1617.js"></script> 
     <script src="js/main.js"></script>
+    
+    <!-- 3. Tích hợp Script của Driver.js -->
+    <script src="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.js.iife.js"></script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const quizContainer = document.getElementById('quiz-container');
@@ -67,11 +174,17 @@
             const checkAnswersBtn = document.getElementById('check-answers-btn');
             const resultMessage = document.getElementById('result-message');
 
-            const questions = listeningPart4Data.part4;
+            // Kiểm tra dữ liệu
+            // Giả định biến global là listeningTestPart1617Data
+            const questions = (typeof listeningTestPart1617Data !== 'undefined') ? listeningTestPart1617Data : [];
+            
+            if (questions.length === 0) {
+                 quizContainer.innerHTML = '<p class="error" style="text-align:center; padding:20px;">Chưa có dữ liệu câu hỏi. Vui lòng cập nhật file data-listening-test-part1617.js</p>';
+            }
+
             const questionsPerPage = 10;
             let currentPage = 1;
 
-            // === HÀM RENDER ĐÃ ĐƯỢC CẬP NHẬT LOGIC ĐÁNH SỐ ===
             function renderPage(page) {
                 quizContainer.innerHTML = '';
                 currentPage = page;
@@ -79,26 +192,14 @@
                 const end = start + questionsPerPage;
                 const questionsToRender = questions.slice(start, end);
 
-                let topicCounter = Math.floor(start / 2) + 1;
-                let subQuestionCounter = 1;
-
                 questionsToRender.forEach((q, index) => {
                     const questionIndex = start + index;
-
-                    // Logic đánh số mới
-                    if (index > 0 && q.topicId !== questionsToRender[index - 1].topicId) {
-                        topicCounter++;
-                        subQuestionCounter = 1;
-                    }
-                    const questionNumber = `${topicCounter}.${subQuestionCounter}`;
-                    subQuestionCounter++;
-
                     const questionElement = document.createElement('div');
                     questionElement.className = 'quiz-card listening-question';
                     questionElement.dataset.questionIndex = questionIndex;
 
                     let optionsHTML = '';
-                    q.options.forEach((option) => {
+                    q.options.forEach((option, i) => {
                         optionsHTML += `
                             <label class="radio-label">
                                 <input type="radio" name="question-${questionIndex}" value="${option}">
@@ -107,8 +208,9 @@
                         `;
                     });
 
+                    // Không có thẻ audio
                     questionElement.innerHTML = `
-                        <p class="question-title">${questionNumber}. ${q.question}</p>
+                        <p class="question-title"><strong>Câu ${q.number}:</strong> ${q.question}</p>
                         <div class="options-container">
                             ${optionsHTML}
                         </div>
@@ -123,11 +225,17 @@
             function renderPagination() {
                 paginationControls.innerHTML = '';
                 const pageCount = Math.ceil(questions.length / questionsPerPage);
+                // Ẩn phân trang nếu chỉ có 1 trang
+                if (pageCount <= 1) return;
+
                 for (let i = 1; i <= pageCount; i++) {
                     const button = document.createElement('button');
                     button.textContent = i;
                     button.className = (i === currentPage) ? 'active' : '';
-                    button.addEventListener('click', () => renderPage(i));
+                    button.addEventListener('click', () => {
+                        renderPage(i);
+                        window.scrollTo(0, 0); // Cuộn lên đầu trang khi chuyển trang
+                    });
                     paginationControls.appendChild(button);
                 }
             }
@@ -149,22 +257,113 @@
                         if (selectedRadio.value === questionData.answer) {
                             card.classList.add('correct');
                             feedbackDiv.textContent = 'Chính xác!';
+                            feedbackDiv.style.color = '#28a745';
                             correctCount++;
                         } else {
                             card.classList.add('incorrect');
                             feedbackDiv.innerHTML = `Sai rồi! Đáp án đúng là: <strong>${questionData.answer}</strong>`;
+                            feedbackDiv.style.color = '#dc3545';
                         }
                     } else {
                         card.classList.add('incorrect');
                         feedbackDiv.innerHTML = `Bạn chưa chọn đáp án. Đáp án đúng là: <strong>${questionData.answer}</strong>`;
+                        feedbackDiv.style.color = '#dc3545';
                     }
                 });
 
                 resultMessage.innerHTML = `Bạn đã trả lời đúng <strong>${correctCount}/${questionCards.length}</strong> câu trên trang này.`;
+                resultMessage.style.color = correctCount === questionCards.length ? '#28a745' : '#333';
             });
 
+            // Render trang đầu tiên khi tải
             renderPage(1);
+
+            // --- KÍCH HOẠT TOUR HƯỚNG DẪN ---
+            // Gọi sau khi render xong để đảm bảo các element đã tồn tại
+            setTimeout(initListeningPart1617TestTour, 800);
         });
+
+        // HÀM KHỞI TẠO TOUR CHO LISTENING PART 4 TEST
+        function initListeningPart1617TestTour() {
+            const driver = window.driver.js.driver;
+            
+            const driverObj = driver({
+                showProgress: true,
+                animate: true,
+                doneBtnText: 'Đã hiểu',
+                nextBtnText: 'Tiếp theo',
+                prevBtnText: 'Quay lại',
+                popoverClass: 'driverjs-theme',
+                steps: [
+                    { 
+                        element: '.explanation-box', 
+                        popover: { 
+                            title: 'Kiểm tra trí nhớ Part 4', 
+                            description: 'Trang này giúp bạn kiểm tra xem mình đã thuộc Key của Part 16 & 17 chưa mà không cần nghe audio.', 
+                            side: "bottom", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.explanation-box[style*="background-color: #e3f2fd"]', 
+                        popover: { 
+                            title: 'Tài liệu gốc', 
+                            description: 'Nếu quên, bạn có thể bấm vào link Drive ở đây để xem lại file gốc.', 
+                            side: "bottom", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.listening-question:first-child', 
+                        popover: { 
+                            title: 'Câu hỏi trắc nghiệm', 
+                            description: 'Một đoạn hội thoại (chủ đề) sẽ tương ứng với 2 câu hỏi (ví dụ 1.1 và 1.2). Bạn phải chọn đáp án đúng cho từng câu.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.listening-question:first-child .options-container', 
+                        popover: { 
+                            title: 'Chọn đáp án', 
+                            description: 'Mỗi câu hỏi có 3 lựa chọn. Hãy chọn 1 đáp án duy nhất đúng cho câu hỏi đó.', 
+                            side: "left", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '#check-answers-btn', 
+                        popover: { 
+                            title: 'Kiểm tra', 
+                            description: 'Sau khi làm xong, bấm nút này để xem kết quả và đáp án đúng.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '#restart-tour', 
+                        popover: { 
+                            title: 'Hỗ trợ', 
+                            description: 'Bấm vào đây bất cứ lúc nào để xem lại hướng dẫn.', 
+                            side: "left", 
+                            align: 'center' 
+                        } 
+                    }
+                ]
+            });
+
+            // Logic tự động chạy lần đầu
+            const hasSeenTour = localStorage.getItem('hasSeenListeningPart1617TestTour');
+            if (!hasSeenTour) {
+                driverObj.drive();
+                localStorage.setItem('hasSeenListeningPart1617TestTour', 'true');
+            }
+
+            // Gán sự kiện cho nút ?
+            document.getElementById('restart-tour').addEventListener('click', () => {
+                driverObj.drive();
+            });
+        }
     </script>
 </body>
 
