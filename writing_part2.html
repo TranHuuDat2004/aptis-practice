@@ -101,7 +101,7 @@
                 <h3>💡 Cẩm nang trả lời Part 2</h3>
                 <p>Bạn có <strong>7 phút</strong> để trả lời một câu hỏi mở.</p>
                 <ul>
-                    <li><strong>Mục tiêu số từ:</strong> Viết khoảng <strong>20 - 50 từ</strong>. Cố gắng viết thành các câu hoàn chỉnh, không chỉ gạch đầu dòng.</li>
+                    <li><strong>Mục tiêu số từ:</strong> Đề bài thường yêu cầu 20-30 từ. Tại đây, hệ thống cho phép tối đa <strong>75 từ</strong> để bạn viết thoải mái, nhưng sẽ chặn nếu vượt quá.</li>
                     <li><strong>Phát triển ý:</strong> Câu trả lời nên bao gồm 2-3 ý nhỏ để thể hiện khả năng diễn đạt.
                         <ul>
                             <li><strong>Ví dụ:</strong> Với câu hỏi "Why are you interested in travel?", bạn có thể trả lời: <br>(1) Mở mang kiến thức với văn hóa mới,  <br>(2) Khiến tôi vui vẻ và tò mò,  <br>(3) Muốn khám phá thêm những điều mới lạ khác trên thế giới.</li>
@@ -158,8 +158,8 @@
                     </div>
                     <div class="writing-prompt">
                         <label for="${topic.id}-answer" style="font-weight:bold; font-size:1.1em; display:block; margin-bottom:10px;">${topic.question}</label>
-                        <textarea id="${topic.id}-answer" rows="6" placeholder="Your answer (recommended 20-50 words)..." style="width:100%; padding:10px; border-radius:5px; border:1px solid #ccc;"></textarea>
-                        <div class="word-count-container" style="text-align:right; margin-top:5px; font-style:italic; color:#666;"><span class="word-count">0 words</span></div>
+                        <textarea id="${topic.id}-answer" rows="6" placeholder="Your answer (20-75 words)..." style="width:100%; padding:10px; border-radius:5px; border:1px solid #ccc;"></textarea>
+                        <div class="word-count-container" style="text-align:right; margin-top:5px; font-style:italic; color:#666;"><span class="word-count">0/75 words</span></div>
                     </div>
                     <div class="card-actions" style="margin-top:20px; text-align:center; border-top:1px dashed #dee2e6; padding-top:20px;">
                         <button class="action-btn show-sample-btn">📖 Xem câu trả lời mẫu</button>
@@ -219,20 +219,39 @@
                 }
             });
 
-            // Sự kiện nhập liệu (Đếm từ & Auto Start Timer)
+            // Sự kiện nhập liệu (Đếm từ & Auto Start Timer & Hard Limit 75 words)
             contentContainer.addEventListener('input', function(e) {
                 if (e.target.tagName === 'TEXTAREA') {
                     const card = e.target.closest('.writing-card');
-                    const val = e.target.value;
-                    const words = val.trim().split(/\s+/).filter(word => word.length > 0);
+                    const MAX_WORDS = 75; // Giới hạn cứng 75 từ cho thoải mái
+
+                    let val = e.target.value;
+                    let words = val.trim().split(/\s+/).filter(word => word.length > 0);
+
+                    // --- LOGIC CHẶN NHẬP LIỆU (HARD LIMIT) ---
+                    if (words.length > MAX_WORDS) {
+                        // Nếu vượt quá, cắt lấy đúng 75 từ và gán ngược lại
+                        e.target.value = words.slice(0, MAX_WORDS).join(" ");
+                        // Cập nhật lại mảng words
+                        words = e.target.value.trim().split(/\s+/).filter(word => word.length > 0);
+                    }
                     
                     // Cập nhật số từ
                     const wordCountSpan = card.querySelector('.word-count');
-                    wordCountSpan.textContent = `${words.length} words`;
+                    wordCountSpan.textContent = `${words.length}/${MAX_WORDS} words`;
+
+                    // Style cảnh báo
+                    if (words.length >= MAX_WORDS) {
+                        wordCountSpan.style.color = '#dc3545';
+                        wordCountSpan.style.fontWeight = 'bold';
+                    } else {
+                        wordCountSpan.style.color = '#666'; 
+                        wordCountSpan.style.fontWeight = 'normal';
+                    }
                     
                     // Lưu bài làm
                     const storageKey = `writing_part2_${card.id}`;
-                    localStorage.setItem(storageKey, val);
+                    localStorage.setItem(storageKey, e.target.value);
 
                     // Tự động bắt đầu timer nếu chưa chạy
                     const startBtn = card.querySelector('.start-writing-btn');
@@ -297,7 +316,7 @@
                         element: '.explanation-box', 
                         popover: { 
                             title: 'Cẩm nang Part 2', 
-                            description: 'Nhiệm vụ của bạn là trả lời 1 câu hỏi mở trong 7 phút. Hãy viết khoảng 20-50 từ, sử dụng các câu hoàn chỉnh.', 
+                            description: 'Nhiệm vụ của bạn là trả lời 1 câu hỏi mở trong 7 phút. Mục tiêu là 20-30 từ, nhưng ở đây bạn có giới hạn <strong>75 từ</strong> để viết thoải mái hơn.', 
                             side: "bottom", 
                             align: 'center' 
                         } 
@@ -315,7 +334,7 @@
                         element: '.writing-card.active .writing-prompt', 
                         popover: { 
                             title: 'Khu vực trả lời', 
-                            description: 'Đọc câu hỏi và nhập câu trả lời vào đây. Đồng hồ sẽ tự động chạy khi bạn bắt đầu gõ.', 
+                            description: 'Đọc câu hỏi và nhập câu trả lời vào đây. Đồng hồ sẽ <strong>tự động chạy</strong> khi bạn bắt đầu gõ.', 
                             side: "top", 
                             align: 'center' 
                         } 
@@ -323,8 +342,8 @@
                     { 
                         element: '.writing-card.active .word-count-container', 
                         popover: { 
-                            title: 'Kiểm soát độ dài', 
-                            description: 'Theo dõi số từ tại đây. Hãy cố gắng viết ít nhất 20 từ để đủ ý và không quá dài dòng.', 
+                            title: 'Giới hạn từ', 
+                            description: 'Theo dõi số từ tại đây. Hệ thống sẽ chặn khi bạn đạt 75 từ. Hãy cố gắng viết súc tích.', 
                             side: "left", 
                             align: 'center' 
                         } 

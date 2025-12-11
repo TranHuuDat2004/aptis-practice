@@ -6,31 +6,123 @@
     <title>Writing - Part 3</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+
+    <!-- 1. Tích hợp CSS của Driver.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css"/>
+
+    <style>
+        /* CSS cho nút Help/Tour */
+        .tour-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            color: #333;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            z-index: 999;
+            font-size: 24px;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .tour-btn:hover {
+            transform: scale(1.1);
+            background-color: #f8f9fa;
+        }
+
+        /* Tùy chỉnh giao diện Driver.js */
+        .driver-popover.driverjs-theme {
+            background-color: #fff;
+            color: #333;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            max-width: 300px;
+        }
+        
+        .driver-popover.driverjs-theme .driver-popover-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--primary-blue, #007bff);
+        }
+        
+        .driver-popover.driverjs-theme .driver-popover-description {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        .driver-popover.driverjs-theme button {
+            background-color: var(--primary-blue, #007bff);
+            color: #fff;
+            text-shadow: none;
+            border: none;
+            border-radius: 4px;
+            padding: 6px 12px;
+        }
+
+        /* Sample Answer Styling */
+        .sample-answer-wrapper {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            font-size: 0.95em;
+        }
+        
+        .sample-answer-item {
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .sample-answer-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .sample-answer-user {
+            font-weight: bold;
+            color: #155724;
+            display: block;
+            margin-bottom: 4px;
+        }
+    </style>
 </head>
 <body>
     <header id="header-placeholder"></header>
+    
+    <!-- 2. Nút kích hoạt lại Tour -->
+    <div class="tour-btn" id="restart-tour" title="Hướng dẫn sử dụng">❓</div>
+
     <div class="content-pusher">
         <div class="container">
             <div class="page-intro">
                 <h1>Writing - Part 3</h1>
                 <p>Trò chuyện trong Chat Room (Tổng thời gian: 10 phút)</p>
             </div>
-            <!-- THÊM CẨM NANG VÀO ĐÂY -->
+            
+            <!-- CẨM NANG -->
             <div class="explanation-box">
                 <h3>💡 Cẩm nang trả lời Part 3</h3>
-                <p>Bạn có <strong>10 phút</strong> để trả lời 3 câu hỏi từ 3 người khác nhau trong một phòng chat. Đây là phần thi kiểm tra khả năng giao tiếp thân mật, tự nhiên.</p>
+                <p>Bạn có <strong>10 phút</strong> để trả lời 3 câu hỏi trong phòng chat. Đây là phần thi kiểm tra khả năng giao tiếp tự nhiên.</p>
                 <ul>
-                    <li><strong>Mục tiêu số từ:</strong> Viết khoảng <strong>30 - 40 từ</strong> cho mỗi câu trả lời.</li>
-                    <li><strong>Văn phong:</strong> Sử dụng ngôn ngữ không trang trọng (informal), giống như khi bạn đang nhắn tin với bạn bè. Có thể dùng các câu cảm thán ngắn (Wow!, That's cool!).</li>
-                    <li><strong>Chiến lược:</strong> Trả lời trực tiếp vào câu hỏi và có thể thêm một chi tiết nhỏ hoặc một câu hỏi ngược lại để cuộc trò chuyện tự nhiên hơn.
-                        <ul>
-                             <li><strong>Ví dụ:</strong> Với câu hỏi "Do you prefer to eat out or eat at home?", bạn có thể trả lời: "I enjoy eating out with friends whenever possible. It's a great way to socialize and try new dishes. How about you?".</li>
-                        </ul>
-                    </li>
-                    <li><strong>Quản lý thời gian:</strong> Dành khoảng 3 phút cho mỗi câu trả lời để đảm bảo bạn hoàn thành cả 3 câu.</li>
+                    <li><strong>Mục tiêu số từ:</strong> Đề bài yêu cầu 30-40 từ. Tại đây, hệ thống giới hạn <strong>75 từ</strong> mỗi câu để bạn viết thoải mái hơn nhưng vẫn kiểm soát được độ dài.</li>
+                    <li><strong>Văn phong:</strong> Sử dụng ngôn ngữ thân mật (informal).</li>
+                    <li><strong>Lưu ý:</strong> Đồng hồ sẽ tự động chạy khi bạn gõ phím. Hết 10 phút toàn bộ ô chat sẽ bị khóa.</li>
                 </ul>
             </div>
+
             <div id="topic-selector-grid" class="topic-grid">
                 <!-- Các nút chọn chủ đề -->
             </div>
@@ -43,12 +135,21 @@
     </div>
     <script src="js/main.js"></script>
     <script src="js/data-writing-part3.js"></script>
+    
+    <!-- 3. Tích hợp Script của Driver.js -->
+    <script src="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.js.iife.js"></script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const selectorContainer = document.getElementById('topic-selector-grid');
             const contentContainer = document.getElementById('writing-container');
             const topics = writingPart3Data;
             let activeTimerInterval;
+
+            if (!topics || topics.length === 0) {
+                contentContainer.innerHTML = `<p class="error">Không có dữ liệu cho Writing Part 3.</p>`;
+                return;
+            }
 
             topics.forEach((topic, index) => {
                 const button = document.createElement('button');
@@ -62,15 +163,28 @@
                 card.id = topic.id;
                 
                 let promptsHTML = '';
+                let sampleAnswersHTML = '';
+
                 topic.prompts.forEach((prompt, i) => {
+                    // HTML cho giao diện chat
                     promptsHTML += `
                         <div class="chat-message them">
                             <div class="chat-user">${prompt.user}</div>
                             <div class="chat-bubble">${prompt.question}</div>
                         </div>
                         <div class="chat-message me">
-                            <textarea class="chat-input" rows="3" data-index="${i}" placeholder="Your answer (30-40 words)..."></textarea>
-                            <div class="word-count-container"><span class="word-count">0 words</span></div>
+                            <textarea class="chat-input" rows="3" data-index="${i}" placeholder="Your answer (recommended 30-40 words)..."></textarea>
+                            <div class="word-count-container" style="text-align: right; font-size: 0.8em; color: #666; margin-top: 2px;">
+                                <span class="word-count">0/75 words</span>
+                            </div>
+                        </div>
+                    `;
+
+                    // HTML cho phần đáp án mẫu
+                    sampleAnswersHTML += `
+                        <div class="sample-answer-item">
+                            <span class="sample-answer-user">Response to ${prompt.user}:</span>
+                            <div>${prompt.sampleAnswer}</div>
                         </div>
                     `;
                 });
@@ -82,84 +196,229 @@
                         <div class="timer-display">10:00</div>
                     </div>
                     <div class="chat-window">${promptsHTML}</div>
-                    <div class="card-actions">
+                    <div class="card-actions" style="margin-top:20px; text-align:center; border-top:1px dashed #dee2e6; padding-top:20px;">
                         <button class="action-btn show-sample-btn">📖 Xem câu trả lời mẫu</button>
                     </div>
-                    <div class="sample-answer-wrapper" style="display: none;"></div>
+                    <div class="sample-answer-wrapper" style="display: none;">
+                        <h4 style="margin-top:0; color:#28a745;">Đoạn chat mẫu:</h4>
+                        ${sampleAnswersHTML}
+                    </div>
                 `;
                 contentContainer.appendChild(card);
             });
 
-            // --- LOGIC (Tái sử dụng từ các phần trước, tùy chỉnh) ---
             const allButtons = selectorContainer.querySelectorAll('.topic-selector-btn');
             const allCards = contentContainer.querySelectorAll('.writing-card');
             
-            function showTopic(targetId) { /* ... Giống Part 1/2 ... */ }
-            function loadAnswers(card) { /* ... Giống Part 1/2 ... */ }
-            allCards.forEach(loadAnswers);
-            selectorContainer.addEventListener('click', function(e) { if (e.target.classList.contains('topic-selector-btn')) showTopic(e.target.dataset.target); });
-            contentContainer.addEventListener('input', function(e) { /* ... Giống Part 1/2 ... */ });
-            contentContainer.addEventListener('click', function(e) {
-                if (e.target.classList.contains('start-writing-btn')) { /* ... Logic timer (10 phút) ... */ }
-                if (e.target.classList.contains('show-sample-btn')) { /* ... Logic show answer (tùy chỉnh) ... */ }
-            });
-            if (allButtons.length > 0) showTopic(allButtons[0].dataset.target);
-
-            // --- PHIÊN BẢN JAVASCRIPT ĐẦY ĐỦ ---
             function showTopic(targetId) {
                 allCards.forEach(card => card.classList.remove('active'));
                 allButtons.forEach(btn => btn.classList.remove('active'));
+                
                 const targetCard = document.querySelector(targetId);
                 const targetButton = selectorContainer.querySelector(`[data-target='${targetId}']`);
+                
                 if (targetCard) targetCard.classList.add('active');
                 if (targetButton) targetButton.classList.add('active');
+
+                // Reset Timer
                 if (activeTimerInterval) clearInterval(activeTimerInterval);
                 allCards.forEach(c => {
                     const btn = c.querySelector('.start-writing-btn');
                     const display = c.querySelector('.timer-display');
-                    if (btn) btn.disabled = false;
-                    if (btn) btn.textContent = 'Bắt đầu tính giờ (10 phút)';
+                    if (btn) {
+                        btn.disabled = false;
+                        btn.textContent = 'Bắt đầu tính giờ (10 phút)';
+                    }
                     if (display) display.textContent = '10:00';
                 });
             }
+
+            function loadAnswers(card) {
+                const storageKey = `writing_part3_${card.id}`;
+                const savedAnswers = JSON.parse(localStorage.getItem(storageKey));
+                if (savedAnswers) {
+                    savedAnswers.forEach((answer, index) => {
+                        const textarea = card.querySelectorAll('textarea')[index];
+                        if (textarea) {
+                            textarea.value = answer;
+                            textarea.dispatchEvent(new Event('input', { bubbles: true }));
+                        }
+                    });
+                }
+            }
+            allCards.forEach(loadAnswers);
+
+            selectorContainer.addEventListener('click', function(e) {
+                if (e.target.classList.contains('topic-selector-btn')) showTopic(e.target.dataset.target);
+            });
+
+            // === XỬ LÝ NHẬP LIỆU: Đếm từ, Giới hạn 75 từ, Tự động Timer ===
+            contentContainer.addEventListener('input', function(e) {
+                if (e.target.tagName === 'TEXTAREA') {
+                    const card = e.target.closest('.writing-card');
+                    const MAX_WORDS = 75;
+
+                    // 1. Auto Start Timer
+                    const startBtn = card.querySelector('.start-writing-btn');
+                    if (startBtn && !startBtn.disabled) {
+                        startBtn.click();
+                    }
+
+                    // 2. Word Count & Hard Limit
+                    let val = e.target.value;
+                    let words = val.trim().split(/\s+/).filter(word => word.length > 0);
+
+                    if (words.length > MAX_WORDS) {
+                        e.target.value = words.slice(0, MAX_WORDS).join(" ");
+                        words = e.target.value.trim().split(/\s+/).filter(word => word.length > 0);
+                    }
+
+                    const wordCountSpan = e.target.nextElementSibling.querySelector('.word-count');
+                    wordCountSpan.textContent = `${words.length}/${MAX_WORDS} words`;
+
+                    if (words.length >= MAX_WORDS) {
+                        wordCountSpan.style.color = '#dc3545';
+                        wordCountSpan.style.fontWeight = 'bold';
+                    } else {
+                        wordCountSpan.style.color = '#666'; 
+                        wordCountSpan.style.fontWeight = 'normal';
+                    }
+
+                    // 3. Save to LocalStorage
+                    const storageKey = `writing_part3_${card.id}`;
+                    const allTextareas = card.querySelectorAll('textarea');
+                    const answersToSave = Array.from(allTextareas).map(ta => ta.value);
+                    localStorage.setItem(storageKey, JSON.stringify(answersToSave));
+                }
+            });
+
+            // === TIMER & SHOW SAMPLE ===
             contentContainer.addEventListener('click', function(e) {
                 if (e.target.classList.contains('start-writing-btn')) {
                     if (activeTimerInterval) clearInterval(activeTimerInterval);
                     const button = e.target;
-                    const timerDisplay = button.nextElementSibling;
+                    const display = button.nextElementSibling;
                     const card = button.closest('.writing-card');
+                    
                     button.disabled = true;
                     button.textContent = 'Đang tính giờ...';
-                    let timeInSeconds = 600; // 10 phút
+                    let time = 600; // 10 phút
+
                     activeTimerInterval = setInterval(() => {
-                        timeInSeconds--;
-                        const minutes = Math.floor(timeInSeconds / 60);
-                        const seconds = timeInSeconds % 60;
-                        timerDisplay.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
-                        if (timeInSeconds <= 0) {
+                        time--;
+                        const minutes = Math.floor(time / 60);
+                        const seconds = time % 60;
+                        display.textContent = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+                        
+                        if (time <= 0) {
                             clearInterval(activeTimerInterval);
-                            timerDisplay.textContent = "Hết giờ!";
+                            display.textContent = "Hết giờ!";
                             alert("Hết giờ làm bài!");
                             card.querySelectorAll('textarea').forEach(ta => ta.disabled = true);
                         }
                     }, 1000);
                 }
+
                 if (e.target.classList.contains('show-sample-btn')) {
                     const wrapper = e.target.closest('.card-actions').nextElementSibling;
-                    const card = e.target.closest('.writing-card');
-                    const topicData = topics.find(t => t.id === card.id);
-                    if (wrapper.innerHTML === '') {
-                        topicData.prompts.forEach(p => {
-                            wrapper.innerHTML += `<div class="sample-answer"><p><strong>${p.user}:</strong> ${p.sampleAnswer}</p></div>`;
-                        });
-                    }
                     const isVisible = wrapper.style.display === 'block';
                     wrapper.style.display = isVisible ? 'none' : 'block';
                     e.target.textContent = isVisible ? '📖 Xem câu trả lời mẫu' : '🙈 Ẩn câu trả lời mẫu';
                 }
             });
 
+            if (allButtons.length > 0) showTopic(allButtons[0].dataset.target);
+
+            // --- KÍCH HOẠT TOUR HƯỚNG DẪN PART 3 ---
+            setTimeout(initWritingPart3Tour, 800);
         });
+
+        function initWritingPart3Tour() {
+            const driver = window.driver.js.driver;
+            const driverObj = driver({
+                showProgress: true,
+                animate: true,
+                doneBtnText: 'Đã hiểu',
+                nextBtnText: 'Tiếp theo',
+                prevBtnText: 'Quay lại',
+                popoverClass: 'driverjs-theme',
+                steps: [
+                    { 
+                        element: '.explanation-box', 
+                        popover: { 
+                            title: 'Cẩm nang Part 3', 
+                            description: 'Bạn đang ở trong phòng chat ảo. Nhiệm vụ là trả lời 3 thành viên khác nhau trong vòng 10 phút.', 
+                            side: "bottom", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '#topic-selector-grid', 
+                        popover: { 
+                            title: 'Chọn phòng chat', 
+                            description: 'Mỗi chủ đề là một bối cảnh khác nhau (ví dụ: CLB Sách, CLB Thể thao...).', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.writing-card.active .chat-window', 
+                        popover: { 
+                            title: 'Giao diện Chat', 
+                            description: 'Bên trái là câu hỏi từ các thành viên. Bên phải là nơi bạn nhập câu trả lời.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.writing-card.active .me:first-child textarea', 
+                        popover: { 
+                            title: 'Nhập câu trả lời', 
+                            description: 'Viết câu trả lời của bạn vào đây. Hệ thống giới hạn 75 từ/câu để bạn tập thói quen viết ngắn gọn.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.writing-card.active .start-writing-btn', 
+                        popover: { 
+                            title: 'Thời gian', 
+                            description: 'Bạn có tổng cộng 10 phút cho cả 3 câu. Đồng hồ sẽ tự chạy ngay khi bạn bắt đầu gõ.', 
+                            side: "bottom", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.writing-card.active .show-sample-btn', 
+                        popover: { 
+                            title: 'Tham khảo', 
+                            description: 'Xem cách người bản xứ trả lời tự nhiên và thân mật (informal) trong chat.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '#restart-tour', 
+                        popover: { 
+                            title: 'Hỗ trợ', 
+                            description: 'Xem lại hướng dẫn này bất cứ lúc nào.', 
+                            side: "left", 
+                            align: 'center' 
+                        } 
+                    }
+                ]
+            });
+
+            const hasSeenTour = localStorage.getItem('hasSeenWritingPart3Tour');
+            if (!hasSeenTour) {
+                driverObj.drive();
+                localStorage.setItem('hasSeenWritingPart3Tour', 'true');
+            }
+
+            document.getElementById('restart-tour').addEventListener('click', () => {
+                driverObj.drive();
+            });
+        }
     </script>
 </body>
 </html>
