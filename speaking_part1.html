@@ -9,11 +9,78 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+
+    <!-- 1. Tích hợp CSS của Driver.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css"/>
+
+    <style>
+        /* CSS cho nút Help/Tour */
+        .tour-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            color: #333;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            z-index: 999;
+            font-size: 24px;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .tour-btn:hover {
+            transform: scale(1.1);
+            background-color: #f8f9fa;
+        }
+
+        /* Tùy chỉnh giao diện Popover của Driver.js */
+        .driver-popover.driverjs-theme {
+            background-color: #fff;
+            color: #333;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            max-width: 300px;
+        }
+        
+        .driver-popover.driverjs-theme .driver-popover-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--primary-blue, #007bff);
+        }
+        
+        .driver-popover.driverjs-theme .driver-popover-description {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        .driver-popover.driverjs-theme button {
+            background-color: var(--primary-blue, #007bff);
+            color: #fff;
+            text-shadow: none;
+            border: none;
+            border-radius: 4px;
+            padding: 6px 12px;
+        }
+    </style>
 </head>
 
 <body>
     <header id="header-placeholder"></header>
+
+    <!-- 2. Nút kích hoạt lại Tour -->
+    <div class="tour-btn" id="restart-tour" title="Hướng dẫn sử dụng">❓</div>
+
     <div class="content-pusher">
         <div class="container">
             <div class="page-intro">
@@ -34,7 +101,7 @@
                         như Google Studio, ChatGPT-4o, hoặc các dịch vụ sửa bài nói chuyên dụng để nhận feedback.</li>
                 </ul>
             </div>
-            <!-- THAY THẾ HỘP GIẢI THÍCH Ở ĐÂY -->
+            
             <div class="method-guide-card" style="margin-bottom: 30px;">
                 <h2>Chiến lược thi Part 1</h2>
                 <p>Bạn sẽ trả lời 3 câu hỏi cá nhân, mỗi câu trong 30 giây. Mục tiêu là trả lời trôi chảy và phát triển
@@ -61,9 +128,11 @@
                         không phải tính xác thực của câu chuyện.</li>
                 </ul>
             </div>
+
             <div class="page-intro">
                 <p>Chọn một chủ đề để bắt đầu luyện tập</p>
             </div>
+
             <!-- BẢNG ĐIỀU KHIỂN CHỌN CHỦ ĐỀ -->
             <div id="topic-selector-grid" class="topic-grid">
                 <!-- 37 nút sẽ được tự động chèn vào đây -->
@@ -77,8 +146,10 @@
     </div>
     <script src="js/main.js"></script>
     <script src="js/data-speaking-part1.js"></script>
-    <!-- Trong file speaking_part1.html -->
-     <!-- === THAY THẾ TOÀN BỘ SCRIPT CŨ BẰNG SCRIPT MỚI NÀY === -->
+
+    <!-- 3. Tích hợp Script của Driver.js -->
+    <script src="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.js.iife.js"></script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const selectorContainer = document.getElementById('topic-selector-grid');
@@ -114,6 +185,9 @@
                 // Tạo card nội dung
                 const card = document.createElement('div');
                 card.className = 'quiz-card speaking-card active'; // Thêm active để nó hiện ra ngay
+                // Thêm ID cho card để Driver.js có thể target chính xác
+                card.id = 'active-speaking-card';
+                
                 const prompt = topic.prompt;
 
                 card.innerHTML = `
@@ -123,12 +197,12 @@
                     <div class="prompt-container">
                         <p class="prompt-question"><strong>Câu hỏi:</strong> ${prompt.question}</p>
                         <h4>Tự luyện tập:</h4>
-                        <div class="timer-controls">
+                        <div class="timer-controls" id="timer-area">
                             <button class="action-btn start-timer-btn" data-duration="${prompt.duration}">▶️ Bắt đầu trả lời (Bấm giờ)</button>
                             <div class="timer-display"><span class="time-left">${prompt.duration}</span>s</div>
                         </div>
                         <div class="card-actions" style="margin-top: 25px; border-top: 1px dashed var(--border-color); padding-top: 25px;">
-                            <button class="action-btn show-sample-btn">📖 Xem câu trả lời mẫu</button>
+                            <button class="action-btn show-sample-btn" id="sample-btn">📖 Xem câu trả lời mẫu</button>
                         </div>
                         <div class="sample-answer-wrapper" style="display: none;">
                             <div class="sample-answer-container">
@@ -161,6 +235,9 @@
                 allButtons[0].classList.add('active');
                 renderTopicCard(0);
             }
+
+            // --- KÍCH HOẠT TOUR HƯỚNG DẪN (Sau khi đã render card đầu tiên) ---
+            initSpeakingTour();
 
             // LOGIC CHO TIMER VÀ NÚT XEM ĐÁP ÁN (hoạt động bên trong card)
             contentContainer.addEventListener('click', function (e) {
@@ -204,6 +281,91 @@
                 }
             });
         });
+
+        // HÀM KHỞI TẠO TOUR
+        function initSpeakingTour() {
+            const driver = window.driver.js.driver;
+            
+            const driverObj = driver({
+                showProgress: true,
+                animate: true,
+                doneBtnText: 'Đã hiểu',
+                nextBtnText: 'Tiếp theo',
+                prevBtnText: 'Quay lại',
+                popoverClass: 'driverjs-theme',
+                steps: [
+                    { 
+                        element: '.method-guide-card', 
+                        popover: { 
+                            title: 'Chiến thuật thi', 
+                            description: 'Đừng bỏ qua phần này! Đây là các mẹo (như phương pháp 5W1H) giúp bạn không bị bí ý tưởng khi thi thật.', 
+                            side: "bottom", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '#topic-selector-grid', 
+                        popover: { 
+                            title: 'Chọn chủ đề', 
+                            description: 'Danh sách 37 chủ đề phổ biến nhất. Bạn có thể chọn bất kỳ số nào để luyện tập ngẫu nhiên.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '#active-speaking-card', 
+                        popover: { 
+                            title: 'Khu vực luyện tập', 
+                            description: 'Đây là câu hỏi chính. Hãy đọc kỹ câu hỏi trước khi bắt đầu.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '#timer-area', 
+                        popover: { 
+                            title: 'Đồng hồ bấm giờ', 
+                            description: 'Bấm nút này để bắt đầu đếm ngược 30 giây. Hãy cố gắng nói liên tục cho đến khi hết giờ.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '#sample-btn', 
+                        popover: { 
+                            title: 'Tham khảo', 
+                            description: 'Sau khi tự trả lời xong, hãy bấm vào đây để nghe và đọc bài mẫu Band điểm cao.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '#restart-tour', 
+                        popover: { 
+                            title: 'Hỗ trợ', 
+                            description: 'Bấm vào dấu hỏi này nếu bạn muốn xem lại hướng dẫn.', 
+                            side: "left", 
+                            align: 'center' 
+                        } 
+                    }
+                ]
+            });
+
+            // Logic tự động chạy lần đầu
+            const hasSeenSpeakingTour = localStorage.getItem('hasSeenSpeakingPart1Tour');
+            if (!hasSeenSpeakingTour) {
+                // Delay nhẹ để đảm bảo UI render xong hoàn toàn
+                setTimeout(() => {
+                    driverObj.drive();
+                    localStorage.setItem('hasSeenSpeakingPart1Tour', 'true');
+                }, 800);
+            }
+
+            // Gán sự kiện cho nút ?
+            document.getElementById('restart-tour').addEventListener('click', () => {
+                driverObj.drive();
+            });
+        }
     </script>
 </body>
 

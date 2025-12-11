@@ -7,12 +7,128 @@
     <title>Writing - Part 1</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
-<link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
 
+    <!-- 1. Tích hợp CSS của Driver.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css"/>
+
+    <style>
+        /* CSS cho nút Help/Tour */
+        .tour-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            color: #333;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            z-index: 999;
+            font-size: 24px;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .tour-btn:hover {
+            transform: scale(1.1);
+            background-color: #f8f9fa;
+        }
+
+        /* Tùy chỉnh giao diện Popover của Driver.js */
+        .driver-popover.driverjs-theme {
+            background-color: #fff;
+            color: #333;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            max-width: 300px;
+        }
+        
+        .driver-popover.driverjs-theme .driver-popover-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--primary-blue, #007bff);
+        }
+        
+        .driver-popover.driverjs-theme .driver-popover-description {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        .driver-popover.driverjs-theme button {
+            background-color: var(--primary-blue, #007bff);
+            color: #fff;
+            text-shadow: none;
+            border: none;
+            border-radius: 4px;
+            padding: 6px 12px;
+        }
+        
+        /* CSS cho phần Sample Answer */
+        .sample-answer-wrapper {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #28a745;
+            font-size: 0.95em;
+        }
+        
+        .sample-answer-item {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .sample-answer-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .sample-answer-item strong {
+            color: #155724;
+            display: block;
+            margin-bottom: 4px;
+        }
+        
+        .card-actions {
+            margin-top: 20px;
+            text-align: center;
+            border-top: 1px dashed #dee2e6;
+            padding-top: 20px;
+        }
+        
+        .show-sample-btn {
+            background-color: #6c757d;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.2s;
+            font-weight: 500;
+        }
+        
+        .show-sample-btn:hover {
+            background-color: #5a6268;
+        }
+    </style>
 </head>
 
 <body>
     <header id="header-placeholder"></header>
+    
+    <!-- 2. Nút kích hoạt lại Tour -->
+    <div class="tour-btn" id="restart-tour" title="Hướng dẫn sử dụng">❓</div>
+
     <div class="content-pusher">
         <div class="container">
             <div class="page-intro">
@@ -23,13 +139,9 @@
             <!-- HỘP GIẢI THÍCH MỚI -->
             <div class="explanation-box">
                 <h3>💡 Phương pháp học & Lưu ý</h3>
-                <p>Bạn có 3 phút để trả lời 5 câu hỏi, mỗi câu không quá 10 từ. Hãy cố gắng trả lời ngắn gọn, đúng trọng
-                    tâm và đúng ngữ pháp.</p>
-                <p><strong>Lưu ý:</strong> Nội dung bạn gõ sẽ được <strong>tự động lưu</strong> vào trình duyệt của bạn
-                    (sử dụng Local Storage). Nếu bạn vô tình tải lại trang, bài làm vẫn sẽ còn. Tuy nhiên, để chắc chắn,
-                    bạn vẫn nên sao chép bài làm quan trọng ra nơi khác như là Word, Google Tài liệu rồi lưu lên Drive để khi cần mà xem lại.</p>
+                <p>Bạn có 3 phút để trả lời 5 câu hỏi. <strong>Lưu ý quan trọng:</strong> Hệ thống thi thật sẽ <strong>ngăn bạn nhập tiếp</strong> khi số từ vượt quá giới hạn (thường là 5 từ, ở đây là 10 từ).</p>
+                <p><strong>Tính năng:</strong> Đồng hồ sẽ <strong>tự động chạy</strong> ngay khi bạn gõ ký tự đầu tiên. Hệ thống cũng tự động lưu bài làm và cắt bớt nếu viết quá dài.</p>
             </div>
-
 
             <!-- BẢNG ĐIỀU KHIỂN CHỌN CHỦ ĐỀ -->
             <div id="topic-selector-grid" class="topic-grid">
@@ -44,6 +156,10 @@
     </div>
     <script src="js/main.js"></script>
     <script src="js/data-writing-part1.js"></script>
+    
+    <!-- 3. Tích hợp Script của Driver.js -->
+    <script src="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.js.iife.js"></script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const selectorContainer = document.getElementById('topic-selector-grid');
@@ -73,12 +189,23 @@
                 const storageKey = `writing_part1_${topic.id}`;
 
                 let questionsHTML = `<div class="card-header"><h2>${topic.title}</h2></div>`;
-                topic.questions.forEach((q, i) => {
+                let sampleAnswersHTML = ''; // Chuỗi HTML chứa các câu trả lời mẫu
+
+                // topic.questions bây giờ là mảng objects {question, sample}
+                topic.questions.forEach((qObj, i) => {
+                    // Tạo ô nhập liệu
                     questionsHTML += `
                         <div class="writing-prompt">
-                            <label for="${topic.id}-answer-${i}">${i + 1}. ${q}</label>
+                            <label for="${topic.id}-answer-${i}">${i + 1}. ${qObj.question}</label>
                             <textarea id="${topic.id}-answer-${i}" rows="2" data-index="${i}" placeholder="Your answer (1-10 words)..."></textarea>
                             <div class="word-count-container"><span class="word-count">0/10 words</span></div>
+                        </div>
+                    `;
+                    // Tạo dòng đáp án mẫu tương ứng
+                    sampleAnswersHTML += `
+                        <div class="sample-answer-item">
+                            <strong>Câu ${i + 1}: ${qObj.question}</strong>
+                            <span style="color: #333;">Suggest: "${qObj.sample}"</span>
                         </div>
                     `;
                 });
@@ -88,7 +215,17 @@
                         <button class="action-btn start-writing-btn">Bắt đầu tính giờ (3 phút)</button>
                         <div class="timer-display">03:00</div>
                     </div>
-                    <div class="writing-content">${questionsHTML}</div>`;
+                    <div class="writing-content">${questionsHTML}</div>
+                    
+                    <!-- Phần hiển thị nút và đáp án mẫu -->
+                    <div class="card-actions">
+                        <button class="show-sample-btn">📖 Xem câu trả lời mẫu</button>
+                    </div>
+                    <div class="sample-answer-wrapper" style="display: none;">
+                        <h4 style="margin-top:0; color:#28a745;">Câu trả lời tham khảo:</h4>
+                        ${sampleAnswersHTML}
+                    </div>
+                `;
                 contentContainer.appendChild(card);
             });
 
@@ -112,8 +249,10 @@
                 allCards.forEach(c => {
                     const btn = c.querySelector('.start-writing-btn');
                     const display = c.querySelector('.timer-display');
-                    if (btn) btn.disabled = false;
-                    if (btn) btn.textContent = 'Bắt đầu tính giờ (3 phút)';
+                    if (btn) {
+                        btn.disabled = false;
+                        btn.textContent = 'Bắt đầu tính giờ (3 phút)';
+                    }
                     if (display) display.textContent = '03:00';
                 });
             }
@@ -127,27 +266,60 @@
                         const textarea = card.querySelector(`#${card.id}-answer-${index}`);
                         if (textarea) {
                             textarea.value = answer;
-                            textarea.dispatchEvent(new Event('input'));
+                            // Trigger sự kiện input để cập nhật đếm từ ngay khi load
+                            textarea.dispatchEvent(new Event('input', { bubbles: true }));
                         }
                     });
                 }
             }
             allCards.forEach(loadAnswers); // Tải bài làm cho tất cả các card
 
-            // GÁN SỰ KIỆN
+            // GÁN SỰ KIỆN CHỌN CHỦ ĐỀ
             selectorContainer.addEventListener('click', function (e) {
                 if (e.target.classList.contains('topic-selector-btn')) showTopic(e.target.dataset.target);
             });
 
+            // GÁN SỰ KIỆN XỬ LÝ NHẬP LIỆU (Word count & Hard Limit & Auto-Start Timer)
             contentContainer.addEventListener('input', function (e) {
                 if (e.target.tagName === 'TEXTAREA') {
                     const card = e.target.closest('.writing-card');
+                    
+                    // === LOGIC MỚI: TỰ ĐỘNG BẮT ĐẦU TÍNH GIỜ KHI GÕ ===
+                    const startBtn = card.querySelector('.start-writing-btn');
+                    // Kiểm tra nếu nút tồn tại và chưa bị disable (nghĩa là chưa chạy)
+                    if (startBtn && !startBtn.disabled) {
+                        startBtn.click(); // Kích hoạt sự kiện click để bắt đầu timer
+                    }
+                    // =================================================
+
                     const storageKey = `writing_part1_${card.id}`;
+                    const MAX_WORDS = 10; // Giới hạn cứng số từ (mô phỏng bài thi thật)
+
+                    let val = e.target.value;
+                    let words = val.trim().split(/\s+/).filter(word => word.length > 0);
+
+                    // --- LOGIC CHẶN NHẬP LIỆU (HARD LIMIT) ---
+                    if (words.length > MAX_WORDS) {
+                        // Nếu vượt quá, cắt lấy đúng số từ quy định và gán ngược lại
+                        // Điều này sẽ ngăn người dùng gõ thêm từ thứ 11
+                        e.target.value = words.slice(0, MAX_WORDS).join(" ");
+                        // Cập nhật lại mảng words để hiển thị đúng số lượng
+                        words = e.target.value.trim().split(/\s+/).filter(word => word.length > 0);
+                    }
+
                     // Cập nhật đếm từ
                     const wordCountSpan = e.target.nextElementSibling.querySelector('.word-count');
-                    const words = e.target.value.trim().split(/\s+/).filter(word => word.length > 0);
-                    wordCountSpan.textContent = `${words.length}/10 words`;
-                    wordCountSpan.classList.toggle('limit-exceeded', words.length > 10);
+                    wordCountSpan.textContent = `${words.length}/${MAX_WORDS} words`;
+                    
+                    // Style cảnh báo khi đạt giới hạn
+                    if (words.length >= MAX_WORDS) {
+                        wordCountSpan.style.color = '#dc3545'; // Màu đỏ
+                        wordCountSpan.style.fontWeight = 'bold';
+                    } else {
+                        wordCountSpan.style.color = ''; 
+                        wordCountSpan.style.fontWeight = '';
+                    }
+
                     // Lưu bài
                     const allTextareas = card.querySelectorAll('textarea');
                     const answersToSave = Array.from(allTextareas).map(ta => ta.value);
@@ -155,7 +327,9 @@
                 }
             });
 
+            // GÁN SỰ KIỆN CLICK (Timer & Show Sample)
             contentContainer.addEventListener('click', function (e) {
+                // Xử lý nút Timer
                 if (e.target.classList.contains('start-writing-btn')) {
                     if (activeTimerInterval) clearInterval(activeTimerInterval); // Dừng timer khác nếu đang chạy
 
@@ -181,11 +355,115 @@
                         }
                     }, 1000);
                 }
+
+                // Xử lý nút Xem đáp án mẫu
+                if (e.target.classList.contains('show-sample-btn')) {
+                    const button = e.target;
+                    const wrapper = button.closest('.card-actions').nextElementSibling;
+                    const isVisible = wrapper.style.display === 'block';
+                    
+                    wrapper.style.display = isVisible ? 'none' : 'block';
+                    button.textContent = isVisible ? '📖 Xem câu trả lời mẫu' : '🙈 Ẩn câu trả lời mẫu';
+                }
             });
 
             // HIỂN THỊ CHỦ ĐỀ ĐẦU TIÊN
             if (allButtons.length > 0) showTopic(allButtons[0].dataset.target);
+
+            // --- KÍCH HOẠT TOUR HƯỚNG DẪN ---
+            setTimeout(initWritingPart1Tour, 800);
         });
+
+        // HÀM KHỞI TẠO TOUR CHO WRITING PART 1
+        function initWritingPart1Tour() {
+            const driver = window.driver.js.driver;
+            
+            const driverObj = driver({
+                showProgress: true,
+                animate: true,
+                doneBtnText: 'Đã hiểu',
+                nextBtnText: 'Tiếp theo',
+                prevBtnText: 'Quay lại',
+                popoverClass: 'driverjs-theme',
+                steps: [
+                    { 
+                        element: '.explanation-box', 
+                        popover: { 
+                            title: 'Phương pháp & Lưu ý', 
+                            description: 'Bạn có 3 phút cho 5 câu hỏi. Hệ thống sẽ **tự động ngăn** không cho bạn nhập thêm khi đã đủ số từ (mô phỏng thi thật).', 
+                            side: "bottom", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '#topic-selector-grid', 
+                        popover: { 
+                            title: 'Chọn đề bài', 
+                            description: 'Danh sách các chủ đề luyện tập Writing Part 1.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.writing-card.active .writing-content', 
+                        popover: { 
+                            title: 'Khu vực làm bài', 
+                            description: 'Nhập câu trả lời ngắn gọn vào đây. Đồng hồ sẽ **tự động chạy** ngay khi bạn gõ ký tự đầu tiên.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.writing-card.active .word-count-container', 
+                        popover: { 
+                            title: 'Giới hạn từ', 
+                            description: 'Bộ đếm này sẽ chuyển sang màu đỏ khi bạn đạt giới hạn (10 từ). Khi đó bạn sẽ không thể gõ thêm từ mới được nữa.', 
+                            side: "left", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.writing-card.active .start-writing-btn', 
+                        popover: { 
+                            title: 'Đồng hồ', 
+                            description: 'Đồng hồ đếm ngược 3 phút. Khi hết giờ, các ô nhập liệu sẽ bị khóa.', 
+                            side: "bottom", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.writing-card.active .show-sample-btn', 
+                        popover: { 
+                            title: 'Đáp án mẫu', 
+                            description: 'Nếu bí ý tưởng, bạn có thể bấm vào đây để xem các câu trả lời ngắn gọn đạt chuẩn.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '#restart-tour', 
+                        popover: { 
+                            title: 'Hỗ trợ', 
+                            description: 'Bấm vào đây để xem lại hướng dẫn.', 
+                            side: "left", 
+                            align: 'center' 
+                        } 
+                    }
+                ]
+            });
+
+            // Logic tự động chạy lần đầu
+            const hasSeenTour = localStorage.getItem('hasSeenWritingPart1Tour');
+            if (!hasSeenTour) {
+                driverObj.drive();
+                localStorage.setItem('hasSeenWritingPart1Tour', 'true');
+            }
+
+            // Gán sự kiện cho nút ?
+            document.getElementById('restart-tour').addEventListener('click', () => {
+                driverObj.drive();
+            });
+        }
     </script>
 </body>
 

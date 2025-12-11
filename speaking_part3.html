@@ -8,10 +8,77 @@
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="icon" href="img/favicon.png" type="image/x-icon">
+
+    <!-- 1. Tích hợp CSS của Driver.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css"/>
+
+    <style>
+        /* CSS cho nút Help/Tour */
+        .tour-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            color: #333;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            z-index: 999;
+            font-size: 24px;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .tour-btn:hover {
+            transform: scale(1.1);
+            background-color: #f8f9fa;
+        }
+
+        /* Tùy chỉnh giao diện Popover của Driver.js */
+        .driver-popover.driverjs-theme {
+            background-color: #fff;
+            color: #333;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            max-width: 300px;
+        }
+        
+        .driver-popover.driverjs-theme .driver-popover-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--primary-blue, #007bff);
+        }
+        
+        .driver-popover.driverjs-theme .driver-popover-description {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        .driver-popover.driverjs-theme button {
+            background-color: var(--primary-blue, #007bff);
+            color: #fff;
+            text-shadow: none;
+            border: none;
+            border-radius: 4px;
+            padding: 6px 12px;
+        }
+    </style>
 </head>
 
 <body>
     <header id="header-placeholder"></header>
+    
+    <!-- 2. Nút kích hoạt lại Tour -->
+    <div class="tour-btn" id="restart-tour" title="Hướng dẫn sử dụng">❓</div>
+
     <div class="content-pusher">
         <div class="container">
             <div class="page-intro">
@@ -78,6 +145,10 @@
     </div>
     <script src="js/main.js"></script>
     <script src="js/data-speaking-part3.js"></script>
+    
+    <!-- 3. Tích hợp Script của Driver.js -->
+    <script src="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.js.iife.js"></script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const selectorContainer = document.getElementById('topic-selector-grid');
@@ -85,25 +156,16 @@
             const topics = speakingPart3Data;
             let timers = {}; // Dùng object để quản lý nhiều timer
 
+            if (!topics || topics.length === 0) {
+                contentContainer.innerHTML = `<p class="error">Không có dữ liệu cho Speaking Part 3.</p>`;
+                return;
+            }
+
             topics.forEach((topic, index) => {
                 const button = document.createElement('button');
                 button.className = 'topic-selector-btn';
                 button.textContent = `Chủ đề ${index + 1}`;
                 button.dataset.target = `#${topic.id}`;
-
-                // --- LOGIC MỚI: HIỂN THỊ TAGS ---
-                // if (topic.tags && topic.tags.length > 0) {
-                //     // let tagsHTML = '<div class="topic-tags">';
-                //     // if (topic.tags.includes('hot')) {
-                //     //     tagsHTML += '<span class="tag-hot" title="Chủ đề thường gặp">🔥 Hot</span>';
-                //     // }
-                //     // if (topic.tags.includes('low-quality-img')) {
-                //     //     tagsHTML += '<span class="tag-warning" title="Ảnh chất lượng thấp">⚠️ LQ</span>';
-                //     // }
-                //     // Thêm các tag khác nếu cần
-                //     // tagsHTML += '</div>';
-                //     button.innerHTML += tagsHTML; // Thêm tags vào nút
-                // }
 
                 selectorContainer.appendChild(button);
 
@@ -111,7 +173,7 @@
                 card.className = 'quiz-card speaking-part3-card';
                 card.id = topic.id;
 
-                // THÊM LOGIC NÀY: Thêm một hộp cảnh báo vào card
+                // Thêm cảnh báo chất lượng ảnh
                 const qualityWarning = topic.quality === 'low'
                     ? `<div class="image-quality-warning">Lưu ý: Hình ảnh cho chủ đề này có chất lượng thấp, chỉ dùng để tham khảo.</div>`
                     : '';
@@ -141,7 +203,7 @@
                         <img src="${topic.image1Src}" alt="Picture 1">
                         <img src="${topic.image2Src}" alt="Picture 2">
                     </div>
-                     
+                      
                     <div class="tasks-wrapper">${tasksHTML}</div>
                     <div class="card-actions">
                         <button class="action-btn show-sample-btn">📖 Xem câu trả lời mẫu</button>
@@ -156,19 +218,10 @@
                 contentContainer.appendChild(card);
             });
 
-            // --- LOGIC (Tái sử dụng từ các phần trước, tùy chỉnh) ---
+            // --- LOGIC HIỂN THỊ CARD ---
             const allButtons = selectorContainer.querySelectorAll('.topic-selector-btn');
             const allCards = contentContainer.querySelectorAll('.speaking-part3-card');
 
-            function showTopic(targetId) { /* ... Giống Part 2 ... */ }
-            selectorContainer.addEventListener('click', function (e) { if (e.target.classList.contains('topic-selector-btn')) showTopic(e.target.dataset.target); });
-            contentContainer.addEventListener('click', function (e) {
-                if (e.target.classList.contains('start-timer-btn')) { /* ... Logic timer ... */ }
-                if (e.target.classList.contains('show-sample-btn')) { /* ... Logic show answer ... */ }
-            });
-            if (allButtons.length > 0) showTopic(allButtons[0].dataset.target);
-
-            // --- PHIÊN BẢN JAVASCRIPT ĐẦY ĐỦ ---
             function showTopic(targetId) {
                 allCards.forEach(card => card.classList.remove('active'));
                 allButtons.forEach(btn => btn.classList.remove('active'));
@@ -177,6 +230,7 @@
                 if (targetCard) targetCard.classList.add('active');
                 if (targetButton) targetButton.classList.add('active');
 
+                // Reset tất cả timer khi chuyển tab
                 Object.values(timers).forEach(timer => clearInterval(timer));
                 allCards.forEach(c => {
                     c.querySelectorAll('.speaking-task-container').forEach(task => {
@@ -190,6 +244,17 @@
                     });
                 });
             }
+
+            selectorContainer.addEventListener('click', function (e) {
+                if (e.target.classList.contains('topic-selector-btn')) showTopic(e.target.dataset.target);
+            });
+
+            if (allButtons.length > 0) showTopic(allButtons[0].dataset.target);
+
+            // --- KÍCH HOẠT TOUR HƯỚNG DẪN ---
+            setTimeout(initSpeakingPart3Tour, 800);
+
+            // --- LOGIC TIMER ---
             contentContainer.addEventListener('click', function (e) {
                 if (e.target.classList.contains('start-timer-btn')) {
                     const button = e.target;
@@ -221,8 +286,89 @@
                     e.target.textContent = isVisible ? '📖 Xem câu trả lời mẫu' : '🙈 Ẩn câu trả lời mẫu';
                 }
             });
-
         });
+
+        // HÀM KHỞI TẠO TOUR CHO PART 3
+        function initSpeakingPart3Tour() {
+            const driver = window.driver.js.driver;
+            
+            const driverObj = driver({
+                showProgress: true,
+                animate: true,
+                doneBtnText: 'Đã hiểu',
+                nextBtnText: 'Tiếp theo',
+                prevBtnText: 'Quay lại',
+                popoverClass: 'driverjs-theme',
+                steps: [
+                    { 
+                        element: '.method-guide-card', 
+                        popover: { 
+                            title: 'Cẩm nang Part 3', 
+                            description: 'Chiến thuật so sánh tranh trong 45s. Hãy nhớ quy tắc "20-20-5" (20s tranh 1, 20s tranh 2, 5s so sánh) và các mẫu câu gợi ý.', 
+                            side: "bottom", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '#topic-selector-grid', 
+                        popover: { 
+                            title: 'Chọn cặp tranh', 
+                            description: 'Danh sách các cặp tranh để luyện tập so sánh.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.speaking-part3-card.active .part3-images-container', 
+                        popover: { 
+                            title: 'Hai bức tranh', 
+                            description: 'Quan sát điểm giống và khác nhau giữa hai bức tranh này. Bạn sẽ phải miêu tả và so sánh chúng ở Nhiệm vụ 1.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.speaking-part3-card.active .tasks-wrapper', 
+                        popover: { 
+                            title: '3 Nhiệm vụ', 
+                            description: 'Nhiệm vụ 1 là so sánh tranh. Nhiệm vụ 2 và 3 là trả lời câu hỏi liên quan. Mỗi phần đều có đồng hồ 45s riêng.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.speaking-part3-card.active .show-sample-btn', 
+                        popover: { 
+                            title: 'Bài mẫu', 
+                            description: 'Bấm vào đây để nghe và đọc bài mẫu Band điểm cao cho cả 3 câu hỏi.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '#restart-tour', 
+                        popover: { 
+                            title: 'Hỗ trợ', 
+                            description: 'Bấm vào đây để xem lại hướng dẫn.', 
+                            side: "left", 
+                            align: 'center' 
+                        } 
+                    }
+                ]
+            });
+
+            // Logic tự động chạy lần đầu
+            const hasSeenTour = localStorage.getItem('hasSeenSpeakingPart3Tour');
+            if (!hasSeenTour) {
+                driverObj.drive();
+                localStorage.setItem('hasSeenSpeakingPart3Tour', 'true');
+            }
+
+            // Gán sự kiện cho nút ?
+            document.getElementById('restart-tour').addEventListener('click', () => {
+                driverObj.drive();
+            });
+        }
     </script>
 </body>
 

@@ -10,10 +10,77 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="icon" href="img/favicon.png" type="image/x-icon">
+
+    <!-- 1. Tích hợp CSS của Driver.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css"/>
+
+    <style>
+        /* CSS cho nút Help/Tour */
+        .tour-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            color: #333;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            z-index: 999;
+            font-size: 24px;
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .tour-btn:hover {
+            transform: scale(1.1);
+            background-color: #f8f9fa;
+        }
+
+        /* Tùy chỉnh giao diện Popover của Driver.js */
+        .driver-popover.driverjs-theme {
+            background-color: #fff;
+            color: #333;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            max-width: 300px;
+        }
+        
+        .driver-popover.driverjs-theme .driver-popover-title {
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--primary-blue, #007bff);
+        }
+        
+        .driver-popover.driverjs-theme .driver-popover-description {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #555;
+        }
+
+        .driver-popover.driverjs-theme button {
+            background-color: var(--primary-blue, #007bff);
+            color: #fff;
+            text-shadow: none;
+            border: none;
+            border-radius: 4px;
+            padding: 6px 12px;
+        }
+    </style>
 </head>
 
 <body>
     <header id="header-placeholder"></header>
+    
+    <!-- 2. Nút kích hoạt lại Tour -->
+    <div class="tour-btn" id="restart-tour" title="Hướng dẫn sử dụng">❓</div>
+
     <div class="content-pusher">
         <div class="container">
             <div class="page-intro">
@@ -102,7 +169,10 @@
     </div>
     <script src="js/main.js"></script>
     <script src="js/data-speaking-part2.js"></script>
-    <!-- Trong file speaking_part2.html -->
+    
+    <!-- 3. Tích hợp Script của Driver.js -->
+    <script src="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.js.iife.js"></script>
+
     <script>
         document.addEventListener('DOMContentLoaded', function () {
             const selectorContainer = document.getElementById('topic-selector-grid');
@@ -121,7 +191,6 @@
                 button.textContent = `Chủ đề ${index + 1}`;
                 button.dataset.target = `#${topic.id}`;
 
-                // THÊM LOGIC NÀY: Thêm icon cảnh báo cho chủ đề chất lượng thấp
                 if (topic.quality === 'low') {
                     button.innerHTML += ` <i class="fas fa-exclamation-triangle" title="Chủ đề luyện tập thêm, ảnh chất lượng thấp"></i>`;
                     button.classList.add('low-quality-btn');
@@ -132,7 +201,7 @@
                 const card = document.createElement('div');
                 card.className = 'quiz-card speaking-part2-card';
                 card.id = topic.id;
-                // THÊM LOGIC NÀY: Thêm một hộp cảnh báo vào card
+                
                 const qualityWarning = topic.quality === 'low'
                     ? `<div class="image-quality-warning">Lưu ý: Hình ảnh cho chủ đề này có chất lượng thấp, chỉ dùng để tham khảo.</div>`
                     : '';
@@ -150,7 +219,6 @@
                     `;
                 });
 
-                // Logic mới: Lấy text từ các task và tạo 1 audio player chung
                 const sampleAnswersText = topic.tasks
                     .filter(t => t.sampleAnswer)
                     .map(t => {
@@ -170,9 +238,10 @@
 
                 card.innerHTML = `
                     <div class="card-header"><h2>${topic.title}</h2></div>
-
-                     ${qualityWarning} 
-                    <img class="speaking-part2-image" src="${topic.imageSrc}" alt="${topic.title}">
+                    ${qualityWarning}
+                    <div class="image-container-wrapper"> 
+                        <img class="speaking-part2-image" src="${topic.imageSrc}" alt="${topic.title}">
+                    </div>
                     <div class="tasks-wrapper">${tasksHTML}</div>
                     <div class="card-actions" style="margin-top: 25px; border-top: 1px dashed var(--border-color); padding-top: 25px;">
                         <button class="action-btn show-sample-btn">📖 Xem câu trả lời mẫu</button>
@@ -186,22 +255,163 @@
                 contentContainer.appendChild(card);
             });
 
-            // Logic hiển thị card (giữ nguyên)
+            // Logic hiển thị card
             const allButtons = selectorContainer.querySelectorAll('.topic-selector-btn');
             const allCards = contentContainer.querySelectorAll('.speaking-part2-card');
-            function showTopic(targetId) { /* ... code giữ nguyên ... */ allCards.forEach(card => card.classList.remove('active')); allButtons.forEach(btn => btn.classList.remove('active')); const targetCard = document.querySelector(targetId); const targetButton = selectorContainer.querySelector(`[data-target='${targetId}']`); if (targetCard) targetCard.classList.add('active'); if (targetButton) targetButton.classList.add('active'); }
-            selectorContainer.addEventListener('click', function (e) { if (e.target.classList.contains('topic-selector-btn')) { showTopic(e.target.dataset.target); } });
-            if (allButtons.length > 0) { showTopic(allButtons[0].dataset.target); }
 
-            // Logic Timer và Show/Hide Answer (giữ nguyên)
+            function showTopic(targetId) {
+                allCards.forEach(card => card.classList.remove('active'));
+                allButtons.forEach(btn => btn.classList.remove('active'));
+                
+                const targetCard = document.querySelector(targetId);
+                const targetButton = selectorContainer.querySelector(`[data-target='${targetId}']`);
+                
+                if (targetCard) targetCard.classList.add('active');
+                if (targetButton) targetButton.classList.add('active');
+            }
+
+            selectorContainer.addEventListener('click', function (e) {
+                // Sửa lỗi click vào icon trong nút
+                const btn = e.target.closest('.topic-selector-btn');
+                if (btn) {
+                    showTopic(btn.dataset.target);
+                }
+            });
+
+            if (allButtons.length > 0) {
+                showTopic(allButtons[0].dataset.target);
+            }
+
+            // --- KÍCH HOẠT TOUR HƯỚNG DẪN ---
+            // Gọi sau khi UI đã được render
+            setTimeout(initSpeakingPart2Tour, 800);
+
+            // Logic Timer và Show/Hide Answer
             let activeTimer = null;
             contentContainer.addEventListener('click', function (e) {
-                if (e.target.classList.contains('start-timer-btn')) { /* ... logic timer giữ nguyên ... */ if (activeTimer) { clearInterval(activeTimer.intervalId); activeTimer.button.textContent = '▶️ Bắt đầu trả lời (Bấm giờ)'; activeTimer.button.disabled = false; activeTimer.timeLeftEl.textContent = activeTimer.button.dataset.duration; if (activeTimer.button === e.target) { activeTimer = null; return } } const button = e.target; const duration = parseInt(button.dataset.duration, 10); const timerDisplay = button.nextElementSibling; const timeLeftEl = timerDisplay.querySelector('.time-left'); let timeLeft = duration; timeLeftEl.textContent = timeLeft; button.textContent = '⏱️ Đang đếm ngược...'; button.disabled = true; const intervalId = setInterval(() => { timeLeft--; timeLeftEl.textContent = timeLeft; if (timeLeft <= 0) { clearInterval(intervalId); button.textContent = 'Hết giờ! Bắt đầu lại'; button.disabled = false; activeTimer = null } }, 1000); activeTimer = { button, intervalId, timeLeftEl }; }
-                if (e.target.classList.contains('show-sample-btn')) { /* ... logic xem đáp án giữ nguyên ... */ const button = e.target; const wrapper = button.closest('.card-actions').nextElementSibling; const isVisible = wrapper.style.display === 'block'; wrapper.style.display = isVisible ? 'none' : 'block'; button.textContent = isVisible ? '📖 Xem câu trả lời mẫu' : '🙈 Ẩn câu trả lời mẫu'; }
+                if (e.target.classList.contains('start-timer-btn')) {
+                    if (activeTimer) {
+                        clearInterval(activeTimer.intervalId);
+                        activeTimer.button.textContent = '▶️ Bắt đầu trả lời (Bấm giờ)';
+                        activeTimer.button.disabled = false;
+                        activeTimer.timeLeftEl.textContent = activeTimer.button.dataset.duration;
+                        if (activeTimer.button === e.target) {
+                            activeTimer = null;
+                            return;
+                        }
+                    }
+                    const button = e.target;
+                    const duration = parseInt(button.dataset.duration, 10);
+                    const timerDisplay = button.nextElementSibling;
+                    const timeLeftEl = timerDisplay.querySelector('.time-left');
+                    let timeLeft = duration;
+                    timeLeftEl.textContent = timeLeft;
+                    button.textContent = '⏱️ Đang đếm ngược...';
+                    button.disabled = true;
+                    const intervalId = setInterval(() => {
+                        timeLeft--;
+                        timeLeftEl.textContent = timeLeft;
+                        if (timeLeft <= 0) {
+                            clearInterval(intervalId);
+                            button.textContent = 'Hết giờ! Bắt đầu lại';
+                            button.disabled = false;
+                            activeTimer = null;
+                        }
+                    }, 1000);
+                    activeTimer = { button, intervalId, timeLeftEl };
+                }
+                if (e.target.classList.contains('show-sample-btn')) {
+                    const button = e.target;
+                    const wrapper = button.closest('.card-actions').nextElementSibling;
+                    const isVisible = wrapper.style.display === 'block';
+                    wrapper.style.display = isVisible ? 'none' : 'block';
+                    button.textContent = isVisible ? '📖 Xem câu trả lời mẫu' : '🙈 Ẩn câu trả lời mẫu';
+                }
             });
         });
-    </script>
 
+        // HÀM KHỞI TẠO TOUR CHO PART 2
+        function initSpeakingPart2Tour() {
+            const driver = window.driver.js.driver;
+            
+            const driverObj = driver({
+                showProgress: true,
+                animate: true,
+                doneBtnText: 'Đã hiểu',
+                nextBtnText: 'Tiếp theo',
+                prevBtnText: 'Quay lại',
+                popoverClass: 'driverjs-theme',
+                steps: [
+                    { 
+                        element: '.method-guide-card', 
+                        popover: { 
+                            title: 'Cẩm nang Part 2', 
+                            description: 'Quy trình 5 bước để mô tả tranh đầy đủ và chi tiết. Hãy đọc kỹ trước khi bắt đầu!', 
+                            side: "bottom", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '#topic-selector-grid', 
+                        popover: { 
+                            title: 'Chọn đề bài', 
+                            description: 'Danh sách các bức tranh để luyện tập.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.speaking-part2-card.active .speaking-part2-image', 
+                        popover: { 
+                            title: 'Quan sát tranh', 
+                            description: 'Khi luyện tập bạn có thể dành thời gian quan sát. Lưu ý: Khi thi thật bạn phải nói ngay lập tức. Hãy quan sát: Ai? Làm gì? Ở đâu?', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.speaking-part2-card.active .tasks-wrapper', 
+                        popover: { 
+                            title: 'Nhiệm vụ', 
+                            description: 'Bao gồm 1 phần mô tả tranh (45s) và 2 câu hỏi liên quan (45s mỗi câu). Hãy bấm nút để bắt đầu tính giờ cho từng phần.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '.speaking-part2-card.active .show-sample-btn', 
+                        popover: { 
+                            title: 'Bài mẫu', 
+                            description: 'Tham khảo cách người bản xứ mô tả bức tranh này để học thêm từ vựng.', 
+                            side: "top", 
+                            align: 'center' 
+                        } 
+                    },
+                    { 
+                        element: '#restart-tour', 
+                        popover: { 
+                            title: 'Hỗ trợ', 
+                            description: 'Bấm vào đây để xem lại hướng dẫn.', 
+                            side: "left", 
+                            align: 'center' 
+                        } 
+                    }
+                ]
+            });
+
+            // Logic tự động chạy lần đầu
+            const hasSeenTour = localStorage.getItem('hasSeenSpeakingPart2Tour');
+            if (!hasSeenTour) {
+                driverObj.drive();
+                localStorage.setItem('hasSeenSpeakingPart2Tour', 'true');
+            }
+
+            // Gán sự kiện cho nút ?
+            document.getElementById('restart-tour').addEventListener('click', () => {
+                driverObj.drive();
+            });
+        }
+    </script>
 </body>
 
 </html>

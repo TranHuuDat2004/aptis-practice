@@ -3,110 +3,110 @@ const writingPart1Data = [
         id: 'wp1_topic1',
         title: 'Chủ đề 1: Lên kế hoạch cho buổi gặp mặt câu lạc bộ',
         questions: [
-            "Hi, what's your full name?",
-            "Where are you from?",
-            "What do you do in your free time?",
-            "How did you hear about our club?",
-            "What are you hoping to gain from joining?"
+            { question: "Hi, what's your full name?", sample: "My name is Tran Huu Dat." },
+            { question: "Where are you from?", sample: "I am from Hanoi, Vietnam." },
+            { question: "What do you do in your free time?", sample: "I like hiking and reading books." },
+            { question: "How did you hear about our club?", sample: "I saw a poster at my school." },
+            { question: "What are you hoping to gain from joining?", sample: "I want to improve my English skills." }
         ]
     },
     {
         id: 'wp1_topic2',
         title: 'Chủ đề 2: Thảo luận về hoạt động cuối tuần',
         questions: [
-            "What activity are you interested in?",
-            "Which day is best for you?",
-            "Who else should we invite?",
-            "What should I bring?",
-            "Where should we meet?"
+            { question: "What activity are you interested in?", sample: "I am interested in playing badminton." },
+            { question: "Which day is best for you?", sample: "Saturday afternoon is best for me." },
+            { question: "Who else should we invite?", sample: "We should invite Sarah and John." },
+            { question: "What should I bring?", sample: "Please bring some snacks and water." },
+            { question: "Where should we meet?", sample: "Let's meet at the central park." }
         ]
     },
     {
         id: 'wp1_topic3',
         title: 'Chủ đề 3: Chuẩn bị cho chuyến đi dã ngoại',
         questions: [
-            "What kind of food do you like?",
-            "Can you help with the preparations?",
-            "What time should we leave?",
-            "What's the weather forecast?",
-            "Do you have any suggestions for games?"
+            { question: "What kind of food do you like?", sample: "I like sandwiches and fresh fruits." },
+            { question: "Can you help with the preparations?", sample: "Yes, I can buy the drinks." },
+            { question: "What time should we leave?", sample: "We should leave at 8 AM." },
+            { question: "What's the weather forecast?", sample: "It is forecasted to be sunny." },
+            { question: "Do you have any suggestions for games?", sample: "How about playing cards or frisbee?" }
         ],
     },
     {
         id: 'wp1_topic4',
         title: 'Chủ đề 4: Đăng ký thành viên câu lạc bộ phim',
-        questions: ["What's your favorite film?", "What kinds of movies do you like?", "Who do you usually go to the movies with?", "What did you do last night?", "Do you like watching films?"]
+        questions: [
+            { question: "What's your favorite film?", sample: "My favorite film is Harry Potter." },
+            { question: "What kinds of movies do you like?", sample: "I like action and comedy movies." },
+            { question: "Who do you usually go to the movies with?", sample: "I usually go with my best friend." },
+            { question: "What did you do last night?", sample: "I watched a documentary on TV." },
+            { question: "Do you like watching films?", sample: "Yes, I love watching films very much." }
+        ]
     },
     {
         id: 'wp1_topic5',
         title: 'Chủ đề 5: Tìm hiểu về bạn mới',
-        questions: ["How do you go to school?", "What is your job?", "What is your first school?", "How do you relax?", "How many people are there in your family?"]
+        questions: [
+            { question: "How do you go to school?", sample: "I go to school by bus." },
+            { question: "What is your job?", sample: "I am a marketing specialist." },
+            { question: "What is your first school?", sample: "My first school is Le Loi Primary School." },
+            { question: "How do you relax?", sample: "I listen to music and sleep." },
+            { question: "How many people are there in your family?", sample: "There are four people in my family." }
+        ]
     },
     {
         id: 'wp1_topic6',
         title: 'Chủ đề 6: Chia sẻ sở thích cá nhân',
-        questions: ["What's your favorite hobby?", "Do you like doing exercise?", "What's your favorite sport?", "Do you like to take photos?", "What do you like to do in the evening?"]
+        questions: [
+            { question: "What's your favorite hobby?", sample: "My favorite hobby is taking photos." },
+            { question: "Do you like doing exercise?", sample: "Yes, I go jogging every morning." },
+            { question: "What's your favorite sport?", sample: "My favorite sport is football." },
+            { question: "Do you like to take photos?", sample: "Yes, I love capturing beautiful moments." },
+            { question: "What do you like to do in the evening?", sample: "I enjoy reading books before sleeping." }
+        ]
     },
     {
         id: 'wp1_topic7',
         title: 'Chủ đề 7: Kế hoạch cho kỳ nghỉ',
-        questions: ["Where do you like to go on holiday?", "What is your favorite season of the year?", "What's the weather like today?", "Why do you learn English?", "What's your favorite animal?"]
+        questions: [
+            { question: "Where do you like to go on holiday?", sample: "I like going to the beach." },
+            { question: "What is your favorite season of the year?", sample: "My favorite season is autumn." },
+            { question: "What's the weather like today?", sample: "Today is sunny and very warm." },
+            { question: "Why do you learn English?", sample: "To travel and get a good job." },
+            { question: "What's your favorite animal?", sample: "I love cats because they are cute." }
+        ]
     },
     {
         id: 'wp1_topic8',
         title: 'Chủ đề 8: Trò chuyện buổi sáng',
-        questions: ["How are you?", "What did you do yesterday?", "What do you like to do every morning?", "How do you get to work?", "What's your favorite food?"]
+        questions: [
+            { question: "How are you?", sample: "I'm doing well, thank you!" },
+            { question: "What did you do yesterday?", sample: "I visited my grandparents yesterday." },
+            { question: "What do you like to do every morning?", sample: "I drink coffee and read news." },
+            { question: "How do you get to work?", sample: "I drive my car to work." },
+            { question: "What's your favorite food?", sample: "My favorite food is Pizza." }
+        ]
     },
     {
         id: 'wp1_topic9',
         title: 'Chủ đề 9: Thông tin cho câu lạc bộ du lịch',
-        questions: ["First language?", "Which job would you like to do in the future?", "Where are you from?", "What do you do?", "What is your favourite device?"]
+        questions: [
+            { question: "First language?", sample: "My first language is Vietnamese." },
+            { question: "Which job would you like to do in the future?", sample: "I want to be a teacher." },
+            { question: "Where are you from?", sample: "I come from Da Nang city." },
+            { question: "What do you do?", sample: "I am currently a student." },
+            { question: "What is your favourite device?", sample: "I love using my laptop." }
+        ]
     },
     {
         id: 'wp1_topic10',
         title: 'Chủ đề 10: Thảo luận cuối tuần',
-        questions: ["What do you usually do on weekends?", "What's your favorite season/time of the year?", "When do you usually watch TV?", "What did you do last night?", "Who do you usually go to the movies with?"]
+        questions: [
+            { question: "What do you usually do on weekends?", sample: "I usually hang out with friends." },
+            { question: "What's your favorite season/time of the year?", sample: "I love winter because of the snow." },
+            { question: "When do you usually watch TV?", sample: "I watch TV in the evening." },
+            { question: "What did you do last night?", sample: "I cooked dinner for my family." },
+            { question: "Who do you usually go to the movies with?", sample: "I go with my sister." }
+        ]
     }
-];
-
-const writingPart1Bank = [
-    { question: "What is your name?", answer: "My name is Tran Huu Dat." },
-    { question: "What do you do?", answer: "I study at university." },
-    { question: "What did you do last night?", answer: "I watched a movie." },
-    { question: "What is your favourite device?", answer: "I love my laptop." },
-    { question: "What's your favourite colour?", answer: "My favorite color is blue." },
-    { question: "What's the weather like today?", answer: "Today is sunny and warm." },
-    { question: "What do you do in your free time?", answer: "I like hiking and reading." },
-    { question: "First language?", answer: "My first language is Vietnamese." },
-    { question: "Who do you usually go to the movies with?", answer: "I usually go with my friends." },
-    { question: "Do you like watching films?", answer: "Yes, I love watching films." },
-    { question: "Where do you like to go on holiday?", answer: "I like beach holidays." },
-    { question: "What did you do last night?", answer: "I cooked dinner and relaxed." },
-    { question: "What's your favorite sport?", answer: "My favorite sport is badminton." },
-    { question: "How many people are there in your family?", answer: "There are four people in my family." },
-    { question: "What did you do yesterday?", answer: "I worked and visited grandparents." },
-    { question: "How do you go to school?", answer: "I walk to school every day." },
-    { question: "Do you like doing exercise?", answer: "Yes, I enjoy exercising regularly." },
-    { question: "Do you like to take photos?", answer: "Yes, I love taking photos." },
-    { question: "What is your job?", answer: "I am a marketing specialist." },
-    { question: "What is your favorite season of the year?", answer: "My favorite season is autumn." },
-    { question: "What do you like to do every morning?", answer: "I drink coffee and read." },
-    { question: "How are you?", answer: "I'm doing well, thank you!" },
-    { question: "What's your favorite hobby?", answer: "Reading books is my favorite hobby." },
-    { question: "How do you get to work?", answer: "I take the bus to work." },
-    { question: "What do you like to do in the evening?", answer: "I enjoy watching movies in the evening." },
-    { question: "What kinds of movies do you like?", answer: "I like action and comedy movies." },
-    { question: "What's your favorite food?", answer: "My favorite food is sushi." },
-    { question: "Where are you from?", answer: "I am from Hanoi, Vietnam." },
-    { question: "What do you do?/ what are you?/ what is your job/ career/ profession/ occupation?", answer: "I am a student." },
-    { question: "Which job would you like to do in the future?", answer: "I want to be a teacher." },
-    { question: "Why do you learn English?", answer: "To travel and get a good job." },
-    { question: "What is your first school?", answer: "My first school is Le Loi School." },
-    { question: "How do you relax?", answer: "I listen to music and rest." },
-    { question: "What do you usually do on weekends?", answer: "I go out with my friends." },
-    { question: "Who do you usually go to the movies with?", answer: "I go with my best friend." },
-    { question: "When do you usually watch TV?", answer: "I watch TV in the evening." },
-    { question: "What is your favorite film?", answer: "My favorite film is Frozen." },
-    { question: "What is your favorite animal?", answer: "I like cats." },
-    { question: "What is your favorite season/time of the year?", answer: "My favorite season is summer." }
 ];
