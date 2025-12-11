@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Câu Hỏi Thường Gặp (FAQ)</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="img/favicon.png" type="image/x-icon">
+    <style>
+        /* CSS riêng cho trang FAQ */
+        .faq-container {
+            max-width: 800px;
+            margin: 20px auto;
+        }
+
+        .faq-item {
+            background-color: #fff;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            border: 1px solid var(--border-color);
+            overflow: hidden; /* Đảm bảo nội dung không bị tràn khi đóng */
+        }
+
+        .faq-question {
+            padding: 20px;
+            font-weight: 700;
+            cursor: pointer;
+            position: relative;
+            color: var(--primary-blue);
+            background-color: #fff;
+            transition: background-color 0.3s ease;
+            user-select: none; /* Ngăn bôi đen text khi click nhanh */
+        }
+        
+        .faq-question:hover {
+            background-color: #f8f9fa;
+        }
+
+        /* Tạo icon mũi tên */
+        .faq-question::after {
+            content: '▼';
+            position: absolute;
+            right: 20px;
+            transition: transform 0.3s ease;
+            font-size: 0.8em;
+            color: #999;
+        }
+
+        .faq-question.active::after {
+            transform: rotate(180deg);
+            color: var(--primary-blue);
+        }
+
+        /* === CẬP NHẬT CSS CHO ANIMATION === */
+        .faq-answer {
+            /* Thay vì display: none, ta dùng max-height */
+            max-height: 0;
+            overflow: hidden;
+            padding: 0 20px; /* Padding trái phải giữ nguyên, trên dưới để 0 */
+            line-height: 1.7;
+            color: #333;
+            /* Transition cả chiều cao và padding để mượt mà nhất */
+            transition: max-height 0.3s ease-out, padding 0.3s ease;
+            background-color: #fff;
+            border-top: 1px solid transparent; /* Ẩn viền khi đóng */
+        }
+
+        /* Khi active, JS sẽ thêm padding-bottom và max-height */
+        .faq-question.active + .faq-answer {
+            border-top-color: var(--border-color);
+        }
+    </style>
+</head>
+<body>
+    <header id="header-placeholder"></header>
+    <div class="content-pusher">
+        <div class="container">
+            <div class="page-intro">
+                <h1>Câu Hỏi Thường Gặp (FAQ)</h1>
+                <p>Giải đáp các thắc mắc phổ biến về chức năng và phương pháp học trên trang web.</p>
+            </div>
+            
+            <div class="faq-container">
+                <!-- Câu hỏi 1 -->
+                <div class="faq-item">
+                    <div class="faq-question">Mục đích chính của trang web này là gì?</div>
+                    <div class="faq-answer">
+                        <p><strong>Aptis Practice</strong> được xây dựng để giúp bạn luyện tập và ghi nhớ các "key" và cấu trúc câu quan trọng cho kỳ thi Aptis ESOL, đặc biệt theo phương pháp học story-based. Trang web tập trung vào việc tạo ra các bài tập tương tác mô phỏng điều kiện thi thật.</p>
+                    </div>
+                </div>
+
+                <!-- Câu hỏi 2 -->
+                <div class="faq-item">
+                    <div class="faq-question">Trang web này có phải là đề thi thật không?</div>
+                    <div class="faq-answer">
+                        <p><strong>Không.</strong> Toàn bộ nội dung trên trang web này (câu hỏi, đáp án, bài mẫu) đều được tổng hợp và biên soạn từ các nguồn tài liệu ôn thi công khai. Chúng chỉ mang tính chất tham khảo và luyện tập, không phải là đề thi thật từ Hội đồng Anh.</p>
+                    </div>
+                </div>
+                
+                <!-- Câu hỏi 3 -->
+                <div class="faq-item">
+                    <div class="faq-question">Tại sao trang "Làm bài Part 1" (Listening) lại yêu cầu ghi nhớ key?</div>
+                    <div class="faq-answer">
+                        <p>Phần thi Listening Part 1 (Câu 1-13) có một ngân hàng câu hỏi và đáp án tương đối cố định. Việc học thuộc "key" (đáp án đúng) cho các bối cảnh phổ biến là một chiến lược hiệu quả để tối đa hóa điểm số ở phần này. Trang "Làm bài Part 1" được thiết kế để bạn kiểm tra khả năng ghi nhớ các key đó.</p>
+                    </div>
+                </div>
+
+                <!-- Câu hỏi 4 -->
+                <div class="faq-item">
+                    <div class="faq-question">Làm thế nào để luyện tập Speaking hiệu quả với trang web?</div>
+                    <div class="faq-answer">
+                        <p>Vì trình duyệt không thể ghi âm trực tiếp, cách tốt nhất là:</p>
+                        <ol>
+                            <li>Mở ứng dụng ghi âm trên điện thoại của bạn.</li>
+                            <li>Trên trang Thi thử Speaking, nhấn nút "Bắt đầu trả lời" và bắt đầu ghi âm cùng lúc.</li>
+                            <li>Sau khi hoàn thành, bạn có thể nghe lại file ghi âm của mình để tự đánh giá hoặc gửi cho bạn bè/giáo viên để nhận feedback.</li>
+                        </ol>
+                    </div>
+                </div>
+                
+                <!-- Câu hỏi 5 -->
+                <div class="faq-item">
+                    <div class="faq-question">Tại sao trang "Phân Tích Đề Bài" (Writing) lại quan trọng?</div>
+                    <div class="faq-answer">
+                        <p>Lỗi sai nghiêm trọng nhất trong Writing Part 4 là "lạc đề" (trả lời không đúng yêu cầu). Trang "Phân Tích Đề Bài" cung cấp các bài quiz ngắn giúp bạn rèn luyện kỹ năng đọc hiểu và xác định TẤT CẢ các nhiệm vụ mà đề bài yêu cầu, đảm bảo bạn không bỏ sót bất kỳ ý nào.</p>
+                    </div>
+                </div>
+
+                <!-- Câu hỏi 6 -->
+                <div class="faq-item">
+                    <div class="faq-question">Tôi có thể đóng góp câu hỏi hoặc báo lỗi ở đâu?</div>
+                    <div class="faq-answer">
+                        <p>Cảm ơn bạn đã quan tâm! Đây là một dự án cá nhân và rất hoan nghênh sự đóng góp. Nếu bạn phát hiện lỗi hoặc có ý tưởng mới, vui lòng tạo một <a href="https://github.com/TranHuuDat2004/aptis-practice/issues" target="_blank">"Issue" trên trang GitHub của dự án</a>.</p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <footer id="footer-placeholder"></footer>
+    </div>
+    
+    <script src="js/main.js"></script>
+    <script>
+        // === LOGIC MỚI CHO ANIMATION FAQ ===
+        document.addEventListener('DOMContentLoaded', () => {
+            const questions = document.querySelectorAll('.faq-question');
+
+            questions.forEach(question => {
+                question.addEventListener('click', () => {
+                    // 1. Kiểm tra xem tab này có đang mở không
+                    const isActive = question.classList.contains('active');
+                    const answer = question.nextElementSibling;
+
+                    // 2. Đóng tất cả các tab khác đang mở (Accordion effect)
+                    questions.forEach(q => {
+                        if (q !== question) {
+                            q.classList.remove('active');
+                            q.nextElementSibling.style.maxHeight = null;
+                            q.nextElementSibling.style.paddingBottom = "0";
+                        }
+                    });
+
+                    // 3. Toggle trạng thái của tab hiện tại
+                    if (!isActive) {
+                        // Mở tab
+                        question.classList.add('active');
+                        // Thêm padding-bottom để đẹp hơn khi mở
+                        answer.style.paddingBottom = "20px";
+                        // Tính toán chiều cao thực tế của nội dung để set max-height
+                        // scrollHeight là chiều cao toàn bộ nội dung bao gồm cả phần bị ẩn
+                        answer.style.maxHeight = answer.scrollHeight + 20 + "px"; 
+                    } else {
+                        // Đóng tab
+                        question.classList.remove('active');
+                        answer.style.maxHeight = null;
+                        answer.style.paddingBottom = "0";
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

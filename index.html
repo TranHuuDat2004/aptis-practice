@@ -10,6 +10,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="icon" href="img/favicon.png" type="image/x-icon">
+
+    <!-- Tích hợp CSS của Driver.js (Thư viện tạo tour hướng dẫn) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.css" />
 </head>
 <style>
     /* === CSS MỚI CHO GIAO DIỆN TAB VÀ CARD === */
@@ -35,6 +38,8 @@
         max-width: 1600px;
         margin: 0 auto;
         padding: 20px;
+        position: relative;
+        /* Để định vị nút tour */
     }
 
     /* Tab Styles */
@@ -82,6 +87,19 @@
 
     .tab-content.active {
         display: block;
+        animation: fadeIn 0.5s ease;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
     }
 
     /* Card Styles */
@@ -131,18 +149,83 @@
     .important-card {
         border-left-color: var(--primary-red);
     }
+
+    /* Nút kích hoạt tour thủ công */
+    .tour-btn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #fff;
+        border: 1px solid var(--primary-blue);
+        color: var(--primary-blue);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        z-index: 999;
+        font-size: 24px;
+        transition: transform 0.2s;
+    }
+
+    .tour-btn:hover {
+        transform: scale(1.1);
+        background-color: var(--primary-blue);
+        color: #fff;
+    }
+
+    /* Tùy chỉnh giao diện Driver.js cho đẹp hơn */
+    .driver-popover.driverjs-theme {
+        background-color: #fff;
+        color: #333;
+        border-radius: 8px;
+        padding: 10px;
+    }
+
+    .driver-popover.driverjs-theme .driver-popover-title {
+        font-size: 18px;
+        font-weight: 700;
+        color: var(--primary-blue);
+    }
+
+    .driver-popover.driverjs-theme .driver-popover-description {
+        font-size: 14px;
+        line-height: 1.5;
+        margin-top: 5px;
+    }
+
+    .driver-popover.driverjs-theme button {
+        background-color: var(--primary-blue);
+        color: #fff;
+        border-radius: 4px;
+        text-shadow: none;
+        border: none;
+    }
+
+    .driver-popover.driverjs-theme button:hover {
+        background-color: #0056b3;
+    }
 </style>
 
 <body>
     <header id="header-placeholder"></header>
+
+    <!-- Nút để mở lại hướng dẫn -->
+    <div class="tour-btn" id="restart-tour" title="Xem hướng dẫn">
+        ❓
+    </div>
+
     <div class="content-pusher" id="content-pusher">
         <div class="container">
 
-            <h1 style="text-align: center;">Aptis Practice</h1>
+            <h1 style="text-align: center;" id="main-title">Aptis Practice</h1>
             <p style="text-align: center;">Chọn một kỹ năng để bắt đầu luyện tập</p>
 
             <!-- === GIAO DIỆN TAB MỚI === -->
-            <div class="skill-tabs">
+            <div class="skill-tabs" id="skill-tabs-tour">
                 <button class="tab-link active" data-tab="tab-guidance">📖 Hướng dẫn chung</button>
                 <button class="tab-link" data-tab="tab-speaking">🗣️ Speaking</button>
                 <button class="tab-link" data-tab="tab-listening">🎧 Listening</button>
@@ -150,7 +233,7 @@
                 <button class="tab-link" data-tab="tab-writing">✍️ Writing</button>
             </div>
 
-            <main class="skill-content-container">
+            <main class="skill-content-container" id="content-area-tour">
                 <!-- Tab 1: Hướng dẫn chung -->
                 <div id="tab-guidance" class="tab-content active">
                     <section class="skill-section">
@@ -167,13 +250,21 @@
                                 <h3>Tổng hợp Từ vựng</h3>
                                 <p>Từ vựng theo chủ đề Nơi chốn và Con người</p>
                             </a>
-                            
-                            
+
+
                             <a href="exam_tips.html" class="part-card">
                                 <h3>Những điều cần nhớ</h3>
                                 <p>Lời khuyên giúp bạn tự tin và làm bài tốt</p>
                             </a>
-                                                        <a href="behind-the-scenes.html" class="part-card">
+                            <a href="reference.html" class="part-card">
+                                <h3>Tài liệu tham khảo </h3>
+                                <p>Nguồn tài liệu chính và tài liệu tham khảo thêm</p>
+                            </a>
+                            <a href="faq.html" class="part-card">
+                                <h3>Câu hỏi thường gặp </h3>
+                                <p>Giúp bạn hiểu hơn ý nghĩa của trang web này</p>
+                            </a>
+                            <a href="behind-the-scenes.html" class="part-card">
                                 <h3>Câu chuyện đằng sau <br> (Tùy chọn)</h3>
                                 <p>Một công cụ được tạo ra từ chính trải nghiệm của một người ôn thi.</p>
                             </a>
@@ -355,28 +446,113 @@
         <footer id="footer-placeholder"></footer>
     </div>
     <script src="js/main.js"></script>
-    <script>
+
+    <!-- Tích hợp Script của Driver.js -->
+    <script src="https://cdn.jsdelivr.net/npm/driver.js@1.0.1/dist/driver.js.iife.js"></script>
+
+<script>
         // === LOGIC MỚI CHO GIAO DIỆN TAB TRÊN TRANG INDEX ===
         document.addEventListener('DOMContentLoaded', function () {
-            // Chỉ chạy code này nếu đang ở trang index.html
-            if (document.querySelector('.skill-tabs')) {
-                const tabLinks = document.querySelectorAll('.tab-link');
-                const tabContents = document.querySelectorAll('.tab-content');
+            const tabLinks = document.querySelectorAll('.tab-link');
+            const tabContents = document.querySelectorAll('.tab-content');
 
+            function showTab(tabId) {
+                tabLinks.forEach(item => item.classList.remove('active'));
+                tabContents.forEach(item => item.classList.remove('active'));
+                
+                const activeLink = document.querySelector(`.tab-link[data-tab='${tabId}']`);
+                const activeContent = document.getElementById(tabId);
+                
+                if(activeLink) activeLink.classList.add('active');
+                if(activeContent) activeContent.classList.add('active');
+            }
+
+            if (tabLinks.length > 0) {
                 tabLinks.forEach(link => {
                     link.addEventListener('click', () => {
-                        const tabId = link.dataset.tab;
-
-                        // Bỏ active ở tất cả các tab và nội dung
-                        tabLinks.forEach(item => item.classList.remove('active'));
-                        tabContents.forEach(item => item.classList.remove('active'));
-
-                        // Thêm active cho tab và nội dung được chọn
-                        link.classList.add('active');
-                        document.getElementById(tabId).classList.add('active');
+                        showTab(link.dataset.tab);
                     });
                 });
             }
+
+            // === CẤU HÌNH TOUR HƯỚ- DẪN (DRIVER.JS) ===
+            const driver = window.driver.js.driver;
+
+            const driverObj = driver({
+                showProgress: true,
+                animate: true,
+                doneBtnText: 'Hoàn thành',
+                nextBtnText: 'Tiếp theo',
+                prevBtnText: 'Quay lại',
+                popoverClass: 'driverjs-theme',
+                steps: [
+                    {
+                        element: '#main-title',
+                        popover: {
+                            title: 'Chào mừng bạn! 👋',
+                            description: 'Chào mừng đến với Aptis Practice Hub. Hãy để mình hướng dẫn bạn cách sử dụng trang web này nhé.',
+                            side: "bottom",
+                            align: 'center'
+                        }
+                    },
+                    {
+                        element: '#skill-tabs-tour',
+                        popover: {
+                            title: 'Chọn kỹ năng',
+                            description: 'Đây là nơi bạn chọn kỹ năng muốn ôn tập: Speaking, Listening, Reading hoặc Writing.',
+                            side: "bottom",
+                            align: 'center'
+                        }
+                    },
+                    {
+                        element: '#content-area-tour',
+                        popover: {
+                            title: 'Danh sách bài học',
+                            description: 'Các bài học, mẹo và bài thi thử tương ứng với kỹ năng bạn chọn sẽ hiện ở khu vực này.',
+                            side: "top",
+                            align: 'center'
+                        },
+                        // Tự động chuyển tab khi đến bước này
+                        onNextClick: () => {
+                           showTab('tab-guidance');
+                           driverObj.moveNext();
+                        }
+                    },
+                    {
+                        element: '#restart-tour',
+                        popover: {
+                            title: 'Cần trợ giúp?',
+                            // === THÊM NÚT Q&A VÀO ĐÂY ===
+                            description: `Bất cứ khi nào bạn quên cách sử dụng, hãy bấm vào nút dấu hỏi này nhé!
+                                          <br><br>
+                                          <button id="faq-tour-btn" class="action-btn" style="background-color: #28a745;">Q&A - Câu hỏi thường gặp</button>`,
+                            side: "left",
+                            align: 'center'
+                        },
+                        onHighlighted: (element) => {
+                            // Gắn sự kiện click cho nút Q&A chỉ khi popover này xuất hiện
+                            const faqBtn = document.getElementById('faq-tour-btn');
+                            if (faqBtn) {
+                                faqBtn.onclick = () => {
+                                    window.location.href = 'faq.html'; // Đổi tên file nếu cần
+                                }
+                            }
+                        }
+                    }
+                ]
+            });
+
+            const hasSeenTour = localStorage.getItem('hasSeenAptisTour');
+            if (!hasSeenTour) {
+                setTimeout(() => {
+                    driverObj.drive();
+                    localStorage.setItem('hasSeenAptisTour', 'true');
+                }, 1000);
+            }
+
+            document.getElementById('restart-tour').addEventListener('click', () => {
+                driverObj.drive();
+            });
         });
     </script>
 </body>
