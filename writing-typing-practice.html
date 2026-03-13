@@ -223,11 +223,7 @@
             });
 
             // Logic tự động chạy lần đầu
-            const hasSeenTour = localStorage.getItem('hasSeenTypingPracticeTour');
-            if (!hasSeenTour) {
-                driverObj.drive();
-                localStorage.setItem('hasSeenTypingPracticeTour', 'true');
-            } else {
+            showTourHint('hasSeenTypingPracticeTour', () => driverObj.drive()); else {
                  // Nếu gọi thủ công từ nút ?, chạy luôn
                  driverObj.drive();
             }

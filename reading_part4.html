@@ -344,11 +344,7 @@
             });
 
             // Logic tự động chạy lần đầu cho Part 4
-            const hasSeenTour = localStorage.getItem('hasSeenReadingPart4Tour');
-            if (!hasSeenTour) {
-                driverObj.drive();
-                localStorage.setItem('hasSeenReadingPart4Tour', 'true');
-            }
+            showTourHint('hasSeenReadingPart4Tour', () => driverObj.drive());
 
             // Gán sự kiện cho nút ?
             document.getElementById('restart-tour').addEventListener('click', () => {

@@ -451,11 +451,7 @@
                 ]
             });
 
-            const hasSeenTour = localStorage.getItem('hasSeenListeningPart15Tour');
-            if (!hasSeenTour) {
-                driverObj.drive();
-                localStorage.setItem('hasSeenListeningPart15Tour', 'true');
-            }
+            showTourHint('hasSeenListeningPart15Tour', () => driverObj.drive());
 
             document.getElementById('restart-tour').addEventListener('click', () => {
                 driverObj.drive();

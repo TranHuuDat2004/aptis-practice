@@ -105,3 +105,44 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
 });
+
+// === GLOBAL TOUR HINT SYSTEM ===
+window.showTourHint = function(tourKey, onStartTour) {
+    const hasSeenHint = localStorage.getItem('hasSeenGlobalTourHint_' + tourKey);
+    if (hasSeenHint) return;
+
+    const tourBtn = document.getElementById('restart-tour');
+    if (!tourBtn) return;
+
+    let hintBubble = document.getElementById('tour-hint-bubble');
+    if (!hintBubble) {
+        hintBubble = document.createElement('div');
+        hintBubble.id = 'tour-hint-bubble';
+        hintBubble.className = 'tour-hint-bubble';
+        hintBubble.innerHTML = `
+            <div style="font-size: 14px; margin-bottom: 12px; color: #333; line-height: 1.4;">
+                Bạn lần đầu tiên đến trang web, hãy xem qua hướng dẫn ngay nhé!
+            </div>
+            <div style="display: flex; gap: 8px; justify-content: flex-end;">
+                <button id="close-tour-hint" style="background: #f1f3f5; border: none; padding: 6px 12px; border-radius: 6px; font-size: 12px; cursor: pointer; color: #495057;">Để sau</button>
+                <button id="start-tour-hint" style="background: #007bff; border: none; padding: 6px 12px; border-radius: 6px; font-size: 12px; cursor: pointer; color: #fff; font-weight: 600;">Xem ngay</button>
+            </div>
+        `;
+        document.body.appendChild(hintBubble);
+
+        document.getElementById('start-tour-hint').onclick = () => {
+            hintBubble.classList.remove('active');
+            localStorage.setItem('hasSeenGlobalTourHint_' + tourKey, 'true');
+            if (onStartTour) onStartTour();
+        };
+
+        document.getElementById('close-tour-hint').onclick = () => {
+            hintBubble.classList.remove('active');
+            localStorage.setItem('hasSeenGlobalTourHint_' + tourKey, 'true');
+        };
+    }
+
+    setTimeout(() => {
+        hintBubble.classList.add('active');
+    }, 2000);
+};

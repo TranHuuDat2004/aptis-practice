@@ -352,14 +352,7 @@
             });
 
             // Logic tự động chạy lần đầu
-            const hasSeenSpeakingTour = localStorage.getItem('hasSeenSpeakingPart1Tour');
-            if (!hasSeenSpeakingTour) {
-                // Delay nhẹ để đảm bảo UI render xong hoàn toàn
-                setTimeout(() => {
-                    driverObj.drive();
-                    localStorage.setItem('hasSeenSpeakingPart1Tour', 'true');
-                }, 800);
-            }
+            showTourHint('SpeakingPart1Tour', () => driverObj.drive());
 
             // Gán sự kiện cho nút ?
             document.getElementById('restart-tour').addEventListener('click', () => {

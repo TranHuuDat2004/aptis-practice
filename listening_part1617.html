@@ -279,11 +279,7 @@
                 ]
             });
 
-            const hasSeenTour = localStorage.getItem('hasSeenListeningPart1617Tour');
-            if (!hasSeenTour) {
-                driverObj.drive();
-                localStorage.setItem('hasSeenListeningPart1617Tour', 'true');
-            }
+            showTourHint('hasSeenListeningPart1617Tour', () => driverObj.drive());
 
             document.getElementById('restart-tour').addEventListener('click', () => {
                 driverObj.drive();

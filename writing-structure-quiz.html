@@ -184,11 +184,7 @@
             });
 
             // Logic tự động chạy lần đầu
-            const hasSeenTour = localStorage.getItem('hasSeenStructureQuizTour');
-            if (!hasSeenTour) {
-                driverObj.drive();
-                localStorage.setItem('hasSeenStructureQuizTour', 'true');
-            } else {
+            showTourHint('hasSeenStructureQuizTour', () => driverObj.drive()); else {
                  // Nếu gọi thủ công từ nút ?, chạy luôn
                  driverObj.drive();
             }

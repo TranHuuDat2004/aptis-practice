@@ -314,11 +314,7 @@
             if (forceStart) {
                 driverObj.drive();
             } else {
-                const hasSeenTour = localStorage.getItem('hasSeenWritingAnalysisTour');
-                if (!hasSeenTour) {
-                    driverObj.drive();
-                    localStorage.setItem('hasSeenWritingAnalysisTour', 'true');
-                }
+                showTourHint('hasSeenWritingAnalysisTour', () => driverObj.drive());
             }
         }
     </script>

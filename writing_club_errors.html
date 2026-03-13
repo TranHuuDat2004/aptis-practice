@@ -303,11 +303,7 @@
             if (forceStart) {
                 driverObj.drive();
             } else {
-                const hasSeenTour = localStorage.getItem('hasSeenClubErrorsTour');
-                if (!hasSeenTour) {
-                    driverObj.drive();
-                    localStorage.setItem('hasSeenClubErrorsTour', 'true');
-                }
+                showTourHint('hasSeenClubErrorsTour', () => driverObj.drive());
             }
         }
     </script>
