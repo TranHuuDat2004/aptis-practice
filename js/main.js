@@ -102,6 +102,7 @@ document.addEventListener("DOMContentLoaded", function() {
             const year = today.getFullYear();
             lastUpdatedEl.textContent = `${day}/${month}/${year}`;
         }
+        initWarningPopup();
     });
 
 });
@@ -146,3 +147,39 @@ window.showTourHint = function(tourKey, onStartTour) {
         hintBubble.classList.add('active');
     }, 2000);
 };
+
+// === GLOBAL WARNING POPUP SYSTEM ===
+function initWarningPopup() {
+    const updateWarning = document.getElementById('update-warning');
+    const closeWarningBtn = document.getElementById('close-warning');
+    const reopenBtn = document.getElementById('reopen-warning-btn');
+    
+    if (!updateWarning || !closeWarningBtn) return;
+
+    // Hiển thị lần đầu (chỉ ở trang chủ index.html)
+    const path = window.location.pathname;
+    const isHomePage = path.endsWith('index.html') || path.endsWith('/') || path === '' || path.split('/').pop() === '';
+    const hasSeenWarning = localStorage.getItem('hasSeenUpdateWarning');
+
+    if (isHomePage && !hasSeenWarning) {
+        setTimeout(() => {
+            updateWarning.classList.add('active');
+        }, 500);
+    }
+
+    // Đóng popup
+    closeWarningBtn.onclick = () => {
+        updateWarning.classList.remove('active');
+        localStorage.setItem('hasSeenUpdateWarning', 'true');
+    };
+
+    // Mở lại từ footer
+    if (reopenBtn) {
+        reopenBtn.onclick = (e) => {
+            e.preventDefault();
+            updateWarning.classList.add('active');
+        };
+    }
+}
+
+// Gọi init khi footer đã được load (trong Main logic của Promise.all)

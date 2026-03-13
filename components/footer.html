@@ -100,17 +100,43 @@
                 <!-- KẾT THÚC THAY ĐỔI -->
             </ul>
             <div class="footer-social">
-                <a href="https://github.com/TranHuuDat2004/aptis-practice" target="_blank" aria-label="GitHub"><i
-                        class="fab fa-github"></i></a>
+                <!-- <a href="https://github.com/TranHuuDat2004/aptis-practice" target="_blank" aria-label="GitHub"><i
+                        class="fab fa-github"></i></a> -->
             </div>
         </div>
     </div>
     <div class="footer-bottom">
-        <div class="container">
-            <p>&copy; 2025 - Aptis Practice Tool. All Rights Reserved.</p>
+        <div class="container" style="display: flex; justify-content: center; align-items: center; gap: 12px; flex-wrap: wrap; color: #6c757d; font-size: 0.85em;">
+            <span>&copy; 2025 <strong>Aptis Practice Tool</strong>. All rights reserved.</span>
+            <span style="color: #dee2e6; font-weight: 300;">|</span>
+            <span>Developed by <strong>Tran Huu Dat</strong></span>
+            <span style="color: #dee2e6; font-weight: 300;">|</span>
+            <a href="https://github.com/TranHuuDat2004/aptis-practice" target="_blank" style="color: inherit; text-decoration: none; display: flex; align-items: center; gap: 5px; transition: color 0.2s;">
+                <i class="fab fa-github"></i> Mã nguồn
+            </a>
+            <span style="color: #dee2e6; font-weight: 300;">|</span>
+            <a href="#" id="reopen-warning-btn" style="color: inherit; text-decoration: none; display: flex; align-items: center; gap: 5px; transition: color 0.2s; font-weight: 500;">
+                <i class="fas fa-exclamation-triangle" style="color: #d9534f;"></i> Lưu ý về đề thi mới
+            </a>
         </div>
     </div>
 </footer>
+
+<!-- Popup Cảnh báo quan trọng (Global) -->
+<div id="update-warning" class="update-warning-overlay">
+    <div class="update-warning-modal">
+        <div class="warning-icon">📢</div>
+        <h2>Lưu ý nho nhỏ trước khi bắt đầu!</h2>
+        <p>
+            Hiện nay, bài thi Aptis đã có một số cập nhật mới về đề thi. 
+            <br><br>
+            Lời khuyên dành cho bạn là hãy dùng website này để <span class="warning-highlight">trau dồi kiến thức và rèn luyện kỹ năng</span> thật vững vàng. Đừng nên phụ thuộc vào việc <span class="warning-highlight">"học tủ" hay học vẹt</span> nữa nhé.
+            <br><br>
+            Các bài học ở đây được thiết kế để minh họa và làm tài liệu tham khảo, giúp bạn tự tin hơn trước kỳ thi thật!
+        </p>
+        <button id="close-warning" class="close-warning-btn">Mình hiểu rồi</button>
+    </div>
+</div>
 
 <script>
     // JavaScript cho Footer Dropdown
